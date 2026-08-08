@@ -29,7 +29,9 @@
 
 6. **其他高 complementary 选项**  
    - **AI Research Skills 库**（高 star，skill 数量待回源）：把 agent 变成 AI/ML 研究助手（fine-tuning、distributed training、evaluation、RAG、paper writing + autoresearch 层），兼容 Claude Code / Codex 等。适合 CS 研究生的实验与系统部分。  
-   - **nature-skills**：Nature 级写作 + 科研绘图，Claude Code + Codex。  
+   - **nature-skills**（上游候选：Yuan1z0825/nature-skills 等社区库族，2026-08-08 回源）：Nature 级写作 + 科研绘图，Claude Code + Codex；社交媒体聚合图中另见 Nature Academic Search / Reader / Figure / Reviewer / Response 等 6 个子 skill 命名，对应该库族，不另立条目。**品牌声明**：此类 "Nature*" 命名为社区自拟，与 *Nature* 期刊无隶属或背书关系，课堂不得表述为期刊认可的标准。  
+   - **PaperSpine（WUBING2023/PaperSpine）**：2026-08-08 回源登记，B/C 级线索。动机驱动的强论文学习 skill：构建论文中心论证（central argument）、证据感知蓝图、修订矩阵、LaTeX 安全审计；与第 4 课论文精读、第 15 课修订回写契合。存在个人镜像（PKUMichael/PaperSpine），引用以上游 WUBING2023 为准。  
+   - **PaperCraft**：2026-08-08 回源登记，B/C 级线索，**正源待定**。同名仓库多个：charlotte-12s/paper-craft（"从 idea 到顶会接收"，17 规则 + 12 skills，CS 方向）、kimogrant/academic-paper-skill（SCI + 学位论文向镜像）。采用前须确认正源与许可。  
    - **feynman** 等 CLI 研究 agent：20+ skills（文献、复现、peer review），可装进 Codex/Claude。  
    - **scientific-agent-skills（K-Dense-AI/scientific-agent-skills）**：2026-08-08 回源登记，B/C 级线索。大型科研 skill 库，自称 "#1 Agent Skills library for science"。README 称约 158–159 个 skill（About 区与正文数字不一致），按领域组织（生物、化学、临床、数据库、研究方法等），SKILL.md 格式，含脚本的 skill 带测试要求；仓库标 MIT，但 FAQ 声明各 skill 许可独立，采用前须逐个核验。明确支持 Claude Code / Codex / Cursor；**OpenCode 兼容未见页面声明，待回源**。方法论面有文献检索/综述、证据可追溯写作（source-bound、line-pinned citations）、同行评审、假设生成、批判性思维、引用管理，与课程 claim-evidence 对齐和防幻觉要求契合。宣传语（"#1""170,000+ scientists"）不采信。**建议列为首选评估候选**。  
    - **Supervisor-Skills（HKUSTDial/Supervisor-Skills）**：2026-08-08 回源登记，B/C 级线索。港科大（广州）助理教授发起（DIAL 实验室），把导师经验蒸馏为技能：idea-evaluator、deep-research、paper-writer（证据门控正文写作）、paper-polish（忠于原意润色）、pre-submission-reviewer、figure-designer 等；"Guide + Skills" 双轨，强调引用核验、不编造，与课程"方法论判断在人类侧"取向契合。CC BY-NC-SA 4.0（非商业、改编须同许可并注明出处，课堂使用与再分发注意边界）；页面提及 Claude Code/Cursor/Codex 及 Claude、DeepSeek、Kimi 等。  
@@ -38,6 +40,8 @@
    - **AI-Powered-Literature-Review-Skills（stephenlzc）**：2026-08-08 回源登记，B/C 级线索。系统性文献综述 skill（8 阶段：检索策略 → 多库检索 → 去重 → 元数据校验 → 单篇分析 → 综述生成），主打 Kimi CLI，页面称也可装入 Claude Code/OpenCode 等；MIT；GB/T 7714-2015 引文格式贴合国内场景。**注意**：依赖浏览器自动化访问 CNKI/WoS/ScienceDirect/PubMed 而非授权 API，涉及订阅条款与平台规则边界，课堂使用前须说明权限与合规边界，不演示越过订阅边界的访问。  
    - **Auto-Empirical Research Skills（AERS，brycewang-stanford/Auto-Empirical-Research-Skills）**：2026-08-08 回源登记，B/C 级线索。社科实证研究方向的 skill 合集（选题、文献、数据、DID/RD/IV 因果识别、估计与稳健性、图表、写作、投稿），CC BY-SA 4.0，README 自称由 "Stanford REAP × CoPaper.AI" 维护（机构身份未核验）。**纳入理由**：仅作为缺口表"统计严谨/因果推断"维度的候选线索。**三点限定**：①面向社科计量场景，与 CS/AI 课程契合有限，不进核心推荐；②含 "de-AIGC"（降低 AI 痕迹）类 skill，与课程 AI 使用披露、人主智辅与诚信规范直接冲突，课堂上只可作为"哪些 skill 不该用"的批判性案例，不得推荐使用；③README 宣传口径不可靠（"23,000+ skills"与正文"1,096"不一致、"20 分钟完成一篇论文"式承诺），按使用规则不采信、不记录。  
    - 社区聚合与发现入口：Auto-Research-Skills hub、awesome-skills；**InternScience/Awesome-Scientific-Skills**（科研 skill 精选目录，MIT，有筛选标准与 skill-metric 质量评估，当前以链接目录为主，2026-08-08 回源）；**kael-odin/awesome-academic-research-skills**（中文学术 skill 仓库每日榜单/雷达，MIT，GitHub Actions 自动抓取，适合作为发现新库的线索而非直接依据，2026-08-08 回源）；**HughYau/AcademicForge**（学术 skill 选配安装平台，32 个技能偏生命科学与算力方向，MIT，自称跨 Claude Code/OpenCode/Codex，2026-08-08 回源）；VoltAgent/awesome-agent-skills（通用大合集，1400+ skill，无科研专门分类，与本课程相关度低，2026-08-08 回源）。建议课程精选上述核心，避免 overload。
+
+**社媒聚合图核对注记（2026-08-08）**：就一张小红书博主截图（"科研人必备的14个codex skills"，C 级社媒线索，截图不入库）逐项回源：Nature* 系对应 nature-skills 条目，Scientific* 系对应 K-Dense scientific-agent-skills，"AI Research Skill" 对应 AI Research Skills 库，"Literature Survey" 与现有条目重叠——四类均不另立；PaperSpine 与 PaperCraft 为新登记（见上）。图内点赞/收藏等宣传数据不记录；该图仅作核对线索，不构成课程证据。
 
 **跨平台使用提示**：多数采用 `SKILL.md`（name + description frontmatter + 正文）。Claude Code 用 `.claude/skills/` 或 marketplace；OpenCode 可读 `.opencode/skills/`、`.claude/skills/` 等；Codex 用 `.agents/skills/`（可 symlink）。安装后通常用自然语言触发或 slash/`$` 命令。始终强调本地/隐私配置与 API key 管理。
 
