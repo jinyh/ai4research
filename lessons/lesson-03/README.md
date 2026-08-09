@@ -14,7 +14,7 @@
 | [source-audit-demo.md](./source-audit-demo.md) | 现行·教学资产 v1.1.0 | Keshav 2007 真实 Crossref—DOI—原文—候选表 trace，含断网备用记录 |
 | [mi-search-trace-demo.md](./mi-search-trace-demo.md) | 现行·教学资产 v0.1.1 | MI 宽泛主题检索真实 trace：分支确定方法审计、17 条待筛选线索、4 条幻觉引用 rejected 实例；方向收敛段待真实方向指认后升版 |
 | [assets/](./assets/README.md) | 现行·2.0 视觉资产 | 4 张自绘教学结构图，逐图出处块登记；课级唯一图源 |
-| [research-question-to-search skill](../../.agents/skills/research-question-to-search/SKILL.md) | 教学工具资产 | "问题→检索式→身份核验→候选表"受限流程；方法论源自本课 handout §一-§七，供教师演示 trace 生产与第 12 课八要素拆解（待该课修订轮引用）；不属三件套，不参与本课门控 |
+| [research-question-to-search skill](../../.agents/skills/research-question-to-search/SKILL.md) | 教学工具资产 | “问题初稿→检索式→公开源检索→入口核验→筛选/审计/候选表”受限流程；v1 仅学术文献，含确定性公开源脚本与三端入口；不属三件套，不参与本课门控 |
 
 ## 文件关系
 

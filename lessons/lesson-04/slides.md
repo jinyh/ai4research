@@ -29,7 +29,7 @@
 - 21-40 人；
 - 连续 90 分钟；
 - 中文授课，英文仅保留论文名、工具名和必要术语；
-- 内容、节奏、映射、制作与三重检查均已通过；现行 17 页正式 PPT 见 `slides.pptx`，视觉规则见 [ppt-quality-gates.md](../../course/ppt-quality-gates.md) 与 [ppt-design-criteria.md](../ppt-design-criteria.md)，关键页规格见 [keystone-design-spec.md](./keystone-design-spec.md)；
+- 内容、节奏和映射已复核；现有 17 页 PPTX 对应上一版母稿，相关页同步后须重走三重检查。视觉规则见 [ppt-quality-gates.md](../../course/ppt-quality-gates.md) 与 [ppt-design-criteria.md](../ppt-design-criteria.md)，关键页规格见 [keystone-design-spec.md](./keystone-design-spec.md)；
 - OpenCode、模型后端和论文原文访问尽量在课前确认；
 - 学生优先使用候选文献表里的 verified 论文；没有者沿用第 1-3 课贯穿案例；
 - 本课无正式提交。
@@ -435,7 +435,7 @@ AI 质疑暴露你自己的盲点。你可能因为觉得方法"看起来合理"
 
 ### 视觉结构
 
-阅读卡模板占主体，下方一行"写入项目 notes/reading-cards/"。
+阅读卡模板占主体，下方一行“写入项目 reading-cards.md”。
 
 ### 教师讲述备注
 

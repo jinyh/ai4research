@@ -32,5 +32,7 @@
 - 单一事实源：`.agents/skills/research-question-to-search/SKILL.md`
 - Claude Code：`.claude/skills/research-question-to-search`（软链接）
 - OpenCode：`.opencode/agent/research-question-to-search.md`（薄封装，运行时读 SKILL.md）
+- Codex 元数据：`.agents/skills/research-question-to-search/agents/openai.yaml`
+- 公开源执行脚本：`.agents/skills/research-question-to-search/scripts/search_public_sources.py`
 
-该 skill 负责"问题→检索式→公开源检索→身份核验→候选文献表行"的受限流程：方法论源为 `lessons/lesson-03/handout.md` §一-§七 与 `references/material-contracts.md` §三；仅公开学术 API，订阅源不自动化，未发表素材不入查询；身份层/主张层双层核验，状态升级与纳入排除决策保留为人工审核点。首个使用场景为课程 2.0 批次 0 的 MI 检索 trace，回归基线为 Keshav 2007 既有 trace。
+该 skill 负责“问题初稿→每库实际检索式→公开源检索→入口核验→筛选/审计/候选表”的受限流程。v1 只自动处理论文、预印本和正式学术出版物；其他来源仅登记为外部线索。它分开记录查询运行状态、预期证据角色、四态核验状态、筛选建议和人工决定，状态升级与最终筛选保留为人工审核点。当前实现包含确定性公开源脚本与 Codex 元数据；Keshav 回归和独立 forward test 聚焦复测均已通过。

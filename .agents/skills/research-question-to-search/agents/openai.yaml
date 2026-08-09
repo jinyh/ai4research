@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Question to Search"
+  short_description: "把研究问题转换为可复盘检索式、来源审计与候选文献记录"
+  default_prompt: "使用 $research-question-to-search 将这个研究问题转为可复盘检索式，并生成来源审计与候选文献记录。"
