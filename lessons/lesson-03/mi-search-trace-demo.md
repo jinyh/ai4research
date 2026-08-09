@@ -1,10 +1,11 @@
 ---
-版本：v0.1.1
+版本：v0.1.2
 最后更新：2026-08-09
 适用课次：第 3 课（教师演示与断网备用；第 12 课八要素拆解可引用）
 文档类型：真实检索方法与失败演示包（MI 方向地图）
 变更记录：
-- v0.1.1 (2026-08-09): 将尚无研究问题、尚未筛选的 17 条记录改称“待筛选线索表”，避免与本课候选文献表进入规则混淆；事实记录不变
+- v0.1.2 (2026-08-09): 对齐讲义 v1.2.0——线索表改用现行十字段表头（稳定来源/对应问题/预期证据角色/纳入理由）；核验状态补"拟用主张待核"；三维分记与查询级运行状态口径同步；仅更新标注方式，事实记录不变
+- v0.1.1 (2026-08-09): 将尚无研究问题、尚未筛选的 17 条记录改称"待筛选线索表"，避免与本课候选文献表进入规则混淆；事实记录不变
 - v0.1.0 (2026-08-09): 首版——2026-08-09 MI 宽泛主题检索 trace：分支确定方法审计、待筛选线索 17 条（全部 pending-身份已核）、4 条真实幻觉引用 rejected 实例；方向收敛段待博士生真实方向指认后升 v1
 ---
 
@@ -16,7 +17,7 @@
 
 1. **检索框架本身也要审计**：检索分支不是先验给定的。Agent 凭记忆预设的分支划分只是线索，必须用领域数据校验（§3 的 v1→v2 修正表）。
 2. **Agent 的记忆引用是幻觉高发区**：Agent 凭记忆给出的 11 个锚点论文 ID 中 6 个身份不符，其中 4 个是彻底的张冠李戴（§6）。全部按 `rejected` 处置并留下恢复路径——失败不重跑到无痕。
-3. **四态口径全程生效**：未做主张层核验的条目一律 `pending`（注明身份已核）；`rejected` 永不入候选表，只留审计记录。状态名用精确拼写，无缩写。
+3. **四态口径与三维分记**：未完成入口核验的条目一律 `pending`（注明已核与待核项）；`rejected` 永不入候选表，只留审计记录；预期证据角色、核验状态与人工筛选决定分开记录，查询级失败不伪装成文献条目。状态名用精确拼写，无缩写。
 
 ## 2. 检索记录
 
@@ -59,29 +60,29 @@ B7-B9 锚点待研究问题收敛后按题名精确检索核验，不在指认�
 | B5 Monosemanticity | `all:monosemanticity OR all:"scaling monosemanticity"` | 104 |
 | B6 忠实性/评价 | `all:interpretability AND (all:faithfulness OR all:fidelity) AND all:evaluation AND (cat:cs.LG OR cat:cs.CL)` | 532 |
 
-## 5. 待筛选线索表（全部 `pending`-身份已核；主张层未做）
+## 5. 待筛选线索表（全部 `pending`-身份已核；拟用主张待核）
 
-身份核验方式：arXiv `id_list` 精确查询，题名/作者/日期以 API 元数据为准。证据角色默认探索线索；纳入/排除待研究问题收敛后由教师确定。由于还没有可检索的问题初稿和拟用主张，本表不是讲义 §五 所定义的候选文献表。
+身份核验方式：arXiv `id_list` 精确查询，题名/作者/日期以 API 元数据为准。本表使用讲义 §五 的十字段表头；由于还没有收敛的研究问题和拟用主张，"对应问题/拟用主张"统一标"待问题收敛"，纳入理由留空、人工筛选决定统一标 `awaiting-human`。证据角色默认探索线索；即使日后完成核验，未经角色理由确认也不改标为主证据、补充证据或对比证据。本表不是候选文献表：正式候选表只登记人工决定纳入且状态不是 `rejected` 的条目。
 
-| 编号 | 题名（核验后） | 作者 | 年份 | 来源 | 证据角色 | 纳入/排除 | 理由 | 核验状态 | caveat/允许主张 |
+| 编号 | 题名（核验后） | 作者 | 年份 | 稳定来源 | 对应问题/拟用主张 | 预期证据角色 | 纳入理由 | 核验状态 | caveat/允许主张 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| MI-C01 | Toy Models of Superposition | Elhage et al. | 2022 | arXiv:2209.10652 | 探索线索 | 待定 | | pending（身份已核） | |
-| MI-C02 | Sparse Autoencoders Find Highly Interpretable Features in Language Models | Cunningham et al. | 2023 | arXiv:2309.08600 | 探索线索 | 待定 | | pending（身份已核） | |
-| MI-C03 | Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2 | Lieberum et al. | 2024 | arXiv:2408.05147 | 探索线索 | 待定 | | pending（身份已核） | |
-| MI-C04 | Jumping Ahead: Improving Reconstruction Fidelity with JumpReLU Sparse Autoencoders | Rajamanoharan et al. | 2024 | arXiv:2407.14435 | 探索线索 | 待定 | | pending（身份已核） | |
-| MI-C05 | Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models | Marks et al. | 2024 | arXiv:2403.19647 | 探索线索 | 待定 | | pending（身份已核） | |
-| MI-C06 | Eliciting Latent Predictions from Transformers with the Tuned Lens | Belrose et al. | 2023 | arXiv:2303.08112 | 探索线索 | 待定 | | pending（身份已核） | |
-| MI-C07 | Emergent Linear Representations in World Models of Self-Supervised Sequence Models | Belrose, Nanda et al. | 2023 | arXiv:2309.00941 | 探索线索 | 待定 | | pending（身份已核） | |
-| MI-C08 | Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small | Wang et al. | 2022 | arXiv:2211.00593 | 探索线索 | 待定 | | pending（身份已核） | |
-| MI-C09 | Towards Automated Circuit Discovery for Mechanistic Interpretability | Conmy et al. | 2023 | arXiv:2304.14997 | 探索线索 | 待定 | | pending（身份已核） | |
-| MI-C10 | Attribution Patching Outperforms Automated Circuit Discovery | Syed et al. | 2023 | arXiv:2310.10348 | 探索线索 | 待定 | | pending（身份已核） | |
-| MI-C11 | How to use and interpret activation patching | Heimersheim et al. | 2024 | arXiv:2404.15255 | 探索线索 | 待定 | | pending（身份已核） | |
-| MI-C12 | Successor Heads: Recurring, Interpretable Attention Heads In The Wild | Gould et al. | 2023 | arXiv:2312.09230 | 探索线索 | 待定 | | pending（身份已核） | |
-| MI-C13 | In-context Learning and Induction Heads | Olsson et al. | 2022 | arXiv:2209.11895 | 探索线索 | 待定 | | pending（身份已核） | |
-| MI-C14 | Engineering Monosemanticity in Toy Models | Jermyn et al. | 2022 | arXiv:2211.09169 | 探索线索 | 待定 | | pending（身份已核） | |
-| MI-C15 | Towards Faithfully Interpretable NLP Systems: How should we define and evaluate faithfulness? | Jacovi & Goldberg | 2020 | arXiv:2004.03685 | 探索线索 | 待定 | | pending（身份已核） | |
-| MI-C16 | Towards Principled Evaluations of Sparse Autoencoders for Interpretability and Control | Makelov et al. | 2024 | arXiv:2405.08366 | 探索线索 | 待定 | | pending（身份已核） | |
-| MI-C17 | A Comparative Study of Faithfulness Metrics for Model Interpretability Methods | Chan et al. | 2022 | arXiv:2204.05514 | 探索线索 | 待定 | | pending（身份已核） | |
+| MI-C01 | Toy Models of Superposition | Elhage et al. | 2022 | arXiv:2209.10652 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
+| MI-C02 | Sparse Autoencoders Find Highly Interpretable Features in Language Models | Cunningham et al. | 2023 | arXiv:2309.08600 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
+| MI-C03 | Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2 | Lieberum et al. | 2024 | arXiv:2408.05147 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
+| MI-C04 | Jumping Ahead: Improving Reconstruction Fidelity with JumpReLU Sparse Autoencoders | Rajamanoharan et al. | 2024 | arXiv:2407.14435 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
+| MI-C05 | Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models | Marks et al. | 2024 | arXiv:2403.19647 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
+| MI-C06 | Eliciting Latent Predictions from Transformers with the Tuned Lens | Belrose et al. | 2023 | arXiv:2303.08112 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
+| MI-C07 | Emergent Linear Representations in World Models of Self-Supervised Sequence Models | Belrose, Nanda et al. | 2023 | arXiv:2309.00941 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
+| MI-C08 | Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small | Wang et al. | 2022 | arXiv:2211.00593 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
+| MI-C09 | Towards Automated Circuit Discovery for Mechanistic Interpretability | Conmy et al. | 2023 | arXiv:2304.14997 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
+| MI-C10 | Attribution Patching Outperforms Automated Circuit Discovery | Syed et al. | 2023 | arXiv:2310.10348 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
+| MI-C11 | How to use and interpret activation patching | Heimersheim et al. | 2024 | arXiv:2404.15255 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
+| MI-C12 | Successor Heads: Recurring, Interpretable Attention Heads In The Wild | Gould et al. | 2023 | arXiv:2312.09230 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
+| MI-C13 | In-context Learning and Induction Heads | Olsson et al. | 2022 | arXiv:2209.11895 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
+| MI-C14 | Engineering Monosemanticity in Toy Models | Jermyn et al. | 2022 | arXiv:2211.09169 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
+| MI-C15 | Towards Faithfully Interpretable NLP Systems: How should we define and evaluate faithfulness? | Jacovi & Goldberg | 2020 | arXiv:2004.03685 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
+| MI-C16 | Towards Principled Evaluations of Sparse Autoencoders for Interpretability and Control | Makelov et al. | 2024 | arXiv:2405.08366 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
+| MI-C17 | A Comparative Study of Faithfulness Metrics for Model Interpretability Methods | Chan et al. | 2022 | arXiv:2204.05514 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
 
 ## 6. 教学点二：审计失败实例（真实发生，本 trace 原生）
 
@@ -126,6 +127,7 @@ http://export.arxiv.org/api/query?id_list=2209.10652
 ## 9. 与课程的连接
 
 - 讲义 §四 四态与进入规则：本文件全部条目按该口径标注；
-- 讲义 §六 常见错误 5（检索过程不可复盘）：§2/§4/§8 给出可复盘记录的最小完整样式；
+- 讲义 §五 三类记录：§2 对应检索记录，§6 对应来源审计记录，§5 是线索区而非正式候选表；
+- 讲义 §六 常见错误 5（检索过程不可复盘）与错误 7（角色、状态和决定混用）：§2/§4/§8 给出可复盘记录的最小完整样式，§5 演示三维分记；
 - 课程 2.0 批次 0 验收项"≥1 条真实科研失败演示"（见课程文档 `docs/course-2.0-plan.md`）：§6 提供 4 条；
 - 方向收敛段（从宽泛主题到具体研究问题的第 1-4 步）待博士生真实方向指认后补入本文件并升版。
