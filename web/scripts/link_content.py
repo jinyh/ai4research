@@ -39,6 +39,15 @@ PUBLISH = {
     "lessons/lesson-01/handout.md": "lessons/lesson-01/handout.md",
     "lessons/lesson-02/handout.md": "lessons/lesson-02/handout.md",
     "lessons/lesson-03/handout.md": "lessons/lesson-03/handout.md",
+    # 第 3 课学生向教学示例（2.0 G2：课级示例发布）
+    "lessons/lesson-03/source-audit-demo.md": "lessons/lesson-03/source-audit-demo.md",
+    "lessons/lesson-03/mi-search-trace-demo.md": "lessons/lesson-03/mi-search-trace-demo.md",
+    # 第 3 课图形资产（2.0 配图管线：逐文件软链，不软链目录——
+    # 规避 mkdocs 对软链目录 followlinks 的不确定性；handout 引用前必须先登记并运行生效）
+    "lessons/lesson-03/assets/research-chain-stage4-structure.svg": "lessons/lesson-03/assets/research-chain-stage4-structure.svg",
+    "lessons/lesson-03/assets/search-process-structure.svg": "lessons/lesson-03/assets/search-process-structure.svg",
+    "lessons/lesson-03/assets/verification-states-entry-structure.svg": "lessons/lesson-03/assets/verification-states-entry-structure.svg",
+    "lessons/lesson-03/assets/keshav-2007-trace-structure.svg": "lessons/lesson-03/assets/keshav-2007-trace-structure.svg",
     "lessons/lesson-04/handout.md": "lessons/lesson-04/handout.md",
     "lessons/lesson-05/handout.md": "lessons/lesson-05/handout.md",
     "lessons/lesson-06/handout.md": "lessons/lesson-06/handout.md",

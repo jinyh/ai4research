@@ -43,6 +43,8 @@
 
 **社媒聚合图核对注记（2026-08-08）**：就一张小红书博主截图（"科研人必备的14个codex skills"，C 级社媒线索，截图不入库）逐项回源：Nature* 系对应 nature-skills 条目，Scientific* 系对应 K-Dense scientific-agent-skills，"AI Research Skill" 对应 AI Research Skills 库，"Literature Survey" 与现有条目重叠——四类均不另立；PaperSpine 与 PaperCraft 为新登记（见上）。图内点赞/收藏等宣传数据不记录；该图仅作核对线索，不构成课程证据。
 
+**小红书宣传注记二（2026-08-08）**：Bryce（与 AERS 同一作者）笔记"全网最强文献综述 Skills 上线"宣传 brycewang-stanford/lit-review-agent-tools。回源：该仓库实为"70+ 工具、11 类"的精选清单（含 skills/MCP/PDF 解析/系统综述），并非笔记所暗示的自动编排多工具的单一 plugin；仓库描述自带"最强工具大全"营销口径。**plugin 本身不作为课程推荐 skill**，仅作线索；其所列 PDF 解析层（MinerU/docling）与系统综述层（ASReview/PRISMA）有独立价值，已登记于"MCP 与数据源条目"，直引 A 级上游。
+
 **跨平台使用提示**：多数采用 `SKILL.md`（name + description frontmatter + 正文）。Claude Code 用 `.claude/skills/` 或 marketplace；OpenCode 可读 `.opencode/skills/`、`.claude/skills/` 等；Codex 用 `.agents/skills/`（可 symlink）。安装后通常用自然语言触发或 slash/`$` 命令。始终强调本地/隐私配置与 API key 管理。
 
 ### MCP 与数据源条目（2026-08-08 回源核验）
@@ -53,7 +55,8 @@
 - **zotero-mcp（54yyyu/zotero-mcp）**：MIT，把个人 Zotero 文献库接入 agent（检索、全文、PDF 标注与笔记、集合/标签、DOI/URL/本地文件导入、去重、可选 Scite 引用分析与语义检索）；要求 Python 3.10+/Zotero 7+，可用于 Claude Code/Claude Desktop 等 MCP 客户端，521 commits 维护中；对应第 3/4 课文献管理与证据链场景。本课程工作环境已配置 Zotero MCP，可先本机体验再决定是否课堂演示。  
 - **academic-mcp（linxueyuanstdio/academic-mcp）**：MIT，统一 search/download/read 三工具，自称 19+ 数据源（含 IEEE/Scopus/Springer/WoS/ACM/JSTOR 等需订阅配置的源）；小型项目、提交量有限，成熟度低，仅列为线索。  
 - **awesome-mcp-servers（punkpeye）**：MIT，目前规模最大的 MCP server 目录，社区活跃，作 MCP 发现入口；LobeHub 等注册表上还有各类学术 MCP，质量参差，须逐个回源核验。  
-- **MCP 使用纪律**：最小权限与 key 隔离（对应第 1 课 agent-permissions.md）；第三方 MCP 属外部供应链，安装前审查代码与权限；MCP 生态的安全与可维护性已有学术研究关注（如 arXiv:2506.13538 对 MCP server 安全性的研究，标题线索，具体结论须回源核验）。本节不构成对任何条目的质量背书。
+- **MCP 使用纪律**：最小权限与 key 隔离（对应第 1 课 agent-permissions.md）；第三方 MCP 属外部供应链，安装前审查代码与权限；MCP 生态的安全与可维护性已有学术研究关注（如 arXiv:2506.13538 对 MCP server 安全性的研究，标题线索，具体结论须回源核验）。本节不构成对任何条目的质量背书。  
+- **PDF 解析与系统综述工具层线索**（2026-08-08 回源；源自 lit-review-agent-tools 清单，但直引上游、不经过该 plugin）：**MinerU**、**docling**（PDF 解析/抽取）对应第 3/4 课论文阅读与证据提取层；**ASReview**（系统综述筛选工具）、**PRISMA**（系统综述报告规范）对应系统综述方法论，与 co-researcher 的 PRISMA 风格 systematic-review skill 互为案例。四者均为独立上游工具，授课前回官方仓库核验版本与用法。
 
 ### 课程方法论框架建议（与 skills 结合）
 不要只教“怎么 prompt”，而教**研究全生命周期的人类-AI 协作纪律**（参考多门 AI-Assisted Research 课程与论文）：

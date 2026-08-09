@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 262" role="img" aria-label="八阶段研究链路，第 3 课聚焦阶段四外部输入摄取">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#44546A"/>
+    </marker>
+  </defs>
+  <g font-family="'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif">
+    <!-- 第 3 课位置标签 -->
+    <rect x="573" y="14" width="100" height="24" rx="12" fill="#1F4D78"/>
+    <text x="623" y="30" text-anchor="middle" font-size="13" fill="#FFFFFF">第 3 课位置</text>
+
+    <!-- 第一行：阶段 1-4 -->
+    <rect x="20" y="50" width="150" height="64" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="95" y="76" text-anchor="middle" font-size="12" fill="#44546A">阶段 1</text>
+    <text x="95" y="98" text-anchor="middle" font-size="16" fill="#1F4D78">问题定义</text>
+
+    <rect x="196" y="50" width="150" height="64" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="271" y="76" text-anchor="middle" font-size="12" fill="#44546A">阶段 2</text>
+    <text x="271" y="98" text-anchor="middle" font-size="16" fill="#1F4D78">第一性原理分析</text>
+
+    <rect x="372" y="50" width="150" height="64" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="447" y="76" text-anchor="middle" font-size="12" fill="#44546A">阶段 3</text>
+    <text x="447" y="98" text-anchor="middle" font-size="16" fill="#1F4D78">机制假设</text>
+
+    <rect x="548" y="50" width="150" height="64" rx="8" fill="#1F4D78" stroke="#1F4D78" stroke-width="2"/>
+    <text x="623" y="76" text-anchor="middle" font-size="12" fill="#D9E2F3">阶段 4</text>
+    <text x="623" y="98" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">外部输入摄取</text>
+
+    <!-- 第一行箭头 -->
+    <line x1="172" y1="82" x2="192" y2="82" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="348" y1="82" x2="368" y2="82" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="524" y1="82" x2="544" y2="82" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- 折返箭头：阶段 4 -> 阶段 5 -->
+    <line x1="623" y1="116" x2="623" y2="166" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- 第二行：阶段 5-8（自右向左） -->
+    <rect x="548" y="170" width="150" height="64" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="623" y="196" text-anchor="middle" font-size="12" fill="#44546A">阶段 5</text>
+    <text x="623" y="218" text-anchor="middle" font-size="16" fill="#1F4D78">证据整理</text>
+
+    <rect x="372" y="170" width="150" height="64" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="447" y="196" text-anchor="middle" font-size="12" fill="#44546A">阶段 6</text>
+    <text x="447" y="218" text-anchor="middle" font-size="16" fill="#1F4D78">研究判断</text>
+
+    <rect x="196" y="170" width="150" height="64" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="271" y="196" text-anchor="middle" font-size="12" fill="#44546A">阶段 7</text>
+    <text x="271" y="218" text-anchor="middle" font-size="16" fill="#1F4D78">原型验证</text>
+
+    <rect x="20" y="170" width="150" height="64" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="95" y="196" text-anchor="middle" font-size="12" fill="#44546A">阶段 8</text>
+    <text x="95" y="218" text-anchor="middle" font-size="16" fill="#1F4D78">回写与表达</text>
+
+    <!-- 第二行箭头（向左） -->
+    <line x1="546" y1="202" x2="526" y2="202" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="370" y1="202" x2="350" y2="202" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="194" y1="202" x2="174" y2="202" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- 底部说明 -->
+    <text x="360" y="256" text-anchor="middle" font-size="13" fill="#44546A">逻辑上承接阶段 1–3；本课可用问题初稿进入，并用检索结果回写问题</text>
+  </g>
+</svg>

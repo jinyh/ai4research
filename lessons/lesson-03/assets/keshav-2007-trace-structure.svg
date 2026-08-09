@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 290" role="img" aria-label="Keshav 2007 真实来源核验 trace：从检索键到候选表记录">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#44546A"/>
+    </marker>
+  </defs>
+  <g font-family="'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif">
+    <!-- 标题 -->
+    <text x="20" y="30" font-size="14" font-weight="bold" fill="#1F4D78">真实核验 trace（Keshav 2007《How to Read a Paper》课堂演示）</text>
+
+    <!-- 第一行：检索键 → 回到原文 -->
+    <rect x="20" y="50" width="158" height="72" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="99" y="80" text-anchor="middle" font-size="16" fill="#1F4D78">检索键</text>
+    <text x="99" y="102" text-anchor="middle" font-size="12" fill="#44546A">题名+作者，留实际请求</text>
+
+    <rect x="196" y="50" width="158" height="72" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="275" y="80" text-anchor="middle" font-size="16" fill="#1F4D78">Crossref 核对</text>
+    <text x="275" y="102" text-anchor="middle" font-size="12" fill="#44546A">题名·作者·刊名·年份</text>
+
+    <rect x="372" y="50" width="158" height="72" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="451" y="80" text-anchor="middle" font-size="16" fill="#1F4D78">DOI 解析</text>
+    <text x="451" y="102" text-anchor="middle" font-size="11" fill="#44546A">10.1145/1273445.1273458</text>
+
+    <rect x="548" y="50" width="158" height="72" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="627" y="80" text-anchor="middle" font-size="16" fill="#1F4D78">回到原文</text>
+    <text x="627" y="102" text-anchor="middle" font-size="12" fill="#44546A">滑铁卢大学公开 PDF</text>
+
+    <line x1="180" y1="86" x2="192" y2="86" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="356" y1="86" x2="368" y2="86" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="532" y1="86" x2="544" y2="86" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- 折返箭头 -->
+    <line x1="627" y1="124" x2="627" y2="170" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- 第二行：原文核对 → 候选表记录（自右向左） -->
+    <rect x="548" y="174" width="158" height="72" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="627" y="200" text-anchor="middle" font-size="16" fill="#1F4D78">原文核对</text>
+    <text x="627" y="220" text-anchor="middle" font-size="11.5" fill="#44546A">p1：方法文章，</text>
+    <text x="627" y="236" text-anchor="middle" font-size="11.5" fill="#44546A">非对照实验</text>
+
+    <rect x="372" y="174" width="158" height="72" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="451" y="204" text-anchor="middle" font-size="16" fill="#1F4D78">收窄主张</text>
+    <text x="451" y="226" text-anchor="middle" font-size="11.5" fill="#44546A">仅称“提出三遍阅读法”</text>
+
+    <rect x="196" y="174" width="158" height="72" rx="8" fill="#EFF6F2" stroke="#2E7D5B" stroke-width="2"/>
+    <text x="275" y="200" text-anchor="middle" font-size="16" font-weight="bold" fill="#2E7D5B">候选表记录</text>
+    <text x="275" y="220" text-anchor="middle" font-size="11.5" fill="#44546A">verified-with-caveat</text>
+    <text x="275" y="236" text-anchor="middle" font-size="11.5" fill="#44546A">当前角色：探索线索</text>
+
+    <line x1="546" y1="210" x2="534" y2="210" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="370" y1="210" x2="358" y2="210" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- 底部说明 -->
+    <text x="360" y="278" text-anchor="middle" font-size="13" fill="#44546A">状态已核验 ≠ 对当前效果问题就是主证据；完整记录见 source-audit-demo.md</text>
+  </g>
+</svg>

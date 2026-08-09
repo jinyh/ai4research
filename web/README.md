@@ -26,10 +26,10 @@ uv run mkdocs build            # 输出到 web/_build/
 
 只发布面向学生的内容，**发布清单在 `scripts/link_content.py` 顶部维护**：
 
-- `course/`：`syllabus`、`curriculum`、`assessment`、`assignments`、`reading-list`、`resources`
-- `lessons/lesson-NN/`：仅 `handout.md`（学生讲义）
+- `course/`：`syllabus`、`assessment`、`assignments`、`reading-list`、`resources` 与三份学生项目模板（`starter-template`、`project-template`、`ethics-and-compliance-template`）
+- `lessons/lesson-NN/`：仅 `handout.md`（学生讲义）；已登记的 `assets/` 图形资产（逐文件软链）与课级学生向示例（第 3 课 `source-audit-demo.md`）
 
-**不发布**：教师教案 `teaching-plan.md`、逐页母稿 `slides.md`、文献精读卡 `reading-notes.md`、协作规范（`sync-rules`、`ppt-quality-gates`）、申报底稿、模板、`archive/`、`references/library/`、`AGENTS.md`/`CLAUDE.md`。
+**不发布**：教师教案 `teaching-plan.md`、逐页母稿 `slides.md`、文献精读卡 `reading-notes.md`、课级 `assets/README.md` 等备课元数据、协作规范（`sync-rules`、`ppt-quality-gates`）、申报底稿、`archive/`、`references/library/`、`AGENTS.md`/`CLAUDE.md`。
 
 ## 增加新课次讲义
 

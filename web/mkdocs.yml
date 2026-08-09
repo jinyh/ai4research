@@ -8,6 +8,7 @@ site_dir: _build
 theme:
   name: material
   language: zh
+  font: false  # G6：禁用 Google Fonts（大陆可达性差），回退系统字体
   features:
     - navigation.tabs
     - navigation.sections
@@ -16,19 +17,12 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
+  # 2.0 v1.3.0 移除深色模式（网站恒浅色）：删 slate palette 与切换按钮，
+  # 免除 16 课嵌图双背景验收；搜索分词维持 lang: [ja] 现状，不增依赖
   palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: 切换深色模式
-    - scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: 切换浅色模式
+    scheme: default
+    primary: indigo
+    accent: indigo
 
 markdown_extensions:
   - admonition
