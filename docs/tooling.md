@@ -6,7 +6,7 @@
 
 | 能力 | 建议状态 | 用途 |
 | --- | --- | --- |
-| Zotero | 可选、推荐 | 检索本地文献库、导出引用、核对全文；涉及本地文献时优先于联网 |
+| Zotero | 已配置 | 检索本地文献库、导出引用、核对全文；涉及本地文献时优先于联网。Claude Code 与 OpenCode 均在用户级配置 zotero-mcp（本地模式）；依赖 Zotero 应用运行 |
 | GitHub | 按需 | 只有需要 issue、PR 或远端仓库操作时启用；连接失败的实例应及时修复或禁用 |
 | Context7 | 非项目依赖 | 核对易变的软件文档；不参与课程事实来源管理 |
 | PPT/Office 本地工具 | 必需 | 渲染、重新打开和视觉检查；不需要 MCP |
@@ -26,3 +26,11 @@
 - 单一事实源：`.agents/skills/prepare-course-lesson/SKILL.md`
 
 截至 2026-08-05 的验证状态：Codex 已从项目 `.agents/skills/` 发现该 skill；`opencode agent list` 已列出 `prepare-course-lesson (subagent)`；Claude Code 的单向软链接已解析到同一 `SKILL.md`，实际触发行为仍应在相关备课任务中单独做 smoke test。该 skill 负责内容门、90 分钟教学门、逐页映射门、PPT 制作、三重检查与里程碑归档。当前备课流程见 [lessons/README.md](../lessons/README.md) 的"制作顺序"段。
+
+`research-question-to-search` 检索流程 skill 于 2026-08-09 按同一三端模式注册（建设计划见 [research-question-to-search-skill-plan.md](./research-question-to-search-skill-plan.md)）：
+
+- 单一事实源：`.agents/skills/research-question-to-search/SKILL.md`
+- Claude Code：`.claude/skills/research-question-to-search`（软链接）
+- OpenCode：`.opencode/agent/research-question-to-search.md`（薄封装，运行时读 SKILL.md）
+
+该 skill 负责"问题→检索式→公开源检索→身份核验→候选文献表行"的受限流程：方法论源为 `lessons/lesson-03/handout.md` §一-§七 与 `references/material-contracts.md` §三；仅公开学术 API，订阅源不自动化，未发表素材不入查询；身份层/主张层双层核验，状态升级与纳入排除决策保留为人工审核点。首个使用场景为课程 2.0 批次 0 的 MI 检索 trace，回归基线为 Keshav 2007 既有 trace。
