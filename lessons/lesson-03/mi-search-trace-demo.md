@@ -4,7 +4,7 @@
 适用课次：第 3 课（教师演示与断网备用；第 12 课八要素拆解可引用）
 文档类型：真实检索方法与失败演示包（MI 方向地图）
 变更记录：
-- v0.4.0 (2026-08-10): 第五阶段——讲义 §六 检索质量自评首次应用于本 trace：用户 Scholar 高引快照 + awesome 列表审计（判定为低精度自动聚合，其 CSUR 综述入池）给出基准集切片，命中分析 4/22（漏 grokking progress measures 引 1109、漏全部五篇元层综述）；三条差距机制定位（新近取样窗口实测 4.5 个月、无引用驱动发现、元层分支与 arXiv 单源缺口）；检索协议修复留档（B10 元层分支命中 12、宽泛检索相关性轮 Open Problems 排第 9）；MI-C02 版本裁决（arXiv 版 Cunningham 一作与 ICLR 2024 版 Huben 一作作者顺序不同）；新锚点 MI-C19–C36 入池并入藏 Zotero 18/18（MCP 掉线后恢复补办：trace-id 全写入、附件假成功复现 18/18 实查为 0、直下核对 PDF 14/15 通过、MI-C35 超时请求实已成功、存量条目补注 4 条）；新增 §10，原 §10/§11 顺延为 §11/§12；教学点增为 6 条
+- v0.4.0 (2026-08-10): 第五阶段——讲义 §六 检索质量自评首次应用于本 trace：用户 Scholar 高引快照 + awesome 列表审计（判定为低精度自动聚合，其 CSUR 综述入池）给出基准集切片，命中分析 4/22（漏 grokking progress measures 引 1109、漏全部五篇元层综述）；三条差距机制定位（新近取样窗口实测 4.5 个月、无引用驱动发现、元层分支与 arXiv 单源缺口）；检索协议修复留档（B10 元层分支命中 12、宽泛检索相关性轮 Open Problems 排第 9）；MI-C02 版本裁决（arXiv 版 Cunningham 一作与 ICLR 2024 版 Huben 一作作者顺序不同）；新锚点 MI-C19–C36 入池；附件补办中锁定假成功根因＝Zotero 云存储配额耗尽（413，6184/300 MB），经用户确认迁移正位至 GraduateCourse 群组库集合 I2GKJGNP（38 条），附件策略降级为 linked_url（36/36），个人库副本与坚果云孤儿对象清除（§10.7）；新增 §10，原 §10/§11 顺延为 §11/§12；教学点增为 6 条
 - v0.3.0 (2026-08-09): 第四阶段补记——20 条材料入藏 Zotero（V7XM4JF2，tag mi-trace，Extra trace-id）；附件管线假成功后改从 arXiv 直下 18 篇 PDF 逐篇首页原文核对：修正 1 条作者张冠李戴（MI-C07 实为 Nanda, Lee, Wattenberg，Belrose 非作者）、发现 MI-C05 已发表 ICLR 2025（PDF 首页 + dblp 两源）；§7 更正——Gao et al. 实有 arXiv 镜像版 2406.04093 转登记 MI-C18（OpenAI 官链 404 留档），Anthropic 两篇 URL 核实存活升 verified；新增 §9，原 §9/§10 顺延为 §10/§11；scite 扫描覆盖 0（无 DOI）如实记录；2 条工具失败记录（附件假成功、活动库漂移）。§5 由 17 条增为 18 条
 - v0.2.1 (2026-08-09): 随讲义 v1.3.0 同步节号（§六常见错误→§七）；在课程连接中登记本文件作为讲义 §六 检索质量自评的分支审计真实示例；事实记录不变
 - v0.2.0 (2026-08-09): 同日第二次记录补记——补执行 B7-B9 分支检索（含 B7 检索式收紧过程留档，§4）；新增 §8 跨源核验（OpenAlex/dblp 抽查 5 个锚点发表状态、Semantic Scholar 无 key 限流失败记录、1 条发表状态记忆错误）；原 §8/§9 顺延为 §9/§10。第一阶段（分支记忆预设）与第二阶段（数据校验增补）记录原文保留，记录演进过程本身即教学点
@@ -179,7 +179,7 @@ Agent 凭记忆提出 11 个锚点 ID，4 个张冠李戴（`rejected`），2 �
 
 第三阶段的核验仍停在元数据层。第四阶段把 20 条材料入藏 Zotero，并对 arXiv 锚点逐篇做 PDF 首页原文核对，身份层升级为三来源：arXiv API 元数据 → Zotero 导入元数据 → PDF 原文。
 
-入藏位置：Zotero 用户库集合 `V7XM4JF2`（Teaching / Mechanistic Interpretability（课程贯穿案例）），全部条目 tag `mi-trace`，Extra 登记 `trace-id`：
+入藏位置（第四阶段当时记录）：Zotero 用户库集合 `V7XM4JF2`（Teaching / Mechanistic Interpretability（课程贯穿案例）），全部条目 tag `mi-trace`，Extra 登记 `trace-id`。注意：该用户库集合已于第五阶段终局（§10.7）经用户确认移入回收站，现行正位为 GraduateCourse 群组库集合 `I2GKJGNP`，key 映射见 `.work/mi-search/stage5/group-keys.json`。下表 key 仅作历史记录：
 
 | trace-id | Zotero key | trace-id | Zotero key |
 | --- | --- | --- | --- |
@@ -299,7 +299,7 @@ GitHub 仓库 `AI-in-Transportation-Lab/awesome-mechanistic-interpretability`（
 
 ### 10.6 Zotero 入藏与工具失败记录（部分完成）
 
-新锚点 17/18 已入藏集合 `V7XM4JF2`（tag `mi-trace`）：
+新锚点 17/18 已入藏集合 `V7XM4JF2`（tag `mi-trace`）（本节为 MCP 掉线当时记录；个人库副本后经用户确认迁入群组库并清除，终局见 §10.7）：
 
 | trace-id | Zotero key | trace-id | Zotero key |
 | --- | --- | --- | --- |
@@ -322,6 +322,21 @@ GitHub 仓库 `AI-in-Transportation-Lab/awesome-mechanistic-interpretability`（
 
 剩余待办（不升级状态，保持 `pending`）：MI-C35/MI-C30/MI-C33/MI-C36 四条 PDF 原文核对（网络/付费墙受限）；B10 残留缺口改式（§10.5）；研究问题收敛后的角色指认。
 
+### 10.7 迁移到群组库与附件策略（第五阶段终局，2026-08-10）
+
+第五阶段补办附件时锁定两条根因，据此改变收藏位置与附件策略（用户确认）：
+
+1. **附件管线假成功的根因＝Zotero 云存储配额耗尽**：补办上传实测得 `HTTP 413 File would exceed quota (6184.6 > 300)`——账户已用约 6.2 GB、配额仅 300 MB（免费档），所有新文件上传一律被拒。阶段四、五的"PDF attached"回报均因此落空（条目创建成功、文件上传被拒，管线未核验实际状态即报成功）；
+2. **群组库文件走不了 WebDAV**：个人库可用坚果云 WebDAV 绕开配额（MI-C27 曾端到端验证：API 建条目 + PUT `<KEY>.zip/.prop` 成功），但 Zotero 群组库的文件只走 Zotero 存储服务器，且本群 `fileEditing: none`，故真实文件附件进群库目前不可行。
+
+据此执行（用户指令"放到 Group Libraries 中的 collection，My Library 的 MI collection 可以删除"）：
+
+- **正位**：GraduateCourse 群组库（groupID 6634461）集合 `I2GKJGNP`（Mechanistic Interpretability）。阶段四 20 条原已在群内，阶段五 18 条由个人库逐条迁移（含 extra trace-id、collections、tags）；`trace-id → 群组 key` 映射存档 `.work/mi-search/stage5/group-keys.json`；
+- **附件策略降级为 linked_url**：36 篇论文各挂 1 条 arXiv PDF 直链或 DOI 官链附件（36/36 成功），点击即在浏览器打开原文；MI-W01/W02 为网页报告不挂附件。离线 PDF 仍以 `.work/mi-search/` 本地存档为准；
+- **个人库副本清除**：用户库集合 `V7XM4JF2` 的 38 条条目（含补注 4 条、测试附件 1 条）全部移入回收站（Zotero 桌面端可恢复），集合删除；坚果云上的孤儿对象 `3D9TAVUG.zip/.prop` 已删除。§9 的 key 表随之作废，仅作历史记录。
+
+若日后要真实文件进群库，须先：群设置开放 File Editing + 清理 Zotero 云存量或升级套餐（群组文件不经 WebDAV）。本 trace 的教学点再加一条：**"附件已加"必须回查实查子项，配额与存储架构是附件策略的前置约束**。
+
 ## 11. 复盘方式
 
 任意一条检索式可在 arXiv API 复盘，例如分支 B1：
@@ -336,7 +351,7 @@ http://export.arxiv.org/api/query?search_query=all:%22sparse+autoencoder%22+AND+
 http://export.arxiv.org/api/query?id_list=2209.10652
 ```
 
-命中数随时间变化属正常差异；复盘时记录自己的检索日期与命中数，与原记录对照。教师生产 trace 的原始材料存档于课程工作区 `.work/mi-search/`（不发布）：第一、二阶段 `arxiv-branches.json`、`anchor-verify.json`、`title-recovery.json`、`broad-mi-titles.json`；第三阶段补记 `arxiv-branches-b7b9.json`、`cross-source-check.json`；第四阶段补记 `pdf-firstpage-check.json` 与 PDF 原文 `pdfs/`；第五阶段补记 `stage5/`（`arxiv-title-batch1`、`openalex-*`、`dblp-*`、`crossref-csur`、`b10-meta-branch`、`broad-relevance-raw.xml` 等检索留档）。Zotero 集合 `V7XM4JF2` 的元数据可在断网时作第二备份（第四阶段 20 条附件缺失需联网取；第五阶段 17 条附件状态待回验，§10.6）。
+命中数随时间变化属正常差异；复盘时记录自己的检索日期与命中数，与原记录对照。教师生产 trace 的原始材料存档于课程工作区 `.work/mi-search/`（不发布）：第一、二阶段 `arxiv-branches.json`、`anchor-verify.json`、`title-recovery.json`、`broad-mi-titles.json`；第三阶段补记 `arxiv-branches-b7b9.json`、`cross-source-check.json`；第四阶段补记 `pdf-firstpage-check.json` 与 PDF 原文 `pdfs/`；第五阶段补记 `stage5/`（检索留档 `arxiv-title-batch1`、`openalex-*`、`dblp-*`、`crossref-csur`、`b10-meta-branch`、`broad-relevance-raw.xml`，附件与迁移留档 `group-keys.json`、`webdav-attach-results.json`、`pdf-firstpage-check/`）。Zotero 断网备份以群组库集合 `I2GKJGNP` 元数据为准（§10.7）；附件为 linked_url 链接，离线 PDF 以本工作区 `pdfs/` 与 `stage5/pdfs/` 存档为准。
 
 ## 12. 与课程的连接
 
