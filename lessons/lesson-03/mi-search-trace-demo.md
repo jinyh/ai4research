@@ -1,9 +1,11 @@
 ---
-版本：v0.2.1
-最后更新：2026-08-09
+版本：v0.4.0
+最后更新：2026-08-10
 适用课次：第 3 课（教师演示与断网备用；第 12 课八要素拆解可引用）
 文档类型：真实检索方法与失败演示包（MI 方向地图）
 变更记录：
+- v0.4.0 (2026-08-10): 第五阶段——讲义 §六 检索质量自评首次应用于本 trace：用户 Scholar 高引快照 + awesome 列表审计（判定为低精度自动聚合，其 CSUR 综述入池）给出基准集切片，命中分析 4/22（漏 grokking progress measures 引 1109、漏全部五篇元层综述）；三条差距机制定位（新近取样窗口实测 4.5 个月、无引用驱动发现、元层分支与 arXiv 单源缺口）；检索协议修复留档（B10 元层分支命中 12、宽泛检索相关性轮 Open Problems 排第 9）；MI-C02 版本裁决（arXiv 版 Cunningham 一作与 ICLR 2024 版 Huben 一作作者顺序不同）；新锚点 MI-C19–C36 入池并入藏 Zotero 18/18（MCP 掉线后恢复补办：trace-id 全写入、附件假成功复现 18/18 实查为 0、直下核对 PDF 14/15 通过、MI-C35 超时请求实已成功、存量条目补注 4 条）；新增 §10，原 §10/§11 顺延为 §11/§12；教学点增为 6 条
+- v0.3.0 (2026-08-09): 第四阶段补记——20 条材料入藏 Zotero（V7XM4JF2，tag mi-trace，Extra trace-id）；附件管线假成功后改从 arXiv 直下 18 篇 PDF 逐篇首页原文核对：修正 1 条作者张冠李戴（MI-C07 实为 Nanda, Lee, Wattenberg，Belrose 非作者）、发现 MI-C05 已发表 ICLR 2025（PDF 首页 + dblp 两源）；§7 更正——Gao et al. 实有 arXiv 镜像版 2406.04093 转登记 MI-C18（OpenAI 官链 404 留档），Anthropic 两篇 URL 核实存活升 verified；新增 §9，原 §9/§10 顺延为 §10/§11；scite 扫描覆盖 0（无 DOI）如实记录；2 条工具失败记录（附件假成功、活动库漂移）。§5 由 17 条增为 18 条
 - v0.2.1 (2026-08-09): 随讲义 v1.3.0 同步节号（§六常见错误→§七）；在课程连接中登记本文件作为讲义 §六 检索质量自评的分支审计真实示例；事实记录不变
 - v0.2.0 (2026-08-09): 同日第二次记录补记——补执行 B7-B9 分支检索（含 B7 检索式收紧过程留档，§4）；新增 §8 跨源核验（OpenAlex/dblp 抽查 5 个锚点发表状态、Semantic Scholar 无 key 限流失败记录、1 条发表状态记忆错误）；原 §8/§9 顺延为 §9/§10。第一阶段（分支记忆预设）与第二阶段（数据校验增补）记录原文保留，记录演进过程本身即教学点
 - v0.1.2 (2026-08-09): 对齐讲义 v1.2.0——线索表改用现行十字段表头（稳定来源/对应问题/预期证据角色/纳入理由）；核验状态补"拟用主张待核"；三维分记与查询级运行状态口径同步；仅更新标注方式，事实记录不变
@@ -13,14 +15,16 @@
 
 # MI 方向地图：检索纪律与幻觉审计 trace
 
-> 案例边界框：本文件是 **AI agent 与教师于 2026-08-09 对 Mechanistic Interpretability（MI）主题执行检索的真实 trace**（含同日第三阶段补记），全部材料为公开 arXiv/OpenAlex/dblp 元数据，不含任何未发表内容。它与 [source-audit-demo.md](./source-audit-demo.md)（Keshav 2007 单篇核验 trace）互为平行：那一篇演示单篇文献的身份核验，本篇演示领域级检索的框架审计与失败处理。学生练习仍使用讲义 §四·5 的虚构案例，不直接修改本文件。
+> 案例边界框：本文件是 **AI agent 与教师于 2026-08-09 对 Mechanistic Interpretability（MI）主题执行检索的真实 trace**（含同日第三、四阶段补记与 2026-08-10 第五阶段基准集轮），全部材料为公开 arXiv/OpenAlex/dblp/Crossref 元数据与公开 PDF 原文，不含任何未发表内容。它与 [source-audit-demo.md](./source-audit-demo.md)（Keshav 2007 单篇核验 trace）互为平行：那一篇演示单篇文献的身份核验，本篇演示领域级检索的框架审计、失败处理与质量自评。学生练习仍使用讲义 §四·5 的虚构案例，不直接修改本文件。
 
-## 1. 本 trace 的四个教学点
+## 1. 本 trace 的六个教学点
 
 1. **检索框架本身也要审计**：检索分支不是先验给定的。Agent 凭记忆预设的分支划分只是线索，必须用领域数据校验（§3 的 v1→v2 修正表）。
 2. **Agent 的记忆引用是幻觉高发区**：Agent 凭记忆给出的 11 个锚点论文 ID 中 6 个身份不符，其中 4 个是彻底的张冠李戴（§6）。全部按 `rejected` 处置并留下恢复路径——失败不重跑到无痕。
 3. **四态口径与三维分记**：未完成入口核验的条目一律 `pending`（注明已核与待核项）；`rejected` 永不入候选表，只留审计记录；预期证据角色、核验状态与人工筛选决定分开记录，查询级失败不伪装成文献条目。状态名用精确拼写，无缩写。
-4. **记录分阶段演进，演进过程本身是教材**：分支方案经历记忆预设（第一阶段）→ 数据校验增补 B7-B9、降级 B2（第二阶段）→ 补记执行分支检索与跨源核验（第三阶段，本版）。第一、二阶段记录原文保留、不重写，补记单独标注——记录的不完整与修正过程是 trace 的一部分，不是要遮掩的瑕疵。
+4. **记录分阶段演进，演进过程本身是教材**：分支方案经历记忆预设（第一阶段）→ 数据校验增补 B7-B9、降级 B2（第二阶段）→ 补记执行分支检索与跨源核验（第三阶段）→ Zotero 入藏与逐篇原文核对（第四阶段，本版）。前几阶段记录原文保留、不重写，补记单独标注——记录的不完整与修正过程是 trace 的一部分，不是要遮掩的瑕疵。
+5. **工具与来源的成功回报也要核验**：Zotero 附件管线曾对 18 篇全部假报"PDF 已附加"，实查附件为 0；§9 据此改走直接下载再逐篇核对原文，仍查出 1 条作者张冠李戴。元数据核验不等于每个字段都核验过，成功回报不等于实际状态。
+6. **质量自评要先用在自己的检索上**：第五阶段把讲义 §六 的检索质量自评应用于本 trace 自身，对用户的 Scholar 高引快照切片命中率仅 4/22，五篇元层综述全部漏检，而执行者此前并未察觉（§10）。自评框架不是纸面规则：记忆锚点加新近取样的组合会系统性漏掉高引经典与元层文献，本 trace 自己就是证据。
 
 ## 2. 检索记录
 
@@ -35,6 +39,10 @@
 | 纳入数 | 分支修正 3 增 1 降级（§3） | 17 条身份已核候选（§5） |
 
 > 第三阶段补记（2026-08-09）：上表为第一、二阶段实际执行记录（分支检索只到 B1-B6）。B7-B9 在第二阶段由词频指认后当时未执行检索，本版已补执行，检索式与命中数见 §4 补记表；锚点仍待研究问题收敛，不预造。
+
+> 第四阶段补记（2026-08-09）：锚点库经 Zotero 入藏与逐篇 PDF 原文核对后由 17 条增为 18 条（新增 MI-C18，由 §7 更正转入），并修正 MI-C07 作者字段，详见 §9。
+
+> 第五阶段补记（2026-08-10）：基准集自评轮——用户以 Google Scholar 高引快照与 GitHub awesome 列表给出外部反例后，新增锚点 MI-C19–C36（18 条）入池，§5 由 18 条增为 36 条；差距定位、命中分析与检索协议修复见 §10。新锚点身份层为 arXiv API 元数据（或 Crossref/OpenAlex/dblp 正式来源）+ Zotero 导入元数据；PDF 原文核对经直下补记完成 14/15（MI-C35 连接截断失败、MI-C30/C33/C36 无 PDF 可取，均保持 `pending` 并留档 §10.6）。
 
 ## 3. 教学点一：分支如何确定——记忆先验 vs 数据校验
 
@@ -77,7 +85,9 @@ B7-B9 锚点待研究问题收敛后按题名精确检索核验，不在指认�
 
 ## 5. 待筛选线索表（全部 `pending`-身份已核；拟用主张待核）
 
-身份核验方式：arXiv `id_list` 精确查询，题名/作者/日期以 API 元数据为准。本表使用讲义 §五 的十字段表头；由于还没有收敛的研究问题和拟用主张，"对应问题/拟用主张"统一标"待问题收敛"，纳入理由留空、人工筛选决定统一标 `awaiting-human`。证据角色默认探索线索；即使日后完成核验，未经角色理由确认也不改标为主证据、补充证据或对比证据。本表不是候选文献表：正式候选表只登记人工决定纳入且状态不是 `rejected` 的条目。
+身份核验方式：初轮按 arXiv `id_list` 精确查询对齐 ID/题名/日期（作者字段系人工转写，见下方更正）；第四阶段经 Zotero 入藏与逐篇 PDF 首页原文核对（§9）后，身份层升级为 arXiv API 元数据 + Zotero 导入元数据 + PDF 原文三来源。本表使用讲义 §五 的十字段表头；由于还没有收敛的研究问题和拟用主张，"对应问题/拟用主张"统一标"待问题收敛"，纳入理由留空、人工筛选决定统一标 `awaiting-human`。证据角色默认探索线索；即使日后完成核验，未经角色理由确认也不改标为主证据、补充证据或对比证据。本表不是候选文献表：正式候选表只登记人工决定纳入且状态不是 `rejected` 的条目。
+
+第四阶段更正（§9）：MI-C07 作者原记"Belrose, Nanda et al."有误，官方作者为 Neel Nanda、Andrew Lee、Martin Wattenberg，Belrose 非该文作者，已更正。
 
 | 编号 | 题名（核验后） | 作者 | 年份 | 稳定来源 | 对应问题/拟用主张 | 预期证据角色 | 纳入理由 | 核验状态 | caveat/允许主张 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -87,7 +97,7 @@ B7-B9 锚点待研究问题收敛后按题名精确检索核验，不在指认�
 | MI-C04 | Jumping Ahead: Improving Reconstruction Fidelity with JumpReLU Sparse Autoencoders | Rajamanoharan et al. | 2024 | arXiv:2407.14435 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
 | MI-C05 | Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models | Marks et al. | 2024 | arXiv:2403.19647 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
 | MI-C06 | Eliciting Latent Predictions from Transformers with the Tuned Lens | Belrose et al. | 2023 | arXiv:2303.08112 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
-| MI-C07 | Emergent Linear Representations in World Models of Self-Supervised Sequence Models | Belrose, Nanda et al. | 2023 | arXiv:2309.00941 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
+| MI-C07 | Emergent Linear Representations in World Models of Self-Supervised Sequence Models | Nanda, Lee, Wattenberg | 2023 | arXiv:2309.00941 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 作者字段经第四阶段原文核对更正（原误记 Belrose） |
 | MI-C08 | Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small | Wang et al. | 2022 | arXiv:2211.00593 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
 | MI-C09 | Towards Automated Circuit Discovery for Mechanistic Interpretability | Conmy et al. | 2023 | arXiv:2304.14997 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
 | MI-C10 | Attribution Patching Outperforms Automated Circuit Discovery | Syed et al. | 2023 | arXiv:2310.10348 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
@@ -98,6 +108,25 @@ B7-B9 锚点待研究问题收敛后按题名精确检索核验，不在指认�
 | MI-C15 | Towards Faithfully Interpretable NLP Systems: How should we define and evaluate faithfulness? | Jacovi & Goldberg | 2020 | arXiv:2004.03685 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
 | MI-C16 | Towards Principled Evaluations of Sparse Autoencoders for Interpretability and Control | Makelov et al. | 2024 | arXiv:2405.08366 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
 | MI-C17 | A Comparative Study of Faithfulness Metrics for Model Interpretability Methods | Chan et al. | 2022 | arXiv:2204.05514 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | |
+| MI-C18 | Scaling and evaluating sparse autoencoders | Gao et al. | 2024 | arXiv:2406.04093 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第四阶段由 §7 更正转入：原记"无 arXiv 版本"有误，此为其 arXiv 镜像版；OpenAI 官链 404 留档 |
+| MI-C19 | Progress measures for grokking via mechanistic interpretability | Nanda et al. | 2023 | arXiv:2301.05217 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第五阶段基准集轮入池；Scholar 快照切片中引用数最高（1109）而历次检索皆漏；已发表 ICLR 2023（PDF 首页 + Scholar 快照两源） |
+| MI-C20 | Mechanistic Interpretability for AI Safety -- A Review | Bereska, Gavves | 2024 | arXiv:2404.14082 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第五阶段入池；B10 元层分支仍不命中（§10.5 引擎怪癖留档）；v3 页眉标 Under review at TMLR，尚未确认正式发表 |
+| MI-C21 | Open Problems in Mechanistic Interpretability | Sharkey et al.（29 位作者） | 2025 | arXiv:2501.16496 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第五阶段入池；在宽泛检索 688 条命中集内，但落在新近 200 条取样窗口外（§10.1） |
+| MI-C22 | Causal Abstraction: A Theoretical Foundation for Mechanistic Interpretability | Geiger et al. | 2023 | arXiv:2301.04709 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第五阶段入池；已发表 JMLR v26 (2025) 1-63（dblp 核验，jmlr.org/papers/v26/23-0058.html）；arXiv 镜像 PDF 即 JMLR 正式定稿版式（首页核对） |
+| MI-C23 | A Practical Review of Mechanistic Interpretability for Transformer-Based Language Models | Rai et al. | 2024 | arXiv:2407.02646 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第五阶段入池 |
+| MI-C24 | Interpretability at Scale: Identifying Causal Mechanisms in Alpaca | Wu et al. | 2023 | arXiv:2305.08809 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第五阶段入池；NeurIPS 2023 发表（Scholar 快照，待第二来源） |
+| MI-C25 | ReDeEP: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability | Sun et al. | 2024 | arXiv:2410.11414 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第五阶段入池；ICLR 2025 发表（PDF 首页 + Scholar 快照两源） |
+| MI-C26 | InterPLM: Discovering Interpretable Features in Protein Language Models via Sparse Autoencoders | Simon, Zou | 2024 | arXiv:2412.12101 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第五阶段入池；已发表 Nature Methods 2025（OpenAlex 核验，DOI 10.1038/s41592-025-02836-7；另有 bioRxiv 版 10.1101/2024.11.14.623630） |
+| MI-C27 | Mechanistic? | Saphra, Wiegreffe | 2024 | arXiv:2410.09087 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第五阶段入池；BlackboxNLP@EMNLP 2024 发表（Scholar 快照与 dblp CoRR 记录） |
+| MI-C28 | Scaling Laws and Interpretability of Learning from Repeated Data | Hernandez et al. | 2022 | arXiv:2205.10487 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第五阶段入池 |
+| MI-C29 | Seeing is Believing: Brain-Inspired Modular Training for Mechanistic Interpretability | Liu, Gan, Tegmark | 2023 | arXiv:2305.08746 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第五阶段入池；Entropy 2023 发表（Scholar 快照，待第二来源）；Zotero PDF 下载失败（IncompleteRead，§10.6） |
+| MI-C30 | From Mechanistic Interpretability to Mechanistic Biology: Training, Evaluating, and Interpreting Sparse Autoencoders on Protein Language Models | Adams et al. | 2025 | DOI 10.1101/2025.02.06.636901（bioRxiv） | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第五阶段入池；已发表 ICML 2025（dblp 核验，conf/icml/AdamsBLYA25） |
+| MI-C31 | Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching | Makelov et al. | 2023 | arXiv:2311.17030 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第五阶段入池；ICLR 2024 发表（Scholar 快照，待第二来源） |
+| MI-C32 | Towards Vision-Language Mechanistic Interpretability: A Causal Tracing Tool for BLIP | Palit et al. | 2023 | arXiv:2308.14179 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第五阶段入池；IEEE/CVF 2023 发表（Scholar 快照，待第二来源） |
+| MI-C33 | Explaining AI through mechanistic interpretability | Kästner, Crook | 2024 | DOI 10.1007/s13194-024-00614-4（European Journal for Philosophy of Science） | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第五阶段入池；非 arXiv 首发，arXiv 单源结构性不可见（§10.1） |
+| MI-C34 | A Survey on Mechanistic Interpretability for Multi-Modal Foundation Models | Lin et al. | 2025 | arXiv:2502.17516 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第五阶段入池 |
+| MI-C35 | Scale Alone Does not Improve Mechanistic Interpretability in Vision Models | Zimmermann et al. | 2023 | arXiv:2307.05471 | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第五阶段入池；NeurIPS 2023 发表（Scholar 快照，待第二来源）；Zotero 已入藏（37FIF34Z，超时请求实已成功）；PDF 原文核对两轮连接截断失败，保持 pending（§10.6） |
+| MI-C36 | Bridging the Black Box: A Survey on Mechanistic Interpretability in AI | Somvanshi et al. | 2026 | DOI 10.1145/3787104（ACM Computing Surveys） | 待问题收敛 | 探索线索 | awaiting-human | pending（身份已核；拟用主张待核） | 第五阶段入池；Crossref 核验（2026-02-04，参考文献 128 条）；awesome 列表维护团队 AIT Lab 的配套综述（§10.2） |
 
 ## 6. 教学点二：审计失败实例（真实发生，本 trace 原生）
 
@@ -115,17 +144,17 @@ Agent 凭记忆提出 11 个锚点 ID，4 个张冠李戴（`rejected`），2 �
 
 课堂用法：与讲义 §四·5 的虚构表（论文 A-E）对照——虚构表练习状态判断，本表展示真实审计中 `rejected` 的发生率与恢复动作。结论不是"AI 不可用"，而是：**记忆与模型输出只能作线索，身份核验必须回到正式来源**。
 
-## 7. 非 arXiv 锚点（pending 线索，URL 待人工核验）
+## 7. 非 arXiv 锚点（第四阶段核验后更新）
 
 | 条目 | 来源类型 | 状态 |
 | --- | --- | --- |
-| Anthropic "Towards Monosemanticity"（2023-10） | 机构研究报告（transformer-circuits.pub） | pending：非 arXiv，URL 与身份待人工核验 |
-| Anthropic "Scaling Monosemanticity"（2024-05） | 机构研究报告 | pending：同上 |
-| OpenAI "Scaling and evaluating sparse autoencoders"（Gao et al., 2024） | 机构技术报告 | pending：无 arXiv 版本，URL 待人工核验 |
+| Anthropic "Towards Monosemanticity: Decomposing Language Models With Dictionary Learning"（2023-10） | 机构研究报告（transformer-circuits.pub） | verified（第四阶段）：官方 URL 核实存活（页面 >5MB，未取快照），入藏 Zotero 网页条目 MI-W01（SG2P8T4T）；身份以官网题名为准，无第三方源交叉 |
+| Anthropic "Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet"（2024-05） | 机构研究报告 | verified（第四阶段）：同上，Zotero 网页条目 MI-W02（P6PPJNXC） |
+| OpenAI "Scaling and evaluating sparse autoencoders"（Gao et al., 2024） | 机构技术报告 | 更正（第四阶段）：原记"无 arXiv 版本"有误；OpenAlex 题名检索命中、arXiv API 确认 arXiv:2406.04093 即该文，转登记为 §5 MI-C18；OpenAI 官方博客与 cdn PDF 两条原链接均返回 404，留档不掩盖 |
 
 ## 8. 跨源核验（第三阶段补记）：单源局限与抽查记录
 
-为什么主源只有 arXiv：MI 是新兴方向，论文集中首发 arXiv，§5 的 17 条锚点全部是 arXiv 论文，且身份核验走 `id_list` 精确查询最直接。但单源有明确局限，本节补记：
+为什么主源只有 arXiv：MI 是新兴方向，论文集中首发 arXiv，§5 的 17 条锚点（第四阶段增为 18 条，见 §9）全部是 arXiv 论文，且身份核验走 `id_list` 精确查询最直接。但单源有明确局限，本节补记：
 
 1. arXiv 元数据不说明锚点是否已在同行评审场合正式发表，而发表状态影响引用时的证据分量；
 2. 检索纪律要求来源之间可交叉印证，单源未交叉本身应被记录为局限。
@@ -140,13 +169,160 @@ Agent 凭记忆提出 11 个锚点 ID，4 个张冠李戴（`rejected`），2 �
 | MI-C09 ACDC | **NeurIPS 2023 会议论文** | arXiv + 一条无来源记录 | 已发表 NeurIPS 2023（单一来源 dblp，待二次印证） |
 | MI-C13 ICL 与 Induction Heads | 无精确题名命中 | 仅 arXiv | 仅预印本（两源一致） |
 
-其余 12 条本轮未抽查，发表状态待研究问题收敛后按需核验。对已发表条目（MI-C08、MI-C09），引用时学生应优先引会议版而非 arXiv 版；两源印证（补 Semantic Scholar 或会议官网）完成后状态可从"单一来源"升级。
+其余 12 条本轮未抽查，发表状态待研究问题收敛后按需核验（第四阶段 §9 原文核对时附带发现 MI-C05 已发表 ICLR 2025，两源印证）。对已发表条目（MI-C05、MI-C08、MI-C09），引用时学生应优先引会议版而非 arXiv 版；MI-C08/MI-C09 尚为单一来源，两源印证（补 Semantic Scholar 或会议官网）完成后状态可从"单一来源"升级。
 
 失败记录 1（发表状态记忆错误，本 trace 第 7 条记忆错误）：核验前教师凭记忆认为 MI-C06 发表于 ICLR 2023；dblp 题名检索与"tuned lens"宽检两轮均只有 CoRR 记录，记忆被证伪。处置：以 dblp 元数据为准，错误记入本节。与 §6 同理——记忆只能作线索，核验回到正式来源。
 
 失败记录 2（Semantic Scholar 限流）：无 API key，两轮查询全部返回 429。处置：本轮记为未执行；恢复路径：申请 S2 API key 或改日重试，届时补 MI-C08/MI-C09 的第二独立来源。
 
-## 9. 复盘方式
+## 9. Zotero 入藏与逐篇原文核对（第四阶段补记，2026-08-09）
+
+第三阶段的核验仍停在元数据层。第四阶段把 20 条材料入藏 Zotero，并对 arXiv 锚点逐篇做 PDF 首页原文核对，身份层升级为三来源：arXiv API 元数据 → Zotero 导入元数据 → PDF 原文。
+
+入藏位置：Zotero 用户库集合 `V7XM4JF2`（Teaching / Mechanistic Interpretability（课程贯穿案例）），全部条目 tag `mi-trace`，Extra 登记 `trace-id`：
+
+| trace-id | Zotero key | trace-id | Zotero key |
+| --- | --- | --- | --- |
+| MI-C01 | 2NS5FJF5 | MI-C10 | TZZW98NN |
+| MI-C02 | G6SAIGI9 | MI-C11 | QDV7FSDM |
+| MI-C03 | RAAAERM4 | MI-C12 | WXZ55WWD |
+| MI-C04 | 9EDCBNRM | MI-C13 | XH4QVEKQ |
+| MI-C05 | X4E68HHI | MI-C14 | SHS7P3BC |
+| MI-C06 | BMF2TXA8 | MI-C15 | KTW2SG49 |
+| MI-C07 | 6D74VEX4 | MI-C16 | F2ZE35B2 |
+| MI-C08 | B2TABF6W | MI-C17 | HAAPZE6J |
+| MI-C09 | G4CF8W6R | MI-C18 | 2BS9ZB49 |
+| MI-W01 | SG2P8T4T | MI-W02 | P6PPJNXC |
+
+### 9.1 逐篇首页核对结果
+
+Zotero 附件管线失效（见 §9.3），改从 arXiv 直接下载 18 篇 PDF（存档 `.work/mi-search/pdfs/`，不发布），pdftotext 提取首页核对题名、第一作者与 arXiv 尾注（判定过程存档 `pdf-firstpage-check.json`）：
+
+- 18 篇题名与第一作者全部核对通过。C02/C05/C08/C12 首页用小体字排版、C05/C08 题名跨行，逐词比对先报假警报、归一化后通过——核对方法本身也要防排版假警报；
+- C01、C13 为 Anthropic Transformer Circuits 报告版式，PDF 无 arXiv 尾注，身份由 arXiv API 元数据加首页题名作者确立并记 caveat；
+- 部分 PDF 为最新修订版（C02 v3、C05 v3/2025-03、C06 v6/2025-11、C07 v2），§5 年份列指首发年份，与修订版时间分开记录。
+
+核对发现 1（作者张冠李戴，已修正 §5）：初轮身份核验按 `id_list` 对齐了 ID/题名/日期，作者字段系人工转写且未经原文核对；原文核对查出 MI-C07 官方作者为 Neel Nanda、Andrew Lee、Martin Wattenberg，Belrose 不是该文作者（疑似与 C06 第一作者 Belrose 混淆）。教训：元数据核验不等于每个字段都核验过。
+
+核对发现 2（发表状态，§8 抽样未覆盖）：MI-C05 正式版 PDF 首页标注 "Published as a conference paper at ICLR 2025"，dblp 复核命中 ICLR 2025 会议论文条目，两源一致，引用应优先会议版。
+
+### 9.2 §7 核查与更正
+
+- OpenAI Gao et al. 2024：原记"无 arXiv 版本"有误。OpenAlex 题名检索命中，arXiv API 确认 arXiv:2406.04093 即该文（2024-06-06），已入藏并按本节口径核对通过，转登记为 §5 MI-C18。OpenAI 官方博客（`openai.com/index/...` 与 `/research/...` 两种猜测路径）与 cdn PDF 链接全部 404——原记录所依赖的链接已失效，404 留档；
+- Anthropic 两篇：官方 URL 核实存活，入藏为网页条目（MI-W01/MI-W02），状态 pending → verified；页面均大于 5MB 未取快照，身份以官网题名为准。
+
+### 9.3 本阶段工具失败记录（真实发生）
+
+1. **Zotero PDF 附件假成功**：18 次导入均回报"PDF attached"，重复入藏测试亦复现，但全库附件实查为 0。处置：核对改走 arXiv 直接下载备用路径；Zotero 现为仅元数据条目，恢复路径：Zotero 桌面端重新附加或排查 MCP 本地存储配置。教训接 §1 第 5 条：工具的成功回报也要核验实际状态。
+2. **Zotero 活动库漂移与 userID 口径**：MCP 服务重启后活动库漂移到 OMNILab 群组库（groupID=318686），"集合消失""条目查无"均为其表象；切回用户库时 userID=0 对 Web API 无效（本地 API 用 0，Web API 用真实 userID 2215172）。处置：以 2215172 切换成功后复核实收 20 条。
+
+scite 撤稿扫描：对本集合执行，20 条均无 DOI（arXiv 预印本与网页报告），Scite 无法覆盖，覆盖率 0 如实记录；该批条目的撤稿风险层依赖 arXiv/官网状态跟踪。
+
+## 10. 阶段五补记：基准集自评轮（2026-08-10）
+
+讲义 v1.3.0 新增 §六"检索质量自评"后，对本 trace 自身执行首次自评。结果：**教师生产的 trace 未通过基准集检查**——用户以 Google Scholar 高引快照与 GitHub awesome 列表给出外部反例，命中分析（§10.4）显示池内锚点对基准集切片的命中率仅 4/22。自评先评自己的检索：讲义 §六 的检查项不是纸面规则，记忆锚点加新近取样的组合会系统性漏掉高引经典与元层文献，而执行者本人未察觉。
+
+### 10.1 差距定位：三条机制
+
+1. **新近取样窗口**：宽泛检索按 `submittedDate` 降序取最新 200 条。复盘实测该式总命中 688 条（与 §2 记录一致），按同一排序第 200 条提交于 **2026-03-27**（存档 `stage5/broad-window-check`）——取样窗口仅覆盖约 4.5 个月。Sharkey et al.《Open Problems in Mechanistic Interpretability》（2025-01-27，arXiv:2501.16496）在 688 条命中集内，但必然落在窗口外：检索式没有错，抽样规则错。§3 的词频分支校验也基于同一 200 条题名，分支结构验证继承同一新近偏倚。
+2. **无引用驱动发现**：锚点来自 Agent 记忆（11 条错 6，见 §6）加近期题名词频，全程未用引用数信号——Semantic Scholar 限流（§8）后未重试，OpenAlex 引用数只用于发表状态抽查，未用于发现。Scholar 快照中引用数最高的 grokking progress measures（1109 次）不在记忆锚点集中。
+3. **元层分支缺失与单源缺口**：B1-B9 均为对象级方法分支，综述、路线图、开放问题、教程类文献无分支承接；且主源仅 arXiv，JMLR（MI-C22）、ACM Computing Surveys（MI-C36）、Nature Methods（MI-C26）、bioRxiv（MI-C30）、哲学期刊（MI-C33）等正式出版物结构性不可见。
+
+### 10.2 外部线索审计：awesome 列表
+
+GitHub 仓库 `AI-in-Transportation-Lab/awesome-mechanistic-interpretability`（136 star / 12 fork，432 commits，最后更新 2026-08-09）核验结果：自述"automatically updated with recent mechanistic interpretability papers from arXiv"，共 1085 条论文，属**自动聚合的宽网**；抽样可见大量明显无关条目（流感预测、光合生物动力学、角动量推力、天然气管网等），其聚合规则对"mechanistic/interpretability"做宽松匹配，精度不足以直接作基准集。按课程口径列为"外部线索"，不自动采信。可用的部分是其维护团队（AIT Lab）的配套综述：Somvanshi et al.《Bridging the Black Box: A Survey on Mechanistic Interpretability in AI》，已用 Crossref 核验（ACM Computing Surveys，DOI 10.1145/3787104，2026-02-04，参考文献 128 条），入池为 MI-C36。教训：带 awesome 标识的聚合列表也要先审计再用；审计产物本身（列表质量判定）留档本节。
+
+### 10.3 基准集切片（用户 Scholar 快照，2026-08-10）
+
+用户提供 Google Scholar 检索首页快照（约 30 条）。Scholar 无公开 API，快照不可机器复现，本节引用数一律注明"Scholar 快照"。按纳入/排除标准处理（排除同样要记理由——Scholar 快照本身也有精度问题）：
+
+- 排除 3 条领域无关：轴承故障诊断（Mechanical Systems and Signal Processing）、天然气管网模拟（Energy）、多相催化 IML（Nature Catalysis）——均为"机制/可解释"一词的领域外用法；
+- 排除 2 条边缘：图注意力可解释学习（ICML 2022，通用可解释学习非 MI）、Nature Methods 通用 IML 综述（IML 泛述，MI 仅为其一节）；
+- 排除 1 条身份未解决：ECIR 2026 "Tutorial on Mechanistic Interpretability"，OpenAlex 检索无正式出版记录，按纪律不预造；
+- Amodei《The urgency of interpretability》（2025，个人网站文章）按课程口径归外部线索，不入论文池；
+- 入池 18 条（MI-C19–C36），见 §5。
+
+引用数双记（Scholar 快照 vs OpenAlex 按 arXiv DOI 键查询，2026-08-10）：
+
+| trace-id | 题名（简） | Scholar 快照 | OpenAlex DOI 键 |
+| --- | --- | --- | --- |
+| MI-C19 | grokking progress measures | 1109 | 54 |
+| MI-C20 | MI for AI Safety review | 640 | 28 |
+| MI-C21 | Open Problems in MI | 280 | 7 |
+| MI-C22 | Causal Abstraction | 220 | 11 |
+| MI-C23 | Practical Review | 219 | 12 |
+| MI-C24 | Interpretability at Scale | 181 | 8 |
+| MI-C25 | ReDeEP | 165 | 5 |
+| MI-C26 | InterPLM | 132 | 2（arXiv 版） |
+| MI-C27 | Mechanistic? | 111 | 3 |
+| MI-C28 | Scaling laws, repeated data | 96 | 22 |
+| MI-C29 | BIMT（Seeing is Believing） | 90 | 2 |
+| MI-C30 | MechBio SAE proteins | 80 | —（bioRxiv DOI 未按此法查） |
+| MI-C31 | Subspace illusion | 73 | 1 |
+| MI-C32 | BLIP causal tracing | 71 | 0 |
+| MI-C33 | Explaining AI through MI | 68 | —（期刊 DOI 未按此法查） |
+| MI-C34 | Multimodal MI survey | 46 | 1 |
+| MI-C35 | Scale alone（vision） | 43 | 6 |
+| MI-C36 | Bridging the Black Box | 27 | —（期刊 DOI 未按此法查） |
+
+两列系统性差异巨大：OpenAlex 按 arXiv DOI 键命中的是记录分裂后的碎片条目，已知低估；Scholar 快照不可机器复现。处理：两列并存不裁决，Scholar 快照作基准排序依据并注明不可复现——与 §8 来源冲突的处理同理。
+
+### 10.4 命中分析
+
+基准集切片 22 条（排除项之外）中池内命中 4 条，**命中率 4/22**：
+
+| 命中条目 | Scholar 快照引用 | 池内编号 | 备注 |
+| --- | --- | --- | --- |
+| Sparse autoencoders find highly interpretable features | 1548 | MI-C02 | 见下方版本裁决 |
+| IOI 电路 | 1277 | MI-C08 | Scholar 快照印证 §8 的 ICLR 2023 发表状态（原单一来源） |
+| ACDC | 880 | MI-C09 | 同上，NeurIPS 2023 |
+| Successor heads | 90 | MI-C12 | Scholar 快照指认 ICLR 2024 发表（待第二来源） |
+
+**MI-C02 版本裁决（第五阶段新发现）**：arXiv 版（2309.08600，2023-09-15）官方作者为 **Hoagy Cunningham, Aidan Ewart, Logan Riggs, Robert Huben, Lee Sharkey**（arXiv API 核验）；ICLR 2024 正式版（OpenReview F76bwRSLeK，dblp 两源）作者为 **Robert Huben, Hoagy Cunningham, Logan Riggs Smith, Aidan Ewart, Lee Sharkey**——两版作者顺序不同，均为合法身份。Scholar 快照的 "Huben et al." 指 ICLR 版。池内 MI-C02 以 arXiv 版为锚不变，补记版本差异；引用该文时必须指认版本。教训：版本之间作者顺序可以变化，"某篇论文的作者是谁"也要带版本限定。
+
+池内发表状态增补：MI-C08/C09 原"单一来源（dblp）"得 Scholar 快照印证；MI-C02/C12 发表状态（ICLR 2024）为 Scholar 快照单源，待第二来源。
+
+**切片自身局限**（基准集法固有约束，呼应讲义 §六·1(a)）：池中 MI-C01（Toy Models of Superposition）、MI-C18（Gao et al.）等高引论文未出现在该 Scholar 页面快照中，说明快照切片本身不完备；4/22 是必要条件的下界证据，不是充分性证明。
+
+### 10.5 检索协议修复（已执行，留档）
+
+1. **新增 B10 元层分支**：
+
+   ```text
+   (ti:survey OR ti:review OR ti:"open problems" OR ti:roadmap OR ti:tutorial)
+     AND all:"mechanistic interpretability" AND (cat:cs.LG OR cat:cs.CL)
+   ```
+
+   命中 12 条（存档 `stage5/b10-meta-branch`）：Open Problems（2501.16496）、Practical Review（2407.02646）、SAE survey（2503.05613）、多模态调查（2502.17516）、CMA survey（2408.01416）等遗漏综述直接浮现——元层缺失得到修复验证。**残留缺口如实记录**：Bereska《MI for AI Safety — A Review》（2404.14082）仍不命中；单独执行 `ti:review AND all:"mechanistic interpretability"` 全库仅命中 1 条，该标题中的 "review" 未被 arXiv API 匹配（标题含 "-- A Review" 的词条怪癖），留档待后续轮改式，不掩盖。
+2. **宽泛检索改双轨**：新增相关性排序轮（`sortBy=relevance`）抽样 20 条（存档 `stage5/broad-relevance-raw.xml`），Open Problems 排第 9，另有 "Challenges in Mechanistically Interpreting Model Representations"（2402.03855）排第 2——证实新近单轨的遗漏可由相关性轮补回。新协议：新近窗口轮（看前沿）+ 相关性轮（看领域中心）双轨留档，必要时加时间分窗轮；三轨均记录实际请求与日期。
+3. **来源范围记录**：本轮基准集暴露的五个非 arXiv 正式出版物（MI-C22/26/30/33/36）已按各自来源入池；后续如研究问题收敛到涉及这些方向，应把 OpenAlex 引用排序发现与 JMLR/CSUR/Nature Methods 等来源列入检索记录。
+
+### 10.6 Zotero 入藏与工具失败记录（部分完成）
+
+新锚点 17/18 已入藏集合 `V7XM4JF2`（tag `mi-trace`）：
+
+| trace-id | Zotero key | trace-id | Zotero key |
+| --- | --- | --- | --- |
+| MI-C19 | GIIH3DAR | MI-C28 | 2W59UWE2 |
+| MI-C20 | J3K98U3J | MI-C29 | 6XMCWNNB |
+| MI-C21 | VRFKX5VH | MI-C30 | A4WV8G3N |
+| MI-C22 | N7XWMW8Q | MI-C31 | FRZHUN2V |
+| MI-C23 | VEUNAIE2 | MI-C32 | 7TM76JGQ |
+| MI-C24 | R5FCEVRA | MI-C33 | PHW3X8BB |
+| MI-C25 | 34A3VQ33 | MI-C34 | EIBMB2CJ |
+| MI-C26 | 7SPMGAPI | MI-C35 | 37FIF34Z |
+| MI-C27 | FM3PJ3EN | MI-C36 | HXAETMSH |
+
+失败与补办记录（如实记录，与第四阶段同理：失败保留、补记标注）：
+
+1. **MCP 掉线与恢复**：入藏 MI-C35 时 Zotero MCP 先超时（-32001）、重试时连接关闭（-32000），本节首版据此记"未入藏"。MCP 恢复后核对：超时请求实际已成功创建条目（`37FIF34Z`），集合共 38 条——**工具的失败回报也不能直接当成事实，要回查实际状态**（与第 5 条教学点同源）。
+2. **trace-id 补记完成**：18 条新条目 Extra `trace-id` 已全部写入（MCP 恢复后逐条 upsert）。
+3. **附件假成功复现**：18/18 回查实查无附件；13 条"PDF attached"回报（含 1 条 Unpaywall 来源声称）全部为假成功——附件管线故障在第五阶段复现，且不限于 arXiv 路径。按第四阶段备用路径改走直接下载逐篇首页核对（存档 `stage5/pdf-firstpage-check/`）：14/15 篇 arXiv 锚点题名与一作核对通过；MI-C35（约 38MB）两轮直下均连接截断（无 %%EOF），PDF 原文核对保持 `pending`；MI-C30 bioRxiv 两条 URL 均返回反爬 HTML（恢复路径：ICML PMLR 正式版或校图书馆）；MI-C33/C36 无 OA PDF（付费墙）。核对附带新发现：MI-C19 PDF 首页标 ICLR 2023（发表状态升两源）、MI-C22 的 arXiv 镜像 PDF 即 JMLR 正式定稿版式（JMLR 26 (2025) 1-63）、MI-C25 PDF 首页标 ICLR 2025（升两源）、MI-C20 v3 页眉标 "Under review as submission to TMLR"（尚未确认正式发表，Scholar 快照亦列 arXiv 预印本，原表不记发表状态是对的）。
+4. **存量条目补注完成**：MI-C02 版本差异注记（Zotero note `XCFK8NZ3`）、MI-C08（`TCD7SUJA`）、MI-C09（`3HPSXK2S`）、MI-C12（`BWCDQSNA`）发表状态补注已写入；其中 MI-C08 补注首版把 Scholar 快照误写成直接指认会议版，发现后即回改——注记本身也要核验。
+
+剩余待办（不升级状态，保持 `pending`）：MI-C35/MI-C30/MI-C33/MI-C36 四条 PDF 原文核对（网络/付费墙受限）；B10 残留缺口改式（§10.5）；研究问题收敛后的角色指认。
+
+## 11. 复盘方式
 
 任意一条检索式可在 arXiv API 复盘，例如分支 B1：
 
@@ -160,14 +336,15 @@ http://export.arxiv.org/api/query?search_query=all:%22sparse+autoencoder%22+AND+
 http://export.arxiv.org/api/query?id_list=2209.10652
 ```
 
-命中数随时间变化属正常差异；复盘时记录自己的检索日期与命中数，与原记录对照。教师生产 trace 的原始 JSON 存档于课程工作区 `.work/mi-search/`（不发布）：第一、二阶段 `arxiv-branches.json`、`anchor-verify.json`、`title-recovery.json`、`broad-mi-titles.json`；第三阶段补记 `arxiv-branches-b7b9.json`、`cross-source-check.json`。
+命中数随时间变化属正常差异；复盘时记录自己的检索日期与命中数，与原记录对照。教师生产 trace 的原始材料存档于课程工作区 `.work/mi-search/`（不发布）：第一、二阶段 `arxiv-branches.json`、`anchor-verify.json`、`title-recovery.json`、`broad-mi-titles.json`；第三阶段补记 `arxiv-branches-b7b9.json`、`cross-source-check.json`；第四阶段补记 `pdf-firstpage-check.json` 与 PDF 原文 `pdfs/`；第五阶段补记 `stage5/`（`arxiv-title-batch1`、`openalex-*`、`dblp-*`、`crossref-csur`、`b10-meta-branch`、`broad-relevance-raw.xml` 等检索留档）。Zotero 集合 `V7XM4JF2` 的元数据可在断网时作第二备份（第四阶段 20 条附件缺失需联网取；第五阶段 17 条附件状态待回验，§10.6）。
 
-## 10. 与课程的连接
+## 12. 与课程的连接
 
 - 讲义 §四 四态与进入规则：本文件全部条目按该口径标注；
 - 讲义 §五 三类记录：§2 对应检索记录，§6 对应来源审计记录，§5 是线索区而非正式候选表；
-- 讲义 §七 常见错误 5（检索过程不可复盘）与错误 7（角色、状态和决定混用）：§2/§4/§9 给出可复盘记录的最小完整样式，§5 演示三维分记；
-- 讲义 §六 检索质量自评：§3 的分支修正过程与 §8 的单源局限记录分别是分支覆盖矩阵自评与来源审计自评的真实示例；
-- 课程 2.0 批次 0 验收项"≥1 条真实科研失败演示"（见课程文档 `docs/course-2.0-plan.md`）：§6 提供 4 条；第三阶段补记 §8 再添 2 条真实失败记录（发表状态记忆错误、S2 限流），并演示单源局限的记录方式与跨源印证方法；
-- 记录演进本身是教学点（§1 第 4 条）：本文件 v0.1.x（第一、二阶段）与 v0.2.0（第三阶段补记）的差异可作课堂对照素材；
+- 讲义 §七 常见错误 5（检索过程不可复盘）与错误 7（角色、状态和决定混用）：§2/§4/§11 给出可复盘记录的最小完整样式，§5 演示三维分记；
+- 讲义 §六 检索质量自评：§3 的分支修正过程与 §8 的单源局限记录分别是分支覆盖矩阵自评与来源审计自评的真实示例；§10 是该自评框架的首次完整应用——基准集切片来自外部反例，命中率 4/22，教师 trace 未过自评本身就是教学点 6；
+- 课程 2.0 批次 0 验收项"≥1 条真实科研失败演示"（见课程文档 `docs/course-2.0-plan.md`）：§6 提供 4 条；第三阶段补记 §8 再添 2 条（发表状态记忆错误、S2 限流）；第四阶段补记 §9 再添 2 条工具失败（附件假成功、活动库漂移）与 1 条作者张冠李戴修正；第五阶段补记 §10.6 再添 MCP 掉线、附件假成功复现与 PDF 下载截断记录及补办过程——失败与修正过程本身也是教学素材；
+- §9 与 [source-audit-demo.md](./source-audit-demo.md) 的"回到原文"步骤呼应：单篇 trace 演示原文核验一条主张，本篇在领域级 trace 上补齐原文身份层；
+- 记录演进本身是教学点（§1 第 4 条）：本文件 v0.1.x（第一、二阶段）、v0.2.x（第三阶段补记）、v0.3.0（第四阶段补记）与 v0.4.0（第五阶段基准集轮）的差异可作课堂对照素材；
 - 方向收敛段（从宽泛主题到具体研究问题的第 1-4 步）待博士生真实方向指认后补入本文件并升版。
