@@ -1,10 +1,11 @@
 # 逐课参考阅读清单
 
-版本：v2.0.4
-最后更新：2026-08-05
+版本：v2.1.0
+最后更新：2026-08-10
 
 变更记录：
 
+- v2.1.0 (2026-08-10)：G3 选题训练配套——第 5 课 Qian 课堂案例扩为六种构思模式（填空/扩展/造锤找钉/小处泛化/复现前作/外部来源，已对本地转载副本核验）；第 6 课新增课堂案例霍强《创新研究到底怎么做？》（四维选题标准卡的兴趣与意义参照）。
 - v2.0.4 (2026-08-05)：修正项目重组后的历史归档路径标签。
 - v2.0.3 (2026-07-30)：修正第 2 课诚信提醒发布机构名为“中国科学院科研道德委员会”，与官方页面及 lesson-02 handout/slides 一致。
 - v2.0.2 (2026-07-30)：区分作者团队工作稿与正式同行评议稿；将未公开论文的绝对禁令调整为授权、规则、环境与最小披露条件。
@@ -148,8 +149,8 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
 
 ### 课堂案例
 
-4. **研究空白生成案例**
-   Qian, Z. *How to Look for Ideas in Computer Science Research*. [本地转载副本](<../references/library/research-method/how to think/How to Look for Ideas in Computer Science Research _ by Zhiyun Qian _ Jan, 2021 _ Medium.pdf>)。只分析维度表和 gap 候选生成；“表格空位”不能自动证明问题重要或真实。
+4. **问题生成与研究空白案例**
+   Qian, Z. *How to Look for Ideas in Computer Science Research*. [本地转载副本](<../references/library/research-method/how to think/How to Look for Ideas in Computer Science Research _ by Zhiyun Qian _ Jan, 2021 _ Medium.pdf>)。分析其六种构思模式（填空、扩展、造锤找钉、小处泛化、复现前作、外部来源）与 gap 候选生成；“表格空位”只是问题来源之一，不能自动证明问题重要或真实。
 
 ## 第 6 课：研究问题、问题定义与第一性原理
 
@@ -171,6 +172,9 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
 
 4. **中文问题审校案例**
    胡晓峰：《浅谈科研课题中的“科学问题”》。[本地副本](<../references/library/research-method/how to think/胡晓峰：浅谈科研课题中的“科学问题”.pdf>)。用于识别把背景、意义、工程任务或“怎么做”误写成科学问题的情况。
+
+5. **选题标准参照案例**
+   霍强：《讲堂 | 霍强：创新研究到底怎么做？》。[本地副本](<../references/library/research-method/how to think/讲堂 _ 霍强：创新研究到底怎么做？.pdf>)。任选，约 15 分钟。用“Start with why”与 Passion/Excellence/Impact 三标准作四维选题标准卡（意义/新颖性/可行性/兴趣）的兴趣与意义维度参照；不替代论证链位置的重要性检查。
 
 ## 第 7 课：机制假设、研究判断与实验设计
 
