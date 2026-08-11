@@ -7,10 +7,10 @@
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
 | [handout.md](./handout.md) | 现行·学生正式讲义 v1.3.1 | 面向学生、可脱离课堂独立阅读：可复盘检索、证据角色四类、角色/状态/决定三分、入口核验、三类记录、候选文献表与检索质量自评 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.1.0 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v0.5.2（20 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
-| [slides.pptx](./slides.pptx) | 待同步·上一版课堂 PPT（20 页） | 对应 v0.4.0 母稿；P05-P19 相关内容页须重建并重新执行三重检查 |
-| [keystone-design-spec.md](./keystone-design-spec.md) | 规范 v1.2.0 | 10 个风险触发关键页的设计契约、模板例外与制作约束 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.2.0 | 90 分钟流程、PPT 执行索引、演示脚本（含 MI 真实幻觉审计失败演示）、课堂产出验收、讲后复盘 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v0.6.0（20 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
+| [slides.pptx](./slides.pptx) | 待制作·课堂 PPT（20 页） | 现行为对应 v0.4.0 母稿的上一版产物；按 `docs/collaboration.md` 分工由 Codex/Claude Code 按 v0.6.0 母稿制作，构建参考留档 `.work/ppt/lesson-03/2026-08-10-v060-rebuild/` |
+| [keystone-design-spec.md](./keystone-design-spec.md) | 规范 v1.3.0 | 10 个风险触发关键页的设计契约、模板例外与制作约束 |
 | [source-audit-demo.md](./source-audit-demo.md) | 现行·教学资产 v1.1.0 | Keshav 2007 真实 Crossref—DOI—原文—候选表 trace，含断网备用记录 |
 | [mi-search-trace-demo.md](./mi-search-trace-demo.md) | 现行·教学资产 v0.4.0 | MI 宽泛主题检索真实 trace：分支确定方法审计、36 条待筛选线索、4 条幻觉引用 rejected 实例；v0.2.0/v0.3.0 补分支检索、跨源核验、Zotero 入藏与逐篇 PDF 原文核对；v0.4.0 第五阶段基准集自评轮——讲义 §六 首次应用于教师 trace 自身（用户 Scholar 高引快照切片命中 4/22，三条差距机制定位，B10 元层分支与双轨检索修复留档，MI-C02 版本作者顺序差异裁决，MCP 掉线工具失败记录；附件假成功根因锁定为 Zotero 云配额 413，正位迁至 GraduateCourse 群组库集合 I2GKJGNP、附件策略降级 linked_url，见 §10.7），各阶段原文保留作记录演进教学点；方向收敛段待真实方向指认后升版 |
 | [assets/](./assets/README.md) | 现行·2.0 视觉资产 | 4 张自绘教学结构图，逐图出处块登记；课级唯一图源 |
@@ -157,3 +157,22 @@
 - Zotero 存储终局（经用户确认）：正位＝GraduateCourse 群组库集合 `I2GKJGNP`（38 条，trace-id 齐全）；附件＝linked_url 直链（36/36，论文各 1，网页报告 2 条不挂）；个人库 MI 副本 38 条与集合已移入回收站（可恢复）；假成功根因＝Zotero 云配额耗尽（413，6184/300 MB），详见 trace §10.7；
 - 剩余：MI-C35/MI-C30/MI-C33/MI-C36 四条 PDF 原文核对（网络/付费墙受限，离线以 `.work/mi-search/` 存档为准）；B10 残留缺口改式；若日后要真实文件进群库，须开放群 File Editing 并清理云存量（群组文件不经 WebDAV）；
 - 既有推迟项不变：方向收敛段待博士生真实方向指认。
+
+## 门控状态（MI 演示织入轮，2026-08-10）
+
+修订轮登记（依据 prepare-course-lesson skill"修订已有课次"条款；上方各轮记录保留不动）：
+
+| 门 | 状态 |
+| --- | --- |
+| 1. 课次目标 | ✅ 复核通过（学习目标与八阶段定位未变） |
+| 2. 内容门 | ✅ 限定范围重走：批次 0 推迟项落地——slides.md v0.6.0 P16 由课堂构造失败样例升级为教师真实 MI 幻觉引用审计（trace §6 四条 rejected + ti: 恢复路径 + 案例边界框），四判断点保留；teaching-plan.md v1.2.0 演示脚本增第 8 步、90 分钟表与课前准备同步、失败演示节重写；keystone-design-spec.md v1.3.0 P16 制作约束更新；讲义 §四·5 虚构表仍为学生练习对象且未改 |
+| 3. 90 分钟教学门 | ✅ 降级复核（页数、八段时间与最低产出未变；27-43 演示段为内容替换非新增） |
+| 4. 逐页映射门 | ✅ 重走（P16 映射改为 mi-search-trace-demo §6 真实来源；其余 19 页映射不变） |
+| 5. PPT 制作 | ⏸ 交接 Codex/Claude Code（按 docs/collaboration.md 分工，OpenCode 不做 PPTX）；内容母稿 v0.6.0 就绪，构建参考留档 `.work/ppt/lesson-03/2026-08-10-v060-rebuild/`（完整脚本、20 页渲染与 inspect，曾通过技术与教学检查） |
+| 6. 三重检查 | ⏸ 待交接方完成 PPTX 后重走 |
+| 7. 里程碑归档 | ⏸ 本轮不产生交付 PPTX |
+
+推迟项：
+
+- Codex/Claude Code 按 v0.6.0 母稿制作 slides.pptx 并重走三重检查后回写 gate 5-6（参考留档含构建脚本与渲染图）；
+- 批次 0 验收剩余项：范式冻结 v1 与 tag `lesson-prep-v2.0-batch0`（registry 填充与 mkdocs build 复跑已于本轮通过）。
