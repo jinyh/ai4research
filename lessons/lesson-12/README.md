@@ -8,9 +8,14 @@
 | --- | --- | --- |
 | [handout.md](./handout.md) | 现行·学生正式讲义 v0.1.2 | 面向学生、可脱离课堂独立阅读的正式讲义：八要素深度分析、个人工作流设计、评价机制、练习、术语、延伸阅读 |
 | [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.2.3 | gate1 定位、gate3 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v0.2.4（20 页） | gate4 逐页六段：屏显内容、视觉结构、教师讲述备注、互动、建议时间、来源与事实边界；按权威 8 段逐时间表 re-fit |
+| [slides.md](./slides.md) | 现行·逐页母稿 v0.3.0（21 页） | gate4 逐页六段：屏显内容、视觉结构、教师讲述备注、互动、建议时间、来源与事实边界；按权威 8 段逐时间表 re-fit |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.0.1 | 14 个关键页四字段契约、模板偏离许可与验收边界 |
-| [slides.pptx](./slides.pptx) | 现行·正式课堂 PPT（20 页） | 继承第 7 课交大正式模板；20 页均含 `[Sources]` speaker notes；已通过技术、教学与视觉检查 |
+| [slides.pptx](./slides.pptx) | 现行·正式课堂 PPT（21 页） | 封面只保留正式课名；退出卡前含独立知识点总结；21 页均含 `[Sources]` speaker notes |
+
+## 2026-08-20 课件修订
+
+- 封面标题改为“第12讲 Agent/Skill 逻辑与自主 Research Workflow 设计”，并上移至两条横线之间。
+- 新增 P20“本讲知识点总结”，原退出卡顺延为 P21；总页数 20→21。
 
 ## 文件关系
 
@@ -44,6 +49,19 @@
 - [x] **gate5 PPT 制作（通过）**：20 页正式 `slides.pptx` 已完成；使用 `@oai/artifact-tool`，P01 复用第 7 课封面，P02-P20 复用标准内容页；保留 master/layout、校徽、红色标题带、主题字体、品牌图形与页码；关键页按 `keystone-design-spec.md` 制作。
 - [x] **gate6 三重检查（通过）**：技术检查为模板保真 0 issues、画布越界 0、空 placeholder 0、默认 prompt 0、20/20 notes 含 `[Sources]`；教学检查确认 20 页、权威 8 段、32 分钟开始设计、60-78 分钟持续实践、Checkpoint 3 十项前置边界一致；视觉检查完成全卷 contact sheet、关键页原尺寸与 LibreOffice 20 页重开渲染。
 - [x] **里程碑记录**：首个正式版本以现行 `slides.pptx` 为基线；构建、模板审计和 QA 台账保存在 `.work/ppt/lesson-12/2026-08-07-formal-build/`，不另建重复归档副本。
+
+## 修订轮登记（2026-08-12，handout v0.2.0）
+
+按 `prepare-course-lesson` skill"修订已有课次"条款登记，原门控记录保留不动：
+
+| 门 | 状态 |
+| --- | --- |
+| gate1 备课规划定位 | ✅ 复核通过（课次目标与八阶段定位不变） |
+| gate2 内容门 | ✅ 重走：handout §2.4/2.5 拆解观察点增 Pi Coding Agent 最小 harness 对照指引，§九延伸阅读新增第 5 条（逐字同步 reading-list v2.2.0 第 12 课新条目），承第 11 课案例顺延为第 6-7 条；新增内容仅分析对象、钉 commit、明确不进学生安装清单；八要素口径与既有案例来源未变 |
+| gate3 90 分钟教学门 | ⬇️ 降级复核：学习目标与权威 8 段时间结构不变；新增内容为拆解观察点内的对照指引与课后延伸阅读，不改变 32 分钟开始设计、60-78 分钟实践的课堂节奏 |
+| gate4 逐页映射门 | 未变更（未动 `slides.md`，原记录有效） |
+| gate5/gate6 PPT 制作与三重检查 | 未变更，原记录有效（未重建 `slides.pptx`） |
+| 推迟项 | pi 钉死 SHA 授课前建议用 earendil-works/pi 新仓库路径复核一次（当前经旧路径 badlogic/pi-mono 重定向核验，见 `references/notes/pi-and-prime-agent.md` §10） |
 
 ## 待复核项
 

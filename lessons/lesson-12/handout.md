@@ -1,10 +1,11 @@
 ---
-版本：v0.1.2
-最后更新：2026-08-07
+版本：v0.2.0
+最后更新：2026-08-12
 适用课次：第 12 课
 文档类型：学生正式讲义
 状态：现行；内容门复核通过；证据绑定可核验来源，AI 输出仅作线索
 变更记录：
+- v0.2.0 (2026-08-12): 修订轮（内容门重走，教学门降级复核，slides/pptx 未变更）：§2.4/2.5 拆解观察点增 Pi Coding Agent 最小 harness 对照指引（钉 commit，仅分析对象、不进安装清单）；§九延伸阅读同步 reading-list v2.2.0 新案例条目；学习目标、时间结构与八要素口径不变。
 - v0.1.2 (2026-08-07): 正式状态与当前课件同步；明确课堂最小产出与虚构 trace 双重标记边界。
 - v0.1.1 (2026-08-07): 复核第 11→12 课衔接、八要素组合与 assignments.md Checkpoint 3；将导读中的八要素表述收敛到课程权威组合，不改正文案例、证据与门条件
 - v0.1.0 (2026-08-06): 从零起草；对齐 lesson-01 §四 Agent Workflow 八要素口径；承接第 11 课 AutoResearch 循环；为第 13 课验证门铺垫个人 Agent Workflow 产出
@@ -108,7 +109,7 @@ Memory 指跨步骤保留的信息。本课程优先使用可审计的项目工�
 
 工具与权限决定 Agent 能读、写、执行和联网到什么范围。
 
-**拆解观察点**：现成 Agent 暴露了哪些工具？MCP server 授予了哪些权限？是否有沙箱、是否需要确认、是否允许 shell 执行？工具列表本身是否可审计？
+**拆解观察点**：现成 Agent 暴露了哪些工具？MCP server 授予了哪些权限？是否有沙箱、是否需要确认、是否允许 shell 执行？工具列表本身是否可审计？一个有用的对照案例是极简 harness Pi Coding Agent（pi.dev，钉死版本见 [reading-list.md](../../course/reading-list.md) 第 12 课）：它默认只暴露 read/write/edit/bash 四个工具，刻意不内置权限弹窗，把风险控制外置给 Git、容器或使用者的扩展——用它对照 OpenCode 的显性权限配置，可以看清"权限内置"与"权限外置"是两种不同的设计决定，而不是功能多寡的差异。该案例只作分析对象，不进学生安装清单。
 
 **设计决策点**：遵循最小权限原则。按只读 / 可写 / 可执行 / 需确认 / 禁止五档划分。关键判断（如修改实验规格、删除失败记录、联网发送未公开数据、修改评价代码）必须保留人工确认。
 
@@ -118,7 +119,7 @@ Memory 指跨步骤保留的信息。本课程优先使用可审计的项目工�
 
 执行循环回答 Agent 如何计划、行动、观察、评价和停止。不是所有任务都需要自主循环。
 
-**拆解观察点**：现成 Agent 是固定工作流（按预定步骤走）、还是自主循环（自己决定下一步）、还是人在每步确认？它的停止条件是什么——任务完成、预算耗尽、还是人喊停？
+**拆解观察点**：现成 Agent 是固定工作流（按预定步骤走）、还是自主循环（自己决定下一步）、还是人在每步确认？它的停止条件是什么——任务完成、预算耗尽、还是人喊停？同一谱系上可以看到不同取舍：pi 把循环压到最小、把计划与子 Agent 移出核心；构建在 pi 之上的 Prime Agent 则把子 Agent 调用做成持久 REPL 中的程序化调用，并给自主模式配置预算与质量门（官方自述"通过门只证明该门所验证的内容"）。两者都只作分析对象（钉死版本与预印本标注见 [reading-list.md](../../course/reading-list.md) 第 11/12 课），不外推为能力结论。
 
 **设计决策点**：先判断你的科研动作需要哪一类。Anthropic 在 *Building Effective Agents* 中区分了 prompt chaining、routing、parallelization、orchestrator-workers、evaluator-optimizer 和 autonomous agent 等模式。它们的可控性和适用场景不同：
 
@@ -378,9 +379,11 @@ Evals：
 3. Anthropic. [*Building Effective Agents*](https://www.anthropic.com/engineering/building-effective-agents)。用途：比较 prompt chaining、routing、parallelization、orchestrator-workers、evaluator-optimizer 与 autonomous agent。引用时标注为工程博客，非学术论文。
 4. Model Context Protocol. [*Architecture Overview*](https://modelcontextprotocol.io/docs/learn/architecture)。用途：分析 host、client、server、tools、resources、prompts 和权限边界；授课前复核当前协议版本。
 
+5. [*Pi Coding Agent*（commit `9795d602`）](https://github.com/earendil-works/pi/tree/9795d602306ef68a97585909e8e79f92a389057b)（pi.dev，`@earendil-works/pi-coding-agent`）。只读该版本 README 与默认工具清单，分析"默认仅 read/write/edit/bash 四工具、权限与计划/子 Agent 刻意移出核心"的设计决定；作为八要素拆解的最小对照组，与 OpenCode 显性 harness 对照，不进学生安装清单；授课前复核。
+
 承第 11 课案例（可作为拆解对象）：
 
-5. Karpathy. [*AutoResearch*](https://github.com/karpathy/autoresearch)。用途：作为受限循环案例，分析其固定预算、固定指标、保留/丢弃和日志设计。
-6. Lu, C. et al. "Towards end-to-end automation of AI research." *Nature* (2026). DOI: [10.1038/s41586-026-10265-5](https://www.nature.com/articles/s41586-026-10265-5)。用途：分析端到端自动化的任务范围、评价证据和仍需人工判断的边界。
+6. Karpathy. [*AutoResearch*](https://github.com/karpathy/autoresearch)。用途：作为受限循环案例，分析其固定预算、固定指标、保留/丢弃和日志设计。
+7. Lu, C. et al. "Towards end-to-end automation of AI research." *Nature* (2026). DOI: [10.1038/s41586-026-10265-5](https://www.nature.com/articles/s41586-026-10265-5)。用途：分析端到端自动化的任务范围、评价证据和仍需人工判断的边界。
 
 > 外部工具和协议会持续变化。阅读时应区分稳定的方法原则与特定版本的功能描述；涉及课堂操作时，以开课前核验的版本和教师提供的环境说明为准。AI 输出仅作线索，不构成证据。

@@ -7,11 +7,16 @@
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
 | [handout.md](./handout.md) | 现行·学生讲义 v0.2.0 | 面向学生、可脱离课堂独立阅读：baseline 选择与公平性、实验规格七字段、可复现最小集合、随机种子与方差、ACM Badging 自查视角、starter→project 模板迁移、判断门提交清单（对齐 assignments.md Checkpoint 2 之 8 项）、练习、术语、延伸阅读 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.3.0 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v0.3.0（20 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.4.0 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v0.4.0（21 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.1.0 | 12 个风险触发关键页的四字段契约、模板例外与验收约束 |
-| [slides.pptx](./slides.pptx) | 现行·正式课堂 PPT（20 页） | 继承第 7 课交大正式模板；20 页均含 `[Sources]` speaker notes；已通过技术、教学与视觉检查 |
+| [slides.pptx](./slides.pptx) | 现行·正式课堂 PPT（21 页） | 封面与收束修订轮已通过技术、教学与视觉检查 |
 | [assets/reproducibility-example/](./assets/reproducibility-example/) | 现行·真实可运行教学工件 | 合成输入上的七字段 `experiment-spec.md`、实际 `config.json`、复算脚本、`results.json` 与 `run-log.jsonl`；P11 真实工件锚点，不作为实证结论 |
+
+## 封面与收束修订轮（2026-08-20）
+
+- 90 分钟总时长不变；P20 总结 4 分钟，P21 提交/回退/退出/预告 8 分钟。
+- 21/21 notes 含来源块，布局 0 越界，Office 校验与 LibreOffice 重开通过；封面、P20-P21 已做视觉检查。
 
 ## 文件关系
 

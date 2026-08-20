@@ -1,6 +1,6 @@
 # 参考资料索引
 
-最后核验：2026-08-08（skills_ref.md 增补新 skill 库与 MCP 条目）
+最后核验：2026-08-12（新增 pi-and-prime-agent.md：pi / Prime Agent 讲师参考对照笔记）
 
 `references/notes/` 保存备课分析与核验记录，`references/library/` 保存默认不纳入 Git 的原始参考。课程结论不直接以本目录中的汇总文字为依据；引用前应回到原始论文、官方文档、课程主页或上游仓库核验。
 
@@ -29,6 +29,7 @@
 | [regulation.md](./notes/regulation.md) | 国内 AI 科研规范整理 | 人主智辅、AI 使用声明、责任归属与禁止事项的检索线索 | B/C | 2026-08-04 重申：二手整理不能作为正式政策证据；具体文件名、条款与发布日期须回学校、教育部、科技部或学会官网核验 |
 | [research-method-选目分析.md](./notes/research-method-选目分析.md) | 全文通读与选目记录 | 对 `research-method/` 资料逐项分级、去重并映射课程课次 | B/C | 2026-07-29 纳入索引；是备课决策记录，不是学生阅读材料或直接证据 |
 | [research-method-补充推荐.md](./notes/research-method-补充推荐.md) | 库外文献推荐线索 | 补足可复现、Agent、实验自动化和评价复盘等空白 | B/C | 2026-07-29 纳入索引；候选条目须回原始论文、官方文档或上游仓库核验后再采用 |
+| [pi-and-prime-agent.md](./notes/pi-and-prime-agent.md) | Agent harness 对照笔记（讲师参考） | pi（极简 harness 底座）与 Prime Agent（自我改进研究型 Agent）的三方对照、八要素映射、钉死版本、安全摘录与待核验清单 | B/C | 2026-08-12 建立；两项目活跃迭代，功能宣称授课前回源；只作分析对象，不构成对学生安装或使用的建议 |
 | [mi-case-registry.md](./notes/mi-case-registry.md) | MI 贯穿案例素材登记 | 课程 2.0 MI 素材元数据（素材 ID、许可、脱敏状态、教学可用性） | 课程内部规则 | 2026-08-08 建立骨架；只存元数据，不存原文与未发表内容；登记表待用户素材到位后填充 |
 | [research-method/](./library/research-method/) | 外部克隆资料库（论文生命周期讲义/经验集） | 传统人工科研方法背景阅读池，按 think→search→write→submit→revise→present→template 组织 | B/C | 2026-07-29 克隆（来源 github.com/secdr/research-method）；多为知乎专栏/教授经验散文/高校讲座 PPT/经典英文写作指南，关键结论须回源；不作为课程证据；含易变条目（2021 基金统计、工具软广等），授课前复核；自带 .git，已加入 .gitignore 不纳入版本管理 |
 
@@ -128,6 +129,8 @@
 - [Orchestra Research AI Research Skills](https://github.com/Orchestra-Research/AI-research-SKILLs)
 - [OpenCode Documentation](https://opencode.ai/docs/)
 - [Model Context Protocol Documentation](https://modelcontextprotocol.io/docs/)
+- [Pi Coding Agent（earendil-works/pi）](https://github.com/earendil-works/pi)（pi.dev；课堂只作分析对象）
+- [Prime Agent（PrimeIntellect-ai/prime-agent）](https://github.com/PrimeIntellect-ai/prime-agent)（课堂只作分析对象）
 
 ### 工作流案例入口（上游仓库优先，A/B）
 

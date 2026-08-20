@@ -1,10 +1,11 @@
 # 逐课参考阅读清单
 
-版本：v2.1.0
-最后更新：2026-08-10
+版本：v2.2.0
+最后更新：2026-08-12
 
 变更记录：
 
+- v2.2.0 (2026-08-12)：第 11 课新增课堂案例"Prime Agent 自我改进研究 Agent 案例簇"（钉 commit，附两篇预印本，仅分析对象）；第 12 课新增课堂案例"Pi Coding Agent 最小 harness 拆解案例"（钉 commit）；两课各达 5 项上限；正式书目与课时结构不变。
 - v2.1.0 (2026-08-10)：G3 选题训练配套——第 5 课 Qian 课堂案例扩为六种构思模式（填空/扩展/造锤找钉/小处泛化/复现前作/外部来源，已对本地转载副本核验）；第 6 课新增课堂案例霍强《创新研究到底怎么做？》（四维选题标准卡的兴趣与意义参照）。
 - v2.0.4 (2026-08-05)：修正项目重组后的历史归档路径标签。
 - v2.0.3 (2026-07-30)：修正第 2 课诚信提醒发布机构名为“中国科学院科研道德委员会”，与官方页面及 lesson-02 handout/slides 一致。
@@ -276,6 +277,9 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
 4. **上游项目案例**
    Karpathy. [*AutoResearch*](https://github.com/karpathy/autoresearch)。只读 README、`program.md` 和核心循环，分析固定预算、固定指标、保留/丢弃和日志；授课前固定 commit 并复核。
 
+5. **自我改进研究 Agent 案例簇（预印本，仅分析对象）**
+   PrimeIntellect. [*Prime Agent*（commit `965941c7`）](https://github.com/PrimeIntellect-ai/prime-agent/tree/965941c750ff816cc4d68d18a5fcea5e0b4c120b)，配 Karten et al. “Continual Harness: Online Adaptation for Self-Improving Foundation Agents.” [arXiv:2605.09998](https://arxiv.org/abs/2605.09998)（预印本）与 Zhang, A. L., Kraska, T. & Khattab, O. “Recursive Language Models.” [arXiv:2512.24601](https://arxiv.org/abs/2512.24601)（预印本）。只分析 `/autonomous` 的预算与质量门设计、harness 状态持久化与回退自述，对照本课四约束；项目发布仅数日、论文未经同行评议，不外推为能力结论，不进学生安装清单；授课前复核。
+
 ## 第 12 课：Agent/Skill 逻辑与自主 Research Workflow 设计
 
 ### 正式书目
@@ -295,6 +299,9 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
 
 4. **协议架构案例**
    Model Context Protocol. [*Architecture Overview*](https://modelcontextprotocol.io/docs/learn/architecture)。只分析 host、client、server、tools、resources、prompts 和权限边界；授课前复核当前协议版本。现成 Skill 仓库保留在 [resources.md](./resources.md) 案例池，不列为正式阅读。
+
+5. **最小 harness 拆解案例**
+   [*Pi Coding Agent*（commit `9795d602`）](https://github.com/earendil-works/pi/tree/9795d602306ef68a97585909e8e79f92a389057b)（pi.dev，`@earendil-works/pi-coding-agent`）。只读该版本 README 与默认工具清单，分析"默认仅 read/write/edit/bash 四工具、权限与计划/子 Agent 刻意移出核心"的设计决定；作为八要素拆解的最小对照组，与 OpenCode 显性 harness 对照，不进学生安装清单；授课前复核。
 
 ## 第 13 课：工作流评价、结果分析与失败复盘
 

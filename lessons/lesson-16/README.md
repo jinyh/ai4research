@@ -8,9 +8,14 @@
 | --- | --- | --- |
 | [handout.md](./handout.md) | 现行·学生讲义（草稿） | 面向学生、可脱离课堂独立阅读：最终论证结构（问题→证据→判断→实验→结论可追溯链路收口）、期末项目提交清单（逐项对齐 assignments.md Checkpoint 4 之 10 项 + project-template 全工件）、学生最终分享陈述结构（备课规划五项必答）、课程总结与复盘（八阶段链路反思 / AI 使用边界 / 不能自动化的判断）、AI 使用记录与伦理说明完整性检查、贯穿案例动作链、论证门+期末项目提交清单（对齐 assignments.md Checkpoint 4 之 10 项）、练习、术语、延伸阅读 |
 | [teaching-plan.md](./teaching-plan.md) | 现行·教师教案（草稿） | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v0.2.1（20 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v0.3.0（20 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.0.1 | 10 个关键页的视觉、教学与验收契约 |
-| [slides.pptx](./slides.pptx) | 正式课堂 PPT（20 页） | 继承第 7 课交大模板的正式课堂投屏文件；逐页含 `[Sources]` speaker notes |
+| [slides.pptx](./slides.pptx) | 正式课堂 PPT（20 页） | 封面只保留正式课名；P18 为独立知识点总结；逐页含 `[Sources]` speaker notes |
+
+## 2026-08-20 课件修订
+
+- 封面标题改为“第16讲 最终分享、论证门与项目提交”，并上移至两条横线之间。
+- P18 重构为“本讲知识点总结”；总页数保持 20。
 
 ## 文件关系
 

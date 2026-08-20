@@ -16,7 +16,7 @@
 
 同一课只保留一套现行内容口径。PPTX 是该口径的视觉交付，不是独立的事实来源。
 
-当前状态（2026-08-07）：[备课规划](./备课规划.md) v2.2.0 整改口径已形成。**全 16 课内容侧草稿与正式课堂 PPT 均已完成**。第 1-16 课均已通过课次目标、内容、90 分钟教学、逐页映射、PPT 制作与三重检查；第 8-16 课另完成关键页设计规格与里程碑决定。四次正式提交门（第 6 问题门/9 判断门/13 验证门/16 论证门）门条件已逐项对齐 `course/assignments.md` Checkpoint 1-4，评分合计 100% 对齐 `course/assessment.md`。正式 PPT 共 16 套；第 8-16 课本轮新增 9 套、161 页，均通过模板保真、来源 notes、空 placeholder、画布边界与 LibreOffice 最终磁盘重开复渲染检查。各课详情见 `lesson-NN/README.md`。
+当前状态（2026-08-20）：[备课规划](./备课规划.md) v2.2.0 整改口径已形成。**全 16 课内容侧草稿与正式课堂 PPT 均已完成**。第 1-16 课均已通过课次目标、内容、90 分钟教学、逐页映射、PPT 制作与三重检查；四次正式提交门（第 6 问题门/9 判断门/13 验证门/16 论证门）门条件已逐项对齐 `course/assignments.md` Checkpoint 1-4，评分合计 100% 对齐 `course/assessment.md`。正式 PPT 共 16 套、332 页；所有封面均只保留正式课名并置于两条横线之间，所有课次均在收束页前设置独立知识点总结（第 16 讲重构现有 P18，不增页）。各课详情见 `lesson-NN/README.md`。
 
 ## 文件类型
 
@@ -36,52 +36,52 @@
 ## 第 1 课
 
 - 现行材料与门控状态统一从 [第 1 课内容入口](./lesson-01/README.md) 查看，避免在两处重复维护版本号。
-- 旧 39 页 PPTX 已归入 [PPT 试制里程碑](../archive/ppt-experiments/lesson-01/2026-07-30-pre-gate-39-page-baseline/decision-record.md)；现行 33 页正式课件见 [slides.pptx](./lesson-01/slides.pptx)。
+- 旧 39 页 PPTX 已归入 [PPT 试制里程碑](../archive/ppt-experiments/lesson-01/2026-07-30-pre-gate-39-page-baseline/decision-record.md)；现行 34 页正式课件见 [slides.pptx](./lesson-01/slides.pptx)。
 - 2026-07-07 的详细教学包与旧详细讲义已迁入 [被替代文稿归档](../archive/superseded-docs/lesson-01/)，不参与现行制作。
 - [教师文献精读卡集](./lesson-01/reading-notes.md)：第 1 课涉及 8 份文献按 AI 辅助阅读协议产出的精读卡；原文定位已完成，待教师复核与定稿。
 
 ## 第 2 课
 
 - 现行材料与门控状态统一从 [第 2 课内容入口](./lesson-02/README.md) 查看。
-- 现行 29 页正式课件见 [slides.pptx](./lesson-02/slides.pptx)，已通过技术、教学与视觉检查。
+- 现行 30 页正式课件见 [slides.pptx](./lesson-02/slides.pptx)，已通过技术、教学与视觉检查；P29 为独立知识点总结。
 
 ## 第 3 课
 
 - 现行材料与门控状态统一从 [第 3 课内容入口](./lesson-03/README.md) 查看。
-- 现行 20 页正式课件见 [slides.pptx](./lesson-03/slides.pptx)，已通过技术、教学与视觉检查。
+- 现行 21 页正式课件见 [slides.pptx](./lesson-03/slides.pptx)，已通过技术、教学与视觉检查。
 
 ## 第 4 课
 
 - 现行材料与门控状态统一从 [第 4 课内容入口](./lesson-04/README.md) 查看。
-- 现行 17 页正式课件见 [slides.pptx](./lesson-04/slides.pptx)，已通过技术、教学与视觉检查；P11-P13 明确标注为虚构教学样例，不作为真实论文证据。
+- 现行 18 页正式课件见 [slides.pptx](./lesson-04/slides.pptx)，已通过技术、教学与视觉检查；封面只保留正式课名，P17 为独立知识点总结，P18 为退出卡与第 5 课预告。
 
 ## 第 5 课
 
 - 现行材料与门控状态统一从 [第 5 课内容入口](./lesson-05/README.md) 查看。
-- 现行 19 页正式课件见 [slides.pptx](./lesson-05/slides.pptx)，已通过技术、教学与视觉检查；P12-P15 明确标注为虚构教学样例，证据地图四视图与问题门口径一致。
+- 现行 21 页正式课件见 [slides.pptx](./lesson-05/slides.pptx)，已通过技术、教学与视觉检查；封面只保留正式课名，P20 为独立知识点总结，P21 为退出卡与第 6 课预告。
 
 ## 第 6 课
 
 - 现行材料与门控状态统一从 [第 6 课内容入口](./lesson-06/README.md) 查看。
-- 现行 20 页正式课件见 [slides.pptx](./lesson-06/slides.pptx)，已通过技术、教学与视觉检查；问题门八项条件、累计工件路径和虚构案例边界已同步。
+- 现行 22 页正式课件见 [slides.pptx](./lesson-06/slides.pptx)，已通过技术、教学与视觉检查；封面只保留正式课名，P20-P22 依次为知识点总结、提交/回退、退出/第 7 课预告。
 
 ## 第 7 课
 
 - 现行材料与门控状态统一从 [第 7 课内容入口](./lesson-07/README.md) 查看。
-- 现行 16 页正式课件见 [slides.pptx](./lesson-07/slides.pptx)，已通过技术、教学与视觉检查。
+- 现行 17 页正式课件见 [slides.pptx](./lesson-07/slides.pptx)，已通过技术、教学与视觉检查；P16 为独立知识点总结。
 
 ## 第 8-16 课
 
 | 课次 | 页数 | 现行入口 | 正式 PPT |
 | --- | ---: | --- | --- |
-| 8 | 14 | [README](./lesson-08/README.md) | [slides.pptx](./lesson-08/slides.pptx) |
-| 9 | 20 | [README](./lesson-09/README.md) | [slides.pptx](./lesson-09/slides.pptx) |
-| 10 | 16 | [README](./lesson-10/README.md) | [slides.pptx](./lesson-10/slides.pptx) |
-| 11 | 19 | [README](./lesson-11/README.md) | [slides.pptx](./lesson-11/slides.pptx) |
-| 12 | 20 | [README](./lesson-12/README.md) | [slides.pptx](./lesson-12/slides.pptx) |
-| 13 | 19 | [README](./lesson-13/README.md) | [slides.pptx](./lesson-13/slides.pptx) |
-| 14 | 17 | [README](./lesson-14/README.md) | [slides.pptx](./lesson-14/slides.pptx) |
-| 15 | 16 | [README](./lesson-15/README.md) | [slides.pptx](./lesson-15/slides.pptx) |
+| 8 | 15 | [README](./lesson-08/README.md) | [slides.pptx](./lesson-08/slides.pptx) |
+| 9 | 21 | [README](./lesson-09/README.md) | [slides.pptx](./lesson-09/slides.pptx) |
+| 10 | 17 | [README](./lesson-10/README.md) | [slides.pptx](./lesson-10/slides.pptx) |
+| 11 | 20 | [README](./lesson-11/README.md) | [slides.pptx](./lesson-11/slides.pptx) |
+| 12 | 21 | [README](./lesson-12/README.md) | [slides.pptx](./lesson-12/slides.pptx) |
+| 13 | 20 | [README](./lesson-13/README.md) | [slides.pptx](./lesson-13/slides.pptx) |
+| 14 | 18 | [README](./lesson-14/README.md) | [slides.pptx](./lesson-14/slides.pptx) |
+| 15 | 17 | [README](./lesson-15/README.md) | [slides.pptx](./lesson-15/slides.pptx) |
 | 16 | 20 | [README](./lesson-16/README.md) | [slides.pptx](./lesson-16/slides.pptx) |
 
 九套课件均继承交大 master/layout 与品牌系统；逐课关键页规格、来源 notes、技术/教学/视觉检查及剩余授课现场风险见各课 README 与 `.work/ppt/lesson-NN/` QA 台账。

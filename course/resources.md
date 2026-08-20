@@ -1,7 +1,8 @@
 ---
-版本：v2.0.0
-最后更新：2026-08-07
+版本：v2.1.0
+最后更新：2026-08-12
 变更记录：
+- v2.1.0 (2026-08-12): GitHub 项目索引新增"Agent harness 对照项目"小节（Pi Coding Agent、Prime Agent，钉 commit，仅备课参考与自学分析对象，不进工具示例段、不暗示推荐安装）
 - v2.0.0 (2026-08-07): 重定位为面向学生的工具与资源索引；删除申报材料段（已在 application-form-draft.md）、方法论溯源段（已在 reference-analysis.md）、国外同类课程对标段（已在 reference-analysis.md）、Awesome 索引、推荐技术栈、推荐资源类别的课堂要求、备课清单与课堂案例（移至 lessons/备课规划.md）
 - v1.0.0 (2026-07-29): 初版资源索引
 ---
@@ -37,6 +38,15 @@
 | [sakanaai/ai-scientist](https://github.com/sakanaai/ai-scientist) | 端到端自动科研（构思→文献→实验→论文→评审）、模板驱动 | 模板驱动教学设计；评审模拟环节 |
 | [sakanaai/ai-scientist-v2](https://github.com/sakanaai/ai-scientist-v2) | 无模板、最佳优先树搜索（BFTS）、通用化跨 ML 领域 | 树搜索思维；v1 vs v2 对比作“模板驱动 vs 自由探索”案例 |
 | [Orchestra-Research/AI-research-SKILLs](https://github.com/Orchestra-Research/AI-research-SKILLs) | 模块化技能库、双循环架构（内循环优化 + 外循环综合）、代理原生研究工件（ARA） | 技能分类体系；ARA 与课程工件状态追踪思路对齐 |
+
+### Agent harness 对照项目
+
+仅供备课参考和学生自学分析，不作为课堂工具，不建议学生安装；分析口径见 [references/notes/pi-and-prime-agent.md](../references/notes/pi-and-prime-agent.md)。
+
+| 项目 | 核心特色 | 课程借鉴点 |
+| --- | --- | --- |
+| [earendil-works/pi](https://github.com/earendil-works/pi)（commit `9795d602`，pi.dev） | 极简 harness：默认仅 read/write/edit/bash 四工具，权限、计划、子 Agent、MCP 刻意移出核心 | 第 12 课八要素拆解的最小对照组，与 OpenCode 显性 harness 对照 |
+| [PrimeIntellect-ai/prime-agent](https://github.com/PrimeIntellect-ai/prime-agent)（commit `965941c7`，MIT，构建于 pi 之上） | RLM（prompt-as-a-variable 的持久 REPL）+ Continual Harness（harness 状态持久化与证据支撑精化）；`/autonomous` 预算与质量门 | 第 11 课四约束与停止条件的对照案例簇；支撑论文为预印本（arXiv:2605.09998、arXiv:2512.24601），只作分析对象 |
 
 ### 评估基准库
 

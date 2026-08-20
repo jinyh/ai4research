@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">MI 问题门到判断门接口</title>
+  <desc id="desc">从结构性研究问题，经过可证伪命题和四项必要条件，连接到第七课假设、第八课陈述和第九课 baseline。</desc>
+  <rect width="1600" height="900" fill="#F7F4EE"/>
+  <text x="92" y="88" font-family="Arial, Noto Sans CJK SC, sans-serif" font-size="50" font-weight="700" fill="#7A0C16">问题门不是终点：把证据缺口改写成可执行接口</text>
+  <text x="94" y="136" font-family="Arial, Noto Sans CJK SC, sans-serif" font-size="23" fill="#4A4A4A">MI 教师演示｜L6 → L7 假设 → L8 陈述 → L9 baseline</text>
+  <g font-family="Arial, Noto Sans CJK SC, sans-serif">
+    <rect x="95" y="225" width="330" height="210" rx="24" fill="#7A0C16"/>
+    <text x="132" y="278" font-size="27" fill="#FFFFFF">结构性问题</text>
+    <text x="132" y="329" font-size="29" font-weight="700" fill="#FFFFFF">SAE 是否比 PCA</text>
+    <text x="132" y="369" font-size="29" font-weight="700" fill="#FFFFFF">更稀疏地干预 IOI？</text>
+    <text x="132" y="407" font-size="21" fill="#FFFFFF">成功还需何种因果证据？</text>
+    <rect x="485" y="225" width="330" height="210" rx="24" fill="#DCE9E3" stroke="#2E6B51" stroke-width="3"/>
+    <text x="522" y="278" font-size="27" fill="#245440">可证伪命题</text>
+    <text x="522" y="329" font-size="24" font-weight="700" fill="#245440">固定目标 KL 下</text>
+    <text x="522" y="369" font-size="24" font-weight="700" fill="#245440">SAE patch 数与 edit</text>
+    <text x="522" y="409" font-size="24" font-weight="700" fill="#245440">均不优于 PCA → 推翻</text>
+    <rect x="875" y="190" width="625" height="280" rx="24" fill="#FFFFFF" stroke="#B2761B" stroke-width="3"/>
+    <text x="915" y="244" font-size="27" font-weight="700" fill="#865811">第一性原理：若主张成立，至少满足</text>
+    <text x="915" y="296" font-size="22" fill="#333333">1  重构误差不能独立制造优势</text>
+    <text x="915" y="338" font-size="22" fill="#333333">2  结果在 held-out IOI 样本上保持</text>
+    <text x="915" y="380" font-size="22" fill="#333333">3  随机/监督方向不能同样轻易达成</text>
+    <text x="915" y="422" font-size="22" fill="#333333">4  正常路径证据排除 dormant pathway</text>
+    <line x1="425" y1="330" x2="485" y2="330" stroke="#7A0C16" stroke-width="6" marker-end="url(#arrowRed)"/>
+    <line x1="815" y1="330" x2="875" y2="330" stroke="#7A0C16" stroke-width="6" marker-end="url(#arrowRed)"/>
+    <rect x="95" y="600" width="330" height="145" rx="22" fill="#E8E3DA"/>
+    <text x="130" y="651" font-size="26" font-weight="700" fill="#4A443C">L7｜机制假设</text>
+    <text x="130" y="693" font-size="21" fill="#333333">效率、忠实、替代路径分拆</text>
+    <rect x="485" y="600" width="330" height="145" rx="22" fill="#E8E3DA"/>
+    <text x="520" y="651" font-size="26" font-weight="700" fill="#4A443C">L8｜3 分钟陈述</text>
+    <text x="520" y="693" font-size="21" fill="#333333">问题—证据—风险—最小实验</text>
+    <rect x="875" y="565" width="625" height="215" rx="22" fill="#173B4D"/>
+    <text x="915" y="621" font-size="27" font-weight="700" fill="#FFFFFF">L9｜可执行 baseline</text>
+    <text x="915" y="666" font-size="22" fill="#FFFFFF">Pythia-410M · layer 11 · IOI · SAE vs PCA</text>
+    <text x="915" y="706" font-size="22" fill="#FFFFFF">指标：patch 数、edit magnitude、KL、重构敏感性</text>
+    <text x="915" y="746" font-size="22" fill="#FFFFFF">失败记录：实际失败/放弃方案 + 处理 + 回写</text>
+    <line x1="260" y1="435" x2="260" y2="600" stroke="#7A0C16" stroke-width="4" marker-end="url(#arrowRed)"/>
+    <line x1="650" y1="435" x2="650" y2="600" stroke="#7A0C16" stroke-width="4" marker-end="url(#arrowRed)"/>
+    <line x1="1188" y1="470" x2="1188" y2="565" stroke="#7A0C16" stroke-width="4" marker-end="url(#arrowRed)"/>
+  </g>
+  <defs><marker id="arrowRed" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7A0C16"/></marker></defs>
+</svg>

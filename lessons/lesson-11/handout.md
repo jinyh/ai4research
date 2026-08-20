@@ -1,10 +1,11 @@
 ---
-版本：v0.1.2
-最后更新：2026-08-07
+版本：v0.2.0
+最后更新：2026-08-12
 适用课次：第 11 课
 文档类型：学生正式讲义
 状态：现行；内容门与教学门已复核
 变更记录：
+- v0.2.0 (2026-08-12): 修订轮（内容门重走，教学门降级复核，slides/pptx 未变更）：§四新增"同谱系对照案例簇"边界小节（Prime Agent：预算与质量门、harness 状态持久化，仅分析对象、预印本标注）；§十延伸阅读同步 reading-list v2.2.0 新案例条目；学习目标、时间结构与既有口径不变。
 - v0.1.2 (2026-08-07): 转为现行正式讲义；增加可直接核验的 AutoResearch `program.md` 固定版本字段对象，保留不外推边界。
 - v0.1.1 (2026-08-07): 复核 gates 2-4；固定 AutoResearch 课程分析版本为 commit `228791f`；精确改写 AI Scientist workshop 评审口径；明确贯穿案例中的数字、commit 与 rubric 版本均为课程教学示意，非实验结果。
 - v0.1.0 (2026-08-06): 从零起草；定位阶段七"原型验证（实验追踪）"；承接第 10 课受限 Agent；含实验自动化循环（假设→运行→度量→评价→回写/回退）、固定指标/预算/停止条件/回退、AutoResearch 元模式与 AI Scientist 案例分析（八维框架，不外推为通用自主科研）、失败实验记录与不选择性删除、贯穿案例改写为受限循环；用真实可核验来源（Sandve et al. 2013、Lu et al. Nature 2026、Huang et al. MLAgentBench ICML 2024、Karpathy AutoResearch）；为第 12 课个人工作流设计铺垫
@@ -197,6 +198,12 @@ PPT 中的工件视图直接绑定该 commit 的 [`program.md`](https://github.c
 - "失败实验可以被自动删除"。
 
 这些表述都超出了来源证据的适用范围。任何在作业或 slides 中出现类似表述，都应被标记为越界并改写为带边界的形式。
+
+### 5. 同谱系对照案例簇（延伸，仅分析对象）
+
+本课的两个分析对象都来自"固定预算的受限循环"这一谱系。2026 年新出现的 Prime Agent（PrimeIntellect，构建于极简 harness pi 之上）代表另一个值得对照的设计方向：**把循环的约束本身做成可持久化的状态**——其 `/autonomous` 模式在 turn/token/time 预算内运行并可配置质量门，官方明确自述"通过一个门只证明该门所验证的内容，到达预算上限不等于任务成功"；其 Continual Harness 机制则尝试让 harness 的补充说明、记忆与子 Agent 规格以证据支撑的小步更新持久化（支撑论文 arXiv:2605.09998 与 arXiv:2512.24601 均为预印本，未经同行评议）。
+
+用本课四约束审视它：预算与质量门设计可与 §三 逐项对照，但"通过门 ≠ 任务成功"恰恰说明——无论 harness 多复杂，停止条件的解释权和回退决定仍必须由研究者保留。该项目发布仅数日、无独立复现，课程只把它作为分析对象：钉死版本的 README 见 [reading-list.md](../../course/reading-list.md) 第 11 课新增案例条目；不进学生安装清单，不外推为"AI 已能自主科研"的任何变体。
 
 ---
 
@@ -395,5 +402,7 @@ for paper in papers:              # 配置扫描（固定论文集）
 课堂案例：
 
 4. Karpathy. [*AutoResearch*（commit `228791f`）](https://github.com/karpathy/autoresearch/tree/228791fb499afffb54b46200aca536f79142f117)。只读该版本 README、`program.md` 和核心循环，分析固定时间预算、固定 `val_bpb`、`keep/discard/crash` 日志和回退；课程材料不随仓库后续变化漂移。
+
+5. PrimeIntellect. [*Prime Agent*（commit `965941c7`）](https://github.com/PrimeIntellect-ai/prime-agent/tree/965941c750ff816cc4d68d18a5fcea5e0b4c120b)，配 Karten et al. “Continual Harness: Online Adaptation for Self-Improving Foundation Agents.” [arXiv:2605.09998](https://arxiv.org/abs/2605.09998)（预印本）与 Zhang, A. L., Kraska, T. & Khattab, O. “Recursive Language Models.” [arXiv:2512.24601](https://arxiv.org/abs/2512.24601)（预印本）。只分析 `/autonomous` 的预算与质量门设计、harness 状态持久化与回退自述，对照本课四约束；项目发布仅数日、论文未经同行评议，不外推为能力结论，不进学生安装清单；授课前复核。
 
 课后阅读采用"AI 导航 → 原文核验 → AI 质疑 → 偏差审计 → 人工定稿"流程。本课核心阅读为 Sandve et al. 2013，约 25 分钟。精读卡持续保存在个人项目 `notes/`，不逐周正式提交，验证门（第 13 课后）统一检查实验记录与失败保留。

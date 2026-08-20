@@ -6,11 +6,13 @@
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生讲义 v1.0.0 | 面向学生、可脱离课堂独立阅读：从研究空白到结构性问题、问题来源交叉检查与四维选题标准卡、非例边界、可证伪命题写法、第一性原理推导（含适用边界）、问题门提交清单（对齐 assignments.md 与 starter-template.md）、练习、术语、延伸阅读 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.0.0 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v1.0.0（21 页，G3 修订轮） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
-| [slides.pptx](./slides.pptx) | 现行·正式课堂 PPT（G3 修订轮重建中） | 21 页可编辑 PPTX；v1.0.0 修订轮重建与三重检查见门控登记 |
-| [keystone-design-spec.md](./keystone-design-spec.md) | 规范 v1.2.0 | 风险触发关键页的设计契约、证据边界、模板例外与制作前后验收 |
+| [handout.md](./handout.md) | 现行·学生讲义 v1.1.0 | 面向学生、可脱离课堂独立阅读：问题定义、第一性原理、九项问题门、MI 问题到 L7-L9 baseline 接口 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.2.0 | 90 分钟流程、PPT 执行索引、MI/虚构双线演示、九项自查、课堂产出验收、讲后复盘 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v1.2.0（22 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
+| [slides.pptx](./slides.pptx) | 现行·正式课堂 PPT（22 页） | 封面与收束修订轮已重建并通过内容、技术与视觉检查 |
+| [keystone-design-spec.md](./keystone-design-spec.md) | 规范 v1.3.0 | 风险触发关键页的设计契约、证据边界、模板例外与制作前后验收 |
+| [mi-problem-definition-demo.md](./mi-problem-definition-demo.md) | 现行·教学资产 v1.0.0 | MI 结构性问题、H-eff/H-rob/H-faith、第一性原理与九项 CP1 自查 |
+| [assets/](./assets/) | 现行·图形资产 | MI 问题到 baseline 接口 SVG 与出处/许可登记 |
 
 ## 文件关系
 
@@ -65,13 +67,26 @@
 
 ## 待复核项
 
-- **问题门条件对齐**：handout §五·2 的 8 项门条件与 [assignments.md](../../course/assignments.md) Checkpoint 1 逐项对齐，已核对一致。slides P14 门条件第 4 项术语已对齐 assignments（"直接证据/补充证据/冲突/空白"）。提交方式（链接/tag/压缩包）、未通过处理（一周内修订、不扣重分）和评分维度（"文献与问题定位"25%）均对齐。待教师在正式提交前复核。
+- **问题门条件对齐**：handout §五·2、slides P15-P16 与 [assignments.md](../../course/assignments.md) Checkpoint 1 九项条件已逐项核对；第 8 项是真实失败/死路的原因、处理与回写位置，第 9 项是 AI 来源与人工核验。
 - 演示用 problem-definition.md 完整版样例需在授课前准备实际可投屏版本；
 - 演示用失败案例（主题当问题、第一性原理脱离文献）需在授课前准备；
-- 20 页密度与 90 分钟节奏的桌面推演（第 5 课同为 20 页，第 1 课 33 页）；
-- 与第 7 课的衔接点：第一性原理推导的待验证前提 → 机制假设 → 实验规格的转换路径是否在 slides P20 进一步细化；
+- 与第 7 课的衔接点已经在 P14/P21 固定为 H-eff/H-rob/H-faith → 机制假设 → L9 baseline；第 7-9 课修订时仍需核对字段是否原样承接；
 - `problem-definition.md` 字段模板是否需要根据本课新增"第一性原理推导"段更新 [starter-template.md](../../course/starter-template.md) §3。
-- G3 修订轮新 P07（问题来源交叉检查与四维选题标准卡）与改动的 P03/P17/P18/P20/P21 需授课教师对 `final-render/` 渲染图做一次视觉抽查。
 - 授课前仍需在教室电脑、实际 PowerPoint 版本和投影设备上做一次现场放映检查；LibreOffice 检查不能替代真实教学设备验收。
+
+### 2.0 批次 1 修订轮（2026-08-20）
+
+- **内容门**：✅ CP1 九项条件、`failure-log.md` 与 starter/project template 已同步；MI 演示把 C02/C16/C31 的证据缺口拆成 H-eff/H-rob/H-faith，不报告未执行实验结果。
+- **90 分钟门**：✅ 五段时间结构不变；P14 仍处于 25-40 分钟教师演示段，40 分钟开始个人实践。
+- **逐页映射门**：✅ 21 页不增页，P14-P16 承担 MI 接口、九项条件和累计工件自查。
+- **PPT 与三重检查**：✅ 21 页正式 PPTX 已重建；21/21 notes 含来源块，布局 0 越界，OOXML 验证通过，LibreOffice 重开导出 21 页并完成全页与高风险页视觉检查。
+
+### 封面与收束修订轮（2026-08-20）
+
+- **内容门**：✅ 课次目标、九项问题门条件和 MI baseline 接口不变；只重组封面识别信息和收束层级。
+- **90 分钟门**：✅ 原 78-90 分钟段拆为 P20 总结、P21 提交/回退、P22 退出/预告，各 4 分钟；总时长仍为 90 分钟。
+- **逐页映射门**：✅ 新 P20 映射结构性问题、可证伪命题、第一性原理和问题门主链；原 P20-P21 顺延为 P21-P22。
+- **PPT 与三重检查**：✅ 22 页正式 PPTX 已重建；22/22 notes 含来源块，布局 0 越界，Office 校验通过，LibreOffice 重开导出 22 页并完成全卷、封面、P20-P22 视觉检查。
+- **剩余风险**：授课前仍需在实际 PowerPoint 与教室投影环境确认字体替换和长课名的最终行宽。
 
 制作顺序与材料状态表见 [lessons/README.md](../README.md)。

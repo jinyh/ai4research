@@ -8,11 +8,16 @@
 | --- | --- | --- |
 | [handout.md](./handout.md) | 现行·学生讲义 | 面向学生、可脱离课堂独立阅读的正式讲义：概念、方法、案例、练习、术语、延伸阅读 |
 | [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v1.6.1（33 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
-| [slides.pptx](./slides.pptx) | 现行·课堂课件（33 页） | 继承交大模板 master/layout 的可编辑正式课件；每页含 `[Sources]` speaker notes |
+| [slides.md](./slides.md) | 现行·逐页母稿 v1.7.0（34 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
+| [slides.pptx](./slides.pptx) | 现行·课堂课件（34 页） | 封面只保留正式课名；退出卡前含独立知识点总结；每页含 `[Sources]` speaker notes |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 规范 | 18 个风险触发关键页的设计契约、模板例外与历史视觉基线 |
 | [reading-notes.md](./reading-notes.md) | 现行·教师文献精读卡集 | 第 1 课 8 篇文献按 AI 辅助阅读协议产出的精读卡，原文定位已完成，待教师复核定稿 |
 | [assets/](./assets/) | 教学资产 | 论文图重绘、概念图等课堂用图 |
+
+## 2026-08-20 课件修订
+
+- 封面标题按课程大纲改为“第1讲 AI 辅助科研导论、OpenCode 工作平台与八阶段研究链路”，并上移至两条横线之间。
+- 新增 P33“本讲知识点总结”，原收束页顺延为 P34；总页数 33→34。
 
 ## 文件关系
 

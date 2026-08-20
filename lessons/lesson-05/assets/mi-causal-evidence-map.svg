@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">SAE 因果有效性证据地图</title>
+  <desc id="desc">中央为待判断主张，左侧是直接与补充支持，右侧是限制与效度威胁，下方是进入实验前仍缺的证据。</desc>
+  <rect width="1600" height="900" fill="#F7F4EE"/>
+  <text x="92" y="88" font-family="Arial, Noto Sans CJK SC, sans-serif" font-size="50" font-weight="700" fill="#7A0C16">证据地图按“判断”组织，而不是按论文排列</text>
+  <text x="94" y="136" font-family="Arial, Noto Sans CJK SC, sans-serif" font-size="23" fill="#4A4A4A">SAE 因果有效性｜课程自绘结构图｜当前综合状态 review</text>
+  <g font-family="Arial, Noto Sans CJK SC, sans-serif">
+    <rect x="492" y="245" width="616" height="190" rx="26" fill="#7A0C16"/>
+    <text x="542" y="303" font-size="28" fill="#FFFFFF">待判断主张</text>
+    <text x="542" y="352" font-size="33" font-weight="700" fill="#FFFFFF">SAE 特征比 PCA 更稀疏地</text>
+    <text x="542" y="395" font-size="33" font-weight="700" fill="#FFFFFF">定位并干预 IOI 行为</text>
+    <rect x="90" y="210" width="330" height="150" rx="20" fill="#DCE9E3" stroke="#2E6B51" stroke-width="3"/>
+    <text x="122" y="257" font-size="27" font-weight="700" fill="#245440">直接支持｜C02</text>
+    <text x="122" y="300" font-size="21" fill="#333333">同模型 / 同任务</text>
+    <text x="122" y="332" font-size="21" fill="#333333">SAE vs PCA patching</text>
+    <rect x="90" y="405" width="330" height="150" rx="20" fill="#E8EFEA" stroke="#64806F" stroke-width="3"/>
+    <text x="122" y="452" font-size="27" font-weight="700" fill="#455E4E">外部支持｜C05</text>
+    <text x="122" y="495" font-size="21" fill="#333333">held-out circuit 评价</text>
+    <text x="122" y="527" font-size="21" fill="#333333">不同任务 / 模型</text>
+    <rect x="1180" y="210" width="330" height="150" rx="20" fill="#F1E2C8" stroke="#B2761B" stroke-width="3"/>
+    <text x="1212" y="257" font-size="27" font-weight="700" fill="#865811">控制限制｜C16</text>
+    <text x="1212" y="300" font-size="21" fill="#333333">可解释 ≠ 可控制</text>
+    <text x="1212" y="332" font-size="21" fill="#333333">监督 / 随机对照</text>
+    <rect x="1180" y="405" width="330" height="150" rx="20" fill="#E6E3E0" stroke="#67615B" stroke-width="3"/>
+    <text x="1212" y="452" font-size="27" font-weight="700" fill="#504A45">效度威胁｜C31</text>
+    <text x="1212" y="495" font-size="21" fill="#333333">dormant pathway</text>
+    <text x="1212" y="527" font-size="21" fill="#333333">成功 ≠ 自动忠实</text>
+    <line x1="420" y1="285" x2="492" y2="315" stroke="#2E6B51" stroke-width="5" marker-end="url(#arrowGreen)"/>
+    <line x1="420" y1="480" x2="492" y2="390" stroke="#64806F" stroke-width="5" marker-end="url(#arrowGreen)"/>
+    <line x1="1180" y1="285" x2="1108" y2="315" stroke="#B2761B" stroke-width="5" marker-end="url(#arrowGold)"/>
+    <line x1="1180" y1="480" x2="1108" y2="390" stroke="#67615B" stroke-width="5" marker-end="url(#arrowGray)"/>
+    <rect x="300" y="650" width="1000" height="150" rx="24" fill="#FFFFFF" stroke="#7A0C16" stroke-width="3"/>
+    <text x="342" y="700" font-size="28" font-weight="700" fill="#7A0C16">缺失证据｜进入 L7-L9 的实验规格</text>
+    <text x="342" y="744" font-size="22" fill="#333333">同设置复现 · 重构误差敏感性 · 随机/监督字典对照 · held-out 样本</text>
+    <text x="342" y="778" font-size="22" fill="#333333">dormant-pathway 排除 · 预注册停止条件 · 多指标评价（C18）</text>
+  </g>
+  <defs>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2E6B51"/></marker>
+    <marker id="arrowGold" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#B2761B"/></marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#67615B"/></marker>
+  </defs>
+</svg>

@@ -8,10 +8,15 @@
 | --- | --- | --- |
 | [handout.md](./handout.md) | 现行·学生讲义 v0.2.0 | 面向学生、可脱离课堂独立阅读：从模糊 prompt 到任务契约五字段（Context / Permission / Non-goal / 人工审核点 / 失败恢复）、权限分层与人工审核点、Agent 代码人工核验（diff 审查 / 测试先行 / 不外包判断）、修复根因 / 绕过失败 / 污染实验三区分、SWE-bench 视角、贯穿案例（承接第 9 课实验规格的一步）、练习、术语、延伸阅读 |
 | [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.3.0 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v0.3.0（16 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v0.4.0（17 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.1.0 | 10 个风险触发关键页的页面任务、视觉锚点、叙事关系、模板映射与验收条件 |
-| [slides.pptx](./slides.pptx) | 正式·课堂 PPT（16 页） | 继承第 7 课交大正式模板；每页含 `[Sources]` speaker notes；已完成技术、教学、视觉与 LibreOffice 重开检查 |
+| [slides.pptx](./slides.pptx) | 正式·课堂 PPT（17 页） | 封面只保留正式课名；退出卡前含独立知识点总结；每页含 `[Sources]` speaker notes |
 | [assets/agent-task-example/](./assets/agent-task-example/) | 现行·课次本地真实教学工件 | 可核验的 before/after、`generate.diff`、`unittest`、测试输出与越权失败日志；供 P12 演示和无执行环境备用路径使用 |
+
+## 2026-08-20 课件修订
+
+- 封面标题改为“第10讲 AI 辅助编码、调试与受限 Agent 执行”，并上移至两条横线之间。
+- 新增 P16“本讲知识点总结”，原退出卡顺延为 P17；总页数 16→17。
 
 ## 文件关系
 
