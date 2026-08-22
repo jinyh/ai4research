@@ -27,7 +27,7 @@ uv run mkdocs build            # 输出到 web/_build/
 只发布面向学生的内容，**发布清单在 `scripts/link_content.py` 顶部维护**：
 
 - `course/`：`syllabus`、`assessment`、`assignments`、`reading-list`、`resources` 与三份学生项目模板（`starter-template`、`project-template`、`ethics-and-compliance-template`）
-- `lessons/lesson-NN/`：仅 `handout.md`（学生讲义）；已登记的 `assets/` 图形资产（逐文件软链）与课级学生向示例（第 3 课 `source-audit-demo.md`）
+- `lessons/lesson-NN/`：`handout.md`（学生讲义），以及发布清单中逐文件登记的课堂材料包、模板、教学示例、可复现工件和图形资产；不软链整个目录
 
 **不发布**：教师教案 `teaching-plan.md`、逐页母稿 `slides.md`、文献精读卡 `reading-notes.md`、课级 `assets/README.md` 等备课元数据、协作规范（`sync-rules`、`ppt-quality-gates`）、申报底稿、`archive/`、`references/library/`、`AGENTS.md`/`CLAUDE.md`。
 
@@ -47,7 +47,7 @@ uv run mkdocs build            # 输出到 web/_build/
 | `mkdocs.yml` | MkDocs 配置（主题、nav、中文搜索） |
 | `pyproject.toml` | `uv` 管理的依赖（mkdocs、mkdocs-material） |
 | `docs/` | 站点源：手写页面 + 软链接引入的内容 |
-| `docs/index.md`、`docs/teacher.md` | 手写的门户首页与课程介绍 |
+| `docs/index.md`、`docs/teacher.md`、`docs/templates.md` | 手写的门户首页、课程介绍与模板/示例聚合入口 |
 | `docs/course/`、`docs/lessons/` | 软链接内容（由脚本生成，勿手改） |
 | `scripts/link_content.py` | 发布清单与软链接维护脚本 |
 | `_build/` | `mkdocs build` 输出（.gitignore 忽略） |

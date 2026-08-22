@@ -6,7 +6,7 @@
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生讲义 v0.2.0 | 面向学生、可脱离课堂独立阅读：baseline 选择与公平性、实验规格七字段、可复现最小集合、随机种子与方差、ACM Badging 自查视角、starter→project 模板迁移、判断门提交清单（对齐 assignments.md Checkpoint 2 之 8 项）、练习、术语、延伸阅读 |
+| [handout.md](./handout.md) | 现行·学生讲义 v0.2.1 | 面向学生、可脱离课堂独立阅读：baseline 选择与公平性、实验规格七字段、可复现最小集合、随机种子与方差、ACM Badging 自查视角、starter→project 模板迁移、判断门提交清单（对齐 assignments.md Checkpoint 2 之 8 项）、练习、术语、延伸阅读 |
 | [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.4.0 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
 | [slides.md](./slides.md) | 现行·逐页母稿 v0.4.0（21 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.1.0 | 12 个风险触发关键页的四字段契约、模板例外与验收约束 |
@@ -19,6 +19,12 @@
 - 21/21 notes 含来源块，布局 0 越界，Office 校验与 LibreOffice 重开通过；封面、P20-P21 已做视觉检查。
 
 ## 文件关系
+
+### 学生入口呈现增强轮（2026-08-22）
+
+- 门 1 与内容门已复核通过：只把复现工件目录入口改为具体 `README.md` 链接，判断门条件、案例事实和来源边界不变。
+- 90 分钟教学门、逐页映射门、PPT 制作与三重检查不受影响，沿用下方既有通过记录；本轮不修改 `teaching-plan.md`、`slides.md` 或 `slides.pptx`。
+- 待延后项：无；复现工件在具体授课设备上的运行结果仍由助教按审阅协议记录。
 
 - **三件套（口径唯一）**：`handout.md`（教什么）↔ `teaching-plan.md`（怎么教）↔ `slides.md`（逐页屏显）。讲义是内容源，教案不替代讲义，slides 不自造事实。
 - 承接第 7 课机制假设与实验规格草图：本课把第 7 课的"假设—指标—实验—可能结论映射"和变量清单草案补全为七字段完整规格，把 J1 研究判断补出 J2。

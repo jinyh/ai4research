@@ -1,10 +1,11 @@
 ---
-版本：v0.2.0
-最后更新：2026-08-06
+版本：v0.2.1
+最后更新：2026-08-22
 适用课次：第 10 课
 文档类型：学生正式讲义
 状态：gates 1-4 通过；课堂最小闭环、备用路径与课次真实工件已对齐
 变更记录：
+- v0.2.1 (2026-08-22): 补充受限 Agent 任务契约与越权失败记录的学生可点击入口；仅增强材料呈现，不改变课堂闭环、案例事实与 90 分钟安排
 - v0.2.0 (2026-08-07): 将课堂负荷收缩为五步最小闭环；无法运行 Agent 时以预置 diff/test/failure-log 完成纸面审查；新增可核验课次工件路径，统一写入 agent-tasks/ 与 experiments/*/agent-traces/
 - v0.1.0 (2026-08-06): 从零起草；定位阶段七"原型验证"中的受限 Agent 执行；承接第 9 课判断门（baseline+实验规格已过门，实验规格中"哪些步骤拟用 Agent、哪些步骤必须人工"为本课直接输入）；为第 11 课实验自动化循环铺垫；含任务契约五字段、权限分层与人工审核点、Agent 代码人工核验、修复根因/绕过失败/污染实验三区分；用真实可核验来源（Russell & Norvig 2020 Ch 2、Yao et al. ReAct ICLR 2023、Amershi et al. CHI 2019、SWE-bench ICLR 2024）；本课非正式提交门
 ---
@@ -236,7 +237,7 @@ Agent 修改 `generate_summary()`，使阅读卡路径强制调用字段约束�
 - 失败记录：`experiments/exp01/agent-traces/task-01-failure-log.md`（含越权请求与拒绝）；
 - AI 使用记录：`ai-usage-log.md` 增加一条——工具/模型、用途、Context、输出用途、人工核验方式、问题。
 
-课堂最低负荷固定为五步：（1）从实验规格选一个受限步骤；（2）写任务契约与权限边界；（3）核对一份真实执行或课前预置 diff；（4）记录一条验证证据和一条失败/越权；（5）开始一条 AI 使用记录。环境就绪时可执行 Agent 与测试；环境故障时使用本课 `assets/agent-task-example/` 中的预置 diff、真实测试输出与失败日志做纸面审查。两条路径的最小产出相同，均回写 `agent-tasks/` 与 `experiments/<experiment-id>/agent-traces/`。
+课堂最低负荷固定为五步：（1）从实验规格选一个受限步骤；（2）写任务契约与权限边界；（3）核对一份真实执行或课前预置 diff；（4）记录一条验证证据和一条失败/越权；（5）开始一条 AI 使用记录。环境就绪时可执行 Agent 与测试；环境故障时使用本课的[受限 Agent 任务契约](./assets/agent-task-example/task-01.md)、预置 diff、真实测试输出与[越权失败记录](./assets/agent-task-example/failure-log.md)做纸面审查。两条路径的最小产出相同，均回写 `agent-tasks/` 与 `experiments/<experiment-id>/agent-traces/`。
 
 ---
 
@@ -334,6 +335,7 @@ Agent 修改 `generate_summary()`，使阅读卡路径强制调用字段约束�
 - [项目里程碑与研究门](../../course/assignments.md)（第 10 课非正式提交门）
 - [考核方案](../../course/assessment.md)（学术规范红线）
 - [期末项目完整模板](../../course/project-template.md)（任务契约写入 `agent-tasks/`、diff 与日志写入 `experiments/`）
+- [受限 Agent 任务契约](./assets/agent-task-example/task-01.md)与[越权失败记录](./assets/agent-task-example/failure-log.md)（无执行环境时的纸面审查入口）
 
 正式书目（见 [reading-list.md](../../course/reading-list.md) 第 10 课）：
 

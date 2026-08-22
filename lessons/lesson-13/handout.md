@@ -1,10 +1,11 @@
 ---
-版本：v0.1.1
-最后更新：2026-08-06
+版本：v0.1.2
+最后更新：2026-08-22
 适用课次：第 13 课
 文档类型：学生正式讲义
 状态：现行；内容门与验证门口径已复核
 变更记录：
+- v0.1.2 (2026-08-22): 补齐评价报告模板与虚构教学样例的正文可点击入口，兑现 v0.1.1 的发布声明；不改变验证门条件、案例事实与 90 分钟安排
 - v0.1.1 (2026-08-07): 撤销“至少 3 次”的普适硬门槛，回归 Checkpoint 3 的“至少一次可重复评价或等价依据”；增加评价报告模板与虚构样例入口。
 - v0.1.0 (2026-08-06): 从零起草；定位阶段七"原型验证成案+评价"，本课=验证门；承接第 10-12 课（受限 Agent/实验自动化/个人 Agent Workflow 设计）；含工作流评价、结果分析（正向与负向均记录）、失败审计（失败不选择性删除）、验证门提交清单（逐项对齐 assignments.md Checkpoint 3 之 10 项）；用真实可核验示例（Sculley et al. 2015 技术债、Bouthillier et al. 2021 方差与比较协议、Breck et al. 2017 ML Test Score、MLAgentBench 失败轨迹）；为第 14 课论文式写作铺垫
 ---
@@ -431,6 +432,8 @@ project/
 - [期末项目完整模板](../../course/project-template.md)（§6 Agent Workflow、§8 评价报告、§10 伦理与合规，验证门材料骨架）
 - [项目里程碑与研究门](../../course/assignments.md)（验证门权威条件 Checkpoint 3）
 - [考核方案](../../course/assessment.md)（"原型与 Agent Workflow 实践"维度，25%）
+- [评价报告模板](./evaluation-report-template.md)（学生写入个人项目 `evaluation-report.md` 的七段结构）
+- [评价报告虚构教学样例](./evaluation-report-example.md)（用于识别结果映射、负向结果与失败审计；不作为实证结果）
 
 正式书目（见 [reading-list.md](../../course/reading-list.md) 第 13 课）：
 

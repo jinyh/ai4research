@@ -1,10 +1,11 @@
 ---
-版本：v0.2.0
-最后更新：2026-08-06
+版本：v0.2.1
+最后更新：2026-08-22
 适用课次：第 9 课
 文档类型：学生正式讲义
 状态：gates 1-4 通过；判断门条件、40-60 分钟持续实践与虚构/真实工件边界已对齐
 变更记录：
+- v0.2.1 (2026-08-22): 将可复现实跑对象改为学生可直接打开的 README 入口；仅增强材料呈现，不改变判断门条件、案例事实与 90 分钟安排
 - v0.2.0 (2026-08-07): 撤销“所有关键比较至少 3 次”和“失败预案必须覆盖三类”的课程自设硬门；改为根据主张强度预先说明重复计划，并为当前最大风险配一条可执行预案；恢复 40-60 分钟持续实践
 - v0.1.0 (2026-08-06): 从零起草；定位阶段六"研究判断成案"与阶段七"原型验证起始"；承接第 7 课机制假设+实验规格草图与第 8 课同伴反馈；含 baseline 选择与公平性、实验规格完善、可复现性、项目模板迁移、判断门提交清单（逐项对齐 assignments.md Checkpoint 2）；用真实可核验示例（Wilson et al. 2017、Pineau et al. 2021、ACM Badging、Bouthillier et al. 2021、MLCommons）；为第 10 课受限 Agent 铺垫
 ---
@@ -190,7 +191,7 @@ baseline 不是"任意一个对比组"，而是用来回答"我观察到的方�
 - 要声称方差、稳定性或稳健性时，预先设计足以估计相应不确定性的重复计划和汇总方式；
 - 如果只跑一次，必须写明边界（如时间约束），并把观察标记为待验证，不能写成稳定方法效应。
 
-课程不设统一“至少 3 次”硬门。可核验的最小实跑对象见 [`assets/reproducibility-example/`](./assets/reproducibility-example/)：它用合成输入、实际 `config.json`、`run.py`、`results.json` 和 `run-log.jsonl` 演示确定性等价复现；它不是实证研究结果。
+课程不设统一“至少 3 次”硬门。可核验的最小实跑对象见[可核验复现工件](./assets/reproducibility-example/README.md)：它用合成输入、实际 `config.json`、`run.py`、`results.json` 和 `run-log.jsonl` 演示确定性等价复现；它不是实证研究结果。
 
 > 这与 assessment.md "实验设计与可复现性"维度的要求一致："实验配置、随机种子、环境依赖和运行命令记录完整"和"能说明威胁有效性和可能的混杂因素"。
 
@@ -462,6 +463,7 @@ J2：baseline 选择朴素而非强 baseline。取舍理由：第 8 课同伴反
 - [期末项目完整模板](../../course/project-template.md)（迁移目标，判断门材料骨架）
 - [项目里程碑与研究门](../../course/assignments.md)（判断门权威条件 Checkpoint 2）
 - [考核方案](../../course/assessment.md)（"实验设计与可复现性"维度，30%）
+- [可核验复现工件](./assets/reproducibility-example/README.md)（合成输入与确定性等价复现教学示例）
 
 正式书目（见 [reading-list.md](../../course/reading-list.md) 第 9 课）：
 
