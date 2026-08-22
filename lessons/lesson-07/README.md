@@ -10,7 +10,7 @@
 | [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.5.0 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
 | [slides.md](./slides.md) | 现行·逐页母稿 v0.6.0（17 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
 | [slides.pptx](./slides.pptx) | 现行·正式课堂 PPT（17 页） | 封面与收束修订轮已通过技术、教学与视觉检查 |
-| [keystone-design-spec.md](./keystone-design-spec.md) | 规范 v1.1.0 | 10 个风险触发关键页的设计契约、模板例外与验收记录 |
+| [keystone-design-spec.md](./keystone-design-spec.md) | 规范 v1.1.1 | 10 个风险触发关键页的设计契约、模板例外与验收记录 |
 
 ## 封面与收束修订轮（2026-08-20）
 

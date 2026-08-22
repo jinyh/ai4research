@@ -1,10 +1,10 @@
 # 智能科研方法
 
-最后更新：2026-07-29
+最后更新：2026-08-22
 
 面向 CS/AI 研究生的 32 学时研究生课程。课程主线是八阶段研究链路驱动的通用科研工作流，科研伦理与负责任 AI 贯穿全过程，Agent Workflow 与 ML 实验自动化作为项目实践中的强化模块。
 
-课程已经批准，当前进入逐课备课、讲义与课件制作、课堂活动设计和考核工具完善阶段。
+课程已经批准。16 课现行材料和可编辑课堂 PPT 已齐备，当前进入课程 2.0 后续批次、教师与博士助教复核、授课环境检查及正式交付准备阶段；详细状态以 [lessons/README.md](../lessons/README.md) 为准。
 
 正式教学材料与开课评审试讲材料分开管理。每次课应分别形成学生正式讲义、教师教案、正式课堂 PPT 和课堂活动材料；名称含 `trial-lecture` 或“试讲”的文件只用于评审与历史追踪，不能替代正式授课材料。具体体例见 [lessons/README.md](../lessons/README.md)。
 
@@ -66,8 +66,7 @@ OpenCode 从第 1 课起作为主要课堂工作平台。课程通过现成 Agen
 ## 文件说明
 
 - [syllabus.md](./syllabus.md)：16 次课教学安排（含八阶段研究链路阶段标注）
-- [course-proposal.md](./course-proposal.md)：新开课立项说明草案
-- [application-form-draft.md](./application-form-draft.md)：对照 SJTU 研究生课程开设申请表的中英文填报草案
+- [application-form-draft.md](./application-form-draft.md)：已批准课程的申请表口径底稿；行政字段仍须以原件和学院要求为准
 - [reference-analysis.md](./reference-analysis.md)：`references/` 资料、培养方案和外部参考的提炼依据（含方法论框架选择依据）
 - [assessment.md](./assessment.md)：考核方式、评分标准和验收条件（含门条件）
 - [assignments.md](./assignments.md)：项目里程碑与四次阶段性交付（含研究门条件）
@@ -76,9 +75,6 @@ OpenCode 从第 1 课起作为主要课堂工作平台。课程通过现成 Agen
 - [ethics-and-compliance-template.md](./ethics-and-compliance-template.md)：科研伦理与合规说明模板
 - [resources.md](./resources.md)：工具、案例和参考资源索引（含方法论参考）
 - [reading-list.md](./reading-list.md)：16 次课正式书目与课堂案例（每课 3-4 项，含经典选章和 AI 辅助阅读协议）
-- [第 1 课正式讲义](../lessons/lesson-01/handout.md)：面向学生、可独立阅读的第一讲课程内容
-- [第 1 课教师教案](../lessons/lesson-01/teaching-plan.md)：90 分钟课堂组织、演示和形成性评价
-- [逐课教学材料规则](../lessons/README.md)：正式讲义、教师教案、课堂 PPT、活动材料与试讲材料的职责边界
+- [逐课教学材料与状态](../lessons/README.md)：16 课正式讲义、教师教案、课堂 PPT、活动材料的入口和状态
 - [试讲材料归档](../archive/trial-lecture/README.md)：全部开课评审试讲版本、逐页大纲、内容源和判断记录
-- [第 1 课内容入口](../lessons/lesson-01/README.md)：第 1 课全部材料的导航、文件关系与阅读路径
-- [第 2 课内容入口](../lessons/lesson-02/README.md)：第 2 课全部材料的导航、文件关系与阅读路径
+- [历史立项依据](../archive/superseded-docs/course-proposal-v1.3.0.md)：课程获批前的立项说明，不作为现行课程权威源

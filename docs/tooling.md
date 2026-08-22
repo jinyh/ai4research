@@ -6,7 +6,7 @@
 
 | 能力 | 建议状态 | 用途 |
 | --- | --- | --- |
-| Zotero | 已配置 | 检索本地文献库、导出引用、核对全文；涉及本地文献时优先于联网。Claude Code 与 OpenCode 均在用户级配置 zotero-mcp（本地模式）；依赖 Zotero 应用运行 |
+| Zotero | 可选、推荐 | 检索本地文献库、导出引用、核对全文；涉及本地文献时优先于联网。具体客户端连接属于用户级环境，不作为仓库事实 |
 | GitHub | 按需 | 只有需要 issue、PR 或远端仓库操作时启用；连接失败的实例应及时修复或禁用 |
 | Context7 | 非项目依赖 | 核对易变的软件文档；不参与课程事实来源管理 |
 | PPT/Office 本地工具 | 必需 | 渲染、重新打开和视觉检查；不需要 MCP |
@@ -25,9 +25,9 @@
 - OpenCode：`.opencode/agent/prepare-course-lesson.md`（薄封装，运行时读 SKILL.md）
 - 单一事实源：`.agents/skills/prepare-course-lesson/SKILL.md`
 
-截至 2026-08-05 的验证状态：Codex 已从项目 `.agents/skills/` 发现该 skill；`opencode agent list` 已列出 `prepare-course-lesson (subagent)`；Claude Code 的单向软链接已解析到同一 `SKILL.md`，实际触发行为仍应在相关备课任务中单独做 smoke test。该 skill 负责内容门、90 分钟教学门、逐页映射门、PPT 制作、三重检查与里程碑归档。当前备课流程见 [lessons/README.md](../lessons/README.md) 的"制作顺序"段。
+该 skill 负责内容门、90 分钟教学门、逐页映射门、PPT 制作、三重检查与里程碑归档。发现与运行状态应在实际使用的客户端中做 smoke test，不在本文件固化某次个人环境结果。当前备课流程见 [lessons/README.md](../lessons/README.md) 的“制作顺序”段。
 
-`research-question-to-search` 检索流程 skill 于 2026-08-09 按同一三端模式注册（建设计划见 [research-question-to-search-skill-plan.md](./research-question-to-search-skill-plan.md)）：
+`research-question-to-search` 检索流程 skill 按同一三端模式注册；历史建设与 forward test 记录已移入[被替代文档归档](../archive/superseded-docs/research-question-to-search-skill-plan-v1.1.2.md)：
 
 - 单一事实源：`.agents/skills/research-question-to-search/SKILL.md`
 - Claude Code：`.claude/skills/research-question-to-search`（软链接）

@@ -33,7 +33,7 @@
 对应落地文件：
 
 - [application-form-draft.md](./application-form-draft.md)：直接按申请表字段组织。
-- [course-proposal.md](./course-proposal.md)：用于论证开课必要性和培养目标关系。
+- [历史课程提案](../archive/superseded-docs/course-proposal-v1.3.0.md)：保留课程获批前的开课必要性与培养目标论证，仅供追溯；现行口径以课程大纲和申请表底稿为准。
 - [syllabus.md](./syllabus.md)：用于细化 16 次课安排。
 - [assessment.md](./assessment.md)：用于支撑课程要求和评分标准。
 

@@ -2,16 +2,16 @@
 
 > 同行评审、论证门预检与修改。本文件是第 15 课所有材料的导航入口，说明各文件角色、关系与阅读路径。门控流程见 [prepare-course-lesson skill](../../.agents/skills/prepare-course-lesson/SKILL.md)。
 
-> 本轮现行版本：`handout.md` v0.1.2、`teaching-plan.md` v0.2.4、`slides.md` v0.2.4、`keystone-design-spec.md` v1.0.1；学生工件只使用 `peer-review.md` 与 `revision-plan.md`。
+> 本轮现行版本：`handout.md` v0.1.2、`teaching-plan.md` v0.3.0、`slides.md` v0.3.0、`keystone-design-spec.md` v1.0.2；学生工件只使用 `peer-review.md` 与 `revision-plan.md`。
 
 ## 文件清单
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
 | [handout.md](./handout.md) | 现行·学生讲义 v0.1.2 | 面向学生、可脱离课堂独立阅读：同行评审 rubric（论证链/证据充分/局限披露/可复现/伦理）、评审校准、同伴交叉评审三问、评审者礼仪与边界（指向工作不指向人、不替代作者判断、不给排名）、四类回应（采纳/澄清/补证/保留异议）、回应记录表六字段、修改优先级三级（致命/重要/表达）、论证门预检清单、AI 只作评审线索、练习、术语、延伸阅读 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.2.4 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.3.0 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
 | [slides.md](./slides.md) | 现行·逐页母稿 v0.3.0（17 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
-| [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.0.1 | 14 个关键页四字段契约、虚构材料标注和模板许可 |
+| [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.0.2 | 14 个关键页四字段契约、虚构材料标注和模板许可 |
 | [peer-review-template.md](./peer-review-template.md) | 现行·`peer-review.md` 模板 | 同伴三问、五维评审和作者六字段回应 |
 | [revision-plan-template.md](./revision-plan-template.md) | 现行·`revision-plan.md` 模板 | 三级优先级、影响工件、时限与 Checkpoint 4 预检 |
 | [slides.pptx](./slides.pptx) | 现行·正式课堂 PPT（17 页） | 封面只保留课程大纲正式课名；主流程收束前含独立知识点总结；主节奏 14 页 + 备用 3 页 |

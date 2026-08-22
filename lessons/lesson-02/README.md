@@ -7,10 +7,10 @@
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
 | [handout.md](./handout.md) | 现行·学生讲义 v1.3.1 | 面向学生、可脱离课堂独立阅读的正式讲义：概念、方法、案例、练习、术语、来源入口 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.4.0 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.5.0 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
 | [slides.md](./slides.md) | 现行·逐页母稿 v1.5.0（30 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
 | [slides.pptx](./slides.pptx) | 现行·正式课堂 PPT（30 页） | 封面只保留正式课名；退出卡前含独立知识点总结；逐页含 `[Sources]` speaker notes |
-| [keystone-design-spec.md](./keystone-design-spec.md) | 规范 v1.1.0 | 13 个风险触发关键页的设计契约、模板例外与制作约束 |
+| [keystone-design-spec.md](./keystone-design-spec.md) | 规范 v1.1.1 | 13 个风险触发关键页的设计契约、模板例外与制作约束 |
 | [classroom-pack.md](./classroom-pack.md) | 现行·课堂材料包 v1.0.0 | 虚构演示项目、可填写模板、同伴互查和无模型备用路径 |
 
 ## 2026-08-20 课件修订

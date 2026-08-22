@@ -7,7 +7,7 @@
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
 | [handout.md](./handout.md) | 现行·学生讲义 v0.1.2 | 面向学生、可脱离课堂独立阅读：论文式写作结构（IMRaD/可追溯叙事、基本论证单元、贡献列表、主题位重音位）、证据回写（结论追踪表、不选择性删除失败、从验证门材料到论文段）、AI 使用披露（七字段、AI 输出只作线索）、引用与署名规范、贯穿案例动作链、论证门条件预演（对齐 assignments.md Checkpoint 4 之 10 项）、练习、术语、延伸阅读 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.2.3 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.3.0 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
 | [slides.md](./slides.md) | 现行·逐页母稿 v0.3.0（18 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.0.1 | 视觉基线、叙事弧、P01/P08/P11/P13/P14/P16 四字段契约与验收边界 |
 | [slides.pptx](./slides.pptx) | 正式课堂 PPT（18 页） | 封面只保留课程大纲正式课名；第 15 课预告前含独立知识点总结；逐页 speaker notes 含 `[Sources]` |

@@ -7,7 +7,7 @@
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
 | [handout.md](./handout.md) | 现行·学生正式讲义 v0.1.2 | 面向学生、可脱离课堂独立阅读：工作流评价（不是功能清单、评价维度、可重复评价、实际影响）、结果分析（映射回假设、正向与负向均记录、证据充分性、威胁有效性）、失败审计（失败不选择性删除、六类根因骨架、失败日志、人工审核记录）、贯穿案例动作链、验证门提交清单（对齐 assignments.md Checkpoint 3 之 10 项）、练习、术语、延伸阅读 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.1.2 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.2.0 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
 | [slides.md](./slides.md) | 现行·逐页母稿 v0.3.0（20 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.0.2 | 10 个风险触发关键页的页面任务、视觉锚点、叙事关系、模板映射与验收条件 |
 | [evaluation-report-template.md](./evaluation-report-template.md) | 现行·评价报告模板 | 学生直接写入个人项目 `evaluation-report.md` 的七段结构 |

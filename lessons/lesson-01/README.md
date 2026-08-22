@@ -10,7 +10,7 @@
 | [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
 | [slides.md](./slides.md) | 现行·逐页母稿 v1.7.0（34 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
 | [slides.pptx](./slides.pptx) | 现行·课堂课件（34 页） | 封面只保留正式课名；退出卡前含独立知识点总结；每页含 `[Sources]` speaker notes |
-| [keystone-design-spec.md](./keystone-design-spec.md) | 规范 | 18 个风险触发关键页的设计契约、模板例外与历史视觉基线 |
+| [keystone-design-spec.md](./keystone-design-spec.md) | 规范 v1.6.2 | 18 个风险触发关键页的设计契约、模板例外与历史视觉基线 |
 | [reading-notes.md](./reading-notes.md) | 现行·教师文献精读卡集 | 第 1 课 8 篇文献按 AI 辅助阅读协议产出的精读卡，原文定位已完成，待教师复核定稿 |
 | [assets/](./assets/) | 教学资产 | 论文图重绘、概念图等课堂用图 |
 
@@ -25,7 +25,7 @@
 - `keystone-design-spec.md` → 指导 `slides.md` 关键页的视觉设计契约。
 - `reading-notes.md` → 为 `handout.md` 提供文献来源与精读卡。
 - 2026-07-07 的 `introduction.md` / `lecture-notes.md` 已移到 [被替代文稿归档](../../archive/superseded-docs/lesson-01/)，现行制作不以之为母版。
-- 旧 39 页 PPTX 已移到 [PPT 试制里程碑](../../archive/ppt-experiments/lesson-01/2026-07-30-pre-gate-39-page-baseline/decision-record.md)。现行 [slides.pptx](./slides.pptx) 与 33 页母稿一致。
+- 旧 39 页 PPTX 已移到 [PPT 试制里程碑](../../archive/ppt-experiments/lesson-01/2026-07-30-pre-gate-39-page-baseline/decision-record.md)。现行 [slides.pptx](./slides.pptx) 与 34 页母稿一致。
 
 ## 关联课程文档
 

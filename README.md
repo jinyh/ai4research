@@ -7,8 +7,8 @@
 - **项目规则**：[`AGENTS.md`](./AGENTS.md)（`CLAUDE.md` 单向软链接到它）。所有协作者先读此文件。
 - **课程大纲权威源**：[`course/syllabus.md`](./course/syllabus.md)
 - **逐课备课工作区**：[`lessons/README.md`](./lessons/README.md)（含材料状态表与制作顺序）
-- **备课规划与复盘**：[`lessons/备课规划.md`](./lessons/备课规划.md)、[`lessons/备课教训.md`](./lessons/备课教训.md)
-- **第 1 课内容入口**：[`lessons/lesson-01/README.md`](./lessons/lesson-01/README.md)（第 1 课全部文件的导航、关系与阅读路径）
+- **备课规划与教师复核**：[`lessons/备课规划.md`](./lessons/备课规划.md)、[`lessons/teacher-review-ledger.md`](./lessons/teacher-review-ledger.md)
+- **课程 2.0 执行计划**：[`docs/course-2.0-plan.md`](./docs/course-2.0-plan.md)
 
 ## 目录职责
 
@@ -20,7 +20,7 @@
 | `references/notes/` | 参考资料分析、选目和核验记录 | 跟踪 |
 | `references/library/` | 论文、书籍、外部 PPT、模板等原始资料 | 默认不跟踪 |
 | `archive/` | 试讲、被替代文稿、有决策价值的 PPT 试制里程碑 | 试讲内容完整跟踪；其他历史材料选择性跟踪 |
-| `docs/` | 协作规范、工具说明、提案 | 跟踪 |
+| `docs/` | 现行协作规范、工具说明、执行计划与审阅协议 | 跟踪 |
 | `scripts/` | 只读验证脚本 | 跟踪 |
 | `web/` | 课程门户网站（MkDocs Material），内容以软链接从 `course/` 与 `lessons/` 引入 | 跟踪配置与手写页面；忽略 `.venv/`、`_build/` |
 | `.work/` | 渲染、解包、layout、QA、临时脚本环境和缓存 | 不跟踪 |
@@ -36,8 +36,9 @@
 
 ## 当前状态
 
-- 第 1、2 课已有讲义、教案、逐页内容母稿；PPT 待按内容门、90 分钟教学门、逐页映射门通过后定稿。
-- 第 3-16 课待制作。
-- 正式提交只有四次：第 6、9、13、16 课后的研究门材料。
+- 全 16 课均已有讲义、教案、逐页母稿和可编辑课堂 PPT，共 332 页；现有 PPT 已完成结构、重开与渲染检查。
+- 课程 2.0 已完成批次 0（L3）与批次 1（L4-L6），批次 2-4 仍待推进。
+- L16 讲义仍为待教师复核草稿，整课正式内容门和全课程发布里程碑尚未通过；`deliverables/` 因此暂不形成正式学期交付。
+- 正式提交仍只有四次：第 6、9、13、16 课后的研究门材料。
 
 详见 [lessons/README.md](./lessons/README.md)。

@@ -2,7 +2,7 @@
 
 最后更新：2026-08-22
 
-当前正式课件制作与可恢复状态见 [PPT 制作进度](./ppt-production-progress.md)。
+课程 2.0 的批次状态见 [改版计划](../docs/course-2.0-plan.md)；逐课内容复核与教师专属决定见 [教师复核台账](./teacher-review-ledger.md)。旧的 PPT 制作流水账已移入[被替代文档归档](../archive/superseded-docs/ppt-production-progress-v0.9.0.md)。
 
 `lessons/` 用于制作课程正式教学材料。试讲材料与正式授课材料必须分开管理。
 

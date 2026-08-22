@@ -6,10 +6,10 @@
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生正式讲义 v0.1.2 | 面向学生、可脱离课堂独立阅读的正式讲义：八要素深度分析、个人工作流设计、评价机制、练习、术语、延伸阅读 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.2.3 | gate1 定位、gate3 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
+| [handout.md](./handout.md) | 现行·学生正式讲义 v0.2.0 | 面向学生、可脱离课堂独立阅读的正式讲义：八要素深度分析、个人工作流设计、评价机制、练习、术语、延伸阅读 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.3.0 | gate1 定位、gate3 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
 | [slides.md](./slides.md) | 现行·逐页母稿 v0.3.0（21 页） | gate4 逐页六段：屏显内容、视觉结构、教师讲述备注、互动、建议时间、来源与事实边界；按权威 8 段逐时间表 re-fit |
-| [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.0.1 | 14 个关键页四字段契约、模板偏离许可与验收边界 |
+| [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.0.2 | 14 个关键页四字段契约、模板偏离许可与验收边界 |
 | [slides.pptx](./slides.pptx) | 现行·正式课堂 PPT（21 页） | 封面只保留正式课名；退出卡前含独立知识点总结；21 页均含 `[Sources]` speaker notes |
 
 ## 2026-08-20 课件修订

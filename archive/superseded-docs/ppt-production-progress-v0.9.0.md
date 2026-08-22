@@ -20,14 +20,14 @@
 
 ### 第 5 课
 
-- 21 页正式 [slides.pptx](./lesson-05/slides.pptx) 已于 2026-08-20 按 v1.2.0 母稿完成封面与收束修订：P01 只保留正式课名并置于两横线之间，P20 为独立总结，P21 为退出卡与第 6 课预告。
+- 21 页正式 [slides.pptx](../../lessons/lesson-05/slides.pptx) 已于 2026-08-20 按 v1.2.0 母稿完成封面与收束修订：P01 只保留正式课名并置于两横线之间，P20 为独立总结，P21 为退出卡与第 6 课预告。
 - 已通过：21/21 `[Sources]` notes、模板映射与保真、`outOfBounds = 0`、Office 校验、LibreOffice 重开导出 21 页、全卷与 P01/P20/P21 高风险页视觉检查。
 - P13-P16 使用 C02/C05/C16/C18/C31 公开证据，依次呈现因果证据矩阵、四类证据角色、受限 mini review 与 F-MI-01 回写；虚构案例保留给学生实践。
 - 已回写 `README.md`、`teaching-plan.md`、`slides.md`、关键页规格和 MI 教学资产。
 
 ### 第 6 课
 
-- 22 页正式 [slides.pptx](./lesson-06/slides.pptx) 已于 2026-08-20 按 v1.2.0 母稿完成封面与收束修订：P01 只保留正式课名并置于两横线之间，P20/P21/P22 依次为总结、提交/回退、退出/预告。
+- 22 页正式 [slides.pptx](../../lessons/lesson-06/slides.pptx) 已于 2026-08-20 按 v1.2.0 母稿完成封面与收束修订：P01 只保留正式课名并置于两横线之间，P20/P21/P22 依次为总结、提交/回退、退出/预告。
 - 已通过：22/22 `[Sources]` notes、模板映射与保真、`outOfBounds = 0`、Office 校验、LibreOffice 重开导出 22 页、全卷与 P01/P20-P22 高风险页视觉检查。
 - P14 固定 H-eff/H-rob/H-faith 到 L7-L9 baseline 接口；P15 呈现问题门九项条件；P16 区分累计工件、第 8 项真实失败记录和第 9 项 AI 记录。
 - 已回写 `README.md`、`teaching-plan.md`、`slides.md`、关键页规格和 MI 教学资产。
@@ -40,27 +40,27 @@
 
 ### 第 3 课
 
-- 21 页正式 [slides.pptx](./lesson-03/slides.pptx) 已制作，并于 2026-08-20 按 v0.7.0 母稿完成封面与收束拆页：P01 只保留课名并置于模板两条横线之间，P20 为独立知识点总结，P21 为退出卡与第 4 课预告。
+- 21 页正式 [slides.pptx](../../lessons/lesson-03/slides.pptx) 已制作，并于 2026-08-20 按 v0.7.0 母稿完成封面与收束拆页：P01 只保留课名并置于模板两条横线之间，P20 为独立知识点总结，P21 为退出卡与第 4 课预告。
 - 已通过：21/21 `[Sources]` notes、模板版式继承、`outOfBounds = 0`、Office 校验、LibreOffice 重开 21 页、全卷 contact sheet 和 P01/P20/P21 高风险页视觉检查；台账位于 `.work/ppt/lesson-03/2026-08-20-cover-summary-revision/`。
-- 已建立 [keystone-design-spec.md](./lesson-03/keystone-design-spec.md)，并回写第 3 课三件套、门控状态和总导航；批次 0 剩范式冻结 v1 与 tag 待用户验收。
+- 已建立 [keystone-design-spec.md](../../lessons/lesson-03/keystone-design-spec.md)，并回写第 3 课三件套、门控状态和总导航；批次 0 剩范式冻结 v1 与 tag 待用户验收。
 
 ### 第 4 课
 
-- 18 页正式 [slides.pptx](./lesson-04/slides.pptx) 已于 2026-08-20 按 v0.8.0 母稿完成封面与收束修订：P01 只保留正式课名并置于两横线之间，P17 为独立总结，P18 为退出卡与第 5 课预告。
+- 18 页正式 [slides.pptx](../../lessons/lesson-04/slides.pptx) 已于 2026-08-20 按 v0.8.0 母稿完成封面与收束修订：P01 只保留正式课名并置于两横线之间，P17 为独立总结，P18 为退出卡与第 5 课预告。
 - 已通过：18/18 `[Sources]` notes、模板 master/layout 与保真、`outOfBounds = 0`、Office 校验、LibreOffice 重开导出 18 页、全卷与 P01/P17/P18 高风险页视觉检查。
 - P11 保留 Keshav 原文/课程构造 AI 输出校准；P12-P13 使用 C02/C16/C31 公开论文做证据阶梯与 `review` 判断；P15 保留 27 分钟持续项目实践。
 - 已回写 `README.md`、`teaching-plan.md`、`slides.md`、关键页规格和 MI 教学资产。
 
 ### 第 7 课
 
-- 17 页正式 [slides.pptx](./lesson-07/slides.pptx) 已完成封面与收束修订：P16 总结，P17 退出/预告。
+- 17 页正式 [slides.pptx](../../lessons/lesson-07/slides.pptx) 已完成封面与收束修订：P16 总结，P17 退出/预告。
 - 已通过：17/17 `[Sources]` notes、模板映射与保真、空 placeholder 0、`outOfBounds = 0`、Office 校验、LibreOffice 重开导出 17 页、全页和高风险页视觉检查。
 - P14 保留 25 分钟最小闭环（`1 主 + 1 个可区分替代`）；P15 对齐 `assignments.md` 五个权威反馈维度；P16 明确第 8-9 课迁移路径。
 - 已回写 `README.md`、`teaching-plan.md`、`slides.md`、关键页规格、总导航和 QA 台账。
 
 ## 全课程封面与收束专项审计（2026-08-20）
 
-审计依据为 [正式课堂 PPT 设计准则](./ppt-design-criteria.md) v1.4.0。已对第 1-16 讲全部正式 PPT 检查 `slides.md`、PPT 文本、封面实际渲染和收束页实际渲染，并按下表完成实施。
+审计依据为 [正式课堂 PPT 设计准则](../../lessons/ppt-design-criteria.md) v1.4.0。已对第 1-16 讲全部正式 PPT 检查 `slides.md`、PPT 文本、封面实际渲染和收束页实际渲染，并按下表完成实施。
 
 初始审计共同结论：
 

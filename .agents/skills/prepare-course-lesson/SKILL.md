@@ -21,7 +21,7 @@ description: 备课门控流程。当用户要制作或修订某课的讲义、�
 
 1. **确认课次目标**：在 `course/syllabus.md` 定位该课的目标与项目产出；在 `course/curriculum.md` 核对八阶段定位；在 `lessons/备课规划.md` 核对当前整改口径。明确该课不得引入的旧口径（见 `course/sync-rules.md`）。
 
-2. **内容门**：对齐 `lessons/lesson-NN/handout.md`（学生讲义）、`teaching-plan.md`（教师教案）、`slides.md`（逐页内容母稿）。三份必须只有一套现行规则、案例与来源口径。通过条件见 `references/material-contracts.md`。
+2. **内容门**：对齐 `lessons/lesson-NN/handout.md`（学生讲义）、`teaching-plan.md`（教师教案）、`slides.md`（逐页内容母稿）。三份必须只有一套现行规则、案例与来源口径。通过条件见仓库根目录的 [`references/material-contracts.md`](../../../references/material-contracts.md)。
 
 3. **90 分钟教学门**：做桌面推演，检查每段时间、第一次学生动手时间、最小课堂产出与备用路径。教师教案须含教学目标、时间分配、课堂活动、演示、形成性评价、课后复盘。
 
@@ -37,7 +37,7 @@ description: 备课门控流程。当用户要制作或修订某课的讲义、�
 
 适用于已通过门控的课次做内容增改（加图、加案例、失败增补、文本清理、配套规范升版同步等，如 2.0 改版轮次）。在核心流程基础上按下列规则执行，并在课次 README 门控表新增"修订轮"登记（保留原门控记录不动）：
 
-- **必须重走**：内容门（按 `references/material-contracts.md` 复核改动范围）；若动 `slides.md`，逐页映射门重走；若重建 `slides.pptx`，三重检查重走。
+- **必须重走**：内容门（按仓库根目录的 [`references/material-contracts.md`](../../../references/material-contracts.md) 复核改动范围）；若动 `slides.md`，逐页映射门重走；若重建 `slides.pptx`，三重检查重走。
 - **降级规则**：学习目标与时间结构不变 → 90 分钟教学门降级为复核（对照既有节奏表核对，不重做桌面推演）；不动 `slides.pptx` → PPT 制作与三重检查登记"未变更，原记录有效"；课次目标不变 → 课次目标门登记"复核通过"。
 - **呈现增强**：handout 独增展示性结构图、出处块或清理表述口吻，且不改变三件套规则、案例与来源口径的，属呈现增强，内容门可带"推迟项清单"通过。
 - **登记要求**：未到位的素材或未完成的改动（如待补的案例线）必须在课次 README 显式登记为"推迟项"，写明内容与补齐时机；不得静默遗漏。
@@ -46,7 +46,7 @@ description: 备课门控流程。当用户要制作或修订某课的讲义、�
 
 - 课程口径：`course/syllabus.md`、`course/curriculum.md`、`course/sync-rules.md`
 - 备课元文档：`lessons/备课规划.md`、`lessons/备课教训.md`、`lessons/README.md`（含材料状态表与制作顺序）
-- 材料契约：`references/material-contracts.md`
+- 材料契约：仓库根目录 [`references/material-contracts.md`](../../../references/material-contracts.md)（唯一契约源）
 - PPT 规则：`course/ppt-quality-gates.md`（质量门）、`lessons/ppt-design-criteria.md`（正式课堂设计准则）
 - 证据标准与安全边界：`AGENTS.md`
 - 正式交付位置：`deliverables/<term>/`
