@@ -1,7 +1,8 @@
 ---
-版本：v2.1.0
-最后更新：2026-08-12
+版本：v2.1.1
+最后更新：2026-08-23
 变更记录：
+- v2.1.1 (2026-08-23): OpenCode 条目补充课程内《OpenCode 最小启动说明》入口；不改变工具示例口径
 - v2.1.0 (2026-08-12): GitHub 项目索引新增"Agent harness 对照项目"小节（Pi Coding Agent、Prime Agent，钉 commit，仅备课参考与自学分析对象，不进工具示例段、不暗示推荐安装）
 - v2.0.0 (2026-08-07): 重定位为面向学生的工具与资源索引；删除申报材料段（已在 application-form-draft.md）、方法论溯源段（已在 reference-analysis.md）、国外同类课程对标段（已在 reference-analysis.md）、Awesome 索引、推荐技术栈、推荐资源类别的课堂要求、备课清单与课堂案例（移至 lessons/备课规划.md）
 - v1.0.0 (2026-07-29): 初版资源索引
@@ -67,7 +68,7 @@
 
 - OpenAI Codex / Codex CLI：<https://openai.com/codex>，<https://github.com/openai/codex>
 - Claude Code 与 Skills：<https://code.claude.com/docs/en/overview>，<https://code.claude.com/docs/en/skills>
-- OpenCode 与 Skills：<https://opencode.ai/docs/>，<https://opencode.ai/docs/skills/>
+- OpenCode 与 Skills：<https://opencode.ai/docs/>，<https://opencode.ai/docs/skills/>；课程内入口：[OpenCode 最小启动说明](./opencode-setup.md)
 - Model Context Protocol：<https://modelcontextprotocol.io/docs/learn/architecture>
 - OpenAI Evals：<https://github.com/openai/evals>
 

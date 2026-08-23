@@ -31,6 +31,8 @@ PUBLISH = {
     "course/assignments.md": "course/assignments.md",
     "course/reading-list.md": "course/reading-list.md",
     "course/resources.md": "course/resources.md",
+    # 课前环境指南（学生可见；课堂零安装口径的课前入口）
+    "course/opencode-setup.md": "course/opencode-setup.md",
     # 学生项目模板（handout 和 assignments 引用，学生需要内容本身）
     "course/starter-template.md": "course/starter-template.md",
     "course/project-template.md": "course/project-template.md",
