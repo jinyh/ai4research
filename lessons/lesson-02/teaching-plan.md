@@ -51,7 +51,7 @@
 - [ ] 准备三个不含真实敏感材料的虚构案例
 - [ ] 准备“过宽权限”和“最小权限”两份演示配置
 - [ ] 演示仓库只含公开或虚构材料，不显示密钥、私人路径或真实账户
-- [ ] 预置 `AGENTS.md`、`agent-permissions.md`、`artifact-tracking.md`、`ethics-and-compliance.md`、`ai-usage-log.md`
+- [ ] 预置 `AGENTS.md`（starter-template 最小模板）、`agent-permissions.md`、`artifact-tracking.md`、`ethics-and-compliance.md`、`ai-usage-log.md`
 - [ ] 准备无模型／无网络时可使用的截图或文本回放
 - [ ] 将 [classroom-pack.md](./classroom-pack.md) 中的案例、模板和离线路径发给学生
 

@@ -47,7 +47,7 @@
 - [x] 按现行 33 页 `slides.md` 制作中文正式 PPT；必要英文只保留课程英文名、论文名、工具名和工件字段
 - [x] 正式 PPT 继承 [交大模版.pptx](../../references/library/template/交大模版.pptx) 的母版、字体与品牌元素，并按设计准则扩展正文构图
 - [x] [OpenCode 最小启动说明](../../course/opencode-setup.md)：安装、启动、模型/后端、项目目录和备用路径
-- [ ] 演示仓库：只含 `AGENTS.md`、问题模板、AI 使用记录和 `notes/`
+- [ ] 演示仓库：只含 `AGENTS.md`（按 starter-template 最小模板）、问题模板、AI 使用记录和 `notes/`
 - [ ] 一次成功演示录屏或截图，防止现场网络/后端故障
 - [ ] 一篇可快速拆解的短论文或论文片段
 - [ ] 八阶段链路图、四门总览图和个人项目时间线
