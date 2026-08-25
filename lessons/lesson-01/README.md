@@ -8,11 +8,21 @@
 | --- | --- | --- |
 | [handout.md](./handout.md) | 现行·学生讲义 | 面向学生、可脱离课堂独立阅读的正式讲义：概念、方法、案例、练习、术语、延伸阅读 |
 | [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v1.8.0（34 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
-| [slides.pptx](./slides.pptx) | 现行·课堂课件（34 页） | 封面只保留正式课名；退出卡前含独立知识点总结；每页含 `[Sources]` speaker notes |
-| [keystone-design-spec.md](./keystone-design-spec.md) | 规范 v1.7.0 | 18 个风险触发关键页的设计契约、模板例外与历史视觉基线 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v1.10.0（30 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
+| [slides.pptx](./slides.pptx) | 现行·课堂课件（30 页） | 封面只保留正式课名；退出卡前含独立知识点总结；每页含 `[Sources]` speaker notes |
+| [keystone-design-spec.md](./keystone-design-spec.md) | 规范 v1.9.0 | 18 个风险触发关键页的设计契约、模板例外与历史视觉基线 |
 | [reading-notes.md](./reading-notes.md) | 现行·教师文献精读卡集 | 第 1 课 8 篇文献按 AI 辅助阅读协议产出的精读卡，原文定位已完成，待教师复核定稿 |
+| [classroom-pack.md](./classroom-pack.md) | 现行·课堂材料包 v1.0.0 | 最小 prompt 可复制版、纸面任务契约、预期 diff 样例、日志空白与纸面验收三项 |
 | [assets/](./assets/) | 教学资产 | 论文图重绘、概念图等课堂用图 |
+
+## 2026-08-25 80→90+ 迭代轮（修订轮·A 批）
+
+- 脚手架与叙事：P30 叙事桥+备用题池上屏显；P31 最小 prompt 块、git diff 提示与五件套自检条；P06 回扣 P03 自我诊断；handout prompt 占位符化、链路草图样例卡、§七·2 口径统一；新建 classroom-pack v1.0.0。
+- 视觉(a)：P33 主链回收式、P34 最小闭环主体、P16 正面对照、P28 五项勾选明确不入屏显；封面回写"第1讲+精炼课名"（判断句移 P03），keystone P01 契约同步、P30 升关键页（19 关键页）。
+- 门控：内容门复核通过；逐页映射门复核（页数不变）；90 分钟教学门降级复核（时间结构不变）；PPT 仅最小编辑（封面/P03/P28/notes），大视觉重构随 B 批重建落地。
+- 推迟项（随视觉精修轮 (b)）：全卷红色审计、四辨识度页型、准则 v1.5.0。
+- B 批减页（34→30）与 PPT 重建已完成（2026-08-25）：旧 P08 并入新 P08（"可检查≠已成立"横条）、旧 P11 移讲义导读、旧 P14 并入新 P09、旧 P21 并入新 P15（回退带）；新 P26 叙事桥+题池、新 P27 最小 prompt+自检条、新 P29 主链回收式、新 P30 最小闭环主体。三重检查：技术（30 页、30/30 `[Sources]`、屏显零分钟数、渲染无重叠裁切）PASS；教学（与母稿 v1.10.0 逐页一致、两段实践与自检条在屏）PASS；视觉（封面第1讲+精炼课名、主链回收落地）PASS。推迟项补：L2 式小字号虚构标记类残留（本课无）与精修轮一并。
+- 注：下方 2026-08-07 门控表为历史快照（33 页口径），现行页数以文件清单与本修订轮记录为准。
 
 ## 2026-08-23 课时修订（修订轮）
 
@@ -34,7 +44,7 @@
 - `keystone-design-spec.md` → 指导 `slides.md` 关键页的视觉设计契约。
 - `reading-notes.md` → 为 `handout.md` 提供文献来源与精读卡。
 - 2026-07-07 的 `introduction.md` / `lecture-notes.md` 已移到 [被替代文稿归档](../../archive/superseded-docs/lesson-01/)，现行制作不以之为母版。
-- 旧 39 页 PPTX 已移到 [PPT 试制里程碑](../../archive/ppt-experiments/lesson-01/2026-07-30-pre-gate-39-page-baseline/decision-record.md)。现行 [slides.pptx](./slides.pptx) 与 34 页母稿一致。
+- 旧 39 页 PPTX 已移到 [PPT 试制里程碑](../../archive/ppt-experiments/lesson-01/2026-07-30-pre-gate-39-page-baseline/decision-record.md)。现行 [slides.pptx](./slides.pptx) 与 30 页母稿一致。
 
 ## 关联课程文档
 
