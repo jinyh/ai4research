@@ -54,7 +54,7 @@ nav:
   - 阅读清单: course/reading-list.md
   - 学习资源: course/resources.md
   - 课程讲义:
-      - 第一讲｜AI 辅助科研导论、OpenCode 与八阶段研究链路: lessons/lesson-01/handout.md
+      - 第一讲｜AI 辅助科研导论与八阶段研究链路: lessons/lesson-01/handout.md
       - 第二讲｜科研伦理、Agent 权限、研究工件与追踪: lessons/lesson-02/handout.md
       - 第三讲｜文献检索与证据角色: lessons/lesson-03/handout.md
       - 第四讲｜AI 辅助精读与主张核验: lessons/lesson-04/handout.md
