@@ -6,16 +6,51 @@
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生正式讲义 v0.2.0 | 面向学生、可脱离课堂独立阅读的正式讲义：八要素深度分析、个人工作流设计、评价机制、练习、术语、延伸阅读 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.3.0 | gate1 定位、gate3 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v0.3.0（21 页） | gate4 逐页六段：屏显内容、视觉结构、教师讲述备注、互动、建议时间、来源与事实边界；按权威 8 段逐时间表 re-fit |
+| [handout.md](./handout.md) | 现行·学生正式讲义 v0.3.1 | 面向学生、可脱离课堂独立阅读：把第 10–11 课同一阅读卡任务升级为可审计工作流，并明确最小原型、trace 与评价前置状态 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.4.1 | gate1 定位、整数时长 90 分钟流程、PPT 执行索引、演示脚本、课堂/课后边界 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v0.5.0（21 页） | gate4 逐页六段；同一任务的对象化工作流契约、最小原型、trace、个人实践与同伴互查 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.0.2 | 14 个关键页四字段契约、模板偏离许可与验收边界 |
-| [slides.pptx](./slides.pptx) | 现行·正式课堂 PPT（21 页） | 封面只保留正式课名；退出卡前含独立知识点总结；21 页均含 `[Sources]` speaker notes |
+| [slides.pptx](./slides.pptx) | 现行·课堂 PPT（21 页） | 已依 v0.5.0 母稿完成对象化视觉提升；保留交大原生 Master/Layout、校徽、红标题带、主题字体、页码和 notes |
 
 ## 2026-08-20 课件修订
 
 - 封面标题改为“第12讲 Agent/Skill 逻辑与自主 Research Workflow 设计”，并上移至两条横线之间。
 - 新增 P20“本讲知识点总结”，原退出卡顺延为 P21；总页数 20→21。
+
+## 修订轮登记（2026-09-12）
+
+### 对象化视觉提升轮（正式）
+
+- 内容与教学：内容口径、课堂最低产出和 90 分钟结构不变；视觉提升教学门复核通过。
+- 正式文件：21 页；`slides.pptx`；SHA-256 `08bcdbaecf3bba21299d2853de8cdddd25b7075b2c9385b356a2c768304b266a`。
+- 技术检查：包结构与布局 0 finding；1 个 Master、4 个 Layout；21/21 页 notes 含 `[Sources]`；教学文字不低于 18 pt。
+- 教学检查：同一工作流从契约、冻结循环升级为最小原型；P14 保持 20×2×3、人工基准与 H1/A1/A2/A3，P16 失败 trace 可直接交给第 13 课。
+- 视觉检查：Artifact Tool 全尺寸与联系图已复核；流程线不穿文字中线，人工基准评价保持蓝色，红色仅用于“执行器不可读”等实际风险。
+- Microsoft PowerPoint 原生检查：通过；最新正式候选已原生打开、导出并逐页复核，P03 契约、P14 工作流链与 P16 失败 trace 可读。LibreOffice 的字体替换结果不作为本轮通过依据。
+- QA：`.work/ppt/lesson-12/2026-09-12-visual-upgrade/lesson-12-visual-upgrade-v5-render/`、`.work/ppt/lesson-12/2026-09-12-visual-upgrade/lesson-12-visual-upgrade-v5-contact.webp`、`.work/ppt/lesson-12/2026-09-12-visual-upgrade/lesson-12-visual-upgrade-v5-validation.json`。
+
+### 课程减负修订轮（2026-09-12，历史；已由本页“对象化视觉提升轮（正式）”取代）
+
+| 门 | 状态 |
+| --- | --- |
+| gate1 备课规划定位 | ✅ 复核：承接第 10 课受限执行与第 11 课受限循环，向第 13 课评价输出 |
+| gate2 内容门 | ✅ 通过：取消“每周证据地图”另起项目；统一同一批 20 篇、两条件各 3 次、120 次输出、人工基准限定条件遗漏率及 H1/A1/A2/A3 |
+| gate3 90 分钟教学门 | ✅ 通过：`5+10+10+15+10+5+10+15+10=90`；个人实践为两段各 10 分钟，中间点评 5 分钟 |
+| gate4 逐页映射门 | ✅ 通过：现行 `slides.md` v0.4.0 共 21 页，与 handout、teaching-plan 的目标、案例、产出一致 |
+| gate5/gate6（历史） | ✅ 已依 `slides.md` v0.4.0 完成 21 页 PPTX；技术、教学和 Artifact Tool 视觉检查通过，终版 Microsoft PowerPoint 原生视觉复检待补；当前验收以本页对象化视觉提升轮为准 |
+
+### 正式 PPT 验证记录（2026-09-12，历史；已由本页对象化视觉提升轮取代）
+
+> 以下为当时事实记录；其中笼统的视觉通过与“锁屏/原生待补”状态不代表当前验收状态。
+
+- 页数与指纹：21 页；SHA-256 `e724befde88cb35461412d5b13bf07af7e37a64495194e0e3ad7e3c46aa6ae98`。
+- 技术检查：包结构、Master/Layout 关系和磁盘重开校验通过；21/21 页 notes 含闭合 `[Sources]`；空 placeholder 0；包级 OOXML 审计确认承担课堂阅读任务的正文、表格、提示、风险和动作文字均不低于 18 pt，页码、来源和许可文字按规则豁免。
+- 教学检查：屏显与 `slides.md` v0.4.0 一致；在第 10–11 课同一任务上组合最小工作流，不重开项目；课堂产出为可运行或可演示的最小原型，并把课后运行结果直接交给第 13 课评价。
+- 视觉检查：已完成 Artifact Tool 全尺寸逐页检查与 contact sheet 检查；修正 P05 顶部标签与说明的几何冲突、缩短 P15 标签后未见裁切、遮挡、异常换行或空可见对象。
+- 兼容性检查：最终版经 LibreOffice 无界面导出为 21 页 PDF，提取文本含中文；该结果不替代 Microsoft PowerPoint 验收。字号修订前候选曾在 Microsoft PowerPoint Slide Sorter 检查，中文与版式正常；最终 18 pt 版因 macOS 锁屏未能再次原生复检，待补。
+- QA 证据：`.work/ppt/lesson-12/2026-09-12-load-revision/validation-18pt-v3.json`、`.work/ppt/lesson-12/2026-09-12-load-revision/artifact-render-18pt-v3/`、`.work/ppt/lesson-12/2026-09-12-load-revision/libreoffice-18pt/slides-final-18pt-validated-v3.pdf`。
+
+课堂最低产出为工作流契约、模式选择、可运行或可复现演示的最小原型、一条 trace 与失败恢复位置。课后补齐批量运行结果，作为第 13 课直接输入。
 
 ## 文件关系
 
@@ -40,7 +75,7 @@
 - **教师**：`teaching-plan.md` → `slides.md` → [ppt-design-criteria.md](../ppt-design-criteria.md) → [ppt-quality-gates.md](../../course/ppt-quality-gates.md)
 - **维护者**：[AGENTS.md](../../AGENTS.md) → [备课规划.md](../备课规划.md) → 本 README → 各文件
 
-## 门控状态（2026-08-07）
+## 门控状态（2026-08-07，历史；当前 gate5/gate6 以对象化视觉提升轮为准）
 
 - [x] **gate1 备课规划定位**：第 12 课目标、八阶段定位（阶段七原型验证·工作流设计子阶段）、模块归属已对齐 `备课规划.md`、`syllabus.md`、`curriculum.md`。
 - [x] **gate2 内容门（通过）**：三件套只有一套现行口径；第 11 课受限循环明确作为第 12 课“执行循环”输入；八要素严格按任务契约 / Context / Memory-状态 / 工具与权限 / 执行循环 / 工件与追踪 / Evals 与人工审核 / 失败恢复组合；Checkpoint 3 十项条件均有本课前置状态与第 13 课完成项；P14 与 P16 的虚构案例均完成屏显与 notes 双标。
@@ -50,7 +85,7 @@
 - [x] **gate6 三重检查（通过）**：技术检查为模板保真 0 issues、画布越界 0、空 placeholder 0、默认 prompt 0、20/20 notes 含 `[Sources]`；教学检查确认 20 页、权威 8 段、32 分钟开始设计、60-78 分钟持续实践、Checkpoint 3 十项前置边界一致；视觉检查完成全卷 contact sheet、关键页原尺寸与 LibreOffice 20 页重开渲染。
 - [x] **里程碑记录**：首个正式版本以现行 `slides.pptx` 为基线；构建、模板审计和 QA 台账保存在 `.work/ppt/lesson-12/2026-08-07-formal-build/`，不另建重复归档副本。
 
-## 修订轮登记（2026-08-12，handout v0.2.0）
+## 修订轮登记（2026-08-12，handout v0.2.0，历史）
 
 按 `prepare-course-lesson` skill"修订已有课次"条款登记，原门控记录保留不动：
 
@@ -73,7 +108,7 @@
 6. **验证门条件对齐**：已复核。teaching-plan §七逐条记录 Checkpoint 3 十项条件的本课前置状态与第 13 课完成项；P18 的八要素验收明确不替代运行、评价、影响报告、证据回写与合规更新。
 7. **PPT 设计准则**：已完成 `keystone-design-spec.md`；P02/P05/P06/P14/P15/P16 等关键页按四字段契约验收，P14-P16 的虚构案例、工件与 trace 均显式标注。
 
-## 正式 PPT 验证记录（2026-08-07）
+## 正式 PPT 验证记录（2026-08-07，历史；当前验收以对象化视觉提升轮为准）
 
 - 页数：20；画布：16:9；最终文件 SHA-256：`c458670701b79fdae422e5c71553a585208bbbb7cab9ec28892bd43df18e96a2`。
 - 模板跟随：源为 `lessons/lesson-07/slides.pptx`；完整审计源 16 页，模板保真检查 0 issues。

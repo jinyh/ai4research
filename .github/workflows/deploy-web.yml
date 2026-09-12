@@ -32,7 +32,12 @@ jobs:
         run: uv run python scripts/link_content.py
       - name: Build site
         working-directory: web
-        run: uv run mkdocs build
+        run: uv run mkdocs build --strict
+      - name: Verify student site
+        working-directory: web
+        run: |
+          uv run python -m unittest discover -s tests -v
+          uv run python scripts/check_site.py
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

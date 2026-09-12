@@ -6,15 +6,40 @@
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生讲义 v1.6.0 | 面向学生、可脱离课堂独立阅读的正式讲义：概念、方法、案例、练习、术语、来源入口 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.9.1 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v1.10.1（26 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
-| [slides.pptx](./slides.pptx) | 现行·正式课堂 PPT（26 页） | 教授/低年级研究生双视角重构；逐页含 `[Sources]` speaker notes |
+| [handout.md](./handout.md) | 现行·学生讲义 v1.7.0 | 面向学生、可脱离课堂独立阅读的正式讲义：概念、方法、案例、练习、术语、来源入口 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.10.0 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v1.11.1（26 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
+| [slides.pptx](./slides.pptx) | 现行·课堂 PPT v1.11.1（26 页） | 已同步逐页母稿视觉升级，并完成技术、教学、视觉与 PowerPoint 原生检查 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 规范 v1.6.1 | 19 个风险触发关键页的设计契约 |
 | [classroom-pack.md](./classroom-pack.md) | 现行·课堂材料包 v1.2.0 | 三件最小工件、临时结对和无模型备用路径 |
 | [assets/](./assets/) | 教学资产 | NASEM、CAS 与上海交大规范原始来源截图 |
 
+### 视觉升级（2026-09-12）
+
+- 逐页映射门：✅ `slides.md` v1.11.1 仅更新视觉结构与字号层级，屏显语义、页数与 90 分钟教案不变。
+- PPT 构建：✅ 26 页候选 r3 已提升为现行 [slides.pptx](./slides.pptx)；构建目录 `.work/ppt/lesson-02/2026-09-12-visual-upgrade/`；SHA256 `f3aaf8739a5e10462c60c37c77442e8417d6933b29ebb419602abf818c3693bb`。
+- 技术检查：✅ finalizer、Artifact Tool 最终文件重导入、26/26 notes `[Sources]`、1 Master/4 Layout、空 placeholder 与字号审计通过。
+- 教学检查：✅ 真实来源截图、虚构未公开合作稿与风险卡—权限一行—使用记录闭环均与逐页母稿一致。
+- 视觉检查：✅ 26 页全尺寸和 contact sheet 逐页复核通过；标题 30–32pt、常规正文 22–24pt、代码/工件 18–20pt，正文以 regular 为主；r3 已修正 P6 两侧“材料”断词。
+- PowerPoint 原生检查：✅ Microsoft PowerPoint 已打开 r3 并原生导出；26/26 张 `native-checked-*.png` 全尺寸逐页复核通过，P6 两侧材料标签完整，中文、换行与品牌元素正常；原生 PDF 为 `.work/ppt/visual-upgrade-20260912/representatives/lesson-02-slides-v1.11.1-visual-r3-native.pdf`。
+- 替代关系：本节视觉检查取代下方减负轮的旧视觉通过记录；旧记录仅保留为历史，不再证明当前候选通过。
+- 状态：✅ 候选已写回正式 `slides.pptx` v1.11.1；正式文件 SHA256 `f3aaf8739a5e10462c60c37c77442e8417d6933b29ebb419602abf818c3693bb`。LibreOffice 中文字体回退单独记为兼容性风险，本轮不宣称 LibreOffice 通过。
+- QA：`.work/ppt/visual-upgrade-20260912/audit/lesson-01-06-qa.md`。
+
+> 状态说明：以上视觉升级记录是现行 PPT 的唯一验收口径。下方减负轮、教师复核轮与旧门控表仅保留当时事实；其中旧的笼统“视觉通过”记录已被本轮技术、教学、视觉和 PowerPoint 原生检查取代。
+
 ## 2026-08-26 教师复核 30 条意见轮
+
+### 课程减负与单案例闭环（修订轮·F 批，2026-09-12）
+
+- 内容门：重走通过。课堂只完整展开虚构未公开合作稿，同一对象连续生成风险卡、权限一行和 AI 使用记录；其他两个案例改为迁移练习。
+- 90 分钟教学门：复核通过。时间结构不变，两段个人实践均为 10 分钟，中间保留 5 分钟教师点评，合计 90 分钟。
+- 逐页映射门：重走通过。P20–P22 与 P26 同步单案例及三层边界，26 页结构不变。
+- PPT 制作：✅ 26 页现行 PPTX 已按 `slides.md` v1.11.0 重建；保留交大原生 Master/Layout、校徽、红标题带、主题字体、页码与 notes。SHA256：`1f893939d6be85fe231ae6b33029b1b5aff64eccdf61da926a3eaff0397e7c8c`。
+- 技术检查：✅ 包完整性、Artifact Tool 重开、26/26 notes `[Sources]`、1 个 Master/4 个 Layout、空 placeholder、屏显计时和布局 finding 均通过；正文实际字号均 ≥18pt，25 个 12pt 对象均为页码。记录：`.work/ppt/lesson-02/2026-09-12-load-revision/validation-r6.json`、`qa-summary.json`、`.work/course-load-revision/font-audit-r6.json`。
+- 教学检查：✅ 虚构未公开合作稿连续形成风险卡、权限一行与使用记录；屏显、互动和来源与现行逐页母稿一致。
+- 视觉检查：✅ Artifact Tool 全尺寸逐页渲染与 contact sheet 复核通过；Microsoft PowerPoint 原生打开并在 Slide Sorter 中滚动检查 26 页，中文、换行和品牌元素完整。联系表：`.work/ppt/lesson-02/2026-09-12-load-revision/contact-sheet-r6/contact-sheet.png`。
+- 剩余风险：LibreOffice 对 Artifact Tool 生成 PPTX 的 PDF 导出存在中文丢失兼容性问题，本轮不宣称 LibreOffice 通过；实际 PowerPoint 已通过，教室投影仍需课前现场检查。
 
 ### ImageGen 结构图与页码映射修订（2026-08-27）
 
@@ -93,7 +118,7 @@
 - **教师**：`teaching-plan.md` → `slides.md` → `course/ppt-quality-gates.md` → `备课规划.md` 第 2 课段
 - **维护者**：`AGENTS.md`（项目根）→ [备课规划.md](../备课规划.md) → 本 README → 各文件
 
-## 门控状态（2026-08-07）
+## 历史门控基线（2026-08-07）
 
 > 注：下表为历史快照（29/30 页口径），现行页数与门控以文件清单与 2026-08-25 修订轮记录为准。
 

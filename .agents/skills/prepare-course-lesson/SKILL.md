@@ -27,7 +27,7 @@ description: 备课门控流程。当用户要制作或修订某课的讲义、�
 
 4. **逐页映射门**：每页写明页面任务、内容母稿位置、证据角色和学生动作。不以历史稿、试讲页或视觉样张为内容母版。
 
-5. **PPT 制作**：前三道门通过后才制作正式 `slides.pptx`。调用已有 presentation/PPT 能力（全局 `ppt-master` skill 等）完成文件级工作。所有构建过程限定在 `.work/ppt/lesson-NN/<run>/`，不得在 `lessons/` 根目录产生 `visual-sample-*`、`v1/v2/v3` 平行文件。
+5. **PPT 制作**：前三道门通过后才制作正式 `slides.pptx`。调用当前可用的 Presentations 等演示制作能力完成文件级工作；设计建议按需查阅 `ppt-design-reference`，不把它作为生产引擎。所有构建过程限定在 `.work/ppt/lesson-NN/<run>/`，不得在 `lessons/` 根目录产生 `visual-sample-*`、`v1/v2/v3` 平行文件。
 
 6. **三重检查**：对最终 PPT 导出后重新打开或重新渲染，分别记录技术检查（图层遮挡、字体替换、裁切、换行、空 placeholder）、教学检查（页与母稿映射、学生动作）、视觉检查（视觉锚点、叙事关系、页型密度）。规则见 `course/ppt-quality-gates.md` 与 `lessons/ppt-design-criteria.md`。
 

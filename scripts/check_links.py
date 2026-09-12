@@ -72,6 +72,9 @@ def headings_in(text: str) -> list[str]:
         match = re.match(r"\s*#{1,6}\s+(.*)", line)
         if match:
             headings.append(match.group(1).strip())
+            # MkDocs / attr_list 的显式标题锚点。
+            if explicit := re.search(r"\{[^}]*#([A-Za-z0-9_-]+)[^}]*\}", match.group(1)):
+                headings.append(explicit.group(1))
     return headings
 
 

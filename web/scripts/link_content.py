@@ -40,6 +40,8 @@ PUBLISH = {
     # 每课发布 handout.md，并逐文件登记学生需要的示例、模板与工件；
     # 不含 teaching-plan / slides / reading-notes / README，也不软链整个 assets 目录
     "lessons/lesson-01/handout.md": "lessons/lesson-01/handout.md",
+    # student_view.py 只呈现学生部分，教师纸面验收节不进入网站。
+    "lessons/lesson-01/classroom-pack.md": "lessons/lesson-01/classroom-pack.md",
     "lessons/lesson-02/handout.md": "lessons/lesson-02/handout.md",
     "lessons/lesson-02/classroom-pack.md": "lessons/lesson-02/classroom-pack.md",
     "lessons/lesson-03/handout.md": "lessons/lesson-03/handout.md",

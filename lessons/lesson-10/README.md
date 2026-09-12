@@ -6,11 +6,11 @@
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生讲义 v0.2.1 | 面向学生、可脱离课堂独立阅读：从模糊 prompt 到任务契约五字段（Context / Permission / Non-goal / 人工审核点 / 失败恢复）、权限分层与人工审核点、Agent 代码人工核验（diff 审查 / 测试先行 / 不外包判断）、修复根因 / 绕过失败 / 污染实验三区分、SWE-bench 视角、贯穿案例（承接第 9 课实验规格的一步）、练习、术语、延伸阅读 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.4.0 | 90 分钟流程、PPT 执行索引、演示脚本、课堂产出验收、讲后复盘 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v0.4.0（17 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
+| [handout.md](./handout.md) | 现行·学生讲义 v0.3.1 | 课堂主线收敛为任务契约、真实 diff/测试、根因/绕过/污染辨析和失败记录；虚构案例承接第 9 课配对设计 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.5.1 | 整数时长的 90 分钟流程、分段实践与中点点评、演示脚本、备用路径和产出验收 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v0.6.0（17 页） | 逐页屏显文案、对象化视觉结构、讲述备注、互动、整数时长与来源边界 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.1.0 | 10 个风险触发关键页的页面任务、视觉锚点、叙事关系、模板映射与验收条件 |
-| [slides.pptx](./slides.pptx) | 正式·课堂 PPT（17 页） | 封面只保留正式课名；退出卡前含独立知识点总结；每页含 `[Sources]` speaker notes |
+| [slides.pptx](./slides.pptx) | 现行·课堂 PPT（17 页） | 已依 v0.6.0 母稿完成对象化视觉提升；保留交大原生 Master/Layout、校徽、红标题带、主题字体、页码和 notes |
 | [assets/agent-task-example/](./assets/agent-task-example/) | 现行·课次本地真实教学工件 | 可核验的 before/after、`generate.diff`、`unittest`、测试输出与越权失败日志；供 P12 演示和无执行环境备用路径使用 |
 
 ## 2026-08-20 课件修订
@@ -20,7 +20,37 @@
 
 ## 文件关系
 
-### 学生入口呈现增强轮（2026-08-22）
+### 对象化视觉提升轮（正式，2026-09-12）
+
+- 内容与教学：内容口径、课堂最低产出和 90 分钟结构不变；视觉提升教学门复核通过。
+- 正式文件：17 页；`slides.pptx`；SHA-256 `6c075708e561bd251da46d0c9b8c77bf5a390ca66ab4ee8556570602a2de1d40`。
+- 技术检查：包结构与布局 0 finding；1 个 Master、4 个 Layout；17/17 页 notes 含 `[Sources]`；教学文字不低于 18 pt。
+- 教学检查：真实 diff 完整显示 `paper_id`、`summary` 与合法换行的缺失校验，受限执行继续直接交给第 11 课冻结循环。
+- 视觉检查：Artifact Tool 全尺寸与联系图已复核；P06 标签不溢出，P12 采用 720px 代码区与 410px 测试/失败区，短字符串不自动折断；ReAct、SWE-bench 页脚显示作者与年份。
+- Microsoft PowerPoint 原生检查：通过；最新正式候选已原生打开、导出并逐页复核，P12 代码完整、缩进与换行可读。LibreOffice 的字体替换结果不作为本轮通过依据。
+- QA：`.work/ppt/lesson-10/2026-09-12-visual-upgrade/lesson-10-visual-upgrade-v8-render/`、`.work/ppt/lesson-10/2026-09-12-visual-upgrade/lesson-10-visual-upgrade-v8-contact.webp`、`.work/ppt/lesson-10/2026-09-12-visual-upgrade/lesson-10-visual-upgrade-v8-validation.json`。
+
+### 课程减负修订轮（2026-09-12，历史；已由本页“对象化视觉提升轮（正式）”取代）
+
+- 课次目标门：复核通过；仍是阶段七中的受限 Agent 执行，不新增提交。
+- 内容门：通过；三件套已统一为配对阅读卡案例，并区分普通技术失败与伪造、隐瞒、越权等规范红线。
+- 90 分钟教学门：通过；各段为整数时长且合计 90，个人实践为 10 + 10 分钟，中间插入 5 分钟教师点评。
+- 逐页映射门：通过；17 页页码与讲义小节保持一一映射，学生屏显无课堂计时。
+- PPT 制作与三重检查：已依新母稿完成 17 页正式 PPTX；技术、教学和 Artifact Tool 视觉检查通过，终版 Microsoft PowerPoint 原生视觉复检待补。
+- 推迟项：最终 18 pt 版因 macOS 锁屏未能再次在 Microsoft PowerPoint 中复检，须在授课机解锁后补做 Slide Sorter、全尺寸页面和投影可读性检查。
+
+### 正式 PPT 验证记录（2026-09-12，历史；已由本页对象化视觉提升轮取代）
+
+> 以下为当时事实记录；其中笼统的视觉通过与“锁屏/原生待补”状态不代表当前验收状态。
+
+- 页数与指纹：17 页；SHA-256 `97e2b25e7eec4c66ae7863c4627c240fe779298a5ad70d34884d6d81ab62bc99`。
+- 技术检查：包结构、Master/Layout 关系和磁盘重开校验通过；17/17 页 notes 含闭合 `[Sources]`；空 placeholder 0；包级 OOXML 审计确认承担课堂阅读任务的正文、表格、提示、风险和动作文字均不低于 18 pt，页码、来源和许可文字按规则豁免。
+- 教学检查：屏显与 `slides.md` v0.5.1 一致；保持“第 10 课受限执行→第 11 课冻结队列与失败恢复”的输入输出，真实 diff、测试以及根因/绕过/污染辨析可见。
+- 视觉检查：已完成 Artifact Tool 全尺寸逐页检查与 contact sheet 检查；修正 P04 长命令换行和 P06 密度后未见裁切、遮挡、异常换行或空可见对象。
+- 兼容性检查：最终版经 LibreOffice 无界面导出为 17 页 PDF，提取文本含中文；该结果不替代 Microsoft PowerPoint 验收。字号修订前候选曾在 Microsoft PowerPoint Slide Sorter 检查，中文与版式正常；最终 18 pt 版因 macOS 锁屏未能再次原生复检，待补。
+- QA 证据：`.work/ppt/lesson-10/2026-09-12-load-revision/validation-18pt-v3.json`、`.work/ppt/lesson-10/2026-09-12-load-revision/artifact-render-18pt-v3/`、`.work/ppt/lesson-10/2026-09-12-load-revision/libreoffice-18pt/slides-final-18pt-validated-v3.pdf`。
+
+### 学生入口呈现增强轮（2026-08-22，历史；当前 PPT 验收以对象化视觉提升轮为准）
 
 - 门 1 与内容门已复核通过：只补任务契约与失败记录的具体链接，课堂闭环、案例事实和来源边界不变。
 - 90 分钟教学门、逐页映射门、PPT 制作与三重检查不受影响，沿用下方既有通过记录；本轮不修改 `teaching-plan.md`、`slides.md` 或 `slides.pptx`。
@@ -49,7 +79,7 @@
 - **教师**：`teaching-plan.md` → `slides.md` → `course/ppt-quality-gates.md`
 - **维护者**：`AGENTS.md`（项目根）→ [备课规划.md](../备课规划.md) → 本 README → 各文件
 
-## 门控状态（2026-08-07）
+## 门控状态（2026-08-07，历史；当前 gate5/gate6 以对象化视觉提升轮为准）
 
 | 门 | 状态 |
 | --- | --- |

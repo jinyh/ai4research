@@ -1,0 +1,46 @@
+/* 交大品牌色用于导航与重点；正文以留白和细分隔线组织。 */
+:root {
+  --md-primary-fg-color: #a6192e;
+  --md-primary-fg-color--light: #bf3449;
+  --md-primary-fg-color--dark: #7a1222;
+  --md-accent-fg-color: #8f1528;
+  --md-default-fg-color: #263442;
+}
+
+.md-grid { max-width: 68rem; }
+.md-content__inner { max-width: 44rem; margin-inline: auto; padding-inline: .8rem; }
+.md-typeset { font-size: .85rem; line-height: 1.8; }
+.md-typeset h1 { color: #182c40; font-weight: 650; letter-spacing: -.025em; }
+.md-typeset h2 { color: #182c40; font-weight: 600; margin-top: 1.7em; }
+.md-typeset h3 { font-weight: 600; }
+.md-typeset strong { font-weight: 600; }
+.md-typeset a { text-underline-offset: .18em; }
+.md-typeset a:hover { text-decoration: underline; }
+.md-typeset blockquote { color: #384859; border-left-color: #a6192e; }
+.md-typeset .md-button { border-width: 1px; border-radius: .15rem; margin: .25rem .4rem .25rem 0; padding: .55em 1em; }
+.md-typeset table:not([class]) { display: table; width: 100%; font-size: .8rem; box-shadow: none; }
+.md-typeset .md-typeset__table { display: block; }
+.milestones table th:nth-child(-n+2),
+.milestones table td:nth-child(-n+2) { white-space: nowrap; }
+/* 首页两列表的第二列仍允许换行。 */
+.milestones table th:last-child,
+.milestones table td:last-child { white-space: normal; }
+.md-typeset table:not([class]) th { background: #f5f6f7; color: #182c40; }
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td { min-width: 0; padding: .75em .9em; }
+.md-typeset details { box-shadow: none; font-size: .8rem; }
+.md-typeset summary { font-weight: 600; }
+.md-nav__link { line-height: 1.55; }
+
+@media (max-width: 600px) {
+  .md-typeset { font-size: .82rem; }
+  .md-typeset h1 { font-size: 1.65em; }
+  .md-typeset table:not([class]) { font-size: .75rem; }
+  .md-typeset table:not([class]) th,
+  .md-typeset table:not([class]) td { padding: .65em .55em; overflow-wrap: anywhere; }
+  .md-typeset .md-button { font-size: .78rem; }
+}
+
+@media print {
+  .md-typeset details > * { display: block !important; }
+}

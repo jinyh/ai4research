@@ -6,14 +6,28 @@
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生讲义 v0.5.0 | 面向学生、可脱离课堂独立阅读：AI 辅助精读五步流程、主张核验、完整阅读卡字段、Keshav 校准与 MI 主张级证据阶梯 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.8.0 | 90 分钟流程、PPT 执行索引、Keshav + MI 双对象演示、课堂产出验收、讲后复盘 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v0.8.0（18 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
-| [slides.pptx](./slides.pptx) | 现行·正式课堂 PPT（18 页） | 封面与收束修订轮已重建并通过内容、技术与视觉检查 |
+| [handout.md](./handout.md) | 现行·学生讲义 v0.6.0 | 面向学生、可脱离课堂独立阅读：AI 辅助精读五步流程、主张核验、完整阅读卡字段、Keshav 校准与 MI 主张级证据阶梯 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.9.0 | 90 分钟流程、PPT 执行索引、Keshav + MI 双对象演示、课堂产出验收、讲后复盘 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v0.9.1（18 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
+| [slides.pptx](./slides.pptx) | 现行·课堂 PPT v0.9.1（18 页） | 已同步逐页母稿视觉升级，并完成技术、教学、视觉与 PowerPoint 原生检查 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 规范 v1.2.0 | 风险触发关键页的设计契约、证据边界、模板例外与制作后验收 |
 | [reading-card-demo.md](./reading-card-demo.md) | 现行·教学资产 v1.0.0 | Keshav 2007 真实原文的完整阅读卡、偏差审计与断网备用对象 |
 | [mi-reading-card-demo.md](./mi-reading-card-demo.md) | 现行·教学资产 v1.0.0 | C02/C16/C31 三张公开论文主张级阅读卡与受限判断 |
 | [assets/](./assets/) | 现行·图形资产 | MI 精读证据阶梯 SVG 与出处/许可登记 |
+
+### 视觉升级（2026-09-12）
+
+- 逐页映射门：✅ `slides.md` v0.9.1 仅更新视觉结构与字号层级，屏显语义、页数与 90 分钟教案不变。
+- PPT 构建：✅ 18 页候选 r2 已提升为现行 [slides.pptx](./slides.pptx)；构建目录 `.work/ppt/lesson-04/2026-09-12-visual-upgrade/`；SHA256 `a1dd50fe5dbe6e5b02eae401a08883b36c8a4a2b1bdcec9732e0e7e79a383a24`。
+- 技术检查：✅ finalizer、Artifact Tool 最终文件重导入、18/18 notes `[Sources]`、1 Master/4 Layout、空 placeholder 与字号审计通过。
+- 教学检查：✅ P11 使用 Keshav p.83 §2 真实原文裁图，课堂构造 AI 输出与原文身份分离；P15 保持单主张精读的完整工作表。
+- 视觉检查：✅ 18 页全尺寸和 contact sheet 逐页复核通过；标题 30–32pt、常规正文 22–24pt、原文/工作表 18–20pt，正文以 regular 为主，未见裁切、遮挡或异常换行。
+- PowerPoint 原生检查：✅ Microsoft PowerPoint 已打开 r2 并原生导出；18/18 张 `native-checked-*.png` 全尺寸逐页复核通过，原文裁图、MI 图、表格换行与中文显示完整；原生 PDF 为 `.work/ppt/visual-upgrade-20260912/representatives/lesson-04-slides-v0.9.1-visual-r2-native.pdf`。
+- 替代关系：本节视觉检查取代下方减负轮的旧视觉通过记录；旧记录仅保留为历史，不再证明当前候选通过。
+- 状态：✅ 候选已写回正式 `slides.pptx` v0.9.1；正式文件 SHA256 `a1dd50fe5dbe6e5b02eae401a08883b36c8a4a2b1bdcec9732e0e7e79a383a24`。LibreOffice 中文字体回退单独记为兼容性风险，本轮不宣称 LibreOffice 通过。
+- QA：`.work/ppt/visual-upgrade-20260912/audit/lesson-01-06-qa.md`。
+
+> 状态说明：以上视觉升级记录是现行 PPT 的唯一验收口径。下方减负轮、旧门控表与 2.0 修订轮仅保留当时事实；其中旧的笼统“视觉通过”记录已被本轮技术、教学、视觉和 PowerPoint 原生检查取代。
 
 ## 文件关系
 
@@ -37,7 +51,18 @@
 - **教师**：`teaching-plan.md` → `slides.md` → `course/ppt-quality-gates.md`
 - **维护者**：`AGENTS.md`（项目根）→ [备课规划.md](../备课规划.md) → 本 README → 各文件
 
-## 门控状态（2026-08-07）
+## 内容复核与历史门控记录（基线日期 2026-08-07）
+
+### 课程减负与单主张精读（修订轮，2026-09-12）
+
+- 内容门：重走通过。当堂只围绕一条关键主张完成原文位置、证据、限定、判断和偏差审计；Keshav 是动作校准，C02/C16/C31 共同收窄一条主张。
+- 90 分钟教学门：重做通过。方法与演示各 15 分钟；个人实践为 12+10 分钟，中间插入 5 分钟教师点评；合计 90 分钟。
+- 逐页映射门：重走通过。P11–P15 已同步单主张及分段实践口径，18 页结构不变。
+- PPT 制作：✅ 18 页现行 PPTX 已按 `slides.md` v0.9.0 重建；保留交大原生 Master/Layout、校徽、红标题带、主题字体、页码与 notes。SHA256：`2e23ce7987d009af294bcb3596e5cdae7673c88c53c7a9e6738f8ea37665c571`。
+- 技术检查：✅ 包完整性、Artifact Tool 重开、18/18 notes `[Sources]`、1 个 Master/4 个 Layout、空 placeholder、屏显计时和布局 finding 均通过；包级审计确认全部课堂正文实际字号 ≥18pt。记录：`.work/ppt/lesson-04/2026-09-12-load-revision/validation-r6.json`、`qa-summary.json`、`.work/course-load-revision/font-audit-r6.json`。
+- 教学检查：✅ 当堂围绕一条关键主张完成原文位置、证据、限定、判断与偏差审计；屏显、互动和来源与现行逐页母稿一致。
+- 视觉检查：✅ Artifact Tool 全尺寸逐页渲染与 contact sheet 复核通过；Microsoft PowerPoint 原生打开并在 Slide Sorter 中检查 18 页，中文、换行和品牌元素完整。联系表：`.work/ppt/lesson-04/2026-09-12-load-revision/contact-sheet-r6/contact-sheet.png`。
+- 剩余风险：LibreOffice 对 Artifact Tool 生成 PPTX 的 PDF 导出存在中文丢失兼容性问题，本轮不宣称 LibreOffice 通过；实际 PowerPoint 已通过，教室投影仍需课前现场检查。
 
 | 门 | 状态 |
 | --- | --- |
