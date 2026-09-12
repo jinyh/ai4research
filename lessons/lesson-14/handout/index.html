@@ -1,0 +1,2264 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="上海交通大学研究生课程“智能科研方法”（AI for Research: Methods and Practice）">
+      
+      
+      
+        <link rel="canonical" href="https://jinyh.github.io/ai4research/lessons/lesson-14/handout/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>第十四讲｜论文式写作、证据回写与 AI 使用披露 - 智能科研方法</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="智能科研方法" class="md-header__button md-logo" aria-label="智能科研方法" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            智能科研方法
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第十四讲｜论文式写作、证据回写与 AI 使用披露
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../learn/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  16 讲课程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../project/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  项目与考核
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../templates/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  模板与资源
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../teacher/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  课程信息
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="智能科研方法" class="md-nav__button md-logo" aria-label="智能科研方法" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    智能科研方法
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../learn/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 讲课程
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    16 讲课程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · AI 辅助科研导论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · 科研伦理与 Agent 边界
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · 检索与来源核验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · 精读与主张核验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · 证据地图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · 问题定义
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · 假设与区分实验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · 中期诊所
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Baseline 与复现
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · 受限 Agent 执行
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 · 自动化循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 · 个人工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 · 工作流评价
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 · 结果写成论证
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 · 同行评审与修改
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 · 最终展示（讲义待复核）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目与考核
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模板与资源
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    模板与资源
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模板与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/opencode-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenCode 最小启动说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/reading-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    逐课参考阅读清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资源索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teacher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课程信息
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导读
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学习目标
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="学习目标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本课、课后与研究门的边界
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、回写与表达在研究链路中的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imrad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、论文式写作结构：IMRaD 与可追溯叙事
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、论文式写作结构：IMRaD 与可追溯叙事">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-imrad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. IMRaD 不是填表，是论证组织
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-imrad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. IMRaD 各段的回写来源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 主题位与重音位：让读者能预期
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 先写一至两条可核验贡献
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、证据回写：结论↔证据↔上游决策链路
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、证据回写：结论↔证据↔上游决策链路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 回写不是润色，是反向追踪
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 不选择性删除失败
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 从验证门材料到论文段
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-agentsmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、AI 使用披露：对齐 AGENTS.md
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、AI 使用披露：对齐 AGENTS.md">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 披露不是声明，是可追溯记录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 披露段最小字段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. AI 输出只作线索
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 披露段位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、引用与署名规范
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、引用与署名规范">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 不虚构文献
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 署名与贡献说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 引用与证据角色
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、贯穿案例：从验证门材料到论文式短文初版
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkpoint-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、论证门条件预演（Checkpoint 4）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、常见错误
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、课堂练习
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="九、课堂练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 1：基本论证单元
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 2：审计 AI 文本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 3：结论追踪表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4imrad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 4：IMRaD 回写映射
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 5：AI 使用披露段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 6：威胁有效性写进讨论段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 7：贡献列表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 8：论证门条件预演
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十、术语表
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十一、延伸阅读与课程材料
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../../../learn/14/">← 本课任务与材料</a></p>
+<hr />
+<h1 id="ai">第十四讲｜论文式写作、证据回写与 AI 使用披露<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h1>
+<h2 id="_1">导读<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>第 13 课你把工作流原型收口为验证门材料：评价报告含 baseline/前后对比、结果映射回假设、失败被审计、人工审核有记录、证据充分性已检查、威胁有效性已讨论。这些材料回答的是"工作流是否真的改善了目标科研动作"。但它们还不是研究叙事——评价报告是给检查者看的项目内部材料，论文式短文是给同行看的研究论证。</p>
+<p>本课对应八阶段研究链路的阶段八"回写与表达"，是"表达、评审与复盘"模块（第 14-16 课）的首课。它的核心转换是：</p>
+<blockquote>
+<p>从"我有评价报告和实验记录"转向"我能把当前可用结论组织成可追溯的研究叙事，并如实披露 AI 的参与"。</p>
+</blockquote>
+<p>完成本课后，你不会立刻提交。第 14 课不是正式提交门（正式提交在第 16 课论证门）。本课产出论文式短文初版、结论追踪表和 AI 使用披露段，作为第 15 课同行评审的输入。</p>
+<h2 id="_2">学习目标<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>完成本讲后，你应该能够：</p>
+<ol>
+<li>用"主张—证据—推理—边界"组织论文式短文的基本论证单元；</li>
+<li>用 IMRaD 或等价结构定位材料去向，而不是把结构当作必须一次填满的表格；</li>
+<li>把结论反向追踪到证据项、实验 ID、研究判断和上游决策，不选择性删除失败；</li>
+<li>如实披露 AI 在检索、代码、实验和写作各环节的参与，包括提示词、模型/版本、核验方式和失败；</li>
+<li>区分 AI 生成文本与可引用结论，AI 输出只作线索；</li>
+<li>处理引用与署名规范，不虚构文献、不混淆作者主张与模型推断；</li>
+<li>形成可供第 15 课真实评审的最小初稿。</li>
+</ol>
+<h3 id="_3">本课、课后与研究门的边界<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>本课要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>课堂最低产出</td>
+<td>选择本人一个关键结果，写成一个“主张—证据—推理—边界”段落；同步补一条结论追踪记录和 AI 使用披露摘要</td>
+</tr>
+<tr>
+<td>课后补全</td>
+<td>把该段扩展为 <code>report.md</code> 初版，补齐 IMRaD 或等价结构、引用核验和披露附件</td>
+</tr>
+<tr>
+<td>第 16 课论证门</td>
+<td>再检查完整提交包、十项门条件和全链路一致性；本课不要求课堂内完成</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_4">一、回写与表达在研究链路中的位置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>八阶段研究链路中，阶段八"回写与表达"不是最后才开始的包装工作。结果出现后，必须回写到假设、证据地图和研究判断；写作时发现证据断裂也要回到取证或实验补做。</p>
+<table>
+<thead>
+<tr>
+<th>输入（来自第 13 课验证门）</th>
+<th>本课处理</th>
+<th>输出（向第 15 课同行评审与第 16 课论证门）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>评价报告（baseline/前后对比/结果分析/失败审计/人工审核）</td>
+<td>把内部材料组织为面向同行的论文式短文</td>
+<td>论文式短文初版（IMRaD 或等价结构）</td>
+</tr>
+<tr>
+<td>证据充分性检查表 + 威胁有效性</td>
+<td>把证据与威胁写成结果段与讨论段</td>
+<td>结论追踪表（结论↔证据↔实验 ID↔研究判断）</td>
+</tr>
+<tr>
+<td>第 1-13 课累计 AI 使用记录</td>
+<td>把累计记录整理为面向同行的 AI 使用披露段</td>
+<td>AI 使用披露段（环节/提示词/模型/核验/失败）</td>
+</tr>
+<tr>
+<td>第 9 课实验规格、第 12 课工作流说明</td>
+<td>把规格与方法写成方法段</td>
+<td>可复现方法段</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>与第 1 课的连接：第 1 课 §2.8 已要求回写与表达的基本论证单元"主张 → 证据 → 推理 → 边界"，并要求负结果同样回写。本课把这条要求落到论文式短文上。</p>
+</blockquote>
+<p>本课产出的是论文式短文初版与披露段，不是论证门终稿。论证门在第 16 课与最终项目合并检查，第 15 课先做同行评审与预检。</p>
+<hr />
+<h2 id="imrad">二、论文式写作结构：IMRaD 与可追溯叙事<a class="headerlink" href="#imrad" title="Permanent link">&para;</a></h2>
+<h3 id="1-imrad">1. IMRaD 不是填表，是论证组织<a class="headerlink" href="#1-imrad" title="Permanent link">&para;</a></h3>
+<p>CS/AI 论文常用 IMRaD 结构（Introduction、Methods、Results、Discussion）。结构本身不产生研究质量，但能让同行快速定位"作者要回答什么、怎么回答、结果是什么、结果意味着什么"。Booth 等人在 <em>The Craft of Research</em> 第 5 版 Chapter 7"Assembling Reasons and Evidence"明确：研究论证由 claim（主张）、reason（理由）、evidence（证据）、warrant（担保）和 anticipated objection（预期反对意见）组成，不是由段落堆叠组成。</p>
+<blockquote>
+<p>来源参考：Booth, W. C. et al. <em>The Craft of Research</em>, 5th ed. University of Chicago Press, 2024. 选读 Chapter 5"Making Good Arguments"和 Chapter 7"Assembling Reasons and Evidence"。<a href="https://press.uchicago.edu/ucp/books/book/chicago/C/bo215874008">出版社页面</a>。用途：把 claim、reason、evidence、warrant 和 anticipated objection 组织为可追溯论证（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 14 课核心阅读）。</p>
+</blockquote>
+<p>一个基本论证单元：</p>
+<blockquote>
+<p>主张：在同一批 20 篇 CS 论文的小样本上，结构化阅读卡组的限定条件遗漏率低于自由摘要组。
+证据：20 篇论文分别进入两个条件，每个条件运行 3 次，共 120 次输出；人工复核基准限定条件后，虚构教学汇总为 0.18±0.03 对 0.31±0.04。
+推理：该方向支持 H1，但还需用 A1 任务转移、A2 标注提示效应和 A3 文档结构效应加以区分。
+边界：数值仅为虚构教学示例；样本小且限于 CS；替代解释尚未全部排除，不外推到其他学科或长篇综述。</p>
+</blockquote>
+<p>这段没有只写"方法有效"，而是同时写出了主张、证据、推理和边界。可追溯叙事要求每个主张都能反向回到证据项、实验 ID 和上游研究判断。</p>
+<p>本例 <code>±</code> 后数值的统计含义尚未定义，因此图中只呈现已有中心值 <code>0.18</code> 和 <code>0.31</code>，暂不画误差线。不得自行把它解释为标准差、标准误或置信区间，也不得据此推断显著性。</p>
+<h3 id="2-imrad">2. IMRaD 各段的回写来源<a class="headerlink" href="#2-imrad" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>论文段</th>
+<th>回写来源（课程工件）</th>
+<th>必须回答</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>引言</td>
+<td><code>problem-definition.md</code>、<code>evidence-map.md</code>、<code>proposal.md</code></td>
+<td>问题为什么重要？非例？可证伪命题？</td>
+</tr>
+<tr>
+<td>方法</td>
+<td><code>experiment-spec.md</code>、<code>agent-workflow.md</code>、<code>ethics-and-compliance.md</code></td>
+<td>baseline？变量？指标？复现条件？工作流边界？</td>
+</tr>
+<tr>
+<td>结果</td>
+<td><code>evaluation-report.md</code>（结果分析段）、<code>experiments/</code></td>
+<td>支持还是反驳 H1？均值/标准差？负向结果？</td>
+</tr>
+<tr>
+<td>讨论</td>
+<td><code>evaluation-report.md</code>（威胁有效性、证据充分性）</td>
+<td>适用边界？威胁有效性？与原假设关系？</td>
+</tr>
+<tr>
+<td>AI 使用披露</td>
+<td><code>ai-usage-log.md</code>（第 1-13 课累计）</td>
+<td>哪些环节用 AI？提示词？模型？核验？失败？</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源参考：Whitesides, G. M. "Whitesides' Group: Writing a Paper." <em>Advanced Materials</em> 16, 1375–1377 (2004). DOI: <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/adma.200400767">10.1002/adma.200400767</a>。用途：用 outline、图表和数据组织驱动写作，而不是先写文字再补图表（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 14 课任选）。</p>
+</blockquote>
+<h3 id="3">3. 主题位与重音位：让读者能预期<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>Gopen 和 Swan 在"The Science of Scientific Writing"中指出：读者读到每句话时都会对下一句的位置产生预期。把已知信息放在句子开头（主题位），把新信息放在句子末尾（重音位），读者就能顺着预期读下去。论文式短文不是把所有事实塞进段落，而是让读者能预期下一句要讲什么。</p>
+<blockquote>
+<p>来源参考：Gopen, G. D., &amp; Swan, J. A. "The Science of Scientific Writing." <em>American Scientist</em> 78(6), 550–558 (1990). <a href="https://www.americanscientist.org/article/the-importance-of-context-in-genetics">期刊页面</a>。本地副本见 PDF（未公开；请查对应公开来源）。用途：理解主题位、重心位、旧信息—新信息和读者预期（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 14 课任选）。</p>
+</blockquote>
+<p>课程不要求你把每句话都按主题位—重音位重写，但要求你检查：你的结果段是不是把"工作流降低了遗漏率"这种新信息当作段落开头，而没有为它铺垫上一句的已知信息。</p>
+<h3 id="4">4. 先写一至两条可核验贡献<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>Peyton Jones 在"How to Write a Great Research Paper"中建议先写贡献列表，再写引言。贡献列表是把研究主张压缩成几条可被同行检查的命题，每条都对应一段证据。</p>
+<blockquote>
+<p>来源参考：Peyton Jones, S. <em>How to Write a Great Research Paper</em>（未公开；请查对应公开来源）。用途：分析贡献列表、示例先行和反馈驱动修改；该材料是经典教学讲义，不作为研究结论的学术证据（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 14 课课堂案例）。</p>
+</blockquote>
+<p>贡献列表不是数量竞赛。课堂先写一至两条能被证据检查的贡献；边界或未决替代解释可以是讨论要点，不必包装成“创新贡献”。贯穿案例草稿：</p>
+<blockquote>
+<p>C1：在同一批 20 篇 CS 论文、两个条件各 3 次运行的虚构教学实验中，阅读卡组的限定条件遗漏率较低，方向支持 H1。
+C2：图表为主论文上的反例揭示任务契约边界；A1/A2/A3 尚未全部排除，因此总体结论仍为“支持（待验证）”。</p>
+</blockquote>
+<p>每条贡献都对应可追溯的证据。第 15 课同行评审会按这些贡献逐条检查。</p>
+<hr />
+<h2 id="_5">三、证据回写：结论↔证据↔上游决策链路<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 回写不是润色，是反向追踪<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>回写（write-back）不是把评价报告的数字抄进论文。它是从论文里每条结论反向追踪到证据项、实验 ID、研究判断和上游决策。AGENTS.md 证据标准明确："关键结论至少绑定一项可核验的直接证据并能追溯到上游研究判断；稳定结论原则上需要两项相互独立的证据。只有单一证据时记录支持强度、适用边界和待验证状态，不得标记为 <code>stable</code>。"</p>
+<blockquote>
+<p>来源参考：AGENTS.md（未公开；请查对应公开来源） 证据标准与失败记录口径。</p>
+</blockquote>
+<p>一个结论追踪表的最小字段：</p>
+<table>
+<thead>
+<tr>
+<th>结论</th>
+<th>证据项</th>
+<th>实验 ID</th>
+<th>上游研究判断</th>
+<th>支持强度</th>
+<th>缺失/冲突</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>E3 评价结果</td>
+<td>两条件各 60 次输出的运行记录</td>
+<td>J1 主指标选限定条件遗漏率</td>
+<td>中（小样本）</td>
+<td>A1/A2/A3 未完全排除、图表反例</td>
+<td>支持（待验证）</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>失败日志 exp-007</td>
+<td>exp-007</td>
+<td>J2 不适用范围写法</td>
+<td>强（直接反例）</td>
+<td>—</td>
+<td>反例（边界）</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>无直接证据</td>
+<td>—</td>
+<td>A2 标注提示效应</td>
+<td>—</td>
+<td>盲评复标与提示对照未完成</td>
+<td>仍不能判断</td>
+</tr>
+</tbody>
+</table>
+<p>这张表不只是写给检查者看，更是写给作者自己——它让你在写作时发现自己写了哪些无证据支撑的主张。</p>
+<h3 id="2">2. 不选择性删除失败<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>第 13 课已强调失败实验和冲突证据不得选择性删除（AGENTS.md 与 assessment.md 学术规范红线）。本课把它落到论文写作上：</p>
+<ul>
+<li><strong>负向结果必须出现在结果段或讨论段</strong>，不能只在评价报告里；</li>
+<li><strong>失败审计的根因必须写进讨论段的"局限"</strong>，不能只展示成功运行；</li>
+<li><strong><code>stable</code> 标记不得滥用</strong>——单一证据就标稳定是常见错误；</li>
+<li><strong>冲突证据必须呈现</strong>，不能只保留支持当前观点的部分。</li>
+</ul>
+<blockquote>
+<p>来源参考：AGENTS.md（未公开；请查对应公开来源） 证据标准；<a href="../../../course/assessment/">assessment.md</a> 学术规范红线。</p>
+</blockquote>
+<p>贯穿案例的 C2（2 篇图表为主论文反例）必须出现在论文里。隐藏它不仅违反学术规范，还丢失了工作流的边界信息——这条反例本身就是 C2 贡献。</p>
+<h3 id="3_1">3. 从验证门材料到论文段<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>验证门材料</th>
+<th>论文段位置</th>
+<th>回写动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>评价报告 §结果分析（支持/反驳/仍不能判断）</td>
+<td>结果段</td>
+<td>把映射关系写成叙事，不只贴表</td>
+</tr>
+<tr>
+<td>评价报告 §失败审计</td>
+<td>讨论段 §局限</td>
+<td>把失败根因写成边界说明</td>
+</tr>
+<tr>
+<td>评价报告 §证据充分性</td>
+<td>讨论段 §证据强度</td>
+<td>把支持强度、缺失证据、待验证状态写明</td>
+</tr>
+<tr>
+<td>评价报告 §威胁有效性</td>
+<td>讨论段 §有效性威胁</td>
+<td>把四类威胁写成具体讨论，不写套话</td>
+</tr>
+<tr>
+<td>评价报告 §人工审核</td>
+<td>方法段 §工作流</td>
+<td>把人工审核点写进工作流描述</td>
+</tr>
+</tbody>
+</table>
+<p>回写时要避免一种错误：把评价报告的内部表格直接贴进论文。论文面向同行，不是面向检查者。同行要看的是叙事论证，不是项目内部材料。</p>
+<hr />
+<h2 id="ai-agentsmd">四、AI 使用披露：对齐 AGENTS.md<a class="headerlink" href="#ai-agentsmd" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 披露不是声明，是可追溯记录<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>AI 使用披露不是在论文末尾加一句"本研究使用了 AI 工具"。AGENTS.md 证据标准要求："AI 输出本身不构成证据。关键结论至少绑定一项可核验的直接证据并能追溯到上游研究判断。"披露的目的是让同行能检查 AI 在哪些环节参与、参与了什么、如何被核验、出了什么问题。</p>
+<blockquote>
+<p>来源参考：AGENTS.md（未公开；请查对应公开来源） 证据标准与 AI 使用披露口径；<a href="../../../course/assessment/">assessment.md</a> 学术规范红线（"使用 AI 生成审稿、实验或数据后不做人工核验"列为红线）。</p>
+</blockquote>
+<h3 id="2_1">2. 披露段最小字段<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>本课要求 AI 使用披露段至少覆盖以下字段，与 <code>ai-usage-log.md</code> 第 1-13 课累计记录对齐：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>环节</td>
+<td>检索 / 阅读 / 代码 / 实验 / 写作 / 审稿模拟</td>
+</tr>
+<tr>
+<td>用途</td>
+<td>具体动作（如"扩展关键词"、"生成阅读卡草稿"、"生成实验脚本候选"）</td>
+</tr>
+<tr>
+<td>模型/版本</td>
+<td>提供方、模型名、版本、调用日期（如"Anthropic Claude 4.5，2026-07-15"）</td>
+</tr>
+<tr>
+<td>提示词摘要</td>
+<td>任务契约要点（输入/输出/权限/不适用范围），不全文复制敏感 prompt</td>
+</tr>
+<tr>
+<td>核验方式</td>
+<td>原文核验、实验复现、人工审核、偏差审计中的哪几种</td>
+</tr>
+<tr>
+<td>输出用途</td>
+<td>直接引用 / 修改后引用 / 仅作线索 / 拒绝</td>
+</tr>
+<tr>
+<td>失败或偏差</td>
+<td>至少一处 AI 错误、过度概括、遗漏或已检查风险（若无明确错误，记录检查过的风险点）</td>
+</tr>
+</tbody>
+</table>
+<p>"失败或偏差"字段与第 4 课"AI 导航→原文核验→AI 质疑→偏差审计→人工定稿"阅读法的偏差审计对应。如果没有发现明显错误，要记录检查过的风险点及核验依据，不虚构错误，也不写"AI 输出全部正确"。</p>
+<h3 id="3-ai">3. AI 输出只作线索<a class="headerlink" href="#3-ai" title="Permanent link">&para;</a></h3>
+<p>AGENTS.md 明确："AI 生成的搜索结果或摘要只能作为定位来源的线索，不能单独成为证据。"论文里不能出现"AI 总结认为……"这种引用。AI 给出的作者、题名、年份、页码、DOI 和引文必须回到正式来源逐项核验（见 <a href="../../../course/reading-list/">reading-list.md</a> §二 AI 辅助经典阅读协议）。</p>
+<h3 id="4_1">4. 披露段位置<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p>CS/AI 论文常见做法：</p>
+<ul>
+<li><strong>致谢段或独立的 AI 使用声明</strong>：列出环节、模型、用途、核验方式；</li>
+<li><strong>方法段</strong>：如果 AI 参与了代码或实验，方法段要写明工作流的 AI 组件、人工审核点和失败恢复；</li>
+<li><strong>附录或补充材料</strong>：完整提示词、完整 AI 使用日志可放附录，正文只放摘要。</li>
+</ul>
+<p>本课不要求你写完整披露终稿，只要求产出披露段初版，包含上表七字段。第 15 课同行评审会检查披露是否透明、是否有"使用 AI 生成审稿、实验或数据后不做人工核验"的红线项。</p>
+<hr />
+<h2 id="_6">五、引用与署名规范<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1. 不虚构文献<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<p>AI 生成引用是最常见的论文写作风险之一。AI 给出的题名、作者、年份、页码、DOI 可能完全虚构，也可能基于真实文献但混淆了细节。课程要求：</p>
+<ul>
+<li><strong>每条引用回到正式来源核验</strong>：DOI、出版社、期刊、会议或作者机构页面；</li>
+<li><strong>不引用未核验的 AI 输出</strong>：AI 给出的文献在核验前只是线索；</li>
+<li><strong>不混淆作者主张与模型推断</strong>：AI 把"降低"写成"消除"是常见过度概括，回到原文检查限定词。</li>
+</ul>
+<blockquote>
+<p>来源参考：<a href="../../../course/reading-list/">reading-list.md</a> §二 AI 辅助经典阅读协议；AGENTS.md（未公开；请查对应公开来源） 证据标准。</p>
+</blockquote>
+<h3 id="2_2">2. 署名与贡献说明<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>CS/AI 研究生项目通常作者只有学生一人。但如果项目涉及：</p>
+<ul>
+<li><strong>导师或组内成员</strong>反馈或数据：致谢段写明具体贡献，不列入作者；</li>
+<li><strong>同伴组</strong>互查反馈：致谢段写明，不列入作者；</li>
+<li><strong>AI 工具</strong>参与：AI 使用披露段写明，不列入作者（AI 工具不具有作者资格）；</li>
+<li><strong>上游代码或数据</strong>：在方法段或致谢段写明来源和许可。</li>
+</ul>
+<blockquote>
+<p>来源参考：<a href="../../../course/assessment/">assessment.md</a> 学术规范红线（涉及"使用 AI 生成审稿、实验或数据后不做人工核验"和"允许 agent 擅自扩大数据访问范围"等红线）。</p>
+</blockquote>
+<h3 id="3_2">3. 引用与证据角色<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<p>第 3-5 课已建立证据角色判断。论文引用不是越多越好，而是每条引用都要写明在论证中扮演什么角色：</p>
+<ul>
+<li><strong>直接证据</strong>：原文研究直接支持本主张；</li>
+<li><strong>补充证据</strong>：相关研究间接支持；</li>
+<li><strong>反例或冲突</strong>：与当前主张不一致的研究，必须呈现；</li>
+<li><strong>方法参考</strong>：借用其方法但结论不一定支持本主张。</li>
+</ul>
+<p>引用时区分角色能避免"堆砌文献冒充证据充分"。</p>
+<hr />
+<h2 id="_7">六、贯穿案例：从验证门材料到论文式短文初版<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>承接第 13 课贯穿案例。第 13 课产出：evaluation-report.md（评价维度 + baseline/前后对比 + 结果分析 + 失败审计 + 人工审核 + 证据充分性 + 威胁有效性）+ 伦理说明更新三条。</p>
+<p>本课动作链：</p>
+<p><strong>第一步：写贡献列表（§二·4）</strong></p>
+<p>C1：同一批 20 篇 CS 论文分别进入阅读卡组与自由摘要组，每组运行 3 次，共 120 次输出；按人工复核基准限定条件计算遗漏率，虚构教学汇总方向支持 H1。
+C2：2 篇图表为主论文反例，揭示任务契约"不适用范围"未覆盖——这是工作流边界。
+C3：A1 任务转移、A2 标注提示效应与 A3 文档结构效应尚未完全排除，结论标“支持（待验证）”而非 <code>stable</code>。</p>
+<p><strong>第二步：按 IMRaD 回写（§二·2）</strong></p>
+<ul>
+<li>引言：第 6 课问题定义 + 第 5 课证据地图 + 第 8 课同伴反馈处理；</li>
+<li>方法：第 9 课实验规格 + 第 12 课工作流说明 + 第 13 课伦理更新三条；</li>
+<li>结果：第 13 课评价报告 §结果分析，含 C1（正向）和 C2（负向反例）；</li>
+<li>讨论：第 13 课评价报告 §威胁有效性 + §证据充分性，含 C3（待验证）。</li>
+</ul>
+<p><strong>第三步：写结论追踪表（§三·1）</strong></p>
+<p>按 §三·1 表格填 C1、C2、C3 三条结论的追踪字段。检查 C3 是否缺直接证据——盲评复标与提示对照尚未完成，因此对 A2 仍“不能判断”，不标 <code>stable</code>。</p>
+<p><strong>第四步：审计一段流畅但证据断裂的 AI 文本（核心活动之一）</strong></p>
+<p>假设 AI 把 C1 改写为：</p>
+<blockquote>
+<p>研究证明，结构化阅读卡能够消除 AI 论文摘要中的引用幻觉。</p>
+</blockquote>
+<p>审计：把"降低"写成"消除"是过度概括；"消除引用幻觉"是不同任务（本项目测的是限定条件遗漏率，不是幻觉）；"研究证明"过强，应为"初步证据"。改回带边界表述：</p>
+<blockquote>
+<p>在同一批 20 篇 CS 论文的两个条件、各 3 次运行中，阅读卡组限定条件遗漏率的虚构教学汇总低于自由摘要组，方向支持 H1；但 A1/A2/A3 尚未完全排除，结果为待验证的初步证据。</p>
+</blockquote>
+<p><strong>第五步：写 AI 使用披露段（§四）</strong></p>
+<p>按 §四·2 七字段填：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>环节</td>
+<td>检索、阅读、写作</td>
+</tr>
+<tr>
+<td>用途</td>
+<td>扩展关键词、生成阅读卡草稿、改写摘要</td>
+</tr>
+<tr>
+<td>模型/版本</td>
+<td>Anthropic Claude 4.5，2026-07-15</td>
+</tr>
+<tr>
+<td>提示词摘要</td>
+<td>"读取 AGENTS.md 与 problem-definition.md，提出三个收敛建议，不修改文件"</td>
+</tr>
+<tr>
+<td>核验方式</td>
+<td>原文核验 + 人工审核 + 偏差审计</td>
+</tr>
+<tr>
+<td>输出用途</td>
+<td>修改后引用（C1 数字经第 13 课评价报告核验）+ 仅作线索（C2 图表反例来自实验，非 AI 生成）</td>
+</tr>
+<tr>
+<td>失败或偏差</td>
+<td>AI 把"降低"写成"消除"（第四步）；3 条证据角色被错标（第 13 课人工审核）；已检查风险：AI 给出的 2 篇文献题名与 DOI 不一致，已回原文核验</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第六步：检查 <code>stable</code> 标记（§三·2）</strong></p>
+<p>C1 当前证据来自 120 次虚构教学输出的单一评价路径，A1/A2/A3 尚未完全排除。不满足两项独立证据，状态“支持（待验证）”，不得标 <code>stable</code>。C2 是直接反例，状态“反例（边界）”。C3 缺直接证据，状态“仍不能判断”。</p>
+<p><strong>第七步：对照论证门条件预演（§七）</strong></p>
+<p>对照 <a href="../../../course/assignments/">assignments.md</a> Checkpoint 4 论证门条件做提交前预演。本课不正式提交，预演目的是发现缺口，留给第 15 课同行评审和第 16 课论证门。</p>
+<p>本课不要求在课堂内完成全部七步，只要求跑通一次"贡献列表 → IMRaD 回写 → 结论追踪表 → AI 文本审计 → AI 使用披露段 → <code>stable</code> 检查 → 论证门预演"的可复盘链路，并产出论文式短文初版（IMRaD 骨架 + 贡献列表 + 结论追踪表 + AI 使用披露段），写入项目的 <code>report.md</code>（本课新增文件，论证门预演各条均指向它）。</p>
+<hr />
+<h2 id="checkpoint-4">七、论证门条件预演（Checkpoint 4）<a class="headerlink" href="#checkpoint-4" title="Permanent link">&para;</a></h2>
+<p>论证门在第 16 课与最终项目合并检查。第 15 课先做同行评审与预检，本课做提交前预演。门条件以 <a href="../../../course/assignments/">assignments.md</a> Checkpoint 4 为权威来源，本节只做面向学生的预演清单。</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>门条件</th>
+<th>本课预演问题</th>
+<th>对应项目文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>论文式短文或研究报告完整，含问题、方法、实验或验证、结果和局限</td>
+<td>IMRaD 各段是否都有回写来源？还是缺段？</td>
+<td><code>report.md</code>（本课新增）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>结果表或图能够追溯到具体证据项、实验 ID 或工作流运行记录</td>
+<td>每张表/图是否标了实验 ID 或证据项编号？</td>
+<td><code>report.md</code> §结果、<code>evidence-map.md</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>讨论内部、外部、构念和结论有效性，或给出等价威胁分析</td>
+<td>第 13 课威胁有效性是否写进讨论段？还是只在评价报告里？</td>
+<td><code>report.md</code> §讨论、<code>evaluation-report.md</code> §威胁</td>
+</tr>
+<tr>
+<td>4</td>
+<td>已处理第 15 课同行评审意见，记录逐条处理决定、理由和修改位置</td>
+<td>留给第 15 课后补；可采纳、澄清、补证、保留异议或暂缓，但须说明真实理由</td>
+<td><code>peer-review.md</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>每个关键结论至少绑定一项直接证据或实验结果及一个上游研究判断</td>
+<td>结论追踪表是否填了"证据项 + 实验 ID + 上游研究判断"三字段？</td>
+<td><code>report.md</code> §结论追踪表</td>
+</tr>
+<tr>
+<td>6</td>
+<td>标记为 <code>stable</code> 的结论原则上有两项独立证据；不满足时已降级状态并说明缺口</td>
+<td>C1 是否被误标 <code>stable</code>？C3 是否被误标 <code>stable</code>？</td>
+<td><code>report.md</code> §结论追踪表</td>
+</tr>
+<tr>
+<td>7</td>
+<td>最终 Agent Workflow 有运行说明、权限边界、评价结果和失败记录</td>
+<td>方法段是否写明工作流边界、权限、评价和失败？</td>
+<td><code>report.md</code> §方法、<code>agent-workflow.md</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td>科研伦理、数据许可、贡献说明和 AI 使用披露完整</td>
+<td>AI 使用披露段是否含七字段？伦理说明是否更新？</td>
+<td><code>report.md</code> §披露、<code>ethics-and-compliance.md</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>工件状态追踪表与实际门检查结果一致</td>
+<td>工件状态是否反映本课新增 <code>report.md</code>？</td>
+<td><code>artifact-tracking.md</code></td>
+</tr>
+<tr>
+<td>10</td>
+<td>完成个人展示、复现抽查和课程复盘</td>
+<td>留给第 16 课；本课只准备展示骨架</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>预演不要求全部通过。预演的目的是发现缺口：哪些条件第 13 课已满足、哪些本课补全、哪些留给第 15-16 课。</p>
+<hr />
+<h2 id="_8">八、常见错误<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>把评价报告贴进论文</strong>：直接复制内部表格，没有面向同行的叙事改写。应回到 §二·1 把表格写成论证。</li>
+<li><strong>只展示成功结果</strong>：C2 图表反例被删，只展示 C1。这是学术规范红线。应回到 §三·2 恢复负向结果。</li>
+<li><strong><code>stable</code> 滥用</strong>：C1 单一证据就标稳定。应回到 §三·1 降级为"支持（待验证）"。</li>
+<li><strong>AI 文本未审计</strong>：直接采用 AI 改写的摘要，没发现"降低"被写成"消除"。应回到 §六·4 审计 AI 文本。</li>
+<li><strong>AI 使用披露流于声明</strong>：只写"使用了 AI 工具"，没写环节、模型、核验、失败。应回到 §四·2 七字段。</li>
+<li><strong>虚构文献</strong>：AI 生成的题名/DOI 未回原文核验。应回到 §五·1 逐项核验。</li>
+<li><strong>混淆作者主张与模型推断</strong>：把 AI 对原文的解读写成原文作者的主张。应回到 §五·1 区分。</li>
+<li><strong>结果段不映射回假设</strong>：只报告数字，不写"支持/反驳/仍不能判断 H1"。应回到 §二·1 基本论证单元。</li>
+<li><strong>威胁有效性写套话</strong>：只写"可能存在威胁"，不写具体威胁。应回到第 13 课 §三·4 借用其四类骨架写具体。</li>
+<li><strong>结论追踪表缺字段</strong>：只写"结论+证据"，缺"上游研究判断"和"状态"。应回到 §三·1 补三字段。</li>
+<li><strong>贡献列表与论文脱节</strong>：贡献列表写了一套，论文正文写了另一套。应回到 §二·4 让每条贡献对应一段。</li>
+<li><strong>披露段缺失败字段</strong>：只写 AI 帮了什么，不写 AI 出了什么错。应回到 §四·2 第七字段。</li>
+</ol>
+<hr />
+<h2 id="_9">九、课堂练习<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="1_3">练习 1：基本论证单元<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<p>用自己的一个研究结论，写一个"主张—证据—推理—边界"四行论证单元。检查证据是否绑定实验 ID，边界是否写明适用范围和不满足 <code>stable</code> 的缺口。</p>
+<h3 id="2-ai">练习 2：审计 AI 文本<a class="headerlink" href="#2-ai" title="Permanent link">&para;</a></h3>
+<p>假设 AI 把你的一个结论改写为流畅但证据断裂的版本（如"消除""证明""显著优于"）。审计它改动了哪些限定词、外推了哪些边界、混淆了哪些任务。改回带边界的表述。</p>
+<h3 id="3_3">练习 3：结论追踪表<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<p>为自己的关键结论填 §三·1 的结论追踪表。检查"证据项 + 实验 ID + 上游研究判断"三字段是否齐全。检查 <code>stable</code> 标记是否满足两项独立证据，不满足时降级。</p>
+<h3 id="4imrad">练习 4：IMRaD 回写映射<a class="headerlink" href="#4imrad" title="Permanent link">&para;</a></h3>
+<p>用 §二·2 的表格，把自己验证门材料（评价报告、实验规格、工作流说明、伦理说明）映射到 IMRaD 各段。标注哪些段已有回写来源、哪些缺来源。</p>
+<h3 id="5ai">练习 5：AI 使用披露段<a class="headerlink" href="#5ai" title="Permanent link">&para;</a></h3>
+<p>按 §四·2 七字段，为自己第 1-13 课累计的 AI 使用写一段披露。至少覆盖检索、阅读、写作三个环节。失败字段至少写一处 AI 错误或已检查风险。</p>
+<h3 id="6">练习 6：威胁有效性写进讨论段<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>把第 13 课评价报告里的四类威胁（内部/外部/构念/结论）改写成讨论段叙事。每条写具体威胁，不写"可能存在威胁"。</p>
+<h3 id="7">练习 7：贡献列表<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<p>为自己的项目写 3-5 条贡献列表。每条贡献对应一段证据和一个状态（支持/反例/仍不能判断）。检查贡献列表与论文正文是否一致。</p>
+<h3 id="8">练习 8：论证门条件预演<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<p>对照 §七 的 10 项门条件，逐项标注当前项目版本已满足、待补全、未满足。写出未满足项的修复计划，标注留给哪一课补全。</p>
+<hr />
+<h2 id="_10">十、术语表<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>本课程中的含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>回写</td>
+<td>把结论反向追踪到证据、实验 ID、研究判断和上游决策，不是润色</td>
+</tr>
+<tr>
+<td>论文式短文</td>
+<td>用 IMRaD 或等价结构组织的面向同行的研究叙事，不是项目内部材料</td>
+</tr>
+<tr>
+<td>IMRaD</td>
+<td>Introduction、Methods、Results、Discussion 的论文结构</td>
+</tr>
+<tr>
+<td>基本论证单元</td>
+<td>主张—证据—推理—边界的四行论证骨架</td>
+</tr>
+<tr>
+<td>贡献列表</td>
+<td>把研究主张压缩成几条可被同行检查的命题，每条对应一段证据</td>
+</tr>
+<tr>
+<td>结论追踪表</td>
+<td>结论↔证据项↔实验 ID↔上游研究判断↔支持强度↔状态的回写表</td>
+</tr>
+<tr>
+<td><code>stable</code></td>
+<td>已达到可引用成熟度的工件状态；关键结论原则上具有两项相互独立的证据</td>
+</tr>
+<tr>
+<td>AI 使用披露</td>
+<td>覆盖环节/用途/模型/提示词/核验/输出用途/失败七字段的可追溯记录</td>
+</tr>
+<tr>
+<td>AI 输出只作线索</td>
+<td>AI 生成的搜索结果或摘要不能单独成为证据，必须回到正式来源核验</td>
+</tr>
+<tr>
+<td>主题位/重音位</td>
+<td>Gopen &amp; Swan 提出的句子信息结构：已知信息在主题位，新信息在重音位</td>
+</tr>
+<tr>
+<td>证据角色</td>
+<td>引用在论证中扮演的角色：直接证据/补充证据/反例或冲突/方法参考</td>
+</tr>
+<tr>
+<td>论证门</td>
+<td>第 16 课的第四次正式提交，与最终项目合并检查；本课做提交前预演</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_11">十一、延伸阅读与课程材料<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>课程内材料：</p>
+<ul>
+<li><a href="../../../course/syllabus/">课程大纲</a></li>
+<li>备课规划（未公开；请查对应公开来源） 第 14 课</li>
+<li><a href="../../../course/reading-list/">逐课阅读清单</a> 第 14 课</li>
+<li><a href="../../../course/project-template/">期末项目完整模板</a>（§9 报告与论文式短文，论证门材料骨架）</li>
+<li><a href="../../../course/assignments/">项目里程碑</a>（Checkpoint 4 论证门条件——权威来源，第 16 课正式提交，本课做预演）</li>
+<li><a href="../../../course/assessment/">考核方案</a>（"表达、伦理与复盘"维度，20%）</li>
+</ul>
+<p>正式书目（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 14 课）：</p>
+<ol>
+<li>Booth, W. C. et al. <em>The Craft of Research</em>, 5th ed. University of Chicago Press, 2024. 选读 Chapter 5"Making Good Arguments"、Chapter 7"Assembling Reasons and Evidence"和 10.2"Planning Your Paper"。<a href="https://press.uchicago.edu/ucp/books/book/chicago/C/bo215874008">出版社页面</a>。用途：把 claim、reason、evidence、warrant 和 anticipated objection 组织为可追溯论证。核心阅读，约 35 分钟。</li>
+<li>Whitesides, G. M. "Whitesides' Group: Writing a Paper." <em>Advanced Materials</em> 16, 1375–1377 (2004). DOI: <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/adma.200400767">10.1002/adma.200400767</a>。用途：用 outline、图表和数据组织驱动写作。任选，约 15 分钟。</li>
+<li>Gopen, G. D., &amp; Swan, J. A. "The Science of Scientific Writing." <em>American Scientist</em> 78(6), 550–558 (1990). <a href="https://www.americanscientist.org/article/the-importance-of-context-in-genetics">期刊页面</a>。用途：理解主题位、重音位、旧信息—新信息和读者预期。任选，约 25 分钟。</li>
+</ol>
+<p>课堂案例：</p>
+<ol>
+<li>Peyton Jones, S. <em>How to Write a Great Research Paper</em>（未公开；请查对应公开来源）。只分析贡献列表、示例先行和反馈驱动修改。该材料是经典教学讲义，不作为研究结论的学术证据。</li>
+</ol>
+<p>课后阅读采用"AI 导航 → 原文核验 → AI 质疑 → 偏差审计 → 人工定稿"流程。本课核心阅读为 Booth et al. 2024 第 5、7 章，约 35 分钟。精读卡持续保存在个人项目 <code>notes/</code>，不逐周正式提交，论证门统一检查论文式短文与 AI 使用披露。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1950 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="上海交通大学研究生课程“智能科研方法”（AI for Research: Methods and Practice）">
+      
+      
+      
+        <link rel="canonical" href="https://jinyh.github.io/ai4research/lessons/lesson-04/handout/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>第四讲｜AI 辅助精读与主张核验 - 智能科研方法</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="智能科研方法" class="md-header__button md-logo" aria-label="智能科研方法" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            智能科研方法
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第四讲｜AI 辅助精读与主张核验
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../learn/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  16 讲课程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../project/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  项目与考核
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../templates/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  模板与资源
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../teacher/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  课程信息
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="智能科研方法" class="md-nav__button md-logo" aria-label="智能科研方法" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    智能科研方法
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../learn/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 讲课程
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    16 讲课程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · AI 辅助科研导论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · 科研伦理与 Agent 边界
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · 检索与来源核验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · 精读与主张核验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · 证据地图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · 问题定义
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · 假设与区分实验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · 中期诊所
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Baseline 与复现
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · 受限 Agent 执行
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 · 自动化循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 · 个人工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 · 工作流评价
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 · 结果写成论证
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 · 同行评审与修改
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 · 最终展示（讲义待复核）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目与考核
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模板与资源
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    模板与资源
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模板与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/opencode-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenCode 最小启动说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/reading-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    逐课参考阅读清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资源索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teacher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课程信息
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导读
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学习目标
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、AI 辅助精读在研究链路中的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、AI 辅助精读五步流程
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、AI 辅助精读五步流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. AI 导航
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 原文核验
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. AI 质疑
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 偏差审计
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 人工定稿
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、主张核验：区分 AI 主张与原文主张
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、主张核验：区分 AI 主张与原文主张">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 为什么要区分
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 回到原文检查什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 错读、过度概括与伪造引用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、阅读卡字段
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、常见错误
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keshav-2007" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、真实演示：Keshav 2007 原文到完整阅读卡
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、真实演示：Keshav 2007 原文到完整阅读卡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一步：AI 导航
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二步：原文核验
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三步：AI 质疑
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第四步：偏差审计
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第五步：人工定稿
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        平行演示：同一问题的三张 MI 阅读卡
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、课堂练习
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、课堂练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 1：AI 导航
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 2：原文核验
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 3：偏差审计
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 4：主张核验
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 5：阅读卡第一版
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、术语表
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、延伸阅读与课程材料
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../../../learn/04/">← 本课任务与材料</a></p>
+<hr />
+<h1 id="ai">第四讲｜AI 辅助精读与主张核验<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h1>
+<h2 id="_1">导读<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>第 3 课把检索过程变成可复盘的方法，为每条材料分别记录预期证据角色、核验状态和筛选决定，并完成“书目身份 + 一条拟用主张”的入口核验。但一条入口核验通过的论文，如果你没有继续核对多条主张、位置、指标、对照和限定条件，仍然可能成为错读的起点。</p>
+<p>一个常见失败是：研究者让 AI 生成一篇论文的摘要，AI 输出结构完整、措辞流畅，研究者据此写下"该论文证明 X 可以降低 Y"，并把这条主张搬进自己的证据地图。问题是：</p>
+<ul>
+<li>原文研究的任务和当前项目一样吗？</li>
+<li>原文的指标和对照是什么？</li>
+<li>原文说的是"降低"还是"在特定条件下降低"？</li>
+<li>AI 给出的页码、图表、公式位置是否真的指向它复述的内容？</li>
+<li>这条主张是作者写的，还是 AI 从"看起来合理"补出来的？</li>
+</ul>
+<p>如果这些没有被处理，"已读"只是一次未核验的转述。本课的目标是把精读过程变成"原文位置—主张—人工判断"的追踪关系：AI 可以建立阅读地图、提出候选解释、暴露遗漏，但每条关键主张必须回到原文位置，并由研究者作出判断。</p>
+<blockquote>
+<p><strong>本课学习边界</strong>：当堂不追求“读完一篇论文”，只围绕一条关键主张完成一张全字段阅读卡。身份、主张、原文位置、限定、个人判断和偏差审计必须可检查；其他主张与论文在课后沿用同一流程补全。</p>
+</blockquote>
+<h2 id="_2">学习目标<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>完成本讲后，你应该能够：</p>
+<ol>
+<li>用五步流程（AI 导航→原文核验→AI 质疑→偏差审计→人工定稿）完成一篇论文的结构化精读；</li>
+<li>区分 AI 主张与原文主张，对每条关键主张回到原文检查任务、设置、指标、对照和限定条件；</li>
+<li>识别 AI 错读、过度概括和伪造引用；至少记录一处 AI 错误或遗漏，未发现时记录已检查风险与核验依据；</li>
+<li>为关键论文建立阅读卡，记录页码、图表或章节位置，区分作者主张、原文证据、个人判断和 AI 建议；</li>
+<li>说明 AI 输出为何只能作为阅读线索，不能单独成为主张或证据。</li>
+</ol>
+<hr />
+<h2 id="ai_1">一、AI 辅助精读在研究链路中的位置<a class="headerlink" href="#ai_1" title="Permanent link">&para;</a></h2>
+<p>八阶段研究链路中，本课承接阶段四"外部输入摄取"，并向阶段五"证据整理"输出经过精读的材料。第 3 课解决“材料从哪来、哪一条拟用主张可安全进入候选表”；本课解决“整篇论文有哪些关键主张、各自说到什么程度”。</p>
+<blockquote>
+<p>与第 3 课的连接：第 3 课候选文献表里的 <code>verified</code> 表示书目信息和至少一条拟用主张与原文一致，不表示整篇论文的贡献、证据结构和局限已经完成精读。本课把这类论文进一步拆成多条可追溯的“主张—位置—证据—判断”。</p>
+<p>与第 5 课的连接：第 5 课把多篇论文的阅读卡重组为证据地图，按研究问题而非按论文排列。阅读卡里"原文位置—主张—人工判断"的追踪关系，是证据地图能区分支持、反驳、冲突和空白的基础。</p>
+</blockquote>
+<p>AI 辅助精读不是"让 AI 读完告诉我结论"。它是一个有节奏的流程：AI 先建立阅读地图，研究者回到原文核验，AI 再根据已核验内容提出质疑，研究者审计偏差并人工定稿。每一步都有明确的产物和核验点。</p>
+<hr />
+<h2 id="ai_2">二、AI 辅助精读五步流程<a class="headerlink" href="#ai_2" title="Permanent link">&para;</a></h2>
+<p>本课程的核心阅读采用以下流程（见 <a href="../../../course/reading-list/">reading-list.md</a> 第二节）：</p>
+<h3 id="1-ai">1. AI 导航<a class="headerlink" href="#1-ai" title="Permanent link">&para;</a></h3>
+<p>让 AI 给出一篇论文的中心问题、论证结构、关键术语、预期证据和待追问问题。全部标记为"未核验"。</p>
+<p>这一步的目的是快速建立阅读地图，决定哪些段落、图表或实验值得重点读。AI 导航的输出只是路线提示，不是结论。常见的 AI 导航产物：</p>
+<ul>
+<li>中心问题（一句话）；</li>
+<li>论证结构（问题→方法→设置→结果→局限）；</li>
+<li>关键术语表；</li>
+<li>预期证据位置（图表、公式、实验编号）；</li>
+<li>待追问问题（措辞强度、限定条件、对照设计）。</li>
+</ul>
+<blockquote>
+<p>注意：AI 给出的"预期证据位置"可能是错的。它可能说"见图 3"，但图 3 说的不是这件事。这正是下一步要核验的。</p>
+</blockquote>
+<h3 id="2">2. 原文核验<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>人工阅读指定章节或段落，至少记录两个可复查的章节、页码、图表、公式或实验位置。这一步不可跳过。</p>
+<p>核验时至少检查：</p>
+<ul>
+<li>AI 给出的中心问题与原文摘要、引言是否一致？</li>
+<li>AI 指向的图表、公式或实验编号是否真的对应它复述的内容？</li>
+<li>原文的措辞是"降低""改善"还是"消除""解决"？</li>
+<li>结果来自什么指标、什么对照、什么样本？</li>
+<li>原文是否限定到特定数据集、模型、任务或条件？</li>
+</ul>
+<p>记录方式：每条核验后的主张，标注原文位置（如"§3.2, p.5, Fig.2"）。没有原文位置的主张，不能进入阅读卡的"作者主张"栏。</p>
+<h3 id="3-ai">3. AI 质疑<a class="headerlink" href="#3-ai" title="Permanent link">&para;</a></h3>
+<p>让 AI 根据已核验内容提出反例、遗漏和适用边界，与个人笔记比较。这一步的目的是暴露你自己的盲点：你可能因为觉得方法"看起来合理"而跳过了对照设计或限定条件。</p>
+<p>AI 质疑的典型问题：</p>
+<ul>
+<li>这个结果在什么条件下会被推翻？</li>
+<li>对照是否公平？baseline 是否有被低估的可能？</li>
+<li>样本规模是否足以支撑原文的结论强度？</li>
+<li>原文的限定条件是否被你的笔记遗漏？</li>
+<li>是否存在原文未讨论的替代解释？</li>
+</ul>
+<p>AI 质疑的输出仍然只是候选问题，不是判断。你需要回到原文检查每个问题，而不是直接采纳 AI 的质疑。</p>
+<h3 id="4">4. 偏差审计<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>至少记录一处 AI 的错误、过度概括或遗漏；如果未发现明显错误，记录已检查的风险点及核验依据，不虚构错误。</p>
+<p>偏差类型见 §三。偏差审计的最小记录：</p>
+<table>
+<thead>
+<tr>
+<th>AI 输出</th>
+<th>偏差类型</th>
+<th>原文实际内容</th>
+<th>核验位置</th>
+<th>处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"原文证明 X 消除 Y"</td>
+<td>过度概括</td>
+<td>原文为"在数据集 D 上降低 Y"</td>
+<td>§4.1, p.7</td>
+<td>改写为限定主张</td>
+</tr>
+<tr>
+<td>"见图 3"</td>
+<td>位置错指</td>
+<td>图 3 讨论的是另一指标</td>
+<td>p.9, Fig.3</td>
+<td>重新定位</td>
+</tr>
+<tr>
+<td>"作者提出 Z 方法"</td>
+<td>张冠李戴</td>
+<td>Z 方法来自参考文献 [12]</td>
+<td>§2, p.3, ref [12]</td>
+<td>标注真实来源</td>
+</tr>
+</tbody>
+</table>
+<p>偏差审计记录是本课课堂产出之一。它不是"AI 出了错"的笑话集，而是后续评价 AI 辅助阅读工作流的重要证据。</p>
+<h3 id="5">5. 人工定稿<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>由学生写出最终阅读卡，区分作者主张、原文证据、个人判断和 AI 建议。阅读卡字段见 §五。</p>
+<p>人工定稿的判断责任在学生。AI 可以建议措辞、补充候选、提出质疑，但阅读卡里的"作者主张"必须能回到原文位置，"个人判断"必须写明理由和适用边界。</p>
+<hr />
+<h2 id="ai_3">三、主张核验：区分 AI 主张与原文主张<a class="headerlink" href="#ai_3" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 为什么要区分<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>生成式模型在复述论文时，会把原文内容、模型推断和"看起来合理"的补充混在一起输出。如果不区分，研究者会把 AI 的推断误当成作者的主张，再把这种误认带进证据地图。</p>
+<p>一条 AI 复述的可能来源：</p>
+<ul>
+<li>原文确实写了（作者主张）；</li>
+<li>原文写了相关内容，AI 推断出更具体的结论（模型推断）；</li>
+<li>原文没写，AI 根据常识或相关文献补充（模型新增）；</li>
+<li>AI 把不同论文的内容拼装（张冠李戴）；</li>
+<li>AI 改写了措辞强度（过度概括）。</li>
+</ul>
+<p>只有第一种能进入阅读卡的"作者主张"栏。后四种必须标为模型推断、待核验或偏差。</p>
+<h3 id="2_1">2. 回到原文检查什么<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>对每条关键主张，至少回到原文检查以下五项：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>检查问题</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>任务</td>
+<td>原文研究的任务和当前项目一样吗？</td>
+<td>原文是医学问答，当前是代码生成——不能直接迁移</td>
+</tr>
+<tr>
+<td>设置</td>
+<td>输入、规模、条件是什么？</td>
+<td>原文用 100 条样本，当前项目需要 10k 规模</td>
+</tr>
+<tr>
+<td>指标</td>
+<td>用什么度量？定义是否一致？</td>
+<td>原文用准确率，当前用 F1——不能直接比较</td>
+</tr>
+<tr>
+<td>对照</td>
+<td>baseline 是什么？是否公平？</td>
+<td>原文 baseline 未调参——"降低"可能只是对照过弱</td>
+</tr>
+<tr>
+<td>限定</td>
+<td>原文限定的范围是什么？</td>
+<td>原文只验证英语，不能外推到多语言</td>
+</tr>
+</tbody>
+</table>
+<p>这五项对应 Keshav 三遍阅读法中第二遍的"深度阅读"检查点（见延伸阅读）。它们不是"读完整篇"的清单，而是"这条主张能不能用"的检查。</p>
+<h3 id="3">3. 错读、过度概括与伪造引用<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>本课要求识别的三类常见偏差：</p>
+<ol>
+<li><strong>AI 错读</strong>：AI 复述的任务、设置、指标或对照与原文不一致。例如原文研究的是"在固定预算下的检索质量"，AI 复述为"检索质量"。</li>
+<li><strong>过度概括</strong>：措辞强度被改写。原文"在条件 C 下降低 Y"，AI 输出"消除 Y"或"解决 Y"。</li>
+<li><strong>伪造引用</strong>：AI 给出的题名、作者、年份、页码、DOI 与正式来源无法对应，或把不同论文的内容拼装成一条。</li>
+</ol>
+<blockquote>
+<p>与第 3 课的连接：第 3 课入口核验处理“文献身份是否一致，以及一条拟用主张能否安全使用”；本课内容核验处理“多条关键主张、位置、证据结构和局限是否被准确理解”。</p>
+</blockquote>
+<hr />
+<h2 id="_3">四、阅读卡字段<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>阅读卡是本课的课堂产出，也是第 5 课证据地图的输入。最小字段：</p>
+<div class="highlight"><pre><span></span><code>论文：题名 / 作者 / 年份 / DOI
+来源核验状态（承接第 3 课）：pending / verified / verified-with-caveat / rejected
+证据角色（承接第 3 课）：主证据 / 补充 / 对比 / 探索线索
+中心问题（一句话，核验后）
+作者主张（每条标注原文位置）：
+  - 主张 1 → §x.x, p.x, Fig.x
+  - 主张 2 → §x.x, p.x, Table x
+原文证据（指标、对照、样本、限定）：
+  - 指标：
+  - 对照：
+  - 样本：
+  - 限定：
+局限与边界（作者自述 + 个人判断）：
+  - 作者自述：
+  - 个人判断：
+个人判断（适用性、待验证、与当前项目的关系）：
+AI 建议（待核验，不混入作者主张）：
+AI 偏差审计（错误/遗漏，或已检查风险与依据，见 §二·4）：
+内容核验状态：pending / verified / verified-with-caveat / rejected
+</code></pre></div>
+<p>字段说明：</p>
+<ul>
+<li><strong>作者主张</strong>：每条必须标注原文位置（章节、页码、图表、公式或实验编号）。没有位置的主张不能进入此栏。</li>
+<li><strong>原文证据</strong>：不是 AI 复述的指标，而是你在原文找到的、可复查的数字、表格或实验设置。</li>
+<li><strong>局限与边界</strong>：区分"作者自述的局限"和"你判断的边界"。作者可能只说"样本小"，你判断"只验证了英语，不能外推到中文"。</li>
+<li><strong>个人判断</strong>：写明这条主张在当前项目里能支撑什么、不能支撑什么、是否需要补充实验或材料。</li>
+<li><strong>AI 偏差审计</strong>：至少记录一处 AI 错读、过度概括、位置错指或伪造引用；未发现明显错误时，记录已检查的风险点及核验依据。</li>
+<li><strong>核验状态</strong>：<code>pending</code> 可留在候选表线索区，但不能进证据地图主格；<code>verified</code> 可进主格；<code>verified-with-caveat</code> 进主格时必须保留范围、方法、版本或措辞限定，不得单独支撑 <code>stable</code>；<code>rejected</code> 仅留审计记录。</li>
+</ul>
+<p>本课所说的“完整阅读卡”不是把整篇论文读完，而是围绕至少 1 条关键主张，将上述所有字段填入可复查内容；不适用的字段必须写明“不适用”及理由，不得留空。</p>
+<p>阅读卡统一保存在个人项目 <code>reading-cards.md</code>。第 5 课再把其中的主张—位置对重组进证据地图；第 6 课问题门统一检查至少 3 张与个人项目直接相关的完整精读卡。</p>
+<hr />
+<h2 id="_4">五、常见错误<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>AI 摘要当阅读卡</strong>：把 AI 输出的论文摘要直接复制进阅读卡，不做原文核验。AI 摘要只是导航线索，不能作为作者主张。</li>
+<li><strong>主张无位置</strong>：写"作者认为 X"，但不标原文位置。无法复查的主张不能进入证据地图。</li>
+<li><strong>措辞强度被改写</strong>：原文"降低"被写成"消除"，原文"在条件 C 下"被省略。每条主张检查任务、设置、指标、对照、限定五项。</li>
+<li><strong>AI 质疑当结论</strong>：AI 提出"这个结果可能不成立"，研究者直接写进阅读卡。AI 质疑只是候选问题，需要回到原文检查。</li>
+<li><strong>偏差审计缺位</strong>：只记录 AI 做对了什么，不记录错在哪里。偏差审计是工作流评价材料，不是表扬稿。</li>
+<li><strong>阅读卡不区分判断来源</strong>：作者主张、原文证据、个人判断、AI 建议混在一栏。阅读卡必须四类分栏。</li>
+<li><strong>外推未限定</strong>：原文只验证了特定数据集或任务，阅读卡直接写"该方法有效"。必须记录原文限定条件和个人判断的边界。</li>
+</ol>
+<hr />
+<h2 id="keshav-2007">六、真实演示：Keshav 2007 原文到完整阅读卡<a class="headerlink" href="#keshav-2007" title="Permanent link">&para;</a></h2>
+<p>演示对象是 S. Keshav 的 <em>How to Read a Paper</em>，DOI <code>10.1145/1273445.1273458</code>。原文为滑铁卢大学公开 PDF，共 2 页。论文对象和书目信息是真实来源；下文标注为“课堂构造 AI 输出”的句子是为训练偏差审计而写，不是实际模型运行结果。</p>
+<h3 id="ai_4">第一步：AI 导航<a class="headerlink" href="#ai_4" title="Permanent link">&para;</a></h3>
+<p>让 AI 给出中心问题、论证结构、关键术语、预期证据位置和待追问问题。课堂构造 AI 输出：“这篇论文通过对照实验证明，三遍阅读法可将阅读时间降低 50%；第一遍固定需要 5 分钟。”全部标记“未核验”。</p>
+<h3 id="_5">第二步：原文核验<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>人工阅读第 1 页摘要和 §2，再检查第 2 页 §4。核验发现：</p>
+<ul>
+<li>摘要与 §2 表明文章提出三遍阅读法，并解释各遍阅读的目标；</li>
+<li>文章没有报告支撑“降低 50%”的对照实验、指标或样本；</li>
+<li>§2.1 写的是第一遍通常用时约 5–10 分钟，不是固定 5 分钟；</li>
+<li>§4 是作者基于 15 年使用经验的叙述，不应改写成已报告的受控实验效果。</li>
+</ul>
+<p>记录原文位置：p.83 摘要与 §2/§2.1；p.84 §4。</p>
+<h3 id="ai_5">第三步：AI 质疑<a class="headerlink" href="#ai_5" title="Permanent link">&para;</a></h3>
+<p>让 AI 根据已核验内容提出反例和遗漏。合格的待查问题包括：这是规范性阅读建议还是经验效果证据？对不同学科、论文类型或阅读目标是否需要调整？这些问题仍要回原文或补充证据核验。</p>
+<h3 id="_6">第四步：偏差审计<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>记录至少一处偏差：</p>
+<table>
+<thead>
+<tr>
+<th>AI 输出</th>
+<th>偏差类型</th>
+<th>原文实际内容</th>
+<th>核验位置</th>
+<th>处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“对照实验证明阅读时间降低 50%”</td>
+<td>模型新增/伪造效果</td>
+<td>原文提出三遍阅读法，未报告该对照实验</td>
+<td>p.83 摘要与 §2；p.84 §4</td>
+<td>删除量化效果主张</td>
+</tr>
+<tr>
+<td>“第一遍固定 5 分钟”</td>
+<td>措辞强化</td>
+<td>原文写约 5–10 分钟</td>
+<td>p.83 §2.1</td>
+<td>改为带范围的转述</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">第五步：人工定稿<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>写出完整阅读卡：作者主张与位置、原文依据、不适用的指标/对照/样本及理由、限定、作者自述和个人边界、个人判断、待核验 AI 建议、偏差审计和内容核验状态。示例的完整可编辑版见 <a href="../reading-card-demo/">reading-card-demo.md</a>。</p>
+<h3 id="mi">平行演示：同一问题的三张 MI 阅读卡<a class="headerlink" href="#mi" title="Permanent link">&para;</a></h3>
+<p>Keshav 示例用于校准“如何把 AI 摘要拉回原文”；接下来把同一动作放进一个真实研究争议。课程公开教学问题是：在 Pythia-410M 的 IOI 任务上，SAE 特征能否比 PCA 更稀疏地定位并干预模型行为；这种 patching 成功还需要哪些证据，才能支持“因果忠实”的解释？</p>
+<p><img alt="MI 精读证据阶梯" src="../assets/mi-reading-evidence-ladder.svg" /></p>
+<p><em>图注：课程自绘结构图。C02、C16、C31 分别承担正向主证据、控制性限制和 patching 效度威胁。图中不含实证数值；来源与许可见 assets/README.md（未公开；请查对应公开来源）。</em></p>
+<p>三张完整卡见 <a href="../mi-reading-card-demo/">mi-reading-card-demo.md</a>：</p>
+<ul>
+<li>C02 的原文位置是 pp.5-6 §4/Fig.3 与 p.9 §6.2；它允许写“该设置下 SAE patching 比 PCA 更稀疏有效”，但不能直接写“特征因果忠实”。</li>
+<li>C16 的原文位置是 pp.1-2、p.11 与 pp.13-14；它表明可解释性不自动推出控制性，但模型和协议不同，不能冒充 C02 的直接反驳。</li>
+<li>C31 的原文位置是 pp.1-5；它说明 patching 可能激活 dormant pathway，同时也保留成功案例，因此允许主张是“需要额外证据”，不是“所有 patching 都无效”。</li>
+</ul>
+<p>这三张卡都标为 <code>verified-with-caveat</code>。它们能进入第 5 课证据地图主格，但 caveat 必须随条目移动；当前综合判断仍是 <code>review</code>，不能标为 <code>stable</code>。</p>
+<hr />
+<h2 id="_8">七、课堂练习<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="1ai">练习 1：AI 导航<a class="headerlink" href="#1ai" title="Permanent link">&para;</a></h3>
+<p>选一篇你候选文献表里的 <code>verified</code> 论文。让 AI 给出中心问题、论证结构、关键术语、预期证据位置和待追问问题。全部标记"未核验"。</p>
+<h3 id="2_2">练习 2：原文核验<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>人工阅读 AI 导航指向的段落或图表。至少记录两个可复查的原文位置（章节、页码、图表或公式）。检查 AI 指向是否真的对应它复述的内容。</p>
+<h3 id="3_1">练习 3：偏差审计<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>对 AI 导航输出逐条核验，填写最小偏差审计表。至少记录一处 AI 错读、位置错指、过度概括或遗漏；未发现明显错误时，记录已检查的风险点及核验依据。</p>
+<h3 id="4_1">练习 4：主张核验<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p>从论文里选一条关键主张，回到原文检查任务、设置、指标、对照、限定五项。写明这条主张在你的项目里能支撑什么、不能支撑什么。</p>
+<h3 id="5_1">练习 5：阅读卡第一版<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h3>
+<p>在项目 <code>reading-cards.md</code> 写入至少一张完整阅读卡。至少包含：作者主张（带位置）、原文证据、局限与边界、个人判断、AI 偏差审计、核验状态。课堂只要求跑通一篇论文的完整流程；第 5 课继续使用这些阅读卡，第 6 课问题门前累计至少 3 张与个人项目直接相关的完整精读卡。</p>
+<p>本课不正式提交。当堂最低产出是一张围绕一条主张的完整阅读卡、一条偏差审计和一条 AI 使用记录；课后才补到累计 3 张；第 6 课按问题门检查当时的完整项目版本。</p>
+<hr />
+<h2 id="_9">八、术语表<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>本课程中的含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI 导航</td>
+<td>让 AI 给出中心问题、论证结构、关键术语和预期证据位置，全部标记"未核验"</td>
+</tr>
+<tr>
+<td>原文核验</td>
+<td>人工阅读指定段落，记录可复查的章节、页码、图表或公式位置</td>
+</tr>
+<tr>
+<td>AI 质疑</td>
+<td>让 AI 根据已核验内容提出反例、遗漏和适用边界，作为候选问题</td>
+</tr>
+<tr>
+<td>偏差审计</td>
+<td>记录至少一处 AI 错读、过度概括、位置错指或伪造引用，或记录检查过的风险点</td>
+</tr>
+<tr>
+<td>人工定稿</td>
+<td>由学生写出阅读卡，区分作者主张、原文证据、个人判断和 AI 建议</td>
+</tr>
+<tr>
+<td>作者主张</td>
+<td>原文确实写了的内容，必须能回到原文位置</td>
+</tr>
+<tr>
+<td>模型推断</td>
+<td>AI 根据原文相关内容推断出的更具体结论，不是作者主张</td>
+</tr>
+<tr>
+<td>过度概括</td>
+<td>措辞强度被改写，如"降低"被写成"消除"</td>
+</tr>
+<tr>
+<td>伪造引用</td>
+<td>AI 给出的题名、作者、年份、页码或 DOI 与正式来源无法对应</td>
+</tr>
+<tr>
+<td>阅读卡</td>
+<td>记录一篇论文主张、证据、局限、个人判断和 AI 偏差的结构化卡片</td>
+</tr>
+<tr>
+<td>核验状态</td>
+<td>pending / verified / verified-with-caveat / rejected</td>
+</tr>
+<tr>
+<td>原文位置</td>
+<td>章节、页码、图表、公式或实验编号，用于复查主张来源</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_10">九、延伸阅读与课程材料<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>课程内材料：</p>
+<ul>
+<li><a href="../../../course/syllabus/">课程大纲</a></li>
+<li>备课规划（未公开；请查对应公开来源） 第 4 课</li>
+<li><a href="../../../course/reading-list/">逐课阅读清单</a> 第 4 课</li>
+<li><a href="../../../course/starter-template/">早期研究脚手架</a></li>
+<li><a href="../../../course/assignments/">项目里程碑与研究门</a></li>
+</ul>
+<p>正式书目（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 4 课）：</p>
+<ol>
+<li>Keshav, S. "How to Read a Paper." <em>ACM SIGCOMM Computer Communication Review</em> 37(3), 83–84 (2007). DOI: <a href="https://doi.org/10.1145/1273445.1273458">10.1145/1273445.1273458</a>。<a href="https://cs.uwaterloo.ca/~brecht/courses/854-http-video-2012/readings/keshav-paper-reading.pdf">作者课程 PDF</a>。用途：以三遍阅读法控制阅读深度，建立实验论文的检查问题。</li>
+<li>Booth, W. C. et al. <em>The Craft of Research</em>, 5th ed. University of Chicago Press, 2024. 选读 Chapter 4 "Engaging Sources"，重点为 reading for a problem、argument、data and support。<a href="https://press.uchicago.edu/ucp/books/book/chicago/C/bo215874008">出版社页面</a>。用途：防止把作者主张、数据、证据和个人推断混为一谈。</li>
+<li>沈向洋、华刚：《读科研论文的三个层次、四个阶段与十个问题》。本地转载副本（未公开；请查对应公开来源）。只作为中文提问清单；正式分发前须确认原始出处与许可。</li>
+</ol>
+<p>课后学习直接服务第 5 课证据地图与第 6 课问题门：</p>
+<ul>
+<li><strong>核心阅读（约 20 分钟）</strong>：Keshav "How to Read a Paper"，按"AI 导航 → 原文核验 → AI 质疑 → 偏差审计 → 人工定稿"流程记录阅读要点。</li>
+<li><strong>项目推进（每张约 30-45 分钟）</strong>：继续完善课堂阅读卡，并在第 6 课问题门前累计至少 3 张与个人项目直接相关的完整精读卡；若课堂已完成 1 张，通常还需补 2 张。</li>
+<li><strong>产出位置与提交</strong>：持续写入个人项目 <code>reading-cards.md</code>，不逐周正式提交；第 5 课再重组进证据地图，第 6 课问题门统一检查。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "metric": "omission_rate",
+  "condition_field": "condition_present",
+  "expected_records": 4,
+  "input": "inputs.json",
+  "result": "results.json",
+  "log": "run-log.jsonl",
+  "randomness": "not_applicable_deterministic"
+}

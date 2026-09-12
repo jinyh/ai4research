@@ -1,0 +1,2320 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="上海交通大学研究生课程“智能科研方法”（AI for Research: Methods and Practice）">
+      
+      
+      
+        <link rel="canonical" href="https://jinyh.github.io/ai4research/lessons/lesson-02/handout/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>第二讲｜科研伦理、Agent 权限、研究工件与追踪 - 智能科研方法</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#agent" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="智能科研方法" class="md-header__button md-logo" aria-label="智能科研方法" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            智能科研方法
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第二讲｜科研伦理、Agent 权限、研究工件与追踪
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../learn/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  16 讲课程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../project/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  项目与考核
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../templates/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  模板与资源
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../teacher/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  课程信息
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="智能科研方法" class="md-nav__button md-logo" aria-label="智能科研方法" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    智能科研方法
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../learn/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 讲课程
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    16 讲课程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · AI 辅助科研导论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · 科研伦理与 Agent 边界
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · 检索与来源核验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · 精读与主张核验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · 证据地图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · 问题定义
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · 假设与区分实验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · 中期诊所
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Baseline 与复现
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · 受限 Agent 执行
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 · 自动化循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 · 个人工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 · 工作流评价
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 · 结果写成论证
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 · 同行评审与修改
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 · 最终展示（讲义待复核）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目与考核
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模板与资源
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    模板与资源
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模板与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/opencode-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenCode 最小启动说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/reading-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    逐课参考阅读清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资源索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teacher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课程信息
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导读
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学习目标
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、科研伦理首先是研究质量问题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、科研伦理首先是研究质量问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        中国科学院《诚信提醒》的课堂用法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、把风险判断写成五个字段
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、把风险判断写成五个字段">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        校级规范与任务级处置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三种处置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三种处置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 允许
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 有条件允许
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 禁止
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、六类常见风险
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、六类常见风险">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 数据、隐私与保密
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 证据真实性与可复现性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 署名、贡献与披露
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 版权、许可与知识产权
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 公平、偏见与社会影响
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 安全与双重用途
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、Agent 权限不是一个总开关
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、Agent 权限不是一个总开关">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四个经典保护原则
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四个经典保护原则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fail-safe-defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fail-safe defaults｜默认拒绝
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#least-privilege" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Least privilege｜最小权限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-mediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete mediation｜每次访问都检查
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#separation-of-privilege" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Separation of privilege｜关键动作需要多项条件
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        研究 harness：声明边界并强制执行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、权限矩阵怎样填写
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、权限矩阵怎样填写">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        把权限写入任务契约
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、研究工件不是“文件列表”
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、研究工件不是“文件列表”">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四种状态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        状态迁移必须有依据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        轻量追踪表
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、日志怎样避免成为形式主义
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、三个案例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、三个案例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        案例 A：未公开稿件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        案例 B：生成数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        案例 C：评价协议
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、第 2 课个人实践
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="九、第 2 课个人实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课堂最低闭环（两段个人实践）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附录：个人实践通用 prompt（可复制版）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课后持续更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        同伴互查三问
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十、课后学习与项目推进
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十一、术语表
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十二、参考阅读
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十二、参考阅读">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        正式书目
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课堂案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../../../learn/02/">← 本课任务与材料</a></p>
+<hr />
+<h1 id="agent">第二讲｜科研伦理、Agent 权限、研究工件与追踪<a class="headerlink" href="#agent" title="Permanent link">&para;</a></h1>
+<h2 id="_1">导读<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>第一讲建立了一个最小可审计交互：Agent 先只读分析，研究者审核建议，再授权有限写入，最后检查实际文件变化并记录 AI 使用。第二讲继续追问：</p>
+<blockquote>
+<p>当 Agent 能够读取材料、调用工具、修改文件和访问网络时，研究者如何把伦理原则变成可执行的边界？</p>
+</blockquote>
+<p>科研伦理不是课程末尾附加的一份声明，也不是背诵若干禁止事项。它至少要进入四个具体位置：</p>
+<ol>
+<li>选择什么材料可以进入 AI Context；</li>
+<li>决定 Agent 可以读取、修改、执行和发送什么；</li>
+<li>判断哪些动作必须由人确认；</li>
+<li>记录研究工件为何从初稿变成可引用结论。</li>
+</ol>
+<p>本讲不要求你解决项目的全部合规问题，而是建立一套可以持续修改的早期控制面：<code>agent-permissions.md</code>、<code>ethics-and-compliance.md</code>、<code>artifact-tracking.md</code> 和 <code>ai-usage-log.md</code>。课堂只完成三项最小产出：一行权限矩阵、一张五字段风险卡和一条 AI 使用记录；工件状态追踪由教师用一个生命周期示范，学生课后再持续更新。这四个文件不在课程仓库里，需要你在自己的项目工作区中按<a href="../../../course/starter-template/">早期研究脚手架</a>创建。</p>
+<h2 id="_2">学习目标<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>完成本讲后，你应该能够：</p>
+<ol>
+<li>从数据、证据、署名、版权、隐私、保密和双重用途等维度识别风险；</li>
+<li>对一项 AI 辅助科研动作作出“允许／有条件允许／禁止”的判断，并用五字段风险卡说明理由；</li>
+<li>根据默认拒绝、最小权限、完全仲裁和权限分离填写 Agent 权限矩阵和人工确认点；</li>
+<li>区分研究工件的 <code>draft → review → approved → stable</code> 四种成熟度；</li>
+<li>用日志、状态和实际文件变化保存一条可追溯记录。</li>
+</ol>
+<hr />
+<h2 id="_3">一、科研伦理首先是研究质量问题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>科研诚信常被理解成“不要造假”，但可信研究还依赖更积极的价值。美国国家科学院 2017 年共识报告把研究诚信概括为六项核心价值：</p>
+<ul>
+<li>客观（objectivity）；</li>
+<li>诚实（honesty）；</li>
+<li>开放（openness）；</li>
+<li>公平（fairness）；</li>
+<li>问责（accountability）；</li>
+<li>守护责任（stewardship）。</li>
+</ul>
+<p>AI 不会自动破坏这些价值，也不会自动保障这些价值。风险往往来自“研究对象、Agent 动作和使用情境”的组合。例如：</p>
+<ul>
+<li>用 AI 整理公开论文，和把未公开评审稿上传到未经授权的平台，不是同一风险；</li>
+<li>用生成数据做压力测试，和把生成数据标成真实实验观测，不是同一行为；</li>
+<li>让 Agent 建议评价指标，和让它在看到结果后自行修改指标，不是同一权限。</li>
+</ul>
+<p>因此，伦理判断不能只问“是否使用 AI”，而要问：</p>
+<blockquote>
+<p>谁，对什么对象，执行什么动作，可能造成什么后果，由谁核验和承担责任？</p>
+</blockquote>
+<h3 id="_4">中国科学院《诚信提醒》的课堂用法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>中国科学院科研道德委员会 2024 年发布的《诚信提醒》覆盖选题调研、申报、数据、音视频与图表、成果撰写、同行评议、使用声明和工具选择八类情境。对本课程最重要的不是逐条记忆，而是识别三条贯穿原则：</p>
+<ol>
+<li><strong>核验</strong>：AI 生成的调研、建议、数据解释、文献和成果内容不能未经核实直接使用；</li>
+<li><strong>披露</strong>：工具、版本、日期、参与环节和使用过程应如实记录；</li>
+<li><strong>保护</strong>：不得因使用 AI 未经授权泄露评审材料、个人隐私、受限数据或知识产权内容。</li>
+</ol>
+<p>课程规范是教学底线，不替代学校、实验室、数据提供方、期刊或项目的正式要求；当多项规则同时适用时，执行更严格且与具体材料相匹配的要求。</p>
+<hr />
+<h2 id="_5">二、把风险判断写成五个字段<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>面对一项 AI 辅助科研动作，可以先填写一个五字段风险卡：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>要回答的问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>对象（Asset）</td>
+<td>涉及什么材料、数据、账户、文件或外部系统？</td>
+</tr>
+<tr>
+<td>动作（Action）</td>
+<td>Agent 要读取、生成、修改、执行、发送还是公开什么？</td>
+</tr>
+<tr>
+<td>风险（Risk）</td>
+<td>可能损害真实性、隐私、保密、许可、安全、公平或可复现性的哪一项？</td>
+</tr>
+<tr>
+<td>控制（Control）</td>
+<td>通过缩小 Context、脱敏、本地处理、只读、人工确认、日志或停止条件如何降低风险？</td>
+</tr>
+<tr>
+<td>责任（Owner）</td>
+<td>谁决定是否继续，谁核验结果，谁对最终使用负责？</td>
+</tr>
+</tbody>
+</table>
+<p>五个字段的用途是迫使判断落到具体动作。只写“注意伦理风险”不能指导 Agent，也不能支持事后复核。</p>
+<h3 id="_6">校级规范与任务级处置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>上海交通大学《关于在教育教学中使用 AI 的规范》将使用场景分为禁止、限制、鼓励和开放四类，是课程最近制度基线。本课的任务级风险处置使用“禁止／有条件允许／允许”三档，映射关系如下：</p>
+<ul>
+<li>校级“禁止”对应任务级“禁止”；</li>
+<li>校级“限制”对应任务级“有条件允许”；</li>
+<li>校级“鼓励”“开放”对应任务级“允许”，但仍须服从材料授权、课程要求和披露责任。</li>
+</ul>
+<p>校级分类是场景治理，任务级处置是具体动作边界。校级“鼓励”或“开放”不等于无须风险卡和权限矩阵；当材料许可、共同作者、机构或期刊规则更严格时，执行更严格要求。授课前应复核学校规范是否有修订。</p>
+<h3 id="_7">三种处置<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>完成风险卡后，给动作一个处置结论：</p>
+<h4 id="1">1. 允许<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<p>风险较低，现有控制充分，可以在当前边界内执行。</p>
+<p>例：Agent 只读公开论文的书目信息，生成候选关键词；学生随后回原始来源核验。</p>
+<h4 id="2">2. 有条件允许<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<p>可以执行，但必须先满足明确条件。</p>
+<p>例：含用户反馈的数据只有在获得授权、完成必要脱敏、限定只读目录并禁止外部传输后，才允许本地分析。</p>
+<h4 id="3">3. 禁止<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<p>风险无法在当前课程条件下合理控制，或者动作本身破坏研究诚信。</p>
+<p>例：把 AI 生成的模拟数据伪装成真实实验数据；把保密评审稿上传到未经评议组织者认可的外部工具；让 Agent 删除不利结果以“清理实验”。</p>
+<p>“有条件允许”不是模糊中间态。条件必须可以检查，例如：</p>
+<ul>
+<li>使用哪一个获授权的数据副本；</li>
+<li>哪些字段需要删除或替换；</li>
+<li>网络是否关闭；</li>
+<li>哪个文件只读；</li>
+<li>哪一步必须由谁确认；</li>
+<li>失败后保存什么记录。</li>
+</ul>
+<hr />
+<h2 id="_8">三、六类常见风险<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 数据、隐私与保密<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>检查材料是否包含个人信息、敏感属性、未公开论文、同行评议材料、学生资料、商业秘密、受限数据或凭据。不要因为材料已经在本机，就假定可以发送给外部模型。</p>
+<p>控制方式包括：</p>
+<ul>
+<li>先确认材料属于作者团队工作稿、正式同行评议稿还是第三方受限材料；</li>
+<li>获得共同作者或其他材料权利人的明确授权；</li>
+<li>只提供完成任务所需的最小片段；</li>
+<li>删除身份字段和无关元数据；</li>
+<li>使用获授权的本地或机构环境；</li>
+<li>禁止联网与跨目录访问；</li>
+<li>记录数据来源、许可和处理方式。</li>
+</ul>
+<h3 id="2_1">2. 证据真实性与可复现性<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>AI 输出可能混淆事实、推断和虚构。生成内容必须保留来源角色：</p>
+<ul>
+<li>AI 建议：候选；</li>
+<li>原文或原始数据：可核验输入；</li>
+<li>分析脚本输出：在给定环境和配置下的结果；</li>
+<li>人工判断：基于证据作出的决定。</li>
+</ul>
+<p>不得把生成数据、补写结果或无法复现的图表当成真实观测。</p>
+<h3 id="3_1">3. 署名、贡献与披露<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>AI 工具不是作者，也不能承担科研责任。使用者需要说明：</p>
+<ul>
+<li>使用了什么工具或模型；</li>
+<li>在什么环节使用；</li>
+<li>提供了什么 Context；</li>
+<li>输出如何被使用或放弃；</li>
+<li>采用了什么人工核验；</li>
+<li>哪些核心判断由研究者完成。</li>
+</ul>
+<h3 id="4">4. 版权、许可与知识产权<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>能访问不等于能上传、改写、再发布或训练。论文全文、图表、代码、模型权重和数据集可能分别受到数据库条款、出版许可、开源许可或项目协议约束。</p>
+<h3 id="5">5. 公平、偏见与社会影响<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>数据覆盖不足、标签偏差、语言和地域差异可能让工作流系统性忽略某些群体或研究方向。风险评估需要记录谁可能受益、谁可能受损、哪些群体在数据中不可见。</p>
+<h3 id="6">6. 安全与双重用途<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>部分研究材料或自动化能力可能同时支持有益与有害用途。课程项目应缩小到可安全展示和复核的范围；对无法在课堂条件下合理控制的高风险任务，不以“研究探索”为由扩大 Agent 权限。</p>
+<hr />
+<h2 id="agent_1">四、Agent 权限不是一个总开关<a class="headerlink" href="#agent_1" title="Permanent link">&para;</a></h2>
+<p>“允许使用 OpenCode”不等于“允许 Agent 做任何事”。权限应按对象和动作拆开：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文件读取</td>
+<td>指定公开论文、项目 Markdown、只读数据副本</td>
+</tr>
+<tr>
+<td>文件写入</td>
+<td>指定目标文件或目录，不默认整个项目</td>
+</tr>
+<tr>
+<td>命令执行</td>
+<td>明确允许的测试、格式检查或只读命令</td>
+</tr>
+<tr>
+<td>网络访问</td>
+<td>关闭、限定域名、限定检索任务或逐次确认</td>
+</tr>
+<tr>
+<td>外部系统</td>
+<td>API、MCP、云盘、数据库、消息和发布平台</td>
+</tr>
+<tr>
+<td>不可逆动作</td>
+<td>删除、覆盖、公开、发送、导入和账户变更</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">四个经典保护原则<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>Saltzer 与 Schroeder 1975 年提出的保护原则虽然早于现代 Agent，但非常适合解释权限设计。</p>
+<h4 id="fail-safe-defaults">Fail-safe defaults｜默认拒绝<a class="headerlink" href="#fail-safe-defaults" title="Permanent link">&para;</a></h4>
+<p>没有明确授权的动作默认不允许，而不是“只要没写禁止就可以”。</p>
+<h4 id="least-privilege">Least privilege｜最小权限<a class="headerlink" href="#least-privilege" title="Permanent link">&para;</a></h4>
+<p>每次任务只获得完成当前动作所需的最小权限，任务变化后重新评估。</p>
+<h4 id="complete-mediation">Complete mediation｜每次访问都检查<a class="headerlink" href="#complete-mediation" title="Permanent link">&para;</a></h4>
+<p>不能只在第一次检查权限，随后允许 Agent 在长循环中任意扩大范围。重要访问和外部动作需要持续检查。</p>
+<h4 id="separation-of-privilege">Separation of privilege｜关键动作需要多项条件<a class="headerlink" href="#separation-of-privilege" title="Permanent link">&para;</a></h4>
+<p>高风险动作不能由单一信号触发。例如公开结果应同时满足：指定文件、通过人工复核、无敏感信息、明确发布目标。</p>
+<p>这些原则不是机械规则，而是风险警报。如果工作流必须违反某项原则，需要记录原因、补偿控制和责任人。</p>
+<h3 id="harness">研究 harness：声明边界并强制执行<a class="headerlink" href="#harness" title="Permanent link">&para;</a></h3>
+<p>权限矩阵、任务契约、版本化协议（如实验规格）和工件追踪记录，都是研究者把研究边界<strong>声明</strong>出来的工件；Agent 环境（本课程使用 OpenCode）是<strong>执行</strong>这些声明的载体。声明加执行，再加上例外走人工确认，构成"研究 harness"。它不是某个产品的功能名，而是这一整套边界机制的统称：研究者声明边界，harness 执行边界，例外必须经人工确认并留记录。后续课程（受限 Agent 执行与自主工作流设计）会继续使用这个概念。</p>
+<hr />
+<h2 id="_10">五、权限矩阵怎样填写<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>本课程使用以下结构：</p>
+<table>
+<thead>
+<tr>
+<th>对象或能力</th>
+<th>只读范围</th>
+<th>可写范围</th>
+<th>是否允许执行</th>
+<th>人工确认点</th>
+<th>禁止事项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>项目 Markdown</td>
+<td><code>problem-definition.md</code>、公开说明</td>
+<td><code>agent-permissions.md</code> 等指定文件</td>
+<td>不适用</td>
+<td>写入前确认目标段落</td>
+<td>不批量重写其他工件</td>
+</tr>
+<tr>
+<td>代码与命令</td>
+<td><code>src/</code>、测试配置</td>
+<td>当前任务指定文件</td>
+<td>只运行白名单命令</td>
+<td>安装依赖、长时任务前确认</td>
+<td>不删除失败记录</td>
+</tr>
+<tr>
+<td>文献与网络</td>
+<td>已批准公开来源</td>
+<td>检索记录</td>
+<td>按任务决定</td>
+<td>登录、下载或发送全文前确认</td>
+<td>不上传正式评审稿或未获授权材料</td>
+</tr>
+<tr>
+<td>数据目录</td>
+<td>获授权只读副本</td>
+<td>派生结果目录</td>
+<td>仅批准脚本</td>
+<td>改变清洗规则前确认</td>
+<td>不接触原始敏感目录</td>
+</tr>
+<tr>
+<td>外部 API / MCP</td>
+<td>明确服务和字段</td>
+<td>明确目标系统</td>
+<td>默认关闭</td>
+<td>外部写入逐次确认</td>
+<td>不发送凭据和未获授权的未公开内容</td>
+</tr>
+</tbody>
+</table>
+<p>矩阵中最容易遗漏的是“人工确认点”。它应该描述触发条件，而不是只写“需要人工确认”：</p>
+<ul>
+<li>第一次从只读变为写入；</li>
+<li>修改研究问题、评价指标或停止条件；</li>
+<li>安装依赖或运行高成本任务；</li>
+<li>访问网络、登录账户或调用外部 API；</li>
+<li>处理敏感、保密或受许可限制材料；</li>
+<li>删除、覆盖、发送、公开或导入外部系统；</li>
+<li>将工件状态改为 <code>approved</code> 或 <code>stable</code>。</li>
+</ul>
+<h3 id="_11">把权限写入任务契约<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>每次 Agent 任务至少说明：</p>
+<div class="highlight"><pre><span></span><code>Task：本次只解决什么问题？
+Context：允许读取哪些文件和材料？
+Output：输出格式和目标文件是什么？
+Permission：允许读取、写入、执行和联网到什么范围？
+Non-goal：本次明确不做什么？
+Review：哪一步暂停并等待人工确认？
+</code></pre></div>
+<p>权限矩阵提供长期边界，任务契约提供本次边界；两者都是研究 harness 的声明工件。两者冲突时执行更窄的授权。</p>
+<hr />
+<h2 id="_12">六、研究工件不是“文件列表”<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>研究工件是可以被审查、追踪和回写的研究产出，例如问题定义、精读卡、证据地图、实验规格、判断记录和评价报告。一个文件存在，不代表其中的主张已经成熟。</p>
+<h3 id="_13">四种状态<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>含义</th>
+<th>可以怎样使用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>draft</code></td>
+<td>初步内容，可能缺失来源、边界或核验</td>
+<td>用于思考和讨论，不作为正式结论</td>
+</tr>
+<tr>
+<td><code>review</code></td>
+<td>已具备最小结构，等待本人或同伴检查</td>
+<td>用于审查和修改</td>
+</tr>
+<tr>
+<td><code>approved</code></td>
+<td>已通过对应研究门或明确人工批准</td>
+<td>可作为下一阶段输入</td>
+</tr>
+<tr>
+<td><code>stable</code></td>
+<td>证据与边界足以支持稳定引用</td>
+<td>可进入最终论证，但仍可在新证据下修订</td>
+</tr>
+</tbody>
+</table>
+<p>状态描述的是成熟度，不是“做到第几步”。把文件从 <code>draft</code> 改成 <code>stable</code>，不会自动增加证据。</p>
+<h3 id="_14">状态迁移必须有依据<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>每次迁移至少记录：</p>
+<ul>
+<li>谁发起变化；</li>
+<li>谁进行了复核；</li>
+<li>新增或核验了什么证据；</li>
+<li>解决了哪些问题；</li>
+<li>仍有哪些边界；</li>
+<li>变化将被用于哪个后续动作。</li>
+</ul>
+<p><code>stable</code> 不是“写得很流畅”。本课程要求关键结论至少绑定一项可核验直接证据或实验结果；准备标为 <code>stable</code> 的结论原则上需要两项相互独立证据。只有单一证据时，应保持边界和待验证状态。</p>
+<h3 id="_15">轻量追踪表<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>工件</th>
+<th>状态</th>
+<th>来源</th>
+<th>依据</th>
+<th>后续用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>问题定义</td>
+<td>draft</td>
+<td>个人兴趣、领域现象</td>
+<td>初步观察</td>
+<td>检索与问题门</td>
+</tr>
+<tr>
+<td>AI 使用记录</td>
+<td>review</td>
+<td>工具交互</td>
+<td>实际 prompt、diff、人工核验</td>
+<td>透明披露</td>
+</tr>
+<tr>
+<td>权限矩阵</td>
+<td>review</td>
+<td>当前任务和材料</td>
+<td>风险卡、人工确认点</td>
+<td>后续 Agent 任务</td>
+</tr>
+<tr>
+<td>伦理清单</td>
+<td>draft</td>
+<td>数据与使用情境</td>
+<td>许可和风险判断</td>
+<td>项目范围调整</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_16">七、日志怎样避免成为形式主义<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<p>日志的价值不是证明“我写过日志”，而是让后来者可以回答：</p>
+<ol>
+<li>AI 在哪一步参与？</li>
+<li>它看到了什么 Context？</li>
+<li>它提出或修改了什么？</li>
+<li>人为什么采纳或拒绝？</li>
+<li>哪些内容经过怎样的核验？</li>
+<li>实际文件变化是否与 Agent 自述一致？</li>
+</ol>
+<p>一条有用的 AI 使用记录包括：</p>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>工具／模型</th>
+<th>用途</th>
+<th>关键输入</th>
+<th>Context／数据来源</th>
+<th>输出用途</th>
+<th>人工核验方式</th>
+<th>问题或误导</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>例</td>
+<td>OpenCode + 某模型</td>
+<td>收敛研究问题</td>
+<td>任务契约摘要</td>
+<td><code>AGENTS.md</code>、问题初稿</td>
+<td>采用建议 2</td>
+<td>检查定义、来源和 diff</td>
+<td>建议 1 扩大了数据范围</td>
+</tr>
+</tbody>
+</table>
+<p>以下记录没有足够信息：</p>
+<ul>
+<li>“用 AI 帮我改了一下”；</li>
+<li>“模型说没有问题”；</li>
+<li>“已人工核验”但不写核验对象和方法；</li>
+<li>只保存最终成功输出，删除失败和拒绝原因；</li>
+<li>只相信 Agent 的完成报告，不检查文件、命令和外部状态。</li>
+</ul>
+<hr />
+<h2 id="_17">八、三个案例<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<p>课堂只完整展开案例 A，并始终沿用同一个虚构对象：一份未公开合作稿。先判断原文不得默认发送给外部模型，再把可执行替代写成权限一行（只允许经授权的公开版本或人工抽象问题），最后在 AI 使用记录中写明“原稿未发送、使用了什么替代输入、人如何核验”。案例 B/C 用于课后迁移或教师根据班级问题选讲，不再并列要求当堂完成。</p>
+<h3 id="a">案例 A：未公开稿件<a class="headerlink" href="#a" title="Permanent link">&para;</a></h3>
+<p>任务：你是共同作者，想把一篇尚未投稿的合作论文上传到个人订阅的外部模型，让它生成供作者内部使用的模拟审稿意见。</p>
+<p>初步判断：<strong>默认不直接上传全文；满足明确条件后可以转为有条件允许。</strong></p>
+<p>条件至少包括：</p>
+<ul>
+<li>所有共同作者或材料权利人同意；</li>
+<li>合作协议、资助要求、机构规定和投稿规则允许；</li>
+<li>使用经项目或机构认可、数据训练与保存规则可接受的处理环境；</li>
+<li>不包含敏感数据、第三方保密材料或尚未获得保护的关键知识产权；</li>
+<li>只提供必要范围，保存 AI 使用记录，并由作者人工核验输出。</li>
+</ul>
+<p>个人付费订阅不等于获得处理授权；即使平台提供关闭训练或临时会话选项，也只能降低部分平台风险，不能替代共同作者同意和项目规则。不同账户类型和服务的数据处理规则可能不同，使用前应核对供应商当前说明，例如 <a href="https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance">OpenAI 数据使用说明</a> 与 <a href="https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training">Anthropic 数据训练说明</a>。若条件不能满足，改用以下替代路径：</p>
+<ul>
+<li>公开版本；</li>
+<li>最小必要片段；</li>
+<li>抽象化问题；</li>
+<li>内部人工审阅；</li>
+<li>获批准的本地／机构环境。</li>
+</ul>
+<p>最小披露的两个常见做法：只发摘要与结构（不发全文与数据）；把未公开数据替换为占位符，只提交要分析的问题。</p>
+<p>如果上传已经发生：停止继续发送；评估已发送内容的敏感级别（摘要／全文／数据）；向共同作者说明并保留记录；后续改用上述合规路径。事后删除或隐瞒不能消除已经发生的泄露。</p>
+<p>如果材料是作为审稿人收到的正式评审稿，判断应更严格：除非期刊或评议组织者明确批准具体工具并能保障保密，否则不得上传，也不能把 AI 输出冒充正式同行评议。中国科学院《诚信提醒》第六条以及 <a href="https://www.nature.com/nature-portfolio/editorial-policies/ai">Nature</a> 和 <a href="https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-reviewers.html">ICMJE</a> 的审稿人政策均强调评审保密与组织者规则。</p>
+<h3 id="b">案例 B：生成数据<a class="headerlink" href="#b" title="Permanent link">&para;</a></h3>
+<p>任务：让 Agent 生成模拟样本，用于测试分析脚本能否处理缺失值和异常值。</p>
+<p>初步判断：<strong>有条件允许。</strong></p>
+<p>条件：明确标记为模拟数据；与真实实验数据分开存储；记录生成逻辑和用途；不得用它替代真实观测或夸大实验结论。</p>
+<p>一个可操作的区分：模拟缺失值可以测试分析脚本是否会崩溃、异常值处理是否按预期运行；它可以支持“脚本在这组模拟条件下通过”的方法结论，不能支持“真实人群中该方法有效”或“现实数据呈现同样规律”的经验结论。后两类结论仍需要真实、获授权并符合研究设计的数据。</p>
+<h3 id="c">案例 C：评价协议<a class="headerlink" href="#c" title="Permanent link">&para;</a></h3>
+<p>任务：自动实验循环发现当前指标下结果不理想，准备自行修改指标并继续搜索。</p>
+<p>初步判断：<strong>禁止 Agent 自行修改。</strong></p>
+<p>原因：指标决定什么算“改善”。看到结果后无记录地改指标，会污染比较并产生选择性报告。Agent 可以提出修改建议，但必须暂停，由研究者说明理由、版本化协议并决定旧结果如何保留。</p>
+<hr />
+<h2 id="2_2">九、第 2 课个人实践<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h2>
+<p>本节分为课堂三件最小产出与课后持续更新两个层级，避免把个人实践误解为必须当场填完全部治理文档。</p>
+<h3 id="_18">课堂最低闭环（两段个人实践）<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p>在自己的 OpenCode 项目中完成：</p>
+<ol>
+<li>在 <code>agent-permissions.md</code> 中填写当前科研动作的一行权限矩阵；</li>
+<li>在同一行明确至少一个人工确认点和一个禁止事项；</li>
+<li>在 <code>ethics-and-compliance.md</code> 中填写一张五字段风险卡；</li>
+<li>只读权限自查：让 Agent 只读 <code>agent-permissions.md</code> 提一条过宽或缺失权限，或人工自行完成同一检查；</li>
+<li>在 <code>ai-usage-log.md</code> 中记录本次 AI 参与、Context、输出用途、采用或拒绝及核验方式。未调用模型时写“本次为人工判断，无模型参与”并记录判断内容。</li>
+</ol>
+<p>四个工件的空表模板见<a href="../../../course/starter-template/">早期研究脚手架</a> §4（工件追踪）、§6（AI 使用记录）、§8（权限矩阵）与 §9（伦理检查，含五字段风险卡空表）；风险卡的字段定义见本讲第二节。</p>
+<p><strong>不必须跑模型</strong>：无模型路径完成同一工件即达闭环，记录口径不同（见<a href="../classroom-pack/">课堂材料包</a> §四"未执行"口径）。</p>
+<p>模型不可用时直接编辑 Markdown，并把“预期 Agent 执行的动作”与“人工核验方式”写清。不得使用真实保密或敏感材料。</p>
+<h3 id="prompt">附录：个人实践通用 prompt（可复制版）<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h3>
+<p>【可替换处】换成你自己的内容：</p>
+<div class="highlight"><pre><span></span><code>读取 agent-permissions.md 和 problem-definition.md。
+任务：
+1. 指出当前权限矩阵中一条过宽或缺失的权限；
+2. 指出风险卡或追踪表中一条缺少核验方式的内容。
+限制：不修改任何文件；不联网；不把建议写成已确认决定。
+</code></pre></div>
+<h3 id="_19">课后持续更新<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p>将 <code>artifact-tracking.md</code> 扩展为四项早期工件：问题定义、AI 使用记录、权限矩阵和伦理清单。每项写明状态、当前依据和下一步。追踪表是后续项目的持续记录，不是本课课堂第四张表。</p>
+<p>当堂只验收风险卡、权限一行、使用记录和一次边界审查；课后只沿用这些工件补全项目边界，不新增正式提交。第 6 课问题门检查的是当时整个项目版本的完整条件，不是要求在本课将所有治理表单一次填满。</p>
+<h3 id="_20">同伴互查三问<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<ol>
+<li>当前只读范围是否已经缩小到完成任务所需的最小集合？</li>
+<li>哪一项动作最需要明确的人工确认点？</li>
+<li>风险理由、权限边界和日志能否相互解释，而不是三份互不关联的表？</li>
+</ol>
+<hr />
+<h2 id="_21">十、课后学习与项目推进<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<p>第 3 课前完成以下轻量任务，总计约 45 分钟：</p>
+<ol>
+<li><strong>核心阅读，约 15 分钟</strong><br />
+   阅读中国科学院科研道德委员会《关于在科研活动中规范使用人工智能技术的诚信提醒》，在个人笔记中记录一条与你当前项目直接相关的底线，以及它将怎样改变权限或核验方式。</li>
+<li><strong>项目更新，约 20 分钟</strong><br />
+   补全一行 <code>agent-permissions.md</code> 权限矩阵、一张 <code>ethics-and-compliance.md</code> 五字段风险卡、<code>artifact-tracking.md</code> 中的四项早期工件，以及 <code>ai-usage-log.md</code> 中本次 AI 参与记录。</li>
+<li><strong>第 3 课准备，约 10 分钟</strong><br />
+   写出一个准备检索的公开研究问题、3–5 个关键词，以及一项来源或网络访问边界。</li>
+<li><strong>任选阅读，不计入基本时间</strong><br />
+   根据个人需要，在 NASEM <em>Fostering Integrity in Research</em> Chapter 2 与 Saltzer、Schroeder 经典论文的四项权限原则选段中二选一。</li>
+</ol>
+<p>以上内容持续写入个人项目，不单独提交、不计周作业分。第 3 课开场进行自查或同伴互看；第 6 课问题门再统一检查与项目直接相关的工件成熟度。</p>
+<hr />
+<h2 id="_22">十一、术语表<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>AI Context</strong>：Agent 在一次任务中能读取的材料和指令范围；它决定 Agent 实际看到什么，是权限控制的第一层。</li>
+<li><strong>风险卡五字段</strong>（Asset / Action / Risk / Control / Owner）：把伦理担忧拆成对象、动作、风险、控制和责任人五项，使判断可记录、可复核。</li>
+<li><strong>允许 / 有条件允许 / 禁止</strong>：对一项 AI 辅助动作的三种处置；“有条件允许”的条件必须可检查（指定数据、脱敏字段、网络开关、确认点等）。</li>
+<li><strong>fail-safe defaults（默认拒绝）</strong>：没有明确授权的动作默认不允许，而非“没写禁止即可”。</li>
+<li><strong>least privilege（最小权限）</strong>：每次任务只获得完成当前动作所需的最小权限，任务变化后重新评估。</li>
+<li><strong>complete mediation（完全仲裁）</strong>：重要访问和外部动作在长循环中持续检查，而非只在入口检查一次。</li>
+<li><strong>separation of privilege（权限分离）</strong>：高风险动作需多项独立条件同时满足才能触发，如公开需指定文件、人工复核、无敏感信息、明确发布目标四者兼备。</li>
+<li><strong>权限矩阵</strong>：按对象和能力列出只读、可写、执行、人工确认点和禁止事项的长期边界表，提供项目级边界。</li>
+<li><strong>任务契约</strong>（Task / Context / Output / Permission / Non-goal / Review）：规定本次任务边界的六字段说明；与权限矩阵冲突时执行更窄授权。</li>
+<li><strong>研究 harness</strong>：把研究边界声明出来并强制执行的机制——权限矩阵、任务契约、版本化协议与追踪记录负责声明，Agent 环境（本课程为 OpenCode）负责执行，例外走人工确认。</li>
+<li><strong>人工确认点</strong>：规定 Agent 在哪些触发条件下暂停等待研究者判断，如首次写入、修改指标、状态迁移为 <code>approved</code> / <code>stable</code>。</li>
+<li><strong>研究工件</strong>：可被审查、追踪和回写的研究产出（问题定义、精读卡、证据地图、实验规格等），其成熟度独立于文件是否存在。</li>
+<li><strong>draft / review / approved / stable</strong>：工件成熟度四状态；状态描述被检查程度，不等于完成比例，<code>stable</code> 可因新证据回退。</li>
+<li><strong>AI 使用记录</strong>：记录 AI 参与环节、Context、输出用途、人工核验方式和问题的日志，用于事后还原判断与披露。</li>
+</ul>
+<hr />
+<h2 id="_23">十二、参考阅读<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
+<h3 id="_24">正式书目<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>核心规范</strong>：中国科学院科研道德委员会：《关于在科研活动中规范使用人工智能技术的诚信提醒》（2024）。<a href="https://www.cas.cn/sygz/202409/t20240910_5031186.shtml">官方页面</a></li>
+<li><strong>校级规范</strong>：上海交通大学：《关于在教育教学中使用 AI 的规范》（2025）。<a href="https://soo.sjtu.edu.cn/upload/file/20250217/20250217162021.pdf">正式文件</a>，授课前复核是否有修订。</li>
+<li><strong>共识报告选章</strong>：National Academies of Sciences, Engineering, and Medicine. <em>Fostering Integrity in Research</em>, Chapter 2 (2017). DOI: <a href="https://doi.org/10.17226/21896">10.17226/21896</a>。</li>
+<li><strong>经典论文选段</strong>：Saltzer, J. H., &amp; Schroeder, M. D. “The Protection of Information in Computer Systems” (1975)，只读 fail-safe defaults、complete mediation、separation of privilege 和 least privilege。<a href="https://web.mit.edu/Saltzer/www/publications/protection/">MIT 作者页面</a></li>
+</ol>
+<h3 id="_25">课堂案例<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Anthropic. <a href="https://www.anthropic.com/engineering/building-effective-agents"><em>Building Effective Agents</em></a> (2024)。只分析检查点、停止条件、沙箱测试和工具接口，不作为科研伦理规范。</li>
+</ol>
+<p>课程模板：</p>
+<ul>
+<li><a href="../classroom-pack/">第 2 课课堂材料包</a></li>
+<li><a href="../../../course/opencode-setup/">OpenCode 最小启动说明</a></li>
+<li><a href="../../../course/starter-template/">早期研究脚手架</a></li>
+<li><a href="../../../course/ethics-and-compliance-template/">科研伦理与合规说明模板</a></li>
+<li><a href="../../../course/reading-list/">逐课参考阅读清单</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

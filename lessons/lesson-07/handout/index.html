@@ -1,0 +1,2126 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="上海交通大学研究生课程“智能科研方法”（AI for Research: Methods and Practice）">
+      
+      
+      
+        <link rel="canonical" href="https://jinyh.github.io/ai4research/lessons/lesson-07/handout/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>第七讲｜机制假设、研究判断与实验设计 - 智能科研方法</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="智能科研方法" class="md-header__button md-logo" aria-label="智能科研方法" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            智能科研方法
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第七讲｜机制假设、研究判断与实验设计
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../learn/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  16 讲课程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../project/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  项目与考核
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../templates/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  模板与资源
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../teacher/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  课程信息
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="智能科研方法" class="md-nav__button md-logo" aria-label="智能科研方法" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    智能科研方法
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../learn/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 讲课程
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    16 讲课程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · AI 辅助科研导论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · 科研伦理与 Agent 边界
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · 检索与来源核验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · 精读与主张核验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · 证据地图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · 问题定义
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · 假设与区分实验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · 中期诊所
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Baseline 与复现
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · 受限 Agent 执行
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 · 自动化循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 · 个人工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 · 工作流评价
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 · 结果写成论证
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 · 同行评审与修改
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 · 最终展示（讲义待复核）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目与考核
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模板与资源
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    模板与资源
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模板与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/opencode-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenCode 最小启动说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/reading-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    逐课参考阅读清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资源索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teacher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课程信息
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导读
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学习目标
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、机制假设与研究判断在研究链路中的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、从问题到机制假设
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、从问题到机制假设">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 结果预测与机制假设
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 可验证因果假设的写法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 反证点与替代假设
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 主假设与可区分替代
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、研究判断记录
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、研究判断记录">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 事实、假设、研究判断与待验证项的区分
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 研究判断记录字段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 用研究判断比较两种方案
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、从假设到区分观察的映射草图
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、从假设到区分观察的映射草图">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 假设—指标—实验—可能结论映射
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 映射草图的最小边界
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 与第 9 课完整规格的边界
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 与 Agent / 自动化的关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、AI 辅助假设生成的核验
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、AI 辅助假设生成的核验">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. AI 在假设生成阶段可以做什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 假设生成阶段的核验清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 一条 AI 使用记录的最小字段
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、常见错误
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、贯穿案例：从问题门到实验规格
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、课堂练习
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、课堂练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 1：结果预测 vs 机制假设
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 2：写可验证因果假设
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 3：替代假设与区分观察
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 4：研究判断记录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 5：假设—指标—实验—可能结论映射
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 6：映射草图边界
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 7：AI 候选机制核验
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 8：机制假设与实验规格初版
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、术语表
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十、延伸阅读与课程材料
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../../../learn/07/">← 本课任务与材料</a></p>
+<hr />
+<h1 id="_1">第七讲｜机制假设、研究判断与实验设计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">导读<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>第 6 课把一个宽泛兴趣收敛成了一个有范围、有非例、有可证伪命题的研究问题，并从基本约束推导出了必要条件和可检验前提。问题门检查的正是"问题问得清不清、做不做得了"。但一个清楚的问题并不自带答案，也不自带实验。当你带着问题门材料走出第 6 课时，你手里有"问题成立"的证据，没有"假设成立"的证据。</p>
+<p>本课对应八阶段研究链路的阶段三"机制假设"与阶段六"研究判断"，向阶段七"原型验证"和第 8 课方案分享输出材料。它的核心转换是：</p>
+<blockquote>
+<p>从"问题成立"转向"假设值得检验"，从"必要条件清单"转向"可观察指标和实验规格"，从"我倾向于这样做"转向"有记录的取舍理由、适用边界与待验证状态"。</p>
+</blockquote>
+<p>完成本课后，你将带着一份机制假设列表、一份研究判断记录初版和一份实验规格草图进入第 8 课。第 8 课的同伴不会评价你的题目是否时髦，只会检查可检验性、证据、可行性和边界——这些材料就是他们检查的对象。</p>
+<h2 id="_3">学习目标<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>完成本讲后，你应该能够：</p>
+<ol>
+<li>区分结果预测与机制假设，并写出包含中间过程的可验证因果假设；</li>
+<li>为一个机制假设给出至少一个反证点和至少一个替代假设，并说明哪个观察能够区分它们；</li>
+<li>区分事实、假设、研究判断和待验证项，并把它们分别落到对应工件；</li>
+<li>写出一条完整研究判断，包含取舍理由、适用边界、依据和待验证状态；</li>
+<li>建立"假设—指标—区分观察—研究判断"的映射草图，说明哪个观察支持、反驳或尚不足以判断当前假设；</li>
+<li>对 AI 生成的候选假设执行核验清单，把虚构机制、不可证伪表述和来源不可追溯的条目归位为探索线索；</li>
+<li>说明本课产出为何是第 8 课方案分享与第 9 课判断门的直接输入。</li>
+</ol>
+<hr />
+<h2 id="_4">一、机制假设与研究判断在研究链路中的位置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>八阶段研究链路中，阶段三"机制假设"回答"为什么预期结果会发生"，阶段六"研究判断"回答"基于当前证据和约束，我为什么这样取舍"。两阶段在第 7 课被显式连接：你要为问题门收敛的可证伪命题配上一个能被实验支持、削弱或推翻的机制，并把设计取舍当场记录下来，避免事后反向改写"最初为什么这样设计"。</p>
+<table>
+<thead>
+<tr>
+<th>输入（来自第 6 课问题门）</th>
+<th>本课处理</th>
+<th>输出（向第 8 课方案分享与第 9 课判断门）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>可证伪命题与第一性原理必要条件</td>
+<td>推导多个候选机制假设，给出反证点与替代解释</td>
+<td>机制假设列表（含淘汰理由）</td>
+</tr>
+<tr>
+<td>证据地图初版与研究空白候选</td>
+<td>把空白候选升级为可检验的假设—指标对应</td>
+<td>研究判断记录初版</td>
+</tr>
+<tr>
+<td>问题门中已识别的约束（数据、时间、工具）</td>
+<td>把约束转译为 baseline、对照、变量与停止条件</td>
+<td>实验规格草图</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>与第 1 课的连接：第 1 课 §2.3 给出了"结果预测 vs 机制假设"的最小区分——本课把它扩展为完整的可验证因果假设写法、反证点、替代假设和研究判断记录。</p>
+</blockquote>
+<p>本课产出的是供第 8 课同伴质询和第 9 课判断门检查的内部工件，不是论文方法段的成稿。方法段写作在第 14 课展开。</p>
+<hr />
+<h2 id="_5">二、从问题到机制假设<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 结果预测与机制假设<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>结果预测回答"预期结果是什么"，机制假设回答"为什么预期结果会发生"。</p>
+<p>仍以贯穿案例（第 1 课证据追踪表 / 第 5 课结构化阅读卡）为例。第 6 课问题门可能把它收敛为：</p>
+<blockquote>
+<p>可证伪命题：在需要逐条核验引用的 20 篇计算机论文阅读任务中，使用结构化阅读卡相比自由摘要，会降低 AI 生成摘要的限定条件遗漏率；若遗漏率未下降或人工核验成本显著增加且无法接受，则该主张不成立。</p>
+</blockquote>
+<p>结果预测：</p>
+<blockquote>
+<p>使用结构化阅读卡会降低遗漏率。</p>
+</blockquote>
+<p>机制假设：</p>
+<blockquote>
+<p>结构化阅读卡的字段约束（限定条件、原文位置、作者主张范围）迫使摘要在生成时显式标注原文中存在的限定条件，使后续核验更容易发现"模型把一般化表述写成原文结论"的错读；机制路径是"字段约束 → 生成时强制标注 → 错读更易暴露"，而不是"阅读卡让模型更聪明"。</p>
+</blockquote>
+<p>一个好的机制假设应该：</p>
+<ul>
+<li>与问题和第一性原理约束一致；</li>
+<li>指出中间过程（mediating process），而不只预测最终指标；</li>
+<li>对应可观察现象；</li>
+<li>允许被实验支持、削弱或推翻；</li>
+<li>能与替代解释区分。</li>
+</ul>
+<h3 id="2">2. 可验证因果假设的写法<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>把机制假设写成可验证形式，至少包含四个要素：</p>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>内容</th>
+<th>贯穿案例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自变量（干预）</td>
+<td>你将操作什么</td>
+<td>摘要生成流程是否使用结构化阅读卡（二值）</td>
+</tr>
+<tr>
+<td>因变量（结果）</td>
+<td>你将观察什么</td>
+<td>AI 生成摘要中限定条件的遗漏率（连续，按固定 rubric 标注）</td>
+</tr>
+<tr>
+<td>机制路径</td>
+<td>干预如何导致结果</td>
+<td>字段约束 → 生成时强制标注限定条件 → 错读更易被核验发现</td>
+</tr>
+<tr>
+<td>反证点</td>
+<td>什么观察会明显削弱当前假设</td>
+<td>若组间差异的估计与不确定性排除了事先界定的有意义改善，或差异只在标注者看到字段提示时出现，则 H1 被反驳或转而支持替代解释</td>
+</tr>
+</tbody>
+</table>
+<p>写法上避免两类常见错误：</p>
+<ul>
+<li>把"使用方法 X 会更好"当作机制假设——这只是结果预测，没有说"为什么"；</li>
+<li>把"模型理解了原文"当作机制——这是黑箱归因，不可观察，也无法与"模型记住了模式"等替代解释区分。</li>
+</ul>
+<h3 id="3">3. 反证点与替代假设<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>一个机制假设要可证伪，就必须存在一个能够推翻它的观察。第 1 课 §2.3 已强调"允许被实验支持、削弱或推翻"；本课进一步要求：在写假设时就预先写出反证点和替代假设。</p>
+<blockquote>
+<p>来源参考：Platt, J. R. "Strong Inference." <em>Science</em> 146(3642): 347–353 (1964). 本课只读替代假设、关键实验与结果区分力部分。用途：为主假设设计竞争解释和反驳条件（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 7 课）。</p>
+</blockquote>
+<p>替代假设不是"另一个题目"，而是对同一预期结果的不同解释。贯穿案例中，主假设是"字段约束导致遗漏率下降"，替代假设可以是：</p>
+<ul>
+<li>A1（任务转移）：阅读卡没有降低错读，只是把错读从"限定条件"字段转移到了"作者主张"字段；总错读率不变。</li>
+<li>A2（标注提示效应）：阅读卡组的遗漏率下降是因为评价者看到字段提示，而不是生成阶段真的少遗漏——这是测量偏倚。</li>
+<li>A3（文档结构效应）：阅读卡只对特定论文结构有效，整体下降不能外推到其他结构。</li>
+</ul>
+<p>一个好的实验应当能让 A1/A2/A3 与主假设产生不同的可观察结果。例如，A1 预测总错读率不变，A2 预测换用无字段提示的标注者后组间差异消失，A3 预测按论文结构分层后效应集中在某一层。如果实验无法区分主假设与某个替代假设，那么这个实验不能"支持"主假设，只能"不反驳"它。</p>
+<h3 id="4">4. 主假设与可区分替代<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>机制假设不是唯一正确答案。本课课堂最低闭环是 1 个主假设 + 1 个可区分的替代假设，均记录区分观察与保留/放弃理由。如果当前已有多个有根据的替代解释，可以保留；不必为了凑数量额外生成假设。</p>
+<p>淘汰理由至少包括：</p>
+<ul>
+<li>与第一性原理约束冲突；</li>
+<li>不可观察或不可测量；</li>
+<li>与已有证据地图中的某条主证据冲突且无法解释；</li>
+<li>在课程周期内无法构造区分性实验；</li>
+<li>与替代假设不可区分。</li>
+</ul>
+<blockquote>
+<p>强调：Agent 建议只能生成候选项，最终机制判断由学生负责。AI 给出的候选机制可能看起来合理，但如果不经过反证点和替代假设的区分检验，就只能算探索线索。</p>
+</blockquote>
+<hr />
+<h2 id="_6">三、研究判断记录<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 事实、假设、研究判断与待验证项的区分<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>这四类东西常被混在一起，导致事后无法复盘。本课要求在机制假设和实验规格之间显式区分：</p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>定义</th>
+<th>在哪个工件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>事实</td>
+<td>已被可核验来源支持、不再当前争议的陈述</td>
+<td>证据地图主格 / 文献阅读卡</td>
+</tr>
+<tr>
+<td>假设</td>
+<td>当前未被直接证据支持、但可被实验检验的机制命题</td>
+<td>机制假设列表</td>
+</tr>
+<tr>
+<td>研究判断</td>
+<td>从证据和约束到行动的有理由取舍</td>
+<td>研究判断记录</td>
+</tr>
+<tr>
+<td>待验证项</td>
+<td>当前既非事实也非已成型假设，需要补证据或补实验才能升级</td>
+<td>研究判断记录的"待验证"字段</td>
+</tr>
+</tbody>
+</table>
+<p>"事实"不等于"绝对正确"，只意味着"当前已被可核验来源支持、不在本课争议范围内"。第 5 课证据地图中的 verified 条目在此意义上是事实；review 和 pending 条目是待验证项。</p>
+<h3 id="2_1">2. 研究判断记录字段<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>沿用第 1 课 §2.6 的研究判断格式，本课要求至少写出一条完整记录：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+<th>贯穿案例样例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>判断内容</td>
+<td>取舍的是什么</td>
+<td>主要评价指标采用"限定条件遗漏率"，不使用通用语言质量评分</td>
+</tr>
+<tr>
+<td>取舍理由</td>
+<td>为什么这样取</td>
+<td>本项目研究可追溯性而非语言流畅度；通用评分无法区分"漏标"与"措辞差"</td>
+</tr>
+<tr>
+<td>适用边界</td>
+<td>在什么条件下成立</td>
+<td>带引用的计算机论文摘要任务；外推到其他学科或长篇综述需重验</td>
+</tr>
+<tr>
+<td>依据</td>
+<td>证据或机制假设</td>
+<td>证据地图 E1（人工标注遗漏样例）+ 第一性原理"主张必须能定位原文"</td>
+</tr>
+<tr>
+<td>待验证状态</td>
+<td>哪些部分仍未确认</td>
+<td>人工标注者间一致性尚未测；rubric 在 20 篇样本上的稳定性待跑</td>
+</tr>
+<tr>
+<td>影响工件</td>
+<td>判断改变后影响什么</td>
+<td>实验规格的因变量定义、标注协议、停止条件</td>
+</tr>
+</tbody>
+</table>
+<p>研究判断记录能够防止一种常见现象：实验完成后，研究者根据结果反向改写"最初为什么这样设计"。保留当时的理由，才能诚实分析哪些判断正确、哪些需要修正。</p>
+<h3 id="3_1">3. 用研究判断比较两种方案<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>本课的核心活动之一是比较两种实验方案，并说明取舍。比较的维度包括：</p>
+<ul>
+<li>能否区分主假设与替代假设；</li>
+<li>baseline 是否公平；</li>
+<li>在课程周期内是否可执行；</li>
+<li>失败后是否留得下可分析的工件；</li>
+<li>是否越权、是否改变评价标准、是否保留失败记录。</li>
+</ul>
+<p>例如，方案甲用"同一批论文、同一模型、阅读卡 vs 自由摘要"比较；方案乙用"两批不同论文、阅读卡 vs 自由摘要"比较。研究判断应当记录：甲控制了论文与模型变量但可能产生任务记忆污染；乙避免了记忆污染但引入了论文难度差异。取舍后保留一个，另一个进入"如时间允许再跑"的备选。</p>
+<hr />
+<h2 id="_7">四、从假设到区分观察的映射草图<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>本课先建立映射草图，回答“哪个观察会如何改变判断”。样本、运行、环境、随机性、标注协议和停止条件等完整工程规格在第 9 课集中补全。</p>
+<h3 id="1_2">1. 假设—指标—实验—可能结论映射<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<p>这是本课要求建立的骨架。每一行对应一条机制假设或替代假设：</p>
+<table>
+<thead>
+<tr>
+<th>当前解释</th>
+<th>优先观察</th>
+<th>支持</th>
+<th>反驳</th>
+<th>仍不能判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H1：字段约束使限定条件更易保留和核验</td>
+<td>人工基准标注的限定条件遗漏率</td>
+<td>阅读卡条件遗漏率更低，不确定性与实质差异一致，且 A1/A2/A3 未触发</td>
+<td>估计与不确定性排除了事先界定的有意义改善</td>
+<td>样本或精度不足，或替代解释未排除</td>
+</tr>
+<tr>
+<td>A1：任务转移</td>
+<td>限定条件遗漏与其他错读的分项及总量</td>
+<td>限定条件遗漏下降，但其他错读上升、总错读未改善</td>
+<td>其他错读没有上升，总错读与限定条件遗漏同向改善</td>
+<td>只评了限定条件，未标注其他错读</td>
+</tr>
+<tr>
+<td>A2：标注提示效应</td>
+<td>盲评与可见字段提示下的差异</td>
+<td>只在评价者看到字段提示时出现差异</td>
+<td>盲评后差异仍保持</td>
+<td>复标规模或一致性不足</td>
+</tr>
+<tr>
+<td>A3：文档结构效应</td>
+<td>不同论文结构分层下的差异</td>
+<td>改善集中在特定文档结构</td>
+<td>多种文档结构下都有方向一致的改善</td>
+<td>各层样本不足以支持分层判断</td>
+</tr>
+</tbody>
+</table>
+<p>这张表的核心价值是让"实验能不能改变研究判断"显式化。如果实验结果无法区分主假设与替代假设，它就不能算"支持"主假设，只能算"未反驳"。</p>
+<h3 id="2_2">2. 映射草图的最小边界<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>变量类别</th>
+<th>定义</th>
+<th>贯穿案例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自变量</td>
+<td>实验者主动操作</td>
+<td>是否使用结构化阅读卡</td>
+</tr>
+<tr>
+<td>因变量</td>
+<td>实验观察的结果</td>
+<td>限定条件遗漏率</td>
+</tr>
+<tr>
+<td>控制变量</td>
+<td>必须保持一致以使比较公平</td>
+<td>模型、解码参数、论文集、温度、最大长度</td>
+</tr>
+<tr>
+<td>混杂变量</td>
+<td>可能影响结果但未控制</td>
+<td>论文结构差异、标注者训练程度、任务记忆</td>
+</tr>
+</tbody>
+</table>
+<p>本课只要标出自变量、因变量、一个公平 baseline 和一项主要混杂因素，以证明区分观察可以被实现。具体采样、重复、配置、标注与停止条件留待第 9 课。</p>
+<blockquote>
+<p>来源参考：Box, G. E. P., Hunter, J. S., &amp; Hunter, W. G. <em>Statistics for Experimenters: Design, Innovation, and Discovery</em>, 2nd ed. Wiley, 2005. 选读 Chapter 1 与 §3.4 "Comparison, Replication, Randomization, and Blocking in Simple Experiments"。用途：把实验理解为模型—推论—数据—修正的迭代学习过程，并检查比较、重复、随机化与区组（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 7 课）。</p>
+<p>来源参考：NIST/SEMATECH. <em>e-Handbook of Statistical Methods: Process Improvement—Experimental Design</em>. 选读 objectives、factors、responses、randomization、replication 与 blocking。用途：检查变量、对照、测量和混杂因素（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 7 课）。</p>
+</blockquote>
+<h3 id="3-9">3. 与第 9 课完整规格的边界<a class="headerlink" href="#3-9" title="Permanent link">&para;</a></h3>
+<p>第 9 课会将草图扩展为完整实验规格，覆盖同论文配对、同配置、人工基准标注、重复运行、环境与停止条件。本课不先填满这些字段，以免在机制和区分观察尚未成立时过早锁定工程细节。</p>
+<h3 id="4-agent">4. 与 Agent / 自动化的关系<a class="headerlink" href="#4-agent" title="Permanent link">&para;</a></h3>
+<p>如果实验流程使用 Agent 或自动化循环（第 10-12 课系统展开），实验规格还需写明：</p>
+<ul>
+<li>允许 Agent 访问哪些文件、数据与网络资源；</li>
+<li>允许写入和执行什么；</li>
+<li>哪些动作必须人工确认；</li>
+<li>是否允许修改评价代码或标注协议；</li>
+<li>失败日志是否保留；</li>
+<li>工作流何时停止（沿用第 1 课 §2.7）。</li>
+</ul>
+<p>本课只在映射草图上标出"哪个观察可由 Agent 生成候选、哪个判断必须人工完成"；权限与自动化规格在第 9-12 课继续补全。</p>
+<hr />
+<h2 id="ai">五、AI 辅助假设生成的核验<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h2>
+<h3 id="1-ai">1. AI 在假设生成阶段可以做什么<a class="headerlink" href="#1-ai" title="Permanent link">&para;</a></h3>
+<p>AI 可以在机制假设阶段提供辅助：</p>
+<ul>
+<li>从问题门材料和证据地图中生成候选机制；</li>
+<li>提示可能的替代假设和反证点；</li>
+<li>草拟实验规格段落（变量、baseline、停止条件）供研究者修订；</li>
+<li>给出变量与混杂因素的清单建议。</li>
+</ul>
+<p>但所有这些产出只能作为草稿或线索。AI 不能：</p>
+<ul>
+<li>替代研究者判断哪条机制值得检验；</li>
+<li>自动判定替代假设是否实质可区分；</li>
+<li>把"模型生成了候选"等同于"假设有证据"；</li>
+<li>给出未经核验的引文、页码或实验常数。</li>
+</ul>
+<h3 id="2_3">2. 假设生成阶段的核验清单<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>对 AI 给出的候选假设、替代假设或实验规格草稿，至少检查：</p>
+<ol>
+<li>候选机制是否包含中间过程，还是只是结果预测换了说法；</li>
+<li>候选假设是否可证伪——是否存在能推翻它的可观察结果；</li>
+<li>替代假设是否真的与主假设可区分——实验能否产生不同结果；</li>
+<li>AI 给出的引文、常数、设置是否回到可核验来源（沿用第 3 课来源审计）；</li>
+<li>AI 草拟的实验规格是否暗中改变了评价标准或引入了不公平 baseline；</li>
+<li>AI 建议的停止条件是否会导致"跑到显著为止"的隐性偏倚。</li>
+</ol>
+<p>未完成这些步骤前，AI 产出只能保留在探索线索区，不能进入机制假设列表的主格或实验规格的成稿部分。</p>
+<h3 id="3-ai">3. 一条 AI 使用记录的最小字段<a class="headerlink" href="#3-ai" title="Permanent link">&para;</a></h3>
+<p>本课至少记录一条 AI 使用记录，包含：工具或模型、用途（如"生成候选机制假设"）、Context（提供的可证伪命题与证据地图条目）、输出用途（作为草稿或线索）、人工核验方式（哪些条目回原文核验、哪些被淘汰）、问题（发现的不可证伪表述或来源不可追溯）。</p>
+<hr />
+<h2 id="_8">六、常见错误<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>结果预测当机制假设</strong>：只写"方法 X 会降低遗漏率"，不说为什么。应补中间过程与可观察路径。</li>
+<li><strong>黑箱归因</strong>：把"模型理解了原文"当机制。这不可观察，且无法与"记住了模式"区分。</li>
+<li><strong>无反证点</strong>：假设写得太弹性，任何结果都能解释。应预先写什么观察会推翻它。</li>
+<li><strong>替代假设不可区分</strong>：列了替代假设但实验无法区分。应检查实验能否产生不同结果。</li>
+<li><strong>事后改判断</strong>：实验后反向改写"最初为什么这样设计"。应保留当时的研究判断记录。</li>
+<li><strong>baseline 不公平</strong>：对照组与实验组在模型、论文、温度、长度上不一致。结论无法成立。</li>
+<li><strong>无停止条件</strong>：跑到出现显著结果为止。应预先写运行次数与停止规则。</li>
+<li><strong>AI 候选直接进列表</strong>：把 AI 生成的机制直接搬入机制假设主格。必须逐条核验。</li>
+<li><strong>混淆事实与假设</strong>：把待验证的机制写成已成立结论。应区分四类并落到对应工件。</li>
+<li><strong>实验不能改变判断</strong>：实验结果无论支持还是反驳都无法区分主假设与替代假设。这种实验不算验证。</li>
+</ol>
+<hr />
+<h2 id="_9">七、贯穿案例：从问题门到实验规格<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>仍以结构化阅读卡与 AI 摘要限定条件遗漏率为例。第 6 课问题门已收敛：</p>
+<blockquote>
+<p>可证伪命题：在 20 篇计算机论文阅读任务中，使用结构化阅读卡相比自由摘要会降低 AI 生成摘要的限定条件遗漏率。</p>
+</blockquote>
+<p>本课的动作链：</p>
+<p>第一步，从命题写出主机制假设（§二·1）：字段约束 → 生成时强制标注 → 错读更易暴露。</p>
+<p>第二步，从 A1 任务转移、A2 标注提示效应、A3 文档结构效应中选一个与 H1 可区分的替代假设。</p>
+<p>第三步，为每个假设写反证点（§二·3）。A1 的反证点是"总错读率组间无差异时支持 A1 而非主假设"。</p>
+<p>第四步，写一条研究判断（§三·2）：采用限定条件遗漏率而非通用语言质量评分；适用边界为带引用的 CS 摘要任务；待验证人工标注一致性。</p>
+<p>第五步，建立假设—指标—区分观察—研究判断映射（§四·1）。主假设与一个替代假设各一行，每行写出“支持／反驳／仍不能判断”。</p>
+<p>第六步，标出自变量、因变量、公平 baseline 和一项主要混杂因素，作为第 9 课完整规格的入口；不在本课填满工程字段。</p>
+<p>第七步，让 AI 围绕可证伪命题生成 3 个候选机制（§五）。执行 §五·2 核验清单：保留 1 个有中间过程且可证伪的候选；淘汰 1 个只是结果预测换说法的候选；淘汰 1 个引用了不存在的"Omission Rate Paradox"文献的候选。记录一条 AI 使用记录。</p>
+<p>本课课堂最低产出是 1 个 H1、1 个可区分替代假设、1 条研究判断和 1 张映射草图，另留 1 条 AI 使用记录。课后只补全限时方案分享所需的表达与风险字段；完整实验规格和复现说明是第 9 课与判断门的要求。</p>
+<hr />
+<h2 id="_10">八、课堂练习<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="1-vs">练习 1：结果预测 vs 机制假设<a class="headerlink" href="#1-vs" title="Permanent link">&para;</a></h3>
+<p>下面是两个候选表述（虚构样例）：</p>
+<blockquote>
+<p>表述甲：使用方法 X 会降低遗漏率。</p>
+<p>表述乙：方法 X 的字段约束迫使生成时显式标注原文限定条件，使错读在核验阶段更易被发现。</p>
+</blockquote>
+<p>指出哪个是结果预测、哪个是机制假设，并说明甲缺少哪几个要素。</p>
+<h3 id="2_4">练习 2：写可验证因果假设<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<p>用你第 6 课问题门的可证伪命题，写出含自变量、因变量、机制路径与反证点的可验证因果假设。</p>
+<h3 id="3_2">练习 3：替代假设与区分观察<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<p>为你写的主假设写 1 个实质可区分的替代假设，并说明什么观察支持替代假设而非主假设。</p>
+<h3 id="4_1">练习 4：研究判断记录<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p>写一条完整研究判断（六字段），内容涉及你的主要评价指标或 baseline 选择。</p>
+<h3 id="5">练习 5：假设—指标—实验—可能结论映射<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>为你的主假设和 1 个替代假设各写一行映射表，每行写出支持、反驳与仍不能判断的观察。</p>
+<h3 id="6">练习 6：映射草图边界<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>标出自变量、因变量、一个公平 baseline 和一项主要混杂因素。完整样本、运行、标注、复现和停止条件留待第 9 课。</p>
+<h3 id="7ai">练习 7：AI 候选机制核验<a class="headerlink" href="#7ai" title="Permanent link">&para;</a></h3>
+<p>让 AI 围绕你的可证伪命题生成 3 个候选机制。执行 §五·2 核验清单，记录至少一处不可证伪表述或来源不可追溯，并改写为受限版本。把核验记录写入 <code>ai-usage-log.md</code>。</p>
+<h3 id="8">练习 8：机制假设与实验规格初版<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<p>在个人项目中创建 <code>hypothesis-and-design.md</code> 并写入：1 个主机制假设、1 个可区分替代假设、1 条研究判断和 1 张映射草图。第 9 课迁移时，机制与判断迁入 <code>hypothesis-and-judgment.md</code>，完整工程字段在 <code>experiment-spec.md</code> 中补全。</p>
+<hr />
+<h2 id="_11">九、术语表<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>本课程中的含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>机制假设</td>
+<td>回答"为什么预期结果会发生"的命题，包含中间过程，可被实验支持、削弱或推翻</td>
+</tr>
+<tr>
+<td>结果预测</td>
+<td>只回答"预期结果是什么"的命题，不含机制路径</td>
+</tr>
+<tr>
+<td>可验证因果假设</td>
+<td>含自变量、因变量、机制路径与反证点的假设写法</td>
+</tr>
+<tr>
+<td>反证点</td>
+<td>能够推翻当前机制假设的可观察结果</td>
+</tr>
+<tr>
+<td>替代假设</td>
+<td>对同一预期结果的不同机制解释，须能与主假设被实验区分</td>
+</tr>
+<tr>
+<td>区分实验</td>
+<td>能让主假设与替代假设产生不同可观察结果的实验</td>
+</tr>
+<tr>
+<td>研究判断</td>
+<td>从证据和约束到行动的有理由取舍，含取舍理由、适用边界、依据、待验证状态与影响工件</td>
+</tr>
+<tr>
+<td>待验证项</td>
+<td>当前既非事实也非已成型假设，需补证据或补实验才能升级的条目</td>
+</tr>
+<tr>
+<td>假设—指标—实验—可能结论映射</td>
+<td>每条假设对应指标、实验与支持/反驳结果的骨架表</td>
+</tr>
+<tr>
+<td>baseline</td>
+<td>公平对照组；控制变量须真正一致，混杂变量须被识别</td>
+</tr>
+<tr>
+<td>控制变量</td>
+<td>必须保持一致以使比较公平的变量</td>
+</tr>
+<tr>
+<td>混杂变量</td>
+<td>可能影响结果但未被控制的变量</td>
+</tr>
+<tr>
+<td>停止条件</td>
+<td>预先写明的运行次数与停止规则，防止"跑到显著为止"</td>
+</tr>
+<tr>
+<td>失败预案</td>
+<td>结果不支持假设或 baseline 跑不通时的回退路径</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_12">十、延伸阅读与课程材料<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>课程内材料：</p>
+<ul>
+<li><a href="../../../course/syllabus/">课程大纲</a></li>
+<li>备课规划（未公开；请查对应公开来源） 第 7 课</li>
+<li><a href="../../../course/reading-list/">逐课阅读清单</a> 第 7 课</li>
+<li><a href="../../../course/starter-template/">早期研究脚手架</a></li>
+<li><a href="../../../course/assignments/">项目里程碑与研究门</a>（第 9 课判断门条件、第 8 课方案分享要求）</li>
+</ul>
+<p>正式书目（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 7 课）：</p>
+<ol>
+<li>Box, G. E. P., Hunter, J. S., &amp; Hunter, W. G. <em>Statistics for Experimenters: Design, Innovation, and Discovery</em>, 2nd ed. Wiley, 2005. ISBN: 978-0-471-71813-0. 选读 Chapter 1 "Catalyzing the Generation of Knowledge" 与 §3.4 "Comparison, Replication, Randomization, and Blocking in Simple Experiments"。<a href="https://bcs.wiley.com/he-bcs/Books?action=index&amp;bcsId=9686&amp;itemId=0471718130">出版社配套页</a>。用途：把实验理解为模型—推论—数据—修正的迭代学习过程。</li>
+<li>Platt, J. R. "Strong Inference." <em>Science</em> 146(3642): 347–353 (1964). DOI: <a href="https://www.science.org/doi/10.1126/science.146.3642.347">10.1126/science.146.3642.347</a>。本课只读替代假设、关键实验与结果区分力部分。用途：为主假设设计竞争解释和反驳条件。</li>
+<li>NIST/SEMATECH. <em>e-Handbook of Statistical Methods: Process Improvement—Experimental Design</em>. <a href="https://www.itl.nist.gov/div898/handbook/pri/pri.htm">在线</a>。选读 objectives、factors、responses、randomization、replication 与 blocking。用途：检查变量、对照、测量和混杂因素。</li>
+</ol>
+<p>课堂案例：</p>
+<ol>
+<li>Raskar, R. <em>Coming up with New Ideas in Imaging</em>. 本地 PPT（未公开；请查对应公开来源）。用于生成机制候选，不作为假设成立的证据。</li>
+</ol>
+<p>课后阅读采用"AI 导航 → 原文核验 → AI 质疑 → 偏差审计 → 人工定稿"流程。本课核心阅读为 Box et al. 选段与 Platt 选段，合计约 50 分钟；阅读卡持续保存在个人项目 <code>notes/</code>，不逐周正式提交，第 9 课判断门统一检查至少 2 条研究判断与一份实验规格草图。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

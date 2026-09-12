@@ -1,0 +1,2085 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="上海交通大学研究生课程“智能科研方法”（AI for Research: Methods and Practice）">
+      
+      
+      
+        <link rel="canonical" href="https://jinyh.github.io/ai4research/lessons/lesson-10/handout/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>第十讲｜AI 辅助编码、调试与受限 Agent 执行 - 智能科研方法</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai-agent" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="智能科研方法" class="md-header__button md-logo" aria-label="智能科研方法" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            智能科研方法
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第十讲｜AI 辅助编码、调试与受限 Agent 执行
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../learn/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  16 讲课程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../project/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  项目与考核
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../templates/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  模板与资源
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../teacher/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  课程信息
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="智能科研方法" class="md-nav__button md-logo" aria-label="智能科研方法" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    智能科研方法
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../learn/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 讲课程
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    16 讲课程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · AI 辅助科研导论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · 科研伦理与 Agent 边界
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · 检索与来源核验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · 精读与主张核验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · 证据地图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · 问题定义
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · 假设与区分实验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · 中期诊所
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Baseline 与复现
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · 受限 Agent 执行
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 · 自动化循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 · 个人工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 · 工作流评价
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 · 结果写成论证
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 · 同行评审与修改
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 · 最终展示（讲义待复核）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目与考核
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模板与资源
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    模板与资源
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模板与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/opencode-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenCode 最小启动说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/reading-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    逐课参考阅读清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资源索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teacher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课程信息
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导读
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学习目标
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、受限 Agent 执行在研究链路中的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、从模糊 prompt 到任务契约
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、从模糊 prompt 到任务契约">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 模糊 prompt 的问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 任务契约五字段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 模糊 prompt 与任务契约的对照
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ReAct 循环与错误传播
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、权限分层与人工审核点
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、权限分层与人工审核点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 最小权限原则的回归
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 人工审核点的位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 为什么要预先写停止与确认
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 失败恢复
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、Agent 产生的代码必须人工核验
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、Agent 产生的代码必须人工核验">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Agent 输出是候选，不是事实
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 修复根因、绕过失败与污染实验
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-diff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. diff 审查清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-swe-bench" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. SWE-bench 视角：任务构造与测试判定
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、贯穿案例：把判断门实验规格的一步改写为受限 Agent 任务
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、常见错误
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、课堂练习
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、课堂练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-prompt_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 1：模糊 prompt 改写
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 2：权限分层
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3diff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 3：diff 审查
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 4：区分修复根因 / 绕过失败 / 污染实验
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 5：写任务契约
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 6：失败记录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 7：人工审核点定位
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8swe-bench" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 8：SWE-bench 视角
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课堂、课后与验证门的边界
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、术语表
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、延伸阅读与课程材料
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../../../learn/10/">← 本课任务与材料</a></p>
+<hr />
+<h1 id="ai-agent">第十讲｜AI 辅助编码、调试与受限 Agent 执行<a class="headerlink" href="#ai-agent" title="Permanent link">&para;</a></h1>
+<h2 id="_1">导读<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>第 9 课你已经把实验规格草图补全为可复现的判断门材料——baseline 公平、七字段完整、复现说明齐到种子、研究判断成案、同伴反馈已处理。判断门通过之后，项目进入阶段七"原型验证"。本课不是把 Agent 装上就让 它跑，而是回答一个更严格的问题：</p>
+<blockquote>
+<p>当 Agent 修改代码、运行测试、归因错误时，研究者在哪里审核、用什么权限边界、留什么记录，才能让"Agent 帮忙"不等于"Agent 替代判断"或"Agent 污染实验"？</p>
+</blockquote>
+<p>本课对应八阶段研究链路的阶段七"原型验证"中的受限 Agent 执行环节。它承接第 9 课实验规格中已标注的"哪些步骤拟用 Agent、哪些步骤必须人工"——那一列标注是本课任务契约的直接输入。本课也是模块四（第 10-13 课）的起点：第 11 课把受限的"一次执行"扩展为"自动化循环"，第 12 课把多次执行封装为可复用工作流，第 13 课评价工作流是否真的改善了研究动作。受限是循环和封装的前提——没有边界的一次执行不能被安全地重复，更不能被自动化。</p>
+<p>完成本课后，你将产出一份任务契约、一段代码 diff、一份验证记录和一份失败记录。本课不正式提交，产出回写个人项目，作为第 13 课验证门材料的过程证据。</p>
+<h2 id="_2">学习目标<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>完成本讲后，你应该能够：</p>
+<ol>
+<li>把一个模糊编码或调试请求改写为带验收标准的任务契约（Context / Permission / Non-goal / 人工审核点 / 失败恢复五字段）；</li>
+<li>为 Agent 设置分层权限：只读 / 可写 / 可执行 / 需确认 / 禁止，并说明为什么这样分层；</li>
+<li>对 Agent 产生的代码进行人工核验：diff 审查、测试先行、不把"模型建议这样做"当作研究判断的充分理由；</li>
+<li>区分修复根因、绕过失败和污染实验三种处理方式，并说明它们对结论可追溯性的不同影响；</li>
+<li>承接第 9 课实验规格，标出"哪些步骤拟用 Agent、哪些步骤必须人工"，并为本课选定的受限任务写出完整任务契约；</li>
+<li>记录失败与越权：当 Agent 修改无关文件、跳过测试或要求越权时，按失败记录而非静默重跑到成功；</li>
+<li>说明本课产出如何成为第 11 课自动化循环与第 13 课验证门评价的输入。</li>
+</ol>
+<hr />
+<h2 id="agent">一、受限 Agent 执行在研究链路中的位置<a class="headerlink" href="#agent" title="Permanent link">&para;</a></h2>
+<p>八阶段研究链路中，阶段七"原型验证"在第 9 课只是起始——判断门要求一个可执行 baseline 或最小验证原型，不要求完整自动化。本课在判断门已过的基础上展开受限 Agent 执行：研究者把实验规格中已标注为"拟用 Agent"的步骤交给 Agent，但每一次执行都有任务契约、权限边界、人工审核点和失败记录。</p>
+<table>
+<thead>
+<tr>
+<th>输入（来自第 9 课与项目当前版本）</th>
+<th>本课处理</th>
+<th>输出（向第 11-13 课）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验规格中"哪些步骤拟用 Agent、哪些步骤必须人工"标注</td>
+<td>把"拟用 Agent"步骤改写为任务契约五字段</td>
+<td>一份可执行受限任务契约</td>
+</tr>
+<tr>
+<td>baseline 代码、实验配置与可运行测试</td>
+<td>Agent 在受限权限下修改目标文件、运行指定检查</td>
+<td>代码 diff + 测试与失败日志</td>
+</tr>
+<tr>
+<td>第 1-2 课 Agent 权限矩阵与伦理检查</td>
+<td>落到本课具体任务：哪些文件只读、哪些可写、哪些命令可执行</td>
+<td>权限分层记录</td>
+</tr>
+<tr>
+<td>研究判断记录与可证伪命题</td>
+<td>人工审核点决定 Agent 的修改是否进入项目</td>
+<td>人工核验记录</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>与第 1 课的连接：第 1 课 §2.7 已要求"如果使用 Agent 或自动化循环，需要明确允许访问哪些文件、允许写入和执行什么、哪些动作必须人工确认、是否允许修改评价代码、失败日志是否保留、工作流何时停止"——本课把这一要求落到一次受限执行的完整链路上。</p>
+</blockquote>
+<p>本课产出的是原型迭代的一轮记录，不是完整自动化系统。自动化循环在第 11 课展开，工作流封装在第 12 课展开，评价在第 13 课展开。</p>
+<hr />
+<h2 id="prompt">二、从模糊 prompt 到任务契约<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h2>
+<h3 id="1-prompt">1. 模糊 prompt 的问题<a class="headerlink" href="#1-prompt" title="Permanent link">&para;</a></h3>
+<p>研究者最常见的请求形式是模糊 prompt：</p>
+<blockquote>
+<p>帮我把 baseline 跑通，看看结果怎么样，有问题就改一下。</p>
+</blockquote>
+<p>这种请求把"跑通""结果怎么样""有问题""改一下"四件事都交给 Agent 自行解释。Agent 可能：</p>
+<ul>
+<li>修改与目标无关的代码以"让结果看起来更好"；</li>
+<li>跳过失败的测试或注释掉断言；</li>
+<li>修改评价协议而不是修改方法；</li>
+<li>把单次运行的差异写成方法效应；</li>
+<li>越过原定权限访问其他目录或联网。</li>
+</ul>
+<p>模糊 prompt 的核心问题不是"可能出错"，而是"出错后无法追溯"——研究者不知道 Agent 做了什么、为什么做、依据什么标准，因此无法判断结果是否仍属于当前实验。</p>
+<h3 id="2">2. 任务契约五字段<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>本课要求把每一个交给 Agent 的编码或调试任务写成任务契约，至少包含五字段：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>内容</th>
+<th>贯穿案例样例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Context</td>
+<td>Agent 能看到哪些文件、配置、上游判断；本次任务在实验规格中对应哪一步</td>
+<td>阅读卡摘要生成函数 <code>src/generate.py</code> 的 <code>generate_summary()</code>；实验规格 §步骤之 3“分别生成”；H1 主假设；不暴露人工限定条件基准、标注者身份与最终评分</td>
+</tr>
+<tr>
+<td>Permission</td>
+<td>只读 / 可写 / 可执行 / 需确认 / 禁止五层，列出具体路径与命令</td>
+<td>只读：<code>experiment-spec.md</code>、<code>evidence-map.md</code>；可写：<code>src/generate.py</code>；可执行：<code>pytest tests/test_generate.py</code>；需确认：任何对 <code>configs/</code> 的修改；禁止：修改 <code>experiments/</code> 已有结果、修改 rubric、访问 <code>notes/</code> 同伴反馈</td>
+</tr>
+<tr>
+<td>Non-goal</td>
+<td>明确不做什么——防止 Agent 把任务膨胀</td>
+<td>不优化生成速度；不替换模型；不修改 prompt 模板；不重跑历史实验；不修改既有评价测试；如需新增行为测试，先由人工审核测试对象与断言</td>
+</tr>
+<tr>
+<td>人工审核点</td>
+<td>哪些动作必须由研究者确认才能继续</td>
+<td>diff 写回前人工审查；测试失败时停并等待研究者；任何对评价协议的改动须人工确认</td>
+</tr>
+<tr>
+<td>失败恢复</td>
+<td>超时、无效输出、工具失败、越权时怎么办</td>
+<td>超时 60 秒 → 终止并记录；输出无法解析 → 保留原始输出与错误日志，不自动重试到成功；越权请求 → 拒绝、记录、报告研究者</td>
+</tr>
+</tbody>
+</table>
+<p>任务契约不是 prompt 模板，是可被独立检查者复核的工件。它写在项目里（例如 <code>agent-tasks/&lt;task-id&gt;.md</code>），与代码 diff、运行日志和人工核验记录一起留存。</p>
+<h3 id="3-prompt">3. 模糊 prompt 与任务契约的对照<a class="headerlink" href="#3-prompt" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>模糊 prompt</th>
+<th>任务契约</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>范围</td>
+<td>"把 baseline 跑通"</td>
+<td>"修改 <code>generate_summary()</code>，使其在阅读卡路径强制调用字段约束，自由摘要路径保持不变"</td>
+</tr>
+<tr>
+<td>权限</td>
+<td>未声明</td>
+<td>五层显式列出</td>
+</tr>
+<tr>
+<td>验收</td>
+<td>"结果怎么样"</td>
+<td>测试通过 + diff 只含授权范围 + 未修改评价协议</td>
+</tr>
+<tr>
+<td>失败处理</td>
+<td>"有问题就改一下"</td>
+<td>超时终止、越权拒绝、不重试到成功</td>
+</tr>
+<tr>
+<td>可追溯</td>
+<td>无法复盘</td>
+<td>契约 + diff + 日志 + 人工核验一一对应</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源参考：Russell, S., &amp; Norvig, P. <em>Artificial Intelligence: A Modern Approach</em>, 4th ed., Pearson, 2020, Chapter 2 "Intelligent Agents"。用途：用经典 Agent 概念（agents and environments、rationality、environment properties、agent structure）理解 Agent 的任务、观察、行动与环境的边界，再分析 LLM coding agent。见 <a href="../../../course/reading-list/">reading-list.md</a> 第 10 课。</p>
+</blockquote>
+<h3 id="4-react">4. ReAct 循环与错误传播<a class="headerlink" href="#4-react" title="Permanent link">&para;</a></h3>
+<p>LLM coding agent 常采用 reasoning—action—observation 循环：模型先推理下一步、调用工具、观察结果、再推理。错误可能在任一环节传播——推理错误导致错误行动，行动错误产生错误观察，错误观察又强化错误推理。</p>
+<blockquote>
+<p>来源参考：Yao, S. et al. "ReAct: Synergizing Reasoning and Acting in Language Models." <em>ICLR 2023</em>. <a href="https://iclr.cc/virtual/2023/poster/11003">会议页面</a>。用途：分析 reasoning—action—observation 循环及其错误传播，理解为什么 Agent 输出必须被核验而不是被信任。</p>
+</blockquote>
+<p>任务契约的存在不是为了消除错误传播，而是让错误传播可被观察——Agent 推理了什么、行动了什么、观察了什么，都有日志可查；任一环节出错，研究者可以定位到具体步骤，而不是面对一个"结果变了但不知道为什么"的项目。</p>
+<hr />
+<h2 id="_3">三、权限分层与人工审核点<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 最小权限原则的回归<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>第 1 课 §四·3 已建立最小权限原则：只读、可写、可执行、需确认、禁止。本课把它从"项目级权限矩阵"落到"任务级权限契约"。</p>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>任务契约中的含义</th>
+<th>贯穿案例样例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>只读</td>
+<td>Agent 可读取以理解 Context，但不得修改</td>
+<td><code>experiment-spec.md</code>、<code>evidence-map.md</code>、<code>hypothesis-and-judgment.md</code></td>
+</tr>
+<tr>
+<td>可写</td>
+<td>Agent 可修改的具体文件</td>
+<td><code>src/generate.py</code></td>
+</tr>
+<tr>
+<td>可执行</td>
+<td>Agent 可运行的明确命令</td>
+<td><code>pytest tests/test_generate.py</code>、<code>python src/run_baseline.py --config configs/exp01.yaml</code></td>
+</tr>
+<tr>
+<td>需确认</td>
+<td>动作在 Agent 完成前必须由研究者审核</td>
+<td>任何对 <code>configs/</code> 的修改、对 <code>rubric</code> 的修改、对 <code>experiments/</code> 已有结果的覆盖</td>
+</tr>
+<tr>
+<td>禁止</td>
+<td>无论任务如何表述都不允许</td>
+<td>修改评价协议、删除失败日志、访问 <code>notes/</code> 同伴反馈、联网调用外部 API 上传项目数据</td>
+</tr>
+</tbody>
+</table>
+<p>权限不是"开放到方便为止"，而是"开放到任务契约所需为止"。任务变小时权限随之收紧；任务结束后权限回收，下一次任务重新授权。</p>
+<h3 id="2_1">2. 人工审核点的位置<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>人工审核点不是"Agent 跑完后再看一眼"。它是任务执行中必须停下来等研究者确认的具体节点：</p>
+<ul>
+<li><strong>diff 写回前</strong>：Agent 生成修改建议后，研究者在写回前审查 diff——只允许授权范围的修改进入项目；</li>
+<li><strong>测试失败时</strong>：Agent 不得自行"修复"失败的测试以让测试通过；停，记录失败日志，等研究者判断是测试错误、实现错误还是评价协议问题；</li>
+<li><strong>评价协议改动时</strong>：任何对 rubric、指标计算、数据划分的改动必须由研究者确认——这是"Agent 不污染实验"的底线；</li>
+<li><strong>越权请求时</strong>：Agent 提出超出权限的请求时，研究者拒绝、记录、决定是否修改任务契约。</li>
+</ul>
+<blockquote>
+<p>来源参考：Amershi, S. et al. "Guidelines for Human-AI Interaction." <em>CHI 2019</em>. DOI: <a href="https://www.microsoft.com/en-us/research/publication/guidelines-for-human-ai-interaction/">10.1145/3290605.3300233</a>。选读人工纠错、控制、反馈和失败处理相关准则。用途：设计人工审核点和可恢复交互，而不是假设 Agent 始终正确。见 <a href="../../../course/reading-list/">reading-list.md</a> 第 10 课。</p>
+</blockquote>
+<h3 id="3">3. 为什么要预先写停止与确认<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>最常见的隐性偏倚是"Agent 跑到结果好看为止"。如果不预先写明停止与确认节点，研究者会在结果有利时接受 Agent 的越权、在结果不利时让 Agent 继续改，最终把 Agent 的修改序列写成方法效应。这与第 9 课 §三·2 停止条件的逻辑一致——预先承诺停下来，不是因为结果已经够好，而是因为"跑到结果好看为止"本身构成偏倚。</p>
+<h3 id="4">4. 失败恢复<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>失败恢复不是"重跑到成功"。一个完整的失败恢复段至少回答：</p>
+<ul>
+<li>超时怎么办（终止并记录，不自动延长）；</li>
+<li>输出无法解析怎么办（保留原始输出与错误日志，研究者判断是否修改任务契约）；</li>
+<li>工具调用失败怎么办（记录失败工具与失败原因，不切换到未授权的替代工具）；</li>
+<li>越权请求怎么办（拒绝、记录、报告研究者，不"变通执行"）；</li>
+<li>测试失败怎么办（停，记录，等研究者判断根因，不"修测试让它通过"）。</li>
+</ul>
+<p>失败日志与成功结果同等重要。超时、解析错误、测试失败等普通技术失败应进入修复与复盘，本身不等于学术不端；明知失败却编造成功、隐瞒或删除记录、越权处理数据、伪造评价结果，才触及 <a href="../../../course/assessment/">assessment.md</a> 学术规范红线。</p>
+<hr />
+<h2 id="agent_1">四、Agent 产生的代码必须人工核验<a class="headerlink" href="#agent_1" title="Permanent link">&para;</a></h2>
+<h3 id="1-agent">1. Agent 输出是候选，不是事实<a class="headerlink" href="#1-agent" title="Permanent link">&para;</a></h3>
+<p>第 1 课 §一·2 已确定：AI 可以生成候选、执行重复步骤或帮助发现问题，但它无法自动获得对研究背景、学科规范、数据来源和潜在后果的完整责任。Agent 产生的代码同理——它是候选实现，不是已验证实现。研究者必须核验：</p>
+<ul>
+<li><strong>diff 审查</strong>：修改是否只在授权范围？是否引入未授权的依赖、联网调用或对评价协议的改动？</li>
+<li><strong>测试先行</strong>：测试是否在修改前就存在？如果 Agent 新增测试，测试是否先于修改被研究者审查？测试是否覆盖了关键路径还是只覆盖了容易通过的路径？</li>
+<li><strong>不外包判断</strong>：方法选择、baseline 公平性、指标定义、停止条件等研究判断不能由 Agent 决定——Agent 可以提供候选，但判断与取舍理由必须由研究者写出。</li>
+</ul>
+<h3 id="2_2">2. 修复根因、绕过失败与污染实验<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>当 Agent 遇到失败时，处理方式分为三类，对结论可追溯性的影响截然不同：</p>
+<table>
+<thead>
+<tr>
+<th>处理方式</th>
+<th>含义</th>
+<th>对可追溯性的影响</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>修复根因</td>
+<td>找到失败的机制原因，修改实现或配置使根因消除</td>
+<td>保留失败日志 + 修改记录 + 根因分析，结论可追溯</td>
+<td><code>generate_summary()</code> 在自由摘要路径误调用了字段约束逻辑 → 修改分支条件，失败日志保留</td>
+</tr>
+<tr>
+<td>绕过失败</td>
+<td>不找根因，让失败表面消失——注释断言、跳过测试、调整数据</td>
+<td>若被工作流提议但未采用，记为失败候选；若研究者明知仍采用并隐瞒，才使结论不可追溯并触及红线</td>
+<td>测试 <code>test_field_constraint</code> 失败 → Agent 建议注释断言，研究者拒绝并记录</td>
+</tr>
+<tr>
+<td>污染实验</td>
+<td>通过修改评价协议、数据划分或 baseline 使结果看起来更好</td>
+<td>方法效应与评价效应混淆，结论不成立</td>
+<td>baseline 遗漏率高于实验组 → 调整 baseline 的温度参数使它"看起来更公平"</td>
+</tr>
+</tbody>
+</table>
+<p>作为进入当前实验版本的代码处理，必须有根因说明、diff 和验证证据。绕过方案可以被保留为“被拒绝的候选”，不得冒充修复；修改评价协议、数据划分或 baseline 是新的研究决定，必须退出当前任务并由研究者重新审核，不能被 Agent 当成调试手段。</p>
+<h3 id="3-diff">3. diff 审查清单<a class="headerlink" href="#3-diff" title="Permanent link">&para;</a></h3>
+<p>对 Agent 产生的每一次 diff，研究者至少检查：</p>
+<ol>
+<li>diff 是否只包含任务契约"可写"层列出的文件？</li>
+<li>是否引入未授权的新依赖或外部调用？</li>
+<li>是否修改了"禁止"层的文件（评价协议、失败日志、实验结果、notes 同伴反馈）？</li>
+<li>新增测试是否先于修改被审查？测试是否覆盖关键路径？</li>
+<li>修改是否在"Non-goal"层声明不做的事情上？</li>
+<li>Agent 的 commit message 或 diff 注释是否把模型推断误写成事实（例如"优化了方法"而不是"修改了分支条件"）？</li>
+</ol>
+<p>任一项不通过，diff 不进入项目。研究者决定是修改任务契约重新执行，还是回到机制假设与实验规格修订判断。</p>
+<h3 id="4-swe-bench">4. SWE-bench 视角：任务构造与测试判定<a class="headerlink" href="#4-swe-bench" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>来源参考：Jimenez, C. E. et al. <em>SWE-bench: Can Language Models Resolve Real-World GitHub Issues?</em> ICLR 2024. <a href="https://www.swebench.com/original.html">项目页面</a>。用途：只分析任务构造、执行环境、测试判定与 benchmark 局限；不要求复刻完整系统。</p>
+</blockquote>
+<p>SWE-bench 把"代码任务"构造为：一个真实 issue、一个可执行的代码仓库快照、一组判定通过的测试。它的关键设计是把"Agent 解决了问题"定义为"指定测试通过"，而不是"Agent 改了一段看起来合理的代码"。本课借用它的视角——Agent 的修改是否被接受，由预先指定的测试判定，不由 Agent 自己的叙述判定。但 SWE-bench 的测试集是真实开源项目的既有测试，课程项目往往没有同等质量的测试集，因此研究者必须额外人工核验，不能把"测试通过"等同于"修改正确"。</p>
+<p>SWE-bench 的局限也是本课的局限：测试通过不等于方法正确、不等于未引入数据泄漏、不等于未污染评价协议。Agent 输出始终需要人工核验。</p>
+<hr />
+<h2 id="agent_2">五、贯穿案例：把判断门实验规格的一步改写为受限 Agent 任务<a class="headerlink" href="#agent_2" title="Permanent link">&para;</a></h2>
+<p>承接第 9 课贯穿案例。第 9 课产出：朴素 baseline（自由摘要）vs 实验组（阅读卡摘要）的七字段实验规格 + 复现说明 + J2（baseline 选朴素而非强）+ 同伴反馈处理 + 失败预案。实验规格 §步骤之 3 是"分别生成"——自由摘要组与阅读卡组分别调用生成函数。</p>
+<p>本课动作链：</p>
+<p><strong>第一步：从实验规格中标出"拟用 Agent"与"必须人工"步骤</strong></p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>拟用 Agent</th>
+<th>必须人工</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 固定同一批 20 篇论文</td>
+<td>否（样本与版本须研究者确认）</td>
+<td>是</td>
+</tr>
+<tr>
+<td>2 为每篇论文建立结构化阅读卡与自由摘要两个条件</td>
+<td><strong>是</strong>——本课受限任务</td>
+<td>否（生成函数实现可由 Agent 修改，但两条件的 prompt 与公平性须人工确认）</td>
+</tr>
+<tr>
+<td>3 以同模型、同解码参数、同最大输出长度执行两条件</td>
+<td><strong>是</strong>——只执行已冻结配置</td>
+<td>是（配置改动须确认）</td>
+</tr>
+<tr>
+<td>4 人工建立限定条件基准并盲评</td>
+<td>否</td>
+<td>是</td>
+</tr>
+<tr>
+<td>5 计算配对限定条件遗漏率与不确定性</td>
+<td>可执行已冻结脚本</td>
+<td>是（指标口径与结果解释须人工）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第二步：为"步骤 3 分别生成"写任务契约</strong></p>
+<ul>
+<li>Context：<code>src/generate.py</code> 的 <code>generate_summary()</code>；实验规格 §步骤之 3；H1 主假设；不暴露人工限定条件基准、标注者身份与最终评分；</li>
+<li>Permission：只读 <code>experiment-spec.md</code>、<code>evidence-map.md</code>；可写 <code>src/generate.py</code>；可执行 <code>pytest tests/test_generate.py</code>；需确认任何对 <code>configs/</code> 的修改；禁止修改 <code>experiments/</code> 已有结果、修改 rubric、访问 <code>notes/</code>；</li>
+<li>Non-goal：不优化生成速度；不替换模型；不修改两条件的 prompt 与评价协议；不重跑历史实验；新增行为测试前先由人工审核；</li>
+<li>人工审核点：diff 写回前审查；测试失败时停；评价协议改动须确认；</li>
+<li>失败恢复：超时 60 秒终止；输出无法解析保留原始输出；越权拒绝记录。</li>
+</ul>
+<p><strong>第三步：Agent 执行与人工核验</strong></p>
+<p>Agent 修改 <code>generate_summary()</code>，使阅读卡路径强制调用字段约束、自由摘要路径保持不变。研究者审查 diff：修改只在 <code>src/generate.py</code>、未引入新依赖、未修改评价协议、未删除失败日志。运行 <code>pytest tests/test_generate.py</code>——通过。研究者额外人工核验：字段约束逻辑是否符合 H1？自由摘要路径是否真的未被影响？新增测试是否覆盖关键路径？</p>
+<p><strong>第四步：记录失败（假设 Agent 越权）</strong></p>
+<p>如果 Agent 在执行中请求修改 <code>configs/exp01.yaml</code> 以"让 baseline 更公平"——这越过了"需确认"层。研究者拒绝、记录"Agent 请求修改 configs/exp01.yaml，理由：使 baseline 温度与实验组一致；判断：当前温度已一致，Agent 推理基于错误观察；处理：拒绝，不修改任务契约，记录本次越权"。失败记录与成功 diff 一起留存。</p>
+<p><strong>第五步：写入项目</strong></p>
+<ul>
+<li>任务契约：<code>agent-tasks/task-01-generate-summary.md</code>；</li>
+<li>代码 diff：<code>src/generate.py</code> 的 commit；</li>
+<li>验证记录：<code>pytest</code> 输出 + 人工核验清单；</li>
+<li>失败记录：<code>experiments/exp01/agent-traces/task-01-failure-log.md</code>（含越权请求与拒绝）；</li>
+<li>AI 使用记录：<code>ai-usage-log.md</code> 增加一条——工具/模型、用途、Context、输出用途、人工核验方式、问题。</li>
+</ul>
+<p>课堂最低负荷固定为五步：（1）从实验规格选一个受限步骤；（2）写任务契约与权限边界；（3）核对一份真实执行或课前预置 diff；（4）记录一条验证证据和一条失败/越权；（5）开始一条 AI 使用记录。环境就绪时可执行 Agent 与测试；环境故障时使用本课的<a href="../assets/agent-task-example/task-01/">受限 Agent 任务契约</a>、预置 diff、真实测试输出与<a href="../assets/agent-task-example/failure-log/">越权失败记录</a>做纸面审查。两条路径的最小产出相同，均回写 <code>agent-tasks/</code> 与 <code>experiments/&lt;experiment-id&gt;/agent-traces/</code>。</p>
+<hr />
+<h2 id="_4">六、常见错误<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>模糊 prompt 直接交给 Agent</strong>：没有任务契约，结果无法追溯。应改写为五字段契约。</li>
+<li><strong>权限开放到方便为止</strong>：可写层包含整个 <code>src/</code> 甚至整个项目。应只开放任务所需的具体文件。</li>
+<li><strong>人工审核点缺失</strong>：Agent 跑完才看一眼，越权已经发生。应在 diff 写回前、测试失败时、评价协议改动时停下来。</li>
+<li><strong>Agent 输出被当作事实</strong>：代码能跑就接受，未审查 diff、未检查未授权依赖。应执行 diff 审查清单。</li>
+<li><strong>绕过失败</strong>：测试失败时让 Agent"修测试"让它通过。应停，记录，等研究者判断根因。</li>
+<li><strong>污染实验</strong>：通过修改评价协议、数据划分或 baseline 使结果看起来更好。这是学术规范红线。</li>
+<li><strong>删除失败日志</strong>：越权请求或失败运行被静默删除。应保留所有失败日志与成功结果同等留存。</li>
+<li><strong>重跑到成功</strong>：失败后自动重试直到结果好看。应预先写明停止与确认节点，失败即停。</li>
+<li><strong>把"测试通过"等同于"修改正确"</strong>：SWE-bench 视角的局限同样适用于课程项目。应额外人工核验方法是否符合 H1、是否引入数据泄漏、是否污染评价协议。</li>
+<li><strong>任务契约一次性写完不再改</strong>：任务执行中发现权限过紧或过松时不修订契约，而是变通执行。应在发现问题时修改契约并记录理由。</li>
+<li><strong>Agent 修改评价代码</strong>：让 Agent 修改 <code>rubric</code>、指标计算或数据划分。应把评价代码列入"禁止"层。</li>
+<li><strong>越权未记录</strong>：Agent 越权请求被口头拒绝但未写入失败记录。应把越权请求、拒绝理由与处理一并记录。</li>
+</ol>
+<hr />
+<h2 id="_5">七、课堂练习<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1-prompt_1">练习 1：模糊 prompt 改写<a class="headerlink" href="#1-prompt_1" title="Permanent link">&para;</a></h3>
+<p>把以下请求改写为任务契约五字段：</p>
+<blockquote>
+<p>帮我看看 baseline 为什么结果不好，改一下让它能跑。</p>
+</blockquote>
+<p>参考改写：明确 Context（哪个文件、哪个函数、哪一步）、Permission（只读哪些、可写哪个、可执行什么、需确认什么、禁止什么）、Non-goal（不做什么）、人工审核点（diff 审查、测试失败时停）、失败恢复（超时、越权、输出不可解析的处理）。</p>
+<h3 id="2_3">练习 2：权限分层<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>为你第 9 课实验规格中的一个"拟用 Agent"步骤，列出五层权限。检查：可写层是否只包含任务所需的具体文件？禁止层是否包含评价协议与失败日志？</p>
+<h3 id="3diff">练习 3：diff 审查<a class="headerlink" href="#3diff" title="Permanent link">&para;</a></h3>
+<p>给定一段 diff（教师提供或贯穿案例的 <code>generate_summary()</code> 修改），按 diff 审查清单六项逐项检查。标注哪项通过、哪项不通过、不通过时如何处理。</p>
+<h3 id="4_1">练习 4：区分修复根因 / 绕过失败 / 污染实验<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p>下面三种处理方式各属哪一类？对结论可追溯性的影响是什么？</p>
+<ol>
+<li>测试 <code>test_field_constraint</code> 失败，Agent 修改 <code>generate_summary()</code> 的分支条件使字段约束只在阅读卡路径调用，测试通过。</li>
+<li>测试 <code>test_field_constraint</code> 失败，Agent 注释掉这条断言，测试通过。</li>
+<li>baseline 遗漏率高于实验组，Agent 调整 baseline 的温度参数使两组接近。</li>
+</ol>
+<p>参考判断：1 修复根因；2 绕过失败；3 污染实验。</p>
+<h3 id="5">练习 5：写任务契约<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>为你第 9 课实验规格中的一个"拟用 Agent"步骤，写完整任务契约五字段。重点检查：Context 是否暴露了不应暴露的信息（如最终 rubric 评分）？Non-goal 是否防止了任务膨胀？失败恢复是否预先写明停止与确认？</p>
+<h3 id="6">练习 6：失败记录<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>假设你的 Agent 在执行中请求访问 <code>notes/</code> 目录中的同伴反馈。写出失败记录：失败表现、可能原因、是否涉及权限或任务契约缺陷、如何修改工作流、修改后结果。</p>
+<h3 id="7">练习 7：人工审核点定位<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<p>在你的实验流程中，标出至少四个人工审核点。检查：diff 写回前是否是审核点？测试失败时是否停？评价协议改动是否须确认？越权请求是否拒绝并记录？</p>
+<h3 id="8swe-bench">练习 8：SWE-bench 视角<a class="headerlink" href="#8swe-bench" title="Permanent link">&para;</a></h3>
+<p>阅读 SWE-bench 的任务构造与测试判定方式（<a href="https://www.swebench.com/original.html">项目页面</a>）。回答：SWE-bench 把"Agent 解决了问题"定义为什么？这个定义的局限是什么？课程项目没有同等质量的测试集时，研究者必须额外做什么？</p>
+<h3 id="_6">课堂、课后与验证门的边界<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>课堂最低产出</strong>：完成一份五字段任务契约；审查一份真实执行或课次预置的 diff/测试记录；对一条根因修复、绕过建议或实验污染风险做出处理决定；保留一条失败或越权记录。</li>
+<li><strong>课后补全</strong>：将契约、diff、验证和失败记录写回个人项目，使本次受限执行可被第 11 课重复调用。不要为了补全而扩大 Agent 权限或改动评价协议。</li>
+<li><strong>验证门完整条件</strong>：以第 13 课及 <code>course/assignments.md</code> 为准。本课工件只是过程证据，不新增一次正式提交。</li>
+</ul>
+<hr />
+<h2 id="_7">八、术语表<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>本课程中的含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>任务契约</td>
+<td>把一个交给 Agent 的编码或调试任务写成带验收标准的工件，至少含 Context / Permission / Non-goal / 人工审核点 / 失败恢复五字段</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>当前任务明确提供给 Agent 的材料和状态；不包括不应暴露的信息</td>
+</tr>
+<tr>
+<td>Permission</td>
+<td>任务级权限分层：只读 / 可写 / 可执行 / 需确认 / 禁止</td>
+</tr>
+<tr>
+<td>Non-goal</td>
+<td>任务明确不做什么，防止任务膨胀</td>
+</tr>
+<tr>
+<td>人工审核点</td>
+<td>任务执行中必须停下来等研究者确认的具体节点</td>
+</tr>
+<tr>
+<td>失败恢复</td>
+<td>超时、无效输出、工具失败、越权时的处理方式；不重跑到成功</td>
+</tr>
+<tr>
+<td>diff 审查</td>
+<td>研究者在 Agent 修改写回前对 diff 进行的范围、依赖、评价协议、测试覆盖检查</td>
+</tr>
+<tr>
+<td>测试先行</td>
+<td>测试先于修改被研究者审查，且覆盖关键路径而非只覆盖容易通过的路径</td>
+</tr>
+<tr>
+<td>修复根因</td>
+<td>找到失败的机制原因并修改使根因消除；保留失败日志与根因分析</td>
+</tr>
+<tr>
+<td>绕过失败</td>
+<td>不找根因，让失败不再出现（注释断言、跳过测试、调整数据）；等同于伪造记录</td>
+</tr>
+<tr>
+<td>污染实验</td>
+<td>通过修改评价协议、数据划分或 baseline 使结果看起来更好；方法效应与评价效应混淆</td>
+</tr>
+<tr>
+<td>ReAct 循环</td>
+<td>LLM coding agent 常采用的 reasoning—action—observation 循环；错误可在任一环节传播</td>
+</tr>
+<tr>
+<td>SWE-bench 视角</td>
+<td>把"Agent 解决了问题"定义为"指定测试通过"，而不是"代码看起来合理"；测试通过不等于修改正确</td>
+</tr>
+<tr>
+<td>受限 Agent 执行</td>
+<td>在任务契约、权限分层、人工审核点和失败记录约束下的一次 Agent 执行；是循环与封装的前提</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_8">九、延伸阅读与课程材料<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>课程内材料：</p>
+<ul>
+<li><a href="../../../course/syllabus/">课程大纲</a></li>
+<li>备课规划（未公开；请查对应公开来源） 第 10 课</li>
+<li><a href="../../../course/reading-list/">逐课阅读清单</a> 第 10 课</li>
+<li><a href="../../../course/assignments/">项目里程碑与研究门</a>（第 10 课非正式提交门）</li>
+<li><a href="../../../course/assessment/">考核方案</a>（学术规范红线）</li>
+<li><a href="../../../course/project-template/">期末项目完整模板</a>（任务契约写入 <code>agent-tasks/</code>、diff 与日志写入 <code>experiments/</code>）</li>
+<li><a href="../assets/agent-task-example/task-01/">受限 Agent 任务契约</a>与<a href="../assets/agent-task-example/failure-log/">越权失败记录</a>（无执行环境时的纸面审查入口）</li>
+</ul>
+<p>正式书目（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 10 课）：</p>
+<ol>
+<li>Russell, S., &amp; Norvig, P. <em>Artificial Intelligence: A Modern Approach</em>, 4th ed. Pearson, 2020. 选读 Chapter 2 "Intelligent Agents"。<a href="https://www.pearson.com/en-us/subject-catalog/p/artificial-intelligence-a-modern-approach/P200000003500/9780134610993">出版社页面</a>。用途：先用经典 Agent 概念理解环境、目标、观察和行动，再分析 LLM coding agent。核心阅读，约 30 分钟。</li>
+<li>Yao, S. et al. "ReAct: Synergizing Reasoning and Acting in Language Models." <em>ICLR 2023</em>. <a href="https://iclr.cc/virtual/2023/poster/11003">会议页面</a>。用途：分析 reasoning—action—observation 循环及其错误传播。任选，约 25 分钟。</li>
+<li>Amershi, S. et al. "Guidelines for Human-AI Interaction." <em>CHI 2019</em>. DOI: <a href="https://www.microsoft.com/en-us/research/publication/guidelines-for-human-ai-interaction/">10.1145/3290605.3300233</a>。选读人工纠错、控制、反馈和失败处理相关准则。用途：设计人工审核点和可恢复交互。任选，约 20 分钟。</li>
+</ol>
+<p>课堂案例：</p>
+<ol>
+<li>Jimenez, C. E. et al. <a href="https://www.swebench.com/original.html"><em>SWE-bench: Can Language Models Resolve Real-World GitHub Issues?</em></a>, ICLR 2024。只分析任务构造、执行环境、测试判定及 benchmark 局限。</li>
+</ol>
+<p>课后阅读采用"AI 导航 → 原文核验 → AI 质疑 → 偏差审计 → 人工定稿"流程。本课核心阅读为 Russell &amp; Norvig 第 4 版第 2 章，约 30 分钟。精读卡持续保存在个人项目 <code>notes/</code>，不逐周正式提交。本课非正式提交门，产出回写个人项目，作为第 13 课验证门材料的过程证据。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

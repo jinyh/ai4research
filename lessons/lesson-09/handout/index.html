@@ -1,0 +1,2392 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="上海交通大学研究生课程“智能科研方法”（AI for Research: Methods and Practice）">
+      
+      
+      
+        <link rel="canonical" href="https://jinyh.github.io/ai4research/lessons/lesson-09/handout/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>第九讲｜Baseline、实验规格、可复现性与判断门 - 智能科研方法</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#baseline" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="智能科研方法" class="md-header__button md-logo" aria-label="智能科研方法" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            智能科研方法
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第九讲｜Baseline、实验规格、可复现性与判断门
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../learn/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  16 讲课程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../project/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  项目与考核
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../templates/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  模板与资源
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../teacher/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  课程信息
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="智能科研方法" class="md-nav__button md-logo" aria-label="智能科研方法" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    智能科研方法
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../learn/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 讲课程
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    16 讲课程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · AI 辅助科研导论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · 科研伦理与 Agent 边界
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · 检索与来源核验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · 精读与主张核验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · 证据地图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · 问题定义
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · 假设与区分实验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · 中期诊所
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Baseline 与复现
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · 受限 Agent 执行
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 · 自动化循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 · 个人工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 · 工作流评价
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 · 结果写成论证
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 · 同行评审与修改
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 · 最终展示（讲义待复核）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目与考核
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模板与资源
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    模板与资源
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模板与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/opencode-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenCode 最小启动说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/reading-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    逐课参考阅读清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资源索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teacher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课程信息
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导读
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学习目标
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baseline_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、Baseline、实验规格与可复现性在研究链路中的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baseline_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、Baseline 选择与公平性
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、Baseline 选择与公平性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 什么是 baseline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 三类常见 baseline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 公平性检查清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. baseline 不公平的典型反例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、实验规格完善
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、实验规格完善">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 七字段规格
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 停止条件为什么容易被忽略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 度量标准与标注协议
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 失败预案
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 与 Agent / 自动化的关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、可复现性：环境、随机种子、数据与代码
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、可复现性：环境、随机种子、数据与代码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 可复现的最小集合
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 随机种子与方差报告
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 数据使用限制与许可
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-acm-badging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 工件状态与 ACM Badging 视角
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、课后操作指引：从轻量脚手架迁移到完整项目模板
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、课后操作指引：从轻量脚手架迁移到完整项目模板">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 为什么要迁移
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 迁移对照表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 新增字段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 迁移验收
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、判断门提交清单
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、判断门提交清单">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 提交方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 门条件自查清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 判断门材料文件结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 未通过时
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、贯穿案例：从实验规格草图到判断门材料
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、常见错误
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、课堂练习
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="九、课堂练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 1：baseline 类型判断
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-baseline_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 2：审计公平 baseline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 3：写复现说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 4：写第二条研究判断
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 5：处理第 8 课同伴反馈
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 6：完整规格补全（课后）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 7：模板迁移核对（课后）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 8：失败事实与预案分栏
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 9：判断门材料自查
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十、术语表
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十一、延伸阅读与课程材料
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../../../learn/09/">← 本课任务与材料</a></p>
+<hr />
+<h1 id="baseline">第九讲｜Baseline、实验规格、可复现性与判断门<a class="headerlink" href="#baseline" title="Permanent link">&para;</a></h1>
+<h2 id="_1">导读<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>第 7 课你把第 6 课的可证伪命题扩成了机制假设、研究判断和映射草图；第 8 课你向固定同伴组陈述了问题、关键证据、机制假设、最小验证和最大风险，并拿到了一份结构化反馈。"能跑通"和"能复现"之间的距离，恰好就是判断门要检查的距离。</p>
+<p>本课对应八阶段研究链路的阶段六"研究判断"成案与阶段七"原型验证"起始，是"假设、研究判断与方案分享"模块的末课，也是全课第二次正式提交——判断门。它的核心转换是：</p>
+<blockquote>
+<p>从"我有一个实验设计草图"转向"我有一个可复现的 baseline、一份完整的实验规格和一份能让别人重新跑起来的复现说明"，从"我倾向于这样做"转向"判断已落档、风险已识别、同伴反馈已处理"。</p>
+</blockquote>
+<p>完成本课后，你将提交判断门材料包：一个可执行 baseline、一份完整实验规格、一份复现说明、至少 2 条研究判断、第 8 课同伴反馈处理记录、当前最大风险与失败预案、一条已经遇到的执行失败或已经放弃的备选方案记录，以及从轻量脚手架迁移到完整项目模板的当前版本。第 10 课将在这些材料上展开受限 Agent 执行。</p>
+<h2 id="_2">学习目标<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>完成本讲后，你应该能够：</p>
+<ol>
+<li>选择一个可解释、公平且能在课程周期内运行的 baseline，并说明它为什么是公平对照；</li>
+<li>把第 7 课的实验规格草图补全为包含假设对应、变量、步骤、度量标准、对照和停止条件的完整规格；</li>
+<li>记录使实验可复现的最小集合：环境、配置、随机种子、数据来源与使用限制、代码位置与运行命令；</li>
+<li>处理机器学习实验中方差来源，避免把单次运行的差异写成结论；</li>
+<li>把第 8 课同伴反馈逐条归档为采纳、澄清、补证、暂缓或保留异议，并记录理由；</li>
+<li>从 <code>starter-template.md</code> 迁移到 <code>project-template.md</code>，且不丢失 AI 使用记录和伦理说明；</li>
+<li>对照判断门条件完成提交前自查。</li>
+</ol>
+<hr />
+<h2 id="baseline_1">一、Baseline、实验规格与可复现性在研究链路中的位置<a class="headerlink" href="#baseline_1" title="Permanent link">&para;</a></h2>
+<p>八阶段研究链路中，阶段六"研究判断"在第 9 课从"取舍记录"升级为"判断成案"——判断不仅被记下，而且被绑定到可复现的 baseline 和完整实验规格上，能够被独立检查者重新跑出。阶段七"原型验证"在本课只是起始：判断门要求一个可执行 baseline 或最小验证原型，不要求完整自动化（自动化在第 10-11 课展开）。</p>
+<table>
+<thead>
+<tr>
+<th>输入（来自第 7-8 课）</th>
+<th>本课处理</th>
+<th>输出（向判断门与第 10 课）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>机制假设列表（主假设 + 替代假设 + 反证点）</td>
+<td>把假设落到可运行 baseline 与对照</td>
+<td>可执行 baseline + 对照说明</td>
+</tr>
+<tr>
+<td>实验规格草图（变量、度量草案）</td>
+<td>补全步骤、停止条件、随机化与失败预案</td>
+<td>完整实验规格</td>
+</tr>
+<tr>
+<td>第 8 课同伴反馈记录</td>
+<td>逐条选择处理类型并写理由</td>
+<td>同伴反馈处理记录</td>
+</tr>
+<tr>
+<td>第 1-8 课 AI 使用记录与伦理检查</td>
+<td>迁移到完整项目模板，保留可追溯链</td>
+<td>完整项目模板版本</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>与第 1 课的连接：第 1 课 §2.7 已要求"工作流何时停止"——本课把这一要求落到实验规格的停止条件上，避免"跑到出现显著结果为止"的隐性偏倚。</p>
+</blockquote>
+<p>本课产出的是供判断门检查的当前项目版本，不是论文实验段的成稿。论文写作在第 14 课展开。</p>
+<hr />
+<h2 id="baseline_2">二、Baseline 选择与公平性<a class="headerlink" href="#baseline_2" title="Permanent link">&para;</a></h2>
+<h3 id="1-baseline">1. 什么是 baseline<a class="headerlink" href="#1-baseline" title="Permanent link">&para;</a></h3>
+<p>baseline 不是"任意一个对比组"，而是用来回答"我观察到的方法效应是否真的来自我假设的机制"的公平参照。一个 baseline 公平，当且仅当：</p>
+<ul>
+<li>控制变量真正一致（同模型、同数据、同解码参数、同评价协议）；</li>
+<li>混杂变量被识别并尽可能消除；</li>
+<li>baseline 的失败不会被归结为"它本身就坏"——它必须在公平条件下被认真运行。</li>
+</ul>
+<p>如果 baseline 不公平，"我的方法有效"的结论无法成立——任何差异都可能来自未控制的变量，而非你的干预。</p>
+<blockquote>
+<p>来源参考：Pineau, J. et al. "Improving Reproducibility in Machine Learning Research." <em>Journal of Machine Learning Research</em> 22(164), 1–20 (2021). <a href="https://www.jmlr.org/papers/v22/20-303.html">JMLR 正式页面</a>。用途：把 ML reproducibility checklist 转化为 baseline、超参、数据和超参选择的报告要求（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 9 课）。</p>
+</blockquote>
+<h3 id="2-baseline">2. 三类常见 baseline<a class="headerlink" href="#2-baseline" title="Permanent link">&para;</a></h3>
+<p>在 CS/AI 与科研方法项目中，常见三类 baseline，选哪一类取决于你的研究问题：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>含义</th>
+<th>适用</th>
+<th>贯穿案例示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>朴素 baseline</td>
+<td>不使用任何目标机制的简单方法</td>
+<td>检验"目标机制是否真的必要"</td>
+<td>自由摘要：直接让模型生成摘要，不强制阅读卡结构</td>
+</tr>
+<tr>
+<td>强 baseline</td>
+<td>已公开、可比的现成方法</td>
+<td>检验"目标方法是否在公平条件下更好"</td>
+<td>已公开的"提示词工程摘要"方法（如 few-shot 摘要），固定 prompt 与解码参数</td>
+</tr>
+<tr>
+<td>自身消融 baseline</td>
+<td>你的方法去掉某关键模块</td>
+<td>检验"哪个模块是效应来源"</td>
+<td>阅读卡去掉"原文位置"字段，保留其他字段</td>
+</tr>
+</tbody>
+</table>
+<p>判断门只要求"一个可执行 baseline 或最小验证原型"。但在判断门材料中必须说明这个 baseline 为什么是公平的——也就是说，如果你只有一个朴素 baseline，要写清楚为什么强 baseline 暂不在范围（如第 8 课同伴反馈指出"强 baseline 需要外部数据集，超出周期"）。</p>
+<h3 id="3">3. 公平性检查清单<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>对每个 baseline，至少回答：</p>
+<ol>
+<li>baseline 与实验组是否使用同一批数据 / 论文 / 任务实例？</li>
+<li>模型、解码参数（温度、最大长度、top-p）、随机种子是否一致？</li>
+<li>评价协议是否一致（同一 rubric、同一批标注者、同一计算口径）？</li>
+<li>baseline 是否被认真运行（运行次数、停止条件与实验组相同）？</li>
+<li>baseline 的失败是否被记录而不是被删除？</li>
+</ol>
+<blockquote>
+<p>来源参考：Bouthillier, X. et al. "Accounting for Variance in Machine Learning Benchmarks." <em>Proceedings of Machine Learning and Systems</em> 3 (2021). <a href="https://proceedings.mlsys.org/paper_files/paper/2021/hash/0184b0cd3cfb185989f858a1d9f5c1eb-Abstract.html">MLSys 正式页面</a>。用途：识别随机性、数据划分、超参选择和种子对结果的方差贡献，避免把单次运行的差异写成结论。</p>
+</blockquote>
+<h3 id="4-baseline">4. baseline 不公平的典型反例<a class="headerlink" href="#4-baseline" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>数据不一致</strong>：实验组用 A 集，baseline 用 B 集，差异可能来自数据难度。</li>
+<li><strong>超参不对等</strong>：baseline 没有调参，实验组做了超参搜索——这是"调参 vs 不调参"的差异，不是机制差异。</li>
+<li><strong>评价不一致</strong>：实验组用盲评，baseline 用非盲评；或实验组用 rubric v2，baseline 用 rubric v1。</li>
+<li><strong>运行次数不对等</strong>：实验组跑 5 次取均值，baseline 只跑 1 次。</li>
+<li><strong>失败被静默删除</strong>：baseline 因协议错误跑不通，只保留实验组的成功结果。</li>
+</ul>
+<blockquote>
+<p>来源参考：ACM. <em>Artifact Review and Badging, Version 1.1</em> (2020). <a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current">官方页面</a>。用途：区分"代码可下载""工件可运行"和"结果得到独立验证"——判断门要求 baseline 可执行，结果可追溯，但不要求通过 ACM 完整 badges。</p>
+</blockquote>
+<hr />
+<h2 id="_3">三、实验规格完善<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>实验规格不等于"代码能跑"。它回答：验证哪个假设、怎么验证、什么是公平对照、什么结果支持或推翻、什么时候停。第 7 课已建立"假设—指标—实验—可能结论"映射和变量清单草案，本课把它补全为判断门可检查的完整规格。</p>
+<h3 id="1">1. 七字段规格<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>判断门条件之五要求实验规格完整，包括假设对应、变量、步骤、度量标准、对照和停止条件。本课要求把它写成一张七字段表：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>内容</th>
+<th>贯穿案例样例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>假设对应</td>
+<td>验证 H1 还是 A1/A2/A3</td>
+<td>H1=阅读卡字段约束使限定条件更易被保留和核验；A1=任务转移；A2=标注提示效应；A3=文档结构效应</td>
+</tr>
+<tr>
+<td>变量</td>
+<td>自变量 / 因变量 / 控制变量 / 混杂变量</td>
+<td>自：是否使用阅读卡；因：限定条件遗漏率；控：模型、解码参数、最大输出长度、论文版本、评价协议；混：论文结构、标注提示与标注者训练</td>
+</tr>
+<tr>
+<td>步骤</td>
+<td>从准备到运行到标注到统计的顺序，每步谁执行、谁审核</td>
+<td>1) 确定同一批 20 篇公开 CS 论文；2) 每篇分别进入阅读卡与自由摘要条件；3) 每个条件重复运行；4) 对人工基准标注执行盲评；5) 配对计算遗漏率、不确定性和一致性</td>
+</tr>
+<tr>
+<td>度量标准</td>
+<td>指标操作定义、计算口径、标注协议、标注者一致性指标</td>
+<td>限定条件遗漏率 = 相对于人工建立并经复核的限定条件基准，摘要遗漏的限定条件数 / 该论文应保留的限定条件数；一致性阈值需由协议事先声明</td>
+</tr>
+<tr>
+<td>对照</td>
+<td>baseline 是什么、为什么公平、控制变量清单</td>
+<td>朴素 baseline = 自由摘要；公平性：同一批论文配对、同模型、同解码参数、同最大输出长度、同论文版本、同评价协议和同运行次数</td>
+</tr>
+<tr>
+<td>配对与重复</td>
+<td>是否使用同一对象配对比较；若有随机源，种子、重复计划与汇总方式如何记录</td>
+<td>每篇论文、每个条件运行 3 次，共 <code>20 篇 × 2 条件 × 3 次 = 120 次输出</code>；记录每次运行配置，按同论文配对汇总</td>
+</tr>
+<tr>
+<td>停止条件</td>
+<td>跑多少次、何时停、什么条件下提前停</td>
+<td>完整教学规格为 120 次输出；只在发现标注协议错误、数据污染或权限问题时提前停，不因结果方向提前停</td>
+</tr>
+</tbody>
+</table>
+<p>这是虚构教学案例的完整规格，不冒充真实实验结果。课堂只在公开合成子集上跑通或检查一条可重运行记录；学生项目的重复计划由其主张强度决定，不把本案例的次数升级为全班通用硬门。</p>
+<p>结果解释统一使用“支持／反驳／仍不能判断”，同时报告估计差异、不确定性和适用边界。未达到统计显著不得直接写成“机制不成立”；证据不足、噪声过大或 A1/A2/A3 未排除时，应写“仍不能判断”。</p>
+<h3 id="2">2. 停止条件为什么容易被忽略<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>最常见的隐性偏倚是"跑到出现显著结果为止"。如果不预先写明运行次数和停止规则，研究者会在结果有利时停、不利时继续跑，最终把噪声差异写成方法效应。停止条件就是预先承诺：跑到第几次就停，提前停只在协议错误或数据污染时触发，不在结果不利时触发。</p>
+<blockquote>
+<p>来源参考：Wilson, G. et al. "Good Enough Practices in Scientific Computing." <em>PLOS Computational Biology</em> 13(6):e1005510 (2017). DOI: <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510">10.1371/journal.pcbi.1005510</a>。用途：建立项目组织、数据管理、版本记录、脚本和协作的最低可靠实践（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 9 课）。</p>
+</blockquote>
+<h3 id="3_1">3. 度量标准与标注协议<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>度量标准不是"用什么指标"，而是"这个指标怎么算出来"。判断门条件之二要求"数据、材料、评价指标和使用限制说明"。一个度量至少要写明：</p>
+<ul>
+<li><strong>操作定义</strong>：从原始数据到指标数字的公式或步骤；</li>
+<li><strong>计算口径</strong>：分母是什么、分子是什么、缺失值如何处理；</li>
+<li><strong>标注协议</strong>：标注者人数、标注者训练、盲评与否、双标注如何解决分歧；</li>
+<li><strong>一致性指标</strong>：标注者间一致性（如 Cohen's kappa 或 Krippendorff's alpha）；若未计算，写明为什么（如样本量不足），并标记为待验证项。</li>
+</ul>
+<h3 id="4">4. 失败预案<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>失败预案是判断门条件之七“当前最大风险和失败预案”的直接来源。先选当前最大风险，为它写一条完整、可执行的预案，至少回答：触发条件是什么、采取什么动作、写入哪里、会怎样改变当前主张或项目范围。</p>
+<p>可从下列情形中选择与本人最大风险相符的一项，也可以写其他风险；课程不要求同时覆盖所有类型：</p>
+<ul>
+<li>baseline 跑不通（如换用更小样本、回退到朴素 baseline）；</li>
+<li>结果不支持假设（如检查是否 A1/A2/A3 替代假设被触发，记录为待验证项而非删除）；</li>
+<li>数据不可用（如换用公开替代数据，并在判断门材料中说明限制）；</li>
+<li>标注者一致性过低（如增加训练、修订 rubric、降级为弱结论）。</li>
+</ul>
+<h3 id="5-agent">5. 与 Agent / 自动化的关系<a class="headerlink" href="#5-agent" title="Permanent link">&para;</a></h3>
+<p>如果实验流程使用 Agent 或自动化循环（第 10-12 课系统展开），实验规格还需写明：</p>
+<ul>
+<li>允许 Agent 访问哪些文件、数据与网络资源；</li>
+<li>允许写入和执行什么；</li>
+<li>哪些动作必须人工确认；</li>
+<li>是否允许修改评价代码或标注协议；</li>
+<li>失败日志是否保留；</li>
+<li>工作流何时停止（沿用第 1 课 §2.7 与第 7 课 §四·4）。</li>
+</ul>
+<p>本课不要求把这些写全，但要求在实验规格中标出"哪些步骤拟用 Agent、哪些步骤必须人工"，作为第 10 课受限 Agent 执行的输入。</p>
+<hr />
+<h2 id="_4">四、可复现性：环境、随机种子、数据与代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>可复现性不是"代码能跑"，而是"另一位研究者在另一台机器上能重新跑出可比的结果"。判断门条件之三要求"环境、配置、随机种子或等价复现条件"。</p>
+<h3 id="1_1">1. 可复现的最小集合<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>来源参考：Sandve, G. K. et al. "Ten Simple Rules for Reproducible Computational Research." <em>PLOS Computational Biology</em> 9(10):e1003285 (2013). DOI: <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285">10.1371/journal.pcbi.1003285</a>。用途：建立结果—脚本—参数—输入—随机种子的可执行追踪链。该文是第 11 课核心阅读，本课借用其最小追踪链概念。</p>
+</blockquote>
+<p>最小复现集合包括：</p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>字段</th>
+<th>贯穿案例样例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>环境</td>
+<td>操作系统、Python/PyTorch 版本、关键库版本</td>
+<td>Python 3.10, transformers 4.40.0, anthropic SDK 0.34.0</td>
+</tr>
+<tr>
+<td>配置</td>
+<td>模型名、解码参数、prompt 模板、rubric 版本</td>
+<td>model=claude-3-5-sonnet-20241022, temperature=0, max_tokens=1024, rubric v1.2</td>
+</tr>
+<tr>
+<td>随机种子</td>
+<td>数据划分种子、运行种子、采样种子</td>
+<td>split_seed=42, run_seeds=[100,200,300]</td>
+</tr>
+<tr>
+<td>数据</td>
+<td>数据来源、版本、划分方式、使用限制</td>
+<td>20 篇 CS 论文来自 ACL Anthology 2024-05 快照；仅用于课程项目，不二次分发</td>
+</tr>
+<tr>
+<td>代码</td>
+<td>仓库位置、commit、运行命令、入口脚本</td>
+<td>github.com/.../project, commit abc123, <code>python src/run_baseline.py --config configs/exp01.yaml</code></td>
+</tr>
+<tr>
+<td>结果</td>
+<td>实验日志位置、原始输出、聚合结果</td>
+<td><code>experiments/exp01/log.jsonl</code>, <code>experiments/exp01/results.csv</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2_1">2. 随机种子与方差报告<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>机器学习实验中，随机性来自多个层面：数据划分、模型初始化、采样、解码。Bouthillier et al. (2021) 指出，单次运行的差异往往大于方法间的差异——如果只跑一次，你可能把种子噪声写成方法效应。</p>
+<p>判断门要求随机性或等价复现条件可追溯，具体方案由主张决定：</p>
+<ul>
+<li>存在随机源时，记录所有已使用随机种子的来源和值；没有随机源时写明确定性或其他等价复现条件；</li>
+<li>要声称方差、稳定性或稳健性时，预先设计足以估计相应不确定性的重复计划和汇总方式；</li>
+<li>如果只跑一次，必须写明边界（如时间约束），并把观察标记为待验证，不能写成稳定方法效应。</li>
+</ul>
+<p>课程不设统一“至少 3 次”硬门。可核验的最小实跑对象见<a href="../assets/reproducibility-example/">可核验复现工件</a>：它用合成输入、实际 <code>config.json</code>、<code>run.py</code>、<code>results.json</code> 和 <code>run-log.jsonl</code> 演示确定性等价复现；它不是实证研究结果。</p>
+<blockquote>
+<p>这与 assessment.md "实验设计与可复现性"维度的要求一致："实验配置、随机种子、环境依赖和运行命令记录完整"和"能说明威胁有效性和可能的混杂因素"。</p>
+</blockquote>
+<h3 id="3_2">3. 数据使用限制与许可<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<p>判断门条件之二要求"数据、材料、评价指标和使用限制说明"。数据部分至少回答：</p>
+<ul>
+<li>数据来源（公开数据集 / 自采 / 课程提供）；</li>
+<li>许可证或使用限制（如 ACL Anthology 论文是否允许二次分发）；</li>
+<li>是否含隐私或敏感内容；</li>
+<li>是否上传到外部模型（沿用第 2 课伦理检查）；</li>
+<li>如果使用 API（如大模型），是否记录了 API 提供方、版本、调用日期。</li>
+</ul>
+<p>把论文全文发送到外部 API 时，确认你拥有相应权限；课程默认不向外部模型发送未公开论文、学生作业或敏感数据（沿用 <a href="../../../course/starter-template/">starter-template.md</a> §8-9 与 <a href="../../../course/reading-list/">reading-list.md</a> §二）。</p>
+<h3 id="4-acm-badging">4. 工件状态与 ACM Badging 视角<a class="headerlink" href="#4-acm-badging" title="Permanent link">&para;</a></h3>
+<p>判断门要求 baseline 可执行、结果可追溯，但不要求通过 ACM 完整 badges。可以用 ACM Artifact Review and Badging 的三个最低档作为自查视角：</p>
+<ul>
+<li><strong>documented</strong>：基本运行说明存在；</li>
+<li><strong>consistent</strong>：说明中的步骤与代码实际行为一致；</li>
+<li><strong>exercisable</strong>：工件能被独立运行，不只是"在我机器上能跑"。</li>
+</ul>
+<p>判断门对应这三档：documented 由实验规格覆盖；consistent 由复现说明与代码一致覆盖；exercisable 由 baseline 可执行覆盖。更高档（complete、results validated、available）是验证门和论证门的目标，本课不要求。</p>
+<p>本课课堂最低产出是：一个经公平性审计的 baseline，以及一条可由同伴按说明重新运行的记录（输入、配置、命令、原始输出和日志位置）。课后只补全本次正式提交所需的规格、复现说明、反馈处理和模板迁移；判断门仍按 §六的九项完整条件检查。</p>
+<hr />
+<h2 id="_5">五、课后操作指引：从轻量脚手架迁移到完整项目模板<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1. 为什么要迁移<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<p>第 1-8 课使用 <a href="../../../course/starter-template/">starter-template.md</a>，建立问题定义、AI 使用记录、Agent 权限矩阵、伦理检查和轻量工件追踪。第 9 课 baseline 与实验规格基本明确后，判断门条件之九要求"从轻量脚手架迁移到完整项目模板，且没有丢失 AI 使用记录和伦理说明"。</p>
+<p>迁移不是重写，也不是课堂里的第二个新方法任务。按下表把已经在 starter-template 中稳定的字段搬到 <a href="../../../course/project-template/">project-template.md</a> 的对应位置，并补全 baseline、实验规格、研究判断记录、复现说明和实验记录字段。</p>
+<h3 id="2_2">2. 迁移对照表<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>starter-template 字段</th>
+<th>project-template 对应位置</th>
+<th>迁移注意</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>§1 项目概览</td>
+<td>§1 项目信息</td>
+<td>补充代码仓库 URL</td>
+</tr>
+<tr>
+<td>§2 八阶段链路草图</td>
+<td>§12 复盘（八阶段链路反思）</td>
+<td>早期链路草图作为期末复盘输入</td>
+</tr>
+<tr>
+<td>§3 问题定义初版</td>
+<td>§2 问题定义与研究问题</td>
+<td>不重写，只搬迁；保留非例和可证伪命题</td>
+</tr>
+<tr>
+<td>§4 轻量工件追踪表</td>
+<td>工件状态追踪表</td>
+<td>状态升级：判断门相关工件至 <code>review</code> 或 <code>approved</code></td>
+</tr>
+<tr>
+<td>§5 AI 辅助精读卡</td>
+<td>§3 相关工作与证据地图（精读卡归档到 <code>notes/</code>）</td>
+<td>精读卡不入正文，但证据地图引用</td>
+</tr>
+<tr>
+<td>§6 AI 使用记录</td>
+<td><code>ai-usage-log.md</code>（独立文件）</td>
+<td>不丢失任何条目，包括第 7-8 课的假设生成与方案分享记录</td>
+</tr>
+<tr>
+<td>§7 轻量失败记录</td>
+<td>§4.7 已遇失败与放弃项 + <code>failure-log.md</code></td>
+<td>事实记录不丢失；判断门条件之八直接检查</td>
+</tr>
+<tr>
+<td>§8 Agent 权限矩阵</td>
+<td>§6 个人 Agent Workflow（权限边界字段）</td>
+<td>第 10 课会扩写，本课只搬迁当前边界</td>
+</tr>
+<tr>
+<td>§9 早期伦理与合规检查</td>
+<td><code>ethics-and-compliance.md</code>（独立文件）</td>
+<td>不丢失，补一条"数据使用限制"说明</td>
+</tr>
+</tbody>
+</table>
+<p>第 7 课建立的 <code>hypothesis-and-design.md</code> 不保留为独立文件：机制假设、研究判断记录和同伴反馈处理迁入 <code>hypothesis-and-judgment.md</code>，实验规格迁入 <code>experiment-spec.md</code>。</p>
+<h3 id="3_3">3. 新增字段<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<p>迁移时需要在 project-template 中新增以下字段（来自本课产出）：</p>
+<ul>
+<li><strong>§4.2 Baseline</strong>：列出至少 1 个 baseline，标明类型（朴素/强/消融）与公平性说明；</li>
+<li><strong>§4.4 指标</strong>：每个指标写明含义、操作定义和适用理由；</li>
+<li><strong>§4.5 消融和对照</strong>：写明对照实验、消融实验和失败预案；</li>
+<li><strong>§4.6 实验规格</strong>：填满七字段表；</li>
+<li><strong>§5 研究判断记录</strong>：至少 2 条，每条六字段（判断内容、取舍理由、适用边界、依据、待验证状态、影响工件）；</li>
+<li><strong>§7 实验记录</strong>：至少 1 行可追溯实验，包含实验 ID、配置、结果、对应假设、是否失败；</li>
+<li><strong><code>failure-log.md</code></strong>：至少记录一个已经遇到的执行失败或已经放弃的备选方案，写明发生条件、处理方式和回写位置；前瞻性失败预案不能替代这条事实记录；</li>
+<li><strong>同伴反馈处理记录</strong>：第 8 课反馈逐条选择采纳、澄清、补证、暂缓或保留异议，并写理由。</li>
+</ul>
+<h3 id="4_1">4. 迁移验收<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p>迁移完成的判据：</p>
+<ul>
+<li>starter-template 中所有 <code>approved</code> 或 <code>stable</code> 字段在 project-template 中都有对应位置；</li>
+<li>AI 使用记录条目数 ≥ 第 1-8 课总和（不丢失）；</li>
+<li>伦理说明含数据使用限制一条；</li>
+<li>工件状态追踪表更新到当前版本，判断门相关工件状态为 <code>review</code> 或 <code>approved</code>；</li>
+<li>实验记录至少 1 行可追溯。</li>
+</ul>
+<hr />
+<h2 id="_6">六、判断门提交清单<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>判断门是全课第二次正式提交。门条件以 <a href="../../../course/assignments/">assignments.md</a> Checkpoint 2 为权威来源，本节只做面向学生的自查清单，不另立规则。</p>
+<h3 id="1_3">1. 提交方式<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<p>提交一个指向当前个人项目版本的链接、tag 或压缩包，不重复制作与项目仓库分离的汇报文档。第 1-9 课所有课堂练习和阅读记录都已回写同一项目，判断门检查的是当前版本是否满足条件，不是重新制作材料。</p>
+<h3 id="2_3">2. 门条件自查清单<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>以下 9 项与 <a href="../../../course/assignments/">assignments.md</a> Checkpoint 2 门条件一一对应，请逐项自查：</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>门条件</th>
+<th>自查问题</th>
+<th>对应项目文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>一个可执行 baseline 或最小验证原型</td>
+<td>是否有至少 1 个 baseline 能在另一台机器上被重新跑起来？baseline 类型（朴素/强/消融）是否写明？为什么是公平对照？</td>
+<td><code>src/</code>、<code>experiments/</code>、<code>README.md</code> 运行说明</td>
+</tr>
+<tr>
+<td>2</td>
+<td>数据、材料、评价指标和使用限制说明</td>
+<td>数据来源、许可证、是否含敏感内容、是否上传外部 API 是否写明？评价指标的操作定义、计算口径、标注协议、一致性指标是否完整？</td>
+<td><code>experiment-spec.md</code> §数据、§度量标准</td>
+</tr>
+<tr>
+<td>3</td>
+<td>环境、配置、随机种子或等价复现条件</td>
+<td>环境（OS、Python、关键库版本）是否记录？模型名、解码参数、prompt 模板、rubric 版本是否记录？所有已使用种子或等价复现条件是否记录？若主张涉及方差或稳定性，是否事先说明足以支撑该主张的重复计划？</td>
+<td><code>experiment-spec.md</code> §环境与配置、<code>experiments/*/config.yaml</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>至少 2 条研究判断，每条写明取舍理由、适用边界、依据和待验证状态</td>
+<td>是否有 ≥2 条研究判断？每条是否包含六字段（判断内容、取舍理由、适用边界、依据、待验证状态、影响工件）？</td>
+<td><code>hypothesis-and-judgment.md</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>实验规格完整，包括假设对应、变量、步骤、度量标准、对照和停止条件</td>
+<td>七字段表是否填满？停止条件是否预先写明，而非"跑到显著为止"？是否为当前最大风险写了一条可执行的失败预案？</td>
+<td><code>experiment-spec.md</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>第 8 课同伴反馈的处理记录</td>
+<td>第 8 课同伴反馈是否逐条选择处理类型并写理由？如保留异议，是否记录可追溯依据和适用边界？</td>
+<td><code>peer-review.md</code> 或 <code>hypothesis-and-judgment.md</code> 同伴反馈段</td>
+</tr>
+<tr>
+<td>7</td>
+<td>当前最大风险和失败预案</td>
+<td>最大风险是否具体（不是"时间不够"）？预案是否与该风险直接对应，能在触发时保留记录并进入可分析的回退路径？</td>
+<td><code>experiment-spec.md</code> §失败预案、<code>README.md</code> §风险</td>
+</tr>
+<tr>
+<td>8</td>
+<td>至少记录一个已经遇到的执行失败或已经放弃的备选方案，写明发生条件、处理方式和回写位置</td>
+<td>记录是否描述已经发生的事实，而非未来预案？是否写清触发/发现条件、采取的处理和由此修改的规格、判断或工件？</td>
+<td><code>failure-log.md</code>、相关实验日志与被回写工件</td>
+</tr>
+<tr>
+<td>9</td>
+<td>从轻量脚手架迁移到完整项目模板，且没有丢失 AI 使用记录和伦理说明</td>
+<td>是否迁移到 project-template？AI 使用记录条目数是否 ≥ 第 1-8 课总和？伦理说明是否含数据使用限制一条？工件状态追踪表是否更新？</td>
+<td>整个项目仓库</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3_4">3. 判断门材料文件结构<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h3>
+<p>迁移到 project-template 后，判断门检查时项目至少包含：</p>
+<div class="highlight"><pre><span></span><code>project/
+├── README.md                    # 运行说明、项目概览、风险
+├── problem-definition.md        # 第 6 课产出（不重写）
+├── proposal.md                  # 第 6 课第一性原理 + 第 7 课机制假设
+├── evidence-map.md              # 第 5 课产出，第 7 课补充
+├── hypothesis-and-judgment.md   # 机制假设列表 + ≥2 条研究判断 + 同伴反馈处理
+├── experiment-spec.md          # 七字段实验规格 + 复现说明
+├── ai-usage-log.md             # 第 1-9 课所有 AI 使用记录
+├── ethics-and-compliance.md     # 含数据使用限制
+├── artifact-tracking.md        # 工件状态追踪表
+├── peer-review.md              # 第 8 课同伴反馈处理
+├── failure-log.md              # 已遇执行失败或已放弃备选方案
+├── src/                         # baseline 与原型代码
+├── experiments/                 # 实验配置、日志、结果
+└── notes/                       # 精读卡、检索式、临时想法
+</code></pre></div>
+<h3 id="4_2">4. 未通过时<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h3>
+<p>未通过时，回到机制假设、证据整理或实验设计环节修改，一周内重新检查。第一次未通过不直接扣重分，但未按期修订会影响对应评分维度（见 <a href="../../../course/assessment/">assessment.md</a> "实验设计与可复现性"维度，占 30%）。</p>
+<p>门未通过时只要求修复缺失条件并重新检查，不重复提交无关材料。根因定位示例：</p>
+<ul>
+<li>baseline 跑不通：回到 §二公平性检查，确认控制变量是否一致；或回到第 7 课实验规格草图，缩小实验范围；</li>
+<li>实验规格缺停止条件：回到本课 §三·2，补全运行次数与停止规则；</li>
+<li>复现说明缺种子：回到本课 §四·1-2，补全环境、配置与种子记录；</li>
+<li>研究判断 &lt; 2 条：回到第 7 课 §三，补写第二条；</li>
+<li>同伴反馈未处理：回到第 8 课反馈记录，逐条归档；</li>
+<li>模板迁移丢失 AI 使用记录：回到本课 §五·4，按迁移对照表逐项核对。</li>
+</ul>
+<hr />
+<h2 id="_7">七、贯穿案例：从实验规格草图到判断门材料<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>承接第 7 课贯穿案例。第 7 课产出：H1 主假设 + 一个可区分的 A1/A2/A3 候选 + 研究判断 J1（采用限定条件遗漏率而非通用语言质量评分）+ 映射草图。第 8 课产出：限时陈述 + 同伴反馈（含"建议增加强 baseline""建议报告不确定性""质疑样本量过小"等）。</p>
+<p>本课动作链：</p>
+<p><strong>第一步：选择 baseline（§二）</strong></p>
+<p>朴素 baseline = 自由摘要（不强制阅读卡结构）。理由：回答 H1"字段约束是否必要"，朴素 baseline 直接检验"没有字段约束会怎样"。强 baseline（few-shot 摘要）暂不在范围——第 8 课同伴反馈指出需要外部 prompt 数据集，超出课程周期。</p>
+<p><strong>第二步：补全实验规格七字段（§三·1）</strong></p>
+<p>H1 对应；变量四类如 §三·1 样例；步骤含 5 步（定义同一批 20 篇 → 每篇进入两条件 → 重复生成 → 对人工基准盲评 → 配对计算）；主指标是限定条件遗漏率；对照为朴素 baseline；每篇、每条件运行 3 次，共 120 次输出；发现协议错误、数据污染或权限问题时提前停。</p>
+<p><strong>第三步：补全可复现说明（§四）</strong></p>
+<p>环境：Python 3.10 与冻结的模型 SDK；配置：<code>model=&lt;frozen-model-id&gt;</code>, <code>temperature=0</code>, <code>rubric=v1.2</code>；运行种子：<code>run_seeds=[100,200,300]</code>；数据：同一批 20 篇公开 CS 论文清单 <code>set-v1</code>，每篇分别进入两个条件；代码：commit <code>abc123</code>, <code>python src/run_baseline.py --config configs/exp01.yaml</code>；结果：<code>experiments/exp01/log.jsonl</code>。模型、SDK 与论文版本必须在实际执行时记录真实值，不能照抄教学占位符。</p>
+<p><strong>第四步：补写第二条研究判断（§五与第 7 课 §三）</strong></p>
+<p>J2：baseline 选择朴素而非强 baseline。取舍理由：第 8 课同伴反馈指出强 baseline 需外部数据集，超出周期；朴素 baseline 已能检验 H1"字段约束是否必要"。适用边界：结论只能支持"字段约束相比无约束更好"，不能支持"阅读卡优于其他结构化方法"。依据：第 8 课同伴反馈记录 + 第一性原理"主张必须能定位原文"。待验证状态：强 baseline 留作后续工作。</p>
+<p><strong>第五步：处理第 8 课同伴反馈（§六·2 之 6）</strong></p>
+<p>逐条归档：</p>
+<ul>
+<li>反馈"增加强 baseline"——保留异议（J2 已记录超出周期的可追溯理由）；</li>
+<li>反馈"报告方差"——采纳（实验规格已含 3 次运行与标准差）；</li>
+<li>反馈"样本量过小"——暂缓（标记为待验证项，结论将标记为"小样本下的初步证据"）。</li>
+</ul>
+<p><strong>第六步：写最大风险与失败预案（§三·4）</strong></p>
+<p>最大风险：20 篇样本可能不足以支持稳定结论。失败预案：若 kappa &lt; 0.7，增加标注者训练并修订 rubric；若 baseline 跑不通，回退到只用主假设行的最小验证；若结果不支持 H1，检查是否触发 A1/A2/A3 并记录为待验证项。</p>
+<p><strong>第七步：补一条已经发生的失败记录（§六·2 之 8）</strong></p>
+<p>从当前项目选择一个已经发生的执行失败或已经放弃的备选方案。例如：强 baseline 因所需外部 prompt 集在课程周期内无法获得而被放弃。记录发生条件、处理方式（改用朴素 baseline，并降低结论边界）和回写位置（J2、<code>experiment-spec.md</code> 对照字段、<code>failure-log.md</code>）。这条事实记录不能用“如果失败就……”的前瞻预案替代。</p>
+<p><strong>第八步：迁移到 project-template（§五）</strong></p>
+<p>按迁移对照表搬迁字段，AI 使用记录从第 1-8 课累计 N 条（不丢失），伦理说明补"数据使用限制：ACL Anthology 论文仅课程使用"。工件状态追踪表更新：实验规格、研究判断记录、baseline 至 <code>review</code>。</p>
+<p><strong>第九步：判断门自查（§六·2）</strong></p>
+<p>对照 9 项门条件逐项自查。</p>
+<p>本课先跑通“映射草图 → 公平 baseline → 一条可重运行记录”。其余字段按 §五迁移指引补全，再对照 §六完成判断门九项自查。</p>
+<hr />
+<h2 id="_8">八、常见错误<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>baseline 不公平</strong>：对照组与实验组在模型、数据、温度、运行次数上不一致。结论无法成立。</li>
+<li><strong>只跑一次就作稳定性结论</strong>：把单次运行的差异写成稳定方法效应。应根据主张强度预先说明足够的重复或等价复现计划，并报告相称的不确定性；课程不设统一次数硬门。</li>
+<li><strong>无停止条件</strong>：跑到出现显著结果为止，构成隐性 p-hacking。应预先写明运行次数与停止规则。</li>
+<li><strong>度量无操作定义</strong>：只写"用遗漏率"，不写分子分母与缺失值处理。应补全计算口径。</li>
+<li><strong>复现说明缺种子</strong>：环境记录了，但随机种子丢失。应记录所有种子来源与值。</li>
+<li><strong>数据使用限制未写</strong>：未说明数据许可证与是否上传外部 API。应补全数据使用限制。</li>
+<li><strong>同伴反馈未归档</strong>：第 8 课拿了反馈但没处理记录。应逐条选择处理类型并写理由。</li>
+<li><strong>迁移丢失 AI 使用记录</strong>：搬到 project-template 时漏掉了第 1-8 课的 AI 使用条目。应按迁移对照表逐项核对。</li>
+<li><strong>第二条研究判断不完整</strong>：只有一条研究判断，或第二条缺适用边界。应补全六字段。</li>
+<li><strong>把"代码能跑"当可复现</strong>：能跑不等于别人能复现。应对照 ACM Badging 三档自查。</li>
+<li><strong>最大风险写成"时间不够"</strong>：不具体。应写具体风险（如样本量不足、kappa 可能过低）。</li>
+<li><strong>失败预案与最大风险脱节</strong>：只写泛化的“如果跑不通就缩小范围”，但没有触发条件、动作与记录位置。应先为当前最大风险写一条可执行预案；baseline 跑不通、结果不支持、数据不可用只是可选例库，不是必须同时覆盖的三类硬门。</li>
+<li><strong>用失败预案代替已经发生的失败记录</strong>：只写未来可能发生什么，却没有记录已经遇到的执行失败或已经放弃的备选方案。应补发生条件、实际处理方式和回写位置。</li>
+</ol>
+<hr />
+<h2 id="_9">九、课堂练习<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="1baseline">练习 1：baseline 类型判断<a class="headerlink" href="#1baseline" title="Permanent link">&para;</a></h3>
+<p>下面三个候选 baseline，判断各属朴素/强/消融，并说明为什么公平或不公平：</p>
+<ol>
+<li>用 GPT-4 生成摘要 vs. 用 Llama-3 生成摘要。</li>
+<li>阅读卡摘要 vs. 自由摘要，同模型同论文同温度。</li>
+<li>阅读卡摘要 vs. 去掉"原文位置"字段的阅读卡摘要。</li>
+</ol>
+<p>参考判断：1 在模型层面不公平；2 是朴素 baseline，公平；3 是消融 baseline。</p>
+<h3 id="2-baseline_1">练习 2：审计公平 baseline<a class="headerlink" href="#2-baseline_1" title="Permanent link">&para;</a></h3>
+<p>用第 7 课映射草图，检查 baseline 与实验条件是否使用同一对象、模型、解码参数、最大输出长度、材料版本、评价协议和运行次数。对每个不一致项写下它会混杂哪条研究判断。</p>
+<h3 id="3_5">练习 3：写复现说明<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
+<p>为你的 baseline 写一条可重运行记录，至少包含输入位置、环境、配置、运行命令、原始输出和日志位置；有随机源时同时记录种子，没有时记录等价复现条件。</p>
+<h3 id="4_3">练习 4：写第二条研究判断<a class="headerlink" href="#4_3" title="Permanent link">&para;</a></h3>
+<p>在第 7 课 J1 基础上，写第二条研究判断（六字段）。建议主题：baseline 选择、度量选择或样本量决定。</p>
+<h3 id="5-8">练习 5：处理第 8 课同伴反馈<a class="headerlink" href="#5-8" title="Permanent link">&para;</a></h3>
+<p>把第 8 课拿到的同伴反馈逐条归档为采纳、澄清、补证、暂缓或保留异议，每条写明理由。处理类型按事实选择；保留异议时要写可追溯依据，不能只写"不同意"。</p>
+<h3 id="6">练习 6：完整规格补全（课后）<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>在课堂 baseline 和可重运行记录上，补全假设对应、变量、步骤、度量标准、对照、配对与重复、停止条件。结果按“支持／反驳／仍不能判断”记录，不把单次或不精确观察写成稳定结论。</p>
+<h3 id="7">练习 7：模板迁移核对（课后）<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<p>对照 §五·2 迁移对照表，把 starter-template 中的字段搬到 project-template 对应位置。检查 AI 使用记录条目数是否 ≥ 第 1-8 课总和，伦理说明是否补了数据使用限制。</p>
+<h3 id="8">练习 8：失败事实与预案分栏<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<p>各写一条：左栏记录已经发生的执行失败或已经放弃的备选方案，右栏记录当前最大风险的前瞻预案。检查两栏是否分别包含发生/触发条件、处理动作和回写位置，并确认二者没有相互替代。</p>
+<h3 id="9">练习 9：判断门材料自查<a class="headerlink" href="#9" title="Permanent link">&para;</a></h3>
+<p>对照 §六·2 的 9 项门条件，逐项自查当前项目版本。标注已满足、待补全和未满足的条目，并写出未满足条目的修复计划。</p>
+<hr />
+<h2 id="_10">十、术语表<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>本课程中的含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>baseline</td>
+<td>用来回答"方法效应是否真的来自假设机制"的公平参照；控制变量须一致，混杂变量须被识别</td>
+</tr>
+<tr>
+<td>朴素 baseline</td>
+<td>不使用任何目标机制的简单方法，检验目标机制是否必要</td>
+</tr>
+<tr>
+<td>强 baseline</td>
+<td>已公开、可比的现成方法，检验目标方法在公平条件下是否更好</td>
+</tr>
+<tr>
+<td>消融 baseline</td>
+<td>你的方法去掉某关键模块，检验哪个模块是效应来源</td>
+</tr>
+<tr>
+<td>公平性</td>
+<td>baseline 与实验组在控制变量上真正一致，混杂变量被识别并尽可能消除</td>
+</tr>
+<tr>
+<td>控制变量</td>
+<td>必须保持一致以使比较公平的变量</td>
+</tr>
+<tr>
+<td>混杂变量</td>
+<td>可能影响结果但未被控制的变量</td>
+</tr>
+<tr>
+<td>实验规格</td>
+<td>回答验证哪个假设、怎么验证、什么是公平对照、什么结果支持或推翻、什么时候停的完整规格</td>
+</tr>
+<tr>
+<td>七字段规格</td>
+<td>假设对应、变量、步骤、度量标准、对照、配对与重复、停止条件</td>
+</tr>
+<tr>
+<td>停止条件</td>
+<td>预先写明的运行次数与停止规则，防止"跑到显著为止"的隐性偏倚</td>
+</tr>
+<tr>
+<td>失败预案</td>
+<td>针对当前最大风险，预先写明触发条件、回退动作、记录位置及其对主张或范围的影响</td>
+</tr>
+<tr>
+<td>已遇失败记录</td>
+<td>对已经发生的执行失败或已经放弃的备选方案，记录发生条件、实际处理方式与回写位置；不能由前瞻预案替代</td>
+</tr>
+<tr>
+<td>可复现性</td>
+<td>另一位研究者在另一台机器上能重新跑出可比的结果</td>
+</tr>
+<tr>
+<td>随机种子</td>
+<td>决定数据划分、模型初始化、采样、解码等随机过程的种子值</td>
+</tr>
+<tr>
+<td>方差报告</td>
+<td>对关键比较多次运行并报告均值与标准差，避免把种子噪声写成方法效应</td>
+</tr>
+<tr>
+<td>工件状态</td>
+<td>draft → review → approved → stable，追踪成熟度与门检查结果</td>
+</tr>
+<tr>
+<td>判断门</td>
+<td>第 9 课后的第二次正式提交，检查 baseline 可执行、实验规格完整、复现说明充分、研究判断成案、同伴反馈处理、风险与失败预案、已遇失败记录、模板迁移</td>
+</tr>
+<tr>
+<td>ACM Badging</td>
+<td>ACM 工件评审徽章体系；本课只用 documented/consistent/exercisable 三档作自查视角</td>
+</tr>
+<tr>
+<td>同伴反馈处理</td>
+<td>第 8 课反馈逐条选择处理类型并写明理由</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_11">十一、延伸阅读与课程材料<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>课程内材料：</p>
+<ul>
+<li><a href="../../../course/syllabus/">课程大纲</a></li>
+<li>备课规划（未公开；请查对应公开来源） 第 9 课</li>
+<li><a href="../../../course/reading-list/">逐课阅读清单</a> 第 9 课</li>
+<li><a href="../../../course/starter-template/">早期研究脚手架</a>（迁移源）</li>
+<li><a href="../../../course/project-template/">期末项目完整模板</a>（迁移目标，判断门材料骨架）</li>
+<li><a href="../../../course/assignments/">项目里程碑与研究门</a>（判断门权威条件 Checkpoint 2）</li>
+<li><a href="../../../course/assessment/">考核方案</a>（"实验设计与可复现性"维度，30%）</li>
+<li><a href="../assets/reproducibility-example/">可核验复现工件</a>（合成输入与确定性等价复现教学示例）</li>
+</ul>
+<p>正式书目（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 9 课）：</p>
+<ol>
+<li>Wilson, G. et al. "Good Enough Practices in Scientific Computing." <em>PLOS Computational Biology</em> 13(6):e1005510 (2017). DOI: <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510">10.1371/journal.pcbi.1005510</a>。用途：建立项目组织、数据管理、版本记录、脚本和协作的最低可靠实践。核心阅读，约 25 分钟。</li>
+<li>Pineau, J. et al. "Improving Reproducibility in Machine Learning Research." <em>Journal of Machine Learning Research</em> 22(164), 1–20 (2021). <a href="https://www.jmlr.org/papers/v22/20-303.html">JMLR 正式页面</a>。用途：将 ML reproducibility checklist 转化为 baseline、环境和实验报告要求。任选，约 25 分钟。</li>
+<li>ACM. <a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current"><em>Artifact Review and Badging, Version 1.1</em></a> (2020)。选读 documented、consistent、complete、exercisable、available 和 results validated 的定义。用途：区分"代码可下载""工件可运行"和"结果得到独立验证"。任选，约 15 分钟。</li>
+<li>Bouthillier, X. et al. "Accounting for Variance in Machine Learning Benchmarks." <em>Proceedings of Machine Learning and Systems</em> 3 (2021). <a href="https://proceedings.mlsys.org/paper_files/paper/2021/hash/0184b0cd3cfb185989f858a1d9f5c1eb-Abstract.html">MLSys 正式页面</a>。用途：检查随机性、方差来源和不公平 benchmark 比较。任选，约 20 分钟。</li>
+</ol>
+<p>课后阅读采用"AI 导航 → 原文核验 → AI 质疑 → 偏差审计 → 人工定稿"流程。本课核心阅读为 Wilson et al. 2017，约 25 分钟。精读卡持续保存在个人项目 <code>notes/</code>，不逐周正式提交，判断门统一检查实验规格与复现说明。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

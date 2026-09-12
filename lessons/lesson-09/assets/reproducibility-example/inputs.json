@@ -1,0 +1,6 @@
+[
+  {"record_id": "synthetic-01", "condition_present": true},
+  {"record_id": "synthetic-02", "condition_present": false},
+  {"record_id": "synthetic-03", "condition_present": true},
+  {"record_id": "synthetic-04", "condition_present": false}
+]

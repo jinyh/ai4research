@@ -1,0 +1,2711 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="上海交通大学研究生课程“智能科研方法”（AI for Research: Methods and Practice）">
+      
+      
+      
+        <link rel="canonical" href="https://jinyh.github.io/ai4research/lessons/lesson-03/mi-search-trace-demo/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>MI 方向地图：检索纪律与幻觉审计 trace - 智能科研方法</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mi-trace" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="智能科研方法" class="md-header__button md-logo" aria-label="智能科研方法" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            智能科研方法
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MI 方向地图：检索纪律与幻觉审计 trace
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../learn/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  16 讲课程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../project/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  项目与考核
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../templates/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  模板与资源
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../teacher/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  课程信息
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="智能科研方法" class="md-nav__button md-logo" aria-label="智能科研方法" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    智能科研方法
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../learn/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 讲课程
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    16 讲课程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · AI 辅助科研导论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · 科研伦理与 Agent 边界
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · 检索与来源核验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · 精读与主张核验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · 证据地图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · 问题定义
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · 假设与区分实验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · 中期诊所
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Baseline 与复现
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · 受限 Agent 执行
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 · 自动化循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 · 个人工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 · 工作流评价
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 · 结果写成论证
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 · 同行评审与修改
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 · 最终展示（讲义待复核）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目与考核
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模板与资源
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    模板与资源
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模板与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/opencode-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenCode 最小启动说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/reading-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    逐课参考阅读清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资源索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teacher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课程信息
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-trace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 本 trace 的六个教学点
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 检索记录
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 教学点一：分支如何确定——记忆先验 vs 数据校验
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 分支检索式（可复盘）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 分支检索式（可复盘）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b7-b9-2026-08-09" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B7-B9 补记（第三阶段，2026-08-09 执行；锚点仍待研究问题收敛）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 线索表与已升级候选证据
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 线索表与已升级候选证据">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-l4-l9-2026-08-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 L4-L9 下游研究问题与证据分工（2026-08-20）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-trace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 教学点二：审计失败实例（真实发生，本 trace 原生）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-arxiv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 非 arXiv 锚点（第四阶段核验后更新）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 跨源核验（第三阶段补记）：单源局限与抽查记录
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-zotero-2026-08-09" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Zotero 入藏与逐篇原文核对（第四阶段补记，2026-08-09）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Zotero 入藏与逐篇原文核对（第四阶段补记，2026-08-09）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 逐篇首页核对结果
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 §7 核查与更正
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 本阶段工具失败记录（真实发生）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-2026-08-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 阶段五补记：基准集自评轮（2026-08-10）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. 阶段五补记：基准集自评轮（2026-08-10）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 差距定位：三条机制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-awesome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 外部线索审计：awesome 列表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-scholar-2026-08-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 基准集切片（用户 Scholar 快照，2026-08-10）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 命中分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#105" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5 检索协议修复（已执行，留档）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#106-zotero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6 Zotero 入藏与工具失败记录（部分完成）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#107-2026-08-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.7 迁移到群组库与附件策略（第五阶段终局，2026-08-10）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#108-2026-08-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.8 第六阶段：原文核对完成与文件正位回归个人库（2026-08-11）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 复盘方式
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. 与课程的连接
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<hr />
+<h1 id="mi-trace">MI 方向地图：检索纪律与幻觉审计 trace<a class="headerlink" href="#mi-trace" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>案例边界框：本文件是 <strong>AI agent 与教师于 2026-08-09 对 Mechanistic Interpretability（MI）主题执行检索的真实 trace</strong>（含同日第三、四阶段补记、2026-08-10 第五阶段基准集轮与 2026-08-11 第六阶段文件正位终局轮），全部材料为公开 arXiv/OpenAlex/dblp/Crossref 元数据与公开 PDF 原文，不含任何未发表内容。它与 <a href="../source-audit-demo/">source-audit-demo.md</a>（Keshav 2007 单篇核验 trace）互为平行：那一篇演示单篇文献的身份核验，本篇演示领域级检索的框架审计、失败处理与质量自评。学生练习仍使用讲义 §四·5 的虚构案例，不直接修改本文件。</p>
+</blockquote>
+<h2 id="1-trace">1. 本 trace 的六个教学点<a class="headerlink" href="#1-trace" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>检索框架本身也要审计</strong>：检索分支不是先验给定的。Agent 凭记忆预设的分支划分只是线索，必须用领域数据校验（§3 的 v1→v2 修正表）。</li>
+<li><strong>Agent 的记忆引用是幻觉高发区</strong>：Agent 凭记忆给出的 11 个锚点论文 ID 中 6 个身份不符，其中 4 个是彻底的张冠李戴（§6）。全部按 <code>rejected</code> 处置并留下恢复路径——失败不重跑到无痕。</li>
+<li><strong>四态口径与三维分记</strong>：未完成入口核验的条目一律 <code>pending</code>（注明已核与待核项）；<code>rejected</code> 永不入候选表，只留审计记录；预期证据角色、核验状态与人工筛选决定分开记录，查询级失败不伪装成文献条目。状态名用精确拼写，无缩写。</li>
+<li><strong>记录分阶段演进，演进过程本身是教材</strong>：分支方案经历记忆预设（第一阶段）→ 数据校验增补 B7-B9、降级 B2（第二阶段）→ 补记执行分支检索与跨源核验（第三阶段）→ Zotero 入藏与逐篇原文核对（第四阶段，本版）。前几阶段记录原文保留、不重写，补记单独标注——记录的不完整与修正过程是 trace 的一部分，不是要遮掩的瑕疵。</li>
+<li><strong>工具与来源的成功回报也要核验</strong>：Zotero 附件管线曾对 18 篇全部假报"PDF 已附加"，实查附件为 0；§9 据此改走直接下载再逐篇核对原文，仍查出 1 条作者张冠李戴。元数据核验不等于每个字段都核验过，成功回报不等于实际状态。</li>
+<li><strong>质量自评要先用在自己的检索上</strong>：第五阶段把讲义 §六 的检索质量自评应用于本 trace 自身，对用户的 Scholar 高引快照切片命中率仅 4/22，五篇元层综述全部漏检，而执行者此前并未察觉（§10）。自评框架不是纸面规则：记忆锚点加新近取样的组合会系统性漏掉高引经典与元层文献，本 trace 自己就是证据。</li>
+</ol>
+<h2 id="2">2. 检索记录<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>宽泛检索</th>
+<th>分支检索（B1-B6）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>库</td>
+<td>arXiv API</td>
+<td>arXiv API</td>
+</tr>
+<tr>
+<td>检索式</td>
+<td><code>all:"mechanistic interpretability" AND (cat:cs.LG OR cat:cs.CL)</code></td>
+<td>见 §3 表</td>
+</tr>
+<tr>
+<td>检索日期</td>
+<td>2026-08-09</td>
+<td>2026-08-09</td>
+</tr>
+<tr>
+<td>时间范围</td>
+<td>排序取最新 200 条（<code>submittedDate</code> 降序）</td>
+<td>相关度排序各取前 6 条</td>
+</tr>
+<tr>
+<td>命中数</td>
+<td>688（总命中；取样 200）</td>
+<td>B1 664 / B2 377 / B3 226 / B4 86 / B5 104 / B6 532</td>
+</tr>
+<tr>
+<td>纳入/排除标准</td>
+<td>题名词频统计用于分支校验，不做论文级纳入</td>
+<td>锚点选取后逐条做身份核验（§5）</td>
+</tr>
+<tr>
+<td>纳入数</td>
+<td>分支修正 3 增 1 降级（§3）</td>
+<td>17 条身份已核候选（§5）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>第三阶段补记（2026-08-09）：上表为第一、二阶段实际执行记录（分支检索只到 B1-B6）。B7-B9 在第二阶段由词频指认后当时未执行检索，本版已补执行，检索式与命中数见 §4 补记表；锚点仍待研究问题收敛，不预造。</p>
+<p>第四阶段补记（2026-08-09）：锚点库经 Zotero 入藏与逐篇 PDF 原文核对后由 17 条增为 18 条（新增 MI-C18，由 §7 更正转入），并修正 MI-C07 作者字段，详见 §9。</p>
+<p>第五阶段补记（2026-08-10）：基准集自评轮——用户以 Google Scholar 高引快照与 GitHub awesome 列表给出外部反例后，新增锚点 MI-C19–C36（18 条）入池，§5 由 18 条增为 36 条；差距定位、命中分析与检索协议修复见 §10。新锚点身份层为 arXiv API 元数据（或 Crossref/OpenAlex/dblp 正式来源）+ Zotero 导入元数据；PDF 原文核对经直下补记完成 14/15（MI-C35 连接截断失败、MI-C30/C33/C36 无 PDF 可取，均保持 <code>pending</code> 并留档 §10.6）。</p>
+</blockquote>
+<h2 id="3-vs">3. 教学点一：分支如何确定——记忆先验 vs 数据校验<a class="headerlink" href="#3-vs" title="Permanent link">&para;</a></h2>
+<p>v1 六个分支由 Agent 凭记忆中 MI 子领域划分预设（SAE/探针/电路/induction heads/monosemanticity/忠实性）。按课程口径这是<strong>探索线索</strong>，不是领域结构证据。校验方法：宽泛检索最新 200 条题名做词频统计，与 v1 分支对照：</p>
+<table>
+<thead>
+<tr>
+<th>数据信号（200 条题名词频）</th>
+<th>对 v1 的修正</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>causal 13、circuit 12、attribution 7、patching 3</td>
+<td>B3 电路方向成立</td>
+</tr>
+<tr>
+<td>sparse autoencoder/SAE/feature/superposition（B1 专查命中 664）</td>
+<td>B1 成立；近期题名 SAE 词频下降系题名专门化，不是方向衰退</td>
+</tr>
+<tr>
+<td>evaluation 5 + faithfulness</td>
+<td>B6 成立</td>
+</tr>
+<tr>
+<td>induction heads / in-context（B4 专查 86 条）</td>
+<td>B4 成立</td>
+</tr>
+<tr>
+<td>monosemanticity（B5 专查 104 条）</td>
+<td>B5 成立</td>
+</tr>
+<tr>
+<td><strong>steering 10、alignment 8、safety 2</strong></td>
+<td><strong>v1 遗漏</strong>：增 B7 表示引导/对齐</td>
+</tr>
+<tr>
+<td><strong>reasoning 9、chain-of-thought 3</strong></td>
+<td><strong>v1 遗漏</strong>：增 B8 推理与 CoT 机制解释</td>
+</tr>
+<tr>
+<td><strong>vision 4</strong>（另有物理 jet-tagger、等变性等应用条目）</td>
+<td><strong>v1 遗漏</strong>：增 B9 非文本模态 MI 应用</td>
+</tr>
+<tr>
+<td>probing 在最新题名中仅 1 次</td>
+<td>B2 降级为方法基础线：历史锚点有效，但非近期前沿话语中心</td>
+</tr>
+</tbody>
+</table>
+<p>B7-B9 锚点待研究问题收敛后按题名精确检索核验，不在指认前预造。第三阶段（本版）已补执行 B7-B9 分支级检索，见 §4 补记表；锚点与线索条目仍不预造。</p>
+<h2 id="4">4. 分支检索式（可复盘）<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>分支</th>
+<th>arXiv 检索式</th>
+<th style="text-align: right;">命中</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B1 SAE/特征提取</td>
+<td><code>all:"sparse autoencoder" AND (cat:cs.LG OR cat:cs.CL)</code></td>
+<td style="text-align: right;">664</td>
+</tr>
+<tr>
+<td>B2 探针/线性表示</td>
+<td><code>(all:"linear probes" OR all:probing) AND all:"language model" AND (all:interpretability OR all:"mechanistic interpretability") AND (cat:cs.LG OR cat:cs.CL)</code></td>
+<td style="text-align: right;">377</td>
+</tr>
+<tr>
+<td>B3 电路发现</td>
+<td><code>all:"circuit discovery" OR all:"activation patching" AND (cat:cs.LG OR cat:cs.CL)</code></td>
+<td style="text-align: right;">226</td>
+</tr>
+<tr>
+<td>B4 Induction heads</td>
+<td><code>all:"induction heads" AND (cat:cs.LG OR cat:cs.CL)</code></td>
+<td style="text-align: right;">86</td>
+</tr>
+<tr>
+<td>B5 Monosemanticity</td>
+<td><code>all:monosemanticity OR all:"scaling monosemanticity"</code></td>
+<td style="text-align: right;">104</td>
+</tr>
+<tr>
+<td>B6 忠实性/评价</td>
+<td><code>all:interpretability AND (all:faithfulness OR all:fidelity) AND all:evaluation AND (cat:cs.LG OR cat:cs.CL)</code></td>
+<td style="text-align: right;">532</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b7-b9-2026-08-09">B7-B9 补记（第三阶段，2026-08-09 执行；锚点仍待研究问题收敛）<a class="headerlink" href="#b7-b9-2026-08-09" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>分支</th>
+<th>arXiv 检索式</th>
+<th style="text-align: right;">命中</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B7 表示引导/对齐</td>
+<td><code>(all:"activation steering" OR all:"representation engineering" OR all:"steering vector" OR all:"specification gaming") AND (cat:cs.LG OR cat:cs.CL)</code></td>
+<td style="text-align: right;">493</td>
+</tr>
+<tr>
+<td>B8 推理与 CoT 机制解释</td>
+<td><code>(all:"chain-of-thought" OR all:reasoning) AND all:"mechanistic interpretability" AND (cat:cs.LG OR cat:cs.CL)</code></td>
+<td style="text-align: right;">90</td>
+</tr>
+<tr>
+<td>B9 非文本模态 MI 应用</td>
+<td><code>all:"mechanistic interpretability" AND (all:vision OR all:image OR all:equivariance OR all:jet OR all:physics)</code>（应用跨学科，不加类目过滤）</td>
+<td style="text-align: right;">208</td>
+</tr>
+</tbody>
+</table>
+<p>检索式修正留档：B7 首版检索式 <code>all:steering AND (cat:cs.LG OR cat:cs.CL)</code> 命中 2834，混入控制/强化学习语境的 steering（与 MI 的表示引导无关），收紧为 steering 专有术语后命中 493，样本题名全部落在引导/对齐方向。与分支划分同理，检索式措辞也需数据校验。两版检索式与响应均存档（<code>arxiv-branches-b7b9.json</code>）。</p>
+<h2 id="5">5. 线索表与已升级候选证据<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<p>身份核验方式：初轮按 arXiv <code>id_list</code> 精确查询对齐 ID/题名/日期（作者字段系人工转写，见下方更正）；第四阶段经 Zotero 入藏与逐篇 PDF 首页原文核对（§9）后，身份层升级为 arXiv API 元数据 + Zotero 导入元数据 + PDF 原文三来源。本表使用讲义 §五 的十字段表头。2026-08-20 已确认教学主线为“SAE 因果有效性”，因此 MI-C02/C05/C16/C18/C31 完成拟用主张、原文位置、角色、纳入决定和 caveat 核验，进入正式候选证据；其余条目保持 <code>pending</code> 线索。<code>verified-with-caveat</code> 只允许在表中边界内使用，不等于结论已经稳定。</p>
+<p>第四阶段更正（§9）：MI-C07 作者原记"Belrose, Nanda et al."有误，官方作者为 Neel Nanda、Andrew Lee、Martin Wattenberg，Belrose 非该文作者，已更正。</p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>题名（核验后）</th>
+<th>作者</th>
+<th>年份</th>
+<th>稳定来源</th>
+<th>对应问题/拟用主张</th>
+<th>预期证据角色</th>
+<th>纳入理由</th>
+<th>核验状态</th>
+<th>caveat/允许主张</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MI-C01</td>
+<td>Toy Models of Superposition</td>
+<td>Elhage et al.</td>
+<td>2022</td>
+<td>arXiv:2209.10652</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td></td>
+</tr>
+<tr>
+<td>MI-C02</td>
+<td>Sparse Autoencoders Find Highly Interpretable Features in Language Models</td>
+<td>Cunningham et al.</td>
+<td>2023</td>
+<td>arXiv:2309.08600v3</td>
+<td>在 Pythia-410M IOI 上，SAE 特征 patching 是否比 PCA 更稀疏地改变模型输出？</td>
+<td>主证据（直接对比）</td>
+<td>included：方法、模型、任务与拟定 baseline 直接对齐</td>
+<td>verified-with-caveat（原文 pp.5-6 §4/Fig.3；p.9 §6.2）</td>
+<td>只支持 Pythia-410M layer 11、IOI 与该 patching/KL 设置；重构误差造成最低 KL 差异，Pythia-70M layer 2 重构使 perplexity 25→40；跨任务泛化待验证</td>
+</tr>
+<tr>
+<td>MI-C03</td>
+<td>Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2</td>
+<td>Lieberum et al.</td>
+<td>2024</td>
+<td>arXiv:2408.05147</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td></td>
+</tr>
+<tr>
+<td>MI-C04</td>
+<td>Jumping Ahead: Improving Reconstruction Fidelity with JumpReLU Sparse Autoencoders</td>
+<td>Rajamanoharan et al.</td>
+<td>2024</td>
+<td>arXiv:2407.14435</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td></td>
+</tr>
+<tr>
+<td>MI-C05</td>
+<td>Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models</td>
+<td>Marks et al.</td>
+<td>2024</td>
+<td>arXiv:2403.19647v3（ICLR 2025）</td>
+<td>SAE 特征能否组成可评价、可干预的稀疏因果子网络？</td>
+<td>补充证据（下游应用）</td>
+<td>included：提供 held-out faithfulness/completeness 与 SHIFT 应用证据</td>
+<td>verified-with-caveat（原文 pp.1-2；p.6 §3.2/Fig.3；p.8 §4）</td>
+<td>任务与模型主要为主谓一致、Pythia-70M/Gemma-2-2B，不直接验证 C02 的 IOI/Pythia-410M 比较；SAE error nodes 对性能重要，且相当部分评价仍为定性</td>
+</tr>
+<tr>
+<td>MI-C06</td>
+<td>Eliciting Latent Predictions from Transformers with the Tuned Lens</td>
+<td>Belrose et al.</td>
+<td>2023</td>
+<td>arXiv:2303.08112</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td></td>
+</tr>
+<tr>
+<td>MI-C07</td>
+<td>Emergent Linear Representations in World Models of Self-Supervised Sequence Models</td>
+<td>Nanda, Lee, Wattenberg</td>
+<td>2023</td>
+<td>arXiv:2309.00941</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td>作者字段经第四阶段原文核对更正（原误记 Belrose）</td>
+</tr>
+<tr>
+<td>MI-C08</td>
+<td>Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small</td>
+<td>Wang et al.</td>
+<td>2022</td>
+<td>arXiv:2211.00593</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td></td>
+</tr>
+<tr>
+<td>MI-C09</td>
+<td>Towards Automated Circuit Discovery for Mechanistic Interpretability</td>
+<td>Conmy et al.</td>
+<td>2023</td>
+<td>arXiv:2304.14997</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td></td>
+</tr>
+<tr>
+<td>MI-C10</td>
+<td>Attribution Patching Outperforms Automated Circuit Discovery</td>
+<td>Syed et al.</td>
+<td>2023</td>
+<td>arXiv:2310.10348</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td></td>
+</tr>
+<tr>
+<td>MI-C11</td>
+<td>How to use and interpret activation patching</td>
+<td>Heimersheim et al.</td>
+<td>2024</td>
+<td>arXiv:2404.15255</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td></td>
+</tr>
+<tr>
+<td>MI-C12</td>
+<td>Successor Heads: Recurring, Interpretable Attention Heads In The Wild</td>
+<td>Gould et al.</td>
+<td>2023</td>
+<td>arXiv:2312.09230</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td></td>
+</tr>
+<tr>
+<td>MI-C13</td>
+<td>In-context Learning and Induction Heads</td>
+<td>Olsson et al.</td>
+<td>2022</td>
+<td>arXiv:2209.11895</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td></td>
+</tr>
+<tr>
+<td>MI-C14</td>
+<td>Engineering Monosemanticity in Toy Models</td>
+<td>Jermyn et al.</td>
+<td>2022</td>
+<td>arXiv:2211.09169</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td></td>
+</tr>
+<tr>
+<td>MI-C15</td>
+<td>Towards Faithfully Interpretable NLP Systems: How should we define and evaluate faithfulness?</td>
+<td>Jacovi &amp; Goldberg</td>
+<td>2020</td>
+<td>arXiv:2004.03685</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td></td>
+</tr>
+<tr>
+<td>MI-C16</td>
+<td>Towards Principled Evaluations of Sparse Autoencoders for Interpretability and Control</td>
+<td>Makelov et al.</td>
+<td>2024</td>
+<td>arXiv:2405.08366v3</td>
+<td>“可解释”SAE 特征是否也足以稀疏控制 IOI 行为？</td>
+<td>对比/限制证据</td>
+<td>included：用监督字典和随机特征基线暴露控制性缺口</td>
+<td>verified-with-caveat（原文 pp.1-2；p.11 §5.2；pp.13-14 §5.3-5.4）</td>
+<td>GPT-2 Small、不同 SAE 与评价协议；结论是 SAE 比监督字典更难控制，并观察 feature occlusion/over-splitting，不能写成对 C02 的同设置直接反驳</td>
+</tr>
+<tr>
+<td>MI-C17</td>
+<td>A Comparative Study of Faithfulness Metrics for Model Interpretability Methods</td>
+<td>Chan et al.</td>
+<td>2022</td>
+<td>arXiv:2204.05514</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td></td>
+</tr>
+<tr>
+<td>MI-C18</td>
+<td>Scaling and evaluating sparse autoencoders</td>
+<td>Gao et al.</td>
+<td>2024</td>
+<td>arXiv:2406.04093</td>
+<td>哪些指标能防止把重构/稀疏度误当作 SAE 的最终目标？</td>
+<td>补充证据（评价框架）</td>
+<td>included：提供 feature recovery、可解释性与 downstream-effect sparsity 指标</td>
+<td>verified-with-caveat（原文 p.1 摘要与引言；p.8 §4.5）</td>
+<td>规模化训练与指标设计支持“多指标评价”，不单独证明某特征因果忠实；OpenAI 原博客链接已失效，以 arXiv 镜像为稳定来源</td>
+</tr>
+<tr>
+<td>MI-C19</td>
+<td>Progress measures for grokking via mechanistic interpretability</td>
+<td>Nanda et al.</td>
+<td>2023</td>
+<td>arXiv:2301.05217</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td>第五阶段基准集轮入池；Scholar 快照切片中引用数最高（1109）而历次检索皆漏；已发表 ICLR 2023（PDF 首页 + Scholar 快照两源）</td>
+</tr>
+<tr>
+<td>MI-C20</td>
+<td>Mechanistic Interpretability for AI Safety -- A Review</td>
+<td>Bereska, Gavves</td>
+<td>2024</td>
+<td>arXiv:2404.14082</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td>第五阶段入池；B10 元层分支仍不命中（§10.5 引擎怪癖留档）；v3 页眉标 Under review at TMLR，尚未确认正式发表</td>
+</tr>
+<tr>
+<td>MI-C21</td>
+<td>Open Problems in Mechanistic Interpretability</td>
+<td>Sharkey et al.（29 位作者）</td>
+<td>2025</td>
+<td>arXiv:2501.16496</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td>第五阶段入池；在宽泛检索 688 条命中集内，但落在新近 200 条取样窗口外（§10.1）</td>
+</tr>
+<tr>
+<td>MI-C22</td>
+<td>Causal Abstraction: A Theoretical Foundation for Mechanistic Interpretability</td>
+<td>Geiger et al.</td>
+<td>2023</td>
+<td>arXiv:2301.04709</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td>第五阶段入池；已发表 JMLR v26 (2025) 1-63（dblp 核验，jmlr.org/papers/v26/23-0058.html）；arXiv 镜像 PDF 即 JMLR 正式定稿版式（首页核对）；个人库副本现为 JMLR 26 (2025) 1-64 期刊正式版，较 arXiv 镜像更权威（§10.8）</td>
+</tr>
+<tr>
+<td>MI-C23</td>
+<td>A Practical Review of Mechanistic Interpretability for Transformer-Based Language Models</td>
+<td>Rai et al.</td>
+<td>2024</td>
+<td>arXiv:2407.02646</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td>第五阶段入池</td>
+</tr>
+<tr>
+<td>MI-C24</td>
+<td>Interpretability at Scale: Identifying Causal Mechanisms in Alpaca</td>
+<td>Wu et al.</td>
+<td>2023</td>
+<td>arXiv:2305.08809</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td>第五阶段入池；NeurIPS 2023 发表（Scholar 快照，待第二来源）</td>
+</tr>
+<tr>
+<td>MI-C25</td>
+<td>ReDeEP: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability</td>
+<td>Sun et al.</td>
+<td>2024</td>
+<td>arXiv:2410.11414</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td>第五阶段入池；ICLR 2025 发表（PDF 首页 + Scholar 快照两源）</td>
+</tr>
+<tr>
+<td>MI-C26</td>
+<td>InterPLM: Discovering Interpretable Features in Protein Language Models via Sparse Autoencoders</td>
+<td>Simon, Zou</td>
+<td>2024</td>
+<td>arXiv:2412.12101</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td>第五阶段入池；已发表 Nature Methods 2025（OpenAlex 核验，DOI 10.1038/s41592-025-02836-7；另有 bioRxiv 版 10.1101/2024.11.14.623630）</td>
+</tr>
+<tr>
+<td>MI-C27</td>
+<td>Mechanistic?</td>
+<td>Saphra, Wiegreffe</td>
+<td>2024</td>
+<td>arXiv:2410.09087</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td>第五阶段入池；BlackboxNLP@EMNLP 2024 发表（Scholar 快照与 dblp CoRR 记录）</td>
+</tr>
+<tr>
+<td>MI-C28</td>
+<td>Scaling Laws and Interpretability of Learning from Repeated Data</td>
+<td>Hernandez et al.</td>
+<td>2022</td>
+<td>arXiv:2205.10487</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td>第五阶段入池</td>
+</tr>
+<tr>
+<td>MI-C29</td>
+<td>Seeing is Believing: Brain-Inspired Modular Training for Mechanistic Interpretability</td>
+<td>Liu, Gan, Tegmark</td>
+<td>2023</td>
+<td>arXiv:2305.08746</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td>第五阶段入池；Entropy 2023 发表（Scholar 快照，待第二来源）；Zotero PDF 下载失败（IncompleteRead，§10.6）</td>
+</tr>
+<tr>
+<td>MI-C30</td>
+<td>From Mechanistic Interpretability to Mechanistic Biology: Training, Evaluating, and Interpreting Sparse Autoencoders on Protein Language Models</td>
+<td>Adams et al.</td>
+<td>2025</td>
+<td>DOI 10.1101/2025.02.06.636901（bioRxiv）</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td>第五阶段入池；已发表 ICML 2025（dblp 核验，conf/icml/AdamsBLYA25）；第六阶段原文核对完成：教师自 ICML PMLR 官方源下载正式版 adams25a，首页题作核对通过（2026-08-11，§10.8）</td>
+</tr>
+<tr>
+<td>MI-C31</td>
+<td>Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching</td>
+<td>Makelov et al.</td>
+<td>2023</td>
+<td>arXiv:2311.17030（ICLR 2024）</td>
+<td>patching 成功是否可能来自 dormant pathway，而非正常计算中的忠实表征？</td>
+<td>冲突/效度威胁证据</td>
+<td>included：直接限定“patching 成功＝因果忠实”的推断</td>
+<td>verified-with-caveat（原文 pp.1-4 摘要、§1/Fig.1；pp.4-5 §1-2）</td>
+<td>讨论一般子空间 patching 幻觉并含 IOI/事实编辑案例，不针对 C02 的 SAE 字典做同设置复现实验；允许主张是“需额外证据”，不是“所有 patching 都无效”</td>
+</tr>
+<tr>
+<td>MI-C32</td>
+<td>Towards Vision-Language Mechanistic Interpretability: A Causal Tracing Tool for BLIP</td>
+<td>Palit et al.</td>
+<td>2023</td>
+<td>arXiv:2308.14179</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td>第五阶段入池；IEEE/CVF 2023 发表（Scholar 快照，待第二来源）</td>
+</tr>
+<tr>
+<td>MI-C33</td>
+<td>Explaining AI through mechanistic interpretability</td>
+<td>Kästner, Crook</td>
+<td>2024</td>
+<td>DOI 10.1007/s13194-024-00614-4（European Journal for Philosophy of Science）</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td>第五阶段入池；非 arXiv 首发，arXiv 单源结构性不可见（§10.1）；第六阶段原文核对完成：Springer OA 版首页题作核对通过（2026-08-11，§10.8）</td>
+</tr>
+<tr>
+<td>MI-C34</td>
+<td>A Survey on Mechanistic Interpretability for Multi-Modal Foundation Models</td>
+<td>Lin et al.</td>
+<td>2025</td>
+<td>arXiv:2502.17516</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td>第五阶段入池</td>
+</tr>
+<tr>
+<td>MI-C35</td>
+<td>Scale Alone Does not Improve Mechanistic Interpretability in Vision Models</td>
+<td>Zimmermann et al.</td>
+<td>2023</td>
+<td>arXiv:2307.05471</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td>第五阶段入池；NeurIPS 2023 发表（Scholar 快照，待第二来源）；Zotero 已入藏（37FIF34Z，超时请求实已成功）；PDF 原文核对曾两轮连接截断失败，第六阶段以本地文件完成核对（2026-08-11，§10.8）</td>
+</tr>
+<tr>
+<td>MI-C36</td>
+<td>Bridging the Black Box: A Survey on Mechanistic Interpretability in AI</td>
+<td>Somvanshi et al.</td>
+<td>2026</td>
+<td>DOI 10.1145/3787104（ACM Computing Surveys）</td>
+<td>待问题收敛</td>
+<td>探索线索</td>
+<td>awaiting-human</td>
+<td>pending（身份已核；拟用主张待核）</td>
+<td>第五阶段入池；Crossref 核验（2026-02-04，参考文献 128 条）；awesome 列表维护团队 AIT Lab 的配套综述（§10.2）；第六阶段原文核对完成：ACM CSUR 正式版首页题作核对通过（2026-08-11，§10.8）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="51-l4-l9-2026-08-20">5.1 L4-L9 下游研究问题与证据分工（2026-08-20）<a class="headerlink" href="#51-l4-l9-2026-08-20" title="Permanent link">&para;</a></h3>
+<p>教学问题固定为：<strong>在 Pythia-410M 的 IOI 任务上，SAE 特征能否比 PCA 方向更稀疏地定位并干预模型行为；这种 patching 成功还需要哪些证据，才能支持“因果忠实”的解释？</strong></p>
+<ul>
+<li>MI-C02 提供同任务的正向直接比较，是主证据；</li>
+<li>MI-C16 表明“可解释”不自动推出“可控制”，提供评价对照与失败机制；</li>
+<li>MI-C31 说明 patching 可能激活 dormant pathway，约束因果解释；</li>
+<li>MI-C18 要求把 feature recovery、可解释性和 downstream-effect sparsity 与重构/稀疏度一起评价；</li>
+<li>MI-C05 证明 SAE 特征可进入 held-out circuit 评价和下游干预，但任务/模型不同，只作外部支持。</li>
+</ul>
+<p>因此当前综合判断是 <code>review</code>，不是 <code>stable</code>：C02 的正向结果足以启动一个 SAE-vs-PCA 最小复现实验，但对“因果忠实”的稳定结论仍缺同模型同任务的 dormant-pathway 排除、监督字典/随机特征对照、held-out 评价与重构误差敏感性分析。L4 完成阅读卡，L5 形成证据地图，L6 收敛问题与第一性原理，L7-L9 再把缺口写成假设、对照和 baseline。</p>
+<h2 id="6-trace">6. 教学点二：审计失败实例（真实发生，本 trace 原生）<a class="headerlink" href="#6-trace" title="Permanent link">&para;</a></h2>
+<p>Agent 凭记忆提出 11 个锚点 ID，4 个张冠李戴（<code>rejected</code>），2 个 ID 正确但记忆题名有误（以 API 元数据修正），1 个题名记忆不全（精确题名检索无命中，关键词检索恢复）。失败全部保留，恢复路径留档：</p>
+<table>
+<thead>
+<tr>
+<th>记忆条目</th>
+<th>核验结果</th>
+<th>处置</th>
+<th>恢复路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2308.10939＝Attribution Patching</td>
+<td>实为凝聚态物理论文</td>
+<td>rejected（ID 记忆错误）</td>
+<td><code>ti:</code> 检索恢复 → 2310.10348</td>
+</tr>
+<tr>
+<td>2203.13787＝Tuned Lens</td>
+<td>实为混合序列预测论文</td>
+<td>rejected（ID 记忆错误）</td>
+<td><code>ti:</code> 检索恢复 → 2303.08112</td>
+</tr>
+<tr>
+<td>2309.10655＝Emergent Linear Representations</td>
+<td>实为路径规划论文</td>
+<td>rejected（ID 记忆错误）</td>
+<td><code>ti:</code> 检索恢复 → 2309.00941</td>
+</tr>
+<tr>
+<td>2407.14400＝Gemma Scope</td>
+<td>实为 O-RAN 预测论文</td>
+<td>rejected（ID 记忆错误）</td>
+<td><code>ti:</code> 检索恢复 → 2408.05147</td>
+</tr>
+<tr>
+<td>2312.09230＝Successor Heads（副标题记错）</td>
+<td>ID 正确，题名以 arXiv 元数据为准</td>
+<td>身份通过，题名修正</td>
+<td>元数据修正</td>
+</tr>
+<tr>
+<td>2405.08366＝SAE 评价（副标题记错）</td>
+<td>ID 正确，题名以 arXiv 元数据为准</td>
+<td>身份通过，题名修正</td>
+<td>元数据修正</td>
+</tr>
+<tr>
+<td>"JumpReLU Autoencoders"（题名记忆不全）</td>
+<td>精确题名检索无命中</td>
+<td>线索保留</td>
+<td>关键词检索恢复 → 2407.14435</td>
+</tr>
+</tbody>
+</table>
+<p>课堂用法：与讲义 §四·5 的虚构表（论文 A-E）对照——虚构表练习状态判断，本表展示真实审计中 <code>rejected</code> 的发生率与恢复动作。结论不是"AI 不可用"，而是：<strong>记忆与模型输出只能作线索，身份核验必须回到正式来源</strong>。</p>
+<h2 id="7-arxiv">7. 非 arXiv 锚点（第四阶段核验后更新）<a class="headerlink" href="#7-arxiv" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>条目</th>
+<th>来源类型</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anthropic "Towards Monosemanticity: Decomposing Language Models With Dictionary Learning"（2023-10）</td>
+<td>机构研究报告（transformer-circuits.pub）</td>
+<td>verified（第四阶段）：官方 URL 核实存活（页面 &gt;5MB，未取快照），入藏 Zotero 网页条目 MI-W01（SG2P8T4T）；身份以官网题名为准，无第三方源交叉</td>
+</tr>
+<tr>
+<td>Anthropic "Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet"（2024-05）</td>
+<td>机构研究报告</td>
+<td>verified（第四阶段）：同上，Zotero 网页条目 MI-W02（P6PPJNXC）</td>
+</tr>
+<tr>
+<td>OpenAI "Scaling and evaluating sparse autoencoders"（Gao et al., 2024）</td>
+<td>机构技术报告</td>
+<td>更正（第四阶段）：原记"无 arXiv 版本"有误；OpenAlex 题名检索命中、arXiv API 确认 arXiv:2406.04093 即该文，转登记为 §5 MI-C18；OpenAI 官方博客与 cdn PDF 两条原链接均返回 404，留档不掩盖</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8">8. 跨源核验（第三阶段补记）：单源局限与抽查记录<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<p>为什么主源只有 arXiv：MI 是新兴方向，论文集中首发 arXiv，§5 的 17 条锚点（第四阶段增为 18 条，见 §9）全部是 arXiv 论文，且身份核验走 <code>id_list</code> 精确查询最直接。但单源有明确局限，本节补记：</p>
+<ol>
+<li>arXiv 元数据不说明锚点是否已在同行评审场合正式发表，而发表状态影响引用时的证据分量；</li>
+<li>检索纪律要求来源之间可交叉印证，单源未交叉本身应被记录为局限。</li>
+</ol>
+<p>抽查方法：从 17 条锚点抽 5 条，用 OpenAlex（按 arXiv DOI 查询 + 题名检索）与 dblp（题名检索）核对发表状态；另尝试 Semantic Scholar 并留失败记录。全部原始响应存档 <code>.work/mi-search/cross-source-check.json</code>。</p>
+<table>
+<thead>
+<tr>
+<th>条目</th>
+<th>dblp</th>
+<th>OpenAlex</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MI-C01 Toy Models of Superposition</td>
+<td>CoRR 2022，无会议记录</td>
+<td>无会议版条目</td>
+<td>仅预印本（两源一致）</td>
+</tr>
+<tr>
+<td>MI-C06 Tuned Lens</td>
+<td>CoRR 2023，无会议记录</td>
+<td>仅 arXiv 位置</td>
+<td>仅预印本（两源一致）</td>
+</tr>
+<tr>
+<td>MI-C08 IOI 电路</td>
+<td><strong>ICLR 2023 会议论文</strong></td>
+<td>仅 arXiv（OpenReview 覆盖不全）</td>
+<td>已发表 ICLR 2023（单一来源 dblp，待二次印证）</td>
+</tr>
+<tr>
+<td>MI-C09 ACDC</td>
+<td><strong>NeurIPS 2023 会议论文</strong></td>
+<td>arXiv + 一条无来源记录</td>
+<td>已发表 NeurIPS 2023（单一来源 dblp，待二次印证）</td>
+</tr>
+<tr>
+<td>MI-C13 ICL 与 Induction Heads</td>
+<td>无精确题名命中</td>
+<td>仅 arXiv</td>
+<td>仅预印本（两源一致）</td>
+</tr>
+</tbody>
+</table>
+<p>其余 12 条本轮未抽查，发表状态待研究问题收敛后按需核验（第四阶段 §9 原文核对时附带发现 MI-C05 已发表 ICLR 2025，两源印证）。对已发表条目（MI-C05、MI-C08、MI-C09），引用时学生应优先引会议版而非 arXiv 版；MI-C08/MI-C09 尚为单一来源，两源印证（补 Semantic Scholar 或会议官网）完成后状态可从"单一来源"升级。</p>
+<p>失败记录 1（发表状态记忆错误，本 trace 第 7 条记忆错误）：核验前教师凭记忆认为 MI-C06 发表于 ICLR 2023；dblp 题名检索与"tuned lens"宽检两轮均只有 CoRR 记录，记忆被证伪。处置：以 dblp 元数据为准，错误记入本节。与 §6 同理——记忆只能作线索，核验回到正式来源。</p>
+<p>失败记录 2（Semantic Scholar 限流）：无 API key，两轮查询全部返回 429。处置：本轮记为未执行；恢复路径：申请 S2 API key 或改日重试，届时补 MI-C08/MI-C09 的第二独立来源。</p>
+<h2 id="9-zotero-2026-08-09">9. Zotero 入藏与逐篇原文核对（第四阶段补记，2026-08-09）<a class="headerlink" href="#9-zotero-2026-08-09" title="Permanent link">&para;</a></h2>
+<p>第三阶段的核验仍停在元数据层。第四阶段把 20 条材料入藏 Zotero，并对 arXiv 锚点逐篇做 PDF 首页原文核对，身份层升级为三来源：arXiv API 元数据 → Zotero 导入元数据 → PDF 原文。</p>
+<p>入藏位置（第四阶段当时记录）：Zotero 用户库集合 <code>V7XM4JF2</code>（Teaching / Mechanistic Interpretability（课程贯穿案例）），全部条目 tag <code>mi-trace</code>，Extra 登记 <code>trace-id</code>。注意：该用户库集合已于第五阶段终局（§10.7）经用户确认移入回收站，现行正位为 GraduateCourse 群组库集合 <code>I2GKJGNP</code>，key 映射见 <code>.work/mi-search/stage5/group-keys.json</code>。下表 key 仅作历史记录：</p>
+<table>
+<thead>
+<tr>
+<th>trace-id</th>
+<th>Zotero key</th>
+<th>trace-id</th>
+<th>Zotero key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MI-C01</td>
+<td>2NS5FJF5</td>
+<td>MI-C10</td>
+<td>TZZW98NN</td>
+</tr>
+<tr>
+<td>MI-C02</td>
+<td>G6SAIGI9</td>
+<td>MI-C11</td>
+<td>QDV7FSDM</td>
+</tr>
+<tr>
+<td>MI-C03</td>
+<td>RAAAERM4</td>
+<td>MI-C12</td>
+<td>WXZ55WWD</td>
+</tr>
+<tr>
+<td>MI-C04</td>
+<td>9EDCBNRM</td>
+<td>MI-C13</td>
+<td>XH4QVEKQ</td>
+</tr>
+<tr>
+<td>MI-C05</td>
+<td>X4E68HHI</td>
+<td>MI-C14</td>
+<td>SHS7P3BC</td>
+</tr>
+<tr>
+<td>MI-C06</td>
+<td>BMF2TXA8</td>
+<td>MI-C15</td>
+<td>KTW2SG49</td>
+</tr>
+<tr>
+<td>MI-C07</td>
+<td>6D74VEX4</td>
+<td>MI-C16</td>
+<td>F2ZE35B2</td>
+</tr>
+<tr>
+<td>MI-C08</td>
+<td>B2TABF6W</td>
+<td>MI-C17</td>
+<td>HAAPZE6J</td>
+</tr>
+<tr>
+<td>MI-C09</td>
+<td>G4CF8W6R</td>
+<td>MI-C18</td>
+<td>2BS9ZB49</td>
+</tr>
+<tr>
+<td>MI-W01</td>
+<td>SG2P8T4T</td>
+<td>MI-W02</td>
+<td>P6PPJNXC</td>
+</tr>
+</tbody>
+</table>
+<h3 id="91">9.1 逐篇首页核对结果<a class="headerlink" href="#91" title="Permanent link">&para;</a></h3>
+<p>Zotero 附件管线失效（见 §9.3），改从 arXiv 直接下载 18 篇 PDF（存档 <code>.work/mi-search/pdfs/</code>，不发布），pdftotext 提取首页核对题名、第一作者与 arXiv 尾注（判定过程存档 <code>pdf-firstpage-check.json</code>）：</p>
+<ul>
+<li>18 篇题名与第一作者全部核对通过。C02/C05/C08/C12 首页用小体字排版、C05/C08 题名跨行，逐词比对先报假警报、归一化后通过——核对方法本身也要防排版假警报；</li>
+<li>C01、C13 为 Anthropic Transformer Circuits 报告版式，PDF 无 arXiv 尾注，身份由 arXiv API 元数据加首页题名作者确立并记 caveat；</li>
+<li>部分 PDF 为最新修订版（C02 v3、C05 v3/2025-03、C06 v6/2025-11、C07 v2），§5 年份列指首发年份，与修订版时间分开记录。</li>
+</ul>
+<p>核对发现 1（作者张冠李戴，已修正 §5）：初轮身份核验按 <code>id_list</code> 对齐了 ID/题名/日期，作者字段系人工转写且未经原文核对；原文核对查出 MI-C07 官方作者为 Neel Nanda、Andrew Lee、Martin Wattenberg，Belrose 不是该文作者（疑似与 C06 第一作者 Belrose 混淆）。教训：元数据核验不等于每个字段都核验过。</p>
+<p>核对发现 2（发表状态，§8 抽样未覆盖）：MI-C05 正式版 PDF 首页标注 "Published as a conference paper at ICLR 2025"，dblp 复核命中 ICLR 2025 会议论文条目，两源一致，引用应优先会议版。</p>
+<h3 id="92-7">9.2 §7 核查与更正<a class="headerlink" href="#92-7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>OpenAI Gao et al. 2024：原记"无 arXiv 版本"有误。OpenAlex 题名检索命中，arXiv API 确认 arXiv:2406.04093 即该文（2024-06-06），已入藏并按本节口径核对通过，转登记为 §5 MI-C18。OpenAI 官方博客（<code>openai.com/index/...</code> 与 <code>/research/...</code> 两种猜测路径）与 cdn PDF 链接全部 404——原记录所依赖的链接已失效，404 留档；</li>
+<li>Anthropic 两篇：官方 URL 核实存活，入藏为网页条目（MI-W01/MI-W02），状态 pending → verified；页面均大于 5MB 未取快照，身份以官网题名为准。</li>
+</ul>
+<h3 id="93">9.3 本阶段工具失败记录（真实发生）<a class="headerlink" href="#93" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Zotero PDF 附件假成功</strong>：18 次导入均回报"PDF attached"，重复入藏测试亦复现，但全库附件实查为 0。处置：核对改走 arXiv 直接下载备用路径；Zotero 现为仅元数据条目，恢复路径：Zotero 桌面端重新附加或排查 MCP 本地存储配置。教训接 §1 第 5 条：工具的成功回报也要核验实际状态。</li>
+<li><strong>Zotero 活动库漂移与 userID 口径</strong>：MCP 服务重启后活动库漂移到 OMNILab 群组库（groupID=318686），"集合消失""条目查无"均为其表象；切回用户库时 userID=0 对 Web API 无效（本地 API 用 0，Web API 用真实 userID 2215172）。处置：以 2215172 切换成功后复核实收 20 条。</li>
+</ol>
+<p>scite 撤稿扫描：对本集合执行，20 条均无 DOI（arXiv 预印本与网页报告），Scite 无法覆盖，覆盖率 0 如实记录；该批条目的撤稿风险层依赖 arXiv/官网状态跟踪。</p>
+<h2 id="10-2026-08-10">10. 阶段五补记：基准集自评轮（2026-08-10）<a class="headerlink" href="#10-2026-08-10" title="Permanent link">&para;</a></h2>
+<p>讲义 v1.3.0 新增 §六"检索质量自评"后，对本 trace 自身执行首次自评。结果：<strong>教师生产的 trace 未通过基准集检查</strong>——用户以 Google Scholar 高引快照与 GitHub awesome 列表给出外部反例，命中分析（§10.4）显示池内锚点对基准集切片的命中率仅 4/22。自评先评自己的检索：讲义 §六 的检查项不是纸面规则，记忆锚点加新近取样的组合会系统性漏掉高引经典与元层文献，而执行者本人未察觉。</p>
+<h3 id="101">10.1 差距定位：三条机制<a class="headerlink" href="#101" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>新近取样窗口</strong>：宽泛检索按 <code>submittedDate</code> 降序取最新 200 条。复盘实测该式总命中 688 条（与 §2 记录一致），按同一排序第 200 条提交于 <strong>2026-03-27</strong>（存档 <code>stage5/broad-window-check</code>）——取样窗口仅覆盖约 4.5 个月。Sharkey et al.《Open Problems in Mechanistic Interpretability》（2025-01-27，arXiv:2501.16496）在 688 条命中集内，但必然落在窗口外：检索式没有错，抽样规则错。§3 的词频分支校验也基于同一 200 条题名，分支结构验证继承同一新近偏倚。</li>
+<li><strong>无引用驱动发现</strong>：锚点来自 Agent 记忆（11 条错 6，见 §6）加近期题名词频，全程未用引用数信号——Semantic Scholar 限流（§8）后未重试，OpenAlex 引用数只用于发表状态抽查，未用于发现。Scholar 快照中引用数最高的 grokking progress measures（1109 次）不在记忆锚点集中。</li>
+<li><strong>元层分支缺失与单源缺口</strong>：B1-B9 均为对象级方法分支，综述、路线图、开放问题、教程类文献无分支承接；且主源仅 arXiv，JMLR（MI-C22）、ACM Computing Surveys（MI-C36）、Nature Methods（MI-C26）、bioRxiv（MI-C30）、哲学期刊（MI-C33）等正式出版物结构性不可见。</li>
+</ol>
+<h3 id="102-awesome">10.2 外部线索审计：awesome 列表<a class="headerlink" href="#102-awesome" title="Permanent link">&para;</a></h3>
+<p>GitHub 仓库 <code>AI-in-Transportation-Lab/awesome-mechanistic-interpretability</code>（136 star / 12 fork，432 commits，最后更新 2026-08-09）核验结果：自述"automatically updated with recent mechanistic interpretability papers from arXiv"，共 1085 条论文，属<strong>自动聚合的宽网</strong>；抽样可见大量明显无关条目（流感预测、光合生物动力学、角动量推力、天然气管网等），其聚合规则对"mechanistic/interpretability"做宽松匹配，精度不足以直接作基准集。按课程口径列为"外部线索"，不自动采信。可用的部分是其维护团队（AIT Lab）的配套综述：Somvanshi et al.《Bridging the Black Box: A Survey on Mechanistic Interpretability in AI》，已用 Crossref 核验（ACM Computing Surveys，DOI 10.1145/3787104，2026-02-04，参考文献 128 条），入池为 MI-C36。教训：带 awesome 标识的聚合列表也要先审计再用；审计产物本身（列表质量判定）留档本节。</p>
+<h3 id="103-scholar-2026-08-10">10.3 基准集切片（用户 Scholar 快照，2026-08-10）<a class="headerlink" href="#103-scholar-2026-08-10" title="Permanent link">&para;</a></h3>
+<p>用户提供 Google Scholar 检索首页快照（约 30 条）。Scholar 无公开 API，快照不可机器复现，本节引用数一律注明"Scholar 快照"。按纳入/排除标准处理（排除同样要记理由——Scholar 快照本身也有精度问题）：</p>
+<ul>
+<li>排除 3 条领域无关：轴承故障诊断（Mechanical Systems and Signal Processing）、天然气管网模拟（Energy）、多相催化 IML（Nature Catalysis）——均为"机制/可解释"一词的领域外用法；</li>
+<li>排除 2 条边缘：图注意力可解释学习（ICML 2022，通用可解释学习非 MI）、Nature Methods 通用 IML 综述（IML 泛述，MI 仅为其一节）；</li>
+<li>排除 1 条身份未解决：ECIR 2026 "Tutorial on Mechanistic Interpretability"，OpenAlex 检索无正式出版记录，按纪律不预造；</li>
+<li>Amodei《The urgency of interpretability》（2025，个人网站文章）按课程口径归外部线索，不入论文池；</li>
+<li>入池 18 条（MI-C19–C36），见 §5。</li>
+</ul>
+<p>引用数双记（Scholar 快照 vs OpenAlex 按 arXiv DOI 键查询，2026-08-10）：</p>
+<table>
+<thead>
+<tr>
+<th>trace-id</th>
+<th>题名（简）</th>
+<th>Scholar 快照</th>
+<th>OpenAlex DOI 键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MI-C19</td>
+<td>grokking progress measures</td>
+<td>1109</td>
+<td>54</td>
+</tr>
+<tr>
+<td>MI-C20</td>
+<td>MI for AI Safety review</td>
+<td>640</td>
+<td>28</td>
+</tr>
+<tr>
+<td>MI-C21</td>
+<td>Open Problems in MI</td>
+<td>280</td>
+<td>7</td>
+</tr>
+<tr>
+<td>MI-C22</td>
+<td>Causal Abstraction</td>
+<td>220</td>
+<td>11</td>
+</tr>
+<tr>
+<td>MI-C23</td>
+<td>Practical Review</td>
+<td>219</td>
+<td>12</td>
+</tr>
+<tr>
+<td>MI-C24</td>
+<td>Interpretability at Scale</td>
+<td>181</td>
+<td>8</td>
+</tr>
+<tr>
+<td>MI-C25</td>
+<td>ReDeEP</td>
+<td>165</td>
+<td>5</td>
+</tr>
+<tr>
+<td>MI-C26</td>
+<td>InterPLM</td>
+<td>132</td>
+<td>2（arXiv 版）</td>
+</tr>
+<tr>
+<td>MI-C27</td>
+<td>Mechanistic?</td>
+<td>111</td>
+<td>3</td>
+</tr>
+<tr>
+<td>MI-C28</td>
+<td>Scaling laws, repeated data</td>
+<td>96</td>
+<td>22</td>
+</tr>
+<tr>
+<td>MI-C29</td>
+<td>BIMT（Seeing is Believing）</td>
+<td>90</td>
+<td>2</td>
+</tr>
+<tr>
+<td>MI-C30</td>
+<td>MechBio SAE proteins</td>
+<td>80</td>
+<td>—（bioRxiv DOI 未按此法查）</td>
+</tr>
+<tr>
+<td>MI-C31</td>
+<td>Subspace illusion</td>
+<td>73</td>
+<td>1</td>
+</tr>
+<tr>
+<td>MI-C32</td>
+<td>BLIP causal tracing</td>
+<td>71</td>
+<td>0</td>
+</tr>
+<tr>
+<td>MI-C33</td>
+<td>Explaining AI through MI</td>
+<td>68</td>
+<td>—（期刊 DOI 未按此法查）</td>
+</tr>
+<tr>
+<td>MI-C34</td>
+<td>Multimodal MI survey</td>
+<td>46</td>
+<td>1</td>
+</tr>
+<tr>
+<td>MI-C35</td>
+<td>Scale alone（vision）</td>
+<td>43</td>
+<td>6</td>
+</tr>
+<tr>
+<td>MI-C36</td>
+<td>Bridging the Black Box</td>
+<td>27</td>
+<td>—（期刊 DOI 未按此法查）</td>
+</tr>
+</tbody>
+</table>
+<p>两列系统性差异巨大：OpenAlex 按 arXiv DOI 键命中的是记录分裂后的碎片条目，已知低估；Scholar 快照不可机器复现。处理：两列并存不裁决，Scholar 快照作基准排序依据并注明不可复现——与 §8 来源冲突的处理同理。</p>
+<h3 id="104">10.4 命中分析<a class="headerlink" href="#104" title="Permanent link">&para;</a></h3>
+<p>基准集切片 22 条（排除项之外）中池内命中 4 条，<strong>命中率 4/22</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>命中条目</th>
+<th>Scholar 快照引用</th>
+<th>池内编号</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sparse autoencoders find highly interpretable features</td>
+<td>1548</td>
+<td>MI-C02</td>
+<td>见下方版本裁决</td>
+</tr>
+<tr>
+<td>IOI 电路</td>
+<td>1277</td>
+<td>MI-C08</td>
+<td>Scholar 快照印证 §8 的 ICLR 2023 发表状态（原单一来源）</td>
+</tr>
+<tr>
+<td>ACDC</td>
+<td>880</td>
+<td>MI-C09</td>
+<td>同上，NeurIPS 2023</td>
+</tr>
+<tr>
+<td>Successor heads</td>
+<td>90</td>
+<td>MI-C12</td>
+<td>Scholar 快照指认 ICLR 2024 发表（待第二来源）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>MI-C02 版本裁决（第五阶段新发现）</strong>：arXiv 版（2309.08600，2023-09-15）官方作者为 <strong>Hoagy Cunningham, Aidan Ewart, Logan Riggs, Robert Huben, Lee Sharkey</strong>（arXiv API 核验）；ICLR 2024 正式版（OpenReview F76bwRSLeK，dblp 两源）作者为 <strong>Robert Huben, Hoagy Cunningham, Logan Riggs Smith, Aidan Ewart, Lee Sharkey</strong>——两版作者顺序不同，均为合法身份。Scholar 快照的 "Huben et al." 指 ICLR 版。池内 MI-C02 以 arXiv 版为锚不变，补记版本差异；引用该文时必须指认版本。教训：版本之间作者顺序可以变化，"某篇论文的作者是谁"也要带版本限定。</p>
+<p>池内发表状态增补：MI-C08/C09 原"单一来源（dblp）"得 Scholar 快照印证；MI-C02/C12 发表状态（ICLR 2024）为 Scholar 快照单源，待第二来源。</p>
+<p><strong>切片自身局限</strong>（基准集法固有约束，呼应讲义 §六·1(a)）：池中 MI-C01（Toy Models of Superposition）、MI-C18（Gao et al.）等高引论文未出现在该 Scholar 页面快照中，说明快照切片本身不完备；4/22 是必要条件的下界证据，不是充分性证明。</p>
+<h3 id="105">10.5 检索协议修复（已执行，留档）<a class="headerlink" href="#105" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>新增 B10 元层分支</strong>：</li>
+</ol>
+<div class="highlight"><pre><span></span><code>(ti:survey OR ti:review OR ti:&quot;open problems&quot; OR ti:roadmap OR ti:tutorial)
+  AND all:&quot;mechanistic interpretability&quot; AND (cat:cs.LG OR cat:cs.CL)
+</code></pre></div>
+<p>命中 12 条（存档 <code>stage5/b10-meta-branch</code>）：Open Problems（2501.16496）、Practical Review（2407.02646）、SAE survey（2503.05613）、多模态调查（2502.17516）、CMA survey（2408.01416）等遗漏综述直接浮现——元层缺失得到修复验证。<strong>残留缺口如实记录</strong>：Bereska《MI for AI Safety — A Review》（2404.14082）仍不命中；单独执行 <code>ti:review AND all:"mechanistic interpretability"</code> 全库仅命中 1 条，该标题中的 "review" 未被 arXiv API 匹配（标题含 "-- A Review" 的词条怪癖），留档待后续轮改式，不掩盖。
+2. <strong>宽泛检索改双轨</strong>：新增相关性排序轮（<code>sortBy=relevance</code>）抽样 20 条（存档 <code>stage5/broad-relevance-raw.xml</code>），Open Problems 排第 9，另有 "Challenges in Mechanistically Interpreting Model Representations"（2402.03855）排第 2——证实新近单轨的遗漏可由相关性轮补回。新协议：新近窗口轮（看前沿）+ 相关性轮（看领域中心）双轨留档，必要时加时间分窗轮；三轨均记录实际请求与日期。
+3. <strong>来源范围记录</strong>：本轮基准集暴露的五个非 arXiv 正式出版物（MI-C22/26/30/33/36）已按各自来源入池；后续如研究问题收敛到涉及这些方向，应把 OpenAlex 引用排序发现与 JMLR/CSUR/Nature Methods 等来源列入检索记录。</p>
+<h3 id="106-zotero">10.6 Zotero 入藏与工具失败记录（部分完成）<a class="headerlink" href="#106-zotero" title="Permanent link">&para;</a></h3>
+<p>新锚点 17/18 已入藏集合 <code>V7XM4JF2</code>（tag <code>mi-trace</code>）（本节为 MCP 掉线当时记录；个人库副本后经用户确认迁入群组库并清除，终局见 §10.7）：</p>
+<table>
+<thead>
+<tr>
+<th>trace-id</th>
+<th>Zotero key</th>
+<th>trace-id</th>
+<th>Zotero key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MI-C19</td>
+<td>GIIH3DAR</td>
+<td>MI-C28</td>
+<td>2W59UWE2</td>
+</tr>
+<tr>
+<td>MI-C20</td>
+<td>J3K98U3J</td>
+<td>MI-C29</td>
+<td>6XMCWNNB</td>
+</tr>
+<tr>
+<td>MI-C21</td>
+<td>VRFKX5VH</td>
+<td>MI-C30</td>
+<td>A4WV8G3N</td>
+</tr>
+<tr>
+<td>MI-C22</td>
+<td>N7XWMW8Q</td>
+<td>MI-C31</td>
+<td>FRZHUN2V</td>
+</tr>
+<tr>
+<td>MI-C23</td>
+<td>VEUNAIE2</td>
+<td>MI-C32</td>
+<td>7TM76JGQ</td>
+</tr>
+<tr>
+<td>MI-C24</td>
+<td>R5FCEVRA</td>
+<td>MI-C33</td>
+<td>PHW3X8BB</td>
+</tr>
+<tr>
+<td>MI-C25</td>
+<td>34A3VQ33</td>
+<td>MI-C34</td>
+<td>EIBMB2CJ</td>
+</tr>
+<tr>
+<td>MI-C26</td>
+<td>7SPMGAPI</td>
+<td>MI-C35</td>
+<td>37FIF34Z</td>
+</tr>
+<tr>
+<td>MI-C27</td>
+<td>FM3PJ3EN</td>
+<td>MI-C36</td>
+<td>HXAETMSH</td>
+</tr>
+</tbody>
+</table>
+<p>失败与补办记录（如实记录，与第四阶段同理：失败保留、补记标注）：</p>
+<ol>
+<li><strong>MCP 掉线与恢复</strong>：入藏 MI-C35 时 Zotero MCP 先超时（-32001）、重试时连接关闭（-32000），本节首版据此记"未入藏"。MCP 恢复后核对：超时请求实际已成功创建条目（<code>37FIF34Z</code>），集合共 38 条——<strong>工具的失败回报也不能直接当成事实，要回查实际状态</strong>（与第 5 条教学点同源）。</li>
+<li><strong>trace-id 补记完成</strong>：18 条新条目 Extra <code>trace-id</code> 已全部写入（MCP 恢复后逐条 upsert）。</li>
+<li><strong>附件假成功复现</strong>：18/18 回查实查无附件；13 条"PDF attached"回报（含 1 条 Unpaywall 来源声称）全部为假成功——附件管线故障在第五阶段复现，且不限于 arXiv 路径。按第四阶段备用路径改走直接下载逐篇首页核对（存档 <code>stage5/pdf-firstpage-check/</code>）：14/15 篇 arXiv 锚点题名与一作核对通过；MI-C35（约 38MB）两轮直下均连接截断（无 %%EOF），PDF 原文核对保持 <code>pending</code>；MI-C30 bioRxiv 两条 URL 均返回反爬 HTML（恢复路径：ICML PMLR 正式版或校图书馆）；MI-C33/C36 无 OA PDF（付费墙）。核对附带新发现：MI-C19 PDF 首页标 ICLR 2023（发表状态升两源）、MI-C22 的 arXiv 镜像 PDF 即 JMLR 正式定稿版式（JMLR 26 (2025) 1-63）、MI-C25 PDF 首页标 ICLR 2025（升两源）、MI-C20 v3 页眉标 "Under review as submission to TMLR"（尚未确认正式发表，Scholar 快照亦列 arXiv 预印本，原表不记发表状态是对的）。</li>
+<li><strong>存量条目补注完成</strong>：MI-C02 版本差异注记（Zotero note <code>XCFK8NZ3</code>）、MI-C08（<code>TCD7SUJA</code>）、MI-C09（<code>3HPSXK2S</code>）、MI-C12（<code>BWCDQSNA</code>）发表状态补注已写入；其中 MI-C08 补注首版把 Scholar 快照误写成直接指认会议版，发现后即回改——注记本身也要核验。</li>
+</ol>
+<p>剩余待办（不升级状态，保持 <code>pending</code>）：MI-C35/MI-C30/MI-C33/MI-C36 四条 PDF 原文核对（网络/付费墙受限）；B10 残留缺口改式（§10.5）；研究问题收敛后的角色指认。（后续：四条原文核对已于第六阶段完成，见 §10.8；其余两项保持。）</p>
+<h3 id="107-2026-08-10">10.7 迁移到群组库与附件策略（第五阶段终局，2026-08-10）<a class="headerlink" href="#107-2026-08-10" title="Permanent link">&para;</a></h3>
+<p>第五阶段补办附件时锁定两条根因，据此改变收藏位置与附件策略（用户确认）：</p>
+<ol>
+<li><strong>附件管线假成功的根因＝Zotero 云存储配额耗尽</strong>：补办上传实测得 <code>HTTP 413 File would exceed quota (6184.6 &gt; 300)</code>——账户已用约 6.2 GB、配额仅 300 MB（免费档），所有新文件上传一律被拒。阶段四、五的"PDF attached"回报均因此落空（条目创建成功、文件上传被拒，管线未核验实际状态即报成功）；</li>
+<li><strong>群组库文件走不了 WebDAV</strong>：个人库可用坚果云 WebDAV 绕开配额（MI-C27 曾端到端验证：API 建条目 + PUT <code>&lt;KEY&gt;.zip/.prop</code> 成功），但 Zotero 群组库的文件只走 Zotero 存储服务器，且本群 <code>fileEditing: none</code>，故真实文件附件进群库目前不可行。</li>
+</ol>
+<p>据此执行（用户指令"放到 Group Libraries 中的 collection，My Library 的 MI collection 可以删除"）：</p>
+<ul>
+<li><strong>正位</strong>：GraduateCourse 群组库（groupID 6634461）集合 <code>I2GKJGNP</code>（Mechanistic Interpretability）。阶段四 20 条原已在群内，阶段五 18 条由个人库逐条迁移（含 extra trace-id、collections、tags）；<code>trace-id → 群组 key</code> 映射存档 <code>.work/mi-search/stage5/group-keys.json</code>；</li>
+<li><strong>附件策略降级为 linked_url</strong>：36 篇论文各挂 1 条 arXiv PDF 直链或 DOI 官链附件（36/36 成功），点击即在浏览器打开原文；MI-W01/W02 为网页报告不挂附件。离线 PDF 仍以 <code>.work/mi-search/</code> 本地存档为准；</li>
+<li><strong>个人库副本清除</strong>：用户库集合 <code>V7XM4JF2</code> 的 38 条条目（含补注 4 条、测试附件 1 条）全部移入回收站（Zotero 桌面端可恢复），集合删除；坚果云上的孤儿对象 <code>3D9TAVUG.zip/.prop</code> 已删除。§9 的 key 表随之作废，仅作历史记录。</li>
+</ul>
+<p>若日后要真实文件进群库，须先：群设置开放 File Editing + 清理 Zotero 云存量或升级套餐（群组文件不经 WebDAV）。本 trace 的教学点再加一条：<strong>"附件已加"必须回查实查子项，配额与存储架构是附件策略的前置约束</strong>。</p>
+<h3 id="108-2026-08-11">10.8 第六阶段：原文核对完成与文件正位回归个人库（2026-08-11）<a class="headerlink" href="#108-2026-08-11" title="Permanent link">&para;</a></h3>
+<p>用户备齐 35 份 PDF 原件（含此前四条受限件），教师补下 MI-C30 的 ICML 2025 PMLR 正式版（<code>proceedings.mlr.press/v267/adams25a</code>，即 §10.6 登记的恢复路径"ICML PMLR 正式版"）。本阶段四件事：</p>
+<ol>
+<li><strong>四条 pending 原文核对完成（§10.6 遗留）</strong>：<code>pdftotext</code> 逐篇首页核对题名与第一作者，全部通过——MI-C35（arXiv v2）、MI-C33（Springer OA 版）、MI-C36（ACM CSUR 正式版）、MI-C30（PMLR 官方版，作者 Etowah Adams 等五人）。此前"连接截断/付费墙"障碍随文件到位消解；条目 <code>pending</code> 状态不变（核对的只是身份层，拟用主张仍未核）。</li>
+<li><strong>群组库存储附件实验与架构约束发现</strong>：上传工具 pyzotero 1.13.2 存在响应键解析 bug（读 <code>success</code>，服务端返回 <code>successful</code>，导致建 stub 后 key 拿不到），改手工建 imported_file stub + 带 key 走三步上传协议绕开；36 条存储附件（约 185 MB）上传群组库成功并逐条拉回字节级复验 36/36。但暴露两条硬约束：<strong>① 群组类型为 Public Open Membership，Zotero 禁止开放群组启用文件存储</strong>（官方文档证实"Public Open groups cannot have file storage enabled"；用户将群改为 Private 并开 File Editing 后附件创建即通——这同时解释了第五阶段群组侧附件操作屡次 403 的真正根因）；<strong>② 群组库文件计入群主（用户本人）的 Zotero 存储配额</strong>，而个人库文件同步走坚果云 WebDAV（prefs 已验证）不计配额。</li>
+<li><strong>用户决定：文件正位迁回个人库，群组库只留链接</strong>。执行：个人库集合 <code>33RDJXG2</code>（Mechanistic Interpretability，此前在回收站）恢复 38 条，含 36 条本地文件附件；删除 MI-C05 空副本（<code>4VCQ34PE</code>，重复登记）；发现并修复个人库 3 条旧文件——MI-C26 所挂实为无关论文（math.CO《Quotient graphs and stochastic matrices》）、MI-C36 所挂实为无关论文（arXiv:2502.14886 外科场景综述），均以正确原件替换；MI-C30 由 bioRxiv 旧版升级为 PMLR 正式版；MI-C22 个人库副本恰为 JMLR 26 (2025) 1-64 期刊正式版，较 arXiv 镜像更权威，保留。替换均直接写入 <code>~/Zotero/storage/</code> 对应附件目录并 MD5 复验；替换后的 3 条附件标题改短名。</li>
+<li><strong>群组库终局撤除文件</strong>：36 条 imported_file 附件全部删除（回验：群组侧仅剩 36 条 linked_url + 4 条注记，零存储占用）。群组库＝共享元数据目录（38 条 + 直链 + 注记）；个人库 <code>33RDJXG2</code>＝文件正位，经 Zotero 客户端同步至坚果云 WebDAV（同步完成确认待补）。迁库丢失的 4 条注记（MI-C02 版本裁决、MI-C08/C09/C12 发表状态）已在群组库重建（8REVBEHN/Q3GSWD6X/ZDTSPQZC/RKFSIBW7）并同步到个人库。个人库 <code>trace-id → key</code> 映射存档 <code>.work/mi-search/stage6/personal-keys.json</code>。</li>
+</ol>
+<p>教学点追加（呼应 §10.7 末段）：附件策略的前置约束除配额与核验纪律外，还有<strong>群组类型约束</strong>（开放群组不可有文件）与<strong>配额归属架构</strong>（群文件计群主配额、个人库可走 WebDAV 绕开）。本 trace v0.4.0 与 v0.5.0 先后演示"配额拒收"与"平台类型约束→配额归属"两个半周期，合起来是文献管理工具工程约束的真实教材；而个人库旧附件中的两条<strong>张冠李戴文件</strong>（MI-C26/C36）再次印证教学点 5：既有状态不等于正确状态，回查实查永远必要。</p>
+<h2 id="11">11. 复盘方式<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<p>任意一条检索式可在 arXiv API 复盘，例如分支 B1：</p>
+<div class="highlight"><pre><span></span><code>http://export.arxiv.org/api/query?search_query=all:%22sparse+autoencoder%22+AND+(cat:cs.LG+OR+cat:cs.CL)&amp;max_results=6
+</code></pre></div>
+<p>单条身份核验：</p>
+<div class="highlight"><pre><span></span><code>http://export.arxiv.org/api/query?id_list=2209.10652
+</code></pre></div>
+<p>命中数随时间变化属正常差异；复盘时记录自己的检索日期与命中数，与原记录对照。教师生产 trace 的原始材料存档于课程工作区 <code>.work/mi-search/</code>（不发布）：第一、二阶段 <code>arxiv-branches.json</code>、<code>anchor-verify.json</code>、<code>title-recovery.json</code>、<code>broad-mi-titles.json</code>；第三阶段补记 <code>arxiv-branches-b7b9.json</code>、<code>cross-source-check.json</code>；第四阶段补记 <code>pdf-firstpage-check.json</code> 与 PDF 原文 <code>pdfs/</code>；第五阶段补记 <code>stage5/</code>（检索留档 <code>arxiv-title-batch1</code>、<code>openalex-*</code>、<code>dblp-*</code>、<code>crossref-csur</code>、<code>b10-meta-branch</code>、<code>broad-relevance-raw.xml</code>，附件与迁移留档 <code>group-keys.json</code>、<code>webdav-attach-results.json</code>、<code>pdf-firstpage-check/</code>）；第六阶段补记 <code>stage6/</code>（个人库键映射 <code>personal-keys.json</code>；上传与回验日志另见 <code>.work/zotero-upload/</code>）。Zotero 侧口径（2026-08-11 终局）：群组库集合 <code>I2GKJGNP</code> 为共享元数据目录（linked_url 直链，§10.7），个人库集合 <code>33RDJXG2</code> 为文件正位（§10.8，坚果云 WebDAV 同步）；离线 PDF 以本工作区 <code>pdfs/</code>、<code>stage5/pdfs/</code> 与用户原件目录存档为准。</p>
+<h2 id="12">12. 与课程的连接<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
+<ul>
+<li>讲义 §四 四态与进入规则：本文件全部条目按该口径标注；</li>
+<li>讲义 §五 三类记录：§2 对应检索记录，§6 对应来源审计记录，§5 是线索区而非正式候选表；</li>
+<li>讲义 §七 常见错误 5（检索过程不可复盘）与错误 7（角色、状态和决定混用）：§2/§4/§11 给出可复盘记录的最小完整样式，§5 演示三维分记；</li>
+<li>讲义 §六 检索质量自评：§3 的分支修正过程与 §8 的单源局限记录分别是分支覆盖矩阵自评与来源审计自评的真实示例；§10 是该自评框架的首次完整应用——基准集切片来自外部反例，命中率 4/22，教师 trace 未过自评本身就是教学点 6；</li>
+<li>课程 2.0 批次 0 验收项"≥1 条真实科研失败演示"（见课程文档 <code>docs/course-2.0-plan.md</code>）：§6 提供 4 条；第三阶段补记 §8 再添 2 条（发表状态记忆错误、S2 限流）；第四阶段补记 §9 再添 2 条工具失败（附件假成功、活动库漂移）与 1 条作者张冠李戴修正；第五阶段补记 §10.6 再添 MCP 掉线、附件假成功复现与 PDF 下载截断记录及补办过程——失败与修正过程本身也是教学素材；</li>
+<li>§9 与 <a href="../source-audit-demo/">source-audit-demo.md</a> 的"回到原文"步骤呼应：单篇 trace 演示原文核验一条主张，本篇在领域级 trace 上补齐原文身份层；</li>
+<li>记录演进本身是教学点（§1 第 4 条）：本文件 v0.1.x（第一、二阶段）、v0.2.x（第三阶段补记）、v0.3.0（第四阶段补记）与 v0.4.0（第五阶段基准集轮）的差异可作课堂对照素材；</li>
+<li>讲义 §五"线索表升级到候选表的条件"：§5 中 MI-C02/C05/C16/C18/C31 已完成主张级升级，其余条目仍保留初态字段；两类状态并列展示“何时能入证据地图”的边界；</li>
+<li>§5.1 固定 L4-L9 的公开材料教学问题与证据分工；它是课程演示线，不替代博士生未发表研究的真实问题与结果。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

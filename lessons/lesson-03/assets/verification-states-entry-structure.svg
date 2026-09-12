@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="候选条目回原文核验后按四态分流：rejected、pending、verified、verified-with-caveat">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#44546A"/>
+    </marker>
+  </defs>
+  <g font-family="'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif">
+    <!-- 左列：文献线索 → 入口核验 -->
+    <rect x="20" y="96" width="172" height="56" rx="8" fill="#F2F6FA" stroke="#1F4D78" stroke-width="1.5"/>
+    <text x="106" y="120" text-anchor="middle" font-size="16" fill="#1F4D78">文献线索</text>
+    <text x="106" y="140" text-anchor="middle" font-size="12" fill="#44546A">AI 给出或自行检索</text>
+
+    <line x1="106" y1="152" x2="106" y2="196" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <rect x="20" y="200" width="172" height="56" rx="8" fill="#F2F6FA" stroke="#1F4D78" stroke-width="1.5"/>
+    <text x="106" y="224" text-anchor="middle" font-size="16" fill="#1F4D78">入口核验</text>
+    <text x="106" y="244" text-anchor="middle" font-size="12" fill="#44546A">身份 + 一条拟用主张</text>
+
+    <!-- 分流箭头 -->
+    <line x1="192" y1="214" x2="314" y2="49" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="192" y1="220" x2="314" y2="125" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="192" y1="234" x2="314" y2="201" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="192" y1="242" x2="314" y2="277" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- rejected -->
+    <rect x="320" y="18" width="380" height="62" rx="8" fill="#FDF0F0" stroke="#C8161E" stroke-width="2"/>
+    <text x="336" y="42" font-size="15" font-weight="bold" fill="#C8161E">rejected ｜ 拒绝</text>
+    <text x="336" y="64" font-size="12.5" fill="#44546A">正式来源确认身份错误或主张不符；不进候选表，仅留审计</text>
+
+    <!-- pending -->
+    <rect x="320" y="94" width="380" height="62" rx="8" fill="#FDF6EC" stroke="#ED7D31" stroke-width="2"/>
+    <text x="336" y="118" font-size="15" font-weight="bold" fill="#C55A11">pending ｜ 待核验</text>
+    <text x="336" y="140" font-size="12.5" fill="#44546A">入口核验未完成或暂时失败；可留线索区并写明待核项</text>
+
+    <!-- verified -->
+    <rect x="320" y="170" width="380" height="62" rx="8" fill="#EFF6F2" stroke="#2E7D5B" stroke-width="2"/>
+    <text x="336" y="194" font-size="15" font-weight="bold" fill="#2E7D5B">verified ｜ 已核验</text>
+    <text x="336" y="216" font-size="12.5" fill="#44546A">身份与拟用主张一致；可进候选表，仍须标预期角色与理由</text>
+
+    <!-- verified-with-caveat -->
+    <rect x="320" y="246" width="380" height="74" rx="8" fill="#EFF6F2" stroke="#2E7D5B" stroke-width="2"/>
+    <rect x="320" y="246" width="6" height="74" fill="#ED7D31"/>
+    <text x="336" y="270" font-size="15" font-weight="bold" fill="#2E7D5B">verified-with-caveat ｜ 核验通过但有限定</text>
+    <text x="336" y="290" font-size="12.5" fill="#44546A">可进候选表与主格；必须保留 caveat 与原文位置，</text>
+    <text x="336" y="308" font-size="12.5" fill="#44546A">不得单独支撑 stable 结论</text>
+  </g>
+</svg>

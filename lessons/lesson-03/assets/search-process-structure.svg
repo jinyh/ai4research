@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 286" role="img" aria-label="检索流程：从研究问题到候选文献表，全程留记录可复盘">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#44546A"/>
+    </marker>
+    <marker id="arrow-loop" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#1F4D78"/>
+    </marker>
+  </defs>
+  <g font-family="'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif">
+    <!-- 全程可复盘回线 -->
+    <line x1="640" y1="22" x2="86" y2="22" stroke="#1F4D78" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#arrow-loop)"/>
+    <text x="360" y="14" text-anchor="middle" font-size="13" fill="#1F4D78">可迭代、可复盘：问题可回写；请求、日期、命中数与筛选标准均留记录</text>
+
+    <!-- 第一行：问题定义 → 纳入排除 -->
+    <rect x="20" y="48" width="158" height="72" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="99" y="78" text-anchor="middle" font-size="16" fill="#1F4D78">问题初稿</text>
+    <text x="99" y="100" text-anchor="middle" font-size="12" fill="#44546A">对象·干预·对照·指标</text>
+
+    <rect x="196" y="48" width="158" height="72" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="275" y="78" text-anchor="middle" font-size="16" fill="#1F4D78">关键词扩展</text>
+    <text x="275" y="100" text-anchor="middle" font-size="12" fill="#44546A">同义·上位·下位</text>
+
+    <rect x="372" y="48" width="158" height="72" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="451" y="78" text-anchor="middle" font-size="16" fill="#1F4D78">检索式构造</text>
+    <text x="451" y="100" text-anchor="middle" font-size="12" fill="#44546A">布尔·字段·截断·短语</text>
+
+    <rect x="548" y="48" width="158" height="72" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="627" y="78" text-anchor="middle" font-size="16" fill="#1F4D78">纳入/排除条件</text>
+    <text x="627" y="100" text-anchor="middle" font-size="12" fill="#44546A">检索前先写第一版</text>
+
+    <line x1="180" y1="84" x2="192" y2="84" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="356" y1="84" x2="368" y2="84" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="532" y1="84" x2="544" y2="84" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- 折返箭头 -->
+    <line x1="627" y1="122" x2="627" y2="170" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- 第二行：执行记录 → 候选表（自右向左） -->
+    <rect x="548" y="174" width="158" height="72" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="627" y="204" text-anchor="middle" font-size="16" fill="#1F4D78">执行与检索记录</text>
+    <text x="627" y="226" text-anchor="middle" font-size="12" fill="#44546A">库·日期·命中数</text>
+
+    <rect x="372" y="174" width="158" height="72" rx="8" fill="#F2F6FA" stroke="#44546A" stroke-width="1.5"/>
+    <text x="451" y="204" text-anchor="middle" font-size="16" fill="#1F4D78">来源审计</text>
+    <text x="451" y="226" text-anchor="middle" font-size="12" fill="#44546A">身份+拟用主张·四态</text>
+
+    <rect x="196" y="174" width="158" height="72" rx="8" fill="#F2F6FA" stroke="#1F4D78" stroke-width="2"/>
+    <text x="275" y="204" text-anchor="middle" font-size="16" font-weight="bold" fill="#1F4D78">候选文献表</text>
+    <text x="275" y="226" text-anchor="middle" font-size="12" fill="#44546A">拟用主张·角色·状态</text>
+
+    <line x1="546" y1="210" x2="534" y2="210" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="370" y1="210" x2="358" y2="210" stroke="#44546A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- 底部说明 -->
+    <text x="360" y="274" text-anchor="middle" font-size="13" fill="#44546A">每一步都留下记录，他人可以复盘你怎样得到当前候选列表</text>
+  </g>
+</svg>

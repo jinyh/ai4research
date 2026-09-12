@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">MI 精读证据阶梯</title>
+  <desc id="desc">从原文位置、任务设置、对照指标、边界限制到人工判断的五级证据阶梯，并展示 C02、C16、C31 三篇论文的分工。</desc>
+  <rect width="1600" height="900" fill="#F7F4EE"/>
+  <text x="96" y="92" font-family="Arial, Noto Sans CJK SC, sans-serif" font-size="50" font-weight="700" fill="#7A0C16">从“论文说了什么”到“这条主张能否使用”</text>
+  <g font-family="Arial, Noto Sans CJK SC, sans-serif">
+    <rect x="110" y="650" width="840" height="110" rx="18" fill="#D8E5EA"/>
+    <text x="150" y="698" font-size="30" font-weight="700" fill="#173B4D">1 原文位置</text>
+    <text x="150" y="735" font-size="22" fill="#173B4D">章节 / 页码 / 图表：先让主张可复查</text>
+    <rect x="190" y="520" width="760" height="110" rx="18" fill="#C5D9DF"/>
+    <text x="230" y="568" font-size="30" font-weight="700" fill="#173B4D">2 任务与设置</text>
+    <text x="230" y="605" font-size="22" fill="#173B4D">模型、层、任务、数据：限定结果作用域</text>
+    <rect x="270" y="390" width="680" height="110" rx="18" fill="#B2CDD4"/>
+    <text x="310" y="438" font-size="30" font-weight="700" fill="#173B4D">3 指标与对照</text>
+    <text x="310" y="475" font-size="22" fill="#173B4D">KL、edit magnitude、PCA / 监督字典 / 随机特征</text>
+    <rect x="350" y="260" width="600" height="110" rx="18" fill="#9FC1C9"/>
+    <text x="390" y="308" font-size="30" font-weight="700" fill="#173B4D">4 局限与替代解释</text>
+    <text x="390" y="345" font-size="22" fill="#173B4D">重构误差、控制性缺口、dormant pathway</text>
+    <rect x="430" y="130" width="520" height="110" rx="18" fill="#7A0C16"/>
+    <text x="470" y="178" font-size="30" font-weight="700" fill="#FFFFFF">5 人工判断</text>
+    <text x="470" y="215" font-size="22" fill="#FFFFFF">能支持什么｜不能支持什么｜还缺什么</text>
+    <line x1="1010" y1="174" x2="1010" y2="742" stroke="#B8B0A5" stroke-width="3"/>
+    <circle cx="1010" cy="270" r="9" fill="#7A0C16"/>
+    <rect x="1060" y="205" width="430" height="130" rx="18" fill="#FFFFFF" stroke="#7A0C16" stroke-width="3"/>
+    <text x="1092" y="252" font-size="28" font-weight="700" fill="#7A0C16">C02｜正向主证据</text>
+    <text x="1092" y="291" font-size="21" fill="#333333">Pythia-410M · IOI · SAE vs PCA</text>
+    <circle cx="1010" cy="460" r="9" fill="#C48A2C"/>
+    <rect x="1060" y="395" width="430" height="130" rx="18" fill="#FFFFFF" stroke="#C48A2C" stroke-width="3"/>
+    <text x="1092" y="442" font-size="28" font-weight="700" fill="#8A5A10">C16｜控制性限制</text>
+    <text x="1092" y="481" font-size="21" fill="#333333">可解释 ≠ 足够可控制</text>
+    <circle cx="1010" cy="650" r="9" fill="#6D6D6D"/>
+    <rect x="1060" y="585" width="430" height="130" rx="18" fill="#FFFFFF" stroke="#6D6D6D" stroke-width="3"/>
+    <text x="1092" y="632" font-size="28" font-weight="700" fill="#444444">C31｜效度威胁</text>
+    <text x="1092" y="671" font-size="21" fill="#333333">patching 成功 ≠ 自动因果忠实</text>
+    <text x="1028" y="796" font-size="24" font-weight="700" fill="#7A0C16">当前结论：review</text>
+    <text x="1028" y="832" font-size="20" fill="#4A4A4A">足以设计 baseline；不足以标记 stable</text>
+  </g>
+</svg>

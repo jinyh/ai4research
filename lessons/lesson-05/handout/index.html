@@ -1,0 +1,2148 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="上海交通大学研究生课程“智能科研方法”（AI for Research: Methods and Practice）">
+      
+      
+      
+        <link rel="canonical" href="https://jinyh.github.io/ai4research/lessons/lesson-05/handout/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>第五讲｜综述结构、证据地图与研究空白 - 智能科研方法</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="智能科研方法" class="md-header__button md-logo" aria-label="智能科研方法" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            智能科研方法
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第五讲｜综述结构、证据地图与研究空白
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../learn/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  16 讲课程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../project/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  项目与考核
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../templates/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  模板与资源
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../teacher/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  课程信息
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="智能科研方法" class="md-nav__button md-logo" aria-label="智能科研方法" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    智能科研方法
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../learn/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 讲课程
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    16 讲课程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · AI 辅助科研导论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · 科研伦理与 Agent 边界
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · 检索与来源核验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · 精读与主张核验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · 证据地图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · 问题定义
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · 假设与区分实验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · 中期诊所
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Baseline 与复现
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · 受限 Agent 执行
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 · 自动化循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 · 个人工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 · 工作流评价
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 · 结果写成论证
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 · 同行评审与修改
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 · 最终展示（讲义待复核）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目与考核
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模板与资源
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    模板与资源
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模板与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/opencode-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenCode 最小启动说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/reading-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    逐课参考阅读清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资源索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teacher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课程信息
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导读
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学习目标
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、证据整理在研究链路中的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、从摘要堆叠到按问题组织综述
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、从摘要堆叠到按问题组织综述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 摘要堆叠为什么不算综述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 叙事性综述与系统性综述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 相关工作矩阵：从按论文排列到按问题排列
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、证据地图
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、证据地图">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 四类标注
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 证据地图的最小字段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 证据地图与相关工作的关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、研究空白识别与候选问题生成
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、研究空白识别与候选问题生成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 问题的来源：生成路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 三类研究空白
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 从证据空白到可检验问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 候选题池：从多条路径生成多个候选
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 不是空白的情况
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、AI 辅助归纳的核验
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、AI 辅助归纳的核验">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. AI 在综述阶段可以做什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 综述阶段的核验清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 一条 AI 使用记录的最小字段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-mini-literature-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. mini literature review 的最小可行草稿
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、常见错误
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、贯穿案例：从阅读卡到证据地图
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、贯穿案例：从阅读卡到证据地图">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        公开 MI 平行演示：支持、限制与效度威胁同图
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、课堂练习
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、课堂练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 1：从摘要堆叠到按问题组织
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 2：构造相关工作矩阵
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 3：标注证据地图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 4：识别空白类型并生成候选题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 5：AI 综述草稿核验
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 6：课堂最低产出
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、术语表
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十、延伸阅读与课程材料
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../../../learn/05/">← 本课任务与材料</a></p>
+<hr />
+<h1 id="_1">第五讲｜综述结构、证据地图与研究空白<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">导读<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>第 3 课把检索过程变成可复盘的方法，并给每条材料标了证据角色。第 4 课对核心论文做了结构化精读，把作者主张、关键证据、实验设置和局限逐条定位到原文，并审计了 AI 摘要中的错读与过度概括。但仅有阅读卡仍不够：当五篇、十篇文献摆在一起时，研究者常犯的错误是按论文顺序堆叠摘要，得到一份"读书报告"，而不是一份能支撑研究判断的综述。</p>
+<p>本课对应八阶段研究链路的阶段五"证据整理"，向阶段六"研究判断"和第 6 课问题门输出材料。它的核心转换是：</p>
+<blockquote>
+<p>从"按论文排列"转向"按研究问题排列"，从"摘要堆叠"转向"证据地图"，从"还没有论文写过"转向"可检验的研究空白"。</p>
+</blockquote>
+<p>完成本课后，你将形成一份 mini literature review 最小可行草稿和证据地图初版，并带着研究空白候选与候选题池进入第 6 课，把它们作为问题门的直接输入。</p>
+<h2 id="_3">学习目标<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>完成本讲后，你应该能够：</p>
+<ol>
+<li>区分叙事性综述与系统性综述，并说明两者在证据强度、可复现性和适用边界上的差别；</li>
+<li>把多篇阅读卡重组为按研究问题排列的相关工作矩阵；</li>
+<li>绘制证据地图，显式区分直接证据、补充证据、冲突和空白，并保留对比证据揭示的不可比性或替代解释；</li>
+<li>区分问题的多条生成路径，识别冲突空白、缺角空白和新问题空白三类研究空白，判断哪些是真实问题、哪些只是表述差异，并从多条路径生成候选题池；</li>
+<li>基于已核验条目写出四句 mini literature review 最小可行草稿，呈现直接证据、补充或对比证据、冲突或局限以及证据空白；</li>
+<li>对 AI 辅助归纳出的综述草稿执行核验，把虚构引文、过度概括和来源不可追溯的条目归位为探索线索；</li>
+<li>说明 mini literature review、证据地图与研究空白为何是问题门的直接输入。</li>
+</ol>
+<hr />
+<h2 id="_4">一、证据整理在研究链路中的位置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>八阶段研究链路中，阶段五"证据整理"承接阶段四"外部输入摄取"产出的候选文献表和第 4 课的阅读卡，向阶段六"研究判断"输出一份能支撑取舍的材料组织。它的任务不是"再多读几篇"，而是把已核验的材料按问题、冲突和缺口重新排列。</p>
+<table>
+<thead>
+<tr>
+<th>输入（来自第 3-4 课）</th>
+<th>本课处理</th>
+<th>输出（向第 6 课问题门）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>候选文献表（含证据角色和核验状态）</td>
+<td>按研究问题重组为相关工作矩阵</td>
+<td>mini literature review 最小可行草稿</td>
+</tr>
+<tr>
+<td>核心论文阅读卡（含原文位置）</td>
+<td>抽取主张、证据、设置和局限进入证据地图</td>
+<td>证据地图初版与研究空白候选</td>
+</tr>
+<tr>
+<td>AI 摘要错读审计记录</td>
+<td>对 AI 综述草稿执行相同核验清单</td>
+<td>一条 AI 使用记录</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>与第 1 课的连接：第 1 课 §2.5 给出了一个简化证据地图样例（E1/E2/E3），本课把它扩展为问题门所需的直接证据、补充证据、冲突和空白四视图。</p>
+</blockquote>
+<p>证据整理不等于文献综述的最终写作。本课仍需形成一份基于已核验证据的 mini literature review 最小可行草稿，但它不是论文 related work 段的最终成稿。证据地图保留判断过程，四句草稿练习最小综合；面向读者的完整论证结构在第 14 课展开。</p>
+<hr />
+<h2 id="_5">二、从摘要堆叠到按问题组织综述<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 摘要堆叠为什么不算综述<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>一份典型的失败综述长这样：</p>
+<blockquote>
+<p>论文 A 提出了方法 X；论文 B 提出了方法 Y；论文 C 在数据集 D 上比较了 X 和 Y；论文 E 指出了 X 的局限。因此，方法 Y 较优。</p>
+</blockquote>
+<p>它的问题不是缺少文献，而是没有说明：</p>
+<ul>
+<li>A、B、C、E 各自的主张在什么条件下成立；</li>
+<li>它们比较的对象、指标和设置是否一致；</li>
+<li>"较优"在哪个维度上、相对什么 baseline；</li>
+<li>哪些主张相互冲突、哪些相互加强、哪些根本不可比；</li>
+<li>综述本身要回答什么研究问题。</li>
+</ul>
+<p>摘要堆叠的根本原因是没有把综述组织在一个研究问题周围。没有问题，就无法判断哪条证据支持什么、反驳什么、缺失什么。</p>
+<h3 id="2">2. 叙事性综述与系统性综述<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>文献综述有两种典型形态，它们在证据强度、可复现性和适用边界上不同：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>叙事性综述</th>
+<th>系统性综述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>范围界定</td>
+<td>研究者根据问题选取核心文献，范围可调整</td>
+<td>预先定义检索式、纳入排除和时间窗，过程可复盘</td>
+</tr>
+<tr>
+<td>综合方式</td>
+<td>按主题、机制或冲突组织叙述</td>
+<td>按固定字段提取，结构化合成（meta-analysis 或定性合成）</td>
+</tr>
+<tr>
+<td>可复现性</td>
+<td>取决于作者是否记录检索与筛选</td>
+<td>高；他人可重现检索和筛选</td>
+</tr>
+<tr>
+<td>适用边界</td>
+<td>适合概念厘清、方法谱系、领域现状</td>
+<td>适合对已有实证研究作证据合成</td>
+</tr>
+<tr>
+<td>主要风险</td>
+<td>选择性引用、忽视冲突、把作者主张写成共识</td>
+<td>机械套用、把不可比研究强行合并、忽视灰色文献</td>
+</tr>
+</tbody>
+</table>
+<p>计算机与 AI 研究中，叙事性综述更常见，但系统性综述的方法约束（预先写检索式、记录命中数、显式纳入排除）可以显著降低选择性偏倚。本课不要求做完整 SLR，但要求借鉴其可复盘逻辑：综述的纳入、排除和组织方式必须能让同伴复盘你为什么这样组织。</p>
+<blockquote>
+<p>来源参考：Kitchenham &amp; Charters, <em>Guidelines for Performing Systematic Literature Reviews in Software Engineering</em>, EBSE-2007-01, 2007。选读 study quality assessment、data extraction 和 synthesis 部分。用途：从"列举文献"转向质量判断、结构化提取与证据综合（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 5 课）。</p>
+</blockquote>
+<h3 id="3">3. 相关工作矩阵：从按论文排列到按问题排列<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>把阅读卡重组为相关工作矩阵，是本课的核心动作。矩阵的行是已有文献（或其核心主张），列是研究问题或子问题。每格填入该文献对该问题的回答、限定条件和证据角色。</p>
+<p>一个最小样例（贯穿第 1 课案例，问题：结构化阅读卡是否降低 AI 摘要的限定条件遗漏率）：</p>
+<table>
+<thead>
+<tr>
+<th>文献（核验后）</th>
+<th>子问题：阅读卡是否强制定位原文？</th>
+<th>子问题：遗漏率指标是否可操作？</th>
+<th>子问题：是否存在对照流程？</th>
+<th>证据角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[论文 A]</td>
+<td>是；§3.2 要求逐条标注页码</td>
+<td>给出字段缺失率定义；限定于 CS 论文</td>
+<td>与自由摘要对照</td>
+<td>主证据</td>
+</tr>
+<tr>
+<td>[论文 B]</td>
+<td>部分；使用总结式阅读卡</td>
+<td>未定义遗漏率</td>
+<td>无对照</td>
+<td>补充证据</td>
+</tr>
+<tr>
+<td>[论文 C]</td>
+<td>不直接研究阅读卡</td>
+<td>给出召回率定义；用于检索任务</td>
+<td>与基线检索对照</td>
+<td>对比证据</td>
+</tr>
+<tr>
+<td>[论文 D]</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>证据空白候选</td>
+</tr>
+</tbody>
+</table>
+<p>矩阵的核心价值是让冲突、缺口和不可比性直接可见：论文 A 与 B 的"是"和"部分"暴露了"结构化"的操作定义不一致；论文 C 的指标来自检索任务，不能直接搬到摘要任务；论文 D 那一列空白说明还没有文献直接回答某个子问题。</p>
+<p>构造矩阵时注意：</p>
+<ol>
+<li>列来自你的研究问题分解，不是从论文关键词反推；</li>
+<li>一篇文献可以同时出现在多个子问题列，但每格只填它对该问题的贡献，不堆叠全文摘要；</li>
+<li>空格不是"没有相关文献"的同义词——空格可能是"还没找到"、"不可比"或"确实没人做过"，三者必须区分。</li>
+</ol>
+<hr />
+<h2 id="_6">三、证据地图<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 四类标注<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>第 3 课给出四种<strong>候选文献角色</strong>：主证据、补充证据、对比证据和探索线索。第 5 课把已核验条目重组为问题门要求的<strong>证据地图四视图</strong>：直接证据、补充证据、冲突和空白。两层口径的关系如下：主证据在对应当前子问题时进入直接证据视图；补充证据进入补充视图；对比证据用于记录替代解释、反例或不可比边界，只有在问题、条件和指标可比且结论相反时才形成冲突；探索线索不进入主格，单列在线索区。</p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>定义</th>
+<th>在地图中能做什么</th>
+<th>不能做什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直接证据</td>
+<td>已核验主证据中直接回答当前子问题的条目</td>
+<td>支撑或反驳当前核心主张</td>
+<td>不能单独支撑外推</td>
+</tr>
+<tr>
+<td>补充证据</td>
+<td>从不同来源、测量或路径补充支持同一主张</td>
+<td>提供独立性</td>
+<td>不能替代主证据回答核心因果问题</td>
+</tr>
+<tr>
+<td>冲突</td>
+<td>可比条件下，已核验条目对同一子问题给出相反结论</td>
+<td>暴露需要解释或进一步验证的分歧</td>
+<td>不能把任务不同或指标不同误写成冲突</td>
+</tr>
+<tr>
+<td>空白</td>
+<td>当前地图中没有可直接回答某子问题的核验材料</td>
+<td>指向下一步检索或研究空白候选</td>
+<td>不能直接写成"领域没人做过"或"已有方法无效"</td>
+</tr>
+</tbody>
+</table>
+<p>几个要点：</p>
+<ol>
+<li>冲突必须显式呈现。如果论文 A 支持、论文 B 反对同一主张，地图里两格都要保留，并记录取舍理由或"待核验"。</li>
+<li>"独立"不等于两个不同网页（见第 3 课）。两篇互相转载、同一数据集、同一团队的不同论文都不自动构成独立证据。</li>
+<li>空白不是"领域空白"的同义词。它只指在你当前地图范围内、针对你当前子问题，没有可直接对应的核验材料。领域是否真的没人做过，要进一步检索才能判断。</li>
+<li>探索线索（含 AI 综述草稿、博客、issue）不进入证据地图的主格，但可以单列一区，作为下一步检索的提示。</li>
+</ol>
+<h3 id="2_1">2. 证据地图的最小字段<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>| 编号 | 子问题 | 文献 | 原文位置 | 主张 | 证据角色 | 冲突/局限 | 核验状态 |
+</code></pre></div>
+<p>字段说明：</p>
+<ul>
+<li>子问题来自相关工作矩阵的列；</li>
+<li>原文位置填页码、章节、图表或 commit hash，沿用第 4 课阅读卡的定位要求；</li>
+<li>主张只填该文献对该子问题的回答，不填全文摘要；</li>
+<li>冲突/局限记录与其他条目的冲突、该条目的样本或设置限制；</li>
+<li>核验状态沿用第 3 课的 <code>pending</code> / <code>verified</code> / <code>verified-with-caveat</code> / <code>rejected</code>：<code>pending</code> 可留候选表，但只在线索区；<code>verified</code> 可进主格；<code>verified-with-caveat</code> 可进主格，但必须保留范围、方法、版本或措辞限定，不得单独支撑 <code>stable</code>；<code>rejected</code> 仅留审计记录。</li>
+</ul>
+<h3 id="3_1">3. 证据地图与相关工作的关系<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>证据地图是研究者的内部工件，服务于问题判断和问题门检查。论文 related work 段在第 14 课系统展开写作时再从地图中提炼。不要把证据地图当成 related work 段的初稿——它保留冲突、空白和未核验条目，而成稿综述要面向读者取舍。</p>
+<hr />
+<h2 id="_7">四、研究空白识别与候选问题生成<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>"还没有论文写过"不等于"这是一个真实的研究空白"。研究空白必须能被表述为：在某个具体条件、对照或机制下，已有证据不能回答的问题，并且这个问题值得回答、能在课程周期内做出最小验证。</p>
+<h3 id="1_2">1. 问题的来源：生成路径<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<p>三类研究空白（下一小节）都是文献驱动路径的产物：先有证据地图，再找地图回答不了的格子。这只是研究问题的来源之一。如果问题只从"关键词 → 找论文 → 找空白"产生，项目容易在文献既有的问题框架里打转，做出"换个数据集再跑一遍"式的增量工作。检索的角色是<strong>检验</strong>一个候选题的新颖性与可行性，不是<strong>生成</strong>候选题；问题可以来自文献之外。</p>
+<p>CS/AI 研究中常见的问题生成路径：</p>
+<table>
+<thead>
+<tr>
+<th>生成路径</th>
+<th>典型形态</th>
+<th>检索对它的角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文献冲突/缺口</td>
+<td>已有证据互相矛盾，或某子问题无回答（本节三类空白）</td>
+<td>确认空白真实，不是"我没找到"</td>
+</tr>
+<tr>
+<td>异常观察</td>
+<td>实验或数据中出现与预期不符、现有解释覆盖不了的现象</td>
+<td>检验该现象是否已被解释，或是已知假象</td>
+</tr>
+<tr>
+<td>实践痛点</td>
+<td>自己科研或工程实践里遇到的一手问题：慢、不稳、不可解释</td>
+<td>检验是否已有解法、解法适用条件</td>
+</tr>
+<tr>
+<td>新条件失效</td>
+<td>新能力、新数据或新场景使旧的默认假设不再成立</td>
+<td>检验旧结论依赖哪些假设</td>
+</tr>
+<tr>
+<td>第一性原理反推</td>
+<td>从基本约束推导什么必须成立，与现状对照</td>
+<td>检验推导前提；推导不替代实证（第 6 课）</td>
+</tr>
+<tr>
+<td>重构/迁移</td>
+<td>换问法、换视角：把一个领域的机制放进新任务</td>
+<td>检验新提法是否真新，而非表述换新</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源参考：Qian, Z. <em>How to Look for Ideas in Computer Science Research</em>. 本地转载副本（未公开；请查对应公开来源）。他总结的六种构思模式——填空（fill in the blank）、扩展（expansion）、造锤找钉（build a hammer and find nails）、小处泛化（start small, then generalize）、复现前作（reproduction of prior work）、外部来源（external sources: industry, news feed）——分别对应上表中文献空白、扩展与迁移、异常观察与实践痛点等路径；"表格空位"只是其中一种，且不自动证明问题重要或真实（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 5 课课堂案例）。</p>
+</blockquote>
+<h3 id="2_2">2. 三类研究空白<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>定义</th>
+<th>识别方法</th>
+<th>常见误判</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冲突空白</td>
+<td>已有证据对同一问题给出相反结论，且差异未被解释</td>
+<td>在证据地图中找到主证据与对比证据对同一子问题给出不同回答的格子；检查条件、指标、样本是否一致</td>
+<td>把任务设置不同导致的表面分歧当作实质冲突</td>
+</tr>
+<tr>
+<td>缺角空白</td>
+<td>某子问题在地图中完全没有核验材料，但相关条件已具备</td>
+<td>相关工作矩阵整列空白，但相邻子问题已有材料</td>
+<td>把"我没找到"等同于"没人做过"</td>
+</tr>
+<tr>
+<td>新问题空白</td>
+<td>在已有材料之外，由新场景、新条件或新机制衍生的问题</td>
+<td>从对比证据的局限、新数据条件或第一性原理反推</td>
+<td>把表述换新当成问题换新；新问题仍需可证伪</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3_2">3. 从证据空白到可检验问题<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<p>研究空白候选不直接进入问题门，要先经过三步检验：</p>
+<ol>
+<li><strong>真实性检验</strong>：再执行一次窄检索（沿用第 3 课检索式构造方法），确认不是"我没找到"而是"确实没有可直接对应的核验材料"。记录检索式、库、日期和命中数。</li>
+<li><strong>重要性检验</strong>：说明这个空白如果不被回答，当前证据地图的哪条主张无法成立，或哪个机制假设无法被检验。重要性来自它在论证链上的位置，不是因为它"新"。</li>
+<li><strong>可行性检验</strong>：在课程周期内，是否能设计一个最小实验、最小对照或最小分析来部分回答它。如果不能，它可能是真实空白但不是本课项目可做的空白。</li>
+</ol>
+<p>通过三步检验的候选进入候选题池（下一小节），与来自其他生成路径的候选题一起接受第 6 课的比较筛选与第一性原理推导。</p>
+<blockquote>
+<p>来源参考：Qian, Z. <em>How to Look for Ideas in Computer Science Research</em>. 本课只分析其构思模式与 gap 候选生成逻辑；"表格空位"不能自动证明问题重要或真实（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 5 课课堂案例）。</p>
+</blockquote>
+<h3 id="4">4. 候选题池：从多条路径生成多个候选<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>通过检验的空白候选不直接成为唯一问题。本课结束前，把空白候选、由冲突改写的候选和来自非文献路径的候选集中为候选题池，一次生成至少 3 个候选题，每个记录：</p>
+<ul>
+<li>一句话问题表述（条件、对象、干预或观察、结果）；</li>
+<li>生成路径标签（§四·1 六类之一）；</li>
+<li>当前证据与核验状态；</li>
+<li>留存或淘汰理由。</li>
+</ul>
+<p>约束：候选题须覆盖至少 2 条不同生成路径，且至少 1 个来自非文献空白路径（异常观察、实践痛点、新条件失效、第一性原理反推或重构/迁移）。如果题池全部来自文献空白，至少补一个从自己经历中的异常或痛点出发的候选，并说明将如何用窄检索或证据地图检验它。</p>
+<p>当堂最低要求：记录 1 个候选题的问题表述与生成路径标签；完整的 ≥3 候选题池与三步完整检验一样，在第 6 课前补齐。第 6 课用四维选题标准卡（意义、新颖性、可行性、兴趣）对题池比较筛选。</p>
+<h3 id="5">5. 不是空白的情况<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>表述差异</strong>：两篇论文用不同术语描述同一机制，看似分歧实则一致——要回到操作定义判断。</li>
+<li><strong>范围差异</strong>：一篇限定于数据集 X，一篇限定于数据集 Y，结论不直接可比——不是冲突空白，是不可比。</li>
+<li><strong>工程未做</strong>：某个具体产品或配置还没有被评测——可能只是工程任务，不是研究空白；要回到机制层面判断。</li>
+<li><strong>新但不重要</strong>：换一个数据集或换一个模型再跑一遍——如果没有机制假设更新，只是增量。</li>
+</ul>
+<hr />
+<h2 id="ai">五、AI 辅助归纳的核验<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h2>
+<h3 id="1-ai">1. AI 在综述阶段可以做什么<a class="headerlink" href="#1-ai" title="Permanent link">&para;</a></h3>
+<p>AI 可以在综述阶段提供辅助：</p>
+<ul>
+<li>从多篇阅读卡中抽取共同主张或分歧点，生成矩阵草稿；</li>
+<li>按子问题聚类，提示可能的冲突或缺角；</li>
+<li>草拟综述段落，供研究者修订；</li>
+<li>给出检索式扩展建议，帮助确认缺角空白。</li>
+</ul>
+<p>但所有这些产出只能作为草稿或线索。AI 不能：</p>
+<ul>
+<li>替代研究者判断哪条主张属于主证据；</li>
+<li>自动判定冲突是否实质；</li>
+<li>把"我没找到"升级为"领域空白"；</li>
+<li>给出未经核验的引文和页码。</li>
+</ul>
+<h3 id="2_3">2. 综述阶段的核验清单<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>对 AI 给出的综述草稿、矩阵草稿或空白候选，至少检查：</p>
+<ol>
+<li>每条引文是否真实存在、题名作者年份 DOI 是否与原文一致（沿用第 3 课来源审计）；</li>
+<li>AI 归纳的"共同主张"是否真的出现在每条引用的原文中，还是模型从其中一篇外推；</li>
+<li>AI 标注的"冲突"是否来自原文的不同结论，还是来自任务设置不同导致的表面分歧；</li>
+<li>AI 提示的"缺角"是否经过窄检索确认；</li>
+<li>AI 草拟的综述段落是否把模型推断写成原文结论，是否丢失限定条件。</li>
+</ol>
+<p>未完成这些步骤前，AI 产出只能保留在探索线索区，不能进入证据地图主格或问题门材料。</p>
+<h3 id="3-ai">3. 一条 AI 使用记录的最小字段<a class="headerlink" href="#3-ai" title="Permanent link">&para;</a></h3>
+<p>本课至少记录一条 AI 使用记录，包含：工具或模型、用途（如"草拟相关工作矩阵"）、Context（提供的阅读卡和子问题）、输出用途（作为草稿或线索）、人工核验方式（哪些条目回原文核验）、问题（发现的错读或过度概括）。</p>
+<h3 id="4-mini-literature-review">4. mini literature review 的最小可行草稿<a class="headerlink" href="#4-mini-literature-review" title="Permanent link">&para;</a></h3>
+<p>完成矩阵、证据地图和 AI 核验后，用四句话把已核验材料综合成一份 mini literature review 最小可行草稿：</p>
+<ol>
+<li>本段回答哪个子问题，范围和限定条件是什么；</li>
+<li>已核验的主证据支持或反驳什么；</li>
+<li>补充或对比证据提供了什么不同视角，当前有哪些冲突或局限；</li>
+<li>尚存什么证据空白，下一步需要怎样核验。</li>
+</ol>
+<p>四句话必须能回指证据地图中的 <code>verified</code> 或带限定的 <code>verified-with-caveat</code> 条目；<code>pending</code> 只能留在线索区，<code>rejected</code> 只留审计记录。本课不要求形成完整综述，也不要求润色为论文 related work 段。</p>
+<hr />
+<h2 id="_8">六、常见错误<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>摘要堆叠</strong>：把多篇阅读卡摘要按论文顺序拼接，得到读书报告而非综述。应按子问题重组。</li>
+<li><strong>选择性引用</strong>：只收录支持当前假设的文献，把反例或对比证据排除。冲突必须显式呈现。</li>
+<li><strong>把"我没找到"当空白</strong>：没有执行窄检索就声称领域空白。要先确认检索可复盘。</li>
+<li><strong>不可比当冲突</strong>：任务、设置或样本不同的研究给出不同结论，被误判为实质冲突。</li>
+<li><strong>AI 综述直接进地图</strong>：把 AI 归纳的共同主张和引文直接搬进证据地图主格。必须逐条核验。</li>
+<li><strong>新但不重要</strong>：把换数据集或换模型再跑一遍当作研究空白，没有机制假设更新。</li>
+<li><strong>矩阵列从论文反推</strong>：从已有论文关键词构造子问题，而不是从研究问题分解。会让综述被文献牵着走。</li>
+<li><strong>把证据地图或四句草稿当成 related work 成稿</strong>：地图保留判断过程，四句草稿只练习最小综合；面向读者的完整论证仍需在第 14 课展开。</li>
+</ol>
+<hr />
+<h2 id="_9">七、贯穿案例：从阅读卡到证据地图<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>仍以第 1 课案例为例。以下论文 A-E、主张、检索式和拟议实验均为<strong>虚构教学样例，不对应真实论文、真实检索结果或实证结论</strong>；它们只用于练习从阅读卡到证据地图的动作。假设第 4 课已为 5 篇材料建立了阅读卡。本课的动作链：</p>
+<p>第一步，写出研究问题和子问题分解：</p>
+<blockquote>
+<p>主问题：在需要逐条核验引用的计算机论文阅读任务中，结构化阅读卡是否降低 AI 摘要的限定条件遗漏率？</p>
+<p>子问题：a. 阅读卡是否强制定位原文？b. 遗漏率是否有可操作定义？c. 是否存在与自由摘要的对照？</p>
+</blockquote>
+<p>第二步，把 5 篇阅读卡按子问题填入相关工作矩阵（§二·3 样例）。</p>
+<p>第三步，从矩阵抽取条目进入证据地图：A 进入直接证据视图（直接回答 a、b），B 进入补充证据视图（部分回答 a，不回答 b），C 保留为对比证据并记录“任务不同、不可比”的边界；若 D 在可比条件下给出相反结论，则 A 与 D 形成冲突。某子问题整列空白时，才形成缺角空白候选。</p>
+<p>第四步，对空白候选执行窄检索：构造检索式 <code>"reading card" AND "omission rate" AND "computer science"</code>，记录实际使用的库、日期、命中数和筛选结果。课堂演示必须使用真实检索记录或明确标注的预录/虚构字段，不预设“命中 0”；若检索到可比材料则补入地图并重新判断空白。</p>
+<p>第五步，对 D 做重要性检验：如果没有这条证据，机制假设"阅读卡强制定位原文从而降低遗漏"无法被直接检验——它位于论证链的关键位置。</p>
+<p>第六步，对 D 做可行性检验：课程周期内可以构造 10-20 篇 CS 论文的小样本，分别用阅读卡和自由摘要生成摘要，用固定 rubric 标注遗漏率——可行。</p>
+<p>通过三步检验后，D 列空白进入候选题池，记一句话问题表述与生成路径标签（文献缺角路径）；第 6 课由第一性原理分析进一步推导为可证伪命题，并与其他路径的候选题比较筛选。非文献路径的候选题在样例中从略，学生项目须按 §四·4 补齐。</p>
+<p>第七步，让 AI 围绕这 5 篇阅读卡草拟一份综述段落，执行 §五·2 核验清单。记录一条 AI 使用记录：把 AI 归纳的"5 篇文献共同支持阅读卡降低遗漏"改写为"1 篇主证据支持、1 篇部分支持、1 篇任务不同不可比、2 篇不直接回答"。</p>
+<p>第八步，把核验后的结果写成四句 mini literature review：界定子问题与范围，概括直接证据，呈现补充、对比或冲突证据及局限，最后写出空白和下一步核验。</p>
+<p>本课不要求填满证据地图，也不要求写成完整 related work；只要求跑通一次"阅读卡 → 矩阵 → 地图 → 空白候选 → 三步检验 → 候选题 → 四句 mini review"的可复盘链路。</p>
+<h3 id="mi">公开 MI 平行演示：支持、限制与效度威胁同图<a class="headerlink" href="#mi" title="Permanent link">&para;</a></h3>
+<p>教师演示改用第 4 课三张 MI 阅读卡，并补入 C18 与 C05。完整可编辑工件见 <a href="../mi-evidence-map-demo/">mi-evidence-map-demo.md</a>。</p>
+<p><img alt="SAE 因果有效性证据地图" src="../assets/mi-causal-evidence-map.svg" /></p>
+<p><em>图注：课程自绘证据结构图。C02 是同任务直接支持；C05 是不同任务的外部支持；C16 与 C31 分别提供控制性限制和 patching 效度威胁；C18 提供多指标评价。来源与许可见 assets/README.md（未公开；请查对应公开来源）。</em></p>
+<p>这张图的关键不是论文数量，而是一个判断的证据结构：</p>
+<ul>
+<li>当前可支持：复现 C02 的 SAE-vs-PCA 最小比较有研究价值且可执行；</li>
+<li>当前不可支持：仅凭 patching efficiency 把结论升级为因果忠实；</li>
+<li>当前缺失：同设置的重构误差敏感性、随机/监督字典对照、held-out 样本和 dormant-pathway 排除；</li>
+<li>失败回写：初版把 Fig.3 写成“因果忠实证明”，经 C31 核验后收窄为 intervention-efficiency 主张，并把效度缺口回写到 L6 问题与 L9 对照。</li>
+</ul>
+<p>因此这条失败不是要删除的错误，而是 CP1 可接受的真实“被放弃问题版本”：记录原因、处理方式与回写位置后，它成为研究判断证据。</p>
+<hr />
+<h2 id="_10">八、课堂练习<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="1_3">练习 1：从摘要堆叠到按问题组织<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<p>下面是一段失败综述（虚构样例）：</p>
+<blockquote>
+<p>论文 A 提出了阅读卡 X；论文 B 提出了阅读卡 Y；论文 C 比较了 X 和 Y；论文 D 指出 X 的局限。因此 Y 较优。</p>
+</blockquote>
+<p>指出至少四个问题，并把它改写为按子问题组织的矩阵骨架。</p>
+<h3 id="2_4">练习 2：构造相关工作矩阵<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<p>用你第 4 课的 2-3 张阅读卡，选择 1 个子问题填入最小矩阵。至少一格标"证据空白候选"并说明当前是"没找到"、"不可比"还是已经过窄检索的空白。</p>
+<h3 id="3_3">练习 3：标注证据地图<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<p>从练习 2 的矩阵中抽取条目，填入证据地图最小字段。主格至少包含一条主证据、补充或对比证据之一，以及一条证据空白；探索线索单列。若存在冲突，在"冲突/局限"字段中显式记录。</p>
+<h3 id="4_1">练习 4：识别空白类型并生成候选题<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p>为你找到的一个证据空白候选标注类型（冲突空白/缺角空白/新问题空白），并执行 §四·3 的三步检验。哪一步它最可能不通过？然后沿至少两条不同的生成路径各写一个候选题（问题表述 + 路径标签 + 当前证据）；如果两个都来自文献空白，再补一个从自己经历中的异常或痛点出发的候选，并说明如何用窄检索检验它。</p>
+<h3 id="5ai">练习 5：AI 综述草稿核验<a class="headerlink" href="#5ai" title="Permanent link">&para;</a></h3>
+<p>让 AI 围绕你的子问题草拟一段综述。执行 §五·2 核验清单，记录至少一处 AI 错读、过度概括或来源不可追溯，并改写为受限版本。把核验记录写入个人项目的 <code>ai-usage-log.md</code>（空表见 <a href="../../../course/starter-template/">早期研究脚手架</a> §6，本课最小字段见 §五·3）。</p>
+<h3 id="6">练习 6：课堂最低产出<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>在个人项目中新建 <code>evidence-map.md</code>（本课新增的项目文件，不在早期研究脚手架的最小文件结构中，字段定义见本课 §三·2）。以同一组记录完成：1 个子问题；2 张 <code>verified</code> 或带完整限定的 <code>verified-with-caveat</code> 阅读卡；对两者可比性和是否冲突的一次判断；1 个窄矩阵；2 条证据地图主格；4 句 mini literature review；1 条 AI 使用记录。矩阵和证据地图是同一组“子问题—主张—原文位置—限定—角色”记录的两种视图，不重复搬写字段。</p>
+<p>如果发现空白候选，当堂只记它的类型、当前状态（通常为 <code>pending</code>）和下一步窄检索，并记下 1 个候选题的问题表述与生成路径标签。课后才补真实性、重要性与可行性三步完整检验和 ≥3 候选题池；第 6 课再按问题门完整条件检查。本课不正式提交。</p>
+<hr />
+<h2 id="_11">九、术语表<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>本课程中的含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>叙事性综述</td>
+<td>按主题、机制或冲突组织的综述，范围由研究者选取，可复现性取决于过程记录</td>
+</tr>
+<tr>
+<td>系统性综述</td>
+<td>预先定义检索、纳入排除和合成方法的综述，过程可复盘</td>
+</tr>
+<tr>
+<td>相关工作矩阵</td>
+<td>行为文献、列为子问题的表格，把多篇阅读卡按问题重组</td>
+</tr>
+<tr>
+<td>证据地图</td>
+<td>将已核验条目组织为直接证据、补充证据、冲突和空白四视图；对比证据的不可比边界或替代解释仍保留在条目中</td>
+</tr>
+<tr>
+<td>mini literature review</td>
+<td>基于已核验证据、围绕一个子问题形成的最小综合草稿；本课采用四句骨架，不等于最终 related work 成稿</td>
+</tr>
+<tr>
+<td>证据空白</td>
+<td>在当前地图范围内、针对当前子问题没有可直接对应的核验材料</td>
+</tr>
+<tr>
+<td>冲突空白</td>
+<td>已有证据对同一问题给出相反结论且差异未被解释的研究空白</td>
+</tr>
+<tr>
+<td>缺角空白</td>
+<td>某子问题整列空白但相关条件已具备的研究空白</td>
+</tr>
+<tr>
+<td>新问题空白</td>
+<td>由新场景、新条件或新机制衍生、仍需可证伪的研究空白</td>
+</tr>
+<tr>
+<td>生成路径</td>
+<td>候选题的来源类别：文献冲突/缺口、异常观察、实践痛点、新条件失效、第一性原理反推、重构/迁移；检索用于检验而非生成候选题</td>
+</tr>
+<tr>
+<td>候选题池</td>
+<td>集中多条生成路径产生的候选题的清单；≥3 个候选题、覆盖 ≥2 条路径、含 ≥1 个非文献空白路径候选，第 6 课比较筛选</td>
+</tr>
+<tr>
+<td>真实性/重要性/可行性检验</td>
+<td>研究空白候选进入问题门前依次通过的三步检验</td>
+</tr>
+<tr>
+<td>三步检验</td>
+<td>真实性（窄检索确认不是"我没找到"）、重要性（论证链位置）、可行性（课程周期内可最小验证）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_12">十、延伸阅读与课程材料<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>课程内材料：</p>
+<ul>
+<li><a href="../../../course/syllabus/">课程大纲</a></li>
+<li>备课规划（未公开；请查对应公开来源） 第 5 课</li>
+<li><a href="../../../course/reading-list/">逐课阅读清单</a> 第 5 课</li>
+<li><a href="../../../course/starter-template/">早期研究脚手架</a></li>
+<li><a href="../../../course/assignments/">项目里程碑与研究门</a>（第 6 课问题门条件）</li>
+</ul>
+<p>正式书目（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 5 课）：</p>
+<ol>
+<li>Kitchenham, B., &amp; Charters, S. <em>Guidelines for Performing Systematic Literature Reviews in Software Engineering</em>. EBSE-2007-01, 2007. 选读 study quality assessment、data extraction 和 synthesis。<a href="https://ebse.webspace.durham.ac.uk/ebse-bibliography/guidelines-for-performing-systematic-literature-reviews-in-software-engineering/">机构索引</a>。用途：从"列举文献"转向质量判断、结构化提取与证据综合。</li>
+<li>Booth, W. C. et al. <em>The Craft of Research</em>, 5th ed. University of Chicago Press, 2024. 选读 4.3–4.5：reading for a problem、arguments、data and support。<a href="https://press.uchicago.edu/ucp/books/book/chicago/C/bo215874008">出版社页面</a>。用途：从来源中提取问题、论证与证据角色。</li>
+<li>Pautasso, M. "Ten Simple Rules for Writing a Literature Review." <em>PLOS Computational Biology</em> 9(7):e1003149 (2013). DOI: <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003149">10.1371/journal.pcbi.1003149</a>。用途：检查综述的范围、批判性、结构和迭代。</li>
+</ol>
+<p>课堂案例：</p>
+<ol>
+<li>Qian, Z. <em>How to Look for Ideas in Computer Science Research</em>. 本地转载副本（未公开；请查对应公开来源）。本课分析其六种构思模式（填空/扩展/造锤找钉/小处泛化/复现前作/外部来源）与 gap 候选生成逻辑；"表格空位"不能自动证明问题重要或真实。</li>
+</ol>
+<p>课后阅读采用"AI 导航 → 原文核验 → AI 质疑 → 偏差审计 → 人工定稿"流程。本课核心阅读为 Kitchenham &amp; Charters 选段，约 30 分钟；阅读卡持续保存在个人项目 <code>notes/</code>，不逐周正式提交，第 6 课问题门统一检查至少 3 张与个人项目直接相关的完整精读卡和一份证据地图初版。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3 @@
+{"event":"start","config":"config.json","input":"inputs.json","randomness":"not_applicable_deterministic"}
+{"event":"metric","records":4,"missing":2,"omission_rate":0.5}
+{"event":"complete","result":"results.json","claim_status":"teaching_artifact_not_empirical"}
