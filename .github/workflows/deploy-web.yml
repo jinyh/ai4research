@@ -3,6 +3,7 @@ name: deploy-web
 on:
   push:
     branches: [main]
+    paths: ['.github/workflows/deploy-web.yml']
   workflow_dispatch:
 
 permissions:
@@ -18,25 +19,33 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Check out reviewed student-only snapshot
+        uses: actions/checkout@v4
         with:
-          python-version: '3.12'
-      - name: Install uv
-        run: pip install uv
-      - name: Sync dependencies
-        working-directory: web
-        run: uv sync --frozen
-      - name: Link content
-        working-directory: web
-        run: uv run python scripts/link_content.py
-      - name: Build site
-        working-directory: web
-        run: uv run mkdocs build
+          # Snapshot on codex/student-site; update only after publication checks.
+          ref: eab290855633e81cf4269c8927e95bd6cf4c218e
+          path: student-site
+          persist-credentials: false
+      - name: Verify publication boundary
+        shell: bash
+        run: |
+          test -f student-site/index.html
+          test -f student-site/search/search_index.json
+          for lesson in $(seq -w 1 16); do
+            test -f "student-site/learn/$lesson/index.html"
+          done
+          if find student-site -type l -print -quit | grep -q .; then
+            echo 'Unexpected symlink in student site' >&2
+            exit 1
+          fi
+          if find student-site -type f \( -name '*.pptx' -o -name 'teaching-plan.md' -o -name 'teacher-review-ledger.md' -o -name 'application-form-draft.md' \) -print -quit | grep -q .; then
+            echo 'Internal material in student site' >&2
+            exit 1
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: web/_build
+          path: student-site
 
   deploy:
     needs: build
