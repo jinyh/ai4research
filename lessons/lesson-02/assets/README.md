@@ -9,9 +9,9 @@
 - `nasem-2017-integrity-values-screenshot.png`：
   - 来源角色：规范原始文件截图（实证身份：报告原文，非重绘）。
   - 出处：National Academies of Sciences, Engineering, and Medicine. *Fostering Integrity in Research* (2017), Highlights p.1. DOI: [10.17226/21896](https://doi.org/10.17226/21896)；截取 nap.nationalacademies.org 开放获取样张第 1 页（报告标题、六价值句与封面）。
-  - 许可：NAP 开放获取（免费下载阅读）；课件内以来源脚注标明出处，不单独发布本图。如需上传网络或正式发布，另行核验 NAP 图像复用条款。
+  - 许可：NAP 开放获取（免费下载阅读）；课件图旁保留简短身份、备注中记录完整出处，不单独发布本图。如需上传网络或正式发布，另行核验 NAP 图像复用条款。
   - 脱敏状态：不适用（公开出版物）。
-  - 嵌入位置：`slides.pptx` P04（科研诚信六价值页）右侧截图位；`handout.md` 不嵌图。
+  - 嵌入位置：`slides.pptx` P04（科研诚信六价值页）左侧截图位；`handout.md` 不嵌图。
 
 - `cas-2024-ai-integrity-page-screenshot.png`：
   - 来源角色：中国科学院《诚信提醒》官方网页截图，用于确认文件身份与科研活动规范来源，不替代逐条原文阅读。
@@ -26,3 +26,9 @@
   - 许可：校级公开文件课堂引用；课件内标明来源。对外发布前按学校要求复核。
   - 脱敏状态：不适用（公开文件）。
   - 嵌入位置：`slides.pptx` P05 右栏；`handout.md` 不嵌图。
+
+## 2026-09-15 整课重建
+
+- NASEM、CAS、SJTU 原始截图继续用于来源识别；CAS 与 SJTU 采用 PPT 内原生裁切，完整图片保留。
+- P06/P13/P25 的历史生成线稿退出当前 PPT，风险分支与 harness 改为原生可编辑节点和连接。生成资产保留为历史材料。
+- 详细来源、完整规范题名与复用说明进入备注。
