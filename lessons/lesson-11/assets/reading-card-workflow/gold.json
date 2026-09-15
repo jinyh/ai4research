@@ -1,0 +1,42 @@
+[
+  {
+    "id": "T01-c1",
+    "source_id": "T01",
+    "source_quote": "英文材料"
+  },
+  {
+    "id": "T01-c2",
+    "source_id": "T01",
+    "source_quote": "摘要不超过200词"
+  },
+  {
+    "id": "T01-c3",
+    "source_id": "T01",
+    "source_quote": "包含显式限定句"
+  },
+  {
+    "id": "T02-c1",
+    "source_id": "T02",
+    "source_quote": "文本型PDF"
+  },
+  {
+    "id": "T02-c2",
+    "source_id": "T02",
+    "source_quote": "页码连续"
+  },
+  {
+    "id": "T02-c3",
+    "source_id": "T02",
+    "source_quote": "文档未加密"
+  },
+  {
+    "id": "T03-c1",
+    "source_id": "T03",
+    "source_quote": "噪声低于10%"
+  },
+  {
+    "id": "T03-c2",
+    "source_id": "T03",
+    "source_quote": "样本数超过100"
+  }
+]

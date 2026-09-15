@@ -2,15 +2,29 @@
 
 > AI 辅助精读与主张核验。本文件是第 4 课所有材料的导航入口，说明各文件角色、关系与阅读路径。门控流程见 [prepare-course-lesson skill](../../.agents/skills/prepare-course-lesson/SKILL.md)。
 
+
+## 整体复审修订轮（2026-09-15，当前状态）
+
+- 目标与课程结构：未变；正式提交仍为第 6、9、13、16 课。
+- 内容：现行 Markdown 已完成本轮修订；板书、诊断答案与串词在教师教案；待教师复核本轮实质变化。
+- 教学门：原时段与总时长不变，本轮复核；诊断嵌入既有开场，课堂包不替代本人项目的门条件。
+- 逐页映射：标题、内容与互动按新母稿核对；页数保持不变。
+- PPT：文件未变更，上轮技术与视觉记录仍描述旧文件；它们不证明本轮新内容已同步。旧 PPT 不应直接作为本轮修订后的讲授稿。
+- 推迟项：教师内容复核后同步 PPT，再做文件级、视觉和实际投影检查；第 16 课继续保留内容门阻塞。
+- 执行记录：[本轮修订与验证](../../docs/course-integrated-revision-20260915.md)；助教分工见[演示准备清单](../../docs/lesson-demo-assignment-20260915.md)。
+
+下方先前通过记录均保留为历史。当前内容与呈现的状态以上述修订轮为准。
+
+
 ## 文件清单
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
 | [handout.md](./handout.md) | 现行·学生讲义 v0.6.0 | 面向学生、可脱离课堂独立阅读：AI 辅助精读五步流程、主张核验、完整阅读卡字段、Keshav 校准与 MI 主张级证据阶梯 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.9.0 | 90 分钟流程、PPT 执行索引、Keshav + MI 双对象演示、课堂产出验收、讲后复盘 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v0.9.1（18 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
-| [slides.pptx](./slides.pptx) | 现行·课堂 PPT v0.9.1（18 页） | 已同步逐页母稿视觉升级，并完成技术、教学、视觉与 PowerPoint 原生检查 |
-| [keystone-design-spec.md](./keystone-design-spec.md) | 规范 v1.2.0 | 风险触发关键页的设计契约、证据边界、模板例外与制作后验收 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.10.0 | 90 分钟流程、PPT 执行索引、Keshav + MI 双对象演示、课堂产出验收、讲后复盘 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v0.10.0（18 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
+| [slides.pptx](./slides.pptx) | 上轮课堂 PPT·待内容同步 v0.9.1（18 页） | 已同步逐页母稿视觉升级，并完成技术、教学、视觉与 PowerPoint 原生检查 |
+| [keystone-design-spec.md](./keystone-design-spec.md) | 规范 v1.3.0 | 风险触发关键页的设计契约、证据边界、模板例外与制作后验收 |
 | [reading-card-demo.md](./reading-card-demo.md) | 现行·教学资产 v1.0.0 | Keshav 2007 真实原文的完整阅读卡、偏差审计与断网备用对象 |
 | [mi-reading-card-demo.md](./mi-reading-card-demo.md) | 现行·教学资产 v1.0.0 | C02/C16/C31 三张公开论文主张级阅读卡与受限判断 |
 | [assets/](./assets/) | 现行·图形资产 | MI 精读证据阶梯 SVG 与出处/许可登记 |

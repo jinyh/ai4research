@@ -4,17 +4,31 @@
 
 > 本轮现行版本：`handout.md` v0.2.1、`teaching-plan.md` v0.4.1、`slides.md` v0.5.0、`keystone-design-spec.md` v1.2.0；学生工件只使用 `peer-review.md` 与 `revision-plan.md`。
 
+
+## 整体复审修订轮（2026-09-15，当前状态）
+
+- 目标与课程结构：未变；正式提交仍为第 6、9、13、16 课。
+- 内容：现行 Markdown 已完成本轮修订；板书、诊断答案与串词在教师教案；待教师复核本轮实质变化。
+- 教学门：原时段与总时长不变，本轮复核；诊断嵌入既有开场，课堂包不替代本人项目的门条件。
+- 逐页映射：标题、内容与互动按新母稿核对；页数保持不变。
+- PPT：文件未变更，上轮技术与视觉记录仍描述旧文件；它们不证明本轮新内容已同步。旧 PPT 不应直接作为本轮修订后的讲授稿。
+- 推迟项：教师内容复核后同步 PPT，再做文件级、视觉和实际投影检查；第 16 课继续保留内容门阻塞。
+- 执行记录：[本轮修订与验证](../../docs/course-integrated-revision-20260915.md)；助教分工见[演示准备清单](../../docs/lesson-demo-assignment-20260915.md)。
+
+下方先前通过记录均保留为历史。当前内容与呈现的状态以上述修订轮为准。
+
+
 ## 文件清单
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生讲义 v0.2.1 | 五维真实评审、五类可选处理动作、实际修改与主要论证门预检；不要求机械拒绝 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.4.1 | 10+30+15+10+5+10+5+5=90；两轮评审和两段修改均不超过 15 分钟 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v0.5.0（15 页） | 真实评审→回应→diff→预检闭环；学生屏显不出现课堂计时 |
-| [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.2.0 | 15 页减负母稿的页面任务、构图、内容与验收契约 |
+| [handout.md](./handout.md) | 现行·学生讲义 v0.3.0 | 五维真实评审、五类可选处理动作、实际修改与主要论证门预检；不要求机械拒绝 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.5.0 | 10+30+15+10+5+10+5+5=90；两轮评审和两段修改均不超过 15 分钟 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v0.6.0（15 页） | 真实评审→回应→diff→预检闭环；学生屏显不出现课堂计时 |
+| [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.3.0 | 15 页减负母稿的页面任务、构图、内容与验收契约 |
 | [peer-review-template.md](./peer-review-template.md) | 现行·`peer-review.md` 模板 | 同伴三问、五维评审和作者六字段回应 |
 | [revision-plan-template.md](./revision-plan-template.md) | 现行·`revision-plan.md` 模板 | 三级优先级、影响工件、时限与 Checkpoint 4 预检 |
-| [slides.pptx](./slides.pptx) | 现行·课堂 PPT v0.5.0（15 页） | 对象优先重排；实际标题 30–32 pt、正文 22–24 pt；可编辑对象与 PowerPoint 原生终检通过 |
+| [slides.pptx](./slides.pptx) | 上轮课堂 PPT·待内容同步 v0.5.0（15 页） | 对象优先重排；实际标题 30–32 pt、正文 22–24 pt；可编辑对象与 PowerPoint 原生终检通过 |
 
 ## 2026-09-12 视觉提升轮（当前有效验收）
 

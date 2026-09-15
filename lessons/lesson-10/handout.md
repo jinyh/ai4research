@@ -1,10 +1,11 @@
 ---
-版本：v0.3.1
-最后更新：2026-09-12
+版本：v0.4.0
+最后更新：2026-09-15
 适用课次：第 10 课
 文档类型：学生正式讲义
-状态：现行；内容口径与 90 分钟结构不变；视觉提升教学门复核通过；终版状态以 README 本轮记录为准
+状态：本轮内容修订；待教师复核；PPT 未同步本轮内容
 变更记录：
+- v0.4.0 (2026-09-15): 整体复审内容修订；统一证据维度、假设与可复演案例，补教学诊断、板书及过渡；本轮源文件状态与 PPT 同步情况见 README。
 - v0.3.1 (2026-09-12): 同步视觉提升轮状态；课程内容、课堂产出与 90 分钟结构不变，教学门已按新逐页构图复核；终版技术与原生视觉状态统一由 README 登记。
 - v0.3.0 (2026-09-12): 课程减负修订；压缩第 2 课权限分类复述，将课堂主线收敛为“任务契约→真实 diff/测试→根因/绕过/污染辨析→失败记录”；统一虚构阅读卡案例为同一批 20 篇论文的配对对照；明确普通技术失败与学术规范红线的边界；重做课堂最低产出/课后补全/研究门边界。
 - v0.2.1 (2026-08-22): 补充受限 Agent 任务契约与越权失败记录的学生可点击入口；仅增强材料呈现，不改变课堂闭环、案例事实与 90 分钟安排
@@ -79,8 +80,8 @@
 
 | 字段 | 内容 | 贯穿案例样例 |
 | --- | --- | --- |
-| Context | Agent 能看到哪些文件、配置、上游判断；本次任务在实验规格中对应哪一步 | 阅读卡摘要生成函数 `src/generate.py` 的 `generate_summary()`；实验规格 §步骤之 3“分别生成”；H1 主假设；不暴露人工限定条件基准、标注者身份与最终评分 |
-| Permission | 只读 / 可写 / 可执行 / 需确认 / 禁止五层，列出具体路径与命令 | 只读：`experiment-spec.md`、`evidence-map.md`；可写：`src/generate.py`；可执行：`pytest tests/test_generate.py`；需确认：任何对 `configs/` 的修改；禁止：修改 `experiments/` 已有结果、修改 rubric、访问 `notes/` 同伴反馈 |
+| Context | Agent 能看到哪些文件、配置、上游判断；本次任务在实验规格中对应哪一步 | 阅读卡摘要生成函数 `src/generate.py` 的 `normalize_record()`；实验规格 §步骤之 3“分别生成”；H1 主假设；不暴露人工限定条件基准、标注者身份与最终评分 |
+| Permission | 只读 / 可写 / 可执行 / 需确认 / 禁止五层，列出具体路径与命令 | 只读：`experiment-spec.md`、`evidence-map.md`；可写：`src/generate.py`；可执行：`python3 -m unittest assets/agent-task-example/tests/test_generate.py`；需确认：任何对 `configs/` 的修改；禁止：修改 `experiments/` 已有结果、修改 rubric、访问 `notes/` 同伴反馈 |
 | Non-goal | 明确不做什么——防止 Agent 把任务膨胀 | 不优化生成速度；不替换模型；不修改 prompt 模板；不重跑历史实验；不修改既有评价测试；如需新增行为测试，先由人工审核测试对象与断言 |
 | 人工审核点 | 哪些动作必须由研究者确认才能继续 | diff 写回前人工审查；测试失败时停并等待研究者；任何对评价协议的改动须人工确认 |
 | 失败恢复 | 超时、无效输出、工具失败、越权时怎么办 | 超时 60 秒 → 终止并记录；输出无法解析 → 保留原始输出与错误日志，不自动重试到成功；越权请求 → 拒绝、记录、报告研究者 |
@@ -91,7 +92,7 @@
 
 | 维度 | 模糊 prompt | 任务契约 |
 | --- | --- | --- |
-| 范围 | "把 baseline 跑通" | "修改 `generate_summary()`，使其在阅读卡路径强制调用字段约束，自由摘要路径保持不变" |
+| 范围 | "把 baseline 跑通" | "修改 `normalize_record()`，使其在缺字段时明确报 ValueError，并保留正常 summary 去空格行为" |
 | 权限 | 未声明 | 五层显式列出 |
 | 验收 | "结果怎么样" | 测试通过 + diff 只含授权范围 + 未修改评价协议 |
 | 失败处理 | "有问题就改一下" | 超时终止、越权拒绝、不重试到成功 |
@@ -119,7 +120,7 @@ LLM coding agent 常采用 reasoning—action—observation 循环：模型先�
 | --- | --- | --- |
 | 只读 | Agent 可读取以理解 Context，但不得修改 | `experiment-spec.md`、`evidence-map.md`、`hypothesis-and-judgment.md` |
 | 可写 | Agent 可修改的具体文件 | `src/generate.py` |
-| 可执行 | Agent 可运行的明确命令 | `pytest tests/test_generate.py`、`python src/run_baseline.py --config configs/exp01.yaml` |
+| 可执行 | Agent 可运行的明确命令 | `python3 -m unittest assets/agent-task-example/tests/test_generate.py`、`python src/run_baseline.py --config configs/exp01.yaml` |
 | 需确认 | 动作在 Agent 完成前必须由研究者审核 | 任何对 `configs/` 的修改、对 `rubric` 的修改、对 `experiments/` 已有结果的覆盖 |
 | 禁止 | 无论任务如何表述都不允许 | 修改评价协议、删除失败日志、访问 `notes/` 同伴反馈、联网调用外部 API 上传项目数据 |
 
@@ -170,7 +171,7 @@ LLM coding agent 常采用 reasoning—action—observation 循环：模型先�
 
 | 处理方式 | 含义 | 对可追溯性的影响 | 例子 |
 | --- | --- | --- | --- |
-| 修复根因 | 找到失败的机制原因，修改实现或配置使根因消除 | 保留失败日志 + 修改记录 + 根因分析，结论可追溯 | `generate_summary()` 在自由摘要路径误调用了字段约束逻辑 → 修改分支条件，失败日志保留 |
+| 修复根因 | 找到失败的机制原因，修改实现或配置使根因消除 | 保留失败日志 + 修改记录 + 根因分析，结论可追溯 | `normalize_record()` 缺字段时直接产生 KeyError → 增加显式缺字段检查并报告 ValueError，失败日志保留 |
 | 绕过失败 | 不找根因，让失败表面消失——注释断言、跳过测试、调整数据 | 若被工作流提议但未采用，记为失败候选；若研究者明知仍采用并隐瞒，才使结论不可追溯并触及红线 | 测试 `test_field_constraint` 失败 → Agent 建议注释断言，研究者拒绝并记录 |
 | 污染实验 | 通过修改评价协议、数据划分或 baseline 使结果看起来更好 | 方法效应与评价效应混淆，结论不成立 | baseline 遗漏率高于实验组 → 调整 baseline 的温度参数使它"看起来更公平" |
 
@@ -201,47 +202,27 @@ SWE-bench 的局限也是本课的局限：测试通过不等于方法正确、�
 
 ## 五、贯穿案例：把判断门实验规格的一步改写为受限 Agent 任务
 
-承接第 9 课贯穿案例。第 9 课产出：朴素 baseline（自由摘要）vs 实验组（阅读卡摘要）的七字段实验规格 + 复现说明 + J2（baseline 选朴素而非强）+ 同伴反馈处理 + 失败预案。实验规格 §步骤之 3 是"分别生成"——自由摘要组与阅读卡组分别调用生成函数。
+本课使用[现有代码工件](./assets/agent-task-example/task-01.md)，在阅读卡流程中校准输出记录的结构检查。`normalize_record()` 接受 paper_id 与 summary；这一步不判断摘要是否保留了原文限定条件，语义评价见[连续小包](../lesson-11/assets/reading-card-workflow/README.md)。
 
-本课动作链：
+### 1. 任务契约
 
-**第一步：从实验规格中标出"拟用 Agent"与"必须人工"步骤**
+- Context：before/generate.py、测试和 task-01；核对缺字段时应给出什么错误。
+- Permission：只改实现文件；测试、评价基准与其他文件只读。
+- Non-goal：不更换任务、不改变测试标准、不修改科研指标。
+- 人工审核：先读失败，再查 diff，最后检查测试与任务一致性。
+- 恢复：保留失败和候选修改；越界建议被拒绝后重新限定任务。
 
-| 步骤 | 拟用 Agent | 必须人工 |
-| --- | --- | --- |
-| 1 固定同一批 20 篇论文 | 否（样本与版本须研究者确认） | 是 |
-| 2 为每篇论文建立结构化阅读卡与自由摘要两个条件 | **是**——本课受限任务 | 否（生成函数实现可由 Agent 修改，但两条件的 prompt 与公平性须人工确认） |
-| 3 以同模型、同解码参数、同最大输出长度执行两条件 | **是**——只执行已冻结配置 | 是（配置改动须确认） |
-| 4 人工建立限定条件基准并盲评 | 否 | 是 |
-| 5 计算配对限定条件遗漏率与不确定性 | 可执行已冻结脚本 | 是（指标口径与结果解释须人工） |
+### 2. 可观察的前后变化
 
-**第二步：为"步骤 3 分别生成"写任务契约**
+前版在缺少 summary 时产生 KeyError；后版显式检测缺字段并报告 ValueError。对照现有 diff，用 unittest 运行两项测试；通过只说明这些验收行为已覆盖，不自动说明整项科研结论正确。
 
-- Context：`src/generate.py` 的 `generate_summary()`；实验规格 §步骤之 3；H1 主假设；不暴露人工限定条件基准、标注者身份与最终评分；
-- Permission：只读 `experiment-spec.md`、`evidence-map.md`；可写 `src/generate.py`；可执行 `pytest tests/test_generate.py`；需确认任何对 `configs/` 的修改；禁止修改 `experiments/` 已有结果、修改 rubric、访问 `notes/`；
-- Non-goal：不优化生成速度；不替换模型；不修改两条件的 prompt 与评价协议；不重跑历史实验；新增行为测试前先由人工审核；
-- 人工审核点：diff 写回前审查；测试失败时停；评价协议改动须确认；
-- 失败恢复：超时 60 秒终止；输出无法解析保留原始输出；越权拒绝记录。
+### 3. 失败与权限决定
 
-**第三步：Agent 执行与人工核验**
+现有 failure-log 描述一个修改 tests 的建议及拒绝决定，按“预置记录回放”使用，不声称它是本次真实 Agent 会话。实际发生的运行失败和实际 diff 可以复演；评价协议调整属于另一个研究决定，不能在修代码时暗改。
 
-Agent 修改 `generate_summary()`，使阅读卡路径强制调用字段约束、自由摘要路径保持不变。研究者审查 diff：修改只在 `src/generate.py`、未引入新依赖、未修改评价协议、未删除失败日志。运行 `pytest tests/test_generate.py`——通过。研究者额外人工核验：字段约束逻辑是否符合 H1？自由摘要路径是否真的未被影响？新增测试是否覆盖关键路径？
+### 4. 交给下一课
 
-**第四步：记录失败（假设 Agent 越权）**
-
-如果 Agent 在执行中请求修改 `configs/exp01.yaml` 以"让 baseline 更公平"——这越过了"需确认"层。研究者拒绝、记录"Agent 请求修改 configs/exp01.yaml，理由：使 baseline 温度与实验组一致；判断：当前温度已一致，Agent 推理基于错误观察；处理：拒绝，不修改任务契约，记录本次越权"。失败记录与成功 diff 一起留存。
-
-**第五步：写入项目**
-
-- 任务契约：`agent-tasks/task-01-generate-summary.md`；
-- 代码 diff：`src/generate.py` 的 commit；
-- 验证记录：`pytest` 输出 + 人工核验清单；
-- 失败记录：`experiments/exp01/agent-traces/task-01-failure-log.md`（含越权请求与拒绝）；
-- AI 使用记录：`ai-usage-log.md` 增加一条——工具/模型、用途、Context、输出用途、人工核验方式、问题。
-
-课堂最低负荷固定为五步：（1）从实验规格选一个受限步骤；（2）写任务契约与权限边界；（3）核对一份真实执行或课前预置 diff；（4）记录一条验证证据和一条失败/越权；（5）开始一条 AI 使用记录。环境就绪时可执行 Agent 与测试；环境故障时使用本课的[受限 Agent 任务契约](./assets/agent-task-example/task-01.md)、预置 diff、真实测试输出与[越权失败记录](./assets/agent-task-example/failure-log.md)做纸面审查。两条路径的最小产出相同，均回写 `agent-tasks/` 与 `experiments/<experiment-id>/agent-traces/`。
-
----
+本次已固定输入、实现和测试。L11 用同一研究动作的小包演示多项执行、失败恢复和状态记录；工程微例与科研评价指标分别标识。
 
 ## 六、常见错误
 
@@ -276,13 +257,13 @@ Agent 修改 `generate_summary()`，使阅读卡路径强制调用字段约束�
 
 ### 练习 3：diff 审查
 
-给定一段 diff（教师提供或贯穿案例的 `generate_summary()` 修改），按 diff 审查清单六项逐项检查。标注哪项通过、哪项不通过、不通过时如何处理。
+给定一段 diff（教师提供或贯穿案例的 `normalize_record()` 修改），按 diff 审查清单六项逐项检查。标注哪项通过、哪项不通过、不通过时如何处理。
 
 ### 练习 4：区分修复根因 / 绕过失败 / 污染实验
 
 下面三种处理方式各属哪一类？对结论可追溯性的影响是什么？
 
-1. 测试 `test_field_constraint` 失败，Agent 修改 `generate_summary()` 的分支条件使字段约束只在阅读卡路径调用，测试通过。
+1. 缺 summary 的测试失败；候选修复增加显式检查、报 ValueError，原两项测试通过。
 2. 测试 `test_field_constraint` 失败，Agent 注释掉这条断言，测试通过。
 3. baseline 遗漏率高于实验组，Agent 调整 baseline 的温度参数使两组接近。
 

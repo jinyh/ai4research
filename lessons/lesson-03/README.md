@@ -2,15 +2,29 @@
 
 > 文献检索与证据角色。课程 2.0 批次 0 已完成；本文件只记录当前材料、当前门控与未决风险。逐轮实施历史见[归档快照](../../archive/superseded-docs/lesson-03/readme-revision-log-2026-08.md.txt)。
 
+
+## 整体复审修订轮（2026-09-15，当前状态）
+
+- 目标与课程结构：未变；正式提交仍为第 6、9、13、16 课。
+- 内容：现行 Markdown 已完成本轮修订；板书、诊断答案与串词在教师教案；待教师复核本轮实质变化。
+- 教学门：原时段与总时长不变，本轮复核；诊断嵌入既有开场，课堂包不替代本人项目的门条件。
+- 逐页映射：标题、内容与互动按新母稿核对；页数保持不变。
+- PPT：文件未变更，上轮技术与视觉记录仍描述旧文件；它们不证明本轮新内容已同步。旧 PPT 不应直接作为本轮修订后的讲授稿。
+- 推迟项：教师内容复核后同步 PPT，再做文件级、视觉和实际投影检查；第 16 课继续保留内容门阻塞。
+- 执行记录：[本轮修订与验证](../../docs/course-integrated-revision-20260915.md)；助教分工见[演示准备清单](../../docs/lesson-demo-assignment-20260915.md)。
+
+下方先前通过记录均保留为历史。当前内容与呈现的状态以上述修订轮为准。
+
+
 ## 文件清单
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
 | [handout.md](./handout.md) | 现行·学生正式讲义 v1.5.0 | 可复盘检索、证据角色、角色/状态/决定三分、入口核验、候选表与检索质量自评 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.5.0 | 90 分钟流程、演示、课堂验收与备用路径 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v0.8.1（21 页） | 屏显、讲述、互动、时间与来源边界 |
-| [slides.pptx](./slides.pptx) | 现行·课堂 PPT v0.8.1（21 页） | 已同步逐页母稿视觉升级，并完成技术、教学、视觉与 PowerPoint 原生检查 |
-| [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页规格 v1.4.0 | 11 个风险触发关键页的设计与验收契约 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.6.0 | 90 分钟流程、演示、课堂验收与备用路径 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v0.9.0（21 页） | 屏显、讲述、互动、时间与来源边界 |
+| [slides.pptx](./slides.pptx) | 上轮课堂 PPT·待内容同步 v0.8.1（21 页） | 已同步逐页母稿视觉升级，并完成技术、教学、视觉与 PowerPoint 原生检查 |
+| [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页规格 v1.5.0 | 11 个风险触发关键页的设计与验收契约 |
 | [source-audit-demo.md](./source-audit-demo.md) | 现行·教学资产 v1.1.0 | Keshav 2007 Crossref—DOI—原文—候选表 trace 与断网备用 |
 | [mi-search-trace-demo.md](./mi-search-trace-demo.md) | 现行·教学资产 v0.6.0 | MI 领域检索、幻觉审计、质量自评与失败恢复 trace |
 | [rsi-search-trace-demo.md](./rsi-search-trace-demo.md) | 现行·教学资产 v0.1.0 | RSI 方向的第二次全流程复现与跨方向方法对照 |

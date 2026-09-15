@@ -2,15 +2,29 @@
 
 > Baseline、实验规格、可复现性与判断门。本文件是第 9 课所有材料的导航入口，说明各文件角色、关系与阅读路径。门控流程见 [prepare-course-lesson skill](../../.agents/skills/prepare-course-lesson/SKILL.md)。
 
+
+## 整体复审修订轮（2026-09-15，当前状态）
+
+- 目标与课程结构：未变；正式提交仍为第 6、9、13、16 课。
+- 内容：现行 Markdown 已完成本轮修订；板书、诊断答案与串词在教师教案；待教师复核本轮实质变化。
+- 教学门：原时段与总时长不变，本轮复核；诊断嵌入既有开场，课堂包不替代本人项目的门条件。
+- 逐页映射：标题、内容与互动按新母稿核对；页数保持不变。
+- PPT：文件未变更，上轮技术与视觉记录仍描述旧文件；它们不证明本轮新内容已同步。旧 PPT 不应直接作为本轮修订后的讲授稿。
+- 推迟项：教师内容复核后同步 PPT，再做文件级、视觉和实际投影检查；第 16 课继续保留内容门阻塞。
+- 执行记录：[本轮修订与验证](../../docs/course-integrated-revision-20260915.md)；助教分工见[演示准备清单](../../docs/lesson-demo-assignment-20260915.md)。
+
+下方先前通过记录均保留为历史。当前内容与呈现的状态以上述修订轮为准。
+
+
 ## 文件清单
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生讲义 v0.4.1 | 公平 baseline、完整实验规格、可重运行记录和判断门边界；统一阅读卡实验口径 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.6.1 | 整数分钟合计 90；完整工程规格集中在本课，个人实践分段并含中点点评 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v0.7.2（21 页） | P07 虚构反例与 P18 文件树／宽注释重排已同步；原生复核通过 |
-| [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.2.0 | 13 个风险触发关键页的四字段契约、模板例外与验收约束 |
-| [slides.pptx](./slides.pptx) | 现行·课堂 PPT v0.7.2（21 页） | 技术、教学、全尺寸视觉与 PowerPoint 原生检查分别通过；正式发布仍依课程发布门 |
+| [handout.md](./handout.md) | 现行·学生讲义 v0.5.0 | 公平 baseline、完整实验规格、可重运行记录和判断门边界；统一阅读卡实验口径 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.7.0 | 整数分钟合计 90；完整工程规格集中在本课，个人实践分段并含中点点评 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v0.8.0（21 页） | P07 虚构反例与 P18 文件树／宽注释重排已同步；原生复核通过 |
+| [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.3.0 | 13 个风险触发关键页的四字段契约、模板例外与验收约束 |
+| [slides.pptx](./slides.pptx) | 上轮课堂 PPT·待内容同步 v0.7.2（21 页） | 技术、教学、全尺寸视觉与 PowerPoint 原生检查分别通过；正式发布仍依课程发布门 |
 | [assets/reproducibility-example/](./assets/reproducibility-example/) | 现行·真实可运行教学工件 | 合成输入上的七字段 `experiment-spec.md`、实际 `config.json`、复算脚本、`results.json` 与 `run-log.jsonl`；P11 真实工件锚点，不作为实证结论 |
 
 ## 封面与收束修订轮（2026-08-20）
