@@ -1,0 +1,114 @@
+[
+  {
+    "job_id": "T01-card",
+    "gold_id": "T01-c1",
+    "retained": true,
+    "output_quote": "英文材料",
+    "judgment": "教师构造参考标注；学生应对回源文本和输出逐项复核"
+  },
+  {
+    "job_id": "T01-card",
+    "gold_id": "T01-c2",
+    "retained": true,
+    "output_quote": "摘要不超过200词",
+    "judgment": "教师构造参考标注；学生应对回源文本和输出逐项复核"
+  },
+  {
+    "job_id": "T01-card",
+    "gold_id": "T01-c3",
+    "retained": true,
+    "output_quote": "包含显式限定句",
+    "judgment": "教师构造参考标注；学生应对回源文本和输出逐项复核"
+  },
+  {
+    "job_id": "T01-free",
+    "gold_id": "T01-c1",
+    "retained": true,
+    "output_quote": "英文材料",
+    "judgment": "教师构造参考标注；学生应对回源文本和输出逐项复核"
+  },
+  {
+    "job_id": "T01-free",
+    "gold_id": "T01-c2",
+    "retained": false,
+    "output_quote": "",
+    "judgment": "教师构造参考标注；学生应对回源文本和输出逐项复核"
+  },
+  {
+    "job_id": "T01-free",
+    "gold_id": "T01-c3",
+    "retained": false,
+    "output_quote": "",
+    "judgment": "教师构造参考标注；学生应对回源文本和输出逐项复核"
+  },
+  {
+    "job_id": "T02-card",
+    "gold_id": "T02-c1",
+    "retained": true,
+    "output_quote": "文本型PDF",
+    "judgment": "教师构造参考标注；学生应对回源文本和输出逐项复核"
+  },
+  {
+    "job_id": "T02-card",
+    "gold_id": "T02-c2",
+    "retained": true,
+    "output_quote": "页码连续",
+    "judgment": "教师构造参考标注；学生应对回源文本和输出逐项复核"
+  },
+  {
+    "job_id": "T02-card",
+    "gold_id": "T02-c3",
+    "retained": false,
+    "output_quote": "",
+    "judgment": "教师构造参考标注；学生应对回源文本和输出逐项复核"
+  },
+  {
+    "job_id": "T02-free",
+    "gold_id": "T02-c1",
+    "retained": true,
+    "output_quote": "文本型PDF",
+    "judgment": "教师构造参考标注；学生应对回源文本和输出逐项复核"
+  },
+  {
+    "job_id": "T02-free",
+    "gold_id": "T02-c2",
+    "retained": false,
+    "output_quote": "",
+    "judgment": "教师构造参考标注；学生应对回源文本和输出逐项复核"
+  },
+  {
+    "job_id": "T02-free",
+    "gold_id": "T02-c3",
+    "retained": true,
+    "output_quote": "文档需未加密",
+    "judgment": "教师构造参考标注；学生应对回源文本和输出逐项复核"
+  },
+  {
+    "job_id": "T03-card",
+    "gold_id": "T03-c1",
+    "retained": false,
+    "output_quote": "",
+    "judgment": "教师构造参考标注；学生应对回源文本和输出逐项复核"
+  },
+  {
+    "job_id": "T03-card",
+    "gold_id": "T03-c2",
+    "retained": false,
+    "output_quote": "",
+    "judgment": "教师构造参考标注；学生应对回源文本和输出逐项复核"
+  },
+  {
+    "job_id": "T03-free",
+    "gold_id": "T03-c1",
+    "retained": true,
+    "output_quote": "噪声低于10%",
+    "judgment": "教师构造参考标注；学生应对回源文本和输出逐项复核"
+  },
+  {
+    "job_id": "T03-free",
+    "gold_id": "T03-c2",
+    "retained": false,
+    "output_quote": "",
+    "judgment": "教师构造参考标注；学生应对回源文本和输出逐项复核"
+  }
+]

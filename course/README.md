@@ -71,6 +71,7 @@ OpenCode 从第 1 课起作为主要课堂工作平台。课程通过现成 Agen
 - [assessment.md](./assessment.md)：考核方式、评分标准和验收条件（含门条件）
 - [assignments.md](./assignments.md)：项目里程碑与四次阶段性交付（含研究门条件）
 - [starter-template.md](./starter-template.md)：早期研究脚手架模板（第 1-6 课为主，第 7-8 课继续完善）
+- [opencode-setup.md](./opencode-setup.md)：OpenCode 最小启动说明（课前安装、后端连接、项目目录与备用路径；课堂零安装口径）
 - [project-template.md](./project-template.md)：学生期末项目完整模板（第 9 课起迁移，含工件状态追踪表）
 - [ethics-and-compliance-template.md](./ethics-and-compliance-template.md)：科研伦理与合规说明模板
 - [resources.md](./resources.md)：工具、案例和参考资源索引（含方法论参考）

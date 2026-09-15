@@ -1,10 +1,20 @@
 # 逐课备课工作区
 
-最后更新：2026-08-22
+最后更新：2026-09-16
 
 课程 2.0 的批次状态见 [改版计划](../docs/course-2.0-plan.md)；逐课内容复核与教师专属决定见 [教师复核台账](./teacher-review-ledger.md)。旧的 PPT 制作流水账已移入[被替代文档归档](../archive/superseded-docs/ppt-production-progress-v0.9.0.md)。
 
 `lessons/` 用于制作课程正式教学材料。试讲材料与正式授课材料必须分开管理。
+
+
+## 整体复审实施轮（2026-09-15—16，当前）
+
+用户已授权按整体复审计划推进。本轮已修改正式 Markdown 内容源：纠正 L01 P03 的证据阶梯，分开 Q1 结果、H1/A2 机制与测量解释、A1 质量、A3 范围及采用决定；L09–L15 使用[可复算构造包](../course/reading-card-case.md)；16 份教案加入板书、诊断反馈和过渡。旧的 20×2×3 规格及 0.18/0.31 汇总退出当前主演。实际工作与验证见[实施记录](../docs/course-integrated-revision-20260915.md)。
+
+本轮保持各课目标、页数和时长；313 页母稿与16份90分钟教案继续复核。PPT 未修改，旧文件的既有检查记录不证明新内容已同步。教师复核本轮内容后再同步PPT并重新检查；第16课原内容门仍待教师确认。正式提交、评分和批准课程结构均未改变。
+
+以下早前状态、案例数字与通过记录保留历史意义，以本节和各课 README 本轮记录为当前入口。
+
 
 ## 材料状态
 
@@ -16,7 +26,13 @@
 
 同一课只保留一套现行内容口径。PPTX 是该口径的视觉交付，不是独立的事实来源。
 
-当前状态（2026-08-22）：全 16 课均已有讲义、教案、逐页母稿与可编辑课堂 PPT，PPT 共 16 套、332 页；现有 PPT 已完成结构、重开与渲染检查。第 1-15 课沿用各课 README 登记的门控状态；**第 16 课讲义 front matter 仍明确为“草稿，待教师复核与第二轮审校”，因此其正式内容门和整课正式发布尚未通过**，PPT 的技术/教学/视觉检查不能替代该内容门。课程 2.0 当前只完成批次 0（L3）与批次 1（L4-L6），其余课次仍按 [2.0 改版计划](../docs/course-2.0-plan.md) 推进。四次研究门名称、条件与 100% 评分结构已对齐权威课程文件，但最终发布仍需教师复核、实际 Microsoft PowerPoint/教室投影检查和发布里程碑。
+本次同步修订（2026-09-13）：第 10–13 课共 78 页已更新并从最终正式路径重新导入检查；第 11 课纠正冻结队列与方法优化的混淆，第 12 课恢复具体 AutoResearch 拆解及独立评价权限，第 10、13 课同步屏显母稿和讲述备注，第 13 课补明虚构失败记录身份。沿用交大模板，页数与各课 90 分钟结构不变。本轮技术与渲染检查以各课 README 最新记录为准，**修改后的文件尚待 PowerPoint 原生与教室投影复检**，不沿用下述历史文件的原生通过结论。第 16 课已完成客观内容冲突修订，见 [内容门复核单](./lesson-16/content-review-20260913.md)，仍待教师确认后重制 12 页 PPT。
+
+历史视觉基线（2026-09-12）：第 1–15 课已完成本轮视觉提升，共 15 套、301 页；逐课有效验收以各 README 最新的视觉升级／当前验收记录为准，不再沿用旧的笼统“视觉通过”。技术检查、实际字号与可编辑对象、教学表达、视觉阅读和 Microsoft PowerPoint 原生复核分别登记。七类共用代表页已形成[试制里程碑](../archive/ppt-experiments/2026-09-12-academic-practice/decision-record.md)，设计规则更新至 [v1.5.0](./ppt-design-criteria.md)。
+
+2026-09-12 终检（历史文件）：15 套最终同 SHA 文件均经 Microsoft PowerPoint 重开并原生导出，完成全尺寸逐页及 contact sheet 检查，最终变更页另行复核。301/301 页有来源 notes；保留各套交大原生 Master、4 个 Layout 与主题结构；教学文字不低于 18 pt，5 个结果图保留原生图表及可编辑数据。16 课教案各合计 90 分钟，第 8 课按 15 人、第 16 课按 25 人容量复核。课程一致性 12 项通过，170 个 Markdown 的内部链接无断链；历史书目有 1 个本机未存外部 PDF 告警，不属于本轮新增文件。检查日志、原生导出与旧新对照留在 `.work/ppt/visual-upgrade-20260912/` 及各课独立工作目录。
+
+**第 16 课讲义仍待教师内容复核，现行 12 页母稿与上一版 20 页 PPT 候选不同步；本轮没有改制其 PPT，也未解除内容门。** 磁盘上仍有 16 套、321 页，但不能把这些文件统称为已通过的正式交付。课程 2.0 的教师专属判断仍按[复核台账](./teacher-review-ledger.md)推进；四次研究门、32 学时、16 课结构及 100% 评分口径不变。正式发布还需教师／博士助教、授课设备与教室投影检查，并通过发布门后进入 `deliverables/`。
 
 ## 文件类型
 
@@ -36,14 +52,14 @@
 ## 第 1 课
 
 - 现行材料与门控状态统一从 [第 1 课内容入口](./lesson-01/README.md) 查看，避免在两处重复维护版本号。
-- 旧 39 页 PPTX 已归入 [PPT 试制里程碑](../archive/ppt-experiments/lesson-01/2026-07-30-pre-gate-39-page-baseline/decision-record.md)；现行 34 页正式课件见 [slides.pptx](./lesson-01/slides.pptx)。
+- 旧 39 页 PPTX 已归入 [PPT 试制里程碑](../archive/ppt-experiments/lesson-01/2026-07-30-pre-gate-39-page-baseline/decision-record.md)；现行 31 页课件见 [slides.pptx](./lesson-01/slides.pptx)，验收以本课 README 最新轮为准。
 - 2026-07-07 的详细教学包与旧详细讲义已迁入 [被替代文稿归档](../archive/superseded-docs/lesson-01/)，不参与现行制作。
 - [教师文献精读卡集](./lesson-01/reading-notes.md)：第 1 课涉及 8 份文献按 AI 辅助阅读协议产出的精读卡；原文定位已完成，待教师复核与定稿。
 
 ## 第 2 课
 
 - 现行材料与门控状态统一从 [第 2 课内容入口](./lesson-02/README.md) 查看。
-- 现行 30 页正式课件见 [slides.pptx](./lesson-02/slides.pptx)，已通过技术、教学与视觉检查；P29 为独立知识点总结。
+- 现行 26 页课件见 [slides.pptx](./lesson-02/slides.pptx)；P25 为独立知识点总结，验收以本课 README 最新轮为准。
 
 ## 第 3 课
 
@@ -80,9 +96,9 @@
 | 11 | 20 | [README](./lesson-11/README.md) | [slides.pptx](./lesson-11/slides.pptx) |
 | 12 | 21 | [README](./lesson-12/README.md) | [slides.pptx](./lesson-12/slides.pptx) |
 | 13 | 20 | [README](./lesson-13/README.md) | [slides.pptx](./lesson-13/slides.pptx) |
-| 14 | 18 | [README](./lesson-14/README.md) | [slides.pptx](./lesson-14/slides.pptx) |
-| 15 | 17 | [README](./lesson-15/README.md) | [slides.pptx](./lesson-15/slides.pptx) |
-| 16 | 20 | [README](./lesson-16/README.md) | [slides.pptx](./lesson-16/slides.pptx) |
+| 14 | 16 | [README](./lesson-14/README.md) | [slides.pptx](./lesson-14/slides.pptx) |
+| 15 | 15 | [README](./lesson-15/README.md) | [slides.pptx](./lesson-15/slides.pptx) |
+| 16 | 20（旧候选；母稿 12） | [README](./lesson-16/README.md) | [slides.pptx](./lesson-16/slides.pptx) |
 
 九套课件均继承交大 master/layout 与品牌系统；逐课关键页规格、来源 notes、技术/教学/视觉检查及剩余授课现场风险见各课 README 与 `.work/ppt/lesson-NN/` QA 台账。
 
@@ -96,7 +112,7 @@
 
 1. 先确定该课在 [课程大纲](../course/syllabus.md) 中的目标和项目产出。
 2. 对齐正式讲义、教师教案和逐页内容母稿，确认只有一套现行规则、案例与来源口径。
-3. 做 90 分钟桌面推演，检查每段时间、第一次学生动手时间、最小课堂产出与备用路径。
+3. 做 90 分钟桌面推演：各段只以整数时长呈现（合计恰好 90 分钟，不写绝对起止时间），检查第一次学生动手的距开课时长、个人实践分段（每段 ≤15 分钟，超出拆两段并插入教师中点点评；同伴互查/轮转不受限）、最小课堂产出与备用路径；屏显不出现任何课堂分钟数，讲义不出现课堂计时分钟数。
 4. 建立逐页映射：每页写明页面任务、内容母稿位置、证据角色和学生动作。
 5. 前三项通过后再制作正式 PPT；不以历史稿、试讲页或视觉样张为内容母版。
 6. 渲染并重新打开检查 PPT，同时验证课堂活动材料；技术通过、教学通过和视觉通过分别记录。

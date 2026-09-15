@@ -65,14 +65,14 @@
 8. 至少一条失败/死路及原因、处理和回写：F-MI-01。
 9. AI 辅助过程与正式来源核验：见 L3 trace、L4 cards 与 registry。
 
-## L7-L9 接口
+## 课后迁移接口
 
 ![从问题门到 baseline](assets/mi-question-to-baseline.svg)
 
 *图注：课程自绘流程图，不代表实验已经运行。来源与许可见 [assets/README.md](./assets/README.md)。*
 
-- L7：把 H-eff、H-rob、H-faith 分别映射到变量、指标、对照与停止条件。
-- L8：用“问题—关键证据—可证伪命题—最小实验—最大风险”完成 3 分钟陈述。
-- L9：运行 Pythia-410M layer 11 IOI 的 SAE-vs-PCA baseline；仓库接口固定到 `HoagyC/sparse_coding@69c5ae0...`，但仓库未声明 license，进入学生复现前先由教师核对依赖与使用边界。
+- 可选择用第 7 课的方法，把 H-eff、H-rob、H-faith 映射到变量、指标与可区分结果。
+- 可选择用第 9 课的规格模板补全 SAE-vs-PCA baseline；仓库接口固定到 `HoagyC/sparse_coding@69c5ae0...`，但仓库未声明 license，进入学生复现前先由教师核对依赖与使用边界。
+- 本材料是课后迁移示例，不是第 7–9 课主线输入；正式课堂继续使用结构化阅读卡 H1/A1/A2/A3 贯穿案例。
 
 上游证据地图见 [L5 MI evidence map](../lesson-05/mi-evidence-map-demo.md)；完整 claim-level 来源见 [L3 MI trace](../lesson-03/mi-search-trace-demo.md) §5。

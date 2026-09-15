@@ -31,6 +31,8 @@ PUBLISH = {
     "course/assignments.md": "course/assignments.md",
     "course/reading-list.md": "course/reading-list.md",
     "course/resources.md": "course/resources.md",
+    # 课前环境指南（学生可见；课堂零安装口径的课前入口）
+    "course/opencode-setup.md": "course/opencode-setup.md",
     # 学生项目模板（handout 和 assignments 引用，学生需要内容本身）
     "course/starter-template.md": "course/starter-template.md",
     "course/project-template.md": "course/project-template.md",
@@ -38,6 +40,8 @@ PUBLISH = {
     # 每课发布 handout.md，并逐文件登记学生需要的示例、模板与工件；
     # 不含 teaching-plan / slides / reading-notes / README，也不软链整个 assets 目录
     "lessons/lesson-01/handout.md": "lessons/lesson-01/handout.md",
+    # student_view.py 只呈现学生部分，教师纸面验收节不进入网站。
+    "lessons/lesson-01/classroom-pack.md": "lessons/lesson-01/classroom-pack.md",
     "lessons/lesson-02/handout.md": "lessons/lesson-02/handout.md",
     "lessons/lesson-02/classroom-pack.md": "lessons/lesson-02/classroom-pack.md",
     "lessons/lesson-03/handout.md": "lessons/lesson-03/handout.md",

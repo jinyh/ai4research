@@ -2,17 +2,45 @@
 
 > 问题定义、第一性原理与问题门。本文件是第 6 课所有材料的导航入口，说明各文件角色、关系与阅读路径。门控流程见 [prepare-course-lesson skill](../../.agents/skills/prepare-course-lesson/SKILL.md)。
 
+
+## 整体复审修订轮（2026-09-15，当前状态）
+
+- 目标与课程结构：未变；正式提交仍为第 6、9、13、16 课。
+- 内容：现行 Markdown 已完成本轮修订；板书、诊断答案与串词在教师教案；待教师复核本轮实质变化。
+- 教学门：原时段与总时长不变，本轮复核；诊断嵌入既有开场，课堂包不替代本人项目的门条件。
+- 逐页映射：标题、内容与互动按新母稿核对；页数保持不变。
+- PPT：文件未变更，上轮技术与视觉记录仍描述旧文件；它们不证明本轮新内容已同步。旧 PPT 不应直接作为本轮修订后的讲授稿。
+- 推迟项：教师内容复核后同步 PPT，再做文件级、视觉和实际投影检查；第 16 课继续保留内容门阻塞。
+- 执行记录：[本轮修订与验证](../../docs/course-integrated-revision-20260915.md)；助教分工见[演示准备清单](../../docs/lesson-demo-assignment-20260915.md)。
+
+下方先前通过记录均保留为历史。当前内容与呈现的状态以上述修订轮为准。
+
+
 ## 文件清单
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生讲义 v1.1.0 | 面向学生、可脱离课堂独立阅读：问题定义、第一性原理、九项问题门、MI 问题到 L7-L9 baseline 接口 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.2.0 | 90 分钟流程、PPT 执行索引、MI/虚构双线演示、九项自查、课堂产出验收、讲后复盘 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v1.2.0（22 页） | 逐页屏显文案、视觉结构、讲述备注、互动、时间、来源与事实边界 |
-| [slides.pptx](./slides.pptx) | 现行·正式课堂 PPT（22 页） | 封面与收束修订轮已重建并通过内容、技术与视觉检查 |
-| [keystone-design-spec.md](./keystone-design-spec.md) | 规范 v1.3.0 | 风险触发关键页的设计契约、证据边界、模板例外与制作前后验收 |
-| [mi-problem-definition-demo.md](./mi-problem-definition-demo.md) | 现行·教学资产 v1.0.0 | MI 结构性问题、H-eff/H-rob/H-faith、第一性原理与九项 CP1 自查 |
+| [handout.md](./handout.md) | 现行·学生讲义 v1.3.0 | 面向学生、可脱离课堂独立阅读：候选题取舍、问题边界、一个待验证前提与九项问题门 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.4.0 | 90 分钟流程、12+5+8 分钟实践拆分、九项状态自查与三层产出边界 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v1.4.0（22 页） | 逐页屏显文案、视觉结构、讲述备注、整数时长、来源与事实边界 |
+| [slides.pptx](./slides.pptx) | 上轮课堂 PPT·待内容同步 v1.3.2（22 页） | 已同步逐页母稿视觉升级，并完成技术、教学、视觉与 PowerPoint 原生检查 |
+| [keystone-design-spec.md](./keystone-design-spec.md) | 规范 v1.4.0 | 风险触发关键页的设计契约、证据边界、模板例外与制作前后验收 |
+| [mi-problem-definition-demo.md](./mi-problem-definition-demo.md) | 课后迁移教学资产 v1.0.0 | MI 结构性问题、H-eff/H-rob/H-faith、第一性原理与九项 CP1 自查；不作为第 7-9 课主线输入 |
 | [assets/](./assets/) | 现行·图形资产 | MI 问题到 baseline 接口 SVG 与出处/许可登记 |
+
+### 视觉升级（2026-09-12）
+
+- 逐页映射门：✅ `slides.md` v1.3.2 仅更新视觉结构与字号层级，屏显语义、页数与 90 分钟教案不变。
+- PPT 构建：✅ 22 页候选 r3 已提升为现行 [slides.pptx](./slides.pptx)；构建目录 `.work/ppt/lesson-06/2026-09-12-visual-upgrade/`；SHA256 `81d2a8ee1b2b592b95872ca20074a172913c14ebcb81865ceecd0f78e0b2c713`。
+- 技术检查：✅ finalizer、Artifact Tool 最终文件重导入、22/22 notes `[Sources]`、1 Master/4 Layout、空 placeholder 与字号审计通过。
+- 教学检查：✅ P14 保持阅读卡案例与 H1/A1/A2/A3/L9 接口，P18 只形成候选题取舍、边界、可证伪命题、一个待验证前提与替代解释标记。
+- 视觉检查：✅ 22 页全尺寸和 contact sheet 逐页复核通过；标题 30–32pt、常规正文 22–24pt、清单/工作表 18–20pt，正文以 regular 为主；r3 已重构 P7 双分支并修正 P10 句号孤行。
+- PowerPoint 原生检查：✅ Microsoft PowerPoint 已打开 r3 并原生导出；22/22 张 `native-checked-*.png` 全尺寸逐页复核通过，P7 双分支与 P10 可证伪命题无重叠或异常换行，中文与品牌元素完整；原生 PDF 为 `.work/ppt/visual-upgrade-20260912/representatives/lesson-06-slides-v1.3.2-visual-r3-native.pdf`。
+- 替代关系：本节视觉检查取代下方减负轮的旧视觉通过记录；旧记录仅保留为历史，不再证明当前候选通过。
+- 状态：✅ 候选已写回正式 `slides.pptx` v1.3.2；正式文件 SHA256 `81d2a8ee1b2b592b95872ca20074a172913c14ebcb81865ceecd0f78e0b2c713`。LibreOffice 中文字体回退单独记为兼容性风险，本轮不宣称 LibreOffice 通过。
+- QA：`.work/ppt/visual-upgrade-20260912/audit/lesson-01-06-qa.md`。
+
+> 状态说明：以上视觉升级记录是现行 PPT 的唯一验收口径。下方减负轮、旧门控表与 2.0 修订轮仅保留当时事实；其中旧的笼统“视觉通过”记录已被本轮技术、教学、视觉和 PowerPoint 原生检查取代。
 
 ## 文件关系
 
@@ -39,7 +67,23 @@
 - **教师**：`teaching-plan.md` → `slides.md` → `course/ppt-quality-gates.md`
 - **维护者**：`AGENTS.md`（项目根）→ [备课规划.md](../备课规划.md) → 本 README → 各文件
 
-## 门控状态
+## 内容复核与历史修订记录
+
+### 课程减负修订轮（2026-09-12）
+
+| 门 | 状态 |
+| --- | --- |
+| 课次目标 | ✅ 保持不变：从候选题收敛到问题定义与第一性原理，并完成问题门提交准备 |
+| 内容门 | ✅ 通过：新颖性改为诊断项；课堂只形成一个替代解释标记，完整 H1/A1/A2/A3 设计移交第 7 课 |
+| 90 分钟教学门 | ✅ 通过：整数时长合计 90；个人实践拆为 12+5+8 分钟，含教师中点点评 |
+| 逐页映射门 | ✅ 通过：handout v1.2.1、teaching-plan/slides v1.3.1 同步课堂最低产出、课后补全和九项问题门边界；P14 保持阅读卡贯穿案例 |
+| PPT 制作 | ✅ 22 页现行 PPTX 已按 `slides.md` v1.3.1 重建；SHA256：`03a05af942e174ce63df1fdd247eb631f9e558352abd842e54f2cae1372b38b6` |
+| 三重检查 | ✅ 技术：包完整性、Artifact Tool 重开、22/22 notes `[Sources]`、1 Master/4 Layout、空 placeholder、屏显计时和布局 finding 通过，正文实际字号均 ≥18pt；教学：P14 阅读卡案例与 H1/A1/A2/A3 接口一致；视觉：全尺寸、contact sheet 与 PowerPoint Slide Sorter 22 页原生检查通过 |
+| 里程碑归档 | 不适用 |
+
+**本轮处理结果**：MI 平行案例降为课后迁移阅读；课堂 P14 已替换为阅读卡贯穿案例，只向第 7-9 课移交替代解释标记并按全局口径展开 H1/A1/A2/A3，不再使用 `mi-question-to-baseline.svg` 作为课堂主线图。技术记录：`.work/ppt/lesson-06/2026-09-12-load-revision/validation-r6.json`、`qa-summary.json`、`.work/course-load-revision/font-audit-r6.json`；联系表：`.work/ppt/lesson-06/2026-09-12-load-revision/contact-sheet-r6/contact-sheet.png`。L06 P07 的两条几何 warning 经全尺寸与 PowerPoint 复核为嵌套卡片边框的预期重叠，不构成文字碰撞。
+
+**剩余风险**：LibreOffice 对 Artifact Tool 生成 PPTX 的 PDF 导出存在中文丢失兼容性问题，本轮不宣称 LibreOffice 通过；实际 PowerPoint 已通过，教室投影仍需课前现场检查。
 
 ### 修订轮登记（2026-08-10，G3 选题训练增强）
 
@@ -70,7 +114,7 @@
 - **问题门条件对齐**：handout §五·2、slides P15-P16 与 [assignments.md](../../course/assignments.md) Checkpoint 1 九项条件已逐项核对；第 8 项是真实失败/死路的原因、处理与回写位置，第 9 项是 AI 来源与人工核验。
 - 演示用 problem-definition.md 完整版样例需在授课前准备实际可投屏版本；
 - 演示用失败案例（主题当问题、第一性原理脱离文献）需在授课前准备；
-- 与第 7 课的衔接点已经在 P14/P21 固定为 H-eff/H-rob/H-faith → 机制假设 → L9 baseline；第 7-9 课修订时仍需核对字段是否原样承接；
+- 与第 7 课的衔接点已经在 P14/P22 固定为阅读卡案例的待验证前提与替代解释标记 → H1/A1/A2/A3 → 第 9 课完整实验规格；第 7-9 课仍需核对字段是否原样承接；
 - `problem-definition.md` 字段模板是否需要根据本课新增"第一性原理推导"段更新 [starter-template.md](../../course/starter-template.md) §3。
 - 授课前仍需在教室电脑、实际 PowerPoint 版本和投影设备上做一次现场放映检查；LibreOffice 检查不能替代真实教学设备验收。
 

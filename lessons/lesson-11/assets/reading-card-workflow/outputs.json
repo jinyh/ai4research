@@ -1,0 +1,38 @@
+[
+  {
+    "job_id": "T01-card",
+    "source_id": "T01",
+    "condition": "card",
+    "text": "任务：方法甲。限定条件：英文材料；摘要不超过200词；包含显式限定句。范围：其他材料未验证。"
+  },
+  {
+    "job_id": "T01-free",
+    "source_id": "T01",
+    "condition": "free",
+    "text": "方法甲改进了英文材料的处理效果。"
+  },
+  {
+    "job_id": "T02-card",
+    "source_id": "T02",
+    "condition": "card",
+    "text": "任务：定位器乙。限定条件：文本型PDF，页码连续。"
+  },
+  {
+    "job_id": "T02-free",
+    "source_id": "T02",
+    "condition": "free",
+    "text": "定位器乙处理文本型PDF，文档需未加密。"
+  },
+  {
+    "job_id": "T03-card",
+    "source_id": "T03",
+    "condition": "card",
+    "text": "任务：方法丙。原文位置：图2。限定条件：未提取。"
+  },
+  {
+    "job_id": "T03-free",
+    "source_id": "T03",
+    "condition": "free",
+    "text": "图2中的方法丙适用于噪声低于10%的情形。"
+  }
+]

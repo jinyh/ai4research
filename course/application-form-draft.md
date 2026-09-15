@@ -61,7 +61,7 @@ This graduate course is designed for students in computer science, artificial in
 
 | 模块 | 主要内容 | 课时 | 教学方式 | 课程思政内容 |
 | --- | --- | ---: | --- | --- |
-| 1. 导论、OpenCode 平台、科研伦理与研究工件 | 八阶段研究链路、个人项目工作区、工件状态追踪与门条件、Agent 权限矩阵、人工智能使用记录与伦理检查 | 4 | 讲授、演示、研讨 | 科技创新责任、科研诚信、负责任使用人工智能、数据隐私与知情同意 |
+| 1. 导论、科研伦理与研究工件 | 八阶段研究链路、个人项目工作区、工件状态追踪与门条件、Agent 权限矩阵、人工智能使用记录与伦理检查 | 4 | 讲授、演示、研讨 | 科技创新责任、科研诚信、负责任使用人工智能、数据隐私与知情同意 |
 | 2. 文献、证据与问题定义 | 检索式设计、证据角色判断、人工智能辅助论文精读、相关工作矩阵、证据地图、空白识别、问题收敛、可证伪命题和第一性原理推导 | 8 | 演示、实践、研讨、工作坊 | 尊重知识来源、避免伪造引用、严谨求实学风、批判性思维与原创意识 |
 | 3. 机制假设、方案分享与可复现基线 | 机制假设、研究判断、实验设计、个人方案分享与反馈、基线（baseline）复现、环境与配置管理、随机种子和实验规格 | 6 | 工作坊、学生分享、案例分析、上机实践 | 面向真实问题的科研责任、公平评价、诚实报告、开源合规与建设性反馈 |
 | 4. 受限 Agent、实验自动化与自主工作流 | Agent 辅助编码与调试、实验队列、AutoResearch 循环、任务契约、上下文、工具权限、Skill/MCP、评估机制、个人工作流实现、结果分析与失败复盘 | 8 | 演示、上机实践、工作坊 | 人机协作责任边界、规范化实验记录、安全可控的智能代理使用 |
@@ -73,7 +73,7 @@ The course is organized into five teaching modules totaling 32 hours. For the de
 
 | Module | Main Contents | Hours | Teaching Style | Ideological and Ethical Elements |
 | --- | --- | ---: | --- | --- |
-| 1. Introduction, OpenCode Platform, Research Ethics, and Artifacts | Eight-stage research chain, individual project workspace, artifact tracking and gates, agent permission matrix, AI usage logs, and ethics checks | 4 | Lecture, demonstration, seminar | Responsibility in technological innovation, research integrity, responsible AI use, data privacy and informed consent |
+| 1. Introduction, Research Ethics, and Artifacts | Eight-stage research chain, individual project workspace, artifact tracking and gates, agent permission matrix, AI usage logs, and ethics checks | 4 | Lecture, demonstration, seminar | Responsibility in technological innovation, research integrity, responsible AI use, data privacy and informed consent |
 | 2. Literature, Evidence, and Problem Definition | Search query design, evidence role assessment, AI-assisted paper reading, related-work matrices, evidence maps, gap identification, problem refinement, falsifiable propositions, and first-principles derivation | 8 | Demonstration, practice, seminar, workshop | Respect for knowledge sources, avoidance of fabricated citations, rigorous scholarship, critical thinking and originality |
 | 3. Mechanism Hypotheses, Proposal Sharing, and Reproducible Baselines | Mechanism hypotheses, research judgment, experiment design, individual proposal sharing and feedback, baseline reproduction, environment and configuration management, random seeds, and experiment specs | 6 | Workshop, student sharing, case analysis, lab practice | Responsibility toward real research problems, fair evaluation, honest reporting, open-source compliance, and constructive feedback |
 | 4. Bounded Agents, Experiment Automation, and Personal Workflows | Agent-assisted coding and debugging, experiment queues, AutoResearch loops, task contracts, context, tool permissions, Skills/MCP, evaluation, personal workflow implementation, result analysis, and failure analysis | 8 | Demonstration, lab practice, workshop | Human accountability, standardized experiment records, and safe and controllable AI agent use |

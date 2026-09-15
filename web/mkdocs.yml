@@ -12,7 +12,6 @@ theme:
   features:
     - navigation.tabs
     - navigation.sections
-    - navigation.expand
     - navigation.indexes
     - search.suggest
     - search.highlight
@@ -21,8 +20,11 @@ theme:
   # 免除 16 课嵌图双背景验收；搜索分词维持 lang: [ja] 现状，不增依赖
   palette:
     scheme: default
-    primary: indigo
-    accent: indigo
+    primary: custom
+    accent: custom
+
+extra_css:
+  - stylesheets/course.css
 
 markdown_extensions:
   - admonition
@@ -41,31 +43,33 @@ plugins:
 
 hooks:
   - scripts/hide_metadata.py  # 剥离正文里的版本/最后更新/变更记录，不展示在网页
-  - scripts/strip_dead_links.py  # 把指向未发布目标的内部链接降级为纯文字，消除断链
+  - scripts/student_view.py  # 权威条件引用、课堂入口、草稿发布保护
+  - scripts/strip_dead_links.py  # 私有资料显式标记；学生资源缺失使构建失败
 
 nav:
   - 首页: index.md
-  - 课程介绍: teacher.md
-  - 课程大纲: course/syllabus.md
-  - 考核方式: course/assessment.md
-  - 项目与研究门: course/assignments.md
-  - 模板、示例与提交指引: templates.md
-  - 阅读清单: course/reading-list.md
-  - 学习资源: course/resources.md
-  - 课程讲义:
-      - 第一讲｜AI 辅助科研导论、OpenCode 与八阶段研究链路: lessons/lesson-01/handout.md
-      - 第二讲｜科研伦理、Agent 权限、研究工件与追踪: lessons/lesson-02/handout.md
-      - 第三讲｜文献检索与证据角色: lessons/lesson-03/handout.md
-      - 第四讲｜AI 辅助精读与主张核验: lessons/lesson-04/handout.md
-      - 第五讲｜综述结构、证据地图与研究空白: lessons/lesson-05/handout.md
-      - 第六讲｜问题定义、第一性原理与问题门: lessons/lesson-06/handout.md
-      - 第七讲｜机制假设、研究判断与实验设计: lessons/lesson-07/handout.md
-      - 第八讲｜学生研究方案分享与设计诊所: lessons/lesson-08/handout.md
-      - 第九讲｜Baseline、实验规格、可复现性与判断门: lessons/lesson-09/handout.md
-      - 第十讲｜AI 辅助编码、调试与受限 Agent 执行: lessons/lesson-10/handout.md
-      - 第十一讲｜实验自动化与 AutoResearch 循环: lessons/lesson-11/handout.md
-      - 第十二讲｜Agent/Skill 背后的逻辑与个人工作流设计: lessons/lesson-12/handout.md
-      - 第十三讲｜工作流评价、结果分析、失败审计与验证门: lessons/lesson-13/handout.md
-      - 第十四讲｜论文式写作、证据回写与 AI 使用披露: lessons/lesson-14/handout.md
-      - 第十五讲｜同行评审、论证门预检与修改: lessons/lesson-15/handout.md
-      - 第十六讲｜学生最终分享、论证门与期末项目: lessons/lesson-16/handout.md
+  - 16 讲课程:
+      - learn/index.md
+      - 01 · AI 辅助科研导论: learn/01.md
+      - 02 · 科研伦理与 Agent 边界: learn/02.md
+      - 03 · 检索与来源核验: learn/03.md
+      - 04 · 精读与主张核验: learn/04.md
+      - 05 · 证据地图: learn/05.md
+      - 06 · 问题定义: learn/06.md
+      - 07 · 假设与区分实验: learn/07.md
+      - 08 · 中期诊所: learn/08.md
+      - 09 · Baseline 与复现: learn/09.md
+      - 10 · 受限 Agent 执行: learn/10.md
+      - 11 · 自动化循环: learn/11.md
+      - 12 · 个人工作流: learn/12.md
+      - 13 · 工作流评价: learn/13.md
+      - 14 · 结果写成论证: learn/14.md
+      - 15 · 同行评审与修改: learn/15.md
+      - 16 · 最终展示（讲义待复核）: learn/16.md
+  - 项目与考核: project.md
+  - 模板与资源:
+      - templates.md
+      - 课前准备: course/opencode-setup.md
+      - 阅读清单: course/reading-list.md
+      - 工具与学习资源: course/resources.md
+  - 课程信息: teacher.md

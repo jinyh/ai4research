@@ -27,6 +27,11 @@ def on_page_markdown(markdown: str, **_kwargs) -> str:
     md = _CHANGELOG.sub("\n\n", markdown)
     md = _VERSION_LINE.sub("", md)
     md = _UPDATED_LINE.sub("", md)
+    # 只清理首个正文标题前的内部登记；正文中的风险/来源状态必须保留。
+    heading = re.search(r"^# ", md, re.MULTILINE)
+    if heading:
+        prefix = re.sub(r"^(?:适用课次|文档类型|状态)：[^\n]*\n", "", md[:heading.start()], flags=re.MULTILINE)
+        md = prefix + md[heading.start():]
     # 顶部 H1 后若留出连续空行，压成单个空行
     md = _LEADING_BLANKS.sub(r"\1\n\n", md)
     return md
