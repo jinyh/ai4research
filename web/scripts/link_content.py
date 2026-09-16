@@ -31,6 +31,7 @@ PUBLISH = {
     "course/assignments.md": "course/assignments.md",
     "course/reading-list.md": "course/reading-list.md",
     "course/resources.md": "course/resources.md",
+    "course/reading-card-case.md": "course/reading-card-case.md",
     # 课前环境指南（学生可见；课堂零安装口径的课前入口）
     "course/opencode-setup.md": "course/opencode-setup.md",
     # 学生项目模板（handout 和 assignments 引用，学生需要内容本身）
@@ -83,6 +84,14 @@ PUBLISH = {
     "lessons/lesson-10/assets/agent-task-example/after/generate.py": "lessons/lesson-10/assets/agent-task-example/after/generate.py",
     "lessons/lesson-10/assets/agent-task-example/tests/test_generate.py": "lessons/lesson-10/assets/agent-task-example/tests/test_generate.py",
     "lessons/lesson-11/handout.md": "lessons/lesson-11/handout.md",
+    "lessons/lesson-11/assets/reading-card-workflow/README.md": "lessons/lesson-11/assets/reading-card-workflow/README.md",
+    "lessons/lesson-11/assets/reading-card-workflow/sources.json": "lessons/lesson-11/assets/reading-card-workflow/sources.json",
+    "lessons/lesson-11/assets/reading-card-workflow/outputs.json": "lessons/lesson-11/assets/reading-card-workflow/outputs.json",
+    "lessons/lesson-11/assets/reading-card-workflow/gold.json": "lessons/lesson-11/assets/reading-card-workflow/gold.json",
+    "lessons/lesson-11/assets/reading-card-workflow/annotations.json": "lessons/lesson-11/assets/reading-card-workflow/annotations.json",
+    "lessons/lesson-11/assets/reading-card-workflow/config.json": "lessons/lesson-11/assets/reading-card-workflow/config.json",
+    "lessons/lesson-11/assets/reading-card-workflow/run.py": "lessons/lesson-11/assets/reading-card-workflow/run.py",
+    "lessons/lesson-11/assets/reading-card-workflow/test_workflow.py": "lessons/lesson-11/assets/reading-card-workflow/test_workflow.py",
     "lessons/lesson-12/handout.md": "lessons/lesson-12/handout.md",
     "lessons/lesson-13/handout.md": "lessons/lesson-13/handout.md",
     "lessons/lesson-13/evaluation-report-template.md": "lessons/lesson-13/evaluation-report-template.md",
@@ -91,6 +100,7 @@ PUBLISH = {
     "lessons/lesson-15/handout.md": "lessons/lesson-15/handout.md",
     "lessons/lesson-15/peer-review-template.md": "lessons/lesson-15/peer-review-template.md",
     "lessons/lesson-15/revision-plan-template.md": "lessons/lesson-15/revision-plan-template.md",
+    "lessons/lesson-15/calibration-pack.md": "lessons/lesson-15/calibration-pack.md",
     "lessons/lesson-16/handout.md": "lessons/lesson-16/handout.md",
 }
 

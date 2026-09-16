@@ -19,9 +19,10 @@
 | 04 | [Keshav 阅读卡](lessons/lesson-04/reading-card-demo.md) / [MI 阅读卡](lessons/lesson-04/mi-reading-card-demo.md) |
 | 05–06 | [MI 证据地图](lessons/lesson-05/mi-evidence-map-demo.md) / [问题定义](lessons/lesson-06/mi-problem-definition-demo.md) |
 | 09 | [可运行复现工件](lessons/lesson-09/assets/reproducibility-example/README.md)（合成输入，不作实证结论） |
+| 09–15 | [阅读卡回放包与下载](materials/reading-card.md)（源文本、预制输出、标注、运行与评价；无模型依赖） |
 | 10 | [任务契约](lessons/lesson-10/assets/agent-task-example/task-01.md) / [diff](lessons/lesson-10/assets/agent-task-example/generate.diff) / [测试输出](lessons/lesson-10/assets/agent-task-example/test-output.txt) / [失败记录](lessons/lesson-10/assets/agent-task-example/failure-log.md) |
-| 13 | [评价报告模板](lessons/lesson-13/evaluation-report-template.md) / [填写样例](lessons/lesson-13/evaluation-report-example.md)（数值与运行 ID 为虚构） |
-| 15 | [同行评审模板](lessons/lesson-15/peer-review-template.md) / [修改计划模板](lessons/lesson-15/revision-plan-template.md) |
+| 13 | [评价报告模板](lessons/lesson-13/evaluation-report-template.md) / [填写样例](lessons/lesson-13/evaluation-report-example.md)（材料与标注为构造；运行 ID 来自实际回放） |
+| 15 | [同行评审模板](lessons/lesson-15/peer-review-template.md) / [修改计划模板](lessons/lesson-15/revision-plan-template.md) / [评审校准与修改](lessons/lesson-15/calibration-pack.md) |
 
 ## 按需查阅
 

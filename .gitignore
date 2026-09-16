@@ -25,6 +25,7 @@ __pycache__/
 # web/docs/ 下由 link_content.py 生成的软链接内容（手写页面 index.md/teacher.md 仍跟踪）
 /web/docs/course/
 /web/docs/lessons/
+/web/docs/downloads/
 
 # inspection / layout 自动产物
 *.ndjson

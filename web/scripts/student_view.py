@@ -66,16 +66,20 @@ def on_page_markdown(markdown: str, *, page, config, **_kwargs) -> str:
         markdown = f"[← 本课任务与材料](../../learn/{num}.md)\n\n" + markdown
 
     guide = re.fullmatch(r"learn/(\d{2})\.md", src)
-    if guide and int(guide.group(1)) < 16:
+    if guide:
         num = guide.group(1)
         readings = (REPO / "course/reading-list.md").read_text(encoding="utf-8")
         heading = re.search(rf"^## (第 {int(num)} 课：[^\n]+)", readings, re.MULTILINE)
         if not heading:
             raise PluginError(f"第 {num} 课缺少阅读入口")
         anchor = slugify(heading.group(1), "-")
+        onward = (f"[下一讲]({int(num) + 1:02}.md)" if int(num) < 16
+                  else "[论证门与项目提交](../project.md#checkpoint-4)")
         markdown += (f"\n\n---\n\n[完整讲义：方法、案例与来源](../lessons/lesson-{num}/handout.md) · "
-                     f"[本课阅读范围](../course/reading-list.md#{anchor}) · "
-                     f"[下一讲](%02d.md)\n" % (int(num) + 1))
+                     f"[本课阅读范围](../course/reading-list.md#{anchor}) · {onward}\n")
+
+    if src == "lessons/lesson-15/calibration-pack.md":
+        markdown = markdown.replace("## 教师参考评审", "## 参考评审（先完成自己的判断）")
 
     if src == "lessons/lesson-01/classroom-pack.md":
         markdown = re.sub(r"^## 五、纸面验收三项（教师用）.*?(?=^## 六、)", "", markdown, flags=re.MULTILINE | re.DOTALL)

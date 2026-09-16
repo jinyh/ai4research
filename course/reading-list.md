@@ -1,10 +1,11 @@
 # 逐课参考阅读清单
 
-版本：v2.2.0
-最后更新：2026-08-12
+版本：v2.2.1
+最后更新：2026-09-13
 
 变更记录：
 
+- v2.2.1 (2026-09-13)：移除 10 个仅有本地入口或重复引用该入口的案例条目；保留全部核心阅读和公开书目，删除本地副本及内部选目入口。
 - v2.2.0 (2026-08-12)：第 11 课新增课堂案例"Prime Agent 自我改进研究 Agent 案例簇"（钉 commit，附两篇预印本，仅分析对象）；第 12 课新增课堂案例"Pi Coding Agent 最小 harness 拆解案例"（钉 commit）；两课各达 5 项上限；正式书目与课时结构不变。
 - v2.1.0 (2026-08-10)：G3 选题训练配套——第 5 课 Qian 课堂案例扩为六种构思模式（填空/扩展/造锤找钉/小处泛化/复现前作/外部来源，已对本地转载副本核验）；第 6 课新增课堂案例霍强《创新研究到底怎么做？》（四维选题标准卡的兴趣与意义参照）。
 - v2.0.4 (2026-08-05)：修正项目重组后的历史归档路径标签。
@@ -14,7 +15,7 @@
 - v2.0.0 (2026-07-29)：改为“正式书目 + 课堂案例”双层结构；以经典书籍选章、同行评议论文、正式规范和原始论文为主干；加入 AI 导航—原文核验—偏差审计阅读法。
 - v1.0.0 (2026-07-29)：初版逐课阅读清单，已归档至 [archive/superseded-docs/reading-list-v1.0.0.md](../archive/superseded-docs/reading-list-v1.0.0.md)。
 
-本清单面向 16 次正式课程。每课共 3-4 项，不超过 5 项；通常只要求 1 项核心阅读，其他正式文献按项目需要选读，系统、项目、演讲和本地讲义只作为课堂案例或中文辅助材料。书籍只指定章节，不布置整本阅读。
+本清单面向 16 次正式课程。每课通常只要求 1 项核心阅读，其余按项目需要选读，总数不超过 5 项。课堂案例提供公开入口；书籍只指定章节，不布置整本阅读。
 
 ## 一、书目层级与使用规则
 
@@ -31,7 +32,7 @@
 
 ### 课堂案例
 
-GitHub 仓库、厂商工程文章、协议文档、大学课程讲义、演讲稿、转载讲义和真实审稿回复可以用于拆解设计与失败，但不作为经典文献，也不单独支撑课程的规范性结论。案例必须标明版本或核验日期。
+提供公开入口的 GitHub 仓库、厂商工程文章、协议文档、大学课程讲义和演讲稿可用于拆解设计与失败，不单独支撑课程的规范性结论。案例须标明版本或核验日期。
 
 ### 中文导读
 
@@ -70,13 +71,8 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
    用途：讨论重要问题、研究品味、勇气和长期工作方式。
 
 3. **任选｜原始综述论文｜约 25 分钟**
-   Wang, H. et al. “Scientific discovery in the age of artificial intelligence.” *Nature* 620, 47–60 (2023). DOI: [10.1038/s41586-023-06221-2](https://www.nature.com/articles/s41586-023-06221-2)。选读引言、总览图和与本人方向相关的一节。本地正式版见 [PDF](../references/library/papers/s41586-023-06221-2.pdf)。
+   Wang, H. et al. “Scientific discovery in the age of artificial intelligence.” *Nature* 620, 47–60 (2023). DOI: [10.1038/s41586-023-06221-2](https://www.nature.com/articles/s41586-023-06221-2)。选读引言、总览图和与本人方向相关的一节。
    用途：定位 AI 介入科学发现链路的环节、机会与限制。
-
-### 课堂案例
-
-4. **演讲案例**
-   Terence Tao. *Mathematics in the Age of AI* (ICM 2026 public lecture). [本地讲稿](../references/library/talk/age-of-ai-icm-2026.pdf)。只分析 AI 使用层级、证明消化链、限制披露和演讲叙事，不把其中的能力数据视为课程已核验结论。
 
 ## 第 2 课：科研伦理、Agent 权限、研究工件与追踪
 
@@ -127,11 +123,6 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
    Booth et al. *The Craft of Research*, 5th ed. 选读 Chapter 4, “Engaging Sources”，重点为 reading for a problem、argument、data and support。
    用途：防止把作者主张、数据、证据和个人推断混为一谈。
 
-### 课堂案例
-
-3. **中文检查表案例**
-   沈向洋、华刚：《读科研论文的三个层次、四个阶段与十个问题》。[本地转载副本](<../references/library/research-method/how to search/沈向洋、华刚：读科研论文的三个层次、四个阶段与十个问题 - 知乎.pdf>)。只作为中文提问清单；正式分发前须确认原始出处与许可。
-
 ## 第 5 课：综述、证据地图与研究空白识别
 
 ### 正式书目
@@ -147,11 +138,6 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
 3. **任选｜同行评议方法论文｜约 20 分钟**
    Pautasso, M. “Ten Simple Rules for Writing a Literature Review.” *PLOS Computational Biology* 9(7):e1003149 (2013). DOI: [10.1371/journal.pcbi.1003149](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003149)。
    用途：检查综述的范围、批判性、结构和迭代。
-
-### 课堂案例
-
-4. **问题生成与研究空白案例**
-   Qian, Z. *How to Look for Ideas in Computer Science Research*. [本地转载副本](<../references/library/research-method/how to think/How to Look for Ideas in Computer Science Research _ by Zhiyun Qian _ Jan, 2021 _ Medium.pdf>)。分析其六种构思模式（填空、扩展、造锤找钉、小处泛化、复现前作、外部来源）与 gap 候选生成；“表格空位”只是问题来源之一，不能自动证明问题重要或真实。
 
 ## 第 6 课：研究问题、问题定义与第一性原理
 
@@ -169,14 +155,6 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
    Hamming. “You and Your Research.” 本课只读“重要问题”和研究品味部分。
    用途：区分“可做”“新颖”和“值得投入”的问题。
 
-### 课堂案例
-
-4. **中文问题审校案例**
-   胡晓峰：《浅谈科研课题中的“科学问题”》。[本地副本](<../references/library/research-method/how to think/胡晓峰：浅谈科研课题中的“科学问题”.pdf>)。用于识别把背景、意义、工程任务或“怎么做”误写成科学问题的情况。
-
-5. **选题标准参照案例**
-   霍强：《讲堂 | 霍强：创新研究到底怎么做？》。[本地副本](<../references/library/research-method/how to think/讲堂 _ 霍强：创新研究到底怎么做？.pdf>)。任选，约 15 分钟。用“Start with why”与 Passion/Excellence/Impact 三标准作四维选题标准卡（意义/新颖性/可行性/兴趣）的兴趣与意义维度参照；不替代论证链位置的重要性检查。
-
 ## 第 7 课：机制假设、研究判断与实验设计
 
 ### 正式书目
@@ -192,11 +170,6 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
 3. **任选｜正式统计手册选段｜约 20 分钟**
    NIST/SEMATECH. [*e-Handbook of Statistical Methods: Process Improvement—Experimental Design*](https://www.itl.nist.gov/div898/handbook/pri/pri.htm)。选读 objectives、factors、responses、randomization、replication 和 blocking。
    用途：检查变量、对照、测量和混杂因素。
-
-### 课堂案例
-
-4. **构思策略案例**
-   Raskar, R. *Coming up with New Ideas in Imaging*. [本地 PPT](<../references/library/research-method/how to think/Coming up with New Ideas in Imaging.ppt>)。用于生成机制候选，不作为假设成立的证据。
 
 ## 第 8 课：学生研究方案分享与设计诊所
 
@@ -269,7 +242,7 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
    用途：用任务、成功标准、轨迹和失败类型评价 ML 实验 Agent。
 
 3. **任选｜前沿原始论文｜约 25 分钟**
-   Lu, C. et al. “Towards end-to-end automation of AI research.” *Nature* (2026). DOI: [10.1038/s41586-026-10265-5](https://www.nature.com/articles/s41586-026-10265-5)。本地正式版见 [PDF](../references/library/papers/s41586-026-10265-5.pdf)。
+   Lu, C. et al. “Towards end-to-end automation of AI research.” *Nature* (2026). DOI: [10.1038/s41586-026-10265-5](https://www.nature.com/articles/s41586-026-10265-5)。
    用途：分析端到端自动化的任务范围、评价证据和仍需人工判断的边界。
 
 ### 课堂案例
@@ -337,13 +310,8 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
    用途：用 outline、图表和数据组织驱动写作。
 
 3. **任选｜经典科学写作论文｜约 25 分钟**
-   Gopen, G. D., & Swan, J. A. “The Science of Scientific Writing.” *American Scientist* 78(6), 550–558 (1990). [期刊页面](https://www.americanscientist.org/article/the-importance-of-context-in-genetics)。本地副本见 [PDF](<../references/library/research-method/how to write/science-of-writing.pdf>)。
+   Gopen, G. D., & Swan, J. A. “The Science of Scientific Writing.” *American Scientist* 78(6), 550–558 (1990). [期刊页面](https://www.americanscientist.org/article/the-importance-of-context-in-genetics)。
    用途：理解主题位、重音位、旧信息—新信息和读者预期。
-
-### 课堂案例
-
-4. **CS 写作讲座案例**
-   Simon Peyton Jones. *How to Write a Great Research Paper*. [本地讲稿](<../references/library/research-method/how to write/How to write a great research paper.pdf>)。只分析贡献列表、示例先行和反馈驱动修改。
 
 ## 第 15 课：同行评审、论证门预检与修改工作坊
 
@@ -356,14 +324,6 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
 2. **任选｜经典研究方法书选章｜约 25 分钟**
    Booth et al. *The Craft of Research*, 5th ed. 选读 Chapter 9 “Acknowledgments and Responses” 和 Chapter 11 “Revising and Organizing”。
    用途：把反对意见转化为子论证，并区分接受、澄清、补证和保留异议。
-
-### 课堂案例
-
-3. **大学课程讲义案例**
-   Stanford Scientific Writing. Unit 8, “How to Do a Peer Review.” [本地课程材料](<../references/library/research-method/how to write/Stanford-科学写作课件/Unit_PDFs-Unit8.pdf>)。用于训练具体、建设性、针对工作而非作者的评审语言；正式分发前确认课程材料许可。
-
-4. **真实回复案例**
-   *Responses to Referee #2 Comments*. [本地案例](<../references/library/research-method/how to use template/response letter/Responses to Referee %232 Comments.pdf>)。只分析接受、补证、澄清和保留异议四类回应。魏秀参、施柏鑫等转载材料降为教师备课线索，不进入正式学生书目。
 
 ## 第 16 课：最终分享、论证门与项目提交
 
@@ -378,9 +338,6 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
 2. **经典 CS 演讲讲义案例**
    Peyton Jones, S. [*How to Give a Good Research Talk*](https://www.microsoft.com/en-us/research/publication/how-to-give-a-good-research-talk/)。选读 audience、story、slides 和 delivery，用于把项目压缩为听众能够复述和检查的研究论证；该材料不作为表达效果的实证研究。
 
-3. **演讲逆向分析**
-   Tao. *Mathematics in the Age of AI*. 本课只分析开场、问题推进、案例选择、限制披露和结尾回扣，不重复第 1 课内容。过时的 Oral/Spotlight Video 软件操作指南不再列入学生书目。
-
 ## 三、不纳入正式书目的材料
 
 - 知乎、Medium、博客和转载 PDF：可作中文辅助或课堂案例，不标为经典或正式证据。
@@ -391,7 +348,7 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
 
 ## 四、维护与版权
 
-本清单由 [research-method 选目分析](../references/notes/research-method-选目分析.md) 和 [库外补充推荐](../references/notes/research-method-补充推荐.md) 提供候选，再回到出版社、期刊、会议、政府、学术组织或作者机构页面核验。
+阅读条目以出版社、期刊、会议、政府、学术组织或作者机构页面为核验入口。
 
 每轮开课前应：
 

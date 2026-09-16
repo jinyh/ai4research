@@ -42,6 +42,7 @@ plugins:
   - tags
 
 hooks:
+  - scripts/build_downloads.py  # 从发布清单生成可独立运行的课堂下载包
   - scripts/hide_metadata.py  # 剥离正文里的版本/最后更新/变更记录，不展示在网页
   - scripts/student_view.py  # 权威条件引用、课堂入口、草稿发布保护
   - scripts/strip_dead_links.py  # 私有资料显式标记；学生资源缺失使构建失败
@@ -65,10 +66,11 @@ nav:
       - 13 · 工作流评价: learn/13.md
       - 14 · 结果写成论证: learn/14.md
       - 15 · 同行评审与修改: learn/15.md
-      - 16 · 最终展示（讲义待复核）: learn/16.md
+      - 16 · 最终展示: learn/16.md
   - 项目与考核: project.md
   - 模板与资源:
       - templates.md
+      - 阅读卡回放包: materials/reading-card.md
       - 课前准备: course/opencode-setup.md
       - 阅读清单: course/reading-list.md
       - 工具与学习资源: course/resources.md
