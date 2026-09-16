@@ -156,10 +156,22 @@ def check_authoritative_sources_and_archive(checks: Checks) -> None:
 
     l16_handout = read(LESSONS / "lesson-16/handout.md")
     l16_moc = read(LESSONS / "lesson-16/README.md")
+    status_match = re.search(r"^状态：(.*)$", l16_handout, re.MULTILINE)
+    status = status_match.group(1) if status_match else ""
+    handout_row = next((line for line in l16_moc.splitlines() if line.startswith("| [handout.md]")), "")
+    ppt_row = next((line for line in l16_moc.splitlines() if line.startswith("| [slides.pptx]")), "")
+    draft_consistent = "草稿" in status and "待定稿·学生讲义" in handout_row and "课堂 PPT 候选" in ppt_row
+    approved_consistent = (
+        "现行；本轮内容与 PPT 已同步" in status
+        and "现行·学生讲义" in handout_row
+        and "现行·可编辑课堂 PPT（12 页）" in ppt_row
+        and "教师确认：用户已明确“通过，你修改后续课程和PPT”" in l16_moc
+        and "发布前现场复核待完成" in status
+    )
     checks.check(
-        "状态：草稿" in l16_handout and "待定稿·学生讲义" in l16_moc and "课堂 PPT 候选" in l16_moc,
-        "第 16 课草稿内容门与 PPT 候选状态保持一致",
-        "第 16 课草稿、README 或 PPT 状态边界不一致",
+        draft_consistent or approved_consistent,
+        "第 16 课内容门、当前材料与现场复核状态一致",
+        "第 16 课当前状态、教师确认或文件清单不一致",
     )
 
 
