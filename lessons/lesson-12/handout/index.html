@@ -865,7 +865,7 @@
   <span class="md-ellipsis">
     
   
-    16 · 最终展示（讲义待复核）
+    16 · 最终展示
   
 
     
@@ -921,6 +921,8 @@
   
     
     
+      
+        
       
         
       
@@ -990,6 +992,34 @@
     
   
     模板与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../materials/reading-card/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    阅读卡回放包
   
 
     
@@ -1322,6 +1352,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="三、何时不用 Agent：确定性脚本、工作流与 Agent 的取舍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autoresearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        固定版本拆解：AutoResearch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1394,56 +1441,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="五、贯穿案例：把同一阅读卡任务升级为工作流">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        动作与任务契约
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#contextmemory" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Context、Memory 与权限
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        执行循环与工件
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Evals、人工审核与失败恢复
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1458,7 +1455,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         七、课堂练习
@@ -1514,7 +1511,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         课堂、课后与验证门的边界
@@ -1530,7 +1527,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         八、术语表
@@ -1541,7 +1538,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         九、延伸阅读与课程材料
@@ -1754,9 +1751,46 @@
 <li><strong>单 Agent</strong>：步骤不可预定，需要观察中间结果再决定下一步，但仍可设停止条件和人工闸门。例如调试一个未知错误，需要边读代码边假设边验证。</li>
 <li><strong>更复杂系统</strong>：多 Agent 协作或长 horizon 任务。本课程不要求学生构建多 Agent 系统，但要求能说明何时它确实必要、何时是过度工程。</li>
 </ul>
-<blockquote>
-<p>第 11 课 AutoResearch 是一种受限循环：固定指标、固定预算、固定保留/丢弃规则，本质更接近 evaluator-optimizer 模式而非完全自主 Agent。理解这一点有助于判断自己的动作是否需要自主性。</p>
-</blockquote>
+<h3 id="autoresearch">固定版本拆解：AutoResearch<a class="headerlink" href="#autoresearch" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/karpathy/autoresearch/blob/228791fb499afffb54b46200aca536f79142f117/program.md">AutoResearch <code>program.md</code>（commit <code>228791f</code>）</a> 是本课只读分析对象。以下字段已于 2026-09-13 回源核验，属于工程案例，不证明通用自主科研能力。</p>
+<table>
+<thead>
+<tr>
+<th>八要素观察点</th>
+<th>原项目中的可核验对象</th>
+<th>迁移到课程阅读卡工作流</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>任务契约、Context</td>
+<td>读 README.md、prepare.py、train.py，以 val_bpb 评价训练改动</td>
+<td>固定论文、配置与输出标准</td>
+</tr>
+<tr>
+<td>状态、工件追踪</td>
+<td>Git commit、单次 run.log、跨实验 results.tsv</td>
+<td>每个 run ID 留输入快照、输出和独立 trace</td>
+</tr>
+<tr>
+<td>工具与权限</td>
+<td>实验代码只改 train.py，禁止改 prepare.py 的评价函数或增依赖；允许写日志并执行训练</td>
+<td>文字约束需由实际权限落实；执行端禁止读 gold</td>
+</tr>
+<tr>
+<td>执行循环</td>
+<td>修改训练代码，按指标与复杂度权衡保留或回退，记录 keep/discard/crash</td>
+<td>冻结队列保留全部输出，失败不删除，不按结果改方法</td>
+</tr>
+<tr>
+<td>Evals、人工审核、恢复</td>
+<td>评价函数固定，启动前确认设置；失败留账、回退代码</td>
+<td>独立评价端在生成后读取 gold；人审核协议和结论</td>
+</tr>
+</tbody>
+</table>
+<p><strong>单次训练预算与外层停止是两个条件。</strong> 原项目每次训练有固定预算，外层持续尝试直到人工中断。本课的 6 份冻结执行队列在预定任务处理完后停止。采用优化循环时，需要另外规定总轮次、总预算和人工审核点。</p>
+<p>“只改 train.py”限定实验代码范围，日志是允许写入的工件；program.md 的文字约束也不等于操作系统已实施权限隔离。固定评价函数并不自动保证评价数据对执行端不可读。课程阅读卡中，gold 的只读权限仅属于独立评价端，执行端不得读取或复制。</p>
 <hr />
 <h2 id="agent-workflow">四、个人 Agent Workflow 设计<a class="headerlink" href="#agent-workflow" title="Permanent link">&para;</a></h2>
 <h3 id="41">4.1 从科研动作出发<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
@@ -1819,44 +1853,59 @@ Evals：
 </blockquote>
 <hr />
 <h2 id="_4">五、贯穿案例：把同一阅读卡任务升级为工作流<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>本案例不重开新项目。它直接承接第 10 课的受限生成任务和第 11 课的执行/失败恢复骨架。</p>
-<h3 id="_5">动作与任务契约<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<ul>
-<li>动作：为同一批 20 篇公开计算机论文分别生成结构化阅读卡和自由摘要，保留可配对的输出、配置与日志。</li>
-<li>输入：冻结的 20 篇论文版本、两个已审核 prompt、相同模型/解码参数/最大输出长度、三个运行种子。</li>
-<li>输出：<code>20 篇 × 2 条件 × 3 次 = 120 份输出</code>，以及每份输出对应的配置、日志和状态。</li>
-<li>成功标准：每份输出都能追到论文、条件、种子和运行 ID；任何失败都留痕；工作流不改动评价协议。</li>
-<li>不适用范围：未公开论文、需要专业图表解析但原型未支持的文档、不允许进入当前模型 Context 的材料。</li>
-</ul>
-<h3 id="contextmemory">Context、Memory 与权限<a class="headerlink" href="#contextmemory" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Context 只读冻结论文、两个 prompt、运行配置和任务契约；不提供人工基准标注、最终评分和同伴反馈。</li>
-<li>Memory 只写入结构化的队列状态、原始输出和失败日志；不依赖会话记忆作为唯一状态。</li>
-<li>可写：新运行目录和状态日志；需确认：任何配置或 prompt 改动；禁止：修改人工基准、覆盖历史输出、删除失败日志。</li>
-</ul>
-<h3 id="_6">执行循环与工件<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<ul>
-<li>模式：固定链与确定性队列，而不是自主 Agent；读取一个队列项→执行冻结条件→保存原始输出与日志→检查运行状态→进入下一项。</li>
-<li>预算：最多 120 份输出及事先写明的时间/token 上限；不因中间结果好看或难看而改变。</li>
-<li>停止：队列完成、预算触顶或出现配置/数据/评价协议漂移；回退后保留已有运行。</li>
-<li>工件：<code>agent-workflow.md</code>、队列配置、<code>experiments/&lt;run-id&gt;/</code>中的原始输出与日志、<code>failure-log.md</code>、<code>ai-usage-log.md</code>。</li>
-</ul>
-<h3 id="evals">Evals、人工审核与失败恢复<a class="headerlink" href="#evals" title="Permanent link">&para;</a></h3>
-<ul>
-<li>baseline 为同一论文的自由摘要条件；对照为结构化阅读卡条件。</li>
-<li>主指标为相对人工建立并复核的限定条件基准，摘要遗漏的限定条件数 / 该论文应保留的限定条件数；不得简化成“缺失字段数/5”。</li>
-<li>假设固定为 H1=字段约束使限定条件更易保留和核验，A1=任务转移，A2=标注提示效应，A3=文档结构效应。</li>
-<li>人工审核点：队列启动前、协议性停止时、失败恢复后、盲评与结果解释时。结果只能进入“支持/反驳/仍不能判断”，未显著不等于机制不成立。</li>
-<li>失败恢复：记录失败运行、拒绝越权改动、回退到稳定配置；普通技术失败进入修复和复盘，不冒充实验结果。</li>
-</ul>
-<hr />
+<p>继续使用<a href="../../lesson-11/assets/reading-card-workflow/">L11 小包</a>，不新换科研题目。统一命题与数字见<a href="../../../course/reading-card-case/">案例口径</a>。</p>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>实体材料或动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>任务</td>
+<td>回放并评价同材料的两种构造输出</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>sources.json 与 outputs.json</td>
+</tr>
+<tr>
+<td>Memory／持久状态</td>
+<td>state.json；events.jsonl 保存已执行与失败历史</td>
+</tr>
+<tr>
+<td>工具与权限</td>
+<td>read_resource 接口按 executor/evaluator 角色检查允许资源</td>
+</tr>
+<tr>
+<td>工件</td>
+<td>输入身份摘要、输出事件、参考标注、evaluation.json</td>
+</tr>
+<tr>
+<td>执行</td>
+<td>六项固定队列，恢复只处理未完成项</td>
+</tr>
+<tr>
+<td>Evals</td>
+<td>evaluator 读取 gold/annotations，程序验证结构和引用、汇总人工判定</td>
+</tr>
+<tr>
+<td>人工审核</td>
+<td>查看失败后决定恢复，复核语义标注，解释有限结论</td>
+</tr>
+</tbody>
+</table>
+<p>运行 access-check 可产生真实的接口拒绝与记录。该接口未提供操作系统级沙箱，不能把它讲成任意代码都无法访问磁盘文件；课堂说明当前控制模型及实际发生的行为。</p>
+<p>本包选择确定性回放加固定链，因为输入与操作已固定。实际科研动作若需要动态分解和工具选择，再说明使用 Agent 的理由；工具数量与自主程度不是评分目标。</p>
+<p>复演时依次打开输入、一次事件、state、评价报告；由同伴从输出反查源文本与版本。只有目录图或预期输出不能替代这个过程。</p>
 <h2 id="11-13">六、与第 11 课、第 13 课的连接<a class="headerlink" href="#11-13" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>承接第 11 课</strong>：第 11 课的受限循环是本课工作流的执行循环部分。本课在其基础上增加 Context、Memory、工件追踪、Evals、人工审核和失败恢复的完整设计，把"一个能跑的循环"升级为"一个可审计可评价的工作流"。</li>
 <li><strong>为第 13 课铺垫</strong>：第 13 课验证门要求工作流"有可运行或可演示原型""至少完成一次可重复评价""至少保留一次失败或局限分析"。本课产出工作流说明、原型和评价计划；课后到第 13 课之间完成运行和评价，第 13 课统一检查。</li>
 </ul>
 <hr />
-<h2 id="_7">七、课堂练习<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_5">七、课堂练习<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h3 id="1-skill">练习 1：拆解一个现成 Skill<a class="headerlink" href="#1-skill" title="Permanent link">&para;</a></h3>
 <p>选择一个现成 Agent/Skill/MCP 服务（可从课程案例池或自己常用工具中选）。用八要素框架写出它的：任务契约、Context、Memory / 状态、工具与权限、执行循环、工件与追踪、Evals 与人工审核、失败恢复。指出至少两处隐含设计决定及其风险。</p>
 <h3 id="2-agent">练习 2：判断是否需要 Agent<a class="headerlink" href="#2-agent" title="Permanent link">&para;</a></h3>
@@ -1871,14 +1920,14 @@ Evals：
 <p>围绕第 10–11 课已执行的同一科研动作，按 §4.2 模板填一份工作流说明。完成任务契约、Context、工具与权限、执行循环、Evals 计划和人工审核点，并运行或演示一个最小路径，保留一条 trace。无法执行时，使用预置输入/输出/失败日志完成等价演示。</p>
 <h3 id="4">练习 4：找出越权与失败<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <p>假设阅读卡工作流提议读取人工限定条件基准，以便“针对遗漏优化输出”。指出它越过了哪些 Context、权限与评价隔离边界，写出停止—记录—收窄—重试—核验的具体动作。</p>
-<h3 id="_8">课堂、课后与验证门的边界<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h3 id="_6">课堂、课后与验证门的边界<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>课堂最低产出</strong>：在第 10–11 课同一任务上完成八要素工作流说明的最小字段；选择确定性脚本、固定链或 Agent 中的一种并说明理由；运行或演示最小路径；保留一条 trace 和一条失败恢复位置。</li>
 <li><strong>课后补全</strong>：把原型工件、权限、状态和 Evals 计划写入 <code>agent-workflow.md</code>，并在第 13 课前准备一次可用于评价的运行结果。</li>
 <li><strong>验证门完整条件</strong>：以 <code>course/assignments.md</code> Checkpoint 3 为准。本课不要求当场完成全部评价和提交自查。</li>
 </ul>
 <hr />
-<h2 id="_9">八、术语表<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h2 id="_7">八、术语表<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1950,7 +1999,7 @@ Evals：
 </tbody>
 </table>
 <hr />
-<h2 id="_10">九、延伸阅读与课程材料<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_8">九、延伸阅读与课程材料<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>课程内材料：</p>
 <ul>
 <li><a href="../../../course/syllabus/">课程大纲第 12 课</a></li>
@@ -1979,7 +2028,7 @@ Evals：
 </ol>
 <p>承第 11 课案例（可作为拆解对象）：</p>
 <ol>
-<li>Karpathy. <a href="https://github.com/karpathy/autoresearch"><em>AutoResearch</em></a>。用途：作为受限循环案例，分析其固定预算、固定指标、保留/丢弃和日志设计。</li>
+<li>Karpathy. <a href="https://github.com/karpathy/autoresearch/blob/228791fb499afffb54b46200aca536f79142f117/program.md"><em>AutoResearch</em>（固定 commit <code>228791f</code>）</a>。用途：分析单次训练预算、固定指标、保留/丢弃与日志设计，并区分外层持续循环和课程冻结队列。</li>
 <li>Lu, C. et al. "Towards end-to-end automation of AI research." <em>Nature</em> (2026). DOI: <a href="https://www.nature.com/articles/s41586-026-10265-5">10.1038/s41586-026-10265-5</a>。用途：分析端到端自动化的任务范围、评价证据和仍需人工判断的边界。</li>
 </ol>
 <blockquote>

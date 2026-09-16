@@ -865,7 +865,7 @@
   <span class="md-ellipsis">
     
   
-    16 · 最终展示（讲义待复核）
+    16 · 最终展示
   
 
     
@@ -921,6 +921,8 @@
   
     
     
+      
+        
       
         
       
@@ -990,6 +992,34 @@
     
   
     模板与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../materials/reading-card/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    阅读卡回放包
   
 
     
@@ -1460,6 +1490,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#同一合作稿案例的一行权限" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        同一合作稿案例的一行权限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1738,7 +1779,7 @@
 <li>选择什么材料可以进入 AI Context；</li>
 <li>决定 Agent 可以读取、修改、执行和发送什么；</li>
 <li>判断哪些动作必须由人确认；</li>
-<li>记录研究工件为何从初稿变成可引用结论。</li>
+<li>记录研究工件经过哪些核验、结论仍有哪些边界。</li>
 </ol>
 <p>本讲不要求你解决项目的全部合规问题，而是建立一套可以持续修改的早期控制面：<code>agent-permissions.md</code>、<code>ethics-and-compliance.md</code>、<code>artifact-tracking.md</code> 和 <code>ai-usage-log.md</code>。课堂只完成三项最小产出：一行权限矩阵、一张五字段风险卡和一条 AI 使用记录；工件状态追踪由教师用一个生命周期示范，学生课后再持续更新。这四个文件不在课程仓库里，需要你在自己的项目工作区中按<a href="../../../course/starter-template/">早期研究脚手架</a>创建。</p>
 <h2 id="_2">学习目标<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -1814,13 +1855,13 @@
 </table>
 <p>五个字段的用途是迫使判断落到具体动作。只写“注意伦理风险”不能指导 Agent，也不能支持事后复核。</p>
 <h3 id="_6">校级规范与任务级处置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>上海交通大学《关于在教育教学中使用 AI 的规范》将使用场景分为禁止、限制、鼓励和开放四类，是课程最近制度基线。本课的任务级风险处置使用“禁止／有条件允许／允许”三档，映射关系如下：</p>
+<p>上海交通大学《关于在教育教学中使用 AI 的规范》将使用场景分为“禁止使用、有限使用、鼓励使用、开放使用”四类，是课程最近制度基线。本课的任务级风险处置使用“禁止／有条件允许／允许”三档，映射关系如下：</p>
 <ul>
-<li>校级“禁止”对应任务级“禁止”；</li>
-<li>校级“限制”对应任务级“有条件允许”；</li>
-<li>校级“鼓励”“开放”对应任务级“允许”，但仍须服从材料授权、课程要求和披露责任。</li>
+<li>校级“禁止使用”对应任务级“禁止”；</li>
+<li>校级“有限使用”对应任务级“有条件允许”；</li>
+<li>校级“鼓励使用”“开放使用”对应任务级“允许”，但仍须服从材料授权、课程要求和披露责任。</li>
 </ul>
-<p>校级分类是场景治理，任务级处置是具体动作边界。校级“鼓励”或“开放”不等于无须风险卡和权限矩阵；当材料许可、共同作者、机构或期刊规则更严格时，执行更严格要求。授课前应复核学校规范是否有修订。</p>
+<p>校级分类是场景治理，任务级处置是具体动作边界。校级“鼓励使用”或“开放使用”不等于无须风险卡和权限矩阵；当材料许可、共同作者、机构或期刊规则更严格时，执行更严格要求。授课前应复核学校规范是否有修订。</p>
 <h3 id="_7">三种处置<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>完成风险卡后，给动作一个处置结论：</p>
 <h4 id="1">1. 允许<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
@@ -1987,6 +2028,31 @@
 </tr>
 </tbody>
 </table>
+<h3 id="同一合作稿案例的一行权限">同一合作稿案例的一行权限<a class="headerlink" href="#同一合作稿案例的一行权限" title="Permanent link">&para;</a></h3>
+<p>下面是课堂构造的教学示例：未公开合作稿留在本地，研究者先人工抽象研究问题，再选用已批准的公开摘要作为替代输入。表中权限仅用于这次示例任务。</p>
+<table>
+<thead>
+<tr>
+<th>对象或能力</th>
+<th>只读范围</th>
+<th>可写范围</th>
+<th>是否允许执行</th>
+<th>人工确认点</th>
+<th>禁止事项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>合作稿的替代输入</td>
+<td>人工抽象问题与已批准的公开摘要</td>
+<td>agent-permissions.md 一行、ethics-and-compliance.md 一张风险卡、ai-usage-log.md 一条记录</td>
+<td>本次不运行命令、不联网</td>
+<td>写回前确认目标文件、目标段落与修改范围</td>
+<td>不读取或外发未公开原稿，不修改问题或指标</td>
+</tr>
+</tbody>
+</table>
+<p>这是可比对的填写样例，学生需根据自己的低风险动作重新确定范围。第一次只读审查的权限更窄：不写任何文件；第二轮得到明确确认后才执行表中写回。</p>
 <p>矩阵中最容易遗漏的是“人工确认点”。它应该描述触发条件，而不是只写“需要人工确认”：</p>
 <ul>
 <li>第一次从只读变为写入；</li>
@@ -2037,11 +2103,12 @@ Review：哪一步暂停并等待人工确认？
 </tr>
 <tr>
 <td><code>stable</code></td>
-<td>证据与边界足以支持稳定引用</td>
-<td>可进入最终论证，但仍可在新证据下修订</td>
+<td>工件经过充分检查，关键结论满足课程稳定状态要求</td>
+<td>可在新证据下修订；有限结论和未决项也可如实进入报告</td>
 </tr>
 </tbody>
 </table>
+<p>来源核验、证据作用、结论方向和工件成熟度分别记录。<code>stable</code> 不表示引用资格。</p>
 <p>状态描述的是成熟度，不是“做到第几步”。把文件从 <code>draft</code> 改成 <code>stable</code>，不会自动增加证据。</p>
 <h3 id="_14">状态迁移必须有依据<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <p>每次迁移至少记录：</p>

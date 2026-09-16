@@ -865,7 +865,7 @@
   <span class="md-ellipsis">
     
   
-    16 · 最终展示（讲义待复核）
+    16 · 最终展示
   
 
     
@@ -921,6 +921,8 @@
   
     
     
+      
+        
       
         
       
@@ -990,6 +992,34 @@
     
   
     模板与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../materials/reading-card/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    阅读卡回放包
   
 
     
@@ -1429,29 +1459,7 @@
   <a href="#1_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        第一步：写出可重复动作（§二·1 假设步骤）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        第二步：写循环四约束（§三）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#1_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        第三步：写循环骨架（§二·1 五步）
+        1. 两种循环分别看
       
     </span>
   </a>
@@ -1462,7 +1470,7 @@
   <a href="#2_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        第四步：标出人工审核点（§四·2）
+        2. 固定约束
       
     </span>
   </a>
@@ -1470,10 +1478,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#3_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        第五步：做四约束短分析（§四）
+        3. 从事件到账本
       
     </span>
   </a>
@@ -1481,10 +1489,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#4_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        第六步：写失败保留记录（§五）
+        4. 技术失败与评价结果
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 课堂到项目
       
     </span>
   </a>
@@ -1497,7 +1516,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         七、常见错误
@@ -1508,7 +1527,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         八、课堂练习
@@ -1520,7 +1539,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1_6" class="md-nav__link">
+  <a href="#1_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         练习 1：判断循环适用性
@@ -1542,7 +1561,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3_4" class="md-nav__link">
+  <a href="#3_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         练习 3：识别指标篡改
@@ -1613,7 +1632,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         九、术语表
@@ -1624,7 +1643,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         十、延伸阅读与课程材料
@@ -1725,7 +1744,7 @@
 <tr>
 <td>假设（Edit 前）</td>
 <td>写明本次迭代要验证的子假设、预期方向、何为支持/削弱/推翻</td>
-<td>假设条目（含对应 H1/A1/A2/A3）</td>
+<td>假设条目（含对应 Q1、H1/A2 与 A1/A3 检查）</td>
 </tr>
 <tr>
 <td>运行</td>
@@ -1992,86 +2011,23 @@
 </blockquote>
 <hr />
 <h2 id="_7">六、贯穿案例：把可重复动作改写为受限循环<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>承接第 9 课贯穿案例：同一批 20 篇公开计算机论文，每篇分别进入结构化阅读卡条件和自由摘要条件，每个条件运行 3 次，共得 <code>20 篇 × 2 条件 × 3 次 = 120 次输出</code>。第 10 课已把其中一次生成写成受限 Agent 任务。</p>
-<p>案例沿用固定假设编号：H1=阅读卡字段约束使限定条件更易保留和核验；A1=任务转移；A2=标注提示效应；A3=文档结构效应。本课只建立可重复执行与失败恢复，不使用中间运行结果判定这些假设。</p>
-<p>本课先区分两种循环：</p>
+<p>使用<a href="../assets/reading-card-workflow/">可复演小包</a>。固定任务是回放三份构造源文本的两条件输出，共六项；输出来自预制素材，无模型调用。真实项目可把回放步骤替换成受限生成，但须重新记录版本、配置与评价。</p>
+<h3 id="1_4">1. 两种循环分别看<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
+<p>固定队列保持方法与输入规则，收集全部输出；优化循环改变候选方法，并依据开发评价作保留决定。两者都保留失败，优化还须规定搜索空间与总预算。本课主演为固定队列。</p>
+<h3 id="2_3">2. 固定约束<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>执行与失败恢复循环</strong>：按冻结配置产生 120 份输出，记录成功、失败、重试和人工停止。它是批量执行队列，<strong>不是优化循环</strong>；不应根据中间结果修改 prompt、模型、指标或数据。</li>
-<li><strong>优化循环</strong>：在独立开发集上对事先允许的候选改动做 <code>Edit → Evaluate → Keep/Discard</code>；不能偷看最终配对评价结果后再调参。</li>
+<li>指标：人工基准限定条件遗漏率，生成/回放端不参与打分。</li>
+<li>预算：六项任务，最多八次尝试；恢复也计入尝试。</li>
+<li>停止：完成六项或达到尝试上限；输入改变必须另建版本。</li>
+<li>恢复：第一次人为注入的 T02-card 技术失败保留；人工查看后重放未完成项，使用新 run ID。</li>
 </ul>
-<p>以下数字、ID 和日志均为<strong>课程教学示意</strong>，只用于展示工件结构，不是已发生的实验结果。</p>
-<h3 id="1_4">第一步：写出可重复动作（§二·1 假设步骤）<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
-<p>可重复动作：给定一篇论文、一个已冻结条件和一个运行种子，生成一份输出并保留配置、日志与原始输出。限定条件遗漏率不是数“字段是否填了”：它要相对人工建立并复核的限定条件基准，计算摘要遗漏的限定条件数 / 该论文应保留的限定条件数。</p>
-<h3 id="_8">第二步：写循环四约束（§三）<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<ul>
-<li>固定指标：依据人工基准的限定条件遗漏率；基准标注和盲评规则在执行前冻结，工作流不得修改；</li>
-<li>预算：20 篇论文 × 2 条件 × 3 次 = 120 份输出；两条件使用同模型、同解码参数、同最大输出长度与同论文版本；资源上限事先记录；</li>
-<li>停止条件：正常停止=完成 120 次运行；协议性停止=发现人工基准或评价协议被修改、论文版本不一致、API 版本变化；禁止=因结果不利而停；</li>
-<li>回退机制：回退到第 9 课判断门通过时冻结的生成配置、论文版本、人工基准与评价协议；回退后保留所有失败迭代；回退触发 J2 研究判断的待验证项升级。</li>
-</ul>
-<h3 id="1_5">第三步：写循环骨架（§二·1 五步）<a class="headerlink" href="#1_5" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>for paper in papers:                    # 固定同一批论文
-  for condition in [card, free]:        # 配对两条件
-    for run_seed in [100, 200, 300]:    # 每条件三次
-      output = run_frozen(paper, condition, run_seed)
-      persist(output, config, log)       # 成功与失败均保留
-human_score_against_gold()              # 人工基准与盲评
-interpret_with_H1_A1_A2_A3()            # 支持/反驳/仍不能判断
-</code></pre></div>
-<h3 id="2_3">第四步：标出人工审核点（§四·2）<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>审核点</th>
-<th>谁审核</th>
-<th>审核什么</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>循环启动前</td>
-<td>学生</td>
-<td>指标定义、rubric 版本、数据划分是否固定</td>
-</tr>
-<tr>
-<td>协议性停止时</td>
-<td>学生</td>
-<td>是否真的协议错误，还是结果不利被伪装为协议错误</td>
-</tr>
-<tr>
-<td>回退触发时</td>
-<td>学生</td>
-<td>回退目标是否为上一稳定配置</td>
-</tr>
-<tr>
-<td>循环结束后</td>
-<td>学生</td>
-<td>失败迭代数 + 成功迭代数 = 总迭代数</td>
-</tr>
-<tr>
-<td>研究判断修订时</td>
-<td>学生</td>
-<td>是否需要把 H1 标记为待验证或修改</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_9">第五步：做四约束短分析（§四）<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>在贯穿案例上只做一次短对比：</p>
-<ul>
-<li>我的循环与 AutoResearch 的相似处：固定预算、固定指标、Keep/Discard、失败保留；</li>
-<li>我的循环与 AI Scientist 的差异处：我的循环不端到端生成想法和论文，只覆盖“冻结生成队列 + 独立人工评价”这一可重复动作；主指标依赖人工限定条件基准，不能由执行器自评；</li>
-<li>仍需人工判断的部分：主题是否值得研究、人工标注分歧如何处理、回退是否真的回到稳定配置、结论是否被外推。</li>
-</ul>
-<h3 id="_10">第六步：写失败保留记录（§五）<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p>至少保留一次失败迭代记录，含七字段（迭代 ID、假设对应、失败类型、触发的停止条件、回退目标、是否人工确认、Keep/Discard），写入项目 <code>failure-log.md</code>（或 <code>experiments/</code> 对应实验日志），供第 13 课验证门的失败保留条件检查。</p>
-<p>本课不要求在课堂内生成 120 份输出，也不把一次小样本执行当成 H1 的证据。</p>
-<ul>
-<li><strong>课堂最低产出</strong>：一份包含指标、预算、停止、回退的循环说明；一条正常运行 trace；一条无改善或结果不支持的 trace；一条受控技术失败 trace。三条 trace 可来自小子集或课次预置日志。</li>
-<li><strong>课后补全</strong>：将受限执行封装成可重复调用的队列与失败恢复逻辑，为第 12 课工作流原型准备。</li>
-<li><strong>验证门完整条件</strong>：第 13 课依 <code>course/assignments.md</code> 检查。虚构案例的 120 份输出是完整教学规格，不是要求每位学生课堂必须跑完的通用门槛。</li>
-</ul>
-<hr />
-<h2 id="_11">七、常见错误<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="3_4">3. 从事件到账本<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h3>
+<p>events.jsonl 逐项保留 attempt_started、controlled_failure、replayed 等事件，state.json 指出已完成项与下一动作。恢复不删除原失败，也不重复记已完成成功项。</p>
+<h3 id="4_2">4. 技术失败与评价结果<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h3>
+<p>完成六项后，T01 改善、T02 无改善、T03 为负例。技术失败属于一次执行事件；无改善与负例属于输出评价，不能靠重新运行或删掉输入消除。Q1 仅在构造材料中方向一致；H1/A2 未决，A1 未评价，A3 范围受限。</p>
+<h3 id="5_1">5. 课堂到项目<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h3>
+<p>先完成一条有状态的执行与恢复说明，并能复原三类记录。借用教师包时标记使用素材及回放身份，个人项目仍缺的运行入口或评价数据写入既有离场卡，课后补到本人项目。</p>
+<h2 id="_8">七、常见错误<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>循环无预算</strong>：跑"直到结果好为止"。应预先写明时间、token、运行次数与失败预算。</li>
 <li><strong>停止条件只写"跑完为止"</strong>：缺协议性停止与禁止停止。应写明三类触发器。</li>
@@ -2085,11 +2041,11 @@ interpret_with_H1_A1_A2_A3()            # 支持/反驳/仍不能判断
 <li><strong>回退后不修订研究判断</strong>：回退了但没把假设标记为待验证。应在回退时触发判断记录更新。</li>
 </ol>
 <hr />
-<h2 id="_12">八、课堂练习<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
-<h3 id="1_6">练习 1：判断循环适用性<a class="headerlink" href="#1_6" title="Permanent link">&para;</a></h3>
+<h2 id="_9">八、课堂练习<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="1_5">练习 1：判断循环适用性<a class="headerlink" href="#1_5" title="Permanent link">&para;</a></h3>
 <p>判断以下科研动作是否适合改写为受限循环，并说明理由：</p>
 <ol>
-<li>用固定模型对 20 篇论文生成阅读卡摘要并计算限定条件遗漏率。</li>
+<li>用固定模型对 3 份构造源文本生成阅读卡摘要并计算限定条件遗漏率。</li>
 <li>让 Agent 自动判断哪篇论文值得深入研究。</li>
 <li>在固定配置扫描下测试三种 prompt 模板的摘要质量分数。</li>
 <li>让 Agent 自动改写论文直到"读起来更好"。</li>
@@ -2097,7 +2053,7 @@ interpret_with_H1_A1_A2_A3()            # 支持/反驳/仍不能判断
 <p>参考判断：1 适合（可重复、指标可机器计算）；2 不适合（依赖人工判断）；3 适合（配置扫描、有界）；4 不适合（"读起来更好"无操作性定义）。</p>
 <h3 id="2_4">练习 2：写四约束<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
 <p>为你第 10 课的受限执行动作写四约束：固定指标、预算、停止条件、回退机制。检查停止条件是否包含正常/协议性/禁止三类。</p>
-<h3 id="3_4">练习 3：识别指标篡改<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h3>
+<h3 id="3_5">练习 3：识别指标篡改<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
 <p>下面这段循环日志有什么问题？</p>
 <blockquote>
 <p>迭代 3：限定条件遗漏率 0.42，未达阈值。自动切换到"字段覆盖率"指标，迭代 3' 字段覆盖率 0.85，达到阈值，Keep。</p>
@@ -2114,7 +2070,7 @@ interpret_with_H1_A1_A2_A3()            # 支持/反驳/仍不能判断
 <h3 id="8">练习 8：不外推清单自查<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
 <p>检查你的循环说明和对比分析中是否出现 §四·4 列表中的越界表述。出现则改写为带边界的形式。</p>
 <hr />
-<h2 id="_13">九、术语表<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h2 id="_10">九、术语表<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -2174,7 +2130,7 @@ interpret_with_H1_A1_A2_A3()            # 支持/反驳/仍不能判断
 </tbody>
 </table>
 <hr />
-<h2 id="_14">十、延伸阅读与课程材料<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h2 id="_11">十、延伸阅读与课程材料<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p>课程内材料：</p>
 <ul>
 <li><a href="../../../course/syllabus/">课程大纲</a></li>

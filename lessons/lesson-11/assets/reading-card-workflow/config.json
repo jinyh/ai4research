@@ -1,0 +1,21 @@
+{
+  "version": "classroom-v1",
+  "provenance": "全部源文本、输出与参考标注均为教学构造；无模型调用",
+  "aggregation": "micro: sum(missing)/sum(gold conditions), separately by condition",
+  "repetitions": 1,
+  "budget_jobs": 6,
+  "fault_job": "T02-card",
+  "allowed_resources": {
+    "executor": [
+      "sources",
+      "outputs"
+    ],
+    "evaluator": [
+      "sources",
+      "outputs",
+      "gold",
+      "annotations"
+    ]
+  },
+  "budget_attempts": 8
+}

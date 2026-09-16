@@ -865,7 +865,7 @@
   <span class="md-ellipsis">
     
   
-    16 · 最终展示（讲义待复核）
+    16 · 最终展示
   
 
     
@@ -921,6 +921,8 @@
   
     
     
+      
+        
       
         
       
@@ -990,6 +992,34 @@
     
   
     模板与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../materials/reading-card/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    阅读卡回放包
   
 
     
@@ -1251,7 +1281,7 @@
 <p>事实边界：以下案例与记录均为课堂构造，不对应真实学生、账户、稿件或数据</p>
 <h1 id="2">第 2 课课堂材料包<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
 <h2 id="_1">一、虚构演示项目<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>情境：研究者准备从一组公开论文摘要中提取候选检索词。当前项目不含个人信息、未公开稿件、密钥或真实账户。</p>
+<p>情境：研究者准备为一份虚构未公开合作稿寻找文献线索。原稿保留在本地且不向 Agent 开放；研究者人工抽象研究问题，再选取已批准的公开摘要，构成可授权的替代输入。演示项目仅保存这份虚构对象描述、抽象问题与公开材料，不包含真实合作稿、个人信息、密钥或账户。</p>
 <div class="highlight"><pre><span></span><code>demo-project/
 ├── AGENTS.md
 ├── problem-definition.md
@@ -1260,7 +1290,8 @@
 ├── ethics-and-compliance.md
 └── ai-usage-log.md
 </code></pre></div>
-<p>第一轮只读，不联网、不写文件、不假定额外授权。第二轮只能修改研究者明确批准的文件，完成后必须检查 diff。</p>
+<p>第一轮只读权限矩阵与人工写好的对象描述，不读取原稿、不联网、不写文件。第二轮经人工确认后，只写权限一行、风险卡和 AI 使用记录，完成后检查 diff。</p>
+<p>完整六字段填写示例见 <a href="../handout/#同一合作稿案例的一行权限">讲义中的同一合作稿案例</a>。</p>
 <h2 id="_2">二、课堂最低闭环模板<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="starter-template-8">权限矩阵一行（表头以 starter-template §8 为准）<a class="headerlink" href="#starter-template-8" title="Permanent link">&para;</a></h3>
 <table>
@@ -1340,7 +1371,7 @@
 <li>风险理由、权限边界和日志能否相互解释？</li>
 </ol>
 <h2 id="_5">四、无模型／无网络备用路径<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>直接编辑以上 Markdown 表格，并在 AI 使用记录中将“实际输出”写为“未执行：模型不可用”，保留预期任务、Context 边界和人工核验方式。这一路径不伪造 AI 执行记录。</p>
+<p>直接编辑以上 Markdown 表格，并在 AI 使用记录的“工具 / 模型”与“输出用途”字段写明“未执行：模型不可用”，保留预期任务、Context 边界和人工核验方式。这一路径不伪造 AI 执行记录。</p>
 <p>课后将风险卡、权限矩阵和 AI 使用记录的状态回写 <code>artifact-tracking.md</code>；这一步不作为本课课堂第四张表。</p>
 
 

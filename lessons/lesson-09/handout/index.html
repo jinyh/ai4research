@@ -865,7 +865,7 @@
   <span class="md-ellipsis">
     
   
-    16 · 最终展示（讲义待复核）
+    16 · 最终展示
   
 
     
@@ -921,6 +921,8 @@
   
     
     
+      
+        
       
         
       
@@ -990,6 +992,34 @@
     
   
     模板与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../materials/reading-card/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    阅读卡回放包
   
 
     
@@ -1505,6 +1535,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="七、贯穿案例：从实验规格草图到判断门材料">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 从原文定义指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 固定可复演规格
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 工程校准与科研评价分开
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 留下判断与失败记录
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1553,7 +1633,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3_5" class="md-nav__link">
+  <a href="#3_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         练习 3：写复现说明
@@ -1564,7 +1644,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4_3" class="md-nav__link">
+  <a href="#4_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         练习 4：写第二条研究判断
@@ -1805,55 +1885,47 @@
 <h2 id="_3">三、实验规格完善<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>实验规格不等于"代码能跑"。它回答：验证哪个假设、怎么验证、什么是公平对照、什么结果支持或推翻、什么时候停。第 7 课已建立"假设—指标—实验—可能结论"映射和变量清单草案，本课把它补全为判断门可检查的完整规格。</p>
 <h3 id="1">1. 七字段规格<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<p>判断门条件之五要求实验规格完整，包括假设对应、变量、步骤、度量标准、对照和停止条件。本课要求把它写成一张七字段表：</p>
+<p>七字段要能落到实际材料；<a href="../../../course/reading-card-case/">贯穿案例</a>的小包采用以下规格。</p>
 <table>
 <thead>
 <tr>
 <th>字段</th>
-<th>内容</th>
-<th>贯穿案例样例</th>
+<th>本例的可检查内容</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>假设对应</td>
-<td>验证 H1 还是 A1/A2/A3</td>
-<td>H1=阅读卡字段约束使限定条件更易被保留和核验；A1=任务转移；A2=标注提示效应；A3=文档结构效应</td>
+<td>Q1 结果；H1/A2 机制与测量解释待区分；A1 质量、A3 范围另查</td>
 </tr>
 <tr>
 <td>变量</td>
-<td>自变量 / 因变量 / 控制变量 / 混杂变量</td>
-<td>自：是否使用阅读卡；因：限定条件遗漏率；控：模型、解码参数、最大输出长度、论文版本、评价协议；混：论文结构、标注提示与标注者训练</td>
+<td>比较两种输出条件，度量限定条件遗漏；材料与参考标注固定</td>
 </tr>
 <tr>
 <td>步骤</td>
-<td>从准备到运行到标注到统计的顺序，每步谁执行、谁审核</td>
-<td>1) 确定同一批 20 篇公开 CS 论文；2) 每篇分别进入阅读卡与自由摘要条件；3) 每个条件重复运行；4) 对人工基准标注执行盲评；5) 配对计算遗漏率、不确定性和一致性</td>
+<td>读源文本，回放预置输出，人工核验标注，脚本校验并汇总</td>
 </tr>
 <tr>
 <td>度量标准</td>
-<td>指标操作定义、计算口径、标注协议、标注者一致性指标</td>
-<td>限定条件遗漏率 = 相对于人工建立并经复核的限定条件基准，摘要遗漏的限定条件数 / 该论文应保留的限定条件数；一致性阈值需由协议事先声明</td>
+<td>各条件缺失数之和 / 应保留条件数之和；分母均为 8。脚本不判断语义</td>
 </tr>
 <tr>
 <td>对照</td>
-<td>baseline 是什么、为什么公平、控制变量清单</td>
-<td>朴素 baseline = 自由摘要；公平性：同一批论文配对、同模型、同解码参数、同最大输出长度、同论文版本、同评价协议和同运行次数</td>
+<td>同一份源文本的自由摘要；此处为构造校准对象，不是已完成的模型实证实验</td>
 </tr>
 <tr>
 <td>配对与重复</td>
-<td>是否使用同一对象配对比较；若有随机源，种子、重复计划与汇总方式如何记录</td>
-<td>每篇论文、每个条件运行 3 次，共 <code>20 篇 × 2 条件 × 3 次 = 120 次输出</code>；记录每次运行配置，按同论文配对汇总</td>
+<td>3 份源文本 × 2 个条件 × 1 份预置输出 = 6 份；无随机重复，不估计方差</td>
 </tr>
 <tr>
 <td>停止条件</td>
-<td>跑多少次、何时停、什么条件下提前停</td>
-<td>完整教学规格为 120 次输出；只在发现标注协议错误、数据污染或权限问题时提前停，不因结果方向提前停</td>
+<td>6 个任务完成即停；最多 8 次执行尝试。技术失败暂停、保留并恢复；负向结果不删除</td>
 </tr>
 </tbody>
 </table>
-<p>这是虚构教学案例的完整规格，不冒充真实实验结果。课堂只在公开合成子集上跑通或检查一条可重运行记录；学生项目的重复计划由其主张强度决定，不把本案例的次数升级为全班通用硬门。</p>
-<p>结果解释统一使用“支持／反驳／仍不能判断”，同时报告估计差异、不确定性和适用边界。未达到统计显著不得直接写成“机制不成立”；证据不足、噪声过大或 A1/A2/A3 未排除时，应写“仍不能判断”。</p>
+<p>这套构造材料支持指标校准和流程回放。真实项目还须预先约定抽样、生成配置、随机性、盲化与标注分歧处理等实际设计，不能把本包写成已经完成独立盲评或模型实验。研究重复次数由主张强度决定，失败重试不算独立研究重复。</p>
+<p>“支持／反驳／仍不能判断”必须对应明确命题。Q1 的结果方向与 H1 的机制证据分开记录；没有区分 H1/A2 时机制保持未决。质量代价和采用成本另查，不能用“不值得采用”直接反驳“遗漏是否下降”。</p>
 <h3 id="2">2. 停止条件为什么容易被忽略<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p>最常见的隐性偏倚是"跑到出现显著结果为止"。如果不预先写明运行次数和停止规则，研究者会在结果有利时停、不利时继续跑，最终把噪声差异写成方法效应。停止条件就是预先承诺：跑到第几次就停，提前停只在协议错误或数据污染时触发，不在结果不利时触发。</p>
 <blockquote>
@@ -1872,7 +1944,7 @@
 <p>可从下列情形中选择与本人最大风险相符的一项，也可以写其他风险；课程不要求同时覆盖所有类型：</p>
 <ul>
 <li>baseline 跑不通（如换用更小样本、回退到朴素 baseline）；</li>
-<li>结果不支持假设（如检查是否 A1/A2/A3 替代假设被触发，记录为待验证项而非删除）；</li>
+<li>结果不支持预期时，分别检查 Q1、H1/A2、A1 质量与 A3 范围，保留观察和未决项；</li>
 <li>数据不可用（如换用公开替代数据，并在判断门材料中说明限制）；</li>
 <li>标注者一致性过低（如增加训练、修订 rubric、降级为弱结论）。</li>
 </ul>
@@ -1906,33 +1978,33 @@
 <tbody>
 <tr>
 <td>环境</td>
-<td>操作系统、Python/PyTorch 版本、关键库版本</td>
-<td>Python 3.10, transformers 4.40.0, anthropic SDK 0.34.0</td>
+<td>运行环境与依赖</td>
+<td>Python 标准库；实际版本写入演练记录，无模型 SDK</td>
 </tr>
 <tr>
 <td>配置</td>
-<td>模型名、解码参数、prompt 模板、rubric 版本</td>
-<td>model=claude-3-5-sonnet-20241022, temperature=0, max_tokens=1024, rubric v1.2</td>
+<td>实际配置与标注口径</td>
+<td>小包 config.json；固定输出；最多 8 次尝试</td>
 </tr>
 <tr>
-<td>随机种子</td>
-<td>数据划分种子、运行种子、采样种子</td>
-<td>split_seed=42, run_seeds=[100,200,300]</td>
+<td>随机性</td>
+<td>种子或等价复现条件</td>
+<td>本包无随机源；通过固定输入及文件摘要识别版本</td>
 </tr>
 <tr>
 <td>数据</td>
-<td>数据来源、版本、划分方式、使用限制</td>
-<td>20 篇 CS 论文来自 ACL Anthology 2024-05 快照；仅用于课程项目，不二次分发</td>
+<td>来源、版本、使用范围</td>
+<td>sources.json / outputs.json；全部为教学构造</td>
 </tr>
 <tr>
 <td>代码</td>
-<td>仓库位置、commit、运行命令、入口脚本</td>
-<td>github.com/.../project, commit abc123, <code>python src/run_baseline.py --config configs/exp01.yaml</code></td>
+<td>实际入口与运行说明</td>
+<td><a href="../../lesson-11/assets/reading-card-workflow/">小包 README</a> 中 replay / evaluate 命令</td>
 </tr>
 <tr>
 <td>结果</td>
-<td>实验日志位置、原始输出、聚合结果</td>
-<td><code>experiments/exp01/log.jsonl</code>, <code>experiments/exp01/results.csv</code></td>
+<td>原始输出、过程与汇总</td>
+<td>运行目录中的 events.jsonl、state.json、evaluation.json</td>
 </tr>
 </tbody>
 </table>
@@ -1959,13 +2031,14 @@
 </ul>
 <p>把论文全文发送到外部 API 时，确认你拥有相应权限；课程默认不向外部模型发送未公开论文、学生作业或敏感数据（沿用 <a href="../../../course/starter-template/">starter-template.md</a> §8-9 与 <a href="../../../course/reading-list/">reading-list.md</a> §二）。</p>
 <h3 id="4-acm-badging">4. 工件状态与 ACM Badging 视角<a class="headerlink" href="#4-acm-badging" title="Permanent link">&para;</a></h3>
-<p>判断门要求 baseline 可执行、结果可追溯，但不要求通过 ACM 完整 badges。可以用 ACM Artifact Review and Badging 的三个最低档作为自查视角：</p>
+<p>判断门要求 baseline 可执行、结果可追溯，但不要求通过 ACM 完整 badges。可以借用 ACM Artifact Review and Badging 中 Functional 的四项检查维度：</p>
 <ul>
 <li><strong>documented</strong>：基本运行说明存在；</li>
 <li><strong>consistent</strong>：说明中的步骤与代码实际行为一致；</li>
+<li><strong>complete</strong>：支撑检查所需的关键部分齐全；</li>
 <li><strong>exercisable</strong>：工件能被独立运行，不只是"在我机器上能跑"。</li>
 </ul>
-<p>判断门对应这三档：documented 由实验规格覆盖；consistent 由复现说明与代码一致覆盖；exercisable 由 baseline 可执行覆盖。更高档（complete、results validated、available）是验证门和论证门的目标，本课不要求。</p>
+<p>ACM Functional 同时检查 documented、consistent、complete、exercisable 等条件；这些是检查维度，不是三档升级。Reusable 另强调可复用质量；Available 和结果复核另有定义。课程借用检查维度，研究门以 assignments.md 为准。</p>
 <p>本课课堂最低产出是：一个经公平性审计的 baseline，以及一条可由同伴按说明重新运行的记录（输入、配置、命令、原始输出和日志位置）。课后只补全本次正式提交所需的规格、复现说明、反馈处理和模板迁移；判断门仍按 §六的九项完整条件检查。</p>
 <hr />
 <h2 id="_5">五、课后操作指引：从轻量脚手架迁移到完整项目模板<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
@@ -2155,33 +2228,53 @@
 </ul>
 <hr />
 <h2 id="_7">七、贯穿案例：从实验规格草图到判断门材料<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>承接第 7 课贯穿案例。第 7 课产出：H1 主假设 + 一个可区分的 A1/A2/A3 候选 + 研究判断 J1（采用限定条件遗漏率而非通用语言质量评分）+ 映射草图。第 8 课产出：限时陈述 + 同伴反馈（含"建议增加强 baseline""建议报告不确定性""质疑样本量过小"等）。</p>
-<p>本课动作链：</p>
-<p><strong>第一步：选择 baseline（§二）</strong></p>
-<p>朴素 baseline = 自由摘要（不强制阅读卡结构）。理由：回答 H1"字段约束是否必要"，朴素 baseline 直接检验"没有字段约束会怎样"。强 baseline（few-shot 摘要）暂不在范围——第 8 课同伴反馈指出需要外部 prompt 数据集，超出课程周期。</p>
-<p><strong>第二步：补全实验规格七字段（§三·1）</strong></p>
-<p>H1 对应；变量四类如 §三·1 样例；步骤含 5 步（定义同一批 20 篇 → 每篇进入两条件 → 重复生成 → 对人工基准盲评 → 配对计算）；主指标是限定条件遗漏率；对照为朴素 baseline；每篇、每条件运行 3 次，共 120 次输出；发现协议错误、数据污染或权限问题时提前停。</p>
-<p><strong>第三步：补全可复现说明（§四）</strong></p>
-<p>环境：Python 3.10 与冻结的模型 SDK；配置：<code>model=&lt;frozen-model-id&gt;</code>, <code>temperature=0</code>, <code>rubric=v1.2</code>；运行种子：<code>run_seeds=[100,200,300]</code>；数据：同一批 20 篇公开 CS 论文清单 <code>set-v1</code>，每篇分别进入两个条件；代码：commit <code>abc123</code>, <code>python src/run_baseline.py --config configs/exp01.yaml</code>；结果：<code>experiments/exp01/log.jsonl</code>。模型、SDK 与论文版本必须在实际执行时记录真实值，不能照抄教学占位符。</p>
-<p><strong>第四步：补写第二条研究判断（§五与第 7 课 §三）</strong></p>
-<p>J2：baseline 选择朴素而非强 baseline。取舍理由：第 8 课同伴反馈指出强 baseline 需外部数据集，超出周期；朴素 baseline 已能检验 H1"字段约束是否必要"。适用边界：结论只能支持"字段约束相比无约束更好"，不能支持"阅读卡优于其他结构化方法"。依据：第 8 课同伴反馈记录 + 第一性原理"主张必须能定位原文"。待验证状态：强 baseline 留作后续工作。</p>
-<p><strong>第五步：处理第 8 课同伴反馈（§六·2 之 6）</strong></p>
-<p>逐条归档：</p>
-<ul>
-<li>反馈"增加强 baseline"——保留异议（J2 已记录超出周期的可追溯理由）；</li>
-<li>反馈"报告方差"——采纳（实验规格已含 3 次运行与标准差）；</li>
-<li>反馈"样本量过小"——暂缓（标记为待验证项，结论将标记为"小样本下的初步证据"）。</li>
-</ul>
-<p><strong>第六步：写最大风险与失败预案（§三·4）</strong></p>
-<p>最大风险：20 篇样本可能不足以支持稳定结论。失败预案：若 kappa &lt; 0.7，增加标注者训练并修订 rubric；若 baseline 跑不通，回退到只用主假设行的最小验证；若结果不支持 H1，检查是否触发 A1/A2/A3 并记录为待验证项。</p>
-<p><strong>第七步：补一条已经发生的失败记录（§六·2 之 8）</strong></p>
-<p>从当前项目选择一个已经发生的执行失败或已经放弃的备选方案。例如：强 baseline 因所需外部 prompt 集在课程周期内无法获得而被放弃。记录发生条件、处理方式（改用朴素 baseline，并降低结论边界）和回写位置（J2、<code>experiment-spec.md</code> 对照字段、<code>failure-log.md</code>）。这条事实记录不能用“如果失败就……”的前瞻预案替代。</p>
-<p><strong>第八步：迁移到 project-template（§五）</strong></p>
-<p>按迁移对照表搬迁字段，AI 使用记录从第 1-8 课累计 N 条（不丢失），伦理说明补"数据使用限制：ACL Anthology 论文仅课程使用"。工件状态追踪表更新：实验规格、研究判断记录、baseline 至 <code>review</code>。</p>
-<p><strong>第九步：判断门自查（§六·2）</strong></p>
-<p>对照 9 项门条件逐项自查。</p>
-<p>本课先跑通“映射草图 → 公平 baseline → 一条可重运行记录”。其余字段按 §五迁移指引补全，再对照 §六完成判断门九项自查。</p>
-<hr />
+<p>案例口径见<a href="../../../course/reading-card-case/">统一说明</a>，实际输入见<a href="../../lesson-11/assets/reading-card-workflow/">工作流小包</a>。Q1 是限定遗漏是否减少的结果命题；H1/A2 区分机制与测量解释；A1/A3 分别检查质量代价和范围。</p>
+<h3 id="1_4">1. 从原文定义指标<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
+<p>打开 T01：人工基准含英文材料、摘要不超过200词、包含显式限定句三项。将两种预制输出逐项对回；遗漏项计入分子，应保留的基准条件计入分母。程序只能检查参考标注完整性并汇总，语义由人核验。</p>
+<h3 id="2_4">2. 固定可复演规格<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>小包中的具体值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>假设对应</td>
+<td>Q1 结果；H1/A2 暂无区分证据；A1/A3 分别记录</td>
+</tr>
+<tr>
+<td>变量</td>
+<td>同一源文本的 card/free 两条件；限定条件保留/遗漏</td>
+</tr>
+<tr>
+<td>步骤</td>
+<td>3 份构造源文本→6 份预制输出→逐项参考标注→复核→汇总</td>
+</tr>
+<tr>
+<td>度量</td>
+<td>每条件共 8 项；按条件逐项合并，不把字段是否非空当作语义正确</td>
+</tr>
+<tr>
+<td>对照</td>
+<td>同材料、同参考基准；此包不调用模型，不宣称做过生成干预</td>
+</tr>
+<tr>
+<td>配对与重复</td>
+<td>按 T01/T02/T03 配对；每条件一份预制输出，记录回放身份</td>
+</tr>
+<tr>
+<td>停止</td>
+<td>6 项处理完停止；技术失败先记录再恢复；输入改变使用新版本</td>
+</tr>
+</tbody>
+</table>
+<p>真实学生项目据主张强度设计生成、重复和不确定性；不照抄本包规模。</p>
+<h3 id="3_5">3. 工程校准与科研评价分开<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
+<p>原有 <a href="../assets/reproducibility-example/">四条布尔记录示例</a>演示输入、配置、结果和日志的复算一致性，输出 0.5。该指标是记录中的布尔条件统计，不替代上面逐条文本核验的遗漏率。两例分别说明“记录可复算”与“指标测到了目标内容”。</p>
+<h3 id="4_3">4. 留下判断与失败记录<a class="headerlink" href="#4_3" title="Permanent link">&para;</a></h3>
+<p>J2 可记录“先使用同材料自由摘要对照检查 Q1，机制检验另补”；依据是当前任务和评价设计，不能把朴素 baseline 自动说成证明某机制必要。技术失败记录发生条件、处理和回写位置；结果不利则保留原样本与分项结果。课堂只完成公平性说明与一条可重运行记录，判断门完整条件课后补齐。</p>
 <h2 id="_8">八、常见错误<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>baseline 不公平</strong>：对照组与实验组在模型、数据、温度、运行次数上不一致。结论无法成立。</li>
@@ -2193,7 +2286,7 @@
 <li><strong>同伴反馈未归档</strong>：第 8 课拿了反馈但没处理记录。应逐条选择处理类型并写理由。</li>
 <li><strong>迁移丢失 AI 使用记录</strong>：搬到 project-template 时漏掉了第 1-8 课的 AI 使用条目。应按迁移对照表逐项核对。</li>
 <li><strong>第二条研究判断不完整</strong>：只有一条研究判断，或第二条缺适用边界。应补全六字段。</li>
-<li><strong>把"代码能跑"当可复现</strong>：能跑不等于别人能复现。应对照 ACM Badging 三档自查。</li>
+<li><strong>把"代码能跑"当可复现</strong>：能跑不等于别人能复现。应对照 ACM 工件检查维度自查。</li>
 <li><strong>最大风险写成"时间不够"</strong>：不具体。应写具体风险（如样本量不足、kappa 可能过低）。</li>
 <li><strong>失败预案与最大风险脱节</strong>：只写泛化的“如果跑不通就缩小范围”，但没有触发条件、动作与记录位置。应先为当前最大风险写一条可执行预案；baseline 跑不通、结果不支持、数据不可用只是可选例库，不是必须同时覆盖的三类硬门。</li>
 <li><strong>用失败预案代替已经发生的失败记录</strong>：只写未来可能发生什么，却没有记录已经遇到的执行失败或已经放弃的备选方案。应补发生条件、实际处理方式和回写位置。</li>
@@ -2210,9 +2303,9 @@
 <p>参考判断：1 在模型层面不公平；2 是朴素 baseline，公平；3 是消融 baseline。</p>
 <h3 id="2-baseline_1">练习 2：审计公平 baseline<a class="headerlink" href="#2-baseline_1" title="Permanent link">&para;</a></h3>
 <p>用第 7 课映射草图，检查 baseline 与实验条件是否使用同一对象、模型、解码参数、最大输出长度、材料版本、评价协议和运行次数。对每个不一致项写下它会混杂哪条研究判断。</p>
-<h3 id="3_5">练习 3：写复现说明<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
+<h3 id="3_6">练习 3：写复现说明<a class="headerlink" href="#3_6" title="Permanent link">&para;</a></h3>
 <p>为你的 baseline 写一条可重运行记录，至少包含输入位置、环境、配置、运行命令、原始输出和日志位置；有随机源时同时记录种子，没有时记录等价复现条件。</p>
-<h3 id="4_3">练习 4：写第二条研究判断<a class="headerlink" href="#4_3" title="Permanent link">&para;</a></h3>
+<h3 id="4_4">练习 4：写第二条研究判断<a class="headerlink" href="#4_4" title="Permanent link">&para;</a></h3>
 <p>在第 7 课 J1 基础上，写第二条研究判断（六字段）。建议主题：baseline 选择、度量选择或样本量决定。</p>
 <h3 id="5-8">练习 5：处理第 8 课同伴反馈<a class="headerlink" href="#5-8" title="Permanent link">&para;</a></h3>
 <p>把第 8 课拿到的同伴反馈逐条归档为采纳、澄清、补证、暂缓或保留异议，每条写明理由。处理类型按事实选择；保留异议时要写可追溯依据，不能只写"不同意"。</p>
@@ -2304,7 +2397,7 @@
 </tr>
 <tr>
 <td>ACM Badging</td>
-<td>ACM 工件评审徽章体系；本课只用 documented/consistent/exercisable 三档作自查视角</td>
+<td>ACM 工件评审徽章体系；本课用 documented/consistent/complete/exercisable 等并列维度自查</td>
 </tr>
 <tr>
 <td>同伴反馈处理</td>

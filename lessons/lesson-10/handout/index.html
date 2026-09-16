@@ -865,7 +865,7 @@
   <span class="md-ellipsis">
     
   
-    16 · 最终展示（讲义待复核）
+    16 · 最终展示
   
 
     
@@ -921,6 +921,8 @@
   
     
     
+      
+        
       
         
       
@@ -990,6 +992,34 @@
     
   
     模板与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../materials/reading-card/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    阅读卡回放包
   
 
     
@@ -1372,6 +1402,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="五、贯穿案例：把判断门实验规格的一步改写为受限 Agent 任务">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 任务契约
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 可观察的前后变化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 失败与权限决定
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 交给下一课
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1409,7 +1489,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2_3" class="md-nav__link">
+  <a href="#2_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         练习 2：权限分层
@@ -1431,7 +1511,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4_1" class="md-nav__link">
+  <a href="#4_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         练习 4：区分修复根因 / 绕过失败 / 污染实验
@@ -1629,12 +1709,12 @@
 <tr>
 <td>Context</td>
 <td>Agent 能看到哪些文件、配置、上游判断；本次任务在实验规格中对应哪一步</td>
-<td>阅读卡摘要生成函数 <code>src/generate.py</code> 的 <code>generate_summary()</code>；实验规格 §步骤之 3“分别生成”；H1 主假设；不暴露人工限定条件基准、标注者身份与最终评分</td>
+<td>阅读卡摘要生成函数 <code>src/generate.py</code> 的 <code>normalize_record()</code>；实验规格 §步骤之 3“分别生成”；H1 主假设；不暴露人工限定条件基准、标注者身份与最终评分</td>
 </tr>
 <tr>
 <td>Permission</td>
 <td>只读 / 可写 / 可执行 / 需确认 / 禁止五层，列出具体路径与命令</td>
-<td>只读：<code>experiment-spec.md</code>、<code>evidence-map.md</code>；可写：<code>src/generate.py</code>；可执行：<code>pytest tests/test_generate.py</code>；需确认：任何对 <code>configs/</code> 的修改；禁止：修改 <code>experiments/</code> 已有结果、修改 rubric、访问 <code>notes/</code> 同伴反馈</td>
+<td>只读：<code>experiment-spec.md</code>、<code>evidence-map.md</code>；可写：<code>src/generate.py</code>；可执行：<code>python3 -m unittest assets/agent-task-example/tests/test_generate.py</code>；需确认：任何对 <code>configs/</code> 的修改；禁止：修改 <code>experiments/</code> 已有结果、修改 rubric、访问 <code>notes/</code> 同伴反馈</td>
 </tr>
 <tr>
 <td>Non-goal</td>
@@ -1667,7 +1747,7 @@
 <tr>
 <td>范围</td>
 <td>"把 baseline 跑通"</td>
-<td>"修改 <code>generate_summary()</code>，使其在阅读卡路径强制调用字段约束，自由摘要路径保持不变"</td>
+<td>"修改 <code>normalize_record()</code>，使其在缺字段时明确报 ValueError，并保留正常 summary 去空格行为"</td>
 </tr>
 <tr>
 <td>权限</td>
@@ -1726,7 +1806,7 @@
 <tr>
 <td>可执行</td>
 <td>Agent 可运行的明确命令</td>
-<td><code>pytest tests/test_generate.py</code>、<code>python src/run_baseline.py --config configs/exp01.yaml</code></td>
+<td><code>python3 -m unittest assets/agent-task-example/tests/test_generate.py</code>、<code>python src/run_baseline.py --config configs/exp01.yaml</code></td>
 </tr>
 <tr>
 <td>需确认</td>
@@ -1789,7 +1869,7 @@
 <td>修复根因</td>
 <td>找到失败的机制原因，修改实现或配置使根因消除</td>
 <td>保留失败日志 + 修改记录 + 根因分析，结论可追溯</td>
-<td><code>generate_summary()</code> 在自由摘要路径误调用了字段约束逻辑 → 修改分支条件，失败日志保留</td>
+<td><code>normalize_record()</code> 缺字段时直接产生 KeyError → 增加显式缺字段检查并报告 ValueError，失败日志保留</td>
 </tr>
 <tr>
 <td>绕过失败</td>
@@ -1825,67 +1905,21 @@
 <p>SWE-bench 的局限也是本课的局限：测试通过不等于方法正确、不等于未引入数据泄漏、不等于未污染评价协议。Agent 输出始终需要人工核验。</p>
 <hr />
 <h2 id="agent_2">五、贯穿案例：把判断门实验规格的一步改写为受限 Agent 任务<a class="headerlink" href="#agent_2" title="Permanent link">&para;</a></h2>
-<p>承接第 9 课贯穿案例。第 9 课产出：朴素 baseline（自由摘要）vs 实验组（阅读卡摘要）的七字段实验规格 + 复现说明 + J2（baseline 选朴素而非强）+ 同伴反馈处理 + 失败预案。实验规格 §步骤之 3 是"分别生成"——自由摘要组与阅读卡组分别调用生成函数。</p>
-<p>本课动作链：</p>
-<p><strong>第一步：从实验规格中标出"拟用 Agent"与"必须人工"步骤</strong></p>
-<table>
-<thead>
-<tr>
-<th>步骤</th>
-<th>拟用 Agent</th>
-<th>必须人工</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1 固定同一批 20 篇论文</td>
-<td>否（样本与版本须研究者确认）</td>
-<td>是</td>
-</tr>
-<tr>
-<td>2 为每篇论文建立结构化阅读卡与自由摘要两个条件</td>
-<td><strong>是</strong>——本课受限任务</td>
-<td>否（生成函数实现可由 Agent 修改，但两条件的 prompt 与公平性须人工确认）</td>
-</tr>
-<tr>
-<td>3 以同模型、同解码参数、同最大输出长度执行两条件</td>
-<td><strong>是</strong>——只执行已冻结配置</td>
-<td>是（配置改动须确认）</td>
-</tr>
-<tr>
-<td>4 人工建立限定条件基准并盲评</td>
-<td>否</td>
-<td>是</td>
-</tr>
-<tr>
-<td>5 计算配对限定条件遗漏率与不确定性</td>
-<td>可执行已冻结脚本</td>
-<td>是（指标口径与结果解释须人工）</td>
-</tr>
-</tbody>
-</table>
-<p><strong>第二步：为"步骤 3 分别生成"写任务契约</strong></p>
+<p>本课使用<a href="../assets/agent-task-example/task-01/">现有代码工件</a>，在阅读卡流程中校准输出记录的结构检查。<code>normalize_record()</code> 接受 paper_id 与 summary；这一步不判断摘要是否保留了原文限定条件，语义评价见<a href="../../lesson-11/assets/reading-card-workflow/">连续小包</a>。</p>
+<h3 id="1_1">1. 任务契约<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Context：<code>src/generate.py</code> 的 <code>generate_summary()</code>；实验规格 §步骤之 3；H1 主假设；不暴露人工限定条件基准、标注者身份与最终评分；</li>
-<li>Permission：只读 <code>experiment-spec.md</code>、<code>evidence-map.md</code>；可写 <code>src/generate.py</code>；可执行 <code>pytest tests/test_generate.py</code>；需确认任何对 <code>configs/</code> 的修改；禁止修改 <code>experiments/</code> 已有结果、修改 rubric、访问 <code>notes/</code>；</li>
-<li>Non-goal：不优化生成速度；不替换模型；不修改两条件的 prompt 与评价协议；不重跑历史实验；新增行为测试前先由人工审核；</li>
-<li>人工审核点：diff 写回前审查；测试失败时停；评价协议改动须确认；</li>
-<li>失败恢复：超时 60 秒终止；输出无法解析保留原始输出；越权拒绝记录。</li>
+<li>Context：before/generate.py、测试和 task-01；核对缺字段时应给出什么错误。</li>
+<li>Permission：只改实现文件；测试、评价基准与其他文件只读。</li>
+<li>Non-goal：不更换任务、不改变测试标准、不修改科研指标。</li>
+<li>人工审核：先读失败，再查 diff，最后检查测试与任务一致性。</li>
+<li>恢复：保留失败和候选修改；越界建议被拒绝后重新限定任务。</li>
 </ul>
-<p><strong>第三步：Agent 执行与人工核验</strong></p>
-<p>Agent 修改 <code>generate_summary()</code>，使阅读卡路径强制调用字段约束、自由摘要路径保持不变。研究者审查 diff：修改只在 <code>src/generate.py</code>、未引入新依赖、未修改评价协议、未删除失败日志。运行 <code>pytest tests/test_generate.py</code>——通过。研究者额外人工核验：字段约束逻辑是否符合 H1？自由摘要路径是否真的未被影响？新增测试是否覆盖关键路径？</p>
-<p><strong>第四步：记录失败（假设 Agent 越权）</strong></p>
-<p>如果 Agent 在执行中请求修改 <code>configs/exp01.yaml</code> 以"让 baseline 更公平"——这越过了"需确认"层。研究者拒绝、记录"Agent 请求修改 configs/exp01.yaml，理由：使 baseline 温度与实验组一致；判断：当前温度已一致，Agent 推理基于错误观察；处理：拒绝，不修改任务契约，记录本次越权"。失败记录与成功 diff 一起留存。</p>
-<p><strong>第五步：写入项目</strong></p>
-<ul>
-<li>任务契约：<code>agent-tasks/task-01-generate-summary.md</code>；</li>
-<li>代码 diff：<code>src/generate.py</code> 的 commit；</li>
-<li>验证记录：<code>pytest</code> 输出 + 人工核验清单；</li>
-<li>失败记录：<code>experiments/exp01/agent-traces/task-01-failure-log.md</code>（含越权请求与拒绝）；</li>
-<li>AI 使用记录：<code>ai-usage-log.md</code> 增加一条——工具/模型、用途、Context、输出用途、人工核验方式、问题。</li>
-</ul>
-<p>课堂最低负荷固定为五步：（1）从实验规格选一个受限步骤；（2）写任务契约与权限边界；（3）核对一份真实执行或课前预置 diff；（4）记录一条验证证据和一条失败/越权；（5）开始一条 AI 使用记录。环境就绪时可执行 Agent 与测试；环境故障时使用本课的<a href="../assets/agent-task-example/task-01/">受限 Agent 任务契约</a>、预置 diff、真实测试输出与<a href="../assets/agent-task-example/failure-log/">越权失败记录</a>做纸面审查。两条路径的最小产出相同，均回写 <code>agent-tasks/</code> 与 <code>experiments/&lt;experiment-id&gt;/agent-traces/</code>。</p>
-<hr />
+<h3 id="2_3">2. 可观察的前后变化<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>前版在缺少 summary 时产生 KeyError；后版显式检测缺字段并报告 ValueError。对照现有 diff，用 unittest 运行两项测试；通过只说明这些验收行为已覆盖，不自动说明整项科研结论正确。</p>
+<h3 id="3_1">3. 失败与权限决定<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>现有 failure-log 描述一个修改 tests 的建议及拒绝决定，按“预置记录回放”使用，不声称它是本次真实 Agent 会话。实际发生的运行失败和实际 diff 可以复演；评价协议调整属于另一个研究决定，不能在修代码时暗改。</p>
+<h3 id="4_1">4. 交给下一课<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p>本次已固定输入、实现和测试。L11 用同一研究动作的小包演示多项执行、失败恢复和状态记录；工程微例与科研评价指标分别标识。</p>
 <h2 id="_4">六、常见错误<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>模糊 prompt 直接交给 Agent</strong>：没有任务契约，结果无法追溯。应改写为五字段契约。</li>
@@ -1909,14 +1943,14 @@
 <p>帮我看看 baseline 为什么结果不好，改一下让它能跑。</p>
 </blockquote>
 <p>参考改写：明确 Context（哪个文件、哪个函数、哪一步）、Permission（只读哪些、可写哪个、可执行什么、需确认什么、禁止什么）、Non-goal（不做什么）、人工审核点（diff 审查、测试失败时停）、失败恢复（超时、越权、输出不可解析的处理）。</p>
-<h3 id="2_3">练习 2：权限分层<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<h3 id="2_4">练习 2：权限分层<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
 <p>为你第 9 课实验规格中的一个"拟用 Agent"步骤，列出五层权限。检查：可写层是否只包含任务所需的具体文件？禁止层是否包含评价协议与失败日志？</p>
 <h3 id="3diff">练习 3：diff 审查<a class="headerlink" href="#3diff" title="Permanent link">&para;</a></h3>
-<p>给定一段 diff（教师提供或贯穿案例的 <code>generate_summary()</code> 修改），按 diff 审查清单六项逐项检查。标注哪项通过、哪项不通过、不通过时如何处理。</p>
-<h3 id="4_1">练习 4：区分修复根因 / 绕过失败 / 污染实验<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p>给定一段 diff（教师提供或贯穿案例的 <code>normalize_record()</code> 修改），按 diff 审查清单六项逐项检查。标注哪项通过、哪项不通过、不通过时如何处理。</p>
+<h3 id="4_2">练习 4：区分修复根因 / 绕过失败 / 污染实验<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h3>
 <p>下面三种处理方式各属哪一类？对结论可追溯性的影响是什么？</p>
 <ol>
-<li>测试 <code>test_field_constraint</code> 失败，Agent 修改 <code>generate_summary()</code> 的分支条件使字段约束只在阅读卡路径调用，测试通过。</li>
+<li>缺 summary 的测试失败；候选修复增加显式检查、报 ValueError，原两项测试通过。</li>
 <li>测试 <code>test_field_constraint</code> 失败，Agent 注释掉这条断言，测试通过。</li>
 <li>baseline 遗漏率高于实验组，Agent 调整 baseline 的温度参数使两组接近。</li>
 </ol>
