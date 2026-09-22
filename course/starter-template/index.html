@@ -932,6 +932,8 @@
       
         
       
+        
+      
     
     
     
@@ -1040,14 +1042,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../opencode-setup/" class="md-nav__link">
+      <a href="../pi-setup/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    OpenCode 最小启动说明
+    Pi Agent 最小启动说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metax-compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    沐曦算力：申请与使用
   
 
     
@@ -1379,7 +1409,7 @@
 
 <hr />
 <h1 id="_1">早期研究脚手架模板<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>本模板用于第 1-6 课的个人选题、文献和证据整理阶段。它的目标是帮助学生在 OpenCode 个人项目工作区中建立研究问题、AI 使用记录、Agent 权限边界、伦理意识和最小追踪关系，而不是提前搭建完整工程项目。</p>
+<p>本模板用于第 1-6 课的个人选题、文献和证据整理阶段。它的目标是帮助学生在 Pi Agent 个人项目工作区中建立研究问题、AI 使用记录、Agent 权限边界、伦理意识和最小追踪关系，而不是提前搭建完整工程项目。</p>
 <p>不要在此阶段强制创建 <code>src/</code>、<code>experiments/</code>、复杂配置系统或完整论文结构。代码和实验脚手架应在第 7-8 课完成机制假设、研究判断和方案分享，并在第 9 课明确 baseline 和实验规格后再引入。</p>
 <h2 id="_2">使用时机<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1658,7 +1688,8 @@
 </table>
 <p>问题门前至少选一条记录，确认它已经回写到对应研究工件，而不只停留在日志中。</p>
 <h2 id="8-agent">8. Agent 权限矩阵<a class="headerlink" href="#8-agent" title="Permanent link">&para;</a></h2>
-<p>OpenCode 是课程主要工作平台，但早期默认最小权限。只开放当前科研动作需要的文件、工具和网络。</p>
+<p>Pi Agent 为主平台，OpenCode 等为备选。权限矩阵和 <code>AGENTS.md</code> 是声明；工具配置、经核验的权限扩展或隔离环境落实限制。未配置写入限制时，先由 Agent 提供建议，由人确认并应用。操作入口见 <a href="../pi-setup/">Pi Agent 最小启动说明</a>。</p>
+<p>Pi Agent 是课程主要工作平台，但早期默认最小权限。只开放当前科研动作需要的文件、工具和网络。</p>
 <table>
 <thead>
 <tr>

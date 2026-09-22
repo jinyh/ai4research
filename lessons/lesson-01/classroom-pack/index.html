@@ -932,6 +932,8 @@
       
         
       
+        
+      
     
     
     
@@ -1040,14 +1042,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../course/opencode-setup/" class="md-nav__link">
+      <a href="../../../course/pi-setup/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    OpenCode 最小启动说明
+    Pi Agent 最小启动说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/metax-compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    沐曦算力：申请与使用
   
 
     
@@ -1178,6 +1208,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#pi-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pi Agent 操作口径
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#prompt" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1232,6 +1273,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#p18p24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、教师与助教的演示交接（现行 P18–P24）
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1252,6 +1304,8 @@
 <hr />
 <p>事实边界：以下契约、diff 样例与记录均为课堂构造或空白模板，不对应真实学生、账户或数据</p>
 <h1 id="1">第 1 课课堂材料包<a class="headerlink" href="#1" title="Permanent link">&para;</a></h1>
+<h2 id="pi-agent">Pi Agent 操作口径<a class="headerlink" href="#pi-agent" title="Permanent link">&para;</a></h2>
+<p>本课主平台为 Pi Agent，OpenCode 等为备选。按 <a href="../../../course/pi-setup/">Pi Agent 最小启动说明</a>先只读生成建议；教师组织学生判断并确认目标段。Pi 默认没有逐次权限弹窗，只有通过复演的限制配置才用于 Agent 写回；未配置时由助教人工应用批准文本，日志注明实际操作者。<code>NETWORK off</code> 指不进行额外联网检索或外部操作，模型后端连接按批准的数据规则使用。后续 diff 核对、人工补修改记录与使用日志的顺序不变；离线材料仍标注构造回放。</p>
 <h2 id="prompt">一、最小 prompt（可复制版）<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h2>
 <p>【可替换处】换成你自己的内容；完整版与字段说明见讲义 §五。</p>
 <p><strong>第一轮（只读，步骤 2）</strong></p>
@@ -1281,10 +1335,10 @@
 <div class="highlight"><pre><span></span><code># 预期 diff（模型不可用时的纸面替代；非实际执行结果）
 <span class="gd">--- a/problem-definition.md</span>
 <span class="gi">+++ b/problem-definition.md</span>
-<span class="gd">- 我想研究 LLM 在文献综述中的应用。</span>
-<span class="gi">+ 在计算机领域文献综述中，LLM 辅助的证据追踪是否能降低主张—来源错配率？</span>
+<span class="gd">- 阅读卡能消除摘要遗漏。</span>
+<span class="gi">+ 对同一组公开计算机论文，结构化阅读卡与自由摘要相比，是否降低生成内容的限定条件遗漏率？</span>
 </code></pre></div>
-<p>纸面路径验收时，把本样例作为"预期 diff"提交，并在 AI 使用记录中按 §四 口径注明未执行。</p>
+<p>纸面路径验收时，根据本人选择形成"预期 diff"并供互查，并在 AI 使用记录中按 §四 口径注明未执行。</p>
 <h2 id="ai-starter-template-6">四、AI 使用记录空白（表头以 starter-template §6 为准）<a class="headerlink" href="#ai-starter-template-6" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1315,6 +1369,17 @@
 <p>模型不可用口径：工具/模型栏写"未执行：模型不可用"，用途栏写"纸面完成任务契约与预期 diff"，人工核验方式栏写"教师/同伴纸面核对"；不伪造执行记录。未调用但完成人工判断时，写"本次为人工判断，无模型参与"并记录判断内容。</p>
 <h2 id="_2">六、链路草图最小样例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>见 <a href="../handout/">handout.md</a> §八·练习 5 的最小样例卡（8 行仅 2 行填不确定性，其余留空）。</p>
+<h2 id="p18p24">七、教师与助教的演示交接（现行 P18–P24）<a class="headerlink" href="#p18p24" title="Permanent link">&para;</a></h2>
+<ul>
+<li>教师在 P18 指出“阅读卡能消除摘要遗漏”的对象、定义与验证缺口：本次先收窄问题，后续再定义遗漏和准备比较材料。</li>
+<li>助教从干净演示副本开始，打开含“当前问题”和“修改记录”的 problem-definition.md，以及 AGENTS.md、ai-usage-log.md。初始当前问题为“阅读卡能消除摘要遗漏。”；修改记录与日志留空。</li>
+<li>P19–P20 助教执行第一轮只读建议；教师请学生预测权限和审查建议，不要求跟着操作菜单。</li>
+<li>P21 的三条建议是课堂构造的讨论材料。现场模型输出可能不同：保留实际输出并逐条说明采纳、修改或拒绝；模型不可用时明确切换为构造回放，不将预制内容称为真实模型输出。</li>
+<li>P22 只授权“当前问题”段。P23 先检查实际 diff，再由人填写修改记录与日志。实际输出与屏显示例不同时，解释差别，不强凑示例。</li>
+<li>P24 保留越界失败回放：停止写入、保留输入和差异、仅恢复本次演示副本的越界变化、收窄任务重试、再次核对。预制失败须明确标为构造回放。</li>
+<li>教师收束：“本次完成阶段一的问题修订。下一步定义遗漏并准备比较材料；阅读卡效果仍待验证。”</li>
+</ul>
+<p>无模型时沿用纸面路径，注明“未执行”。复用阅读卡题的学生独立选择一处概念或范围、写明理由，形成自己的预期 diff；直接复制本包示例不算完成判断。</p>
 
 
 

@@ -1034,6 +1034,8 @@
       
         
       
+        
+      
     
     
     
@@ -1142,14 +1144,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course/opencode-setup/" class="md-nav__link">
+      <a href="../../course/pi-setup/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    OpenCode 最小启动说明
+    Pi Agent 最小启动说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course/metax-compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    沐曦算力：申请与使用
   
 
     
@@ -1343,15 +1373,16 @@
 <h1 id="1-ai">第 1 讲 · AI 辅助科研导论<a class="headerlink" href="#1-ai" title="Permanent link">&para;</a></h1>
 <p>围绕一个当前不确定的问题，完成一次“AI 建议 → 人工判断 → 有限写回 → 检查记录”的交互。</p>
 <h2 id="_1">带什么来<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>一个研究兴趣、可使用的公开材料，以及<a href="../../course/starter-template/">早期研究脚手架</a>。环境问题先查<a href="../../course/opencode-setup/">课前准备</a>。</p>
+<p>一个研究兴趣、可使用的公开材料，以及<a href="../../course/starter-template/">早期研究脚手架</a>。课前按<a href="../../course/pi-setup/">Pi Agent 准备</a>确认环境；课程模型资源见<a href="../../course/metax-compute/#pi">沐曦算力申请与接入</a>。</p>
 <h2 id="_2">课堂怎么做<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
-<li>写下初步问题和一个不确定性，在研究链路草图上标出它的位置。</li>
+<li>跟随同一阅读卡案例，理解八阶段怎样衔接；再写下自己的问题与不确定性。</li>
 <li>请 AI 只读材料、提出建议；由你选择一处值得修改的内容。</li>
-<li>明确允许修改的文件与范围，确认后再写回。</li>
-<li>查看实际 diff 和日志，写下第一条 AI 使用记录。</li>
+<li>明确只修改 <code>problem-definition.md</code> 的“当前问题”段，确认后按已验证的配置写回；未配置写入限制时由人应用建议。</li>
+<li>核对实际 diff 与修改范围，再人工补修改记录和第一条 AI 使用记录。</li>
 </ol>
 <h2 id="_3">做到哪里<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>本次完成阶段 1 的问题修订，下一步定义“限定条件遗漏”并准备比较材料；效果仍待实验验证。</p>
 <p>留下问题、不确定性、链路位置、一次经审查的修改和使用记录。八阶段草图只填当前相关位置；其余随项目推进补全。</p>
 <h2 id="_4">完成样例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>打开<a href="../../lessons/lesson-01/classroom-pack/">两轮提示词、预期 diff 与日志空表</a>。样例为课堂构造，预期 diff 不冒充实际执行；你的记录应能看出建议、人工取舍、实际修改与待核验项。模型不可用时按材料包完成纸面审查，标明未执行。</p>

@@ -932,6 +932,8 @@
       
         
       
+        
+      
     
     
     
@@ -1040,14 +1042,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../course/opencode-setup/" class="md-nav__link">
+      <a href="../../../course/pi-setup/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    OpenCode 最小启动说明
+    Pi Agent 最小启动说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/metax-compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    沐曦算力：申请与使用
   
 
     
@@ -1587,7 +1617,7 @@
 <li>说明何时应使用确定性脚本、固定工作流（prompt chaining / routing / parallelization 等）、单 Agent 或更复杂系统，并给出取舍理由；</li>
 <li>围绕自己当前科研动作，写出个人 Agent Workflow 的输入、输出、成功标准、不适用范围、权限边界、停止条件、人工审核点和失败恢复预案；</li>
 <li>为该工作流设计一次可重复评价，包括 baseline、指标或 rubric、对照或等价依据；</li>
-<li>在 OpenCode 或等价环境中完成可运行或可演示的最小原型，并保留运行记录与至少一次失败或局限；</li>
+<li>在 Pi Agent（OpenCode 等备选）中完成可运行或可演示的最小原型，并保留运行记录与至少一次失败或局限；</li>
 <li>把上述产物组织成可提交给第 13 课验证门的材料包前置状态。</li>
 </ol>
 <hr />
@@ -1675,7 +1705,7 @@
 <p><strong>常见失败模式</strong>：依赖会话历史作为唯一 Memory，重启即丢失；状态被 Agent 静默修改而无可审查 diff；Memory 与工件不一致，事后无法判断哪份是当时真实状态。</p>
 <h3 id="24">2.4 工具与权限<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
 <p>工具与权限决定 Agent 能读、写、执行和联网到什么范围。</p>
-<p><strong>拆解观察点</strong>：现成 Agent 暴露了哪些工具？MCP server 授予了哪些权限？是否有沙箱、是否需要确认、是否允许 shell 执行？工具列表本身是否可审计？一个有用的对照案例是极简 harness Pi Coding Agent（pi.dev，钉死版本见 <a href="../../../course/reading-list/">reading-list.md</a> 第 12 课）：它默认只暴露 read/write/edit/bash 四个工具，刻意不内置权限弹窗，把风险控制外置给 Git、容器或使用者的扩展——用它对照 OpenCode 的显性权限配置，可以看清"权限内置"与"权限外置"是两种不同的设计决定，而不是功能多寡的差异。该案例只作分析对象，不进学生安装清单。</p>
+<p><strong>拆解观察点</strong>：现成 Agent 暴露了哪些工具？MCP server 授予了哪些权限？是否有沙箱、是否需要确认、是否允许 shell 执行？工具列表本身是否可审计？一个有用的对照案例是极简 harness Pi Coding Agent（pi.dev，钉死版本见 <a href="../../../course/reading-list/">reading-list.md</a> 第 12 课）：它默认只暴露 read/write/edit/bash 四个工具，刻意不内置权限弹窗，把权限控制外置给容器或使用者的扩展，Git 用于追踪与恢复而非权限隔离——用它对照 OpenCode 的显性权限配置，可以看清"权限内置"与"权限外置"是两种不同的设计决定，而不是功能多寡的差异。Pi Agent 同时是课程主平台；此处钉定版本用于理解设计，实际课堂版本与限制配置按启动说明和助教复演记录确认。</p>
 <p><strong>设计决策点</strong>：遵循最小权限原则。按只读 / 可写 / 可执行 / 需确认 / 禁止五档划分。关键判断（如修改实验规格、删除失败记录、联网发送未公开数据、修改评价代码）必须保留人工确认。</p>
 <p><strong>常见失败模式</strong>：为方便一次性开放全盘读写；允许 Agent 自行扩大权限；把"能执行 shell"默认当作"能执行任意 shell"；评价代码与执行代码未隔离，Agent 可改评价以"通过"。</p>
 <h3 id="25">2.5 执行循环<a class="headerlink" href="#25" title="Permanent link">&para;</a></h3>
@@ -1844,7 +1874,7 @@ Evals：
 <p>本课不要求完整工程系统。可接受的最小实现包括：</p>
 <ul>
 <li>一份按 4.2 模板填好的工作流说明；</li>
-<li>一个可运行或可演示的原型（可以是 OpenCode 任务契约 + 工具调用、一个带 prompt 和脚本的固定链、或一个可演示的 evaluator-optimizer 小循环）；</li>
+<li>一个可运行或可演示的原型（可以是 Pi Agent 任务契约 + 工具调用、一个带 prompt 和脚本的固定链、或一个可演示的 evaluator-optimizer 小循环）；</li>
 <li>至少一次运行记录（含至少一次失败或局限）；</li>
 <li>一份评价计划（baseline、指标、对照）。</li>
 </ul>
@@ -2023,7 +2053,7 @@ Evals：
 <p>Model Context Protocol. <a href="https://modelcontextprotocol.io/docs/learn/architecture"><em>Architecture Overview</em></a>。用途：分析 host、client、server、tools、resources、prompts 和权限边界；授课前复核当前协议版本。</p>
 </li>
 <li>
-<p><a href="https://github.com/earendil-works/pi/tree/9795d602306ef68a97585909e8e79f92a389057b"><em>Pi Coding Agent</em>（commit <code>9795d602</code>）</a>（pi.dev，<code>@earendil-works/pi-coding-agent</code>）。只读该版本 README 与默认工具清单，分析"默认仅 read/write/edit/bash 四工具、权限与计划/子 Agent 刻意移出核心"的设计决定；作为八要素拆解的最小对照组，与 OpenCode 显性 harness 对照，不进学生安装清单；授课前复核。</p>
+<p><a href="https://github.com/earendil-works/pi/tree/9795d602306ef68a97585909e8e79f92a389057b"><em>Pi Coding Agent</em>（commit <code>9795d602</code>）</a>（pi.dev，<code>@earendil-works/pi-coding-agent</code>）。只读该版本 README 与默认工具清单，分析"默认仅 read/write/edit/bash 四工具、权限与计划/子 Agent 刻意移出核心"的设计决定；作为课程主平台的八要素拆解案例，与 OpenCode 备选环境对照。该 commit 仅作结构分析锚点，课堂安装版本按 <a href="../../../course/pi-setup/">Pi Agent 最小启动说明</a>与助教复演记录确认；授课前复核。</p>
 </li>
 </ol>
 <p>承第 11 课案例（可作为拆解对象）：</p>

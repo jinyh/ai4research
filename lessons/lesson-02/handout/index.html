@@ -932,6 +932,8 @@
       
         
       
+        
+      
     
     
     
@@ -1040,14 +1042,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../course/opencode-setup/" class="md-nav__link">
+      <a href="../../../course/pi-setup/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    OpenCode 最小启动说明
+    Pi Agent 最小启动说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/metax-compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    沐曦算力：申请与使用
   
 
     
@@ -1923,7 +1953,7 @@
 <p>部分研究材料或自动化能力可能同时支持有益与有害用途。课程项目应缩小到可安全展示和复核的范围；对无法在课堂条件下合理控制的高风险任务，不以“研究探索”为由扩大 Agent 权限。</p>
 <hr />
 <h2 id="agent_1">四、Agent 权限不是一个总开关<a class="headerlink" href="#agent_1" title="Permanent link">&para;</a></h2>
-<p>“允许使用 OpenCode”不等于“允许 Agent 做任何事”。权限应按对象和动作拆开：</p>
+<p>“允许使用 Pi Agent”不等于“允许 Agent 做任何事”。权限应按对象和动作拆开：</p>
 <table>
 <thead>
 <tr>
@@ -1970,7 +2000,7 @@
 <p>高风险动作不能由单一信号触发。例如公开结果应同时满足：指定文件、通过人工复核、无敏感信息、明确发布目标。</p>
 <p>这些原则不是机械规则，而是风险警报。如果工作流必须违反某项原则，需要记录原因、补偿控制和责任人。</p>
 <h3 id="harness">研究 harness：声明边界并强制执行<a class="headerlink" href="#harness" title="Permanent link">&para;</a></h3>
-<p>权限矩阵、任务契约、版本化协议（如实验规格）和工件追踪记录，都是研究者把研究边界<strong>声明</strong>出来的工件；Agent 环境（本课程使用 OpenCode）是<strong>执行</strong>这些声明的载体。声明加执行，再加上例外走人工确认，构成"研究 harness"。它不是某个产品的功能名，而是这一整套边界机制的统称：研究者声明边界，harness 执行边界，例外必须经人工确认并留记录。后续课程（受限 Agent 执行与自主工作流设计）会继续使用这个概念。</p>
+<p>权限矩阵、任务契约、版本化协议（如实验规格）和工件追踪记录，都是研究者把研究边界<strong>声明</strong>出来的工件；Pi Agent 是主要执行环境，但不会仅凭这些声明自动强制限制行为；工具配置、经核验的权限扩展或隔离环境负责落实<strong>执行限制</strong>。声明加执行，再加上例外走人工确认，构成"研究 harness"。它不是某个产品的功能名，而是这一整套边界机制的统称：研究者声明边界，harness 执行边界，例外必须经人工确认并留记录。后续课程（受限 Agent 执行与自主工作流设计）会继续使用这个概念。</p>
 <hr />
 <h2 id="_10">五、权限矩阵怎样填写<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p>本课程使用以下结构：</p>
@@ -2191,7 +2221,7 @@ Review：哪一步暂停并等待人工确认？
 <tbody>
 <tr>
 <td>例</td>
-<td>OpenCode + 某模型</td>
+<td>Pi Agent + 某模型</td>
 <td>收敛研究问题</td>
 <td>任务契约摘要</td>
 <td><code>AGENTS.md</code>、问题初稿</td>
@@ -2247,7 +2277,7 @@ Review：哪一步暂停并等待人工确认？
 <h2 id="2_2">九、第 2 课个人实践<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h2>
 <p>本节分为课堂三件最小产出与课后持续更新两个层级，避免把个人实践误解为必须当场填完全部治理文档。</p>
 <h3 id="_18">课堂最低闭环（两段个人实践）<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
-<p>在自己的 OpenCode 项目中完成：</p>
+<p>在自己的 Pi Agent 项目中完成：</p>
 <ol>
 <li>在 <code>agent-permissions.md</code> 中填写当前科研动作的一行权限矩阵；</li>
 <li>在同一行明确至少一个人工确认点和一个禁止事项；</li>
@@ -2301,7 +2331,7 @@ Review：哪一步暂停并等待人工确认？
 <li><strong>separation of privilege（权限分离）</strong>：高风险动作需多项独立条件同时满足才能触发，如公开需指定文件、人工复核、无敏感信息、明确发布目标四者兼备。</li>
 <li><strong>权限矩阵</strong>：按对象和能力列出只读、可写、执行、人工确认点和禁止事项的长期边界表，提供项目级边界。</li>
 <li><strong>任务契约</strong>（Task / Context / Output / Permission / Non-goal / Review）：规定本次任务边界的六字段说明；与权限矩阵冲突时执行更窄授权。</li>
-<li><strong>研究 harness</strong>：把研究边界声明出来并强制执行的机制——权限矩阵、任务契约、版本化协议与追踪记录负责声明，Agent 环境（本课程为 OpenCode）负责执行，例外走人工确认。</li>
+<li><strong>研究 harness</strong>：把研究边界声明出来并强制执行的机制——权限矩阵、任务契约、版本化协议与追踪记录负责声明，Pi Agent 配合实际工具配置、权限扩展或隔离环境落实执行限制，例外走人工确认；仅有提示词或 AGENTS.md 不算强制执行。</li>
 <li><strong>人工确认点</strong>：规定 Agent 在哪些触发条件下暂停等待研究者判断，如首次写入、修改指标、状态迁移为 <code>approved</code> / <code>stable</code>。</li>
 <li><strong>研究工件</strong>：可被审查、追踪和回写的研究产出（问题定义、精读卡、证据地图、实验规格等），其成熟度独立于文件是否存在。</li>
 <li><strong>draft / review / approved / stable</strong>：工件成熟度四状态；状态描述被检查程度，不等于完成比例，<code>stable</code> 可因新证据回退。</li>
@@ -2323,7 +2353,7 @@ Review：哪一步暂停并等待人工确认？
 <p>课程模板：</p>
 <ul>
 <li><a href="../classroom-pack/">第 2 课课堂材料包</a></li>
-<li><a href="../../../course/opencode-setup/">OpenCode 最小启动说明</a></li>
+<li><a href="../../../course/pi-setup/">Pi Agent 最小启动说明</a></li>
 <li><a href="../../../course/starter-template/">早期研究脚手架</a></li>
 <li><a href="../../../course/ethics-and-compliance-template/">科研伦理与合规说明模板</a></li>
 <li><a href="../../../course/reading-list/">逐课参考阅读清单</a></li>
