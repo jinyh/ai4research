@@ -33,6 +33,8 @@ PUBLISH = {
     "course/resources.md": "course/resources.md",
     "course/reading-card-case.md": "course/reading-card-case.md",
     # 课前环境指南（学生可见；课堂零安装口径的课前入口）
+    "course/pi-setup.md": "course/pi-setup.md",
+    "course/metax-compute.md": "course/metax-compute.md",
     "course/opencode-setup.md": "course/opencode-setup.md",
     # 学生项目模板（handout 和 assignments 引用，学生需要内容本身）
     "course/starter-template.md": "course/starter-template.md",

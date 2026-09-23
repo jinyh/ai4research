@@ -38,7 +38,7 @@ uv run python scripts/check_site.py
 
 只发布面向学生的内容，**发布清单在 `scripts/link_content.py` 顶部维护**：
 
-- `course/`：`syllabus`、`assessment`、`assignments`、`reading-list`、`resources` 与三份学生项目模板（`starter-template`、`project-template`、`ethics-and-compliance-template`）
+- `course/`：`syllabus`、`assessment`、`assignments`、`reading-list`、`resources`、`pi-setup`、`opencode-setup`、`metax-compute` 与三份学生项目模板（`starter-template`、`project-template`、`ethics-and-compliance-template`）
 - `lessons/lesson-NN/`：`handout.md`（学生讲义），以及发布清单中逐文件登记的课堂材料包、模板、教学示例、可复现工件和图形资产；不软链整个目录
 
 **不发布**：教师教案 `teaching-plan.md`、逐页母稿 `slides.md`、文献精读卡 `reading-notes.md`、课级 `assets/README.md` 等备课元数据、协作规范（`sync-rules`、`ppt-quality-gates`）、申报底稿、`archive/`、`references/library/`、`AGENTS.md`/`CLAUDE.md`。
@@ -65,7 +65,21 @@ uv run python scripts/check_site.py
 | `_build/` | `mkdocs build` 输出（.gitignore 忽略） |
 | `.venv/` | uv 虚拟环境（.gitignore 忽略） |
 
-## 当前部署（2026-09-16）
+## 当前部署（2026-09-23）
+
+本次更新Lesson 01阅读卡与限定条件遗漏的具体样例，并同步课堂材料包的新页码。学生快照为`ea7940f33778ebe934bb2ac8044a5e3257c4c6bd`，延续`codex/student-site`历史；对应35页PPT在课程源仓库维护，不进入学生网站。
+
+本地14项网站测试、严格构建、69页文件/锚点/发布边界检查通过。与上次快照相比，仅第1课讲义、课堂包、搜索索引和站点地图变化；课程首页、其他课次与下载ZIP保持一致。部署结果由GitHub Actions和线上文件核验确认。
+
+## 上一次部署（2026-09-22）
+
+本次按用户明确授权发布沐曦算力支持与此前课程改进，学生快照为 `74d1f1789c4f4b22c5a91e58b139fa651d454709`，部署配置提交为 `21a0d5895714a775b1265bf8f97b9aa3c1715d87`。共 69 个 HTML 页面；新增算力申请、Pi 模型接入、GPU 使用与结果保存指南，首页、资源页和第 1、9–13 讲提供入口。同步 Pi 主平台、Lesson 01 阅读卡链路及现行学生材料。
+
+本地严格构建、14 项网站测试、69 页内部链接/锚点/发布边界检查、12 项课程一致性检查通过。浏览器检查首页、算力页及第 1 讲；下载包 SHA-256 为 `f80d50a335c599956cc4bb3b152b8344ac9416588937ee965fe39a7331fdb16b`。发布仅更新学生静态快照与部署配置；现行课程源继续在本地维护。
+
+发布任务：[GitHub Actions](https://github.com/jinyh/ai4research/actions/runs/35720363098)已成功。线上首页经浏览器确认；另下载核对首页、算力页、Pi 指南、第 1/9/16 讲、项目条件、第 1 课完整讲义、搜索索引与材料 ZIP，共 10 项与验收构建逐字节一致。
+
+## 上一次部署（2026-09-16）
 
 学生网站使用 `codex/student-site` 分支中的已审阅静态快照，由主分支的 `.github/workflows/deploy-web.yml` 固定到具体提交后部署至 <https://jinyh.github.io/ai4research/>。本次发布目标为 `b2465696d4621eef2c3fd79668f7cdceda28676c`，包含 67 个 HTML 页面、16 个课堂入口、第 16 课完整讲义及可复演阅读卡材料包。
 

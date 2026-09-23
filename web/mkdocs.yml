@@ -71,7 +71,8 @@ nav:
   - 模板与资源:
       - templates.md
       - 阅读卡回放包: materials/reading-card.md
-      - 课前准备: course/opencode-setup.md
+      - 课前准备: course/pi-setup.md
+      - 沐曦算力支持: course/metax-compute.md
       - 阅读清单: course/reading-list.md
       - 工具与学习资源: course/resources.md
   - 课程信息: teacher.md

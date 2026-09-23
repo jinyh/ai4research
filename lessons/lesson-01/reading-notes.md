@@ -1,10 +1,12 @@
 ---
-版本：v1.0.3
-最后更新：2026-08-07
+版本：v1.0.5
+最后更新：2026-09-22
 适用课次：第 1 课
 文档类型：教师文献精读卡集
 状态：原文定位已完成；待教师复核与定稿
 变更记录：
+- v1.0.5 (2026-09-22): 同步 Pi Agent 主平台、OpenCode 等备选及人工应用建议路径。
+- v1.0.4 (2026-09-22): 补现行页序索引及 Hao 统计口径复核；早期精读卡的课堂映射保留为历史建议。
 - v1.0.3 (2026-08-07): 将 Lu et al. 2026 AI Scientist 精读卡的课堂引用由旧页号 P03 同步到现行 P04
 - v1.0.2 (2026-08-05): 更新项目重组后的本地参考资料路径
 - v1.0.1 (2026-07-30): 区分自动文本定位与教师人工复核，删除与授课无关的模型整合过程说明
@@ -21,6 +23,16 @@
 >
 ---
 
+## 现行引用索引（2026-09-22）
+
+当前主平台为 Pi Agent，OpenCode 等为备选；平台操作见 [Pi Agent 最小启动说明](../../course/pi-setup.md)。
+
+本轮以实际 31 页 PPT 为准：Lu et al. 的论文案例在 **P05**；Nature 评论与社论在 **P06**；Hao et al. 的个人产出、被引优势与集体探索在 **P07**；八阶段地图与阅读卡示意在 **P14–P16**；同一项目的助教操作在 **P19–P24**。Gottweis、Ghareeb、Tao 等精读卡供教师拓展阅读，不视为本轮屏显必讲内容。
+
+Hao 的 3.02 倍对应研究者年均论文数，4.84 倍对应研究者被引量，比较对象均为样本中的 AI 采用者与非采用者；不是单篇论文被引比率，也不是因果增益。样本约 4,130 万篇、六个自然科学学科。Figure 3b 的知识空间集中及探索范围收缩，不直接等同于创新水平下降；课堂以“怎样利用 AI 探索有价值的新问题”引出研究判断。已对照 [Nature 原文](https://www.nature.com/articles/s41586-025-09922-y) 的摘要、个人影响与知识范围段落复核。
+
+**下方卡片中的旧 PPT 页号及“可用于/对应”描述是早期设计建议和核验记录，均为历史映射，不是现行授课索引。** 论文自身页码与原文证据定位不变；现行课堂文案与边界以 [slides.md](./slides.md) 和 [handout.md](./handout.md) 为准。
+
 ## 文献清单与第 1 课角色
 
 | # | 文献 | 本地原件 | 第 1 课角色 |
@@ -28,11 +40,11 @@
 | 1 | Simon《人工科学》3rd ed. Ch.5 | `references/library/books/Simon_...3rd_ed.pdf` | 核心阅读：问题—目标—约束—评价 |
 | 2 | Hamming「You and Your Research」(Ch.30) | `references/library/books/Hamming_1997_...pdf` | 任选：重要问题/研究品味 |
 | 3 | Wang et al. 2023 综述 | `references/library/papers/s41586-023-06221-2.pdf` | 任选：AI 介入科学发现环节 |
-| 4 | Lu et al. 2026 AI Scientist | `references/library/papers/s41586-026-10265-5.pdf` | slides P04 钩子 |
-| 5 | Gottweis et al. 2026 Co-Scientist | `references/library/papers/s41586-026-10644-y.pdf` | slides P04 钩子 |
-| 6 | Ghareeb et al. 2026 Robin | `references/library/papers/s41586-026-10652-y.pdf` | slides P04 钩子 |
-| 7 | Hao et al. 2026 影响与收缩 | `references/library/papers/s41586-025-09922-y.pdf` | slides P05 钩子 |
-| 8 | Tao, Mathematics in the Age of AI (ICM 2026) | `references/library/talk/age-of-ai-icm-2026.pdf` | 课堂案例 |
+| 4 | Lu et al. 2026 AI Scientist | `references/library/papers/s41586-026-10265-5.pdf` | P05 论文案例 |
+| 5 | Gottweis et al. 2026 Co-Scientist | `references/library/papers/s41586-026-10644-y.pdf` | 教师拓展阅读 |
+| 6 | Ghareeb et al. 2026 Robin | `references/library/papers/s41586-026-10652-y.pdf` | 教师拓展阅读 |
+| 7 | Hao et al. 2026 影响与收缩 | `references/library/papers/s41586-025-09922-y.pdf` | P07 个人影响与集体探索 |
+| 8 | Tao, Mathematics in the Age of AI (ICM 2026) | `references/library/talk/age-of-ai-icm-2026.pdf` | 教师拓展阅读 |
 
 ---
 
