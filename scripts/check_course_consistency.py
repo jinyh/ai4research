@@ -144,15 +144,15 @@ def check_authoritative_sources_and_archive(checks: Checks) -> None:
         "课程材料契约仍有重复副本或 skill 未链接权威源",
     )
 
-    retired = {
-        "course/course-proposal.md": "archive/superseded-docs/course-proposal-v1.3.0.md",
-        "docs/project-reorganization-proposal.md": "archive/superseded-docs/project-reorganization-proposal.md",
-        "docs/research-question-to-search-skill-plan.md": "archive/superseded-docs/research-question-to-search-skill-plan-v1.1.2.md",
-        "lessons/ppt-production-progress.md": "archive/superseded-docs/ppt-production-progress-v0.9.0.md",
-        "lessons/lesson-03/mi-search-trace-ai-suggestions.md": "archive/superseded-docs/lesson-03/mi-search-trace-ai-suggestions-v0.1.0.md",
-    }
-    bad = [source for source, target in retired.items() if (REPO / source).exists() or not (REPO / target).exists()]
-    checks.check(not bad, "被替代文档已退出活动路径并进入统一归档", f"归档映射异常：{bad}")
+    retired = (
+        "course/course-proposal.md",
+        "docs/project-reorganization-proposal.md",
+        "docs/research-question-to-search-skill-plan.md",
+        "lessons/ppt-production-progress.md",
+        "lessons/lesson-03/mi-search-trace-ai-suggestions.md",
+    )
+    bad = [source for source in retired if (REPO / source).exists()]
+    checks.check(not bad, "被替代文档已退出活动路径", f"活动路径仍有被替代文档：{bad}")
 
     l16_handout = read(LESSONS / "lesson-16/handout.md")
     l16_moc = read(LESSONS / "lesson-16/README.md")

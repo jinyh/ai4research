@@ -57,7 +57,7 @@
 | PowerPoint 原生 | 通过：与正式文件同 SHA 的终候选在 Microsoft PowerPoint 打开、导出 16 页 PDF、不保存关闭，再逐页核验原生渲染 |
 | 里程碑 | 本轮七类共用代表页建立新视觉语言，统一归档；不为单课重复保存试制稿 |
 
-检查中间物保留在 `.work/ppt/lesson-14/2026-09-12-visual-upgrade/`；跨课次代表页与规则见[试制决策](../../archive/ppt-experiments/2026-09-12-academic-practice/decision-record.md)。
+检查中间物保留在 `.work/ppt/lesson-14/2026-09-12-visual-upgrade/`；跨课次代表页与规则见试制决策（仅本机保留：`archive/ppt-experiments/2026-09-12-academic-practice/decision-record.md`）。
 
 课前仍需：教师／博士助教复核、授课电脑和教室后排投影检查；真实项目材料须确认授权。LibreOffice 存在中文字体回退差异，本轮不据其结果宣称跨软件显示一致。第 16 课内容门未因此解除。
 

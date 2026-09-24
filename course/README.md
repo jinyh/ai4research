@@ -77,5 +77,5 @@ OpenCode 从第 1 课起作为主要课堂工作平台。课程通过现成 Agen
 - [resources.md](./resources.md)：工具、案例和参考资源索引（含方法论参考）
 - [reading-list.md](./reading-list.md)：16 次课正式书目与课堂案例（每课 3-4 项，含经典选章和 AI 辅助阅读协议）
 - [逐课教学材料与状态](../lessons/README.md)：16 课正式讲义、教师教案、课堂 PPT、活动材料的入口和状态
-- [试讲材料归档](../archive/trial-lecture/README.md)：全部开课评审试讲版本、逐页大纲、内容源和判断记录
-- [历史立项依据](../archive/superseded-docs/course-proposal-v1.3.0.md)：课程获批前的立项说明，不作为现行课程权威源
+- 试讲材料归档（仅本机保留：`archive/trial-lecture/README.md`）：全部开课评审试讲版本、逐页大纲、内容源和判断记录
+- 历史立项依据（仅本机保留：`archive/superseded-docs/course-proposal-v1.3.0.md`）：课程获批前的立项说明，不作为现行课程权威源

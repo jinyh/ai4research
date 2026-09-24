@@ -1,6 +1,6 @@
 # 第 3 课内容入口（MOC）
 
-> 文献检索与证据角色。课程 2.0 批次 0 已完成；本文件只记录当前材料、当前门控与未决风险。逐轮实施历史见[归档快照](../../archive/superseded-docs/lesson-03/readme-revision-log-2026-08.md.txt)。
+> 文献检索与证据角色。课程 2.0 批次 0 已完成；本文件只记录当前材料、当前门控与未决风险。逐轮实施历史见归档快照（仅本机保留：`archive/superseded-docs/lesson-03/readme-revision-log-2026-08.md.txt`）。
 
 
 ## 内容与 PPT 同步轮（2026-09-16，当前状态）
@@ -57,7 +57,7 @@
 
 > 状态说明：以上视觉升级记录是现行 PPT 的唯一验收口径。下方减负轮、旧门控状态与旧视觉检查仅保留当时事实；其中旧的笼统“视觉通过”记录已被本轮技术、教学、视觉和 PowerPoint 原生检查取代。
 
-原 trace v0.5.1 上的 AI 建议叠加稿已冻结并移入[被替代文档归档](../../archive/superseded-docs/lesson-03/mi-search-trace-ai-suggestions-v0.1.0.md)，不得作为现行候选表或证据地图来源。
+原 trace v0.5.1 上的 AI 建议叠加稿已冻结并移入被替代文档归档（仅本机保留：`archive/superseded-docs/lesson-03/mi-search-trace-ai-suggestions-v0.1.0.md`），不得作为现行候选表或证据地图来源。
 
 ## 文件关系
 

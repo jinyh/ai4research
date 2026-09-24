@@ -27,7 +27,7 @@
 
 该 skill 负责内容门、90 分钟教学门、逐页映射门、PPT 制作、三重检查与里程碑归档。发现与运行状态应在实际使用的客户端中做 smoke test，不在本文件固化某次个人环境结果。当前备课流程见 [lessons/README.md](../lessons/README.md) 的“制作顺序”段。
 
-`research-question-to-search` 检索流程 skill 按同一三端模式注册；历史建设与 forward test 记录已移入[被替代文档归档](../archive/superseded-docs/research-question-to-search-skill-plan-v1.1.2.md)：
+`research-question-to-search` 检索流程 skill 按同一三端模式注册；历史建设与 forward test 记录已移入被替代文档归档（仅本机保留：`archive/superseded-docs/research-question-to-search-skill-plan-v1.1.2.md`）：
 
 - 单一事实源：`.agents/skills/research-question-to-search/SKILL.md`
 - Claude Code：`.claude/skills/research-question-to-search`（软链接）

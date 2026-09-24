@@ -194,8 +194,8 @@
 - **三件套（口径唯一）**：`handout.md`（教什么）↔ `teaching-plan.md`（怎么教）↔ `slides.md`（逐页屏显）。讲义是内容源，教案不替代讲义，slides 不自造事实。
 - `keystone-design-spec.md` → 指导 `slides.md` 关键页的视觉设计契约。
 - `reading-notes.md` → 为 `handout.md` 提供文献来源与精读卡。
-- 2026-07-07 的 `introduction.md` / `lecture-notes.md` 已移到 [被替代文稿归档](../../archive/superseded-docs/lesson-01/)，现行制作不以之为母版。
-- 旧 39 页 PPTX 已移到 [PPT 试制里程碑](../../archive/ppt-experiments/lesson-01/2026-07-30-pre-gate-39-page-baseline/decision-record.md)。现行 [slides.pptx](./slides.pptx) 与 31 页母稿一致。
+- 2026-07-07 的 `introduction.md` / `lecture-notes.md` 已移到 被替代文稿归档（仅本机保留：`archive/superseded-docs/lesson-01/`），现行制作不以之为母版。
+- 旧 39 页 PPTX 已移到 PPT 试制里程碑（仅本机保留：`archive/ppt-experiments/lesson-01/2026-07-30-pre-gate-39-page-baseline/decision-record.md`）。现行 [slides.pptx](./slides.pptx) 与 31 页母稿一致。
 
 ## 关联课程文档
 

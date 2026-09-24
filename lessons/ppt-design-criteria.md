@@ -21,7 +21,7 @@
 
 课次目标、屏显文案、证据角色与学生动作以各课 `slides.md` 为准；课次关键页和例外写入该课设计规格。文件技术、证据框和导出后检查见 [PPT 质量门](../course/ppt-quality-gates.md)。历史试制稿只用于比较，不是现行内容母版。
 
-本轮七类代表页、取舍与检查范围见[学术研讨与实践试制里程碑](../archive/ppt-experiments/2026-09-12-academic-practice/decision-record.md)。
+本轮七类代表页、取舍与检查范围见学术研讨与实践试制里程碑（仅本机保留：`archive/ppt-experiments/2026-09-12-academic-practice/decision-record.md`）。
 
 ## 一、品牌与基础系统
 

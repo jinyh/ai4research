@@ -8,6 +8,17 @@ applied/
 # references/library/ 下的外部原件与克隆库，仅由 references/README.md 作索引
 /references/library/
 
+# 本机历史材料与通用 Office skill；项目专属 skill 仍跟踪
+/archive/
+/.agents/skills/docx/
+/.agents/skills/pdf/
+/.agents/skills/pptx/
+/.agents/skills/xlsx/
+/.claude/skills/docx
+/.claude/skills/pdf
+/.claude/skills/pptx
+/.claude/skills/xlsx
+
 # 本地渲染、模板审计、解包、layout、QA 缓存与中间产物
 .work/
 /.tmp/

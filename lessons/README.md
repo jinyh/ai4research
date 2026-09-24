@@ -2,7 +2,7 @@
 
 最后更新：2026-09-22
 
-课程 2.0 的批次状态见 [改版计划](../docs/course-2.0-plan.md)；逐课内容复核与教师专属决定见 [教师复核台账](./teacher-review-ledger.md)。旧的 PPT 制作流水账已移入[被替代文档归档](../archive/superseded-docs/ppt-production-progress-v0.9.0.md)。
+课程 2.0 的批次状态见 [改版计划](../docs/course-2.0-plan.md)；逐课内容复核与教师专属决定见 [教师复核台账](./teacher-review-ledger.md)。旧的 PPT 制作流水账已移入被替代文档归档（仅本机保留：`archive/superseded-docs/ppt-production-progress-v0.9.0.md`）。
 
 `lessons/` 用于制作课程正式教学材料。试讲材料与正式授课材料必须分开管理。
 
@@ -58,8 +58,8 @@ Pi Agent 为课程主要执行环境，OpenCode 等为备选；[课前准备](..
 ## 第 1 课
 
 - 现行材料与门控状态统一从 [第 1 课内容入口](./lesson-01/README.md) 查看，避免在两处重复维护版本号。
-- 旧 39 页 PPTX 已归入 [PPT 试制里程碑](../archive/ppt-experiments/lesson-01/2026-07-30-pre-gate-39-page-baseline/decision-record.md)；现行 35 页课件见 [slides.pptx](./lesson-01/slides.pptx)，验收以本课 README 最新轮为准。
-- 2026-07-07 的详细教学包与旧详细讲义已迁入 [被替代文稿归档](../archive/superseded-docs/lesson-01/)，不参与现行制作。
+- 旧 39 页 PPTX 已归入 PPT 试制里程碑（仅本机保留：`archive/ppt-experiments/lesson-01/2026-07-30-pre-gate-39-page-baseline/decision-record.md`）；现行 35 页课件见 [slides.pptx](./lesson-01/slides.pptx)，验收以本课 README 最新轮为准。
+- 2026-07-07 的详细教学包与旧详细讲义已迁入 被替代文稿归档（仅本机保留：`archive/superseded-docs/lesson-01/`），不参与现行制作。
 - [教师文献精读卡集](./lesson-01/reading-notes.md)：第 1 课涉及 8 份文献按 AI 辅助阅读协议产出的精读卡；原文定位已完成，待教师复核与定稿。
 
 ## 第 2 课
