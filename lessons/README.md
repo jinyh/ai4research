@@ -65,7 +65,7 @@ Pi Agent 为课程主要执行环境，OpenCode 等为备选；[课前准备](..
 ## 第 2 课
 
 - 现行材料与门控状态统一从 [第 2 课内容入口](./lesson-02/README.md) 查看。
-- 现行 26 页课件见 [slides.pptx](./lesson-02/slides.pptx)；P25 为独立知识点总结，验收以本课 README 最新轮为准。
+- 现行 27 页课件见 [slides.pptx](./lesson-02/slides.pptx)；P02 为第 1 讲回顾与材料包入口，P26 为独立知识点总结，验收以本课 README 最新轮为准。
 
 ## 第 3 课
 
