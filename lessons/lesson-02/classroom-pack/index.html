@@ -1311,7 +1311,7 @@
 <p>事实边界：以下案例与记录均为课堂构造，不对应真实学生、账户、稿件或数据</p>
 <h1 id="2">第 2 课课堂材料包<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
 <h2 id="_1">一、虚构演示项目<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>情境：研究者准备为一份虚构未公开合作稿寻找文献线索。原稿保留在本地且不向 Agent 开放；研究者人工抽象研究问题，再选取已批准的公开摘要，构成可授权的替代输入。演示项目仅保存这份虚构对象描述、抽象问题与公开材料，不包含真实合作稿、个人信息、密钥或账户。</p>
+<p>情境：研究者准备为一份虚构未公开合作稿梳理研究问题与相关线索。原稿保留在本地且不向 Agent 开放；演示假设已确认获准讨论的问题描述和符合要求的处理环境。演示项目仅保存虚构对象描述与获准的问题描述，不包含真实合作稿、个人信息、密钥或账户。真实任务须在运行前核实内容授权与环境，抽象化本身不构成授权。</p>
 <div class="highlight"><pre><span></span><code>demo-project/
 ├── AGENTS.md
 ├── problem-definition.md
@@ -1320,8 +1320,9 @@
 ├── ethics-and-compliance.md
 └── ai-usage-log.md
 </code></pre></div>
-<p>第一轮只读权限矩阵与人工写好的对象描述，不读取原稿、不联网、不写文件。第二轮经人工确认后，只写权限一行、风险卡和 AI 使用记录，完成后检查 diff。</p>
-<p>完整六字段填写示例见 <a href="../handout/#同一合作稿案例的一行权限">讲义中的同一合作稿案例</a>。</p>
+<p>本演示的“不联网”指不进行额外网络操作，模型后端的传输、存储和训练条件须先核查。第一轮只读权限矩阵与人工写好的虚构对象描述，不读取原稿、不联网、不写文件。第二轮经人工确认后，只写权限一行、风险卡和 AI 使用记录，完成后检查 diff。</p>
+<p><strong>助教演示交接</strong>：教师在 P21 交代虚构材料身份并请学生预测暂停点；助教在 P22 展示只读输入与过宽权限建议后停下，由教师主持学生判断；教师在 P23 明确批准文件、段落和范围后，助教写回并展示实际 diff。第 1 课阅读卡问题的有限写回只作口头衔接，本包的合作稿与记录仍为课堂构造。助教备好干净起点、完成版和可恢复副本；若授课设备上的限制配置未验证，使用预制 trace 或 Markdown 回放并明确标注实际执行方式。</p>
+<p>完整六字段填写示例见 <a href="../handout/#l02-partner-draft-permission">讲义中的同一合作稿案例</a>。</p>
 <h2 id="_2">二、课堂最低闭环模板<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="starter-template-8">权限矩阵一行（表头以 starter-template §8 为准）<a class="headerlink" href="#starter-template-8" title="Permanent link">&para;</a></h3>
 <table>
