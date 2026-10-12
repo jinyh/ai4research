@@ -193,7 +193,8 @@ def check_authoritative_sources_and_archive(checks: Checks) -> None:
         judgment_revision is not None
         and "教师内容复核待登记，不沿用旧 PASS" in judgment_revision.group(1)
         and "现场" in judgment_revision.group(1)
-        and "现行修订稿；本地审阅，未发布" in status
+        and status.strip() in ("现行修订稿；本地审阅，未发布",
+                              "现行修订稿；学生网站已发布，本轮复核另登记")
         and "现行·学生讲义（本轮复核另登记）" in handout_row
         and "现行·可编辑课堂 PPT（12 页）" in ppt_row
     )
