@@ -70,6 +70,7 @@ nav:
   - 项目与考核: project.md
   - 模板与资源:
       - templates.md
+      - 个人微型项目: course/micro-project.md
       - 阅读卡回放包: materials/reading-card.md
       - 课前准备: course/pi-setup.md
       - 沐曦算力支持: course/metax-compute.md

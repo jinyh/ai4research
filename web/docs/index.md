@@ -12,9 +12,11 @@ hide:
 
 **2 学分 · 32 学时 · 16 讲 · 一个个人项目 · 四次正式提交**
 
-[课前准备](course/opencode-setup.md){ .md-button .md-button--primary }
+[课前准备](course/pi-setup.md){ .md-button .md-button--primary }
 [进入 16 讲](learn/index.md){ .md-button }
 [查看提交要求](project.md){ .md-button }
+
+本课程算力由沐曦支持，用于模型调用与按需 GPU 实验。[申请与使用算力](course/metax-compute.md)。
 
 ## 这门课怎样推进
 
@@ -30,3 +32,11 @@ hide:
 </div>
 
 学生主导活动：第 8 讲中期诊所、第 15 讲评审修改、第 16 讲最终展示。
+
+## 判断任务与课外预算
+
+每课先独立判断共同材料，再核验并迁移到本人项目。课外总投入每课最多 60 分钟，包含阅读、准备、安装排障、项目推进和提交。研究门课不叠加新必读。
+
+[16课输入与输出路径](course/judgment-path.md) · [候选来源起始池](course/source-starter-pool.md) · [个人微型项目](course/micro-project.md)
+
+[全部学生判断任务包](downloads/judgment-tasks.zip) · [CPU个人项目起点](downloads/micro-project.zip) · [离线检索诊断](downloads/search-diagnosis.zip)

@@ -1,7 +1,9 @@
 ---
-版本：v2.1.2
-最后更新：2026-09-13
+版本：v2.2.0
+最后更新：2026-09-22
 变更记录：
+- v2.2.0 (2026-09-22): 增加沐曦课程算力支持与申请入口。
+- v2.1.3 (2026-09-22): Pi Agent 改为课堂主平台，OpenCode 等为备选；同步相关入口与操作边界，课程结构、评分及提交节点不变。
 - v2.1.2 (2026-09-13): 同步精简后的阅读清单范围；移除学生资源页中的内部分析入口
 - v2.1.1 (2026-08-23): OpenCode 条目补充课程内《OpenCode 最小启动说明》入口；不改变工具示例口径
 - v2.1.0 (2026-08-12): GitHub 项目索引新增"Agent harness 对照项目"小节（Pi Coding Agent、Prime Agent，钉 commit，仅备课参考与自学分析对象，不进工具示例段、不暗示推荐安装）
@@ -11,7 +13,11 @@
 
 # 资源索引
 
-工具会快速变化，授课时应按当学期情况更新具体工具版本；课程要求固定在科研动作、可验证产出和个人 Agent Workflow 的评价上。OpenCode 从第 1 课起作为主要课堂工作平台，但课程不以安装、记忆或调用现成 Skills 为目标。
+工具会快速变化，授课时应按当学期情况更新具体工具版本；课程要求固定在科研动作、可验证产出和个人 Agent Workflow 的评价上。Pi Agent 从第 1 课起作为主要课堂工作平台，但课程不以安装、记忆或调用现成 Skills 为目标。
+
+## 课程算力支持
+
+沐曦为本课程提供算力支持。[申请与使用指南](./metax-compute.md)集中说明算力券、Pi 模型连接、GPU 实验及结果保存。
 
 ## 课程内已有参考
 
@@ -43,11 +49,11 @@
 
 ### Agent harness 对照项目
 
-以下项目用于工作流对照分析，不进入课堂安装清单。
+Pi Agent 是课程主平台，也用于第 12 课结构拆解；OpenCode 等为备选。以下钉定 commit 用于结构分析，不锁定课堂安装版本。Prime Agent 仅作分析对象，不进入学生必装清单。
 
 | 项目 | 核心特色 | 课程借鉴点 |
 | --- | --- | --- |
-| [earendil-works/pi](https://github.com/earendil-works/pi)（commit `9795d602`，pi.dev） | 极简 harness：默认仅 read/write/edit/bash 四工具，权限、计划、子 Agent、MCP 刻意移出核心 | 第 12 课八要素拆解的最小对照组，与 OpenCode 显性 harness 对照 |
+| [earendil-works/pi](https://github.com/earendil-works/pi)（commit `9795d602`，pi.dev） | 极简 harness：默认仅 read/write/edit/bash 四工具，权限、计划、子 Agent、MCP 刻意移出核心 | 课堂主平台；第 12 课拆解其最小 harness，并与 OpenCode 备选环境对照 |
 | [PrimeIntellect-ai/prime-agent](https://github.com/PrimeIntellect-ai/prime-agent)（commit `965941c7`，MIT，构建于 pi 之上） | RLM（prompt-as-a-variable 的持久 REPL）+ Continual Harness（harness 状态持久化与证据支撑精化）；`/autonomous` 预算与质量门 | 第 11 课四约束与停止条件的对照案例簇；支撑论文为预印本（arXiv:2605.09998、arXiv:2512.24601），只作分析对象 |
 
 ### 评估基准库
@@ -69,7 +75,8 @@
 
 - OpenAI Codex / Codex CLI：<https://openai.com/codex>，<https://github.com/openai/codex>
 - Claude Code 与 Skills：<https://code.claude.com/docs/en/overview>，<https://code.claude.com/docs/en/skills>
-- OpenCode 与 Skills：<https://opencode.ai/docs/>，<https://opencode.ai/docs/skills/>；课程内入口：[OpenCode 最小启动说明](./opencode-setup.md)
+- Pi Agent 主平台：[最小启动说明](./pi-setup.md)；[官方文档](https://github.com/earendil-works/pi/tree/main/packages/coding-agent)。
+- OpenCode 备选平台与 Skills：<https://opencode.ai/docs/>，<https://opencode.ai/docs/skills/>；课程内入口：[OpenCode 最小启动说明](./opencode-setup.md)
 - Model Context Protocol：<https://modelcontextprotocol.io/docs/learn/architecture>
 - OpenAI Evals：<https://github.com/openai/evals>
 

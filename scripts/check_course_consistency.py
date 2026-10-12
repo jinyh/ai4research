@@ -161,15 +161,44 @@ def check_authoritative_sources_and_archive(checks: Checks) -> None:
     handout_row = next((line for line in l16_moc.splitlines() if line.startswith("| [handout.md]")), "")
     ppt_row = next((line for line in l16_moc.splitlines() if line.startswith("| [slides.pptx]")), "")
     draft_consistent = "草稿" in status and "待定稿·学生讲义" in handout_row and "课堂 PPT 候选" in ppt_row
+    current_revision = re.search(r"^## RSI 与评价训练修订轮[^\n]*\n(.*?)(?=^## |\Z)", l16_moc, re.MULTILINE | re.DOTALL)
+    revision_text = current_revision.group(1) if current_revision else ""
+    # Current approval must belong to this revision; historical confirmation
+    # cannot approve new material or an unsynchronised presentation.
+    teacher_approved = (
+        "教师已确认“可以，已完成复核”" in revision_text
+        and "本轮内容门通过" in revision_text
+        and "正式文件已同步" in revision_text
+        and "本机打开当前文件通过" in revision_text
+    ) if current_revision else "教师确认：用户已明确“通过，你修改后续课程和PPT”" in l16_moc
     approved_consistent = (
         "现行；本轮内容与 PPT 已同步" in status
         and "现行·学生讲义" in handout_row
         and "现行·可编辑课堂 PPT（12 页）" in ppt_row
-        and "教师确认：用户已明确“通过，你修改后续课程和PPT”" in l16_moc
+        and teacher_approved
         and "发布前现场复核待完成" in status
     )
+    # A scoped new revision may retain an approved PPT as its previous baseline.
+    # Its current pending status must be explicit; old confirmation cannot approve it.
+    revision_consistent = (
+        "待教师复核" in status and "PPT 尚未同步" in status
+        and "修订源·学生讲义（待教师复核）" in handout_row
+        and "前轮基线·可编辑课堂 PPT（12 页）" in ppt_row
+        and current_revision is not None
+        and "独立教师内容复核尚待完成" in current_revision.group(1)
+        and "正式文件当前仍为前一轮" in current_revision.group(1)
+    )
+    judgment_revision = re.search(r"^## 研究判断与负荷修订轮（2026-10-12）\n(.*?)(?=^## |\Z)", l16_moc, re.MULTILINE | re.DOTALL)
+    judgment_consistent = (
+        judgment_revision is not None
+        and "教师内容复核待登记，不沿用旧 PASS" in judgment_revision.group(1)
+        and "现场" in judgment_revision.group(1)
+        and "现行修订稿；本地审阅，未发布" in status
+        and "现行·学生讲义（本轮复核另登记）" in handout_row
+        and "现行·可编辑课堂 PPT（12 页）" in ppt_row
+    )
     checks.check(
-        draft_consistent or approved_consistent,
+        judgment_consistent or (judgment_revision is None and (draft_consistent or approved_consistent or revision_consistent)),
         "第 16 课内容门、当前材料与现场复核状态一致",
         "第 16 课当前状态、教师确认或文件清单不一致",
     )

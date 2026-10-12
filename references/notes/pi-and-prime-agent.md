@@ -1,4 +1,4 @@
-> **核验状态（2026-08-12）**：本文件为讲师参考笔记，B/C 级。两个项目均活跃迭代、表述易变；钉死 commit 仅作课堂分析锚点，所有功能宣称授课前必须回源复核。本文件不构成对学生安装或使用的建议；课堂中两者只作**分析对象**，不作结论外推的依据。
+> **核验状态（2026-08-12）**：本文件为讲师参考笔记，B/C 级。两个项目均活跃迭代、表述易变；钉死 commit 仅作课堂分析锚点，所有功能宣称授课前必须回源复核。功能对照仍以所列 commit 为分析锚点。**2026-09-22 课程决策更新**：Pi Agent 为主要课堂平台，OpenCode 等为备选；Prime Agent 仍仅作分析对象。安装入口见 [Pi Agent 最小启动说明](../../course/pi-setup.md)。分析快照不替代课堂版本复演。
 
 # Pi Agent 与 Prime Agent 对照笔记（讲师参考）
 
@@ -7,27 +7,27 @@
 - **Pi Agent**（pi.dev，`@earendil-works/pi-coding-agent`）：极简终端 coding agent 底座，默认只给模型 4 个工具（read/write/edit/bash），刻意不内置权限弹窗、plan mode、sub-agents、MCP，复杂能力交给 extensions/skills/prompt templates/packages。
 - **Prime Agent**（PrimeIntellect，MIT 许可）：约 2026-08-06 发布的自我改进研究型 Agent，面向长任务。**官方 README 明确声明构建于 pi 之上**（致谢 earendil-works/pi）——二者同一技术谱系：pi 是最小底座，Prime Agent 是在其上叠加的研究型长任务层。
 - **课程结论**（对应 `course/reference-analysis.md` 采纳判断）：
-  - pi 引入为第 12 课课堂拆解案例与讲师参考，作八要素框架的"最小对照组"；
+  - Pi Agent 从第 1 课起作为主要课堂平台，第 12 课进一步拆解其八要素；
   - Prime Agent 限制性引入为第 11 课课堂案例簇（钉 commit + 两篇预印本）与延伸阅读，讲师演示仅作备选；
-  - **均不进入学生必装清单**。OpenCode 仍为唯一课堂统一基线（syllabus 口径）。
+  - Pi Agent 是主要课前准备路径，OpenCode 等为备选；Prime Agent 不进入学生必装清单。
 
 ## 2. 谱系关系
 
 ```text
 pi（极简 harness 底座，earendil-works/pi）
  └── Prime Agent（研究型长任务层，PrimeIntellect-ai/prime-agent，README 自述 built on top of pi）
-旁置对照：OpenCode（完整工作台，课程统一基线，不随本笔记改变）
+旁置对照：OpenCode（完整工作台，课程备选环境）
 ```
 
 教学价值：三点一线演示"同一组八要素设计决定的不同取舍"——pi 把 harness 压到最小、把决定留给使用者；OpenCode 把权限、子 Agent、MCP、任务列表做成显性内置；Prime Agent 把 harness 本身变成可持久化、可被证据驱动精化的状态。这正对应课程"不绑定工具、教设计决定"的理念。
 
 ## 3. 三方对照表（按 harness 设计维度）
 
-| 维度 | OpenCode（基线） | pi（commit `9795d602`） | Prime Agent（commit `965941c7`） |
+| 维度 | OpenCode（备选） | pi（commit `9795d602`） | Prime Agent（commit `965941c7`） |
 | --- | --- | --- | --- |
 | 核心定位 | 功能完整的开源终端 Agent 工作台 | 可拼装的极简 Agent 底座 | 自我改进的研究型长任务 Agent |
 | 默认工具 | 内置工具较多（文件、命令、搜索、补丁、任务列表、网页、LSP 等） | 4 个：read/write/edit/bash；grep/find/ls 等只读工具需配置启用 | 一切经程序化：持久 IPython REPL 是内置模型工具，文件/shell/子 Agent 均通过代码调用 |
-| 权限控制 | 细粒度权限（allow/ask/deny，按工具/命令/路径/agent） | 刻意不内置 permission popups，依赖 Git/容器/tmux/扩展控制风险 | 官方自述 worker/kernel 隔离**不是安全沙箱**，以用户权限执行模型生成的 Python |
+| 权限控制 | 细粒度权限（allow/ask/deny，按工具/命令/路径/agent） | 刻意不内置 permission popups，容器/权限扩展落实限制；Git 留痕恢复，tmux 管理会话，二者不提供权限隔离 | 官方自述 worker/kernel 隔离**不是安全沙箱**，以用户权限执行模型生成的 Python |
 | 计划与子 Agent | 内置 plan/build agent、todo、subagents | 刻意不内置 plan mode、to-dos、sub-agents | 内置程序化子 Agent（`rlm(...)` 生成子 Agent 并取回结果）；Agent 间可直接通信 |
 | Skill 机制 | MCP servers、Agent Skills、自定义工具 | extensions、skills、prompt templates、packages | skills 为可导入 Python 包；内置 skill creator |
 | 状态与 Memory | 会话 + 项目规则文件（AGENTS.md 等） | 启动读取 AGENTS.md/CLAUDE.md 与全局说明 | **Continual Harness**：supplemental prompts/memories/skill 描述/子 Agent 规格为持久状态，`/refine` 做证据支撑的小步更新，快照可回滚；不改不可变基础 system prompt |
@@ -35,7 +35,7 @@ pi（极简 harness 底座，earendil-works/pi）
 | 长任务能力 | — | — | daemon 后台会话、detach/reattach、heartbeat、schedule、持久 goal |
 | 安装方式 | npm/安装脚本，支持多 Provider 含国内供应商 | npm 包（@earendil-works/pi-coding-agent） | `curl -fsSL .../install.sh \| sh`；有 SHA-256 校验、无签名校验；可能触发 sudo 装 Node |
 | 模型接入 | 多 Provider + OpenAI-compatible | 订阅登录 + API Key 多 Provider | 订阅登录（ChatGPT/Claude/Copilot）+ API Key（含 DeepSeek、MiniMax、Kimi 等）+ OpenAI-compatible 自定义端点（models.json）；Prime Inference 为可选自家服务 |
-| 课堂角色 | 统一基线（不变） | 第 12 课源码级拆解案例（最小对照组） | 第 11 课案例簇 + 延伸阅读；讲师演示备选 |
+| 课堂角色 | 备选执行环境 | 主要课堂平台 + 第 12 课源码级拆解案例 | 第 11 课案例簇 + 延伸阅读；讲师演示备选 |
 
 ## 4. Prime Agent 核心机制核验记录（2026-08-12）
 

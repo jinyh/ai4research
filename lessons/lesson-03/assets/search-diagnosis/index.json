@@ -1,0 +1,7 @@
+[
+ {"id":"S1","title":"How to Read a Paper","keywords":"three-pass; research reading","identity":"real bibliographic title; teaching index"},
+ {"id":"S2","title":"Guidelines for Performing Systematic Literature Reviews in Software Engineering","keywords":"search strategy; study selection","identity":"real bibliographic title; teaching index"},
+ {"id":"S3","title":"Teaching record: structured reading cards","keywords":"paper reading; condition retention","identity":"constructed"},
+ {"id":"S4","title":"Teaching record: reading memory cards","keywords":"hardware; memory","identity":"constructed"},
+ {"id":"S5","title":"Teaching record: paper card recycling","keywords":"manufacturing; recycling","identity":"constructed"}
+]

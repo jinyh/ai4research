@@ -5,7 +5,18 @@
 > 本轮现行版本：`handout.md` v0.2.1、`teaching-plan.md` v0.4.1、`slides.md` v0.5.0、`keystone-design-spec.md` v1.2.0；学生工件只使用 `peer-review.md` 与 `revision-plan.md`。
 
 
-## 内容与 PPT 同步轮（2026-09-16，当前状态）
+## 研究判断与负荷修订轮（2026-10-12）
+
+本轮现行材料以此节为准；以下按日期保留的通过记录只描述其当时版本。
+
+- 核心判断：先改哪一条，哪条意见可以有依据地保留异议？
+- 新增 [学生任务与原始输入](./judgment-task.md)、[教师判断依据](./judgment-teacher.md)，本人产出回到原项目；课外总投入每课最多60分钟。
+- 内容与映射：当前 15 页；普通课教学结构重新桌面推演，专用课保留学生主导；教师内容复核待登记，不沿用旧 PASS。
+- PPT 技术/视觉：本轮修改页 P04,P10,P15，最终磁盘文件与全页渲染检查结果见[执行记录](../../docs/research-judgment-revision-20261012.md)。
+- 现场：学生实际计时试做、PowerPoint 授课环境及教室投影待核验；网站发布状态见[部署记录](../../web/README.md)，现场核验独立登记。
+
+
+## 内容与 PPT 同步轮（2026-09-16，历史状态）
 
 - 教师确认：用户已明确“通过，你修改后续课程和PPT”；据此完成后续内容和课件同步。此确认解除本轮内容与制作前置阻塞，现场授课验收另行登记。
 - 内容、教学与映射：现行讲义、教案和 15 页母稿已同步；90 分钟安排保持原定结构，板书、诊断反馈和过渡见教案。
@@ -34,13 +45,13 @@
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生讲义 v0.3.1 | 学生可独立阅读的当前内容源 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.5.1 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v0.6.1 | 15 页屏显、讲述、动作与来源；已同步 PPT |
+| [handout.md](./handout.md) | 现行·学生讲义 v0.4.0 | 学生可独立阅读的当前内容源 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.6.0 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v0.7.0 | 15 页屏显、讲述、动作与来源；已同步 PPT |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.3.1 | 本轮实际构图、可编辑对象与验收；旧规格保留历史 |
 | [peer-review-template.md](./peer-review-template.md) | 现行·`peer-review.md` 模板 | 同伴三问、五维评审和作者六字段回应 |
 | [revision-plan-template.md](./revision-plan-template.md) | 现行·`revision-plan.md` 模板 | 三级优先级、影响工件、时限与 Checkpoint 4 预检 |
-| [slides.pptx](./slides.pptx) | 现行·可编辑课堂 PPT（15 页） | 已同步本轮内容；文件与渲染通过，现场核验待完成 |
+| [slides.pptx](./slides.pptx) | 现行·可编辑课堂 PPT（15 页） | 本轮内容及检查见顶部记录；教师复核、现场验证单列 |
 
 ## 2026-09-12 视觉提升轮（当前有效验收）
 
@@ -98,7 +109,7 @@
 
 ## 阅读路径
 
-- **学生**：`handout.md` → `course/reading-list.md` 第 15 课（Smith 1990 论文及 1989 技术报告 + Booth et al. 选段，约 50 分钟）
+- **学生**：`handout.md` → `course/reading-list.md` 第 15 课（Smith 关于 correctness 与 presentation 的指定段落，15分钟；其余按需参考）
 - **教师**：`teaching-plan.md` → `slides.md` → `course/ppt-quality-gates.md`
 - **维护者**：`AGENTS.md`（项目根）→ [备课规划.md](../备课规划.md) → 本 README → 各文件
 

@@ -14,6 +14,10 @@ sys.path.insert(0, str(WEB / "scripts"))
 import hide_metadata
 import strip_dead_links
 import student_view
+import build_downloads
+import link_content
+import check_site
+from zipfile import ZipFile
 
 
 def page(src):
@@ -21,6 +25,12 @@ def page(src):
 
 
 class StudentViewTests(unittest.TestCase):
+    def test_classroom_clock_excludes_explicit_homework_budget(self):
+        self.assertFalse(check_site.has_classroom_timing("课堂怎么做 独立判断 课外与下课去向 课外总投入最多60分钟"))
+        self.assertTrue(check_site.has_classroom_timing("课堂怎么做 独立判断10分钟 课外与下课去向 60分钟"))
+        self.assertTrue(check_site.has_classroom_timing("课堂怎么做 实践15分钟"))
+        self.assertFalse(check_site.has_classroom_timing("课堂怎么做 独立判断与验证"))
+
     def test_conditions_are_from_authority(self):
         source = (WEB.parent / "course/assignments.md").read_text()
         result = student_view.on_page_markdown((WEB / "docs/project.md").read_text(), page=page("project.md"), config={})
@@ -56,16 +66,23 @@ class StudentViewTests(unittest.TestCase):
         self.assertIn("../../learn/16.md", result)
 
     def test_approved_final_lesson_is_published(self):
-        current = page("lessons/lesson-16/handout.md")
-        source = Path(current.file.abs_src_path).read_text()
-        self.assertFalse(student_view.draft_handout(source))
-        result = student_view.on_page_markdown(source, page=current, config={})
+        with tempfile.TemporaryDirectory() as folder:
+            source = Path(folder) / "handout.md"
+            source.write_text("状态：现行，教师复核通过\n# 第十六讲\n## 学习目标\n可追溯论证")
+            current = page("lessons/lesson-16/handout.md")
+            current.file.abs_src_path = str(source)
+            self.assertFalse(student_view.draft_handout(source.read_text()))
+            result = student_view.on_page_markdown(source.read_text(), page=current, config={})
         self.assertIn("## 学习目标", result)
         self.assertNotIn("当前不作为正式学习材料发布", result)
 
     def test_reference_title_not_filename(self):
-        reference = page("lessons/lesson-08/handout.md")
-        student_view.on_page_markdown("# 第八讲｜学生研究方案分享与设计诊所\n\n正文", page=reference, config={})
+        with tempfile.TemporaryDirectory() as folder:
+            source = Path(folder) / "handout.md"
+            source.write_text("状态：现行，教师复核通过\n# 第八讲｜学生研究方案分享与设计诊所\n\n正文")
+            reference = page("lessons/lesson-08/handout.md")
+            reference.file.abs_src_path = str(source)
+            student_view.on_page_markdown(source.read_text(), page=reference, config={})
         self.assertEqual(reference.title, "第八讲｜学生研究方案分享与设计诊所")
 
     def test_case_status_does_not_block_whole_lesson(self):
@@ -114,9 +131,43 @@ class StudentViewTests(unittest.TestCase):
             self.assertNotIn(title, visible)
         lessons = re.findall(r"^## 第 (\d+) 课：", visible, re.MULTILINE)
         self.assertEqual(lessons, [str(n) for n in range(1, 17)])
-        self.assertEqual(visible.count("**核心｜"), 16)
+        self.assertEqual(visible.count("**核心｜"), 12)
+        self.assertEqual(visible.count("**参考（研究门课不加必读）｜"), 4)
         self.assertIn("Keshav", visible)
         self.assertIn("未经授权", visible)
+
+    def test_rsi_download_is_exact_student_whitelist(self):
+        with tempfile.TemporaryDirectory() as folder:
+            build_downloads.build_rsi_download({"docs_dir": folder}, link_content.PUBLISH)
+            with ZipFile(Path(folder) / "downloads/rsi-selection-case.zip") as archive:
+                self.assertEqual(set(archive.namelist()),
+                                 {f"rsi-selection-case/{name}" for name in build_downloads.RSI_FILES})
+                for name in archive.namelist():
+                    self.assertNotIn("teacher", name)
+                    self.assertNotIn(".work", name)
+                    self.assertNotIn(b"/Users/bright", archive.read(name))
+        with tempfile.TemporaryDirectory() as folder:
+            with self.assertRaises(PluginError):
+                build_downloads.build_rsi_download({"docs_dir": folder}, set())
+
+    def test_judgment_bundles_keep_teacher_answers_private(self):
+        for n in range(1, 17):
+            self.assertIn(f"lessons/lesson-{n:02}/judgment-task.md", link_content.PUBLISH)
+            self.assertNotIn(f"lessons/lesson-{n:02}/judgment-teacher.md", link_content.PUBLISH)
+        with tempfile.TemporaryDirectory() as folder:
+            build_downloads.build_judgment_downloads({"docs_dir": folder}, link_content.PUBLISH)
+            with ZipFile(Path(folder) / "downloads/judgment-tasks.zip") as archive:
+                self.assertEqual(set(archive.namelist()), set(build_downloads.JUDGMENT_FILES))
+                for name in archive.namelist():
+                    self.assertNotIn("teacher", name)
+                    self.assertNotIn(b"/Users/bright", archive.read(name))
+                    self.assertNotIn(b".work/", archive.read(name))
+            for name in ("micro-project.zip", "search-diagnosis.zip"):
+                with ZipFile(Path(folder) / "downloads" / name) as archive:
+                    self.assertIn("README.md", archive.namelist())
+        with tempfile.TemporaryDirectory() as folder:
+            with self.assertRaises(PluginError):
+                build_downloads.build_judgment_downloads({"docs_dir": folder}, {})
 
     def test_outside_docs_not_treated_as_published(self):
         with tempfile.TemporaryDirectory() as folder:

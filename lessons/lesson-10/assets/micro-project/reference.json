@@ -1,0 +1,13 @@
+{
+ "provenance":"Public constructed development checks; never an unseen test set",
+ "cases":[
+  {"case_id":"N1","accept":true,"expected":{"paper_id":"T01","summary":"A result"}},
+  {"case_id":"N2","accept":true,"expected":{"paper_id":"T02","summary":"中文结果"}},
+  {"case_id":"E1","accept":false},
+  {"case_id":"E2","accept":false},
+  {"case_id":"E3","accept":false},
+  {"case_id":"E4","accept":false},
+  {"case_id":"E5","accept":false},
+  {"case_id":"E6","accept":false}
+ ]
+}

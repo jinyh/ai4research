@@ -1,10 +1,12 @@
 # 逐课参考阅读清单
 
-版本：v2.2.1
-最后更新：2026-09-13
+版本：v2.3.0
+最后更新：2026-10-12
 
 变更记录：
-
+- 2026-10-12：共同诊断与本人迁移修订；课外总投入每课不超过 60 分钟，四次提交与评分不变。
+- v2.2.3 (2026-10-01): 评价证据角色、早期试探与内容验收统一；加入 RSI 补充案例，正式提交和评分不变。
+- v2.2.2 (2026-09-22): Pi Agent 改为课堂主平台，OpenCode 等为备选；同步相关入口与操作边界，课程结构、评分及提交节点不变。
 - v2.2.1 (2026-09-13)：移除 10 个仅有本地入口或重复引用该入口的案例条目；保留全部核心阅读和公开书目，删除本地副本及内部选目入口。
 - v2.2.0 (2026-08-12)：第 11 课新增课堂案例"Prime Agent 自我改进研究 Agent 案例簇"（钉 commit，附两篇预印本，仅分析对象）；第 12 课新增课堂案例"Pi Coding Agent 最小 harness 拆解案例"（钉 commit）；两课各达 5 项上限；正式书目与课时结构不变。
 - v2.1.0 (2026-08-10)：G3 选题训练配套——第 5 课 Qian 课堂案例扩为六种构思模式（填空/扩展/造锤找钉/小处泛化/复现前作/外部来源，已对本地转载副本核验）；第 6 课新增课堂案例霍强《创新研究到底怎么做？》（四维选题标准卡的兴趣与意义参照）。
@@ -15,7 +17,15 @@
 - v2.0.0 (2026-07-29)：改为“正式书目 + 课堂案例”双层结构；以经典书籍选章、同行评议论文、正式规范和原始论文为主干；加入 AI 导航—原文核验—偏差审计阅读法。
 - v1.0.0 (2026-07-29)：初版逐课阅读清单，已归档至 `archive/superseded-docs/reading-list-v1.0.0.md`（仅本机保留）。
 
-本清单面向 16 次正式课程。每课通常只要求 1 项核心阅读，其余按项目需要选读，总数不超过 5 项。课堂案例提供公开入口；书籍只指定章节，不布置整本阅读。
+本清单面向 16 次正式课程。普通课只要求 1 项指定段落阅读（15 分钟以内），研究门课不叠加新必读。其余作为按需参考，不叠加到每课 60 分钟总预算。课堂案例提供公开入口；书籍只指定章节，不布置整本阅读。
+
+## 课堂难度与课外总预算
+
+面向已有编程、机器学习和英文论文阅读基础、科研经验有限的计算机研究生。采用“共同诊断＋本人迁移”：先独立判断，再比较证据、验证并修订同一个人项目。逐课输入、核心判断、验证和去向见[研究判断路径](./judgment-path.md)。
+
+课外总投入每课最多 60 分钟，包含阅读、准备、安装排障、项目推进和提交整理。普通课为指定阅读 15 分钟＋准备 10 分钟＋项目补全 35 分钟；L6/9/13/16 为整理 15 分钟＋修订提交 45 分钟，不叠加新必读。所需主要操作与研究门检查在课堂完成。超出预算先缩小材料或任务范围，不把未完课堂任务整体转移到课后。
+
+默认个人项目为基于共同材料、本人独立定义并验证的微型研究问题；自有课题可用规模相当的公开子问题。阅读卡工作流为共同主线，MI 和 RSI 分别用于真实文献争议与评价诊断，不要求三个项目。L4–L6 逐课在课堂完成一张完整精读卡；报告与展示整理累计材料，不另起文档。
 
 ## 一、书目层级与使用规则
 
@@ -60,33 +70,39 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
 
 ## 第 1 课：AI 辅助科研导论与八阶段研究链路
 
+**本课阅读边界：**Simon Chapter 5 中讨论设计目标与约束的段落；找出一处目标与约束的区别。不要求读完整章。
+
+
 ### 正式书目
 
-1. **核心｜经典书籍选章｜约 30 分钟**
+1. **核心｜经典书籍选章｜指定范围**
    Herbert A. Simon. *The Sciences of the Artificial*, 3rd ed. MIT Press, 1996（2019 reissue）. 选读 Chapter 5, “The Science of Design: Creating the Artificial”。[出版社页面](https://mitpress.mit.edu/9780262537537/the-sciences-of-the-artificial/)
    用途：区分自然现象研究与人工物设计，理解 CS/AI 研究中“问题—目标—约束—评价”的基本结构。
 
-2. **任选｜经典演讲/书籍章节｜约 20 分钟**
+2. **按需参考（非额外要求）｜经典演讲/书籍章节｜约 20 分钟**
    Richard W. Hamming. *The Art of Doing Science and Engineering: Learning to Learn*. Stripe Press, 2020 reissue. 选读 “You and Your Research”。[出版社页面](https://press.stripe.com/the-art-of-doing-science-and-engineering)
    用途：讨论重要问题、研究品味、勇气和长期工作方式。
 
-3. **任选｜原始综述论文｜约 25 分钟**
+3. **按需参考（非额外要求）｜原始综述论文｜约 25 分钟**
    Wang, H. et al. “Scientific discovery in the age of artificial intelligence.” *Nature* 620, 47–60 (2023). DOI: [10.1038/s41586-023-06221-2](https://www.nature.com/articles/s41586-023-06221-2)。选读引言、总览图和与本人方向相关的一节。
    用途：定位 AI 介入科学发现链路的环节、机会与限制。
 
 ## 第 2 课：科研伦理、Agent 权限、研究工件与追踪
 
+**本课阅读边界：**中科院诚信提醒中涉及 AI 生成内容核实与责任的条款；对照本课权限声明，不扩展为整份规范背诵。
+
+
 ### 正式书目
 
-1. **核心｜正式规范｜约 15 分钟**
+1. **核心｜正式规范｜指定范围**
    中国科学院科研道德委员会：《关于在科研活动中规范使用人工智能技术的诚信提醒》（2024）。[官方页面](https://www.cas.cn/sygz/202409/t20240910_5031186.shtml)
    用途：建立 AI 辅助检索、生成内容披露、数据真实性、评审保密和责任归属的国内底线。
 
-2. **任选｜共识报告选章｜约 25 分钟**
+2. **按需参考（非额外要求）｜共识报告选章｜约 25 分钟**
    National Academies of Sciences, Engineering, and Medicine. *Fostering Integrity in Research*. National Academies Press, 2017. 选读 Chapter 2, “Foundations of Integrity in Research: Core Values and Guiding Norms”, pp. 27–38. DOI: [10.17226/21896](https://nap.nationalacademies.org/catalog/21896/fostering-integrity-in-research)。
    用途：从客观、诚实、开放、公平、问责和守护责任理解科研诚信，而不只记忆禁止事项。
 
-3. **任选｜经典论文选段｜约 20 分钟**
+3. **按需参考（非额外要求）｜经典论文选段｜约 20 分钟**
    Saltzer, J. H., & Schroeder, M. D. “The Protection of Information in Computer Systems.” *Proceedings of the IEEE* 63(9), 1278–1308 (1975). DOI: [10.1109/PROC.1975.9939](https://doi.org/10.1109/PROC.1975.9939)。只读 fail-safe defaults、complete mediation、separation of privilege 和 least privilege。
    用途：为 Agent 权限矩阵提供经典安全原则，而不是依赖某个平台的权限界面。
 
@@ -97,89 +113,107 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
 
 ## 第 3 课：文献检索与证据角色判断
 
+**本课阅读边界：**Booth Chapter 3 中 Finding and Evaluating Sources 的检索与来源评价段落；只记录一次查询修订依据。
+
+
 ### 正式书目
 
-1. **核心｜经典研究方法书选章｜约 30 分钟**
+1. **核心｜经典研究方法书选章｜指定范围**
    Booth, W. C. et al. *The Craft of Research*, 5th ed. University of Chicago Press, 2024. 选读 Chapter 3, “Finding and Evaluating Sources”，含 “Using Generative Artificial Intelligence” quick tip。[出版社页面](https://press.uchicago.edu/ucp/books/book/chicago/C/bo215874008)
    用途：区分来源类型、相关性、可靠性和来源在论证中的角色。
 
-2. **任选｜正式技术报告选段｜约 25 分钟**
+2. **按需参考（非额外要求）｜正式技术报告选段｜约 25 分钟**
    Kitchenham, B., & Charters, S. *Guidelines for Performing Systematic Literature Reviews in Software Engineering*. EBSE-2007-01, 2007. 选读 protocol、search strategy 和 study selection。[机构索引](https://ebse.webspace.durham.ac.uk/ebse-bibliography/guidelines-for-performing-systematic-literature-reviews-in-software-engineering/)
    用途：把检索、纳入和排除过程变成可复核方法。
 
-3. **任选｜正式报告规范｜约 15 分钟**
+3. **按需参考（非额外要求）｜正式报告规范｜约 15 分钟**
    Page, M. J. et al. “The PRISMA 2020 statement: an updated guideline for reporting systematic reviews.” *BMJ* 372:n71 (2021). DOI: [10.1136/bmj.n71](https://www.bmj.com/content/372/bmj.n71)。只读 checklist 和 flow diagram。[PRISMA 官方入口](https://www.prisma-statement.org/prisma-2020-statement)
    用途：学习透明报告逻辑，不要求 CS/AI 项目机械套用医学综述格式。
 
 ## 第 4 课：AI 辅助论文精读与深度分析
 
+**本课阅读边界：**Keshav §2.1–§2.3 与 §4（两页内定位）；检查时长、深度和证据类型。
+
+
 ### 正式书目
 
-1. **核心｜经典论文｜约 20 分钟**
+1. **核心｜经典论文｜指定范围**
    Keshav, S. “How to Read a Paper.” *ACM SIGCOMM Computer Communication Review* 37(3), 83–84 (2007). DOI: [10.1145/1273445.1273458](https://doi.org/10.1145/1273445.1273458)。[作者课程 PDF](https://cs.uwaterloo.ca/~brecht/courses/854-http-video-2012/readings/keshav-paper-reading.pdf)
    用途：以三遍阅读法控制阅读深度，并建立实验论文的检查问题。
 
-2. **任选｜经典研究方法书选章｜约 25 分钟**
+2. **按需参考（非额外要求）｜经典研究方法书选章｜约 25 分钟**
    Booth et al. *The Craft of Research*, 5th ed. 选读 Chapter 4, “Engaging Sources”，重点为 reading for a problem、argument、data and support。
    用途：防止把作者主张、数据、证据和个人推断混为一谈。
 
 ## 第 5 课：综述、证据地图与研究空白识别
 
+**本课阅读边界：**Kitchenham & Charters 中 search strategy 与 study selection 的段落；检查检索范围如何影响空白判断。
+
+
 ### 正式书目
 
-1. **核心｜正式技术报告选段｜约 30 分钟**
+1. **核心｜正式技术报告选段｜指定范围**
    Kitchenham & Charters. *Guidelines for Performing Systematic Literature Reviews in Software Engineering*. 选读 study quality assessment、data extraction 和 synthesis。
    用途：从“列举文献”转向质量判断、结构化提取与证据综合。
 
-2. **任选｜经典研究方法书选段｜约 20 分钟**
+2. **按需参考（非额外要求）｜经典研究方法书选段｜约 20 分钟**
    Booth et al. *The Craft of Research*, 5th ed. 选读 4.3–4.5：reading for a problem、arguments、data and support。
    用途：从来源中提取问题、论证与证据角色。
 
-3. **任选｜同行评议方法论文｜约 20 分钟**
+3. **按需参考（非额外要求）｜同行评议方法论文｜约 20 分钟**
    Pautasso, M. “Ten Simple Rules for Writing a Literature Review.” *PLOS Computational Biology* 9(7):e1003149 (2013). DOI: [10.1371/journal.pcbi.1003149](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003149)。
    用途：检查综述的范围、批判性、结构和迭代。
 
 ## 第 6 课：研究问题、问题定义与第一性原理
 
+**本课阅读边界：**研究门课：不叠加新必读；整理已有三张卡的原文定位和问题定义。
+
+
 ### 正式书目
 
-1. **核心｜经典研究方法书选章｜约 35 分钟**
+1. **参考（研究门课不加必读）｜经典研究方法书选章｜指定范围**
    Booth et al. *The Craft of Research*, 5th ed. 选读 Chapter 1, “From Topics to Questions” 和 Chapter 2, “From Questions to a Problem”。
    用途：把兴趣收敛为研究问题，并用 “So what?”、实际后果和知识后果检查重要性。
 
-2. **任选｜经典论文｜约 25 分钟**
+2. **按需参考（非额外要求）｜经典论文｜约 25 分钟**
    Platt, J. R. “Strong Inference.” *Science* 146(3642), 347–353 (1964). DOI: [10.1126/science.146.3642.347](https://pubmed.ncbi.nlm.nih.gov/17739513/)。
    用途：用竞争假设、关键实验和排除逻辑形成可证伪命题。
 
-3. **任选｜经典演讲/书籍章节｜约 15 分钟**
+3. **按需参考（非额外要求）｜经典演讲/书籍章节｜约 15 分钟**
    Hamming. “You and Your Research.” 本课只读“重要问题”和研究品味部分。
    用途：区分“可做”“新颖”和“值得投入”的问题。
 
 ## 第 7 课：机制假设、研究判断与实验设计
 
+**本课阅读边界：**Platt Strong Inference 中多个假设与关键实验的段落；对照本人预测表。
+
+
 ### 正式书目
 
-1. **核心｜经典书籍选章｜约 35 分钟**
+1. **按需参考（非额外要求）｜经典书籍选章｜指定范围**
    Box, G. E. P., Hunter, J. S., & Hunter, W. G. *Statistics for Experimenters: Design, Innovation, and Discovery*, 2nd ed. Wiley, 2005. ISBN: 978-0-471-71813-0. 选读 Chapter 1, “Catalyzing the Generation of Knowledge” 和 3.4, “Comparison, Replication, Randomization, and Blocking in Simple Experiments”。[出版社配套页](https://bcs.wiley.com/he-bcs/Books?action=index&bcsId=9686&itemId=0471718130)
    用途：把实验理解为模型—推论—数据—修正的迭代学习过程。
 
-2. **任选｜经典论文重读｜约 15 分钟**
+2. **核心｜经典论文重读｜约 15 分钟**
    Platt. “Strong Inference.” 本课只读替代假设、关键实验与结果区分力部分。
    用途：为主假设设计竞争解释和反驳条件。
 
-3. **任选｜正式统计手册选段｜约 20 分钟**
+3. **按需参考（非额外要求）｜正式统计手册选段｜约 20 分钟**
    NIST/SEMATECH. [*e-Handbook of Statistical Methods: Process Improvement—Experimental Design*](https://www.itl.nist.gov/div898/handbook/pri/pri.htm)。选读 objectives、factors、responses、randomization、replication 和 blocking。
    用途：检查变量、对照、测量和混杂因素。
 
 ## 第 8 课：学生研究方案分享与设计诊所
 
+**本课阅读边界：**Booth 中 reasons/evidence 与反对意见的相邻段落；只查本人方案的一处证据缺口。
+
+
 ### 正式书目
 
-1. **核心｜经典研究方法书选段｜约 20 分钟**
+1. **核心｜经典研究方法书选段｜指定范围**
    Booth et al. *The Craft of Research*, 5th ed. 选读 5.5, “Planning Your Research Argument” 和 10.2, “Planning Your Paper”。
    用途：检查问题、理由、证据与预期反对意见是否构成完整论证。
 
-2. **任选｜经典论文｜约 15 分钟**
+2. **按需参考（非额外要求）｜经典论文｜约 15 分钟**
    Whitesides, G. M. “Whitesides’ Group: Writing a Paper.” *Advanced Materials* 16, 1375–1377 (2004). DOI: [10.1002/adma.200400767](https://advanced.onlinelibrary.wiley.com/doi/10.1002/adma.200400767)。
    用途：理解“好的论文提纲也是好的研究计划”，先组织数据和论证再写文字。
 
@@ -190,37 +224,43 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
 
 ## 第 9 课：Baseline、实验规格与可复现实验工程
 
+**本课阅读边界：**研究门课：不叠加新必读；核对既有协议、运行说明和反馈处理。
+
+
 ### 正式书目
 
-1. **核心｜同行评议方法论文｜约 25 分钟**
+1. **参考（研究门课不加必读）｜同行评议方法论文｜指定范围**
    Wilson, G. et al. “Good Enough Practices in Scientific Computing.” *PLOS Computational Biology* 13(6):e1005510 (2017). DOI: [10.1371/journal.pcbi.1005510](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510)。
    用途：建立项目组织、数据管理、版本记录、脚本和协作的最低可靠实践。
 
-2. **任选｜原始研究论文｜约 25 分钟**
+2. **按需参考（非额外要求）｜原始研究论文｜约 25 分钟**
    Pineau, J. et al. “Improving Reproducibility in Machine Learning Research.” *Journal of Machine Learning Research* 22(164), 1–20 (2021). [JMLR 正式页面](https://www.jmlr.org/papers/v22/20-303.html)。
    用途：将 ML reproducibility checklist 转化为 baseline、环境和实验报告要求。
 
-3. **任选｜正式政策｜约 15 分钟**
+3. **按需参考（非额外要求）｜正式政策｜约 15 分钟**
    ACM. [*Artifact Review and Badging, Version 1.1*](https://www.acm.org/publications/policies/artifact-review-and-badging-current) (2020)。选读 documented、consistent、complete、exercisable、available 和 results validated 的定义。
    用途：区分“代码可下载”“工件可运行”和“结果得到独立验证”。
 
-4. **任选｜原始研究论文｜约 20 分钟**
+4. **按需参考（非额外要求）｜原始研究论文｜约 20 分钟**
    Bouthillier, X. et al. “Accounting for Variance in Machine Learning Benchmarks.” *Proceedings of Machine Learning and Systems* 3 (2021). [MLSys 正式页面](https://proceedings.mlsys.org/paper_files/paper/2021/hash/0184b0cd3cfb185989f858a1d9f5c1eb-Abstract.html)。
    用途：检查随机性、方差来源和不公平 benchmark 比较。
 
 ## 第 10 课：AI 辅助编码、调试与受限 Agent 执行
 
+**本课阅读边界：**ReAct 中 action/observation 循环的图及失败处理说明；对照本人的一次调试 trace。
+
+
 ### 正式书目
 
-1. **核心｜经典教材选章｜约 30 分钟**
+1. **按需参考（非额外要求）｜经典教材选章｜指定范围**
    Russell, S., & Norvig, P. *Artificial Intelligence: A Modern Approach*, 4th ed. Pearson, 2020. 选读 Chapter 2, “Intelligent Agents”：agents and environments、rationality、environment properties、agent structure。[出版社页面](https://www.pearson.com/en-us/subject-catalog/p/artificial-intelligence-a-modern-approach/P200000003500/9780134610993)
    用途：先用经典 Agent 概念理解环境、目标、观察和行动，再分析 LLM coding agent。
 
-2. **任选｜基础性 Agent 论文｜约 25 分钟**
+2. **核心｜基础性 Agent 论文｜约 25 分钟**
    Yao, S. et al. “ReAct: Synergizing Reasoning and Acting in Language Models.” *ICLR 2023*. [会议页面](https://iclr.cc/virtual/2023/poster/11003)。
    用途：分析 reasoning—action—observation 循环及其错误传播。
 
-3. **任选｜同行评议 HCI 论文｜约 20 分钟**
+3. **按需参考（非额外要求）｜同行评议 HCI 论文｜约 20 分钟**
    Amershi, S. et al. “Guidelines for Human-AI Interaction.” *CHI 2019*. DOI: [10.1145/3290605.3300233](https://www.microsoft.com/en-us/research/publication/guidelines-for-human-ai-interaction/)。选读人工纠错、控制、反馈和失败处理相关准则。
    用途：设计人工确认点和可恢复交互，而不是假设 Agent 始终正确。
 
@@ -231,17 +271,20 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
 
 ## 第 11 课：实验自动化、AutoResearch 循环与结果追踪
 
+**本课阅读边界：**Sandve et al. 中保持原始结果、记录程序版本和随机性相关规则；只挑与本人队列有关的条目。
+
+
 ### 正式书目
 
-1. **核心｜经典可复现论文｜约 25 分钟**
+1. **核心｜经典可复现论文｜指定范围**
    Sandve, G. K. et al. “Ten Simple Rules for Reproducible Computational Research.” *PLOS Computational Biology* 9(10):e1003285 (2013). DOI: [10.1371/journal.pcbi.1003285](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285)。
    用途：建立结果—脚本—参数—输入—随机种子的可执行追踪链。
 
-2. **任选｜原始研究论文｜约 25 分钟**
+2. **按需参考（非额外要求）｜原始研究论文｜约 25 分钟**
    Huang, Q. et al. “MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation.” *ICML 2024*, PMLR 235, 20271–20309. [PMLR 正式页面](https://proceedings.mlr.press/v235/huang24y.html)。
    用途：用任务、成功标准、轨迹和失败类型评价 ML 实验 Agent。
 
-3. **任选｜前沿原始论文｜约 25 分钟**
+3. **按需参考（非额外要求）｜前沿原始论文｜约 25 分钟**
    Lu, C. et al. “Towards end-to-end automation of AI research.” *Nature* (2026). DOI: [10.1038/s41586-026-10265-5](https://www.nature.com/articles/s41586-026-10265-5)。
    用途：分析端到端自动化的任务范围、评价证据和仍需人工判断的边界。
 
@@ -255,13 +298,16 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
 
 ## 第 12 课：Agent/Skill 逻辑与自主 Research Workflow 设计
 
+**本课阅读边界：**van der Aalst 工作流模式中的 sequence、exclusive choice 与 iteration 定义/示例；对照本人控制流。
+
+
 ### 正式书目
 
-1. **核心｜经典 Agent 论文｜约 30 分钟**
+1. **按需参考（非额外要求）｜经典 Agent 论文｜指定范围**
    Wooldridge, M., & Jennings, N. R. “Intelligent Agents: Theory and Practice.” *The Knowledge Engineering Review* 10(2), 115–152 (1995). DOI: [10.1017/S0269888900008122](https://www.cambridge.org/core/journals/knowledge-engineering-review/article/abs/intelligent-agents-theory-and-practice/CF2A6AAEEA1DBD486EF019F6217F1597)。选读 agent properties、abstract architectures 和 reflection 部分。
    用途：区分 autonomy、reactivity、pro-activeness 和 social ability，不把“调用 LLM”自动等同于 Agent。
 
-2. **任选｜经典工作流论文｜约 25 分钟**
+2. **核心｜经典工作流论文｜约 25 分钟**
    van der Aalst, W. M. P. et al. “Workflow Patterns.” *Distributed and Parallel Databases* 14, 5–51 (2003). DOI: [10.1023/A:1022883727209](https://research.tue.nl/files/2053121/613310.pdf)。选读 sequence、parallel split、synchronization、exclusive choice、simple merge 和 iteration。
    用途：用可复用控制流模式分析 Skill 和 Agent Workflow，而不是按产品术语分类。
 
@@ -274,21 +320,24 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
    Model Context Protocol. [*Architecture Overview*](https://modelcontextprotocol.io/docs/learn/architecture)。只分析 host、client、server、tools、resources、prompts 和权限边界；授课前复核当前协议版本。现成 Skill 仓库保留在 [resources.md](./resources.md) 案例池，不列为正式阅读。
 
 5. **最小 harness 拆解案例**
-   [*Pi Coding Agent*（commit `9795d602`）](https://github.com/earendil-works/pi/tree/9795d602306ef68a97585909e8e79f92a389057b)（pi.dev，`@earendil-works/pi-coding-agent`）。只读该版本 README 与默认工具清单，分析"默认仅 read/write/edit/bash 四工具、权限与计划/子 Agent 刻意移出核心"的设计决定；作为八要素拆解的最小对照组，与 OpenCode 显性 harness 对照，不进学生安装清单；授课前复核。
+   [*Pi Coding Agent*（commit `9795d602`）](https://github.com/earendil-works/pi/tree/9795d602306ef68a97585909e8e79f92a389057b)（pi.dev，`@earendil-works/pi-coding-agent`）。只读该版本 README 与默认工具清单，分析"默认仅 read/write/edit/bash 四工具、权限与计划/子 Agent 刻意移出核心"的设计决定；作为课程主平台的八要素拆解案例，与 OpenCode 备选环境对照。该 commit 仅作结构分析锚点，课堂安装版本按 [Pi Agent 最小启动说明](./pi-setup.md)与助教复演记录确认；授课前复核。
 
 ## 第 13 课：工作流评价、结果分析与失败复盘
 
+**本课阅读边界：**研究门课：不叠加新必读；核查现有评价定义、逐条记录与独立性说明。
+
+
 ### 正式书目
 
-1. **核心｜经典 ML 系统论文｜约 25 分钟**
+1. **参考（研究门课不加必读）｜经典 ML 系统论文｜指定范围**
    Sculley, D. et al. “Hidden Technical Debt in Machine Learning Systems.” *NeurIPS 2015*, 2503–2511. [Google Research 正式页面](https://research.google/pubs/hidden-technical-debt-in-machine-learning-systems/)。
    用途：从纠缠、反馈回路、隐性消费者、数据依赖和配置债建立失败分类。
 
-2. **任选｜原始研究论文重读｜约 20 分钟**
+2. **按需参考（非额外要求）｜原始研究论文重读｜约 20 分钟**
    Bouthillier et al. “Accounting for Variance in Machine Learning Benchmarks.” 本课只读比较协议、不确定性和结论强度部分。
    用途：让工作流前后对照报告方差和不确定性，而不是只比较单次分数。
 
-3. **任选｜系统评价论文｜约 20 分钟**
+3. **按需参考（非额外要求）｜系统评价论文｜约 20 分钟**
    Breck, E. et al. “The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction.” *IEEE Big Data 2017*. [Google Research 正式页面](https://research.google/pubs/the-ml-test-score-a-rubric-for-ml-production-readiness-and-technical-debt-reduction/)。
    用途：学习用可检查 rubric 评价数据、模型、基础设施和监控，而不是用功能清单代替质量。
 
@@ -299,37 +348,46 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
 
 ## 第 14 课：论文式表达与回写
 
+**本课阅读边界：**Booth 的 claim、reason、evidence、warrant 定义与一个短例；只对照本人论证段，不读完整三章。
+
+
 ### 正式书目
 
-1. **核心｜经典研究方法书选章｜约 35 分钟**
+1. **核心｜经典研究方法书选章｜指定范围**
    Booth et al. *The Craft of Research*, 5th ed. 选读 Chapter 5 “Making Good Arguments”、Chapter 7 “Assembling Reasons and Evidence” 和 10.2 “Planning Your Paper”。
    用途：把 claim、reason、evidence、warrant 和 anticipated objection 组织为可追溯论证。
 
-2. **任选｜经典论文｜约 15 分钟**
+2. **按需参考（非额外要求）｜经典论文｜约 15 分钟**
    Whitesides. “Whitesides’ Group: Writing a Paper.” *Advanced Materials* 16, 1375–1377 (2004). DOI: [10.1002/adma.200400767](https://advanced.onlinelibrary.wiley.com/doi/10.1002/adma.200400767)。
    用途：用 outline、图表和数据组织驱动写作。
 
-3. **任选｜经典科学写作论文｜约 25 分钟**
+3. **按需参考（非额外要求）｜经典科学写作论文｜约 25 分钟**
    Gopen, G. D., & Swan, J. A. “The Science of Scientific Writing.” *American Scientist* 78(6), 550–558 (1990). [期刊页面](https://www.americanscientist.org/article/the-importance-of-context-in-genetics)。
    用途：理解主题位、重音位、旧信息—新信息和读者预期。
 
 ## 第 15 课：同行评审、论证门预检与修改工作坊
 
+**本课阅读边界：**Smith The Task of the Referee 中 correctness 与 presentation 的评审要求；只选与收到意见相关的段落。
+
+
 ### 正式书目
 
-1. **核心｜经典 CS 评审论文｜约 25 分钟**
+1. **核心｜经典 CS 评审论文｜指定范围**
    Smith, A. J. “The Task of the Referee.” *Computer* 23(4), 65–71 (1990)；早期技术报告 UCB/CSD-89-511。[UC Berkeley 正式存档](https://www2.eecs.berkeley.edu/Pubs/TechRpts/1989/6154.html)
    用途：从正确性、新颖性、重要性、表达质量和出版物定位评价论文。
 
-2. **任选｜经典研究方法书选章｜约 25 分钟**
+2. **按需参考（非额外要求）｜经典研究方法书选章｜约 25 分钟**
    Booth et al. *The Craft of Research*, 5th ed. 选读 Chapter 9 “Acknowledgments and Responses” 和 Chapter 11 “Revising and Organizing”。
    用途：把反对意见转化为子论证，并区分接受、澄清、补证和保留异议。
 
 ## 第 16 课：最终分享、论证门与项目提交
 
+**本课阅读边界：**研究门课：不叠加新必读；整理展示所用结论与原始记录定位。
+
+
 ### 正式书目
 
-1. **核心｜经典书籍选章｜约 30 分钟**
+1. **参考（研究门课不加必读）｜经典书籍选章｜指定范围**
    Alley, M. *The Craft of Scientific Presentations: Critical Steps to Succeed and Critical Errors to Avoid*, 2nd ed. Springer, 2013. DOI: [10.1007/978-1-4419-8279-7](https://link.springer.com/book/10.1007/978-1-4419-8279-7)。选读 Chapter 3 “Structure”、Chapter 4 “Visual Aids”，以及 Critical Errors 3、4、7。
    用途：控制内容范围、建立叙事路径，并让幻灯片承载可辨认的证据而非默认模板。
 
@@ -358,3 +416,9 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
 4. 通过学校图书馆提供付费书籍和论文的合法访问方式；
 5. 检查指定章节、阅读时间与课程任务是否仍匹配；
 6. 用更高质量的正式来源替换当前二手案例时，保留变更记录。
+
+## RSI 补充案例：按需参考
+
+- [可控 CPU 案例](../lessons/lesson-11/assets/rsi-selection-case/README.md)：第 9、11、13 课共用，不新增必读。
+- Cawley, G. C. & Talbot, N. L. C. (2010). *On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation*. JMLR 11:2079–2107. [原文与题录](https://www.jmlr.org/papers/v11/cawley10a.html)。用途：有限样本评价准则的反复选优偏差。
+- Hardt, M. (2015). [The reusable holdout: Preserving validity in adaptive data analysis](https://research.google/blog/the-reusable-holdout-preserving-validity-in-adaptive-data-analysis/)。研究团队说明，用途：反馈参与开发后，留出证据独立性如何改变；不要求实现 reusable holdout。

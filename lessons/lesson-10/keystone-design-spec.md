@@ -160,3 +160,7 @@
 - 10/10 关键页已按本规格实现；P14 的长停留结构在 Artifact-tool 与 LibreOffice 重渲染中均保持可读。
 - 模板保真检查 issueCount=0，16 页无溢出和空 placeholder，16/16 页 notes 含闭合 `[Sources]`。
 - 逐页视觉检查未发现阻断性 overlap、clipping 或 wrapping；详细证据见 `.work/ppt/lesson-10/run-20260807/qa-ledger.txt`。
+
+## 2026-10-12 判断任务关键页
+
+本轮修改 P03,P13,P17；屏显唯一源为 slides.md。共同诊断页展示原始对象、不同选项及需作的决定，完整输入在 judgment-task.md；教师解释留在讲述备注和 judgment-teacher.md，先答后揭示。本人迁移页明确实际修改、核验与输出位置；退出页只承接既有项目。保留交大母版、主题、页脚与其余有效页面，检查长句换行和原文可读性。

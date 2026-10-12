@@ -21,4 +21,12 @@
 | [15 · 同行评审与修改](15.md) | 真实评审、现场修改与提交预检 |
 | [16 · 最终展示](16.md) | **学生主导**：展示、抽查、复盘与**论证门** |
 
-[课前准备](../course/opencode-setup.md) · [四次提交条件](../project.md) · [完整课程大纲](../course/syllabus.md)
+[课前准备](../course/pi-setup.md) · [四次提交条件](../project.md) · [完整课程大纲](../course/syllabus.md)
+
+## 判断任务与课外预算
+
+每课先独立判断共同材料，再核验并迁移到本人项目。课外总投入每课最多 60 分钟，包含阅读、准备、安装排障、项目推进和提交。研究门课不叠加新必读。
+
+[16课输入与输出路径](../course/judgment-path.md) · [候选来源起始池](../course/source-starter-pool.md) · [个人微型项目](../course/micro-project.md)
+
+[全部学生判断任务包](../downloads/judgment-tasks.zip) · [CPU个人项目起点](../downloads/micro-project.zip) · [离线检索诊断](../downloads/search-diagnosis.zip)

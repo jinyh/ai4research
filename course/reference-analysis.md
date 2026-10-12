@@ -1,7 +1,8 @@
 ---
-版本：v1.5.0
-最后更新：2026-08-12
+版本：v1.5.1
+最后更新：2026-09-22
 变更记录：
+- v1.5.1 (2026-09-22): Pi Agent 改为课堂主平台，OpenCode 等为备选；同步相关入口与操作边界，课程结构、评分及提交节点不变。
 - v1.5.0 (2026-08-12): 项目参考新增 Pi Agent 与 Prime Agent 两条（钉死 commit 与预印本标注），记录采纳判断——仅作第 11/12 课课堂分析案例与讲师参考，不进学生必装清单，OpenCode 统一基线不变
 - v1.4.1 (2026-08-05): 更新项目重组后的参考资料与本地申请原件路径
 - v1.4.0 (2026-07-29): 确立“正式书目 + 课堂案例”双层阅读体系；以经典书籍选章和原始论文为主干，引入可审计的 AI 辅助阅读流程
@@ -76,7 +77,7 @@
 | --- | --- | --- | --- | --- | --- | --- |
 | 定位 | 学术前沿 MOOC | 在线证书（可计入硕士） | 模块化证书 | 项目驱动研讨 | 跨学科实践 | 研究方法论 + AI 实践 |
 | 学时 | 12 讲座 | 16 周 | 多模块 Workshop | 一学期 | 一学期 | 16 周 / 32 学时 |
-| 技术栈 | 多代理、推理、规划 | LangGraph、RAG、Python | Claude Code、LangGraph | 去中心化代理 | LangChain、AutoGen | OpenCode 为课堂平台，不绑定模型或后端 |
+| 技术栈 | 多代理、推理、规划 | LangGraph、RAG、Python | Claude Code、LangGraph | 去中心化代理 | LangChain、AutoGen | Pi Agent 为课堂主平台，OpenCode 等为备选，不绑定模型或后端 |
 | 教学方法 | 讲座 + YouTube | 在线异步 + 项目 | Workshop + 动手 | 项目驱动 | 面对面 + 实践 | 讲授 + 研讨 + 上机 + 项目 |
 | 先修要求 | AI 基础 | Python 基础 | 无（非开发者友好） | 研究生 | 无 | Python + ML 基础 |
 | 伦理处理 | 独立讲座 | 部分覆盖 | 治理与风险模块 | 信任/声誉主题 | 贯穿全课 | 贯穿全流程 |
@@ -139,7 +140,7 @@
 - Sakana AI Scientist v1 展示了模板驱动的端到端自动科研（构思→文献→实验→论文→评审）。AI Scientist v2 引入最佳优先树搜索（BFTS），去除模板依赖，实现更通用的探索流程；已有 AI 生成论文被 ICLR 2025 Workshop 接收。具体 Star 数、模板数量和运行成本应在每轮备课前更新。
 - Orchestra Research AI Research Skills 提供模块化技能库，引入“代理原生研究工件（ARA）”概念和双循环架构（内循环优化 + 外循环综合）。具体技能数量、文档规模和安装方式应在每轮备课前更新。
 - Awesome 系列索引提供跨领域 AutoResearch 用例（科研、软件优化、金融交易）和评估基准（MLAgentBench、MLE-Bench、MLR-Bench、AgentBench）。具体收录数量和 Star 数应在每轮备课前更新。
-- Pi Agent（pi.dev，`earendil-works/pi`）是极简终端 coding agent 底座：默认仅 read/write/edit/bash 四工具，刻意不内置权限弹窗、plan mode、sub-agents 与 MCP，复杂能力交给 extensions/skills/packages。它可作第 12 课八要素拆解的"最小对照组"，与 OpenCode 的显性 harness 构成同谱系对照。来源为上游仓库与 pi.dev 文档（A 级来源身份，功能描述易变，授课前复核）；2026-05-07 项目从 badlogic/pi-mono 迁至 earendil-works/pi。**采纳判断**：引入为课堂拆解案例与讲师参考（钉 commit），不进学生必装清单；对照细节见 [references/notes/pi-and-prime-agent.md](../references/notes/pi-and-prime-agent.md)。
+- Pi Agent（pi.dev，`earendil-works/pi`）是极简终端 coding agent 底座：默认仅 read/write/edit/bash 四工具，刻意不内置权限弹窗、plan mode、sub-agents 与 MCP，复杂能力交给 extensions/skills/packages。它可作第 12 课八要素拆解的"最小对照组"，与 OpenCode 的显性 harness 构成同谱系对照。来源为上游仓库与 pi.dev 文档（A 级来源身份，功能描述易变，授课前复核）；2026-05-07 项目从 badlogic/pi-mono 迁至 earendil-works/pi。**采纳判断**：作为从第 1 课贯穿全程的主平台，并保留第 12 课拆解案例（钉 commit）；OpenCode 等为备选，课堂准备见 [Pi Agent 最小启动说明](./pi-setup.md)；对照细节见 [references/notes/pi-and-prime-agent.md](../references/notes/pi-and-prime-agent.md)。
 - Prime Agent（PrimeIntellect，MIT）约 2026-08-06 发布，官方自述构建于 pi 之上，面向长任务研究场景，两大抽象为 RLM（prompt-as-a-variable 的持久 REPL 程序化调用；上游论文 arXiv:2512.24601，预印本）与 Continual Harness（harness 状态持久化与证据支撑的精化；arXiv:2605.09998，预印本）；`/autonomous` 提供 turn/token/time 预算与质量门，官方自述"通过门只证明该门所验证的内容"。**采纳判断**：限制性引入——作第 11 课课堂案例簇（钉 commit + 两篇预印本，标注未同行评议）与延伸阅读；发布仅数日、支撑论文均为预印本、安装方式（curl|sh、用户权限执行）不满足课程安全教学要求，因此不进学生必做环节，讲师演示仅作备选且须隔离环境；厂商基准数字按课程口径只作报告观点引用。对照细节与待核验清单见 [references/notes/pi-and-prime-agent.md](../references/notes/pi-and-prime-agent.md)。
 
 ### AutoResearch 元模式
@@ -207,7 +208,7 @@
 
 本轮在既有结构化研究方法论基础上，进一步确定可执行的教学组织：
 
-- OpenCode 从第 1 课起作为统一课堂工作平台；它是承载环境，不是学习目标，也不限制模型或后端。
+- Pi Agent 从第 1 课起作为统一课堂工作平台；它是承载环境，不是学习目标，也不限制模型或后端。
 - 课程不讲解现成 Skills 的安装和调用步骤，而是拆解任务契约、上下文、工具权限、状态与工件、执行循环、评价、人工审核和失败恢复。
 - 每位学生独立完成一个真实或半真实研究项目，并为其中一个科研动作设计、实现和评价个人 Agent Workflow。
 - 3-4 人固定同伴组只承担分享、互查和同行评审，不共同提交；确需双人完成的高计算量实验须事先批准，并分别提交个人工件和反思。

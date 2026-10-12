@@ -47,6 +47,14 @@ class Page(HTMLParser):
         return "".join(self.article)
 
 
+def has_classroom_timing(article_text):
+    # The explicit homework section is student-facing by design; classroom
+    # timings remain teacher-only. Do not treat a 60-minute homework cap as a
+    # classroom schedule.
+    classroom = article_text.split("课外与下课去向", 1)[0]
+    return bool(re.search(r"\d+\s*分钟", classroom))
+
+
 def main():
     site = WEB / "_build"
     base_path = urlsplit(yaml.safe_load((WEB / "mkdocs.yml").read_text())["site_url"]).path
@@ -80,7 +88,7 @@ def main():
         target = site / f"learn/{n:02}/index.html"
         if target not in pages:
             errors.append(f"第 {n} 讲缺少任务入口")
-        elif re.search(r"\d+\s*分钟", pages[target].text):
+        elif has_classroom_timing(pages[target].text):
             errors.append(f"第 {n} 讲任务入口出现课堂计时")
 
     for n in range(1, 17):

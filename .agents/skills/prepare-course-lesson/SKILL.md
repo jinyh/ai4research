@@ -1,6 +1,6 @@
 ---
 name: prepare-course-lesson
-description: 备课门控流程。当用户要制作或修订某课的讲义、教案、逐页内容母稿或课堂 PPT，或提到"备课""准备第 N 课""做课件""定稿 PPT"时使用。强制按内容门→90 分钟教学门→逐页映射门→PPT 制作→三重检查→里程碑归档的顺序推进，禁止跳过门控直接做 PPT。
+description: 课程材料的备课与审阅流程。用于制作、修订或检查某课的讲义、教案、逐页母稿和课堂 PPT。制作修订按内容、教学、映射和 PPT 检查顺序推进；只读审阅按指定范围检查，不自动重制整课。
 ---
 
 # prepare-course-lesson
@@ -17,11 +17,17 @@ description: 备课门控流程。当用户要制作或修订某课的讲义、�
 
 ## 核心流程
 
+### 只读审阅
+
+用户仅要求检查、解释或评审现有材料时，先按仓库根目录的[逐课材料审校检查清单](../../../lessons/review-checklist.md)检查指定页面及必要前后文。读取实际 PPT 屏显、备注和相关演示材料，核对实际页序与母稿映射；区分已验证事实、修改建议和待现场验证。只读审阅不启动制作、归档或整课改写；用户授权修订后，再进入下述对应门控。
+
+### 制作与修订
+
 按下列顺序推进。每道门未通过不得进入下一道。
 
 1. **确认课次目标**：在 `course/syllabus.md` 定位该课的目标与项目产出；在 `course/curriculum.md` 核对八阶段定位；在 `lessons/备课规划.md` 核对当前整改口径。明确该课不得引入的旧口径（见 `course/sync-rules.md`）。
 
-2. **内容门**：对齐 `lessons/lesson-NN/handout.md`（学生讲义）、`teaching-plan.md`（教师教案）、`slides.md`（逐页内容母稿）。三份必须只有一套现行规则、案例与来源口径。通过条件见仓库根目录的 [`references/material-contracts.md`](../../../references/material-contracts.md)。
+2. **内容门**：对齐 `lessons/lesson-NN/handout.md`（学生讲义）、`teaching-plan.md`（教师教案）、`slides.md`（逐页内容母稿）及本次涉及的课堂包、模板和演示输入输出。按[逐课材料审校检查清单](../../../lessons/review-checklist.md)执行通用与适用项；通过条件见仓库根目录的 [`references/material-contracts.md`](../../../references/material-contracts.md)。检查清单是执行项唯一入口，不在本 skill 复制维护。
 
 3. **90 分钟教学门**：做桌面推演。各段只以整数时长呈现（如 5 分钟、10 分钟、15 分钟），合计恰好 90 分钟，不写绝对起止时间；检查第一次学生动手的距开课时长、最小课堂产出与备用路径；确认个人实践每段 ≤15 分钟（超出拆两段并插入教师中点共性卡点点评；同伴互查/轮转不受此限），且屏显不出现任何课堂分钟数、讲义不出现课堂计时分钟数。教师教案须含教学目标、时间分配、课堂活动、演示、形成性评价、课后复盘。
 
@@ -29,7 +35,7 @@ description: 备课门控流程。当用户要制作或修订某课的讲义、�
 
 5. **PPT 制作**：前三道门通过后才制作正式 `slides.pptx`。调用当前可用的 Presentations 等演示制作能力完成文件级工作；设计建议按需查阅 `ppt-design-reference`，不把它作为生产引擎。所有构建过程限定在 `.work/ppt/lesson-NN/<run>/`，不得在 `lessons/` 根目录产生 `visual-sample-*`、`v1/v2/v3` 平行文件。
 
-6. **三重检查**：对最终 PPT 导出后重新打开或重新渲染，分别记录技术检查（图层遮挡、字体替换、裁切、换行、空 placeholder）、教学检查（页与母稿映射、学生动作）、视觉检查（视觉锚点、叙事关系、页型密度）。规则见 `course/ppt-quality-gates.md` 与 `lessons/ppt-design-criteria.md`。
+6. **三重检查**：对最终 PPT 导出后重新打开或重新渲染，按检查清单核对最后写入文件与演示材料，分别记录技术检查（图层遮挡、字体替换、裁切、换行、空 placeholder）、教学检查（页与母稿映射、学生动作）、视觉检查（视觉锚点、叙事关系、页型密度）。规则见 `course/ppt-quality-gates.md` 与 `lessons/ppt-design-criteria.md`。历史通过记录不证明本轮修订已通过。
 
 7. **里程碑归档**：按 `archive/ppt-experiments/` 的标准（确立沿用视觉语言 / 记录重要取舍 / 正式版基线 / 不可由 Git 替代的证据）决定哪些试制结果归档。每个里程碑最多 1 PPTX + 1 contact sheet + 1 简短决策记录。不归档逐页 PNG、解包 XML、重复 PDF、inspection 文件。
 
@@ -44,6 +50,7 @@ description: 备课门控流程。当用户要制作或修订某课的讲义、�
 
 ## 资源路由
 
+- 审阅执行项唯一入口：`lessons/review-checklist.md`；单纯审阅和修订自检均按范围使用
 - 课程口径：`course/syllabus.md`、`course/curriculum.md`、`course/sync-rules.md`
 - 备课元文档：`lessons/备课规划.md`、`lessons/备课教训.md`、`lessons/README.md`（含材料状态表与制作顺序）
 - 材料契约：仓库根目录 [`references/material-contracts.md`](../../../references/material-contracts.md)（唯一契约源）
