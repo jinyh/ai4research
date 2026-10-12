@@ -1,0 +1,7 @@
+# Preserve binary teaching artifacts and recorded CSV fingerprints.
+*.pdf binary
+*.pptx binary
+*.png binary
+*.jpg binary
+*.zip binary
+*.csv -text whitespace=cr-at-eol
