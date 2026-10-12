@@ -1,0 +1,105 @@
+{
+  "audit_date": "2026-10-01",
+  "dream_rsi": {
+    "repository": "https://github.com/zhengkid/Dream-RSI",
+    "commit": "4149ea9181ab1db80f85717ffda2c9f0f130e85b",
+    "tracked_files": 18,
+    "readme_sha256": "88d12a26bc683b49b74824488d40661ea91ad28feac25566aa4d1ef8fa064747",
+    "executable_sources": [],
+    "history_tables": [],
+    "scope": "Only the pinned local checkout was audited; README says code is being prepared for release."
+  },
+  "dash": {
+    "repository": "https://github.com/ruiding-uchicago/DASH",
+    "commit": "76b7209bc04cf5bd0f73947a5f92f8a8ea335776",
+    "csv": [
+      {
+        "name": "1st_final.csv",
+        "source_path": "Machine Learning Script and Databases/Machine Learning Databases and Script/AL_failure_tsne/1st_final.csv",
+        "url": "https://raw.githubusercontent.com/ruiding-uchicago/DASH/76b7209bc04cf5bd0f73947a5f92f8a8ea335776/Machine%20Learning%20Script%20and%20Databases/Machine%20Learning%20Databases%20and%20Script/AL_failure_tsne/1st_final.csv",
+        "sha256": "cb5c6f74a46e2450e687f0f8553633b5809eff73ee1a5dd99b0ffb52c6188c36",
+        "rows": 64,
+        "failed_sample": 30,
+        "null_overpotential": 30,
+        "numeric_overpotential": 34
+      },
+      {
+        "name": "2nd_final.csv",
+        "source_path": "Machine Learning Script and Databases/Machine Learning Databases and Script/AL_failure_tsne/2nd_final.csv",
+        "url": "https://raw.githubusercontent.com/ruiding-uchicago/DASH/76b7209bc04cf5bd0f73947a5f92f8a8ea335776/Machine%20Learning%20Script%20and%20Databases/Machine%20Learning%20Databases%20and%20Script/AL_failure_tsne/2nd_final.csv",
+        "sha256": "84dd4f69ed341615a07153c0857b636a767bfe709a9386cb1ccb3397c4dbd2d6",
+        "rows": 64,
+        "failed_sample": 25,
+        "null_overpotential": 25,
+        "numeric_overpotential": 39
+      },
+      {
+        "name": "3rd_final.csv",
+        "source_path": "Machine Learning Script and Databases/Machine Learning Databases and Script/AL_failure_tsne/3rd_final.csv",
+        "url": "https://raw.githubusercontent.com/ruiding-uchicago/DASH/76b7209bc04cf5bd0f73947a5f92f8a8ea335776/Machine%20Learning%20Script%20and%20Databases/Machine%20Learning%20Databases%20and%20Script/AL_failure_tsne/3rd_final.csv",
+        "sha256": "dc306b5629f37106acc829aa8a17ddb06cbc975c5ac188eb14d653ad77f9429f",
+        "rows": 64,
+        "failed_sample": 12,
+        "null_overpotential": 12,
+        "numeric_overpotential": 52
+      },
+      {
+        "name": "4th_final.csv",
+        "source_path": "Machine Learning Script and Databases/Machine Learning Databases and Script/AL_failure_tsne/4th_final.csv",
+        "url": "https://raw.githubusercontent.com/ruiding-uchicago/DASH/76b7209bc04cf5bd0f73947a5f92f8a8ea335776/Machine%20Learning%20Script%20and%20Databases/Machine%20Learning%20Databases%20and%20Script/AL_failure_tsne/4th_final.csv",
+        "sha256": "70b20c3c9b24afd25ca6552c9fb829d14a30cfe5507b0f15e1c2be0c612d41f1",
+        "rows": 64,
+        "failed_sample": 0,
+        "null_overpotential": 0,
+        "numeric_overpotential": 64
+      },
+      {
+        "name": "5th_final.csv",
+        "source_path": "Machine Learning Script and Databases/Machine Learning Databases and Script/AL_failure_tsne/5th_final.csv",
+        "url": "https://raw.githubusercontent.com/ruiding-uchicago/DASH/76b7209bc04cf5bd0f73947a5f92f8a8ea335776/Machine%20Learning%20Script%20and%20Databases/Machine%20Learning%20Databases%20and%20Script/AL_failure_tsne/5th_final.csv",
+        "sha256": "4de150527df1f3aabd07c12406da2094234d25feacaf08d55ccfdfcfa9b70f3a",
+        "rows": 64,
+        "failed_sample": 0,
+        "null_overpotential": 0,
+        "numeric_overpotential": 64
+      }
+    ],
+    "workbook": {
+      "name": "AL Full Experimental Records.xlsx",
+      "source_path": "Experimental Records, Raw Data, and Supplementary Notes and Figures/AL Full Experimental Records.xlsx",
+      "url": "https://raw.githubusercontent.com/ruiding-uchicago/DASH/76b7209bc04cf5bd0f73947a5f92f8a8ea335776/Experimental%20Records%2C%20Raw%20Data%2C%20and%20Supplementary%20Notes%20and%20Figures/AL%20Full%20Experimental%20Records.xlsx",
+      "sha256": "ddad10179d72a4b2557f2b0ab0ad57095af1b51e61c5ce3183e19c9e3ced7d1d"
+    },
+    "workbook_sheets": [
+      {
+        "name": "1st_final",
+        "data_rows": 64,
+        "failed_sample": 30
+      },
+      {
+        "name": "2nd_final",
+        "data_rows": 64,
+        "failed_sample": 25
+      },
+      {
+        "name": "3rd_final",
+        "data_rows": 64,
+        "failed_sample": 12
+      },
+      {
+        "name": "4th_final",
+        "data_rows": 64,
+        "failed_sample": 0
+      },
+      {
+        "name": "5th_final",
+        "data_rows": 64,
+        "failed_sample": 0
+      }
+    ],
+    "readme_reported_trials": 258,
+    "independent_sample_count": null,
+    "failed_sample_cause": null,
+    "interpretation": "Five CSVs and the named workbook each contain 320 rows; the README reports 258 experimental trials. Mapping to original curves and independent trials is unresolved."
+  }
+}

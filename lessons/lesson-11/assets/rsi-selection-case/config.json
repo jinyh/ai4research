@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "root_seed": 20261001,
+  "pool_size": 64,
+  "candidate_counts": [1, 4, 16, 64],
+  "history_trials": 32,
+  "validation_trials_per_candidate": 32,
+  "final_trials": 512,
+  "repeats": 500,
+  "bootstrap_samples": 2000,
+  "equal_probability": 0.65,
+  "heterogeneous_range": [0.55, 0.75]
+}

@@ -934,6 +934,8 @@
       
         
       
+        
+      
     
     
     
@@ -994,6 +996,34 @@
     
   
     模板与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../micro-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    个人微型项目：阅读记录校验与评价可靠性
   
 
     
@@ -1211,7 +1241,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        使用时机
+        课堂难度与课外总预算
       
     </span>
   </a>
@@ -1220,6 +1250,17 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用时机
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         最小文件结构
@@ -1281,7 +1322,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         修改记录
@@ -1410,8 +1451,12 @@
 <hr />
 <h1 id="_1">早期研究脚手架模板<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>本模板用于第 1-6 课的个人选题、文献和证据整理阶段。它的目标是帮助学生在 Pi Agent 个人项目工作区中建立研究问题、AI 使用记录、Agent 权限边界、伦理意识和最小追踪关系，而不是提前搭建完整工程项目。</p>
-<p>不要在此阶段强制创建 <code>src/</code>、<code>experiments/</code>、复杂配置系统或完整论文结构。代码和实验脚手架应在第 7-8 课完成机制假设、研究判断和方案分享，并在第 9 课明确 baseline 和实验规格后再引入。</p>
-<h2 id="_2">使用时机<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>不要在此阶段强制创建 <code>src/</code>、<code>experiments/</code>、复杂配置系统或完整论文结构。第 3–6 课允许有预算上限的数据格式与独立样本审计、最小反例、环境检查和小规模试跑，用于收敛问题。完整工程在问题与协议基本明确后展开；第 9 课迁移以内容成熟度为准，不以第一次创建代码文件为标志。</p>
+<h2 id="_2">课堂难度与课外总预算<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>面向已有编程、机器学习和英文论文阅读基础、科研经验有限的计算机研究生。采用“共同诊断＋本人迁移”：先独立判断，再比较证据、验证并修订同一个人项目。逐课输入、核心判断、验证和去向见<a href="../judgment-path/">研究判断路径</a>。</p>
+<p>课外总投入每课最多 60 分钟，包含阅读、准备、安装排障、项目推进和提交整理。普通课为指定阅读 15 分钟＋准备 10 分钟＋项目补全 35 分钟；L6/9/13/16 为整理 15 分钟＋修订提交 45 分钟，不叠加新必读。所需主要操作与研究门检查在课堂完成。超出预算先缩小材料或任务范围，不把未完课堂任务整体转移到课后。</p>
+<p>默认个人项目为基于共同材料、本人独立定义并验证的微型研究问题；自有课题可用规模相当的公开子问题。阅读卡工作流为共同主线，MI 和 RSI 分别用于真实文献争议与评价诊断，不要求三个项目。L4–L6 逐课在课堂完成一张完整精读卡；报告与展示整理累计材料，不另起文档。</p>
+<h2 id="_3">使用时机<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>第 1 课：选定研究方向，写出初步问题和八阶段链路草图。</li>
 <li>第 2 课：建立 AI 使用记录、Agent 权限矩阵、科研伦理检查清单和轻量工件追踪表。</li>
@@ -1419,7 +1464,7 @@
 <li>第 7-8 课：继续补充机制假设、研究判断、实验设计和同伴反馈。</li>
 <li>第 9 课：baseline 和实验规格明确后，迁移到完整的 <a href="../project-template/">project-template.md</a>。</li>
 </ul>
-<h2 id="_3">最小文件结构<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">最小文件结构<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>建议早期项目只维护以下文件：</p>
 <div class="highlight"><pre><span></span><code>project/
 ├── AGENTS.md
@@ -1432,7 +1477,9 @@
 ├── ethics-and-compliance.md
 └── notes/
 </code></pre></div>
-<p><code>notes/</code> 可用于保存检索式、课堂反馈、临时想法和阅读摘记。进入问题门前，再将稳定内容整理为正式工件。</p>
+<p><code>notes/</code> 可用于保存检索式、课堂反馈、阅读摘记，以及低成本审计与试跑记录。也可合并到一份主文档，通过 README、章节锚点和记录 ID 定位，文件数量不计分。</p>
+<p>早期试探在已有记录中写明目的、预算上限、输入与来源、观察、如何改变问题和后续核验需求。探索性观察可以修改问题与协议；后续验证须说明此前已看过哪些数据，哪些证据保持独立。独立样本数未确认、失败原因未知或环境不可执行时，保留缺口，不把未知编码为失败或零收益。</p>
+<p>示例：<a href="../../lessons/lesson-11/assets/rsi-selection-case/#problem-gate">RSI 问题门材料审计</a>。进入问题门前整理必要内容，不另复制阶段报告。</p>
 <h3 id="agentsmd">AGENTS.md 最小模板<a class="headerlink" href="#agentsmd" title="Permanent link">&para;</a></h3>
 <p><code>AGENTS.md</code> 是可执行的任务边界声明。建立个人项目时可直接使用以下最小版本，第 2 课起随任务逐次收紧或放宽：</p>
 <div class="highlight"><pre><span></span><code># 项目边界
@@ -1530,7 +1577,7 @@
 <li>一个明确非例：</li>
 <li>一个可证伪命题：</li>
 </ul>
-<h3 id="_4">修改记录<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_5">修改记录<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>问题表述每次修订（含 Agent 建议经人工确认后的写回）留一行，确保修订理由与回退可能可追溯：</p>
 <table>
 <thead>

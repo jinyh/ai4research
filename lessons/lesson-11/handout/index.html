@@ -934,6 +934,8 @@
       
         
       
+        
+      
     
     
     
@@ -994,6 +996,34 @@
     
   
     模板与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course/micro-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    个人微型项目：阅读记录校验与评价可靠性
   
 
     
@@ -1560,104 +1590,10 @@
   <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
-        八、课堂练习
+        八、共同诊断与本人迁移
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="八、课堂练习">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        练习 1：判断循环适用性
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        练习 2：写四约束
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        练习 3：识别指标篡改
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-autoresearch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        练习 4：拆解 AutoResearch
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-ai-scientist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        练习 5：拆解 AI Scientist 的边界
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        练习 6：写循环骨架
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        练习 7：失败保留
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        练习 8：不外推清单自查
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1683,6 +1619,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        补充：固定协议下的反复选优
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课外预算与下次输入
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1702,6 +1660,7 @@
 
 <p><a href="../../../learn/11/">← 本课任务与材料</a></p>
 <hr />
+<p>本轮修订状态：2026-10-12 内容修订与文件检查；教师内容复核及现场试教另行登记，历史通过不继承。</p>
 <h1 id="autoresearch">第十一讲｜实验自动化与 AutoResearch 循环<a class="headerlink" href="#autoresearch" title="Permanent link">&para;</a></h1>
 <h2 id="_1">导读<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>第 10 课你在受限权限下完成了一次 Agent 辅助代码或调试任务，并留下了 diff、日志和失败记录。"Agent 能跑"和"Agent 能在固定指标、预算和停止条件下被反复运行、被评价、被回退"之间，还有一段距离。这段距离就是本课要处理的实验自动化循环。</p>
@@ -1711,6 +1670,7 @@
 </blockquote>
 <p>本课不复刻 AI Scientist 或 AutoResearch 整套系统。它们只用来做一次短对照：系统如何写预算、指标、保留/丢弃和失败恢复，哪些判断仍必须由人做出。完整八维框架留作查阅材料，第 12 课再用它组合个人工作流。</p>
 <h2 id="_2">学习目标<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>本课核心能力：应该恢复、回退还是停止，哪些记录必须保留？能以可定位证据回答，并将决定落实到本人项目。</p>
 <p>完成本讲后，你应该能够：</p>
 <ol>
 <li>说明 <code>Edit → Evaluate → Keep/Discard → Repeat</code> 循环的适用条件与不适用条件；</li>
@@ -2071,35 +2031,12 @@
 <li><strong>回退后不修订研究判断</strong>：回退了但没把假设标记为待验证。应在回退时触发判断记录更新。</li>
 </ol>
 <hr />
-<h2 id="_9">八、课堂练习<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<h3 id="1_5">练习 1：判断循环适用性<a class="headerlink" href="#1_5" title="Permanent link">&para;</a></h3>
-<p>判断以下科研动作是否适合改写为受限循环，并说明理由：</p>
-<ol>
-<li>用固定模型对 3 份构造源文本生成阅读卡摘要并计算限定条件遗漏率。</li>
-<li>让 Agent 自动判断哪篇论文值得深入研究。</li>
-<li>在固定配置扫描下测试三种 prompt 模板的摘要质量分数。</li>
-<li>让 Agent 自动改写论文直到"读起来更好"。</li>
-</ol>
-<p>参考判断：1 适合（可重复、指标可机器计算）；2 不适合（依赖人工判断）；3 适合（配置扫描、有界）；4 不适合（"读起来更好"无操作性定义）。</p>
-<h3 id="2_4">练习 2：写四约束<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
-<p>为你第 10 课的受限执行动作写四约束：固定指标、预算、停止条件、回退机制。检查停止条件是否包含正常/协议性/禁止三类。</p>
-<h3 id="3_5">练习 3：识别指标篡改<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
-<p>下面这段循环日志有什么问题？</p>
-<blockquote>
-<p>迭代 3：限定条件遗漏率 0.42，未达阈值。自动切换到"字段覆盖率"指标，迭代 3' 字段覆盖率 0.85，达到阈值，Keep。</p>
-</blockquote>
-<p>参考：评价协议漂移——循环在结果不利时切换指标。应回退到迭代 2 的稳定配置并人工审核。</p>
-<h3 id="4-autoresearch">练习 4：拆解 AutoResearch<a class="headerlink" href="#4-autoresearch" title="Permanent link">&para;</a></h3>
-<p>用八维框架拆解 AutoResearch（Karpathy README + program.md）。每个维度写一句"系统已处理"和一句"仍需人工判断"。</p>
-<h3 id="5-ai-scientist">练习 5：拆解 AI Scientist 的边界<a class="headerlink" href="#5-ai-scientist" title="Permanent link">&para;</a></h3>
-<p>用八维框架拆解 Lu et al. 2026 的 AI Scientist。重点写"自动评审"维度上它做了什么、不能替代什么。指出至少两处不能外推为通用自主科研的边界。</p>
-<h3 id="6">练习 6：写循环骨架<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
-<p>为你自己的一个可重复科研动作写五步循环骨架（假设/运行/度量/评价/回写回退）。标出至少三个人工审核点。</p>
-<h3 id="7">练习 7：失败保留<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
-<p>让你的循环至少跑一次失败迭代，按 §五·2 的七字段记录。检查：失败迭代数 + 成功迭代数 = 总迭代数？</p>
-<h3 id="8">练习 8：不外推清单自查<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
-<p>检查你的循环说明和对比分析中是否出现 §四·4 列表中的越界表述。出现则改写为带边界的形式。</p>
-<hr />
+<h2 id="_9">八、共同诊断与本人迁移<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p><strong>应该恢复、回退还是停止，哪些记录必须保留？</strong> 先用<a href="../judgment-task/">本课判断任务</a>独立分析原始材料，再比较依据。教师演示用于校准，不能直接复制其结论代替本人判断。</p>
+<p>在同一微型项目执行 changed.py，使用 execute --fault-once；检查失败后状态，人工批准后恢复，比对 run_id 与完成任务，解释预算耗尽、完成或停止决定。</p>
+<p>验证时：验证中断保留、重启不重复成功任务、输入或实现改变须新建目录。保留无改善和负结果；原阅读卡 replay 仅作相邻示范，权限接口不等于系统隔离。</p>
+<p>回写同一个人项目：本人队列运行目录、恢复证据与停止决定。L12 以已验证动作设计一个实质工作流环节。</p>
+<p>达标意味着决定有理由、证据可定位、验证与范围相称；优秀表现是识别替代解释并以检查改进判断。其余旧案例作方法参考，课堂提前完成时可选，不叠加课后必做。</p>
 <h2 id="_10">九、术语表<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2173,7 +2110,7 @@
 </ul>
 <p>正式书目（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 11 课）：</p>
 <ol>
-<li>Sandve, G. K. et al. "Ten Simple Rules for Reproducible Computational Research." <em>PLOS Computational Biology</em> 9(10):e1003285 (2013). DOI: <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285">10.1371/journal.pcbi.1003285</a>。用途：建立结果—脚本—参数—输入—随机种子的可执行追踪链。核心阅读，约 25 分钟。</li>
+<li>Sandve, G. K. et al. "Ten Simple Rules for Reproducible Computational Research." <em>PLOS Computational Biology</em> 9(10):e1003285 (2013). DOI: <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285">10.1371/journal.pcbi.1003285</a>。用途：建立结果—脚本—参数—输入—随机种子的可执行追踪链。指定范围见本课课外预算。</li>
 <li>Huang, Q. et al. "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation." <em>ICML 2024</em>, PMLR 235, 20271–20309. <a href="https://proceedings.mlr.press/v235/huang24y.html">PMLR 正式页面</a>。用途：用任务、成功标准、轨迹和失败类型评价 ML 实验 Agent。任选，约 25 分钟。</li>
 <li>Lu, C. et al. "Towards end-to-end automation of AI research." <em>Nature</em> (2026). DOI: <a href="https://www.nature.com/articles/s41586-026-10265-5">10.1038/s41586-026-10265-5</a>。用途：分析端到端自动化的任务范围、评价证据和仍需人工判断的边界。任选，约 25 分钟。<strong>不外推为通用自主科研能力。</strong></li>
 </ol>
@@ -2186,7 +2123,14 @@
 <p>PrimeIntellect. <a href="https://github.com/PrimeIntellect-ai/prime-agent/tree/965941c750ff816cc4d68d18a5fcea5e0b4c120b"><em>Prime Agent</em>（commit <code>965941c7</code>）</a>，配 Karten et al. “Continual Harness: Online Adaptation for Self-Improving Foundation Agents.” <a href="https://arxiv.org/abs/2605.09998">arXiv:2605.09998</a>（预印本）与 Zhang, A. L., Kraska, T. &amp; Khattab, O. “Recursive Language Models.” <a href="https://arxiv.org/abs/2512.24601">arXiv:2512.24601</a>（预印本）。只分析 <code>/autonomous</code> 的预算与质量门设计、harness 状态持久化与回退自述，对照本课四约束；项目发布仅数日、论文未经同行评议，不外推为能力结论，不进学生安装清单；授课前复核。</p>
 </li>
 </ol>
-<p>课后阅读采用"AI 导航 → 原文核验 → AI 质疑 → 偏差审计 → 人工定稿"流程。本课核心阅读为 Sandve et al. 2013，约 25 分钟。精读卡持续保存在个人项目 <code>notes/</code>，不逐周正式提交，验证门（第 13 课后）统一检查实验记录与失败保留。</p>
+<h2 id="_12">补充：固定协议下的反复选优<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>协议没有漂移，反复选优也可能使历史最佳分数过于乐观。<a href="../assets/rsi-selection-case/#validation-gate">RSI 实际 CPU 案例</a>在所有候选真实成功率均为 0.65 的条件下，历史选优 K=64 的平均乐观偏差为 0.1882，独立最终成功率为 0.6508；参考选择损失为零。数值来自合成环境实际运行，不是 Dream-RSI 或工业任务的表现。</p>
+<p>这里没有偷换指标、删除失败或越过预算。需要补上的约束是：声明选择反馈和最终评价的角色，冻结候选后再揭示最终证据，最终结果不得继续驱动本轮优化。独立均匀验证与等预算随机验证都参与候选选择，其结论仍由单列的最终评价检查。</p>
+<p>检查图表时分别回答：历史分数是否乐观？是否真的选错？哪份证据参与选择？资源是否相同？四个问题不能只用一条 Keep/Discard 记录代替。完整日志与固定指标使过程可追踪，独立最终评价支撑结论。系统短分析保留四约束与人工判断边界，完整比较材料仍为按需参考。</p>
+<h2 id="_13">课外预算与下次输入<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>课外总投入最多 <strong>60 分钟</strong>：指定阅读 15 分钟，准备 10 分钟，项目补全 35 分钟。阅读范围：Sandve et al. 中保持原始结果、记录程序版本和随机性相关规则；只挑与本人队列有关的条目。</p>
+<p>项目补全：整理一次恢复和停止理由；按需查看 RSI 选优案例，不新增运行项目。</p>
+<p>安装、下载与排障计入总预算。准备超出预算即采用现成 CPU 起点或纸面备用；未完项带回课堂收窄或补关键检查。三张完整精读卡在 L4、L5、L6 的课堂迁移中逐张完成，课后只补相应缺口。报告、说明和展示从累计项目整理；不增加独立文档或正式提交。</p>
 
 
 

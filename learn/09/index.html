@@ -769,7 +769,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        完成样例
+        课外与下课去向
       
     </span>
   </a>
@@ -1036,6 +1036,8 @@
       
         
       
+        
+      
     
     
     
@@ -1096,6 +1098,34 @@
     
   
     模板与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course/micro-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    个人微型项目：阅读记录校验与评价可靠性
   
 
     
@@ -1346,7 +1376,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        完成样例
+        课外与下课去向
       
     </span>
   </a>
@@ -1370,24 +1400,22 @@
 
 
 
-<h1 id="9-baseline">第 9 讲 · Baseline 与复现<a class="headerlink" href="#9-baseline" title="Permanent link">&para;</a></h1>
-<p>让同伴按你的说明重新运行一条 baseline 记录。</p>
+<h1 id="9-baseline">第 9 讲 · 公平 baseline 与实际复现<a class="headerlink" href="#9-baseline" title="Permanent link">&para;</a></h1>
+<p>“降低遗漏”这项比较公平吗？</p>
 <h2 id="_1">带什么来<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>假设映射草图、诊所反馈、输入材料与可执行 baseline；环境未就绪时使用<a href="../../lessons/lesson-09/assets/reproducibility-example/">复现工件</a>。</p>
-<p>需要 GPU 跑 baseline 时，课前核对镜像与依赖适配，见<a href="../../course/metax-compute/#gpu">沐曦算力指南</a>。已有课堂回放材料继续可用。</p>
+<p>L8 已修订的协议；CPU 运行起点。</p>
 <h2 id="_2">课堂怎么做<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
-<li>检查对照的输入、模型、参数和评价口径是否公平。</li>
-<li>固定输入与配置，运行或审查最小路径，保存原始输出。</li>
-<li>写清命令、环境和日志位置，让同伴按说明复查。</li>
-<li>把真实失败事实与未来失败预案分开记录。</li>
+<li>打开<a href="../../lessons/lesson-09/judgment-task/">共同诊断任务与原始输入</a>，先写判断和依据。</li>
+<li>与同伴比较；核验后说明维持或改变判断的理由。</li>
+<li>复制个人微型项目起点，实际执行 baseline.py 并评价；保存本人 trace 与输入、实现散列。为记录校验问题冻结比较协议，同伴依说明复现关键步骤。阅读卡回放另作方法示范。</li>
+<li>核对 inputs、implementation、reference 与运行目录；基线和后续修改共用输入及评价。回放只证明回放过程；构造开发用例上的改进不能外推为模型改善。</li>
 </ol>
 <h2 id="_3">做到哪里<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>一个经公平性审查的 baseline，以及一条可按说明重跑的记录。</p>
-<h2 id="_4">完成样例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p><a href="../../materials/reading-card/">阅读卡回放包</a>包含 3 份源文本、两条件共 6 份预制输出，以及逐条参考标注。从 T01 的一项条件对回输出，再计算遗漏率。全部材料为教学构造，不调用模型，不构成阅读卡效果的实证证据。</p>
-<p><a href="../../lessons/lesson-09/assets/reproducibility-example/">四条记录复算包</a>用于单独校准追踪与复算，不与六份输出混作同一实验。</p>
-<p>课后补齐实验规格、复现说明、反馈处理与模板迁移，按<a href="../../project/#checkpoint-2">判断门条件</a>提交；第 10 讲在这些材料上做受限执行。</p>
+<p>判断门：baseline 运行、七字段规格、复现说明及两条判断。达标看独立判断、证据定位、相称验证与实际回写；无改善或仍不能判断也可达标。</p>
+<h2 id="_4">课外与下课去向<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>本课为研究门课，课外总投入最多 <strong>60 分钟</strong>：整理 15 分钟，修订与提交 45 分钟；不叠加新必读。15 分钟整理；45 分钟修订并提交判断门，主要运行在课堂完成。</p>
+<p>L10 在这个工作区完成受限补丁，输入与评价协议保持冻结。 安装与排障包含在预算内；超时切换备用。既有示例仅供参考，不替代本人执行与决定。</p>
 <hr />
 <p><a href="../../lessons/lesson-09/handout/">完整讲义：方法、案例与来源</a> · <a href="../../course/reading-list/#9-baseline">本课阅读范围</a> · <a href="../10/">下一讲</a></p>
 
