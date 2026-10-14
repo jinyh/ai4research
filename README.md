@@ -39,8 +39,8 @@
 ## 当前状态
 
 - 课程材料与既有学生网站分别以 `course-baseline-2026-10-14` 和 `student-site-baseline-2026-10-14` 冻结，恢复说明见[冻结记录](docs/course-freeze-20261014.md)。
-- 16 课源稿与学生学习页已按 AI 深度参与、学生独立判断和个人项目修订；16 份 PPT 修订预览与严格构建的网站预览仅保存在本地 `.work/course-revision-preview/`，未发布。
-- 课程一致性、内部链接、网站测试、预览构建和边界检查通过；实际 GPT-2 权重运行、教师／博士助教复核、PowerPoint 实机、教室投影和跨系统网站验收仍待完成。逐项状态见[全课修订执行记录](docs/ai-research-revision-20261014.md)。
+- 16 课修订源已推送到 `codex/ai-research-revision`；学生网站已于 2026-10-14 更新。16 份 PPT 修订预览仍仅保存在本地 `.work/course-revision-preview/`，尚未作为正式课件交付。
+- 课程一致性、内部链接、网站测试、严格构建和发布边界检查通过；GitHub Pages 部署成功，抽查的线上页面和下载与快照逐字节一致。实际 GPT-2 权重运行、教师／博士助教复核、PowerPoint 实机、教室投影和跨系统网站验收仍待完成。逐项状态见[全课修订执行记录](docs/ai-research-revision-20261014.md)。
 - 正式提交仍只有四次：第 6、9、13、16 课后的研究门材料。
 
 详见 [lessons/README.md](./lessons/README.md)。

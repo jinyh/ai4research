@@ -65,7 +65,15 @@ uv run python scripts/check_site.py
 | `_build/` | `mkdocs build` 输出（.gitignore 忽略） |
 | `.venv/` | uv 虚拟环境（.gitignore 忽略） |
 
-## 当前部署（2026-10-12）
+## 当前部署（2026-10-14）
+
+本轮按用户明确授权更新课程修订后的学生网站。课程源提交为 `d64c2d5c019ad4abef2f26089ecd4c9ad43a7836`（分支 `codex/ai-research-revision`）；学生网站静态快照为 `13fb1e7c8b420123e4d596102730219c4c6d3427`（分支 `codex/student-site`）；部署指针提交为 `d944e467e72d4cc0fab09ef7fbd815fe77b5e275`（`main`）。
+
+快照共 197 个文件、93 个 HTML 页面和 6 个学生下载 ZIP，含第 9 课 MI IOI 学生实验包；教师教案、判断答案、逐页母稿、PPT 与内部复核材料未进入快照。17 项学生网站测试、严格构建、站点链接/锚点/发布边界检查、12 项课程一致性检查和 MI 包内 4 项测试通过；6 个 ZIP 均通过完整性检查。
+
+[GitHub Actions 发布任务](https://github.com/jinyh/ai4research/actions/runs/38553647982)已成功。线上首页、L3 入口、L3 完整讲义、L9 入口、MI 下载包与搜索索引共 6 项均返回 HTTP 200，并与验收快照逐字节一致。教师内容复核、助教计时、授课电脑、教室投影及跨系统视觉检查仍单独待完成；网站上线不代表正式课件验收完成。
+
+## 上一次部署（2026-10-12）
 
 用户明确授权提交、推送和网站材料发布。课程源提交为 `148aedf998ac1a3e000a70cfbb3b8f7f10ba780d`；学生网站静态快照为 `cc78f488ed5c101605ad2e879ca9112064760593`，沿用 `codex/student-site` 历史，不合入完整备课提交链。部署工作流固定到本次快照。
 
