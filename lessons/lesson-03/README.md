@@ -3,9 +3,20 @@
 > 文献检索与证据角色。课程 2.0 批次 0 已完成；本文件只记录当前材料、当前门控与未决风险。逐轮实施历史见归档快照（仅本机保留：`archive/superseded-docs/lesson-03/readme-revision-log-2026-08.md.txt`）。
 
 
+## 32 页方法与案例扩展（2026-10-13）
+
+本节为本轮现行入口。两课扩展方案已获用户明确实施授权；以下历史记录不证明当前文件通过本轮检查。
+
+- 屏显页脚：已移除讲义和内部文件映射，仅保留公开原文出处；完整对应继续保存在母稿与备注。
+- 核心交付：可复盘查询、两条来源审计、一条候选的角色与纳入决定，写入 `notes/literature-search.md`。
+- 内容：32 页连续主线，P04–P09 相邻方法例，P10–P13 先答后议，P14–P17 逐步揭示，P21–P23 MI 中点校准；讲义、教案、母稿、判断依据和关键页规格已同步。两课不新增正式提交。
+- 教学桌面推演：十段时长为 5/10/10/10/5/15/5/15/10/5 分钟，合计 90 分钟。本人实践各 15 分钟，操作页不增加讲授时间；课外总预算保持 60 分钟。学生实际试做尚待计时。
+- 技术、教学映射与视觉：终检记录见[本轮执行记录](../../docs/lesson-03-04-expansion-20261013.md)。最终磁盘文件已重新导入并渲染 32 页，屏显、来源备注及母稿逐项匹配；本轮技术与视觉自检通过，未继承旧版 PASS。
+- 教师最终内容复核、PowerPoint 授课环境、学生实际试做及教室投影仍待独立登记；本轮不更新网站或 `deliverables/`，不自动提交或推送。
+
 ## 研究判断与负荷修订轮（2026-10-12）
 
-本轮现行材料以此节为准；以下按日期保留的通过记录只描述其当时版本。
+本节保留 2026-10-12 修订的历史状态；现行材料以顶部 32 页扩展记录为准。
 
 - 核心判断：查询的改动解决了哪种漏检，又引入什么误纳？
 - 新增 [学生任务与原始输入](./judgment-task.md)、[教师判断依据](./judgment-teacher.md)，本人产出回到原项目；课外总投入每课最多60分钟。
@@ -58,13 +69,13 @@
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生讲义（本轮复核另登记） v1.7.0 | 学生可独立阅读的当前内容源 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.7.0 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v0.10.0 | 21 页屏显、讲述、动作与来源；已同步 PPT |
-| [slides.pptx](./slides.pptx) | 现行·可编辑课堂 PPT（21 页） | 本轮内容及检查见顶部记录；教师复核、现场验证单列 |
-| [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.5.1 | 本轮实际构图、可编辑对象与验收；旧规格保留历史 |
+| [handout.md](./handout.md) | 现行·学生讲义（本轮复核另登记） v1.8.0 | 学生可独立阅读的当前内容源 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.8.0 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v0.11.1 | 32 页屏显、讲述、动作与来源；已同步 PPT |
+| [slides.pptx](./slides.pptx) | 现行·可编辑课堂 PPT（32 页） | 本轮内容及检查见顶部记录；教师复核、现场验证单列 |
+| [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.6.0 | 本轮实际构图、可编辑对象与验收；旧规格保留历史 |
 | [source-audit-demo.md](./source-audit-demo.md) | 现行·教学资产 v1.1.0 | Keshav 2007 Crossref—DOI—原文—候选表 trace 与断网备用 |
-| [mi-search-trace-demo.md](./mi-search-trace-demo.md) | 现行·教学资产 v0.6.0 | MI 领域检索、幻觉审计、质量自评与失败恢复 trace |
+| [mi-search-trace-demo.md](./mi-search-trace-demo.md) | 现行·教学资产 v0.6.1 | MI 领域检索、幻觉审计、质量自评与失败恢复 trace |
 | [rsi-search-trace-demo.md](./rsi-search-trace-demo.md) | 现行·教学资产 v0.1.0 | RSI 方向的第二次全流程复现与跨方向方法对照 |
 | [assets/](./assets/README.md) | 现行·视觉资产 | 4 张自绘教学结构图及逐图出处登记 |
 | [research-question-to-search skill](../../.agents/skills/research-question-to-search/SKILL.md) | 教学工具资产 | 受限的公开学术文献检索、入口核验与候选表流程；不参与本课三件套门控 |

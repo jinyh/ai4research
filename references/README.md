@@ -30,6 +30,7 @@
 | [research-method-选目分析.md](./notes/research-method-选目分析.md) | 全文通读与选目记录 | 对 `research-method/` 资料逐项分级、去重并映射课程课次 | B/C | 2026-07-29 纳入索引；是备课决策记录，不是学生阅读材料或直接证据 |
 | [research-method-补充推荐.md](./notes/research-method-补充推荐.md) | 库外文献推荐线索 | 补足可复现、Agent、实验自动化和评价复盘等空白 | B/C | 2026-07-29 纳入索引；候选条目须回原始论文、官方文档或上游仓库核验后再采用 |
 | [pi-and-prime-agent.md](./notes/pi-and-prime-agent.md) | Agent harness 对照笔记（讲师参考） | pi（极简 harness 底座）与 Prime Agent（自我改进研究型 Agent）的三方对照、八要素映射、钉死版本、安全摘录与待核验清单 | B/C | 2026-08-12 建立；两项目活跃迭代，功能宣称授课前回源；只作分析对象，不构成对学生安装或使用的建议 |
+| [sciencebuddy-ai4research-report.md](./notes/sciencebuddy-ai4research-report.md) | ScienceBuddy 源码、JEV 与课程价值报告 v1.0.0（教师参考） | 第 11–13 课双循环、证据约束与评价复盘；附 CPU 专项复现，兼供第 3–4 课来源核验 | B/C；含回源核验与本地实验记录 | 2026-09-26 核验，固定 commit 5317799；区分源码事实、作者实验与产品宣称；不改变课程结构或主平台，授课前复核 |
 | [mi-case-registry.md](./notes/mi-case-registry.md) | MI 贯穿案例素材登记 | 课程 2.0 MI 素材元数据（素材 ID、许可、脱敏状态、教学可用性） | 课程内部规则 | 2026-08-08 建立骨架；只存元数据，不存原文与未发表内容；登记表待用户素材到位后填充 |
 | [research-method/](./library/research-method/) | 外部克隆资料库（论文生命周期讲义/经验集） | 传统人工科研方法背景阅读池，按 think→search→write→submit→revise→present→template 组织 | B/C | 2026-07-29 克隆（来源 github.com/secdr/research-method）；多为知乎专栏/教授经验散文/高校讲座 PPT/经典英文写作指南，关键结论须回源；不作为课程证据；含易变条目（2021 基金统计、工具软广等），授课前复核；自带 .git，已加入 .gitignore 不纳入版本管理 |
 

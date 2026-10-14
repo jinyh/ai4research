@@ -1,0 +1,19 @@
+{
+  "tool_source": {
+    "visible_evidence_tokens": 8184,
+    "clipping_events": 1,
+    "input_tokens": 8185
+  },
+  "relabeled_harness_source": {
+    "visible_evidence_tokens": 9500,
+    "clipping_events": 0,
+    "input_tokens": 9501
+  },
+  "fabricated_tool_text_accepted_after_one_execute": true,
+  "nonexistent_prm_quotes_retained_in_public_evidence": true,
+  "invalid_prm_with_two_clean_wrong_answers": {
+    "status": "skipped",
+    "reason": "Need evidence from two distinct training tasks"
+  },
+  "fixtures": "Character tokenizer, fake containers and model; real broker and validators"
+}

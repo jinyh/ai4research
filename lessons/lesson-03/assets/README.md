@@ -1,6 +1,6 @@
 # 第 3 课视觉资产（2.0 批次 0）
 
-本目录是第 3 课唯一图源（课级 `assets/` 范式，见 `lessons/ppt-design-criteria.md` v1.3.0"assets 唯一图源与 handout 嵌图规范"）。同一文件既被 `handout.md` 引用，也将供正式 PPT 嵌入；禁止两套副本。文件经 `web/scripts/link_content.py` 逐文件软链发布到站点；本 README 属备课元数据，不发布。
+本目录是第 3 课唯一图源（课级 `assets/` 范式，见 `lessons/ppt-design-criteria.md` v1.3.0"assets 唯一图源与 handout 嵌图规范"）。讲义与 PPT 按各自教学需要引用本目录同一来源文件，保留独立的嵌入位置登记。文件经 `web/scripts/link_content.py` 逐文件软链发布到站点；本 README 属备课元数据，不发布。
 
 ## 逐图登记
 
@@ -38,4 +38,14 @@
 
 ## 总说明
 
-当前全部为自绘教学结构图，无论文原图、无未发表素材。配色挂靠 `lessons/ppt-design-criteria.md` 语义色表（主描边深蓝 `#1F4D78`、次级 `#44546A`、通过绿 `#2E7D5B`、拒绝红 `#C8161E`、待定橙 `#ED7D31`）；SVG 透明底，按站点恒浅色口径只需浅色底可读。MI 演示线图件待素材到位后按 `references/notes/mi-case-registry.md` 登记增补。
+上述 SVG 为自绘教学结构图；本轮新增的真实原文裁图在下节登记，均无未发表素材。配色挂靠 `lessons/ppt-design-criteria.md` 语义色表（主描边深蓝 `#1F4D78`、次级 `#44546A`、通过绿 `#2E7D5B`、拒绝红 `#C8161E`、待定橙 `#ED7D31`）；SVG 透明底，按站点恒浅色口径只需浅色底可读。MI 演示线图件待素材到位后按 `references/notes/mi-case-registry.md` 登记增补。
+
+## 32 页扩展的原文证据资产（2026-10-13）
+
+下列图片均从本机保存的公开论文 PDF 直接裁取，保留原文字句和图形，不使用生成图替代证据。用途为课堂原文核验；原文版权归原作者/出版方，裁图不声称开放许可。无学生资料或未公开研究。嵌入位置按现行 slides.md。
+
+| 资产 | 来源角色与原文位置 | 屏显用途 |
+| --- | --- | --- |
+| [keshav-structure.png](./keshav-structure.png) | 真实原文；[Keshav 2007](https://doi.org/10.1145/1273445.1273458)，p.83 §2 | P20 入口核验中的方法主张 |
+
+裁取坐标、文件指纹和渲染过程保存在本机 `.work/ppt/lesson-03/2026-10-13-expansion/`。本轮不发布网站；外部分发遵循现有材料授权与发布复核。
