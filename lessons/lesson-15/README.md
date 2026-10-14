@@ -2,8 +2,10 @@
 
 > 同行评审、论证门预检与修改。本文件是第 15 课所有材料的导航入口，说明各文件角色、关系与阅读路径。门控流程见 [prepare-course-lesson skill](../../.agents/skills/prepare-course-lesson/SKILL.md)。
 
-> 本轮现行版本：`handout.md` v0.2.1、`teaching-plan.md` v0.4.1、`slides.md` v0.5.0、`keystone-design-spec.md` v1.2.0；学生工件只使用 `peer-review.md` 与 `revision-plan.md`。
+> 本轮修订源稿：`handout.md` v0.5.1、`teaching-plan.md` v0.6.1、`slides.md` v0.7.1；正式 PPTX 为冻结基线。
 
+
+> 2026-10-14 全课修订：当前 Markdown 为本地修订源稿；PPTX 保持冻结基线，本轮预览待生成与检查；学生网站保持冻结版本。既有验收记录只对应其所注明的历史版本。
 
 ## 研究判断与负荷修订轮（2026-10-12）
 
@@ -45,13 +47,13 @@
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生讲义 v0.4.0 | 学生可独立阅读的当前内容源 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.6.0 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v0.7.0 | 15 页屏显、讲述、动作与来源；已同步 PPT |
+| [handout.md](./handout.md) | 现行·学生讲义 v0.5.2 | 学生可独立阅读的当前内容源 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.6.1 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v0.7.1 | 15 页屏显、讲述、动作与来源；冻结 PPTX 仍为基线；本轮修订预览待生成与检查 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.3.1 | 本轮实际构图、可编辑对象与验收；旧规格保留历史 |
 | [peer-review-template.md](./peer-review-template.md) | 现行·`peer-review.md` 模板 | 同伴三问、五维评审和作者六字段回应 |
 | [revision-plan-template.md](./revision-plan-template.md) | 现行·`revision-plan.md` 模板 | 三级优先级、影响工件、时限与 Checkpoint 4 预检 |
-| [slides.pptx](./slides.pptx) | 现行·可编辑课堂 PPT（15 页） | 本轮内容及检查见顶部记录；教师复核、现场验证单列 |
+| [slides.pptx](./slides.pptx) | 冻结基线·可编辑课堂 PPT（15 页） | 2026-10-14 冻结版本；本轮修订预览待生成与检查，未同步正式文件 |
 
 ## 2026-09-12 视觉提升轮（当前有效验收）
 

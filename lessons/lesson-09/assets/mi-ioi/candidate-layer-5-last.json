@@ -1,0 +1,6 @@
+{
+  "name": "candidate-layer-5-last",
+  "layer": 5,
+  "position": "last",
+  "reason": "Development-only test after baseline: distinguish layer depth from intervention position; same fixed protocol."
+}

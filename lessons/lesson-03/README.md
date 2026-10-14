@@ -3,6 +3,8 @@
 > 文献检索与证据角色。课程 2.0 批次 0 已完成；本文件只记录当前材料、当前门控与未决风险。逐轮实施历史见归档快照（仅本机保留：`archive/superseded-docs/lesson-03/readme-revision-log-2026-08.md.txt`）。
 
 
+> 2026-10-14 全课修订：当前 Markdown 为本地修订源稿；PPTX 保持冻结基线，本轮预览待生成与检查；学生网站保持冻结版本。既有验收记录只对应其所注明的历史版本。
+
 ## 32 页方法与案例扩展（2026-10-13）
 
 本节为本轮现行入口。两课扩展方案已获用户明确实施授权；以下历史记录不证明当前文件通过本轮检查。
@@ -69,10 +71,10 @@
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生讲义（本轮复核另登记） v1.8.0 | 学生可独立阅读的当前内容源 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.8.0 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v0.11.1 | 32 页屏显、讲述、动作与来源；已同步 PPT |
-| [slides.pptx](./slides.pptx) | 现行·可编辑课堂 PPT（32 页） | 本轮内容及检查见顶部记录；教师复核、现场验证单列 |
+| [handout.md](./handout.md) | 现行·学生讲义（本轮复核另登记） v1.9.1 | 学生可独立阅读的当前内容源 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.9.0 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v0.12.0 | 32 页屏显、讲述、动作与来源；冻结 PPTX 仍为基线；本轮修订预览待生成与检查 |
+| [slides.pptx](./slides.pptx) | 冻结基线·可编辑课堂 PPT（32 页） | 2026-10-14 冻结版本；本轮修订预览待生成与检查，未同步正式文件 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.6.0 | 本轮实际构图、可编辑对象与验收；旧规格保留历史 |
 | [source-audit-demo.md](./source-audit-demo.md) | 现行·教学资产 v1.1.0 | Keshav 2007 Crossref—DOI—原文—候选表 trace 与断网备用 |
 | [mi-search-trace-demo.md](./mi-search-trace-demo.md) | 现行·教学资产 v0.6.1 | MI 领域检索、幻觉审计、质量自评与失败恢复 trace |

@@ -50,6 +50,7 @@ def on_pre_build(config, **_kwargs):
             info.external_attr = 0o100644 << 16
             archive.writestr(info, data)
     build_rsi_download(config, module.PUBLISH)
+    build_mi_ioi_download(config, module.PUBLISH)
     build_judgment_downloads(config, module.PUBLISH)
 
 
@@ -57,6 +58,13 @@ RSI_PACKAGE = "lessons/lesson-11/assets/rsi-selection-case"
 RSI_FILES = ("README.md", "config.json", "run.py", "test_case.py", "plot.py", "source-audit.json",
              "figures/selection-diagnosis.png", "recorded/config.json", "recorded/raw-counts.csv",
              "recorded/results.csv", "recorded/summary.json", "recorded/manifest.json")
+
+MI_IOI_PACKAGE = "lessons/lesson-09/assets/mi-ioi"
+MI_IOI_FILES = (
+    "README.md", "WORKFLOW.md", "cases.jsonl", "protocol.json", "policy-baseline.json",
+    "candidate-layer-5-last.json", "candidate-layer-8-subject.json", "requirements.txt",
+    "run.py", "test_runner.py",
+)
 
 
 def build_rsi_download(config, publish):
@@ -80,6 +88,28 @@ def build_rsi_download(config, publish):
             archive.writestr(info, data)
 
 
+def build_mi_ioi_download(config, publish):
+    """Package only the student-facing IOI experiment inputs and runner."""
+    output = Path(config["docs_dir"]) / "downloads/mi-ioi.zip"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    base = config.get("site_url", "https://jinyh.github.io/ai4research/").rstrip("/")
+    with ZipFile(output, "w", compression=ZIP_DEFLATED) as archive:
+        for name in MI_IOI_FILES:
+            relative = f"{MI_IOI_PACKAGE}/{name}"
+            if relative not in publish:
+                raise PluginError(f"MI IOI 下载文件未获发布清单登记：{relative}")
+            info = ZipInfo(f"mi-ioi/{name}", date_time=(2026, 10, 14, 0, 0, 0))
+            info.compress_type = ZIP_DEFLATED
+            info.external_attr = 0o100644 << 16
+            data = (REPO / relative).read_bytes()
+            if name == "README.md":
+                text = data.decode("utf-8").replace(
+                    "../../../../course/micro-project.md", base + "/course/micro-project/"
+                )
+                data = text.encode("utf-8")
+            archive.writestr(info, data)
+
+
 # Explicit files only: teacher judgments, notes and authoring material never enter a ZIP.
 JUDGMENT_FILES = (
     "course/judgment-path.md",
@@ -94,6 +124,16 @@ JUDGMENT_FILES = (
     "lessons/lesson-07/judgment-task.md",
     "lessons/lesson-08/judgment-task.md",
     "lessons/lesson-09/judgment-task.md",
+    "lessons/lesson-09/assets/mi-ioi/README.md",
+    "lessons/lesson-09/assets/mi-ioi/WORKFLOW.md",
+    "lessons/lesson-09/assets/mi-ioi/cases.jsonl",
+    "lessons/lesson-09/assets/mi-ioi/protocol.json",
+    "lessons/lesson-09/assets/mi-ioi/policy-baseline.json",
+    "lessons/lesson-09/assets/mi-ioi/candidate-layer-5-last.json",
+    "lessons/lesson-09/assets/mi-ioi/candidate-layer-8-subject.json",
+    "lessons/lesson-09/assets/mi-ioi/requirements.txt",
+    "lessons/lesson-09/assets/mi-ioi/run.py",
+    "lessons/lesson-09/assets/mi-ioi/test_runner.py",
     "lessons/lesson-10/judgment-task.md",
     "lessons/lesson-11/judgment-task.md",
     "lessons/lesson-12/judgment-task.md",

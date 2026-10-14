@@ -174,7 +174,7 @@ def check_authoritative_sources_and_archive(checks: Checks) -> None:
     approved_consistent = (
         "现行；本轮内容与 PPT 已同步" in status
         and "现行·学生讲义" in handout_row
-        and "现行·可编辑课堂 PPT（12 页）" in ppt_row
+        and "冻结基线·可编辑课堂 PPT（12 页）" in ppt_row
         and teacher_approved
         and "发布前现场复核待完成" in status
     )
@@ -196,7 +196,7 @@ def check_authoritative_sources_and_archive(checks: Checks) -> None:
         and status.strip() in ("现行修订稿；本地审阅，未发布",
                               "现行修订稿；学生网站已发布，本轮复核另登记")
         and "现行·学生讲义（本轮复核另登记）" in handout_row
-        and "现行·可编辑课堂 PPT（12 页）" in ppt_row
+        and "冻结基线·可编辑课堂 PPT（12 页）" in ppt_row
     )
     checks.check(
         judgment_consistent or (judgment_revision is None and (draft_consistent or approved_consistent or revision_consistent)),

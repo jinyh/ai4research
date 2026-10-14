@@ -56,7 +56,7 @@ def has_classroom_timing(article_text):
 
 
 def main():
-    site = WEB / "_build"
+    site = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else WEB / "_build"
     base_path = urlsplit(yaml.safe_load((WEB / "mkdocs.yml").read_text())["site_url"]).path
     files = sorted(site.rglob("*.html"))
     if not files:

@@ -1,0 +1,6 @@
+{
+  "name": "candidate-layer-8-subject",
+  "layer": 8,
+  "position": "subject",
+  "reason": "Development-only test after baseline: distinguish layer depth from intervention position; same fixed protocol."
+}

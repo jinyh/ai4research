@@ -3,6 +3,8 @@
 > 综述结构、证据地图与研究空白。本文件是第 5 课所有材料的导航入口，说明各文件角色、关系与阅读路径。门控流程见 [prepare-course-lesson skill](../../.agents/skills/prepare-course-lesson/SKILL.md)。
 
 
+> 2026-10-14 全课修订：当前 Markdown 为本地修订源稿；PPTX 保持冻结基线，本轮预览待生成与检查；学生网站保持冻结版本。既有验收记录只对应其所注明的历史版本。
+
 ## 研究判断与负荷修订轮（2026-10-12）
 
 本轮现行材料以此节为准；以下按日期保留的通过记录只描述其当时版本。
@@ -58,10 +60,10 @@
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生讲义（本轮复核另登记） v1.5.0 | 学生可独立阅读的当前内容源 |
+| [handout.md](./handout.md) | 现行·学生讲义（本轮复核另登记） v1.5.1 | 学生可独立阅读的当前内容源 |
 | [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.5.0 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v1.5.0 | 21 页屏显、讲述、动作与来源；已同步 PPT |
-| [slides.pptx](./slides.pptx) | 现行·可编辑课堂 PPT（21 页） | 本轮内容及检查见顶部记录；教师复核、现场验证单列 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v1.5.0 | 21 页屏显、讲述、动作与来源；冻结 PPTX 仍为基线；本轮修订预览待生成与检查 |
+| [slides.pptx](./slides.pptx) | 冻结基线·可编辑课堂 PPT（21 页） | 2026-10-14 冻结版本；本轮修订预览待生成与检查，未同步正式文件 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.4.1 | 本轮实际构图、可编辑对象与验收；旧规格保留历史 |
 | [mi-evidence-map-demo.md](./mi-evidence-map-demo.md) | 现行·教学资产 v1.0.0 | C02/C05/C16/C18/C31 因果证据矩阵、四句受限综述与 F-MI-01 回写 |
 | [assets/](./assets/) | 现行·图形资产 | MI 因果证据地图 SVG 与出处/许可登记 |
