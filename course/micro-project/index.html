@@ -27,7 +27,7 @@
     
     
       
-        <title>个人微型项目：阅读记录校验与评价可靠性 - 智能科研方法</title>
+        <title>个人微型项目：GPT-2 IOI 干预与 AI 研究工作流 - 智能科研方法</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#gpt-2-ioi-ai" class="md-skip">
           跳转至
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              个人微型项目：阅读记录校验与评价可靠性
+              个人微型项目：GPT-2 IOI 干预与 AI 研究工作流
             
           </span>
         </div>
@@ -1043,7 +1043,7 @@
   <span class="md-ellipsis">
     
   
-    个人微型项目：阅读记录校验与评价可靠性
+    个人微型项目：GPT-2 IOI 干预与 AI 研究工作流
   
 
     
@@ -1061,7 +1061,7 @@
   <span class="md-ellipsis">
     
   
-    个人微型项目：阅读记录校验与评价可靠性
+    个人微型项目：GPT-2 IOI 干预与 AI 研究工作流
   
 
     
@@ -1087,10 +1087,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        共同对象与个人问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        可以在一个项目里完成的研究问题
+        可运行起点
       
     </span>
   </a>
@@ -1101,7 +1112,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        运行起点
+        两类比较分别解释
       
     </span>
   </a>
@@ -1109,10 +1120,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#l9l13" class="md-nav__link">
+  <a href="#ai" class="md-nav__link">
     <span class="md-ellipsis">
       
-        L9–L13 的接续
+        AI 参与和一次改进
       
     </span>
   </a>
@@ -1123,18 +1134,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        足够小且仍有判断难度
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        最终论证使用现成材料
+        课次接续
       
     </span>
   </a>
@@ -1351,10 +1351,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        共同对象与个人问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        可以在一个项目里完成的研究问题
+        可运行起点
       
     </span>
   </a>
@@ -1365,7 +1376,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        运行起点
+        两类比较分别解释
       
     </span>
   </a>
@@ -1373,10 +1384,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#l9l13" class="md-nav__link">
+  <a href="#ai" class="md-nav__link">
     <span class="md-ellipsis">
       
-        L9–L13 的接续
+        AI 参与和一次改进
       
     </span>
   </a>
@@ -1387,18 +1398,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        足够小且仍有判断难度
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        最终论证使用现成材料
+        课次接续
       
     </span>
   </a>
@@ -1422,57 +1422,99 @@
 
 
 
-<h1 id="_1">个人微型项目：阅读记录校验与评价可靠性<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">可以在一个项目里完成的研究问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>默认问题：<strong>对冻结的小型阅读记录集，增加输入校验能否减少坏记录进入后续评价，同时保留正常记录及其内容？</strong></p>
-<p>学生自行定义错误范围、选择校验方式并解释取舍。也可选择同等规模的分组盲化、评价审计或队列恢复问题。共同材料提供起点，选择、实现、验证与结论由本人完成。研究对象是这条处理流程；结果不能外推为模型阅读理解改善。</p>
-<p>正常输入：paper_id 和 summary 都是非空字符串；输出保留 paper_id，清理 summary 首尾空白。必须同时检查坏记录拦截与正常记录保留。简单拒绝所有记录虽然拦截率高，却违背任务。程序测试通过后，仍要说明这些测试覆盖哪类研究风险。</p>
-<h2 id="_3">运行起点<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>使用<a href="../../lessons/lesson-10/assets/micro-project/">微型项目运行包</a>。Python 3 标准库即可运行，不调用模型、不要求付费额度。输入与参考判定是公开教学构造；它们是开发检查集，不能称为未见过的独立测试。</p>
-<p>在自己的项目副本内操作。保留原 baseline.py，复制为 changed.py；修改实现，不改冻结输入和评价代码。运行目录区分版本。先执行 baseline，再执行改动版，使用同一 reference.json 分别评价；若确需修正参考判定，先解释协议变化并重评双方，保留旧报告。</p>
-<h2 id="l9l13">L9–L13 的接续<a class="headerlink" href="#l9l13" title="Permanent link">&para;</a></h2>
+<h1 id="gpt-2-ioi-ai">个人微型项目：GPT-2 IOI 干预与 AI 研究工作流<a class="headerlink" href="#gpt-2-ioi-ai" title="Permanent link">&para;</a></h1>
+<h2 id="_1">共同对象与个人问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>共同问题：<strong>GPT-2 small 中哪些激活干预能改变间接宾语任务的答案偏好，效果能否迁移到新的句式？</strong>每位学生独立选择一个层、位置或输入条件；也可迁移到规模相当的公开研究子问题。没有固定搭档或共同评分。</p>
+<p>例如，原句以“When John and Mary went to the store, John gave a bag to”结尾，比较下一个词 Mary 与 John 的 logit 差。扰动句把第二次出现的 John 改为 Mary。在扰动运行中注入原句某层、某位置的 residual activation，观察答案偏好变化。该干预检验特定条件下的因果作用；单点恢复不能证明找到了完整 IOI 回路。</p>
+<p><a href="https://arxiv.org/abs/2211.00593">IOI 原始研究</a>提供研究背景。本课输入是依据任务形式自行构造的教学材料，不能写成原论文的完整复现。Pythia／SAE 文献属于不同模型、层与方法设置，不能把其数值直接合并到 GPT-2 结果。</p>
+<h2 id="_2">可运行起点<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><a href="../../lessons/lesson-09/assets/mi-ioi/">MI IOI 实验包</a>提供固定模型版本、24 组原句／扰动句、运行器、对照和行为测试。按模板族分为 12 组开发和 12 组保留评价。先在开发材料上试探并冻结选择，再打开保留评价；已经查看的反馈不得继续称为未见证据。</p>
+<p>CPU 可以运行，不要求训练 SAE。模型与依赖由教师提前准备，安装排障计入既定课外预算。离线保存的记录可用于诊断和故障恢复；最终项目仍需本人实际运行，并保留 AI 参与研究动作的记录。</p>
+<h2 id="_3">两类比较分别解释<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>课次</th>
-<th>本人实际动作</th>
-<th>与研究判断的关系</th>
+<th>比较对象</th>
+<th>基线与对照</th>
+<th>能回答的问题</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>L9</td>
-<td>执行 baseline，冻结输入/协议，同伴复现</td>
-<td>哪些是坏记录？正常内容是否被保留？</td>
+<td>科学实验</td>
+<td>原句参考、扰动无干预、无效操作、打乱激活维度的随机对照、指定 patch</td>
+<td>这项干预在给定任务上是否改变答案偏好？</td>
 </tr>
 <tr>
-<td>L10</td>
-<td>预测候选补丁行为，修改 changed.py，保留失败及对照</td>
-<td>根因修复还是吞异常/删分母？</td>
-</tr>
-<tr>
-<td>L11</td>
-<td>用 --fault-once 受控中断，再恢复；核对成功任务不重复</td>
-<td>技术恢复、负结果与停止分别如何处理？</td>
-</tr>
-<tr>
-<td>L12</td>
-<td>将本人校验接入实际队列；核对输入、输出、人工检查与评价 trace</td>
-<td>这个环节需要多少自主性？</td>
-</tr>
-<tr>
-<td>L13</td>
-<td>汇总坏记录拦截、正常项误拒、失败和成本，做采用/修订/停止决定</td>
-<td>改动是否改善了所定义的动作，证据支持到哪里？</td>
+<td>研究工作方式</td>
+<td>学生已在使用的 AI 方式与改进工作流；相同上下文、工具和预算，记录选择与失败</td>
+<td>改进是否提高研究质量、减少遗漏或节省成本？</td>
 </tr>
 </tbody>
 </table>
-<p>原<a href="../../lessons/lesson-11/assets/reading-card-workflow/">阅读卡回放包</a>的 replay、evaluate、access-check 保持不变；用于语义标注、保存输出回放与权限接口教学。本包执行学生代码，用于检验实质实现与队列行为。两者可以服务同一个研究问题，不形成第二个项目。</p>
-<h2 id="_4">足够小且仍有判断难度<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>课堂先使用 8 条公开输入。本人需识别至少一个未覆盖的有效性威胁，例如合法空字符串是否真的应拒绝、ID 是否需要去空白、错误结构是否属于研究对象。若选择一个新边界，在 L10 修改前记录预期和理由；纳入开发的材料保持开发身份。没有独立测试时，就报告开发检查上的行为与未验证范围，不伪称泛化。</p>
-<p>对照要保留所有输入的处理结果；成功、拒绝、异常和受控中断各自有事件，不通过删除记录使指标好看。运行时间为本机单次测量，不能据此声称性能提升。CPU 实现和记录均可在课堂完成；安装、准备及课后修补计入每课 60 分钟上限。</p>
-<h2 id="_5">最终论证使用现成材料<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>短报告直接引用问题定义、冻结协议、diff、两个运行目录和评价报告，说明一次取舍、一个反例/失败或未决问题。无需额外制作一套表格，也不要求使用 Agent、MCP 或多个工具才能取得优秀评价。</p>
+<p>随机对照保留激活向量的元素与范数，但破坏维度对应；它不是所有无关干预的代表。报告逐模板结果与失败，不只给总均值。样本很小，描述性差异不自动支持统计显著性或广泛机制结论。</p>
+<h2 id="ai">AI 参与和一次改进<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h2>
+<p>AI 可以读取开发结果、提出竞争解释、选择下一项实验、生成受限补丁、检查对照或写分析。每人至少实际执行其中一个研究动作，并让结果进入后续判断。GPT-2 是实验研究对象，它的前向计算本身不算 Agent 组织研究。</p>
+<p>沿用本人原有 AI 工作方式作为起点。写明一个可检验的缺口，让 AI 协助修改工作流，在可比资源下重新评价。保留输入、模型／Agent 身份、工具调用或相关输出、实际 diff、结果及本人理由；记录写入既有项目，不另交操作流水账。没有改进、负结果或采用原方案都可以达标。</p>
+<h2 id="_4">课次接续<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>课次</th>
+<th>个人实际动作</th>
+<th>关键判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L1–2</td>
+<td>记录已有 AI 用法，建立公开材料与工具范围</td>
+<td>哪个研究动作值得改善？</td>
+</tr>
+<tr>
+<td>L3–6</td>
+<td>多路检索、精读、证据综合与低成本试探</td>
+<td>文献允许我提出什么问题？</td>
+</tr>
+<tr>
+<td>L7–8</td>
+<td>比较竞争解释，个人分享并处理质询</td>
+<td>哪个对照能改变我的判断？</td>
+</tr>
+<tr>
+<td>L9</td>
+<td>运行研究 baseline，记录原有 AI 方式与评价协议</td>
+<td>两类比较是否公平、可复查？</td>
+</tr>
+<tr>
+<td>L10</td>
+<td>让 Agent 实现或修复一个真实实验动作</td>
+<td>补丁是否改变预期行为？</td>
+</tr>
+<tr>
+<td>L11</td>
+<td>保留失败、恢复和停止记录</td>
+<td>下一步实验的信息价值是否值得成本？</td>
+</tr>
+<tr>
+<td>L12</td>
+<td>实际修改一个可复用的工作流环节</td>
+<td>改的是当前答案、流程还是改进方法？</td>
+</tr>
+<tr>
+<td>L13</td>
+<td>按冻结协议比较效果、成本与迁移</td>
+<td>采用、修订或停止的依据是什么？</td>
+</tr>
+<tr>
+<td>L14–16</td>
+<td>论证、独立评审、个人展示与新情境检验</td>
+<td>结论支持到哪里，何时应改变？</td>
+</tr>
+</tbody>
+</table>
+<p>原<a href="../../lessons/lesson-10/assets/micro-project/">记录校验包</a>与<a href="../../lessons/lesson-11/assets/reading-card-workflow/">阅读卡回放包</a>保留为输入契约、恢复与评价审计示例，不能独自替代本项目的真实 AI 研究动作。</p>
+<p>深入 RSI 选做；教师展示多轮有界改进。任务纠错、工作流持久改进和改进方法自身变化分别记录，不因循环次数增加就声称递归自我改进。</p>
 
 
 

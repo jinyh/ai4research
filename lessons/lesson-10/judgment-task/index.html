@@ -23,7 +23,7 @@
     
     
       
-        <title>第 10 课共同诊断｜补丁意图与可区分测试 - 智能科研方法</title>
+        <title>第 10 课研究任务｜Agent 实现实验与定位失败 - 智能科研方法</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#10" class="md-skip">
+        <a href="#10-agent" class="md-skip">
           跳转至
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第 10 课共同诊断｜补丁意图与可区分测试
+              第 10 课研究任务｜Agent 实现实验与定位失败
             
           </span>
         </div>
@@ -1023,7 +1023,7 @@
   <span class="md-ellipsis">
     
   
-    个人微型项目：阅读记录校验与评价可靠性
+    个人微型项目：GPT-2 IOI 干预与 AI 研究工作流
   
 
     
@@ -1241,7 +1241,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        先独立判断
+        输入与待判断问题
       
     </span>
   </a>
@@ -1252,7 +1252,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        原始材料与待比较选项
+        共同材料与比较
       
     </span>
   </a>
@@ -1263,7 +1263,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        迁移到本人项目
+        迁移到个人研究
       
     </span>
   </a>
@@ -1298,72 +1298,44 @@
 
 
 
-<h1 id="10">第 10 课共同诊断｜补丁意图与可区分测试<a class="headerlink" href="#10" title="Permanent link">&para;</a></h1>
-<h2 id="_1">先独立判断<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><strong>问题：三个补丁中哪个修复契约，测试能区分它们吗？</strong></p>
-<p>输入：L9 baseline、冻结协议及一项受限动作。先记录判断和依据，再与同伴比较；课堂校准后可修订并写明改变原因。答案有分歧时回到具体记录。已有示例可作方法参考，不替代本人的初始判断。</p>
-<h2 id="_2">原始材料与待比较选项<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>教学构造补丁提案。输入契约：paper_id 与 summary 均为非空字符串；summary 首尾空白应去掉；正常输入必须保留。原实现仅访问字段并 strip。</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 原实现（含待修缺口）</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">normalize_record</span><span class="p">(</span><span class="n">record</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;paper_id&quot;</span><span class="p">:</span> <span class="n">record</span><span class="p">[</span><span class="s2">&quot;paper_id&quot;</span><span class="p">],</span> <span class="s2">&quot;summary&quot;</span><span class="p">:</span> <span class="n">record</span><span class="p">[</span><span class="s2">&quot;summary&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()}</span>
-</code></pre></div>
-<table>
-<thead>
-<tr>
-<th>补丁</th>
-<th>行为</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>A</td>
-<td>只查 key 是否存在，缺字段给 ValueError</td>
-</tr>
-<tr>
-<td>B</td>
-<td>遇到异常返回空对象，同时让下游略过空对象</td>
-</tr>
-<tr>
-<td>C</td>
-<td>字段存在、类型与去空白后非空都检查；不改评价代码</td>
-</tr>
-</tbody>
-</table>
-<p>输入：正常文本、缺 summary、summary 为 None、summary 为全空白、paper_id 为全空白。既有测试只覆盖前两类。</p>
-<p><strong>待决定：</strong>A 已通过旧测试是否足够？为至少两项候选补丁给出行为预测，再设计能区分它们的测试。</p>
-<p>把“初始判断—证据位置—仍缺什么—核验后决定”写在现有笔记中。允许回答“仍不能判断”，同时指出下一项能改变判断的证据。</p>
-<p>实际实现入口：<a href="../../../course/micro-project/">个人微型项目</a>，与原回放包服务同一个人项目。</p>
-<h2 id="_3">迁移到本人项目<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>从现有 normalize_record 示例或本人同规模动作出发，先冻结正常/缺字段/空值/类型用例，再实际修改一个模块。与 baseline 在相同输入上比较，保留旧失败和新结果。</p>
-<p><strong>验证：</strong>检查 diff 仅在授权实现与本人新增行为测试内；gold/既有评价只读。若 AI 给出补丁，人工逐项审核；仅抄 after 示例不足以覆盖空值与类型。</p>
-<p><strong>保存位置与达标证据：</strong>受限补丁、失败用例、测试结果、trace 与人工决定。</p>
-<p><strong>下课去向：</strong>L11 把已核准动作接到小队列，检验恢复与停止。</p>
+<h1 id="10-agent">第 10 课研究任务｜Agent 实现实验与定位失败<a class="headerlink" href="#10-agent" title="Permanent link">&para;</a></h1>
+<h2 id="_1">输入与待判断问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>冻结实验协议、baseline 与一项实际缺口。</p>
+<p><strong>Agent 的修改修复了行为，还是只让检查不再报错？</strong></p>
+<p>AI 可以参与问题、假设、实验选择、分析和评审。先形成个人初始判断，再比较证据与外部意见；这项课堂诊断不等于项目中禁用 AI。把“当前判断—依据—新证据或反馈—最终处理”写入已有项目，不增加独立作业。</p>
+<h2 id="_2">共同材料与比较<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>比较三个候选动作：A 删除失败输入；B 在发现多 token 名称时静默选第一个 token；C 显式校验并保留失败，修正输入设计后建立新版本。说明它们对分母、任务与可比性的影响。</p>
+<p>共同实验入口：<a href="../../../course/micro-project/">个人 MI 项目</a>。场景中的候选判断是教学问题，未标为实际记录的选项不是实验结果。</p>
+<h2 id="_3">迁移到个人研究<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>给 Agent 明确动作、可写文件和测试条件；实际生成并运行一个补丁或策略实现。核对差异，解释为什么采用或撤回。</p>
+<p><strong>验证：</strong>正常和失败输入都保留；变化涉及协议时重评可比双方，不把旧结果与新协议混算。</p>
+<p><strong>保存与达标证据：</strong>实际 AI 动作、diff、行为检查、结果与个人决定。</p>
+<p><strong>下次输入：</strong>L11 将动作接入有预算的运行与恢复流程。</p>
 <h2 id="_4">完成标准<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>尺度</th>
+<th>水平</th>
 <th>判断依据</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>需支持</td>
-<td>完成操作，但理由、证据定位或验证仍有缺口。</td>
+<td>能执行动作，但理由、证据定位或验证仍有缺口</td>
 </tr>
 <tr>
 <td>达标</td>
-<td>独立决定，证据可定位，完成相称验证，并更新本人项目。</td>
+<td>独立解释选择，证据可定位，完成相称检查并更新个人项目</td>
 </tr>
 <tr>
 <td>优秀</td>
-<td>识别替代解释或有效性威胁，以额外检查改变或加强判断。</td>
+<td>识别替代解释或有效性威胁，用实际检查改变或加强判断</td>
 </tr>
 </tbody>
 </table>
-<p>课堂尺度对应课程的待改、达标、卓越；不新增每周成绩或提交。优秀依判断质量，不要求更多课外时长。</p>
-<p>断网时保留同样的判断要求，使用包内文本、存档或本地工件。工程课纸面诊断仅作备用练习，最终仍须补本人实际执行、实质修改和对照评价。提前完成者可寻找一个使自己决定改变的反例；不增加课后任务。</p>
+<p>讨论、自愿协作和 AI 参与不改变个人评分。无改善、有依据地保留原方案或仍不能判断都可成立，但须说明依据及下一项会改变判断的证据。不得以模板填写或教师回放替代本人真实 AI 研究动作。</p>
+<p>普通课课外总量最多 60 分钟，包含阅读、准备、安装排障和项目补全；研究门课用同一预算整理提交，不增加必读。断网时可使用保存材料完成诊断，缺失的实际执行仍需按教师安排补核验。</p>
 
 
 

@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#9-baseline" class="md-skip">
+        <a href="#9-mi" class="md-skip">
           跳转至
         </a>
       
@@ -1125,7 +1125,7 @@
   <span class="md-ellipsis">
     
   
-    个人微型项目：阅读记录校验与评价可靠性
+    个人微型项目：GPT-2 IOI 干预与 AI 研究工作流
   
 
     
@@ -1400,22 +1400,23 @@
 
 
 
-<h1 id="9-baseline">第 9 讲 · 公平 baseline 与实际复现<a class="headerlink" href="#9-baseline" title="Permanent link">&para;</a></h1>
-<p>“降低遗漏”这项比较公平吗？</p>
+<h1 id="9-mi">第 9 讲 · MI 共同实验与双基线<a class="headerlink" href="#9-mi" title="Permanent link">&para;</a></h1>
+<p>哪些激活干预会改变 GPT-2 small 的答案偏好，证据支持怎样的机制判断？</p>
 <h2 id="_1">带什么来<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>L8 已修订的协议；CPU 运行起点。</p>
+<p>L8 个人方案与实验协议；课程提供的 GPT-2 small IOI 实验包。</p>
+<p><a href="../../downloads/mi-ioi.zip">下载 MI IOI 实验包（不含模型权重）</a></p>
 <h2 id="_2">课堂怎么做<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li>打开<a href="../../lessons/lesson-09/judgment-task/">共同诊断任务与原始输入</a>，先写判断和依据。</li>
-<li>与同伴比较；核验后说明维持或改变判断的理由。</li>
-<li>复制个人微型项目起点，实际执行 baseline.py 并评价；保存本人 trace 与输入、实现散列。为记录校验问题冻结比较协议，同伴依说明复现关键步骤。阅读卡回放另作方法示范。</li>
-<li>核对 inputs、implementation、reference 与运行目录；基线和后续修改共用输入及评价。回放只证明回放过程；构造开发用例上的改进不能外推为模型改善。</li>
+<li>先个人记录判断和依据，再看教师校准或参加开放讨论；面对新证据时说明维持、修订或暂缓判断的理由。</li>
+<li>实际运行 GPT-2 small IOI 激活干预，按协议比较 corrupt、noop、random 与 patch；另记录本人已有 AI 工作方式的一次真实运行。科学实验和工作流比较分别立基线。</li>
+<li>核对环境与依赖版本、输入、干预位置、运行记录和失败；24 组材料按模板族分为 12 组开发与 12 组保留评价。开发材料上的效果不作为迁移证据。</li>
 </ol>
 <h2 id="_3">做到哪里<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>判断门：baseline 运行、七字段规格、复现说明及两条判断。达标看独立判断、证据定位、相称验证与实际回写；无改善或仍不能判断也可达标。</p>
+<p>判断门：实际 MI 运行、科学实验协议、个人已有 AI 工作方式基线、复现材料与两条判断。达标看独立判断、证据定位、相称验证与实际回写；无改善或仍不能判断也可达标。</p>
 <h2 id="_4">课外与下课去向<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>本课为研究门课，课外总投入最多 <strong>60 分钟</strong>：整理 15 分钟，修订与提交 45 分钟；不叠加新必读。15 分钟整理；45 分钟修订并提交判断门，主要运行在课堂完成。</p>
-<p>L10 在这个工作区完成受限补丁，输入与评价协议保持冻结。 安装与排障包含在预算内；超时切换备用。既有示例仅供参考，不替代本人执行与决定。</p>
+<p>L10 继续在冻结的输入与协议上实现受限实验动作。 安装与排障包含在预算内；超时切换备用。既有示例仅供参考，不替代本人执行与决定。</p>
 <hr />
 <p><a href="../../lessons/lesson-09/handout/">完整讲义：方法、案例与来源</a> · <a href="../../course/reading-list/#9-baseline">本课阅读范围</a> · <a href="../10/">下一讲</a></p>
 

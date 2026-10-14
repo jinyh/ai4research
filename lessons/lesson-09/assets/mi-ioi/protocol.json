@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "model": "openai-community/gpt2",
+  "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+  "dtype": "float32",
+  "device": "cpu",
+  "seed": 20261014,
+  "threads": 4,
+  "metric": "logit(clean_indirect_object) - logit(clean_subject)",
+  "controls": ["clean", "corrupt", "noop", "random"],
+  "split_unit": "template_family",
+  "research_scope": "Residual-stream intervention in a small teaching IOI task; not full circuit identification",
+  "evaluation_rule": "Choose a policy using development data only. Freeze policy and protocol before evaluating heldout. After feedback, those records cannot support a fresh unseen-test claim."
+}

@@ -23,7 +23,7 @@
     
     
       
-        <title>第 11 课共同诊断｜恢复、负结果与停止 - 智能科研方法</title>
+        <title>第 11 课研究任务｜结果驱动迭代、恢复与停止 - 智能科研方法</title>
       
     
     
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第 11 课共同诊断｜恢复、负结果与停止
+              第 11 课研究任务｜结果驱动迭代、恢复与停止
             
           </span>
         </div>
@@ -1023,7 +1023,7 @@
   <span class="md-ellipsis">
     
   
-    个人微型项目：阅读记录校验与评价可靠性
+    个人微型项目：GPT-2 IOI 干预与 AI 研究工作流
   
 
     
@@ -1241,7 +1241,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        先独立判断
+        输入与待判断问题
       
     </span>
   </a>
@@ -1252,7 +1252,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        原始材料与待比较选项
+        共同材料与比较
       
     </span>
   </a>
@@ -1263,7 +1263,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        迁移到本人项目
+        迁移到个人研究
       
     </span>
   </a>
@@ -1298,73 +1298,44 @@
 
 
 
-<h1 id="11">第 11 课共同诊断｜恢复、负结果与停止<a class="headerlink" href="#11" title="Permanent link">&para;</a></h1>
-<h2 id="_1">先独立判断<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><strong>问题：应该恢复、回退还是停止，哪些记录必须保留？</strong></p>
-<p>输入：L10 已核准的动作；冻结队列与预算。先记录判断和依据，再与同伴比较；课堂校准后可修订并写明改变原因。答案有分歧时回到具体记录。已有示例可作方法参考，不替代本人的初始判断。</p>
-<h2 id="_2">原始材料与待比较选项<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>教学构造运行账本；与可运行回放包的受控失败分支相同类型。</p>
-<table>
-<thead>
-<tr>
-<th>尝试</th>
-<th>任务</th>
-<th>结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>run-001</td>
-<td>T01-card</td>
-<td>成功</td>
-</tr>
-<tr>
-<td>run-002</td>
-<td>T01-free</td>
-<td>成功</td>
-</tr>
-<tr>
-<td>run-003</td>
-<td>T02-card</td>
-<td>受控 timeout；未完成</td>
-</tr>
-</tbody>
-</table>
-<p>冻结配置：6 个任务，最多 8 次尝试；已经成功的任务不应重跑。另有已完成评价：T02 两条件相同；T03 阅读卡更差。</p>
-<p>同学建议：“换一个随机种子，删掉 T03 和 timeout，只报告历史最佳；这样曲线更稳定。”</p>
-<p><strong>待决定：</strong>为技术失败、无改善和负结果分别选下一动作；若恢复前输入变了怎么办？</p>
-<p>把“初始判断—证据位置—仍缺什么—核验后决定”写在现有笔记中。允许回答“仍不能判断”，同时指出下一项能改变判断的证据。</p>
-<p>实际实现入口：<a href="../../../course/micro-project/">个人微型项目</a>，与原回放包服务同一个人项目。</p>
-<h2 id="_3">迁移到本人项目<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>在同一微型项目执行 changed.py，使用 execute --fault-once；检查失败后状态，人工批准后恢复，比对 run_id 与完成任务，解释预算耗尽、完成或停止决定。</p>
-<p><strong>验证：</strong>验证中断保留、重启不重复成功任务、输入或实现改变须新建目录。保留无改善和负结果；原阅读卡 replay 仅作相邻示范，权限接口不等于系统隔离。</p>
-<p><strong>保存位置与达标证据：</strong>本人队列运行目录、恢复证据与停止决定。</p>
-<p><strong>下课去向：</strong>L12 以已验证动作设计一个实质工作流环节。</p>
+<h1 id="11">第 11 课研究任务｜结果驱动迭代、恢复与停止<a class="headerlink" href="#11" title="Permanent link">&para;</a></h1>
+<h2 id="_1">输入与待判断问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>L10 可运行动作、开发结果与剩余预算。</p>
+<p><strong>应恢复、改变实验方向还是停止？</strong></p>
+<p>AI 可以参与问题、假设、实验选择、分析和评审。先形成个人初始判断，再比较证据与外部意见；这项课堂诊断不等于项目中禁用 AI。把“当前判断—依据—新证据或反馈—最终处理”写入已有项目，不增加独立作业。</p>
+<h2 id="_2">共同材料与比较<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>MI 包支持受控中断和恢复。比较“同输入同策略续跑”“修改策略仍用原目录”“因负结果删除一条输入”三种行为；再看开发模板之间是否给出不同趋势。</p>
+<p>共同实验入口：<a href="../../../course/micro-project/">个人 MI 项目</a>。场景中的候选判断是教学问题，未标为实际记录的选项不是实验结果。</p>
+<h2 id="_3">迁移到个人研究<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>实际触发一次受控中断并恢复，核对不重复已完成输入。让 AI 根据开发反馈选择下一步，保存无效尝试与停止理由。</p>
+<p><strong>验证：</strong>恢复不改变输入、协议和策略指纹。候选越多越容易选出偶然高值；现有 RSI 模拟是固定池选择偏差案例。</p>
+<p><strong>保存与达标证据：</strong>恢复证据、开发实验轨迹与继续／停止判断。</p>
+<p><strong>下次输入：</strong>L12 将已暴露的缺口写成可复用工作流改进。</p>
 <h2 id="_4">完成标准<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>尺度</th>
+<th>水平</th>
 <th>判断依据</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>需支持</td>
-<td>完成操作，但理由、证据定位或验证仍有缺口。</td>
+<td>能执行动作，但理由、证据定位或验证仍有缺口</td>
 </tr>
 <tr>
 <td>达标</td>
-<td>独立决定，证据可定位，完成相称验证，并更新本人项目。</td>
+<td>独立解释选择，证据可定位，完成相称检查并更新个人项目</td>
 </tr>
 <tr>
 <td>优秀</td>
-<td>识别替代解释或有效性威胁，以额外检查改变或加强判断。</td>
+<td>识别替代解释或有效性威胁，用实际检查改变或加强判断</td>
 </tr>
 </tbody>
 </table>
-<p>课堂尺度对应课程的待改、达标、卓越；不新增每周成绩或提交。优秀依判断质量，不要求更多课外时长。</p>
-<p>断网时保留同样的判断要求，使用包内文本、存档或本地工件。工程课纸面诊断仅作备用练习，最终仍须补本人实际执行、实质修改和对照评价。提前完成者可寻找一个使自己决定改变的反例；不增加课后任务。</p>
+<p>讨论、自愿协作和 AI 参与不改变个人评分。无改善、有依据地保留原方案或仍不能判断都可成立，但须说明依据及下一项会改变判断的证据。不得以模板填写或教师回放替代本人真实 AI 研究动作。</p>
+<p>普通课课外总量最多 60 分钟，包含阅读、准备、安装排障和项目补全；研究门课用同一预算整理提交，不增加必读。断网时可使用保存材料完成诊断，缺失的实际执行仍需按教师安排补核验。</p>
 
 
 

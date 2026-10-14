@@ -1023,7 +1023,7 @@
   <span class="md-ellipsis">
     
   
-    个人微型项目：阅读记录校验与评价可靠性
+    个人微型项目：GPT-2 IOI 干预与 AI 研究工作流
   
 
     
@@ -1252,6 +1252,17 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
+        本课研究主线：工作流改进与递归改进
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         学习目标
       
     </span>
@@ -1299,7 +1310,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         二、八要素深度分析
@@ -1493,10 +1504,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        五、贯穿案例：把同一阅读卡任务升级为工作流
+        五、方法示例：把同一阅读卡任务升级为工作流
       
     </span>
   </a>
@@ -1515,21 +1526,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        七、共同诊断与本人迁移
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        八、术语表
+        共同诊断与本人迁移
       
     </span>
   </a>
@@ -1540,7 +1540,7 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        九、延伸阅读与课程材料
+        八、术语表
       
     </span>
   </a>
@@ -1549,6 +1549,17 @@
       
         <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、延伸阅读与课程材料
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         课外预算与下次输入
@@ -1590,7 +1601,14 @@
 <blockquote>
 <p>现成 Skill 可以作为参考实现，但课程不把"调用某个 Skill"当作学习目标。评分看你是否能说清八要素并接受评价，不看使用了多少工具。</p>
 </blockquote>
-<h2 id="_2">学习目标<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">本课研究主线：工作流改进与递归改进<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><strong>核心判断：改动改善了当前答案、后续流程，还是产生改进的方法？</strong></p>
+<p>公平比较 A 固定提示的 AI 分析与实验建议，B 有反馈的 Agent 研究循环。两者均可读取开发材料、使用相同工具和相同预算上限；两者均不能以保留反馈选优。不存在预设的最佳架构。</p>
+<p>选择实测缺口，修改一个可复用环节并实际运行。如 AI 原来只看总均值，可加入逐模板检查后再选择实验。保留基线、diff、trace、失败和资源。</p>
+<p>只改标题不算实质改进；提示词修改若确实改变研究行为且经评价，可以构成工作流改进。持久化改进规则并用于后续轮次，才有讨论递归改进的基础。</p>
+<p>本课产物：个人工作流改进版本及实际运行证据。L13 按预先冻结的评价协议比较两种工作方式。</p>
+<p>完整输入、动作与完成标准见<a href="../judgment-task/">本课研究任务</a>。共同实验见<a href="../../../course/micro-project/">个人 MI 项目</a>。以下阅读卡、回放和记录校验例子用于解释局部方法；本人的主要产物回写同一个 MI 项目或等规模公开子问题。</p>
+<h2 id="_3">学习目标<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>本课核心能力：这个任务需要 Agent 自主选择吗？能以可定位证据回答，并将决定落实到本人项目。</p>
 <p>完成本讲后，你应该能够：</p>
 <ol>
@@ -1663,7 +1681,7 @@
 <p>八要素不是清单，是设计决定。每一项都需要你给出取舍理由和适用边界，而不是默认填满。</p>
 </blockquote>
 <hr />
-<h2 id="_3">二、八要素深度分析<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">二、八要素深度分析<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>下面逐项展开。每项给出"拆解现成 Agent 时的观察点"和"设计个人工作流时的决策点"，并指出常见失败模式。</p>
 <h3 id="21">2.1 任务契约<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
 <p>任务契约回答"这个工作流到底在做什么"。一条可审计的任务契约至少包含：输入、输出、成功标准、不适用范围。</p>
@@ -1741,12 +1759,12 @@
 <h3 id="26">2.6 工件与追踪<a class="headerlink" href="#26" title="Permanent link">&para;</a></h3>
 <p>工件与追踪要求输入、日志、输出和上游决定可关联。一次运行至少留下：任务契约、Context 清单、工具调用记录、中间结果、最终输出、diff、人工审核记录。</p>
 <p><strong>拆解观察点</strong>：现成 Agent 是否生成可审查的 trace？trace 是否绑定到具体工件版本？能否从一条结论反向追到当时 Context、prompt 和工具结果？</p>
-<p><strong>设计决策点</strong>：把工作流输出写成可追溯工件。每条 AI 生成的主张在进入项目前必须能回到原文、数据或实验 ID。课程要求 AI 使用记录包含工具/模型、用途、Context、输出用途和人工核验方式（见第 1 课与第 2 课）。</p>
+<p><strong>设计决策点</strong>：把工作流输出写成可追溯工件。涉及外部事实的 AI 生成主张在作为证据时须能回到原文、数据或实验 ID；AI 提出的假设、解释和设计建议应标明生成条件，并用研究材料进行检验。课程要求 AI 使用记录包含工具/模型、用途、Context、输出用途和人工核验方式（见第 1 课与第 2 课）。</p>
 <p><strong>常见失败模式</strong>：只保留最终输出不留中间步骤；trace 与工件分离，无法对应；Agent 自述"我修改了 X"以自述代替实际 diff 检查。</p>
 <h3 id="27-evals">2.7 Evals 与人工审核<a class="headerlink" href="#27-evals" title="Permanent link">&para;</a></h3>
-<p>Evals 回答"和什么比、用什么指标或 rubric"；人工审核点回答"哪些判断和外部动作必须人确认"。两者都是对 Agent 输出的外部校准——前者看是否改善目标动作，后者守住不可让渡的人工判断。</p>
+<p>Evals 回答"和什么比、用什么指标或 rubric"；研究审核点回答"哪些高风险决定需要独立核查、授权或责任人确认"。两者都是对 Agent 输出的外部校准——前者检查目标动作是否改善，后者确保事实依据、权限边界和研究责任清楚；它不表示 AI 不能参与相关研究判断。</p>
 <p><strong>拆解观察点</strong>：现成 Agent 是否带评价？它的评价是自评还是外部评价？评价代码是否可被 Agent 修改？baseline 是什么？现成 Agent 在哪些位置要求人确认？越权动作是否被记录？</p>
-<p><strong>设计决策点</strong>：为个人工作流设计一次可重复评价。至少包含 baseline（不用工作流时同一动作的结果）、指标或 rubric、对照或等价依据。关键结论的 stable 状态原则上需要两项相互独立证据（见第 1 课证据要求）。第 11 课强调：评价协议在工作流运行期间不可被篡改，失败结果不可被选择性删除。同时明确列出必须人工确认的步骤（如修改实验规格、删除工件、联网发送数据、修改评价代码、外部写入）。</p>
+<p><strong>设计决策点</strong>：为个人工作流设计一次可重复评价。至少包含 baseline（不用工作流时同一动作的结果）、指标或 rubric、对照或等价依据。关键结论的 stable 状态原则上需要两项相互独立证据（见第 1 课证据要求）。第 11 课强调：评价协议在工作流运行期间不可被篡改，失败结果不可被选择性删除。同时明确列出需要授权或责任人确认的步骤（如修改实验规格、删除工件、联网发送数据、修改评价代码、外部写入）。</p>
 <p><strong>常见失败模式</strong>：只有"能跑"没有对照；Agent 既执行又自评；只保留成功结果；指标在迭代中被悄悄放宽；人工审核点未写在契约里，事后无法判断哪一步该有人。</p>
 <h3 id="28">2.8 失败恢复<a class="headerlink" href="#28" title="Permanent link">&para;</a></h3>
 <p>失败恢复回答"超时、无效输出、工具失败或越权时怎么办"。</p>
@@ -1863,7 +1881,7 @@ Evals：
 <p>第 13 课会要求"至少完成一次可重复评价"。本课先把评价计划写清，运行和评价可以在课后到第 13 课之间推进，不要求本课正式提交。</p>
 </blockquote>
 <hr />
-<h2 id="_4">五、贯穿案例：把同一阅读卡任务升级为工作流<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">五、方法示例：把同一阅读卡任务升级为工作流<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>继续使用<a href="../../lesson-11/assets/reading-card-workflow/">L11 小包</a>，不新换科研题目。统一命题与数字见<a href="../../../course/reading-card-case/">案例口径</a>。</p>
 <table>
 <thead>
@@ -1909,20 +1927,18 @@ Evals：
 </table>
 <p>运行 access-check 可产生真实的接口拒绝与记录。该接口未提供操作系统级沙箱，不能把它讲成任意代码都无法访问磁盘文件；课堂说明当前控制模型及实际发生的行为。</p>
 <p>本包选择确定性回放加固定链，因为输入与操作已固定。实际科研动作若需要动态分解和工具选择，再说明使用 Agent 的理由；工具数量与自主程度不是评分目标。</p>
-<p>复演时依次打开输入、一次事件、state、评价报告；由同伴从输出反查源文本与版本。只有目录图或预期输出不能替代这个过程。</p>
+<p>复演时依次打开输入、一次事件、state、评价报告；本人从输出反查源文本与版本，也可邀请他人开放讨论。只有目录图或预期输出不能替代这个过程。</p>
 <h2 id="11-13">六、与第 11 课、第 13 课的连接<a class="headerlink" href="#11-13" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>承接第 11 课</strong>：第 11 课的受限循环是本课工作流的执行循环部分。本课在其基础上增加 Context、Memory、工件追踪、Evals、人工审核和失败恢复的完整设计，把"一个能跑的循环"升级为"一个可审计可评价的工作流"。</li>
 <li><strong>为第 13 课铺垫</strong>：第 13 课验证门要求工作流"有可运行或可演示原型""至少完成一次可重复评价""至少保留一次失败或局限分析"。本课产出工作流说明、原型和评价计划；课后到第 13 课之间完成运行和评价，第 13 课统一检查。</li>
 </ul>
 <hr />
-<h2 id="_5">七、共同诊断与本人迁移<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p><strong>这个任务需要 Agent 自主选择吗？</strong> 先用<a href="../judgment-task/">本课判断任务</a>独立分析原始材料，再比较依据。教师演示用于校准，不能直接复制其结论代替本人判断。</p>
-<p>在个人副本接入 L10 校验，或增加分组盲化/任务状态持久化等一个实质环节。对真实输入走通输入→处理→人工检查→评价 trace；输出标明 accepted/rejected 与理由，正常项守恒。</p>
-<p>验证时：同一输入运行 baseline 与改动版；检查拒绝记录仍在账本中，gold 不参与执行端选择。只换提示词措辞、改标题或画流程图不能替代实际实现。</p>
-<p>回写同一个人项目：本人可运行工作流、实质 diff、任务契约与端到端 trace。L13 按冻结协议评价 baseline 和改动版。</p>
-<p>达标意味着决定有理由、证据可定位、验证与范围相称；优秀表现是识别替代解释并以检查改进判断。其余旧案例作方法参考，课堂提前完成时可选，不叠加课后必做。</p>
-<h2 id="_6">八、术语表<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_6">共同诊断与本人迁移<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>选择实测缺口，修改一个可复用环节并实际运行。如 AI 原来只看总均值，可加入逐模板检查后再选择实验。保留基线、diff、trace、失败和资源。</p>
+<p>验证：只改标题不算实质改进；提示词修改若确实改变研究行为且经评价，可以构成工作流改进。持久化改进规则并用于后续轮次，才有讨论递归改进的基础。</p>
+<p>产物：个人工作流改进版本及实际运行证据。完整任务见<a href="../judgment-task/">本课研究任务</a>。</p>
+<h2 id="_7">八、术语表<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1994,7 +2010,7 @@ Evals：
 </tbody>
 </table>
 <hr />
-<h2 id="_7">九、延伸阅读与课程材料<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_8">九、延伸阅读与课程材料<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>课程内材料：</p>
 <ul>
 <li><a href="../../../course/syllabus/">课程大纲第 12 课</a></li>
@@ -2027,9 +2043,9 @@ Evals：
 <li>Lu, C. et al. "Towards end-to-end automation of AI research." <em>Nature</em> (2026). DOI: <a href="https://www.nature.com/articles/s41586-026-10265-5">10.1038/s41586-026-10265-5</a>。用途：分析端到端自动化的任务范围、评价证据和仍需人工判断的边界。</li>
 </ol>
 <blockquote>
-<p>外部工具和协议会持续变化。阅读时应区分稳定的方法原则与特定版本的功能描述；涉及课堂操作时，以开课前核验的版本和教师提供的环境说明为准。AI 输出仅作线索，不构成证据。</p>
+<p>外部工具和协议会持续变化。阅读时应区分稳定的方法原则与特定版本的功能描述；涉及课堂操作时，以开课前核验的版本和教师提供的环境说明为准。AI 对外部事实的主张须回到来源或运行记录核验；若研究对象是 AI 输出、检索结果或 Agent 行为轨迹，可将其作为可追溯研究数据分析。</p>
 </blockquote>
-<h2 id="_8">课外预算与下次输入<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_9">课外预算与下次输入<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <p>课外总投入最多 <strong>60 分钟</strong>：指定阅读 15 分钟，准备 10 分钟，项目补全 35 分钟。阅读范围：van der Aalst 工作流模式中的 sequence、exclusive choice 与 iteration 定义/示例；对照本人控制流。</p>
 <p>项目补全：仅修未走通的一个环节并补运行说明；不要求接入 MCP 或付费模型。</p>
 <p>安装、下载与排障计入总预算。准备超出预算即采用现成 CPU 起点或纸面备用；未完项带回课堂收窄或补关键检查。三张完整精读卡在 L4、L5、L6 的课堂迁移中逐张完成，课后只补相应缺口。报告、说明和展示从累计项目整理；不增加独立文档或正式提交。</p>

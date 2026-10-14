@@ -1023,7 +1023,7 @@
   <span class="md-ellipsis">
     
   
-    个人微型项目：阅读记录校验与评价可靠性
+    个人微型项目：GPT-2 IOI 干预与 AI 研究工作流
   
 
     
@@ -1363,6 +1363,17 @@
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
+        独立判断与工作流改进的评价
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         最终提交物
       
     </span>
@@ -1372,7 +1383,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         按内容定位的两种组织方式
@@ -1388,7 +1399,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         基本验收条件
@@ -1399,7 +1410,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       
         学术规范红线
@@ -1430,12 +1441,12 @@
 <hr />
 <h1 id="_1">考核方案<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">课堂难度与课外总预算<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>面向已有编程、机器学习和英文论文阅读基础、科研经验有限的计算机研究生。采用“共同诊断＋本人迁移”：先独立判断，再比较证据、验证并修订同一个人项目。逐课输入、核心判断、验证和去向见<a href="../judgment-path/">研究判断路径</a>。</p>
+<p>面向已有编程、机器学习、英文论文阅读和 AI 使用经验、科研经验有限的计算机研究生。AI 可以参与真实研究动作；评价学生能否解释关键选择、核验结果，并在新证据或新条件下更新判断。讨论和同伴意见是可选输入，不要求固定搭档、同伴一致或签认。逐课输入、核心判断、验证和去向见<a href="../judgment-path/">研究判断路径</a>。</p>
 <p>课外总投入每课最多 60 分钟，包含阅读、准备、安装排障、项目推进和提交整理。普通课为指定阅读 15 分钟＋准备 10 分钟＋项目补全 35 分钟；L6/9/13/16 为整理 15 分钟＋修订提交 45 分钟，不叠加新必读。所需主要操作与研究门检查在课堂完成。超出预算先缩小材料或任务范围，不把未完课堂任务整体转移到课后。</p>
-<p>默认个人项目为基于共同材料、本人独立定义并验证的微型研究问题；自有课题可用规模相当的公开子问题。阅读卡工作流为共同主线，MI 和 RSI 分别用于真实文献争议与评价诊断，不要求三个项目。L4–L6 逐课在课堂完成一张完整精读卡；报告与展示整理累计材料，不另起文档。</p>
+<p>默认采用共同 MI 小实验：GPT-2 small 的 IOI 激活干预及跨模板检验。每位学生独立选择研究分支，自有课题可使用同等规模的公开子问题。阅读卡服务文献理解，记录校验和回放作为局部方法示例，Pythia／SAE 文献作为不同设置的进阶比较。学生只做一个项目；L4–L6 课堂累计三张核心精读卡，报告与展示整理已有材料。</p>
 <h2 id="_3">总体结构<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>课程采用过程性评价与最终个人项目结合的方式。核心考核不是"用了多少 AI 工具"或安装了多少现成 Skills，而是学生是否形成了可验证、可复现、可追溯、有门的科研闭环，并能为自己的科研动作设计、实现和评价一个可审计的 Agent Workflow。</p>
-<p>课程不设置每周作业分。第 6、9、13、16 课的四次研究门材料作为过程性评分证据；第 8 课分享和第 15 课同行评审是形成性活动，不单独按演讲或课堂表现计分。</p>
+<p>课程不设置每周作业分。第 6、9、13、16 课的四次研究门材料作为过程性评分证据；第 8 课个人分享与公开质询、第 15 课独立匿名评审是形成性活动，不单独按演讲或课堂表现计分。个人产物和新情境下的解释构成独立判断证据。</p>
 <table>
 <thead>
 <tr>
@@ -1541,7 +1552,7 @@
 <tr>
 <td>判断门</td>
 <td>第 9 课后</td>
-<td>机制假设、研究判断、baseline、实验规格、复现说明、同伴反馈处理、风险和一条已遇执行失败/已放弃方案记录</td>
+<td>机制假设、研究判断、实验 baseline、本人已有 AI 工作方式与评价协议、复现说明、方案质询处理、风险和一条已遇执行失败/已放弃方案记录</td>
 <td>实验设计与可复现性</td>
 </tr>
 <tr>
@@ -1607,11 +1618,14 @@
 <li>图表说明准确，不夸大实验结论。</li>
 <li>展示能清楚说明研究闭环和关键证据。</li>
 <li>科研伦理与合规说明覆盖数据来源、隐私、许可、署名、AI 使用披露和潜在误用。</li>
-<li>AI 使用复盘具体，包括有效用法、误导案例、验证方法和不可自动化部分。</li>
+<li>AI 使用复盘具体，包括有效用法、误导案例、验证方法和自动化的适用条件与待验证部分。</li>
 <li>能说明个人工作流输出如何通过证据、实验 ID、evals 或人工 review 被审计。</li>
 <li>四个研究门的门条件已全部满足。</li>
 </ul>
-<h2 id="_8">最终提交物<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_8">独立判断与工作流改进的评价<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>学生可以让 AI 参与问题、假设、实验、分析与评审。评分检查其能否解释采纳或否定建议的依据、识别替代解释，以及面对新证据或新条件时更新判断。讨论和自愿协作不改变个人评分；不按同伴一致、相互签认或反对 AI 的次数加分。</p>
+<p>每人完成一次真实 AI 工作流运行与有依据的改进，并与原有 AI 工作方式作资源可比的评价。负结果、没有改进或有依据地保留原方案均可达标；深入 RSI 不设工具或轮数加分。GPT-2 是共同实验的研究对象，其前向计算本身不能替代 AI 研究动作。</p>
+<h2 id="_9">最终提交物<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <p>每位学生提交一个个人项目仓库链接或压缩包，以下内容必须可定位。下列文件名为分文件组织示例，不要求逐一创建同名文件：</p>
 <ul>
 <li><code>problem-definition.md</code>：问题定义（含非例和可证伪命题）</li>
@@ -1630,7 +1644,7 @@
 <li><code>peer-review.md</code> 和 <code>revision-plan.md</code>：同行评审与修改处理</li>
 <li>工件状态追踪表</li>
 </ul>
-<h3 id="_9">按内容定位的两种组织方式<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h3 id="_10">按内容定位的两种组织方式<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>分文件版沿用建议结构；合并版可采用 <code>README.md</code> 索引＋一份研究主文档＋实现与原始记录。两种方式按相同内容验收，文件数量不作为评分依据。</p>
 <p>主文档按问题与证据、命题与判断、实验协议、个人 Agent Workflow、评价结果、伦理与 AI 披露、同行评审处理及复盘组织。使用章节锚点和记录 ID 关联内容；命题文本只维护一份，实验与结果引用其 ID。原始配置、日志、trace 和 AI 使用记录可单独保存，由主文档引用。</p>
 <table>
@@ -1685,7 +1699,7 @@
 </tbody>
 </table>
 <p>四个研究门提交当前项目版本的链接、tag 或压缩包；保留阶段快照，不另复制制作阶段报告。内容合并不允许覆盖原始记录或丢失修订历史。合并填写示例见 <a href="../../lessons/lesson-11/assets/rsi-selection-case/">RSI 案例主文档</a>。</p>
-<h2 id="_10">基本验收条件<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_11">基本验收条件<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p>满足以下条件才进入评分：</p>
 <ul>
 <li>项目问题与课程主题相关。</li>
@@ -1701,7 +1715,7 @@
 <li>标记为 <code>stable</code> 的关键结论原则上有两项独立证据；不足时已标注限制和待验证状态。</li>
 <li>四个阶段检查点的门条件已满足。</li>
 </ul>
-<h2 id="_11">学术规范红线<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h2 id="_12">学术规范红线<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <p>普通技术失败、复现未通过、样本不足或结果不支持假设，只要如实保留记录、说明原因和边界，并按要求修订，就属于研究过程证据，不自动构成学术规范红线。只有编造、隐瞒、越权、覆盖记录，或明知结果不可核验仍冒充已验证结论时，才按下列红线处理。</p>
 <p>以下情况应直接扣重分，严重者不予通过：</p>
 <ul>

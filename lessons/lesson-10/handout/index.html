@@ -1023,7 +1023,7 @@
   <span class="md-ellipsis">
     
   
-    个人微型项目：阅读记录校验与评价可靠性
+    个人微型项目：GPT-2 IOI 干预与 AI 研究工作流
   
 
     
@@ -1249,6 +1249,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本课研究主线：Agent 实现实验与定位失败
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1260,7 +1271,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#agent" class="md-nav__link">
+  <a href="#agent_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         一、受限 Agent 执行在研究链路中的位置
@@ -1393,7 +1404,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#agent_1" class="md-nav__link">
+  <a href="#agent_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         四、Agent 产生的代码必须人工核验
@@ -1454,15 +1465,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#agent_2" class="md-nav__link">
+  <a href="#agent_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        五、贯穿案例：把判断门实验规格的一步改写为受限 Agent 任务
+        五、方法示例：把判断门实验规格的一步改写为受限 Agent 任务
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="五、贯穿案例：把判断门实验规格的一步改写为受限 Agent 任务">
+    <nav class="md-nav" aria-label="五、方法示例：把判断门实验规格的一步改写为受限 Agent 任务">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1529,7 +1540,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        七、共同诊断与本人迁移
+        共同诊断与本人迁移
       
     </span>
   </a>
@@ -1590,12 +1601,19 @@
 <hr />
 <h1 id="ai-agent">第十讲｜AI 辅助编码、调试与受限 Agent 执行<a class="headerlink" href="#ai-agent" title="Permanent link">&para;</a></h1>
 <h2 id="_1">导读<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>第 9 课你已经把实验规格草图补全为可复现的判断门材料——baseline 公平、七字段完整、复现说明齐到种子、研究判断成案、同伴反馈已处理。判断门通过之后，项目进入阶段七"原型验证"。本课不是把 Agent 装上就让 它跑，而是回答一个更严格的问题：</p>
+<p>第 9 课你已经把实验规格草图补全为可复现的判断门材料——科学实验与个人已有 AI 工作方式分别设立 baseline、七字段完整、复现说明齐到种子、研究判断成案，并记录实际质询或个人新条件下的处理。判断门通过之后，项目进入阶段七"原型验证"。本课不是把 Agent 装上就让它跑，而是回答一个更严格的问题：</p>
 <blockquote>
 <p>当 Agent 修改代码、运行测试、归因错误时，研究者在哪里审核、用什么权限边界、留什么记录，才能让"Agent 帮忙"不等于"Agent 替代判断"或"Agent 污染实验"？</p>
 </blockquote>
 <p>本课对应八阶段研究链路的阶段七"原型验证"中的受限 Agent 执行环节。它承接第 9 课实验规格中已标注的"哪些步骤拟用 Agent、哪些步骤必须人工"——那一列标注是本课任务契约的直接输入。本课也是模块四（第 10-13 课）的起点：第 11 课把受限的"一次执行"扩展为"自动化循环"，第 12 课把多次执行封装为可复用工作流，第 13 课评价工作流是否真的改善了研究动作。受限是循环和封装的前提——没有边界的一次执行不能被安全地重复，更不能被自动化。</p>
 <p>完成本课后，你将产出一份任务契约、一段代码 diff、一份验证记录和一份失败记录。本课不正式提交，产出回写个人项目，作为第 13 课验证门材料的过程证据。</p>
+<h2 id="agent">本课研究主线：Agent 实现实验与定位失败<a class="headerlink" href="#agent" title="Permanent link">&para;</a></h2>
+<p><strong>核心判断：Agent 的修改修复了行为，还是只让检查不再报错？</strong></p>
+<p>比较三个候选动作：A 删除失败输入；B 在发现多 token 名称时静默选第一个 token；C 显式校验并保留失败，修正输入设计后建立新版本。说明它们对分母、任务与可比性的影响。</p>
+<p>给 Agent 明确动作、可写文件和测试条件；实际生成并运行一个补丁或策略实现。核对差异，解释为什么采用或撤回。</p>
+<p>正常和失败输入都保留；变化涉及协议时重评可比双方，不把旧结果与新协议混算。</p>
+<p>本课产物：实际 AI 动作、diff、行为检查、结果与个人决定。L11 将动作接入有预算的运行与恢复流程。</p>
+<p>完整输入、动作与完成标准见<a href="../judgment-task/">本课研究任务</a>。共同实验见<a href="../../../course/micro-project/">个人 MI 项目</a>。以下阅读卡、回放和记录校验例子用于解释局部方法；本人的主要产物回写同一个 MI 项目或等规模公开子问题。</p>
 <h2 id="_2">学习目标<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>本课核心能力：三个补丁中哪个修复契约，测试能区分它们吗？能以可定位证据回答，并将决定落实到本人项目。</p>
 <p>完成本讲后，你应该能够：</p>
@@ -1609,7 +1627,7 @@
 <li>说明本课产出如何成为第 11 课自动化循环与第 13 课验证门评价的输入。</li>
 </ol>
 <hr />
-<h2 id="agent">一、受限 Agent 执行在研究链路中的位置<a class="headerlink" href="#agent" title="Permanent link">&para;</a></h2>
+<h2 id="agent_1">一、受限 Agent 执行在研究链路中的位置<a class="headerlink" href="#agent_1" title="Permanent link">&para;</a></h2>
 <p>八阶段研究链路中，阶段七"原型验证"在第 9 课只是起始——判断门要求一个可执行 baseline 或最小验证原型，不要求完整自动化。本课在判断门已过的基础上展开受限 Agent 执行：研究者把实验规格中已标注为"拟用 Agent"的步骤交给 Agent，但每一次执行都有任务契约、权限边界、人工审核点和失败记录。</p>
 <table>
 <thead>
@@ -1812,7 +1830,7 @@
 </ul>
 <p>失败日志与成功结果同等重要。超时、解析错误、测试失败等普通技术失败应进入修复与复盘，本身不等于学术不端；明知失败却编造成功、隐瞒或删除记录、越权处理数据、伪造评价结果，才触及 <a href="../../../course/assessment/">assessment.md</a> 学术规范红线。</p>
 <hr />
-<h2 id="agent_1">四、Agent 产生的代码必须人工核验<a class="headerlink" href="#agent_1" title="Permanent link">&para;</a></h2>
+<h2 id="agent_2">四、Agent 产生的代码必须人工核验<a class="headerlink" href="#agent_2" title="Permanent link">&para;</a></h2>
 <h3 id="1-agent">1. Agent 输出是候选，不是事实<a class="headerlink" href="#1-agent" title="Permanent link">&para;</a></h3>
 <p>第 1 课 §一·2 已确定：AI 可以生成候选、执行重复步骤或帮助发现问题，但它无法自动获得对研究背景、学科规范、数据来源和潜在后果的完整责任。Agent 产生的代码同理——它是候选实现，不是已验证实现。研究者必须核验：</p>
 <ul>
@@ -1871,7 +1889,7 @@
 <p>SWE-bench 把"代码任务"构造为：一个真实 issue、一个可执行的代码仓库快照、一组判定通过的测试。它的关键设计是把"Agent 解决了问题"定义为"指定测试通过"，而不是"Agent 改了一段看起来合理的代码"。本课借用它的视角——Agent 的修改是否被接受，由预先指定的测试判定，不由 Agent 自己的叙述判定。但 SWE-bench 的测试集是真实开源项目的既有测试，课程项目往往没有同等质量的测试集，因此研究者必须额外人工核验，不能把"测试通过"等同于"修改正确"。</p>
 <p>SWE-bench 的局限也是本课的局限：测试通过不等于方法正确、不等于未引入数据泄漏、不等于未污染评价协议。Agent 输出始终需要人工核验。</p>
 <hr />
-<h2 id="agent_2">五、贯穿案例：把判断门实验规格的一步改写为受限 Agent 任务<a class="headerlink" href="#agent_2" title="Permanent link">&para;</a></h2>
+<h2 id="agent_3">五、方法示例：把判断门实验规格的一步改写为受限 Agent 任务<a class="headerlink" href="#agent_3" title="Permanent link">&para;</a></h2>
 <p>本课使用<a href="../assets/agent-task-example/task-01/">现有代码工件</a>，在阅读卡流程中校准输出记录的结构检查。<code>normalize_record()</code> 接受 paper_id 与 summary；这一步不判断摘要是否保留了原文限定条件，语义评价见<a href="../../lesson-11/assets/reading-card-workflow/">连续小包</a>。</p>
 <h3 id="1_1">1. 任务契约<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1903,12 +1921,10 @@
 <li><strong>越权未记录</strong>：Agent 越权请求被口头拒绝但未写入失败记录。应把越权请求、拒绝理由与处理一并记录。</li>
 </ol>
 <hr />
-<h2 id="_5">七、共同诊断与本人迁移<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p><strong>三个补丁中哪个修复契约，测试能区分它们吗？</strong> 先用<a href="../judgment-task/">本课判断任务</a>独立分析原始材料，再比较依据。教师演示用于校准，不能直接复制其结论代替本人判断。</p>
-<p>从现有 normalize_record 示例或本人同规模动作出发，先冻结正常/缺字段/空值/类型用例，再实际修改一个模块。与 baseline 在相同输入上比较，保留旧失败和新结果。</p>
-<p>验证时：检查 diff 仅在授权实现与本人新增行为测试内；gold/既有评价只读。若 AI 给出补丁，人工逐项审核；仅抄 after 示例不足以覆盖空值与类型。</p>
-<p>回写同一个人项目：受限补丁、失败用例、测试结果、trace 与人工决定。L11 把已核准动作接到小队列，检验恢复与停止。</p>
-<p>达标意味着决定有理由、证据可定位、验证与范围相称；优秀表现是识别替代解释并以检查改进判断。其余旧案例作方法参考，课堂提前完成时可选，不叠加课后必做。</p>
+<h2 id="_5">共同诊断与本人迁移<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>给 Agent 明确动作、可写文件和测试条件；实际生成并运行一个补丁或策略实现。核对差异，解释为什么采用或撤回。</p>
+<p>验证：正常和失败输入都保留；变化涉及协议时重评可比双方，不把旧结果与新协议混算。</p>
+<p>产物：实际 AI 动作、diff、行为检查、结果与个人决定。完整任务见<a href="../judgment-task/">本课研究任务</a>。</p>
 <h2 id="_6">八、术语表<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

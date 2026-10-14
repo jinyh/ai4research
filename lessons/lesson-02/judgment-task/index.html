@@ -23,7 +23,7 @@
     
     
       
-        <title>第 2 课共同诊断｜权限声明与运行行为 - 智能科研方法</title>
+        <title>第 2 课研究任务｜研究上下文与工具组织 - 智能科研方法</title>
       
     
     
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第 2 课共同诊断｜权限声明与运行行为
+              第 2 课研究任务｜研究上下文与工具组织
             
           </span>
         </div>
@@ -1023,7 +1023,7 @@
   <span class="md-ellipsis">
     
   
-    个人微型项目：阅读记录校验与评价可靠性
+    个人微型项目：GPT-2 IOI 干预与 AI 研究工作流
   
 
     
@@ -1241,7 +1241,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        先独立判断
+        输入与待判断问题
       
     </span>
   </a>
@@ -1252,7 +1252,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        原始材料与待比较选项
+        共同材料与比较
       
     </span>
   </a>
@@ -1263,7 +1263,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        迁移到本人项目
+        迁移到个人研究
       
     </span>
   </a>
@@ -1298,80 +1298,44 @@
 
 
 
-<h1 id="2">第 2 课共同诊断｜权限声明与运行行为<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
-<h2 id="_1">先独立判断<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><strong>问题：这份 trace 足以证明边界有效吗？应在哪个动作前停止？</strong></p>
-<p>输入：L1 的动作、diff 和使用记录。先记录判断和依据，再与同伴比较；课堂校准后可修订并写明改变原因。答案有分歧时回到具体记录。已有示例可作方法参考，不替代本人的初始判断。</p>
-<h2 id="_2">原始材料与待比较选项<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>教学构造 trace，不代表真实服务调用。</p>
-<p>任务：只修改 problem-definition.md 的“当前问题”段。声明：network=off；read=problem-definition.md；write=该段；首次写回需人工确认。</p>
-<table>
-<thead>
-<tr>
-<th>事件</th>
-<th>记录</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>E1</td>
-<td>读取 problem-definition.md</td>
-</tr>
-<tr>
-<td>E2</td>
-<td>输出三项修改建议</td>
-</tr>
-<tr>
-<td>E3</td>
-<td>human_approval：选择建议 B，只改当前问题</td>
-</tr>
-<tr>
-<td>E4</td>
-<td>helper 读取 notes/source-list.md 以“补充背景”</td>
-</tr>
-<tr>
-<td>E5</td>
-<td>写回获批段落；diff 只含该段</td>
-</tr>
-<tr>
-<td>E6</td>
-<td>总结：“diff 合规，全部权限检查通过”</td>
-</tr>
-</tbody>
-</table>
-<p>工具报告只提供文件 diff，没有进程或网络层隔离证明。</p>
-<p><strong>待决定：</strong>A：diff 合规即可接收；B：E4 需要额外授权，先停止并核查；C：把所有 notes 加入白名单以免再次停止。</p>
-<p>把“初始判断—证据位置—仍缺什么—核验后决定”写在现有笔记中。允许回答“仍不能判断”，同时指出下一项能改变判断的证据。</p>
-<h2 id="_3">迁移到本人项目<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>给本人一个动作写清读写范围、确认点与拒绝分支，更新既有权限行、风险卡和日志。选一次允许动作和一次越界尝试检验控制。</p>
-<p><strong>验证：</strong>用现有 access-check 接口或人工逐步拦截演示拒绝；如仅验证接口，记录“非操作系统隔离”。未获授权的读取不要真实执行。</p>
-<p><strong>保存位置与达标证据：</strong>权限行、风险卡、一次允许/拒绝检查及日志。</p>
-<p><strong>下课去向：</strong>L3 只在已声明的公开来源和网络范围内检索。</p>
+<h1 id="2">第 2 课研究任务｜研究上下文与工具组织<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
+<h2 id="_1">输入与待判断问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>L1 问题、已有 AI 用法和一次读写记录。</p>
+<p><strong>哪些上下文与工具让 Agent 能完成研究，哪些动作需要新的授权？</strong></p>
+<p>AI 可以参与问题、假设、实验选择、分析和评审。先形成个人初始判断，再比较证据与外部意见；这项课堂诊断不等于项目中禁用 AI。把“当前判断—依据—新证据或反馈—最终处理”写入已有项目，不增加独立作业。</p>
+<h2 id="_2">共同材料与比较<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>教学情境：Agent 需要公开论文、开发实验记录与模型配置来提出下次实验。目录还含未公开学生数据和保留评价结果。请画出当前任务真正需要读取和写入的位置。</p>
+<p>共同实验入口：<a href="../../../course/micro-project/">个人 MI 项目</a>。场景中的候选判断是教学问题，未标为实际记录的选项不是实验结果。</p>
+<h2 id="_3">迁移到个人研究<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>建立最小可用研究环境；给 Agent 公开论文和开发结果，允许提出并执行一个有预算的研究动作。明确结果、策略与原始记录的保存位置。</p>
+<p><strong>验证：</strong>执行一个已授权动作和一个受控拒绝检查；区分提示约束、工具接口限制与操作系统隔离。</p>
+<p><strong>保存与达标证据：</strong>上下文清单、任务权限与一次运行 trace。</p>
+<p><strong>下次输入：</strong>L3 在这份公开来源和工具范围内实际检索。</p>
 <h2 id="_4">完成标准<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>尺度</th>
+<th>水平</th>
 <th>判断依据</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>需支持</td>
-<td>完成操作，但理由、证据定位或验证仍有缺口。</td>
+<td>能执行动作，但理由、证据定位或验证仍有缺口</td>
 </tr>
 <tr>
 <td>达标</td>
-<td>独立决定，证据可定位，完成相称验证，并更新本人项目。</td>
+<td>独立解释选择，证据可定位，完成相称检查并更新个人项目</td>
 </tr>
 <tr>
 <td>优秀</td>
-<td>识别替代解释或有效性威胁，以额外检查改变或加强判断。</td>
+<td>识别替代解释或有效性威胁，用实际检查改变或加强判断</td>
 </tr>
 </tbody>
 </table>
-<p>课堂尺度对应课程的待改、达标、卓越；不新增每周成绩或提交。优秀依判断质量，不要求更多课外时长。</p>
-<p>断网时保留同样的判断要求，使用包内文本、存档或本地工件。工程课纸面诊断仅作备用练习，最终仍须补本人实际执行、实质修改和对照评价。提前完成者可寻找一个使自己决定改变的反例；不增加课后任务。</p>
+<p>讨论、自愿协作和 AI 参与不改变个人评分。无改善、有依据地保留原方案或仍不能判断都可成立，但须说明依据及下一项会改变判断的证据。不得以模板填写或教师回放替代本人真实 AI 研究动作。</p>
+<p>普通课课外总量最多 60 分钟，包含阅读、准备、安装排障和项目补全；研究门课用同一预算整理提交，不增加必读。断网时可使用保存材料完成诊断，缺失的实际执行仍需按教师安排补核验。</p>
 
 
 
