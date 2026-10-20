@@ -1023,7 +1023,7 @@
   <span class="md-ellipsis">
     
   
-    个人微型项目：GPT-2 IOI 干预与 AI 研究工作流
+    教师 MI Demo 与学生个人研究项目
   
 
     
@@ -1241,7 +1241,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        导读
+        教师演示与个人项目
       
     </span>
   </a>
@@ -1252,7 +1252,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        本课研究主线：结果驱动迭代、恢复与停止
+        导读
       
     </span>
   </a>
@@ -1263,7 +1263,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        学习目标
+        本课研究主线：结果驱动迭代、恢复与停止
       
     </span>
   </a>
@@ -1274,7 +1274,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        一、实验自动化循环在研究链路中的位置
+        学习目标
       
     </span>
   </a>
@@ -1283,6 +1283,17 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、实验自动化循环在研究链路中的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         二、实验自动化循环：假设→运行→度量→评价→回写/回退
@@ -1332,7 +1343,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         三、固定指标、预算、停止条件与回退机制
@@ -1465,7 +1476,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         五、失败实验记录与不选择性删除
@@ -1515,7 +1526,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         六、方法示例：把可重复动作改写为受限循环
@@ -1587,7 +1598,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         七、常见错误
@@ -1598,7 +1609,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         共同诊断与本人迁移
@@ -1609,7 +1620,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       
         九、术语表
@@ -1620,7 +1631,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
       
         十、延伸阅读与课程材料
@@ -1631,7 +1642,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     <span class="md-ellipsis">
       
         补充：固定协议下的反复选优
@@ -1642,7 +1653,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
       
         课外预算与下次输入
@@ -1673,21 +1684,23 @@
 <hr />
 <p>本轮修订状态：2026-10-12 内容修订与文件检查；教师内容复核及现场试教另行登记，历史通过不继承。</p>
 <h1 id="autoresearch">第十一讲｜实验自动化与 AutoResearch 循环<a class="headerlink" href="#autoresearch" title="Permanent link">&para;</a></h1>
-<h2 id="_1">导读<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">教师演示与个人项目<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>MI（机制可解释性）是教师贯穿全课的研究 Demo；学生从第1课起维护自己的个人项目，方向不限于 MI。短时共同诊断用于理解方法，个人实践回到本人课题。尚未确定课题者使用可替换的公开小问题，至L6收敛。L4–L6围绕本人问题累计三张核心精读卡；每人实际执行一个 AI 研究工作流并作一次有依据的改进。 个人验证可采用 ML 对照、系统测试、数据审计或论证反例，按本人的研究问题选择。教师演示的输入、结果和工具要求只适用于对应案例。</p>
+<h2 id="_2">导读<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>第 10 课你在受限权限下完成了一次 Agent 辅助代码或调试任务，并留下了 diff、日志和失败记录。"Agent 能跑"和"Agent 能在固定指标、预算和停止条件下被反复运行、被评价、被回退"之间，还有一段距离。这段距离就是本课要处理的实验自动化循环。</p>
 <p>本课对应八阶段研究链路的阶段七"原型验证（实验追踪）"，属于"受限 Agent、实验自动化与自主工作流"模块（第 10-13 课）。它的核心转换是：</p>
 <blockquote>
 <p>从"Agent 帮我跑通了一次"转向"一个可重复执行的实验机制——固定指标、固定预算、固定停止条件，结果与失败都被追踪，回退路径预先写明"。</p>
 </blockquote>
 <p>本课不复刻 AI Scientist 或 AutoResearch 整套系统。它们只用来做一次短对照：系统如何写预算、指标、保留/丢弃和失败恢复，哪些判断仍必须由人做出。完整八维框架留作查阅材料，第 12 课再用它组合个人工作流。</p>
-<h2 id="_2">本课研究主线：结果驱动迭代、恢复与停止<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_3">本课研究主线：结果驱动迭代、恢复与停止<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><strong>核心判断：应恢复、改变实验方向还是停止？</strong></p>
 <p>MI 包支持受控中断和恢复。比较“同输入同策略续跑”“修改策略仍用原目录”“因负结果删除一条输入”三种行为；再看开发模板之间是否给出不同趋势。</p>
 <p>实际触发一次受控中断并恢复，核对不重复已完成输入。让 AI 根据开发反馈选择下一步，保存无效尝试与停止理由。</p>
 <p>恢复不改变输入、协议和策略指纹。候选越多越容易选出偶然高值；现有 RSI 模拟是固定池选择偏差案例。</p>
 <p>本课产物：恢复证据、开发实验轨迹与继续／停止判断。L12 将已暴露的缺口写成可复用工作流改进。</p>
-<p>完整输入、动作与完成标准见<a href="../judgment-task/">本课研究任务</a>。共同实验见<a href="../../../course/micro-project/">个人 MI 项目</a>。以下阅读卡、回放和记录校验例子用于解释局部方法；本人的主要产物回写同一个 MI 项目或等规模公开子问题。</p>
-<h2 id="_3">学习目标<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>完整输入、动作与完成标准见<a href="../judgment-task/">本课研究任务</a>。教师演示与个人项目的分工见<a href="../../../course/micro-project/">项目说明</a>。以下示例用于解释方法；本人的主要产物回写自己的研究项目，方向不限于 MI。</p>
+<h2 id="_4">学习目标<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>本课核心能力：应该恢复、回退还是停止，哪些记录必须保留？能以可定位证据回答，并将决定落实到本人项目。</p>
 <p>完成本讲后，你应该能够：</p>
 <ol>
@@ -1699,7 +1712,7 @@
 <li>把自己一个可重复科研动作改写为受限循环，并标出人工审核点与回退路径。</li>
 </ol>
 <hr />
-<h2 id="_4">一、实验自动化循环在研究链路中的位置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">一、实验自动化循环在研究链路中的位置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>八阶段研究链路中，阶段七"原型验证"在第 10 课是"起始"（受限 Agent 执行一次），在第 11 课升级为"实验追踪"——不只跑通，而是可重复地跑、可被评价地跑、可被回退地跑。第 13 课将进一步升级为"评价报告"，第 14 课进入回写。</p>
 <table>
 <thead>
@@ -1737,7 +1750,7 @@
 </blockquote>
 <p>本课产出不是论文实验段成稿，也不是验证门材料包（验证门在第 13 课后）。本课只要求学生跑通一次"可重复动作 → 受限循环 → 指标轨迹 → 失败保留"的链路。</p>
 <hr />
-<h2 id="_5">二、实验自动化循环：假设→运行→度量→评价→回写/回退<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">二、实验自动化循环：假设→运行→度量→评价→回写/回退<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <h3 id="1">1. 循环的五步<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>实验自动化循环不是一个新方法，它只是把研究者手工做的事用受限 Agent 串起来，并在每一步留下可审查的工件：</p>
 <table>
@@ -1806,7 +1819,7 @@
 </ul>
 <p>如果循环允许"这次结果不好，换一个指标再算"，它就退化成了隐性 p-hacking（沿用第 9 课 §三·2）。</p>
 <hr />
-<h2 id="_6">三、固定指标、预算、停止条件与回退机制<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_7">三、固定指标、预算、停止条件与回退机制<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>实验自动化循环的四项硬约束——固定指标、预算、停止条件、回退机制——是第 9 课停止条件在循环场景下的扩展。缺一项，循环就从"受限执行"退化为"无界搜索"。</p>
 <h3 id="1_1">1. 固定指标<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
 <p>固定指标意味着：指标的计算口径、分母分子、缺失处理、标注协议在循环启动前写明，循环运行期间不可被工作流自身修改。</p>
@@ -1956,7 +1969,7 @@
 <p>本课的两个分析对象都来自"固定预算的受限循环"这一谱系。2026 年新出现的 Prime Agent（PrimeIntellect，构建于极简 harness pi 之上）代表另一个值得对照的设计方向：<strong>把循环的约束本身做成可持久化的状态</strong>——其 <code>/autonomous</code> 模式在 turn/token/time 预算内运行并可配置质量门，官方明确自述"通过一个门只证明该门所验证的内容，到达预算上限不等于任务成功"；其 Continual Harness 机制则尝试让 harness 的补充说明、记忆与子 Agent 规格以证据支撑的小步更新持久化（支撑论文 arXiv:2605.09998 与 arXiv:2512.24601 均为预印本，未经同行评议）。</p>
 <p>用本课四约束审视它：预算与质量门设计可与 §三 逐项对照，但"通过门 ≠ 任务成功"恰恰说明——无论 harness 多复杂，停止条件的解释权和回退决定仍必须由研究者保留。该项目发布仅数日、无独立复现，课程只把它作为分析对象：钉死版本的 README 见 <a href="../../../course/reading-list/">reading-list.md</a> 第 11 课新增案例条目；不进学生安装清单，不外推为"AI 已能自主科研"的任何变体。</p>
 <hr />
-<h2 id="_7">五、失败实验记录与不选择性删除<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_8">五、失败实验记录与不选择性删除<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <h3 id="1_3">1. 为什么失败记录是循环的一部分<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
 <p>循环的价值不只在于成功迭代，更在于失败迭代被保留。失败记录能够回答：</p>
 <ul>
@@ -2018,7 +2031,7 @@
 <p>与第 13 课的连接：第 13 课的失败复盘和证据充分性检查会直接使用本课保留的失败记录。本课不要求完成复盘，只要求失败被保留。</p>
 </blockquote>
 <hr />
-<h2 id="_8">六、方法示例：把可重复动作改写为受限循环<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_9">六、方法示例：把可重复动作改写为受限循环<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <p>使用<a href="../assets/reading-card-workflow/">可复演小包</a>。固定任务是回放三份构造源文本的两条件输出，共六项；输出来自预制素材，无模型调用。真实项目可把回放步骤替换成受限生成，但须重新记录版本、配置与评价。</p>
 <h3 id="1_4">1. 两种循环分别看<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
 <p>固定队列保持方法与输入规则，收集全部输出；优化循环改变候选方法，并依据开发评价作保留决定。两者都保留失败，优化还须规定搜索空间与总预算。本课主演为固定队列。</p>
@@ -2035,7 +2048,7 @@
 <p>完成六项后，T01 改善、T02 无改善、T03 为负例。技术失败属于一次执行事件；无改善与负例属于输出评价，不能靠重新运行或删掉输入消除。Q1 仅在构造材料中方向一致；H1/A2 未决，A1 未评价，A3 范围受限。</p>
 <h3 id="5_1">5. 课堂到项目<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h3>
 <p>先完成一条有状态的执行与恢复说明，并能复原三类记录。借用教师包时标记使用素材及回放身份，个人项目仍缺的运行入口或评价数据写入既有离场卡，课后补到本人项目。</p>
-<h2 id="_9">七、常见错误<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h2 id="_10">七、常见错误<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>循环无预算</strong>：跑"直到结果好为止"。应预先写明时间、token、运行次数与失败预算。</li>
 <li><strong>停止条件只写"跑完为止"</strong>：缺协议性停止与禁止停止。应写明三类触发器。</li>
@@ -2049,11 +2062,11 @@
 <li><strong>回退后不修订研究判断</strong>：回退了但没把假设标记为待验证。应在回退时触发判断记录更新。</li>
 </ol>
 <hr />
-<h2 id="_10">共同诊断与本人迁移<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_11">共同诊断与本人迁移<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p>实际触发一次受控中断并恢复，核对不重复已完成输入。让 AI 根据开发反馈选择下一步，保存无效尝试与停止理由。</p>
 <p>验证：恢复不改变输入、协议和策略指纹。候选越多越容易选出偶然高值；现有 RSI 模拟是固定池选择偏差案例。</p>
 <p>产物：恢复证据、开发实验轨迹与继续／停止判断。完整任务见<a href="../judgment-task/">本课研究任务</a>。</p>
-<h2 id="_11">九、术语表<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h2 id="_12">九、术语表<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -2113,7 +2126,7 @@
 </tbody>
 </table>
 <hr />
-<h2 id="_12">十、延伸阅读与课程材料<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h2 id="_13">十、延伸阅读与课程材料<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
 <p>课程内材料：</p>
 <ul>
 <li><a href="../../../course/syllabus/">课程大纲</a></li>
@@ -2139,11 +2152,11 @@
 <p>PrimeIntellect. <a href="https://github.com/PrimeIntellect-ai/prime-agent/tree/965941c750ff816cc4d68d18a5fcea5e0b4c120b"><em>Prime Agent</em>（commit <code>965941c7</code>）</a>，配 Karten et al. “Continual Harness: Online Adaptation for Self-Improving Foundation Agents.” <a href="https://arxiv.org/abs/2605.09998">arXiv:2605.09998</a>（预印本）与 Zhang, A. L., Kraska, T. &amp; Khattab, O. “Recursive Language Models.” <a href="https://arxiv.org/abs/2512.24601">arXiv:2512.24601</a>（预印本）。只分析 <code>/autonomous</code> 的预算与质量门设计、harness 状态持久化与回退自述，对照本课四约束；项目发布仅数日、论文未经同行评议，不外推为能力结论，不进学生安装清单；授课前复核。</p>
 </li>
 </ol>
-<h2 id="_13">补充：固定协议下的反复选优<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h2 id="_14">补充：固定协议下的反复选优<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
 <p>协议没有漂移，反复选优也可能使历史最佳分数过于乐观。<a href="../assets/rsi-selection-case/#validation-gate">RSI 实际 CPU 案例</a>在所有候选真实成功率均为 0.65 的条件下，历史选优 K=64 的平均乐观偏差为 0.1882，独立最终成功率为 0.6508；参考选择损失为零。数值来自合成环境实际运行，不是 Dream-RSI 或工业任务的表现。</p>
 <p>这里没有偷换指标、删除失败或越过预算。需要补上的约束是：声明选择反馈和最终评价的角色，冻结候选后再揭示最终证据，最终结果不得继续驱动本轮优化。独立均匀验证与等预算随机验证都参与候选选择，其结论仍由单列的最终评价检查。</p>
 <p>检查图表时分别回答：历史分数是否乐观？是否真的选错？哪份证据参与选择？资源是否相同？四个问题不能只用一条 Keep/Discard 记录代替。完整日志与固定指标使过程可追踪，独立最终评价支撑结论。系统短分析保留四约束与人工判断边界，完整比较材料仍为按需参考。</p>
-<h2 id="_14">课外预算与下次输入<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h2 id="_15">课外预算与下次输入<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
 <p>课外总投入最多 <strong>60 分钟</strong>：指定阅读 15 分钟，准备 10 分钟，项目补全 35 分钟。阅读范围：Sandve et al. 中保持原始结果、记录程序版本和随机性相关规则；只挑与本人队列有关的条目。</p>
 <p>项目补全：整理一次恢复和停止理由；按需查看 RSI 选优案例，不新增运行项目。</p>
 <p>安装、下载与排障计入总预算。准备超出预算即采用现成 CPU 起点或纸面备用；未完项带回课堂收窄或补关键检查。三张完整精读卡在 L4、L5、L6 的课堂迁移中逐张完成，课后只补相应缺口。报告、说明和展示从累计项目整理；不增加独立文档或正式提交。</p>

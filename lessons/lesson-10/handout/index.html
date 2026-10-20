@@ -1023,7 +1023,7 @@
   <span class="md-ellipsis">
     
   
-    个人微型项目：GPT-2 IOI 干预与 AI 研究工作流
+    教师 MI Demo 与学生个人研究项目
   
 
     
@@ -1241,6 +1241,17 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
+        教师演示与个人项目
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         导读
       
     </span>
@@ -1260,7 +1271,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         学习目标
@@ -1343,7 +1354,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         三、权限分层与人工审核点
@@ -1526,7 +1537,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         六、常见错误
@@ -1537,7 +1548,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         共同诊断与本人迁移
@@ -1548,7 +1559,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         八、术语表
@@ -1559,7 +1570,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         九、延伸阅读与课程材料
@@ -1570,7 +1581,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         课外预算与下次输入
@@ -1600,7 +1611,9 @@
 <p><a href="../../../learn/10/">← 本课任务与材料</a></p>
 <hr />
 <h1 id="ai-agent">第十讲｜AI 辅助编码、调试与受限 Agent 执行<a class="headerlink" href="#ai-agent" title="Permanent link">&para;</a></h1>
-<h2 id="_1">导读<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">教师演示与个人项目<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>MI（机制可解释性）是教师贯穿全课的研究 Demo；学生从第1课起维护自己的个人项目，方向不限于 MI。短时共同诊断用于理解方法，个人实践回到本人课题。尚未确定课题者使用可替换的公开小问题，至L6收敛。L4–L6围绕本人问题累计三张核心精读卡；每人实际执行一个 AI 研究工作流并作一次有依据的改进。 个人验证可采用 ML 对照、系统测试、数据审计或论证反例，按本人的研究问题选择。教师演示的输入、结果和工具要求只适用于对应案例。</p>
+<h2 id="_2">导读<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>第 9 课你已经把实验规格草图补全为可复现的判断门材料——科学实验与个人已有 AI 工作方式分别设立 baseline、七字段完整、复现说明齐到种子、研究判断成案，并记录实际质询或个人新条件下的处理。判断门通过之后，项目进入阶段七"原型验证"。本课不是把 Agent 装上就让它跑，而是回答一个更严格的问题：</p>
 <blockquote>
 <p>当 Agent 修改代码、运行测试、归因错误时，研究者在哪里审核、用什么权限边界、留什么记录，才能让"Agent 帮忙"不等于"Agent 替代判断"或"Agent 污染实验"？</p>
@@ -1613,8 +1626,8 @@
 <p>给 Agent 明确动作、可写文件和测试条件；实际生成并运行一个补丁或策略实现。核对差异，解释为什么采用或撤回。</p>
 <p>正常和失败输入都保留；变化涉及协议时重评可比双方，不把旧结果与新协议混算。</p>
 <p>本课产物：实际 AI 动作、diff、行为检查、结果与个人决定。L11 将动作接入有预算的运行与恢复流程。</p>
-<p>完整输入、动作与完成标准见<a href="../judgment-task/">本课研究任务</a>。共同实验见<a href="../../../course/micro-project/">个人 MI 项目</a>。以下阅读卡、回放和记录校验例子用于解释局部方法；本人的主要产物回写同一个 MI 项目或等规模公开子问题。</p>
-<h2 id="_2">学习目标<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>完整输入、动作与完成标准见<a href="../judgment-task/">本课研究任务</a>。教师演示与个人项目的分工见<a href="../../../course/micro-project/">项目说明</a>。以下示例用于解释方法；本人的主要产物回写自己的研究项目，方向不限于 MI。</p>
+<h2 id="_3">学习目标<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>本课核心能力：三个补丁中哪个修复契约，测试能区分它们吗？能以可定位证据回答，并将决定落实到本人项目。</p>
 <p>完成本讲后，你应该能够：</p>
 <ol>
@@ -1766,7 +1779,7 @@
 </blockquote>
 <p>任务契约的存在不是为了消除错误传播，而是让错误传播可被观察——Agent 推理了什么、行动了什么、观察了什么，都有日志可查；任一环节出错，研究者可以定位到具体步骤，而不是面对一个"结果变了但不知道为什么"的项目。</p>
 <hr />
-<h2 id="_3">三、权限分层与人工审核点<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">三、权限分层与人工审核点<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="1">1. 最小权限原则的回归<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>第 1 课 §四·3 已建立最小权限原则：只读、可写、可执行、需确认、禁止。本课把它从"项目级权限矩阵"落到"任务级权限契约"。</p>
 <table>
@@ -1905,7 +1918,7 @@
 <p>现有 failure-log 描述一个修改 tests 的建议及拒绝决定，按“预置记录回放”使用，不声称它是本次真实 Agent 会话。实际发生的运行失败和实际 diff 可以复演；评价协议调整属于另一个研究决定，不能在修代码时暗改。</p>
 <h3 id="4_1">4. 交给下一课<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
 <p>本次已固定输入、实现和测试。L11 用同一研究动作的小包演示多项执行、失败恢复和状态记录；工程微例与科研评价指标分别标识。</p>
-<h2 id="_4">六、常见错误<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">六、常见错误<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>模糊 prompt 直接交给 Agent</strong>：没有任务契约，结果无法追溯。应改写为五字段契约。</li>
 <li><strong>权限开放到方便为止</strong>：可写层包含整个 <code>src/</code> 甚至整个项目。应只开放任务所需的具体文件。</li>
@@ -1921,11 +1934,11 @@
 <li><strong>越权未记录</strong>：Agent 越权请求被口头拒绝但未写入失败记录。应把越权请求、拒绝理由与处理一并记录。</li>
 </ol>
 <hr />
-<h2 id="_5">共同诊断与本人迁移<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">共同诊断与本人迁移<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>给 Agent 明确动作、可写文件和测试条件；实际生成并运行一个补丁或策略实现。核对差异，解释为什么采用或撤回。</p>
 <p>验证：正常和失败输入都保留；变化涉及协议时重评可比双方，不把旧结果与新协议混算。</p>
 <p>产物：实际 AI 动作、diff、行为检查、结果与个人决定。完整任务见<a href="../judgment-task/">本课研究任务</a>。</p>
-<h2 id="_6">八、术语表<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_7">八、术语表<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1993,7 +2006,7 @@
 </tbody>
 </table>
 <hr />
-<h2 id="_7">九、延伸阅读与课程材料<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_8">九、延伸阅读与课程材料<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>课程内材料：</p>
 <ul>
 <li><a href="../../../course/syllabus/">课程大纲</a></li>
@@ -2014,7 +2027,7 @@
 <ol>
 <li>Jimenez, C. E. et al. <a href="https://www.swebench.com/original.html"><em>SWE-bench: Can Language Models Resolve Real-World GitHub Issues?</em></a>, ICLR 2024。只分析任务构造、执行环境、测试判定及 benchmark 局限。</li>
 </ol>
-<h2 id="_8">课外预算与下次输入<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_9">课外预算与下次输入<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <p>课外总投入最多 <strong>60 分钟</strong>：指定阅读 15 分钟，准备 10 分钟，项目补全 35 分钟。阅读范围：ReAct 中 action/observation 循环的图及失败处理说明；对照本人的一次调试 trace。</p>
 <p>项目补全：修课堂发现的一个边界用例，整理补丁理由；不另开新功能。</p>
 <p>安装、下载与排障计入总预算。准备超出预算即采用现成 CPU 起点或纸面备用；未完项带回课堂收窄或补关键检查。三张完整精读卡在 L4、L5、L6 的课堂迁移中逐张完成，课后只补相应缺口。报告、说明和展示从累计项目整理；不增加独立文档或正式提交。</p>

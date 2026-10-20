@@ -1023,7 +1023,7 @@
   <span class="md-ellipsis">
     
   
-    个人微型项目：GPT-2 IOI 干预与 AI 研究工作流
+    教师 MI Demo 与学生个人研究项目
   
 
     
@@ -1281,6 +1281,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注意力头与联合干预
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1299,7 +1310,7 @@
 
 
 <h1 id="gpt-2-small-ioi">GPT-2 small IOI 激活干预教学包<a class="headerlink" href="#gpt-2-small-ioi" title="Permanent link">&para;</a></h1>
-<p>本包进行真实模型推理。研究对象、输入和适用范围见<a href="../../../../course/micro-project/">个人微型项目</a>。输入为课程自行构造，依据 <a href="https://arxiv.org/abs/2211.00593">IOI 原始研究</a> 的任务形式；不是原论文数据或完整回路复现。模型来自 <a href="https://huggingface.co/openai-community/gpt2">openai-community/gpt2</a>，MIT 许可，固定修订见 protocol.json。GPT-2 被研究模型与协助研究的 Agent 是两个不同角色。</p>
+<p>本包是教师演示，也供自愿选择MI项目者使用；其他学生不需要安装或运行它。本包进行真实模型推理。研究对象、输入和适用范围见<a href="../../../../course/micro-project/">教师演示与个人项目分工</a>。输入为课程自行构造，依据 <a href="https://arxiv.org/abs/2211.00593">IOI 原始研究</a> 的任务形式；不是原论文数据或完整回路复现。模型来自 <a href="https://huggingface.co/openai-community/gpt2">openai-community/gpt2</a>，MIT 许可，固定修订见 protocol.json。GPT-2 被研究模型与协助研究的 Agent 是两个不同角色。</p>
 <h2 id="_1">准备与运行<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>教师在课前分发固定版本模型目录，包含 config.json、model.safetensors、tokenizer.json、tokenizer_config.json、vocab.json、merges.txt 和模型许可。依赖使用 Python 3.12 与 requirements.txt；不要求学生付费或本地 GPU。安装排障计入每课总预算，不能把课堂未完任务整体转移到课后。</p>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.12<span class="w"> </span>.venv
@@ -1326,6 +1337,9 @@ uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </s
 <p>首次受控中断退出码为 2，恢复跳过已完成记录；输入、协议、实现或策略改变时拒绝恢复，应新建运行目录。普通模型加载失败同样要保存实际错误与修复，不伪造成功记录。</p>
 <h2 id="ai">AI 研究工作流<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h2>
 <p><a href="WORKFLOW/">WORKFLOW.md</a>给出可交给当前 Agent 环境执行的真实任务。Agent 在开发反馈上提出策略，实验运行器负责测量，评价协议保持冻结，学生解释采用决定。Agent 输出与工具记录写入个人项目，不能拿教师示例或运行器前向推理冒充自己的 AI 研究动作。</p>
+<h2 id="_4">注意力头与联合干预<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>策略可设 <code>component: attention_heads</code> 与 <code>heads: [9]</code> 或 <code>[9, 6]</code>，层和头均从0计数。干预发生在指定层注意力输出拼接后、c_proj投影前，只替换所选头的维度。默认 residual 模式仍在block输出替换整向量。随机对照在选定维度内打乱，不影响其他头。<code>test_heads.py</code>检查粒度、联合替换和空操作数值不变性。两模式的效应不能当作同一对象直接排名。</p>
+<p>本轮在12条开发输入上实际检查了residual、单头、联合干预和受控恢复；运行摘要与课堂范围由教师记录，不据此宣称跨模型机制结论。</p>
 
 
 
