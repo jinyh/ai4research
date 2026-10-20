@@ -1,9 +1,9 @@
 # GPT-2 small IOI 激活干预教学包
 
-版本：v1.0.0
-最后更新：2026-10-14
+版本：v1.1.0
+最后更新：2026-10-20
 
-本包进行真实模型推理。研究对象、输入和适用范围见[个人微型项目](../../../../course/micro-project.md)。输入为课程自行构造，依据 [IOI 原始研究](https://arxiv.org/abs/2211.00593) 的任务形式；不是原论文数据或完整回路复现。模型来自 [openai-community/gpt2](https://huggingface.co/openai-community/gpt2)，MIT 许可，固定修订见 protocol.json。GPT-2 被研究模型与协助研究的 Agent 是两个不同角色。
+本包是教师演示，也供自愿选择MI项目者使用；其他学生不需要安装或运行它。本包进行真实模型推理。研究对象、输入和适用范围见[教师演示与个人项目分工](../../../../course/micro-project.md)。输入为课程自行构造，依据 [IOI 原始研究](https://arxiv.org/abs/2211.00593) 的任务形式；不是原论文数据或完整回路复现。模型来自 [openai-community/gpt2](https://huggingface.co/openai-community/gpt2)，MIT 许可，固定修订见 protocol.json。GPT-2 被研究模型与协助研究的 Agent 是两个不同角色。
 
 ## 准备与运行
 
@@ -52,3 +52,9 @@ layer 使用 0–11；position 为第二次主语所在 token 的 subject 或句
 ## AI 研究工作流
 
 [WORKFLOW.md](./WORKFLOW.md)给出可交给当前 Agent 环境执行的真实任务。Agent 在开发反馈上提出策略，实验运行器负责测量，评价协议保持冻结，学生解释采用决定。Agent 输出与工具记录写入个人项目，不能拿教师示例或运行器前向推理冒充自己的 AI 研究动作。
+
+## 注意力头与联合干预
+
+策略可设 `component: attention_heads` 与 `heads: [9]` 或 `[9, 6]`，层和头均从0计数。干预发生在指定层注意力输出拼接后、c_proj投影前，只替换所选头的维度。默认 residual 模式仍在block输出替换整向量。随机对照在选定维度内打乱，不影响其他头。`test_heads.py`检查粒度、联合替换和空操作数值不变性。两模式的效应不能当作同一对象直接排名。
+
+本轮在12条开发输入上实际检查了residual、单头、联合干预和受控恢复；运行摘要与课堂范围由教师记录，不据此宣称跨模型机制结论。

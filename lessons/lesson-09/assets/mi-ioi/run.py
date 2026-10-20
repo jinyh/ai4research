@@ -43,6 +43,27 @@ def validate_policy(policy):
         raise ValueError('layer must be an integer from 0 to 11')
     if policy.get('position') not in ('subject', 'last'):
         raise ValueError('position must be subject or last')
+    component = policy.get('component', 'residual')
+    if component not in ('residual', 'attention_heads'):
+        raise ValueError('component must be residual or attention_heads')
+    heads = policy.get('heads', [])
+    if component == 'attention_heads':
+        if (not isinstance(heads, list) or not heads or
+            any(type(h) is not int or not 0 <= h < 12 for h in heads) or
+            len(set(heads)) != len(heads)):
+            raise ValueError('heads must be unique GPT-2 head indices 0–11')
+    elif heads:
+        raise ValueError('heads only applies to attention_heads')
+
+
+def replace_slice(hidden, replacement, pos, dimensions=None):
+    """Patch a position; head dimensions are concatenated attention outputs before c_proj."""
+    changed = hidden.clone()
+    if dimensions is None:
+        changed[:, pos, :] = replacement
+    else:
+        changed[:, pos, dimensions] = replacement[:, dimensions]
+    return changed
 
 
 def summarize(rows):
@@ -132,6 +153,11 @@ def main():
                 raise ValueError('Expected two clean subject occurrences: ' + case['id'])
             pos = occurrences[-1] if policy['position'] == 'subject' else clean.shape[1] - 1
             layer = model.transformer.h[policy['layer']]
+            head_patch = policy.get('component', 'residual') == 'attention_heads'
+            dimensions = None
+            if head_patch:
+                width = model.config.n_embd // model.config.n_head
+                dimensions = [h * width + i for h in policy['heads'] for i in range(width)]
             cache = {}
 
             def capture(_module, _inputs, output):
@@ -142,10 +168,19 @@ def main():
                 nonlocal forwards
                 def hook(_module, _inputs, output):
                     hidden = output[0] if isinstance(output, tuple) else output
-                    changed = hidden.clone()
-                    changed[:, pos, :] = replacement
+                    changed = replace_slice(hidden, replacement, pos, dimensions)
                     return (changed,) + output[1:] if isinstance(output, tuple) else changed
-                handle = layer.register_forward_hook(capture if replacement is None else hook)
+                if head_patch:
+                    def pre_hook(_module, inputs):
+                        # c_proj receives concatenated head outputs, before projection.
+                        hidden = inputs[0]
+                        if replacement is None:
+                            cache['value'] = hidden[:, pos, :].detach().clone()
+                            return None
+                        return (replace_slice(hidden, replacement, pos, dimensions),) + inputs[1:]
+                    handle = layer.attn.c_proj.register_forward_pre_hook(pre_hook)
+                else:
+                    handle = layer.register_forward_hook(capture if replacement is None else hook)
                 try:
                     with torch.inference_mode():
                         logits = model(ids, use_cache=False).logits[0, -1]
@@ -162,8 +197,13 @@ def main():
             seed = protocol['seed'] + int(hashlib.sha256(case['id'].encode()).hexdigest()[:8], 16)
             generator = torch.Generator().manual_seed(seed)
             shuffled = clean_activation[:, torch.randperm(clean_activation.shape[-1], generator=generator)]
+            if head_patch:
+                shuffled = clean_activation.clone()
+                permutation = torch.randperm(len(dimensions), generator=generator)
+                shuffled[:, dimensions] = clean_activation[:, [dimensions[i] for i in permutation.tolist()]]
             row = {'id': case['id'], 'family': case['family'], 'split': args.split,
                    'layer': policy['layer'], 'position': pos, 'clean': c, 'corrupt': b,
+                   'component': policy.get('component', 'residual'), 'heads': policy.get('heads', []),
                    'noop': forward(corrupt, corrupt_activation),
                    'random': forward(corrupt, shuffled),
                    'patch': forward(corrupt, clean_activation)}

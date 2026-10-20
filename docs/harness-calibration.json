@@ -1,0 +1,135 @@
+{
+  "version": 1,
+  "teacher_confirmation": "unverified",
+  "boundary": "建议标签用于准备校准；未经过教师确认，不支持自动采用",
+  "cases": [
+    {
+      "id": "C01",
+      "use": "development",
+      "title": "主线错位",
+      "stimulus": "任务要求读本人论文，讲义却强制所有人完成IOI实验",
+      "proposed_status": "fail",
+      "teacher_label": null,
+      "teacher_evidence": null
+    },
+    {
+      "id": "C02",
+      "use": "development",
+      "title": "答案泄露",
+      "stimulus": "独立判断前已经填好唯一正确的机制解释",
+      "proposed_status": "fail",
+      "teacher_label": null,
+      "teacher_evidence": null
+    },
+    {
+      "id": "C03",
+      "use": "development",
+      "title": "伪造结果",
+      "stimulus": "把构造logit值标为本次真实模型输出",
+      "proposed_status": "fail",
+      "teacher_label": null,
+      "teacher_evidence": null
+    },
+    {
+      "id": "C04",
+      "use": "development",
+      "title": "原图裁切",
+      "stimulus": "轴和比较条件被裁掉却据图判定优胜",
+      "proposed_status": "fail",
+      "teacher_label": null,
+      "teacher_evidence": null
+    },
+    {
+      "id": "C05",
+      "use": "development",
+      "title": "论文分钟数",
+      "stimulus": "原文记录实验推理耗时，引用准确，非课堂计时",
+      "proposed_status": "pass",
+      "teacher_label": null,
+      "teacher_evidence": null
+    },
+    {
+      "id": "C06",
+      "use": "development",
+      "title": "无代码材料",
+      "stimulus": "学生核对证明前提与反例，完成本人研究决定",
+      "proposed_status": "pass",
+      "teacher_label": null,
+      "teacher_evidence": null
+    },
+    {
+      "id": "C07",
+      "use": "development",
+      "title": "负结果",
+      "stimulus": "真实无改善，保留全部结果并解释停止理由",
+      "proposed_status": "pass",
+      "teacher_label": null,
+      "teacher_evidence": null
+    },
+    {
+      "id": "C08",
+      "use": "development",
+      "title": "准确AI解释",
+      "stimulus": "核对两处原文后有依据地采纳AI原解释",
+      "proposed_status": "pass",
+      "teacher_label": null,
+      "teacher_evidence": null
+    },
+    {
+      "id": "C09",
+      "use": "reserved",
+      "title": "来源不足",
+      "stimulus": "只有摘要，关键方法尚未取得原文",
+      "proposed_status": "unverified",
+      "teacher_label": null,
+      "teacher_evidence": null
+    },
+    {
+      "id": "C10",
+      "use": "reserved",
+      "title": "模型分歧",
+      "stimulus": "两个独立观察相冲突且缺决定性证据",
+      "proposed_status": "unverified",
+      "teacher_label": null,
+      "teacher_evidence": null
+    },
+    {
+      "id": "C11",
+      "use": "reserved",
+      "title": "分享课",
+      "stimulus": "90分钟分享与质询，无个人两段练习模板",
+      "proposed_status": "pass",
+      "teacher_label": null,
+      "teacher_evidence": null
+    },
+    {
+      "id": "C12",
+      "use": "reserved",
+      "title": "教学负荷",
+      "stimulus": "流程90分钟但未经学生试走的复杂新任务",
+      "proposed_status": "unverified",
+      "teacher_label": null,
+      "teacher_evidence": null
+    },
+    {
+      "id": "C13",
+      "use": "development",
+      "title": "阶段边界与实际试做",
+      "stimulus": "L4源稿有完整90分钟安排与备用输入，但没有助教真实计时。独立评审对teaching.execution返回unverified且blocking=true；应由教师明确源稿设计检查与授课验收分别如何处理。",
+      "proposed_status": "unverified",
+      "teacher_label": null,
+      "teacher_evidence": null,
+      "observation_record": ".work/harness/lesson-04/2026-10-20-personal-projects/source-review-5/review.json"
+    },
+    {
+      "id": "C14",
+      "use": "development",
+      "title": "任务页与未发生的学生产出",
+      "stimulus": "P18–P20引导本人论文的核验；模型因未见未来学生的真实AI输出，将visual.objects记为unverified。待教师判断该证据应属于呈现阶段还是学生试做，不能自动改成通过或错误。",
+      "proposed_status": "unverified",
+      "teacher_label": null,
+      "teacher_evidence": null,
+      "observation_record": ".work/harness/lesson-04/2026-10-20-personal-projects/presentation-review-1/progress.json"
+    }
+  ]
+}

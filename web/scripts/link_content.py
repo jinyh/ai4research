@@ -48,6 +48,7 @@ PUBLISH = {
     "lessons/lesson-02/handout.md": "lessons/lesson-02/handout.md",
     "lessons/lesson-02/classroom-pack.md": "lessons/lesson-02/classroom-pack.md",
     "lessons/lesson-03/handout.md": "lessons/lesson-03/handout.md",
+    "lessons/lesson-03/ioi-retrieval-record.md": "lessons/lesson-03/ioi-retrieval-record.md",
     # 第 3 课学生向教学示例（2.0 G2：课级示例发布）
     "lessons/lesson-03/source-audit-demo.md": "lessons/lesson-03/source-audit-demo.md",
     "lessons/lesson-03/mi-search-trace-demo.md": "lessons/lesson-03/mi-search-trace-demo.md",
@@ -58,6 +59,11 @@ PUBLISH = {
     "lessons/lesson-03/assets/verification-states-entry-structure.svg": "lessons/lesson-03/assets/verification-states-entry-structure.svg",
     "lessons/lesson-03/assets/keshav-2007-trace-structure.svg": "lessons/lesson-03/assets/keshav-2007-trace-structure.svg",
     "lessons/lesson-04/handout.md": "lessons/lesson-04/handout.md",
+    "lessons/lesson-04/personal-reading-inputs.md": "lessons/lesson-04/personal-reading-inputs.md",
+    "lessons/lesson-04/ioi-reading-guide.md": "lessons/lesson-04/ioi-reading-guide.md",
+    "lessons/lesson-04/assets/ioi-completeness-legend-original.svg": "lessons/lesson-04/assets/ioi-completeness-legend-original.svg",
+    "lessons/lesson-04/assets/ioi-completeness-original.svg": "lessons/lesson-04/assets/ioi-completeness-original.svg",
+    "lessons/lesson-04/assets/ioi-circuit-original.svg": "lessons/lesson-04/assets/ioi-circuit-original.svg",
     "lessons/lesson-04/reading-card-demo.md": "lessons/lesson-04/reading-card-demo.md",
     "lessons/lesson-04/mi-reading-card-demo.md": "lessons/lesson-04/mi-reading-card-demo.md",
     "lessons/lesson-04/assets/mi-reading-evidence-ladder.svg": "lessons/lesson-04/assets/mi-reading-evidence-ladder.svg",
@@ -70,8 +76,9 @@ PUBLISH = {
     "lessons/lesson-07/handout.md": "lessons/lesson-07/handout.md",
     "lessons/lesson-08/handout.md": "lessons/lesson-08/handout.md",
     "lessons/lesson-09/handout.md": "lessons/lesson-09/handout.md",
-    # L9 IOI 实验包：显式发布学生运行所需文件，不含模型权重或运行产物。
+    # L9 IOI教师演示包：供按需查看，不作为所有学生必做任务。
     "lessons/lesson-09/assets/mi-ioi/README.md": "lessons/lesson-09/assets/mi-ioi/README.md",
+    "lessons/lesson-09/assets/mi-ioi/test_heads.py": "lessons/lesson-09/assets/mi-ioi/test_heads.py",
     "lessons/lesson-09/assets/mi-ioi/WORKFLOW.md": "lessons/lesson-09/assets/mi-ioi/WORKFLOW.md",
     "lessons/lesson-09/assets/mi-ioi/cases.jsonl": "lessons/lesson-09/assets/mi-ioi/cases.jsonl",
     "lessons/lesson-09/assets/mi-ioi/protocol.json": "lessons/lesson-09/assets/mi-ioi/protocol.json",

@@ -63,7 +63,7 @@ MI_IOI_PACKAGE = "lessons/lesson-09/assets/mi-ioi"
 MI_IOI_FILES = (
     "README.md", "WORKFLOW.md", "cases.jsonl", "protocol.json", "policy-baseline.json",
     "candidate-layer-5-last.json", "candidate-layer-8-subject.json", "requirements.txt",
-    "run.py", "test_runner.py",
+    "run.py", "test_runner.py", "test_heads.py",
 )
 
 
@@ -118,13 +118,20 @@ JUDGMENT_FILES = (
     "lessons/lesson-01/judgment-task.md",
     "lessons/lesson-02/judgment-task.md",
     "lessons/lesson-03/judgment-task.md",
+    "lessons/lesson-03/ioi-retrieval-record.md",
     "lessons/lesson-04/judgment-task.md",
+    "lessons/lesson-04/ioi-reading-guide.md",
+    "lessons/lesson-04/personal-reading-inputs.md",
+    "lessons/lesson-04/assets/ioi-completeness-original.svg",
+    "lessons/lesson-04/assets/ioi-completeness-legend-original.svg",
+    "lessons/lesson-04/assets/ioi-circuit-original.svg",
     "lessons/lesson-05/judgment-task.md",
     "lessons/lesson-06/judgment-task.md",
     "lessons/lesson-07/judgment-task.md",
     "lessons/lesson-08/judgment-task.md",
     "lessons/lesson-09/judgment-task.md",
     "lessons/lesson-09/assets/mi-ioi/README.md",
+    "lessons/lesson-09/assets/mi-ioi/test_heads.py",
     "lessons/lesson-09/assets/mi-ioi/WORKFLOW.md",
     "lessons/lesson-09/assets/mi-ioi/cases.jsonl",
     "lessons/lesson-09/assets/mi-ioi/protocol.json",

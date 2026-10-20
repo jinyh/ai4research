@@ -36,3 +36,7 @@
 - 公开源执行脚本：`.agents/skills/research-question-to-search/scripts/search_public_sources.py`
 
 该 skill 负责“问题初稿→每库实际检索式→公开源检索→入口核验→筛选/审计/候选表”的受限流程。v1 只自动处理论文、预印本和正式学术出版物；其他来源仅登记为外部线索。它分开记录查询运行状态、预期证据角色、四态核验状态、筛选建议和人工决定，状态升级与最终筛选保留为人工审核点。当前实现包含确定性公开源脚本与 Codex 元数据；Keshav 回归和独立 forward test 聚焦复测均已通过。
+
+## 全课备课检查入口
+
+[全课备课 Harness](./lesson-harness.md)复用现有课程一致性、链接和屏显检查，并绑定当前材料与逐项语义评审。`scripts/check_lesson.py` 只读源材料，报告进入 `.work/`；不调用外部模型、不自动发布。先用于 L4，再随各课修订接入。

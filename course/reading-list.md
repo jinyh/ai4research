@@ -1,9 +1,12 @@
 # 逐课参考阅读清单
 
-版本：v2.4.0
-最后更新：2026-10-14
+版本：v2.5.0
+最后更新：2026-10-20
 
 变更记录：
+- v2.5.0 (2026-10-20): 区分教师MI演示与学生个人项目，补齐跨方向验证和迁移；课程结构与评分不变。
+- v2.4.2 (2026-10-20): L4 核心阅读承接 IOI 原文指标与完整性检验，Keshav 保留按需参考；预算不变。
+- v2.4.1 (2026-10-15): L3 核心阅读改为共同 IOI 种子的摘要与任务定义，Booth 保留按需参考；原阅读预算不变。
 - 2026-10-14：同步 AI 深度参与、个人判断与多路检索主线；新增 research／academia Agent Skills 版本审阅记录，未将外部工作流列为课程实测。
 - 2026-10-12：共同诊断与本人迁移修订；课外总投入每课不超过 60 分钟，四次提交与评分不变。
 - v2.2.3 (2026-10-01): 评价证据角色、早期试探与内容验收统一；加入 RSI 补充案例，正式提交和评分不变。
@@ -26,7 +29,7 @@
 
 课外总投入每课最多 60 分钟，包含阅读、准备、安装排障、项目推进和提交整理。普通课为指定阅读 15 分钟＋准备 10 分钟＋项目补全 35 分钟；L6/9/13/16 为整理 15 分钟＋修订提交 45 分钟，不叠加新必读。所需主要操作与研究门检查在课堂完成。超出预算先缩小材料或任务范围，不把未完课堂任务整体转移到课后。
 
-默认采用共同 MI 小实验：GPT-2 small 的 IOI 激活干预及跨模板检验。每位学生独立选择研究分支，自有课题可使用同等规模的公开子问题。阅读卡服务文献理解，记录校验和回放作为局部方法示例，Pythia／SAE 文献作为不同设置的进阶比较。学生只做一个项目；L4–L6 课堂累计三张核心精读卡，报告与展示整理已有材料。
+MI（机制可解释性）是教师贯穿全课的研究 Demo；学生从第1课起维护自己的个人项目，方向不限于 MI。短时共同诊断用于理解方法，个人实践回到本人课题。尚未确定课题者使用可替换的公开小问题，至L6收敛。L4–L6围绕本人问题累计三张核心精读卡；每人实际执行一个 AI 研究工作流并作一次有依据的改进。
 
 ## 一、书目层级与使用规则
 
@@ -114,35 +117,43 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
 
 ## 第 3 课：文献检索与证据角色判断
 
-**本课阅读边界：**Booth Chapter 3 中 Finding and Evaluating Sources 的检索与来源评价段落；记录一次真实的路线比较与策略调整，不要求预先选定单一数据库。
+**教师 Demo 阅读边界：**IOI 原文摘要与 §2 任务定义，记录一项检索缺口；指定阅读 15 分钟，包含在本课 60 分钟课外总量内。
 
 
 ### 正式书目
 
-1. **核心｜经典研究方法书选章｜指定范围**
+1. **核心｜原始研究｜指定范围**
+   Wang, K., Variengien, A., Conmy, A., Shlegeris, B., & Steinhardt, J. *Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small*. ICLR 2023；预印本 2022。[原文 v1](https://arxiv.org/html/2211.00593v1)。
+   用途：共同 IOI 任务与检索种子，只读摘要和 §2。
+
+2. **按需参考（非额外要求）｜经典研究方法书选章**
    Booth, W. C. et al. *The Craft of Research*, 5th ed. University of Chicago Press, 2024. 选读 Chapter 3, “Finding and Evaluating Sources”，含 “Using Generative Artificial Intelligence” quick tip。[出版社页面](https://press.uchicago.edu/ucp/books/book/chicago/C/bo215874008)
    用途：区分来源类型、相关性、可靠性和来源在论证中的角色。
 
-2. **按需参考（非额外要求）｜正式技术报告选段｜约 25 分钟**
+3. **按需参考（非额外要求）｜正式技术报告选段｜约 25 分钟**
    Kitchenham, B., & Charters, S. *Guidelines for Performing Systematic Literature Reviews in Software Engineering*. EBSE-2007-01, 2007. 选读 protocol、search strategy 和 study selection。[机构索引](https://ebse.webspace.durham.ac.uk/ebse-bibliography/guidelines-for-performing-systematic-literature-reviews-in-software-engineering/)
    用途：把检索、纳入和排除过程变成可复核方法。
 
-3. **按需参考（非额外要求）｜正式报告规范｜约 15 分钟**
+4. **按需参考（非额外要求）｜正式报告规范｜约 15 分钟**
    Page, M. J. et al. “The PRISMA 2020 statement: an updated guideline for reporting systematic reviews.” *BMJ* 372:n71 (2021). DOI: [10.1136/bmj.n71](https://www.bmj.com/content/372/bmj.n71)。只读 checklist 和 flow diagram。[PRISMA 官方入口](https://www.prisma-statement.org/prisma-2020-statement)
    用途：学习透明报告逻辑，不要求 CS/AI 项目机械套用医学综述格式。
 
 ## 第 4 课：AI 辅助论文精读与深度分析
 
-**本课阅读边界：**Keshav §2.1–§2.3 与 §4（两页内定位）；检查时长、深度和证据类型。
+**教师 Demo 阅读边界：**IOI 论文 §2 / §2.1 的任务、指标与均值替换，以及 §4.1 / Fig.6(a)，围绕一条主张核对支持与限定；§3.1 / 附录 B 仅用于另行方法比较。指定阅读 15 分钟，计入每课 60 分钟总预算。
 
 
 ### 正式书目
 
-1. **核心｜经典论文｜指定范围**
+1. **核心｜原始研究｜指定范围**
+   Wang, K., Variengien, A., Conmy, A., Shlegeris, B., & Steinhardt, J. *Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small*. ICLR 2023；预印本 2022。[原文 v1](https://arxiv.org/html/2211.00593v1)。
+   用途：承接 L3，在原文、图表和课程代码之间核对干预对象与机制主张。
+
+2. **按需参考（非额外要求）｜经典论文**
    Keshav, S. “How to Read a Paper.” *ACM SIGCOMM Computer Communication Review* 37(3), 83–84 (2007). DOI: [10.1145/1273445.1273458](https://doi.org/10.1145/1273445.1273458)。[作者课程 PDF](https://cs.uwaterloo.ca/~brecht/courses/854-http-video-2012/readings/keshav-paper-reading.pdf)
    用途：以三遍阅读法控制阅读深度，并建立实验论文的检查问题。
 
-2. **按需参考（非额外要求）｜经典研究方法书选章｜约 25 分钟**
+3. **按需参考（非额外要求）｜经典研究方法书选章｜约 25 分钟**
    Booth et al. *The Craft of Research*, 5th ed. 选读 Chapter 4, “Engaging Sources”，重点为 reading for a problem、argument、data and support。
    用途：防止把作者主张、数据、证据和个人推断混为一谈。
 
@@ -427,3 +438,7 @@ AI 生成的作者、题名、年份、页码、DOI 和引文必须回到正式�
 - [可控 CPU 案例](../lessons/lesson-11/assets/rsi-selection-case/README.md)：第 9、11、13 课共用，不新增必读。
 - Cawley, G. C. & Talbot, N. L. C. (2010). *On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation*. JMLR 11:2079–2107. [原文与题录](https://www.jmlr.org/papers/v11/cawley10a.html)。用途：有限样本评价准则的反复选优偏差。
 - Hardt, M. (2015). [The reusable holdout: Preserving validity in adaptive data analysis](https://research.google/blog/the-reusable-holdout-preserving-validity-in-adaptive-data-analysis/)。研究团队说明，用途：反馈参与开发后，留出证据独立性如何改变；不要求实现 reusable holdout。
+
+## 教师演示与学生个人阅读（2026-10-20）
+
+上列 IOI、SAE 等 MI 材料供教师备课与短时共同诊断。学生 L3 检索、L4–L6 三张精读卡围绕本人课题选材；每课指定阅读片段仍计入原有课外预算。没有代码的论文可核对推导、数据、研究设计或论证。公开备用短材料见 [L4 迁移输入](../lessons/lesson-04/personal-reading-inputs.md)。

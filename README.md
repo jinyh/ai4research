@@ -8,7 +8,8 @@
 - **课程大纲权威源**：[`course/syllabus.md`](./course/syllabus.md)
 - **逐课备课工作区**：[`lessons/README.md`](./lessons/README.md)（含材料状态表与制作顺序）
 - **备课规划与教师复核**：[`lessons/备课规划.md`](./lessons/备课规划.md)、[`lessons/teacher-review-ledger.md`](./lessons/teacher-review-ledger.md)
-- **全课修订执行记录**：[`docs/ai-research-revision-20261014.md`](./docs/ai-research-revision-20261014.md)（当前权威执行计划与状态）
+- **当前综合修订**：[`docs/personal-project-revision-20261020.md`](./docs/personal-project-revision-20261020.md)（MI教师Demo、学生个人项目与备课Harness；各批次完成边界）
+- **上一轮全课修订**：[`docs/ai-research-revision-20261014.md`](./docs/ai-research-revision-20261014.md)（2026-10-14基线与历史状态）
 - **旧版课程 2.0 计划**：[`docs/course-2.0-plan.md`](./docs/course-2.0-plan.md)（历史批次记录）
 
 ## 目录职责

@@ -1,5 +1,8 @@
 # 第 13 课内容入口（MOC）
 
+> 当前轮（2026-10-20）：已修正为教师MI Demo与学生本人项目，源稿任务见[综合修订记录](../../docs/personal-project-revision-20261020.md)。本课原PPT保留；源稿改动不继承旧版PPT或人员复核通过，后续按课接入呈现复验。
+
+
 > 工作流评价、结果分析、失败审计与验证门。本文件是第 13 课所有材料的导航入口，说明各文件角色、关系与阅读路径。门控流程见 [prepare-course-lesson skill](../../.agents/skills/prepare-course-lesson/SKILL.md)。
 
 
@@ -60,8 +63,8 @@
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生讲义（本轮复核另登记） v0.5.1 | 学生可独立阅读的当前内容源 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.5.0 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
+| [handout.md](./handout.md) | 现行·学生讲义（本轮复核另登记） v0.6.0 | 学生可独立阅读的当前内容源 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.6.0 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
 | [slides.md](./slides.md) | 现行·逐页母稿 v0.7.0 | 20 页屏显、讲述、动作与来源；冻结 PPTX 仍为基线；本轮修订预览待生成与检查 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.1.2 | 本轮实际构图、可编辑对象与验收；旧规格保留历史 |
 | [evaluation-report-template.md](./evaluation-report-template.md) | 现行·评价报告模板 | 学生直接写入个人项目 `evaluation-report.md` 的七段结构 |
