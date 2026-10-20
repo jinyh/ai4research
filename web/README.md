@@ -65,7 +65,17 @@ uv run python scripts/check_site.py
 | `_build/` | `mkdocs build` 输出（.gitignore 忽略） |
 | `.venv/` | uv 虚拟环境（.gitignore 忽略） |
 
-## 当前部署（2026-10-14）
+## 当前部署（2026-10-20）
+
+用户明确授权提交、推送与发布。课程源提交为 `eaeadca84a424b85c5cbf15013c741e9a21a600c`（`codex/ai-research-revision`）；学生网站快照为 `ba1acc4a0778381323ed881670f40a40fe626ee8`（`codex/student-site`）；部署指针提交为 `955c2ea009ac4b4ae9df2e9fda10f96abcdca452`（`main`）。网站快照延续原分支历史，主分支仅更新部署指针。
+
+本轮同步“MI 教师 Demo＋学生个人项目”、16课学生材料、L3检索和L4精读修订，以及相应阅读输入、项目说明和下载包。快照共204个文件、96个HTML页面、6个学生下载ZIP。教师教案、判断答案、逐页母稿、PPT和原始评审日志不进入学生网站；课程源仓库另行维护这些源材料。L4候选PPT仍在本地 `.work/`，未进入正式交付。
+
+发布前12项课程一致性检查、241份Markdown链接、44项Harness回归、17项网站测试、严格构建及96页链接／锚点／发布边界检查通过，6个ZIP完整性检查通过。构建HTML保留主题模板空白，以逐字节指纹核对，不为消除生成文件的空白提示改写输出。
+
+[GitHub Actions发布任务](https://github.com/jinyh/ai4research/actions/runs/39446561574)成功。线上115项文件（全部96个HTML、6个ZIP、10个SVG、搜索索引及两份站点地图）与验收快照逐字节一致，L4教师答案和教案路径均返回404。原始清单与核验记录保存在本机 `.work/publish-20261020/`。教师内容确认、真实助教试做和教室投影仍待完成，网站发布状态单独登记。
+
+## 上一次部署（2026-10-14）
 
 本轮按用户明确授权更新课程修订后的学生网站。课程源提交为 `d64c2d5c019ad4abef2f26089ecd4c9ad43a7836`（分支 `codex/ai-research-revision`）；学生网站静态快照为 `13fb1e7c8b420123e4d596102730219c4c6d3427`（分支 `codex/student-site`）；部署指针提交为 `d944e467e72d4cc0fab09ef7fbd815fe77b5e275`（`main`）。
 
