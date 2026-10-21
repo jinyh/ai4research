@@ -1,20 +1,28 @@
 # 第 4 课内容入口（MOC）
 
+> 本轮状态（2026-10-21，教学选目修订）：源稿按教师批准的审阅意见更新，PPT新版预览已完成源稿、映射、文件和视觉自检。现行 `lesson-04.pptx` 保留已确认基线，尚未承载本轮修改；交付包与网站保持原版本。本轮入口与检查见[修订执行记录](../../docs/lesson-01-04-reading-revision-20261021.md)。
+
+- [本轮新版PPT预览](../../.work/ppt/lesson-04/2026-10-21-reading/output/lesson-04-reading-preview.pptx)：可编辑，独立与现场复核另记。
+
+## 既有基线与历史检查
+
+
 > AI 辅助精读与主张核验。本文件是第 4 课所有材料的导航入口，说明各文件角色、关系与阅读路径。门控流程见 [prepare-course-lesson skill](../../.agents/skills/prepare-course-lesson/SKILL.md)。
 
 
-> 当前状态（2026-10-20，个人项目修订轮）：MI 为教师 Demo，学生阅读本人项目材料。本轮源稿、32页候选与检查状态见[综合修订记录](../../docs/personal-project-revision-20261020.md)。独立评审、教师确认及现场检查分别登记；历史通过不代表当前版本。
+> 当前状态（2026-10-21，教师确认后更新）：MI 为教师 Demo，学生阅读本人项目材料。教师已确认并授权更新，32页基线已写入现行 lesson-04.pptx。源稿与检查状态见[综合修订记录](../../docs/personal-project-revision-20261020.md)。独立评审、教师确认及现场检查分别登记；历史通过不代表当前版本。
 
 ## 当前入口
 
 - [学生任务](./judgment-task.md)、[个人阅读输入](./personal-reading-inputs.md)：一张精读卡服务本人项目；无代码论文有等价核验路径。
 - [IOI 演示输入](./ioi-reading-guide.md)：只用于共同诊断；教师解释在初判后揭示。
 - [Harness 协议](../../docs/lesson-harness.md)：版本绑定、独立评审、候选比较与人工确认。
-- 当前 slides.pptx 保留冻结基线；本轮候选进入 .work，未替换或发布。上一轮记录见[历史 Harness 记录](../../docs/lesson-04-harness-20261020.md)。
+- [现行课堂 PPT](./lesson-04.pptx)：32页，2026-10-21按教师确认由checked-13原字节提升，SHA-256 `885487e6bbb1d5dbd517f1385e1bc3cf1f55b5ad36664af21bfa1d2fe5a9d226`。旧冻结版仍在Git历史与本机基线副本中。更新记录见[现行版本登记](../../docs/lesson-04-current-20261021.md)。
+- 教师确认已登记；助教实际试做、图表数据编辑与教室投影仍分别待核。既有Harness阶段结论保留原身份，不改写为全部检查通过。
 
 ## 历史：32 页方法与案例扩展（2026-10-13）
 
-本节保留2026-10-13扩展的当时记录；本轮以顶部2026-10-20记录为准。
+本节保留2026-10-13扩展的当时记录；本轮以顶部2026-10-21记录为准。
 
 - 屏显页脚：已移除讲义和内部文件映射，仅保留公开原文出处；完整对应继续保存在母稿与备注。
 - 核心交付：围绕一条关键主张完成第一张完整精读卡，至少两个原文位置，写入 `reading-cards.md`。
@@ -78,11 +86,11 @@
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生讲义（本轮复核另登记） v0.11.0 | 学生可独立阅读的当前内容源 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.14.0 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v2.0.0 | 32 页屏显、讲述、动作与来源；本轮预览已完成阶段自检，见顶部入口 |
-| [slides.pptx](./slides.pptx) | 冻结基线·可编辑课堂 PPT（32 页） | 2026-10-14 冻结版本；本轮预览另存 .work，未替换正式文件 |
-| [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v2.0.0 | 本轮实际构图、可编辑对象与验收；旧规格保留历史 |
+| [handout.md](./handout.md) | 现行·学生讲义（本轮复核另登记） v0.12.0 | 学生可独立阅读的当前内容源 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.15.0 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v2.1.0 | 32 页屏显、讲述、动作与来源；本轮预览已完成阶段自检，见顶部入口 |
+| [lesson-04.pptx](./lesson-04.pptx) | 现行·教师确认的可编辑课堂 PPT（32 页） | 2026-10-21由checked-13提升；现场检查分别登记 |
+| [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v2.1.0 | 本轮实际构图、可编辑对象与验收；旧规格保留历史 |
 | [reading-card-demo.md](./reading-card-demo.md) | 现行·教学资产 v1.1.0 | Keshav 2007 真实原文的完整阅读卡、偏差审计与断网备用对象 |
 | [mi-reading-card-demo.md](./mi-reading-card-demo.md) | 现行·教学资产 v1.0.1 | C02/C16/C31 三张公开论文主张级阅读卡与受限判断 |
 | [assets/](./assets/) | 现行·图形资产 | MI 精读证据阶梯 SVG 与出处/许可登记 |
@@ -90,13 +98,13 @@
 ### 视觉升级（2026-09-12）
 
 - 逐页映射门：✅ `slides.md` v0.9.1 仅更新视觉结构与字号层级，屏显语义、页数与 90 分钟教案不变。
-- PPT 构建：✅ 18 页候选 r2 已提升为现行 [slides.pptx](./slides.pptx)；构建目录 `.work/ppt/lesson-04/2026-09-12-visual-upgrade/`；SHA256 `a1dd50fe5dbe6e5b02eae401a08883b36c8a4a2b1bdcec9732e0e7e79a383a24`。
+- PPT 构建：✅ 18 页候选 r2 已提升为现行 [lesson-04.pptx](./lesson-04.pptx)；构建目录 `.work/ppt/lesson-04/2026-09-12-visual-upgrade/`；SHA256 `a1dd50fe5dbe6e5b02eae401a08883b36c8a4a2b1bdcec9732e0e7e79a383a24`。
 - 技术检查：✅ finalizer、Artifact Tool 最终文件重导入、18/18 notes `[Sources]`、1 Master/4 Layout、空 placeholder 与字号审计通过。
 - 教学检查：✅ P11 使用 Keshav p.83 §2 真实原文裁图，课堂构造 AI 输出与原文身份分离；P15 保持单主张精读的完整工作表。
 - 视觉检查：✅ 18 页全尺寸和 contact sheet 逐页复核通过；标题 30–32pt、常规正文 22–24pt、原文/工作表 18–20pt，正文以 regular 为主，未见裁切、遮挡或异常换行。
 - PowerPoint 原生检查：✅ Microsoft PowerPoint 已打开 r2 并原生导出；18/18 张 `native-checked-*.png` 全尺寸逐页复核通过，原文裁图、MI 图、表格换行与中文显示完整；原生 PDF 为 `.work/ppt/visual-upgrade-20260912/representatives/lesson-04-slides-v0.9.1-visual-r2-native.pdf`。
 - 替代关系：本节视觉检查取代下方减负轮的旧视觉通过记录；旧记录仅保留为历史，不再证明当前候选通过。
-- 状态：✅ 候选已写回正式 `slides.pptx` v0.9.1；正式文件 SHA256 `a1dd50fe5dbe6e5b02eae401a08883b36c8a4a2b1bdcec9732e0e7e79a383a24`。LibreOffice 中文字体回退单独记为兼容性风险，本轮不宣称 LibreOffice 通过。
+- 状态：✅ 候选已写回正式 `lesson-04.pptx` v0.9.1；正式文件 SHA256 `a1dd50fe5dbe6e5b02eae401a08883b36c8a4a2b1bdcec9732e0e7e79a383a24`。LibreOffice 中文字体回退单独记为兼容性风险，本轮不宣称 LibreOffice 通过。
 - QA：`.work/ppt/visual-upgrade-20260912/audit/lesson-01-06-qa.md`。
 
 > 状态说明：以上视觉升级记录是现行 PPT 的唯一验收口径。下方减负轮、旧门控表与 2.0 修订轮仅保留当时事实；其中旧的笼统“视觉通过”记录已被本轮技术、教学、视觉和 PowerPoint 原生检查取代。

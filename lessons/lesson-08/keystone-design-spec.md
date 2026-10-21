@@ -20,7 +20,7 @@
 
 当前母稿为 [slides.md](./slides.md) v0.9.1，共 15 页。P03 的最低个人产出是一次陈述、一次独立新条件判断，以及对实际质询或自检作出有依据的处理；不设置反馈数量、固定组或必须修改结论的配额。P04 按 25 人容量采用每人约 2 分钟的五段陈述。
 
-本轮候选 PPTX 位于 `.work/course-revision-preview/pptx/validated/`，16 课预览均通过结构与版式检查。全页渲染总览已检查；本课修改页全尺寸复核、Microsoft PowerPoint 实际打开、教师/助教复核和教室投影待完成。冻结基线仍是 `slides.pptx`，没有被覆盖。
+本轮候选 PPTX 位于 `.work/course-revision-preview/pptx/validated/`，16 课预览均通过结构与版式检查。全页渲染总览已检查；本课修改页全尺寸复核、Microsoft PowerPoint 实际打开、教师/助教复核和教室投影待完成。冻结基线仍是 `lesson-08.pptx`，没有被覆盖。
 
 ## 2026-09-16 当前实现与验收
 
@@ -127,7 +127,7 @@
 
 ## 三、模板例外与制作约束
 
-- 以 `lessons/lesson-07/slides.pptx` 为直接视觉基线，克隆源页并编辑继承对象，保留 master → layout → slide 层级。
+- 以 `lessons/lesson-07/lesson-07.pptx` 为直接视觉基线，克隆源页并编辑继承对象，保留 master → layout → slide 层级。
 - P01 沿用交大封面；不加装饰图。
 - P04、P05、P08、P10-P12 为精读工件/方法页，屏显文字不低于 18 pt；内容优先删减，不缩字补密度。
 - P10-P11 的贯穿案例为课程教学案例，不伪装成已发表研究证据；画面与 speaker notes 同步标注。
@@ -143,7 +143,7 @@
 
 ## 五、正式制作验收
 
-- 正式文件：`slides.pptx`，14 页；SHA-256 `9fb5c2b8e67247116b408aff73c4d8f94b5b60df7560142d2e5e5592b21972e7`。
+- 正式文件：`lesson-08.pptx`，14 页；SHA-256 `9fb5c2b8e67247116b408aff73c4d8f94b5b60df7560142d2e5e5592b21972e7`。
 - 模板：直接继承 `lesson-07/slides.pptx` 的 master/layout、交大品牌、页眉页脚和字体体系；模板忠实度检查 0 问题。
 - 技术：越界对象 0；空结构 placeholder 0；默认提示文本 0；14 页 speaker notes 均含 `[Sources]`。
 - 教学：14 页均映射 handout；P13 支撑 42:30-85:00 长停留，P14 闭合到第 9 课判断门；四个诊断维度、一个行动性检查和边界横切字段口径一致。

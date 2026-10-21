@@ -1,0 +1,91 @@
+{
+  "version": "1.0.0",
+  "date": "2026-10-21",
+  "scope": "L01–L03 PPTX",
+  "authorization": "可以进入deliverables，并且清理临时文件",
+  "status": "user_authorized_delivery",
+  "checks": {
+    "agent_content_mapping_visual_technical": "passed",
+    "teacher_delivery_authorization": "confirmed",
+    "independent_model_review": "pending; prior automatic approval rejection",
+    "native_powerpoint": "unverified",
+    "teaching_assistant_trial": "unverified",
+    "classroom_projection": "unverified"
+  },
+  "original_materials_archive": "archive/course-releases/2026-10-21-l01-l03/input-baseline/",
+  "files": [
+    {
+      "lesson": "01",
+      "path": "deliverables/2026-fall/lesson-01.pptx",
+      "current": "lessons/lesson-01/lesson-01.pptx",
+      "pages": 36,
+      "sha256": "a55f143a194b6597b9f91737d5974a9571d93de057b1dc3a6b66b69946f6eaf8",
+      "bytes": 1121580,
+      "source": "lessons/lesson-01/slides.md",
+      "source_sha256": "946e75087fa5fed5a073708fd9f58eff99a5927f07aeb29342b4eed7e65cab5a",
+      "source_check_report": ".work/harness/lesson-01/2026-10-21-continuity/source-final-check/report.md",
+      "presentation_check_report": ".work/harness/lesson-01/2026-10-21-continuity/presentation-check/report.md",
+      "delivery_verification": {
+        "package_integrity": "passed",
+        "current_and_delivery_byte_identical": true,
+        "mother_and_notes_alignment": "passed",
+        "rendered_from_delivery_path": true,
+        "pages_byte_identical_to_checked_preview": 36,
+        "report": ".work/harness/lesson-01/2026-10-21-continuity/delivery-verification.json"
+      }
+    },
+    {
+      "lesson": "02",
+      "path": "deliverables/2026-fall/lesson-02.pptx",
+      "current": "lessons/lesson-02/lesson-02.pptx",
+      "pages": 27,
+      "sha256": "4a4d24a284197acab63cd7e079b7d68d3402a30ab014b52b67cd0ab88070863d",
+      "bytes": 1449711,
+      "source": "lessons/lesson-02/slides.md",
+      "source_sha256": "7da298fb60f6fb6d167702069cbfdb5d0a1cdfd8846bff91a19d18092c273e53",
+      "source_check_report": ".work/harness/lesson-02/2026-10-21-continuity/source-final-check/report.md",
+      "presentation_check_report": ".work/harness/lesson-02/2026-10-21-continuity/presentation-check/report.md",
+      "delivery_verification": {
+        "package_integrity": "passed",
+        "current_and_delivery_byte_identical": true,
+        "mother_and_notes_alignment": "passed",
+        "rendered_from_delivery_path": true,
+        "pages_byte_identical_to_checked_preview": 27,
+        "report": ".work/harness/lesson-02/2026-10-21-continuity/delivery-verification.json"
+      }
+    },
+    {
+      "lesson": "03",
+      "path": "deliverables/2026-fall/lesson-03.pptx",
+      "current": "lessons/lesson-03/lesson-03.pptx",
+      "pages": 32,
+      "sha256": "def6d3fd3362a815947c263f92a5c704ad23cec20e6f4c815919288f06ed3030",
+      "bytes": 476358,
+      "source": "lessons/lesson-03/slides.md",
+      "source_sha256": "4aacbdf7a1599ecdcf86dc3d1bc0f1440613d362fb79afb13ef27589371a3b18",
+      "source_check_report": ".work/harness/lesson-03/2026-10-21-continuity/source-final-check/report.md",
+      "presentation_check_report": ".work/harness/lesson-03/2026-10-21-continuity/presentation-check/report.md",
+      "delivery_verification": {
+        "package_integrity": "passed",
+        "current_and_delivery_byte_identical": true,
+        "mother_and_notes_alignment": "passed",
+        "rendered_from_delivery_path": true,
+        "pages_byte_identical_to_checked_preview": 32,
+        "report": ".work/harness/lesson-03/2026-10-21-continuity/delivery-verification.json"
+      }
+    }
+  ],
+  "final_path_verification": {
+    "passed": true,
+    "pages": 95,
+    "same_hash_as_approved_previews": true,
+    "all_95_rendered_pages_byte_identical": true
+  },
+  "cleanup": {
+    "scope": "L01–L03 2026-10-21-continuity only",
+    "removed_bytes": 50171630,
+    "removed_items": 12,
+    "original_materials_preserved": true,
+    "final_check_reports_preserved": true
+  }
+}

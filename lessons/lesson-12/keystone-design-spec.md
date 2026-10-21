@@ -22,7 +22,7 @@
 版本：v1.1.1
 最后更新：2026-09-16
 状态：现行；本轮内容与 PPT 已同步；发布前现场复核待完成
-模板基线：`lessons/lesson-07/slides.pptx`（交大正式课件 master / layout / 品牌）
+模板基线：`lessons/lesson-07/lesson-07.pptx`（交大正式课件 master / layout / 品牌）
 
 变更记录：
 - v1.1.1 (2026-09-16): 教师通过后完成全课 PPT 同步，登记当前文件检查与现场复核边界。

@@ -77,7 +77,7 @@ status 为 pass、partial、fail、unverified 或 not_applicable；blocking 为�
 python3 -m unittest discover -s scripts/tests -v
 python3 scripts/check_course_consistency.py
 python3 scripts/check_links.py
-python3 scripts/check_slide_alignment.py lessons/lesson-03/slides.md lessons/lesson-03/slides.pptx
+python3 scripts/check_slide_alignment.py lessons/lesson-03/slides.md lessons/lesson-03/lesson-03.pptx
 ```
 
 脚本结构检查不证明课件的学术质量和课堂效果。源稿自检完成、教师复核未完成时可生成明确标注的预览，按现行材料契约登记；正式交付仍遵循原有门控和发布边界。

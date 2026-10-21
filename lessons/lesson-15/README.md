@@ -56,7 +56,7 @@
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.3.1 | 本轮实际构图、可编辑对象与验收；旧规格保留历史 |
 | [peer-review-template.md](./peer-review-template.md) | 现行·`peer-review.md` 模板 | 同伴三问、五维评审和作者六字段回应 |
 | [revision-plan-template.md](./revision-plan-template.md) | 现行·`revision-plan.md` 模板 | 三级优先级、影响工件、时限与 Checkpoint 4 预检 |
-| [slides.pptx](./slides.pptx) | 冻结基线·可编辑课堂 PPT（15 页） | 2026-10-14 冻结版本；本轮修订预览待生成与检查，未同步正式文件 |
+| [lesson-15.pptx](./lesson-15.pptx) | 冻结基线·可编辑课堂 PPT（15 页） | 2026-10-14 冻结版本；本轮修订预览待生成与检查，未同步正式文件 |
 
 ## 2026-09-12 视觉提升轮（当前有效验收）
 
@@ -128,11 +128,11 @@
 | 4. 逐页映射门 | ✅ PASS（15 页逐页映射到讲义与真实课堂动作；屏显无课堂计时） |
 | 5. PPT 制作 | ✅ 通过（15 页；保留 1 个 master、4 个 layout、交大校徽、红标题带、页脚与页码） |
 | 6. 三重检查 | ⚠️ 部分通过（技术：15 页、15 组 notes 与 `[Sources]`、实际教学文字 ≥18 pt；教学：逐页对齐 v0.4.1；视觉：系统 LibreOffice 全尺寸页与 contact sheet 检查通过；18 pt 终版因 macOS 锁屏尚未完成 Microsoft PowerPoint 原生检查） |
-| 7. 里程碑记录 | ✅ 通过（首个正式版本以现行 `slides.pptx` 为基线；构建、模板审计和 QA 台账保存在 `.work/ppt/lesson-15/2026-08-07-formal-build/`，不另建重复归档） |
+| 7. 里程碑记录 | ✅ 通过（首个正式版本以现行 `lesson-15.pptx` 为基线；构建、模板审计和 QA 台账保存在 `.work/ppt/lesson-15/2026-08-07-formal-build/`，不另建重复归档） |
 
 ## 历史 PPT 验证记录（同日减负轮；原视觉通过结论撤回）
 
-- 正式路径：`lessons/lesson-15/slides.pptx`；15 页；399963 bytes；SHA-256 `a7813d19d5c866a2efb0a3ba447562d5b992d771808b44b10cc45594aab603be`。
+- 正式路径：`lessons/lesson-15/lesson-15.pptx`；15 页；399963 bytes；SHA-256 `a7813d19d5c866a2efb0a3ba447562d5b992d771808b44b10cc45594aab603be`。
 - 模板关系：保留交大原生 1 个 master、4 个 layout、校徽、红标题带、页码与主题关系。
 - 技术检查：15 组 notes，`[Sources]` 15/15；最终器结构、字体、版面与 Artifact Tool 重开检查通过。
 - 教学检查：15 页与 `slides.md` v0.4.1 同序，真实评审、五类可选处理、diff、主要预检与第 16 课交接均可见。
@@ -142,7 +142,7 @@
 ## 历史 PPT 验证记录（2026-08-07）
 
 - 页数：16；主节奏 P01-P13，备用 P14-P16；画布 16:9；SHA-256：`0ed8ea01d192cccd3f6274acb2395285a3eeb97c42b750943395acfc04fe2b73`。
-- 模板跟随：源为 `lessons/lesson-07/slides.pptx`；完整审计 16 个源页，模板保真检查 0 issues。
+- 模板跟随：源为 `lessons/lesson-07/lesson-07.pptx`；完整审计 16 个源页，模板保真检查 0 issues。
 - 结构检查：16 张 slide、16 张 notes、16 个 `[Sources]` 块；空结构 placeholder 0；默认 prompt 0；layout 越界 0。
 - 教学检查：0-15 / 15-35 / 35-50 / 50-65 / 65-82 / 82-90 节奏完整；P10 明确每人至少评 1 位固定同伴并收 1 位三问；P12 逐项呈现 Checkpoint 4 十项条件；作者保留决定权贯穿 P06/P11/P16。
 - 视觉检查：artifact-tool 与 LibreOffice contact sheet 均无空白页、标题异常换行、正文裁切或品牌遮挡；P04/P09/P15 虚构材料屏显明确。

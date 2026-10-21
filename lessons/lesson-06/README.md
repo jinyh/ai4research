@@ -66,7 +66,7 @@
 | [handout.md](./handout.md) | 现行·学生讲义（本轮复核另登记） v1.6.0 | 学生可独立阅读的当前内容源 |
 | [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.6.0 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
 | [slides.md](./slides.md) | 现行·逐页母稿 v1.5.1 | 22 页屏显、讲述、动作与来源；冻结 PPTX 仍为基线；本轮修订预览待生成与检查 |
-| [slides.pptx](./slides.pptx) | 冻结基线·可编辑课堂 PPT（22 页） | 2026-10-14 冻结版本；本轮修订预览待生成与检查，未同步正式文件 |
+| [lesson-06.pptx](./lesson-06.pptx) | 冻结基线·可编辑课堂 PPT（22 页） | 2026-10-14 冻结版本；本轮修订预览待生成与检查，未同步正式文件 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.4.1 | 本轮实际构图、可编辑对象与验收；旧规格保留历史 |
 | [mi-problem-definition-demo.md](./mi-problem-definition-demo.md) | 课后迁移教学资产 v1.0.0 | MI 结构性问题、H-eff/H-rob/H-faith、第一性原理与九项 CP1 自查；不作为第 7-9 课主线输入 |
 | [assets/](./assets/) | 现行·图形资产 | MI 问题到 baseline 接口 SVG 与出处/许可登记 |
@@ -74,13 +74,13 @@
 ### 视觉升级（2026-09-12）
 
 - 逐页映射门：✅ `slides.md` v1.3.2 仅更新视觉结构与字号层级，屏显语义、页数与 90 分钟教案不变。
-- PPT 构建：✅ 22 页候选 r3 已提升为现行 [slides.pptx](./slides.pptx)；构建目录 `.work/ppt/lesson-06/2026-09-12-visual-upgrade/`；SHA256 `81d2a8ee1b2b592b95872ca20074a172913c14ebcb81865ceecd0f78e0b2c713`。
+- PPT 构建：✅ 22 页候选 r3 已提升为现行 [lesson-06.pptx](./lesson-06.pptx)；构建目录 `.work/ppt/lesson-06/2026-09-12-visual-upgrade/`；SHA256 `81d2a8ee1b2b592b95872ca20074a172913c14ebcb81865ceecd0f78e0b2c713`。
 - 技术检查：✅ finalizer、Artifact Tool 最终文件重导入、22/22 notes `[Sources]`、1 Master/4 Layout、空 placeholder 与字号审计通过。
 - 教学检查：✅ P14 保持阅读卡案例与 H1/A1/A2/A3/L9 接口，P18 只形成候选题取舍、边界、可证伪命题、一个待验证前提与替代解释标记。
 - 视觉检查：✅ 22 页全尺寸和 contact sheet 逐页复核通过；标题 30–32pt、常规正文 22–24pt、清单/工作表 18–20pt，正文以 regular 为主；r3 已重构 P7 双分支并修正 P10 句号孤行。
 - PowerPoint 原生检查：✅ Microsoft PowerPoint 已打开 r3 并原生导出；22/22 张 `native-checked-*.png` 全尺寸逐页复核通过，P7 双分支与 P10 可证伪命题无重叠或异常换行，中文与品牌元素完整；原生 PDF 为 `.work/ppt/visual-upgrade-20260912/representatives/lesson-06-slides-v1.3.2-visual-r3-native.pdf`。
 - 替代关系：本节视觉检查取代下方减负轮的旧视觉通过记录；旧记录仅保留为历史，不再证明当前候选通过。
-- 状态：✅ 候选已写回正式 `slides.pptx` v1.3.2；正式文件 SHA256 `81d2a8ee1b2b592b95872ca20074a172913c14ebcb81865ceecd0f78e0b2c713`。LibreOffice 中文字体回退单独记为兼容性风险，本轮不宣称 LibreOffice 通过。
+- 状态：✅ 候选已写回正式 `lesson-06.pptx` v1.3.2；正式文件 SHA256 `81d2a8ee1b2b592b95872ca20074a172913c14ebcb81865ceecd0f78e0b2c713`。LibreOffice 中文字体回退单独记为兼容性风险，本轮不宣称 LibreOffice 通过。
 - QA：`.work/ppt/visual-upgrade-20260912/audit/lesson-01-06-qa.md`。
 
 > 状态说明：以上视觉升级记录是现行 PPT 的唯一验收口径。下方减负轮、旧门控表与 2.0 修订轮仅保留当时事实；其中旧的笼统“视觉通过”记录已被本轮技术、教学、视觉和 PowerPoint 原生检查取代。

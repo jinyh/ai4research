@@ -157,7 +157,7 @@
 
 ### 原三、模板例外与制作约束
 
-- 以 `lessons/lesson-07/slides.pptx` 为直接视觉基线，克隆源页并编辑继承对象，保留 master → layout → slide 层级。
+- 以 `lessons/lesson-07/lesson-07.pptx` 为直接视觉基线，克隆源页并编辑继承对象，保留 master → layout → slide 层级。
 - P01 沿用交大封面；标准内容页保留交大红标题带、校徽、页脚与页码。
 - P04、P07 的连接线先于节点创建；静态状态必须完整可读，不依赖 Morph。
 - P09、P10、P17 的虚构教学工件在画面与 notes 同时标记，不伪装成真实日志或实证结果。
@@ -174,7 +174,7 @@
 
 ## 五、正式制作验收
 
-- 正式文件：`slides.pptx`，19 页；SHA-256 `0ac0b5f632dabee4ed2eeb335536604079b2a7a6ab12acfd6395a82107a6cd89`。
+- 正式文件：`lesson-11.pptx`，19 页；SHA-256 `0ac0b5f632dabee4ed2eeb335536604079b2a7a6ab12acfd6395a82107a6cd89`。
 - 模板：继承 `lesson-07/slides.pptx` 的 1 个 master、4 个 layout、交大品牌、红标题带、页脚和字体体系；模板忠实度检查 0 问题。
 - 技术：越界对象 0；空结构 placeholder 0；默认提示文本 0；19 页 speaker notes 均含 `[Sources]`。
 - 教学：19 页均映射 handout；五步、四约束、失败保留、AutoResearch/AI Scientist 分析边界与第 12 课衔接均在画面闭环。

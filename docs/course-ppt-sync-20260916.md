@@ -27,22 +27,22 @@
 
 | 课次 | 页数 | 屏显重绘页 | 文件 |
 | --- | ---: | --- | --- |
-| [L01](../lessons/lesson-01/README.md) | 31 | P03、P29 | [PPT](../lessons/lesson-01/slides.pptx) |
-| [L02](../lessons/lesson-02/README.md) | 26 | 仅更新讲述备注 | [PPT](../lessons/lesson-02/slides.pptx) |
-| [L03](../lessons/lesson-03/README.md) | 21 | 仅更新讲述备注 | [PPT](../lessons/lesson-03/slides.pptx) |
-| [L04](../lessons/lesson-04/README.md) | 18 | 仅更新讲述备注 | [PPT](../lessons/lesson-04/slides.pptx) |
-| [L05](../lessons/lesson-05/README.md) | 21 | P06、P16 | [PPT](../lessons/lesson-05/slides.pptx) |
-| [L06](../lessons/lesson-06/README.md) | 22 | P04、P10、P11、P14、P16、P22 | [PPT](../lessons/lesson-06/slides.pptx) |
-| [L07](../lessons/lesson-07/README.md) | 17 | P04、P05、P06、P07、P08、P11、P12 | [PPT](../lessons/lesson-07/slides.pptx) |
-| [L08](../lessons/lesson-08/README.md) | 15 | P04、P08、P10、P11 | [PPT](../lessons/lesson-08/slides.pptx) |
-| [L09](../lessons/lesson-09/README.md) | 21 | P04、P05、P07、P08、P09、P10、P11、P13、P18 | [PPT](../lessons/lesson-09/slides.pptx) |
-| [L10](../lessons/lesson-10/README.md) | 17 | P04、P05、P06、P11 | [PPT](../lessons/lesson-10/slides.pptx) |
-| [L11](../lessons/lesson-11/README.md) | 20 | P10、P11、P17 | [PPT](../lessons/lesson-11/slides.pptx) |
-| [L12](../lessons/lesson-12/README.md) | 21 | P06、P14、P15、P16、P17 | [PPT](../lessons/lesson-12/slides.pptx) |
-| [L13](../lessons/lesson-13/README.md) | 20 | P04、P06、P07、P08、P09、P10、P11、P12、P13、P14、P16 | [PPT](../lessons/lesson-13/slides.pptx) |
-| [L14](../lessons/lesson-14/README.md) | 16 | P03、P04、P05、P06、P07、P08、P09、P10、P11、P12 | [PPT](../lessons/lesson-14/slides.pptx) |
-| [L15](../lessons/lesson-15/README.md) | 15 | P02、P04、P06、P09、P10、P11 | [PPT](../lessons/lesson-15/slides.pptx) |
-| [L16](../lessons/lesson-16/README.md) | 12 | P01、P02、P03、P04、P05、P06、P07、P08、P09、P10、P11、P12 | [PPT](../lessons/lesson-16/slides.pptx) |
+| [L01](../lessons/lesson-01/README.md) | 31 | P03、P29 | [PPT](../lessons/lesson-01/lesson-01.pptx) |
+| [L02](../lessons/lesson-02/README.md) | 26 | 仅更新讲述备注 | [PPT](../lessons/lesson-02/lesson-02.pptx) |
+| [L03](../lessons/lesson-03/README.md) | 21 | 仅更新讲述备注 | [PPT](../lessons/lesson-03/lesson-03.pptx) |
+| [L04](../lessons/lesson-04/README.md) | 18 | 仅更新讲述备注 | [PPT](../lessons/lesson-04/lesson-04.pptx) |
+| [L05](../lessons/lesson-05/README.md) | 21 | P06、P16 | [PPT](../lessons/lesson-05/lesson-05.pptx) |
+| [L06](../lessons/lesson-06/README.md) | 22 | P04、P10、P11、P14、P16、P22 | [PPT](../lessons/lesson-06/lesson-06.pptx) |
+| [L07](../lessons/lesson-07/README.md) | 17 | P04、P05、P06、P07、P08、P11、P12 | [PPT](../lessons/lesson-07/lesson-07.pptx) |
+| [L08](../lessons/lesson-08/README.md) | 15 | P04、P08、P10、P11 | [PPT](../lessons/lesson-08/lesson-08.pptx) |
+| [L09](../lessons/lesson-09/README.md) | 21 | P04、P05、P07、P08、P09、P10、P11、P13、P18 | [PPT](../lessons/lesson-09/lesson-09.pptx) |
+| [L10](../lessons/lesson-10/README.md) | 17 | P04、P05、P06、P11 | [PPT](../lessons/lesson-10/lesson-10.pptx) |
+| [L11](../lessons/lesson-11/README.md) | 20 | P10、P11、P17 | [PPT](../lessons/lesson-11/lesson-11.pptx) |
+| [L12](../lessons/lesson-12/README.md) | 21 | P06、P14、P15、P16、P17 | [PPT](../lessons/lesson-12/lesson-12.pptx) |
+| [L13](../lessons/lesson-13/README.md) | 20 | P04、P06、P07、P08、P09、P10、P11、P12、P13、P14、P16 | [PPT](../lessons/lesson-13/lesson-13.pptx) |
+| [L14](../lessons/lesson-14/README.md) | 16 | P03、P04、P05、P06、P07、P08、P09、P10、P11、P12 | [PPT](../lessons/lesson-14/lesson-14.pptx) |
+| [L15](../lessons/lesson-15/README.md) | 15 | P02、P04、P06、P09、P10、P11 | [PPT](../lessons/lesson-15/lesson-15.pptx) |
+| [L16](../lessons/lesson-16/README.md) | 12 | P01、P02、P03、P04、P05、P06、P07、P08、P09、P10、P11、P12 | [PPT](../lessons/lesson-16/lesson-16.pptx) |
 
 ## 验证与边界
 

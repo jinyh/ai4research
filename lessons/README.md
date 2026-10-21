@@ -1,6 +1,12 @@
 # 逐课备课工作区
 
-最后更新：2026-10-20
+> 2026-10-21教学选目修订：L01–L04源稿和127页PPT新版预览已完成本地自检，现行课件、交付包与网站保持原版本。重点为L04先补背景再独立读图、真实AI导航核验与5/10分钟讨论校准。见[修订记录与预览](../docs/lesson-01-04-reading-revision-20261021.md)。
+
+> 2026-10-21文件命名：16课现行PPT统一为各课目录中的 `lesson-NN.pptx`，对应PDF使用 `lesson-NN.pdf`；逐页母稿保留 `slides.md`。交付目录使用同名课件，仅纳入已获授权课次。旧文件名到新文件名的映射及字节验证见[改名记录](../docs/lesson-filenames-20261021.md)。
+
+> 2026-10-21 L01–L03交付：三课95页PPT经用户明确授权提升现行版，纳入[2026秋季交付目录](../deliverables/2026-fall/README.md)。源稿、映射、技术与视觉自检完成；独立评审、实际PowerPoint、助教试做和投影待核项保留。本轮中间稿与渲染缓存已清理，见[执行记录](../docs/lesson-01-03-continuity-20261021.md)。
+
+最后更新：2026-10-21
 
 当前优先轮见[综合修订记录](../docs/personal-project-revision-20261020.md)：16课讲义、教案与任务区分教师MI演示和本人项目；L4形成新的32页候选。其他课的源稿接续不代表既有PPT已同步。真实GPT-2演示记录、独立评审、教师与现场确认分别登记，历史结果不用于替代本轮核验。
 
@@ -49,7 +55,7 @@ Pi Agent 为课程主要执行环境，OpenCode 等为备选；[课前准备](..
 
 同一课只保留一套现行内容口径。PPTX 是该口径的视觉交付，不是独立的事实来源。
 
-历史制作与视觉取舍见各课 README 的日期记录；当前磁盘文件总数为 16 套、344 页；L01 的母稿、README 与实际课件已统一为36页。第 16 课已完成现行 12 页重制。正式发布仍须完成教师／博士助教现场复核及授课设备、教室投影检查，通过后进入 `deliverables/`。
+历史制作与视觉取舍见各课 README 的日期记录；当前磁盘文件总数为 16 套、344 页；L01 的母稿、README 与实际课件已统一为36页。第 16 课已完成现行 12 页重制。L01–L03已按2026-10-21用户明确授权进入 `deliverables/2026-fall/`，待现场事项按交付记录继续跟踪；其他课沿用各自门控状态。
 
 ## 文件类型
 
@@ -59,7 +65,7 @@ Pi Agent 为课程主要执行环境，OpenCode 等为备选；[课前准备](..
 | --- | --- | --- |
 | `teaching-plan.md` | 教师 | 教学目标、90 分钟流程、课堂活动、演示脚本、时间控制和课后复盘 |
 | `handout.md` | 学生 | 可独立阅读的正式讲义，包含概念、方法、案例、练习、术语和延伸阅读 |
-| `slides.md` / `slides.pptx` | 课堂展示 | 中文为主的逐页内容母稿与现行可编辑 PPT；尚无现行 PPT 时不放置过时占位文件 |
+| `slides.md` / `lesson-NN.pptx` | 课堂展示 | 中文为主的逐页内容母稿与现行可编辑 PPT；尚无现行 PPT 时不放置过时占位文件 |
 | `activity-*` | 教师与学生 | 课堂练习、反馈卡、rubric、示例输入和参考答案 |
 
 ## 试讲材料
@@ -69,53 +75,53 @@ Pi Agent 为课程主要执行环境，OpenCode 等为备选；[课前准备](..
 ## 第 1 课
 
 - 现行材料与门控状态统一从 [第 1 课内容入口](./lesson-01/README.md) 查看，避免在两处重复维护版本号。
-- 旧 39 页 PPTX 已归入 PPT 试制里程碑（仅本机保留：`archive/ppt-experiments/lesson-01/2026-07-30-pre-gate-39-page-baseline/decision-record.md`）；现行 36 页课件见 [slides.pptx](./lesson-01/slides.pptx)，验收以本课 README 最新轮为准。
+- 旧 39 页 PPTX 已归入 PPT 试制里程碑（仅本机保留：`archive/ppt-experiments/lesson-01/2026-07-30-pre-gate-39-page-baseline/decision-record.md`）；现行 36 页课件见 [lesson-01.pptx](./lesson-01/lesson-01.pptx)，验收以本课 README 最新轮为准。
 - 2026-07-07 的详细教学包与旧详细讲义已迁入 被替代文稿归档（仅本机保留：`archive/superseded-docs/lesson-01/`），不参与现行制作。
 - [教师文献精读卡集](./lesson-01/reading-notes.md)：第 1 课涉及 8 份文献按 AI 辅助阅读协议产出的精读卡；原文定位已完成，待教师复核与定稿。
 
 ## 第 2 课
 
 - 现行材料与门控状态统一从 [第 2 课内容入口](./lesson-02/README.md) 查看。
-- 现行 27 页课件见 [slides.pptx](./lesson-02/slides.pptx)；P02 为第 1 讲回顾与材料包入口，P26 为独立知识点总结，验收以本课 README 最新轮为准。
+- 现行 27 页课件见 [lesson-02.pptx](./lesson-02/lesson-02.pptx)；P02 为第 1 讲回顾与材料包入口，P26 为独立知识点总结，验收以本课 README 最新轮为准。
 
 ## 第 3 课
 
 - 现行材料与门控状态统一从 [第 3 课内容入口](./lesson-03/README.md) 查看。
-- 现行 32 页可编辑课件见 [slides.pptx](./lesson-03/slides.pptx)；2026-10-15 IOI 主线与屏显一致性修订见课次入口，当前为审阅用课堂稿，现场验证另登记。
+- 现行 32 页可编辑课件见 [lesson-03.pptx](./lesson-03/lesson-03.pptx)；2026-10-15 IOI 主线与屏显一致性修订见课次入口，当前为审阅用课堂稿，现场验证另登记。
 
 ## 第 4 课
 
 - 现行材料与门控状态统一从 [第 4 课内容入口](./lesson-04/README.md) 查看。
-- L4 当前讲义、教案与32页母稿采用2026-10-20 IOI主线；[slides.pptx](./lesson-04/slides.pptx)保留冻结基线，本轮预览与 Harness 检查见[修订记录](../docs/lesson-04-harness-20261020.md)。教师与现场复核单列。
+- L4讲义、教案与32页母稿采用教师MI Demo＋学生个人项目主线；[现行课件](./lesson-04/lesson-04.pptx)已于2026-10-21按教师确认由checked-13提升。文件指纹、检查和待现场事项见[版本登记](../docs/lesson-04-current-20261021.md)。
 
 ## 第 5 课
 
 - 现行材料与门控状态统一从 [第 5 课内容入口](./lesson-05/README.md) 查看。
-- 现行 21 页正式课件见 [slides.pptx](./lesson-05/slides.pptx)，已通过技术、教学与视觉检查；封面只保留正式课名，P20 为独立知识点总结，P21 为退出卡与第 6 课预告。
+- 现行 21 页正式课件见 [lesson-05.pptx](./lesson-05/lesson-05.pptx)，已通过技术、教学与视觉检查；封面只保留正式课名，P20 为独立知识点总结，P21 为退出卡与第 6 课预告。
 
 ## 第 6 课
 
 - 现行材料与门控状态统一从 [第 6 课内容入口](./lesson-06/README.md) 查看。
-- 现行 22 页正式课件见 [slides.pptx](./lesson-06/slides.pptx)，已通过技术、教学与视觉检查；封面只保留正式课名，P20-P22 依次为知识点总结、提交/回退、退出/第 7 课预告。
+- 现行 22 页正式课件见 [lesson-06.pptx](./lesson-06/lesson-06.pptx)，已通过技术、教学与视觉检查；封面只保留正式课名，P20-P22 依次为知识点总结、提交/回退、退出/第 7 课预告。
 
 ## 第 7 课
 
 - 现行材料与门控状态统一从 [第 7 课内容入口](./lesson-07/README.md) 查看。
-- 现行 17 页正式课件见 [slides.pptx](./lesson-07/slides.pptx)，已通过技术、教学与视觉检查；P16 为独立知识点总结。
+- 现行 17 页正式课件见 [lesson-07.pptx](./lesson-07/lesson-07.pptx)，已通过技术、教学与视觉检查；P16 为独立知识点总结。
 
 ## 第 8-16 课
 
 | 课次 | 页数 | 现行入口 | PPT 文件 |
 | --- | ---: | --- | --- |
-| 8 | 15 | [README](./lesson-08/README.md) | [slides.pptx](./lesson-08/slides.pptx) |
-| 9 | 21 | [README](./lesson-09/README.md) | [slides.pptx](./lesson-09/slides.pptx) |
-| 10 | 17 | [README](./lesson-10/README.md) | [slides.pptx](./lesson-10/slides.pptx) |
-| 11 | 20 | [README](./lesson-11/README.md) | [slides.pptx](./lesson-11/slides.pptx) |
-| 12 | 21 | [README](./lesson-12/README.md) | [slides.pptx](./lesson-12/slides.pptx) |
-| 13 | 20 | [README](./lesson-13/README.md) | [slides.pptx](./lesson-13/slides.pptx) |
-| 14 | 16 | [README](./lesson-14/README.md) | [slides.pptx](./lesson-14/slides.pptx) |
-| 15 | 15 | [README](./lesson-15/README.md) | [slides.pptx](./lesson-15/slides.pptx) |
-| 16 | 12 | [README](./lesson-16/README.md) | [slides.pptx](./lesson-16/slides.pptx) |
+| 8 | 15 | [README](./lesson-08/README.md) | [lesson-08.pptx](./lesson-08/lesson-08.pptx) |
+| 9 | 21 | [README](./lesson-09/README.md) | [lesson-09.pptx](./lesson-09/lesson-09.pptx) |
+| 10 | 17 | [README](./lesson-10/README.md) | [lesson-10.pptx](./lesson-10/lesson-10.pptx) |
+| 11 | 20 | [README](./lesson-11/README.md) | [lesson-11.pptx](./lesson-11/lesson-11.pptx) |
+| 12 | 21 | [README](./lesson-12/README.md) | [lesson-12.pptx](./lesson-12/lesson-12.pptx) |
+| 13 | 20 | [README](./lesson-13/README.md) | [lesson-13.pptx](./lesson-13/lesson-13.pptx) |
+| 14 | 16 | [README](./lesson-14/README.md) | [lesson-14.pptx](./lesson-14/lesson-14.pptx) |
+| 15 | 15 | [README](./lesson-15/README.md) | [lesson-15.pptx](./lesson-15/lesson-15.pptx) |
+| 16 | 12 | [README](./lesson-16/README.md) | [lesson-16.pptx](./lesson-16/lesson-16.pptx) |
 
 九套课件均继承交大 master/layout 与品牌系统；逐课关键页规格、来源 notes、技术/教学/视觉检查及剩余授课现场风险见各课 README 与 `.work/ppt/lesson-NN/` QA 台账。
 

@@ -68,7 +68,7 @@ class HarnessTests(unittest.TestCase):
         return harness.evaluate(self.root, '04', self.manifest['stage'], self.manifest_path)
 
     def pptx(self, body='标题</a:t></a:r></a:p><a:p><a:r><a:t>对象 判断 原文 核验 条目', order=(1,)):
-        path = self.lesson / 'slides.pptx'
+        path = self.lesson / 'lesson-04.pptx'
         ns = 'xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"'
         with zipfile.ZipFile(path, 'w') as z:
             z.writestr('ppt/presentation.xml', f'<p:presentation {ns}><p:sldIdLst>' + ''.join(f'<p:sldId id="{i+255}" r:id="r{i}"/>' for i in order) + '</p:sldIdLst></p:presentation>')

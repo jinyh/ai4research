@@ -55,22 +55,22 @@
 
 | 课次 | 学生任务 | 教师依据 | 可编辑课件 | 页数 | 屏显修改页 | SHA256前12位 |
 | --- | --- | --- | --- | ---: | --- | --- |
-| L1 | [任务](../lessons/lesson-01/judgment-task.md) | [依据](../lessons/lesson-01/judgment-teacher.md) | [PPT](../lessons/lesson-01/slides.pptx) | 36 | 7, 31, 36 | `795b43a5dfd8` |
-| L2 | [任务](../lessons/lesson-02/judgment-task.md) | [依据](../lessons/lesson-02/judgment-teacher.md) | [PPT](../lessons/lesson-02/slides.pptx) | 27 | 4, 24, 27 | `d6b0b64294c7` |
-| L3 | [任务](../lessons/lesson-03/judgment-task.md) | [依据](../lessons/lesson-03/judgment-teacher.md) | [PPT](../lessons/lesson-03/slides.pptx) | 21 | 1, 3, 6, 13, 14, 16, 17, 18, 21 | `4ecadbabf71b` |
-| L4 | [任务](../lessons/lesson-04/judgment-task.md) | [依据](../lessons/lesson-04/judgment-teacher.md) | [PPT](../lessons/lesson-04/slides.pptx) | 18 | 2, 3, 9, 11, 12, 14, 15, 17, 18 | `fb4775e9bc00` |
-| L5 | [任务](../lessons/lesson-05/judgment-task.md) | [依据](../lessons/lesson-05/judgment-teacher.md) | [PPT](../lessons/lesson-05/slides.pptx) | 21 | 3, 17, 21 | `05ccf732969f` |
-| L6 | [任务](../lessons/lesson-06/judgment-task.md) | [依据](../lessons/lesson-06/judgment-teacher.md) | [PPT](../lessons/lesson-06/slides.pptx) | 22 | 3, 17, 22 | `b1615ad9eaa3` |
-| L7 | [任务](../lessons/lesson-07/judgment-task.md) | [依据](../lessons/lesson-07/judgment-teacher.md) | [PPT](../lessons/lesson-07/slides.pptx) | 17 | 3, 14, 17 | `1bfacfda4c4c` |
-| L8 | [任务](../lessons/lesson-08/judgment-task.md) | [依据](../lessons/lesson-08/judgment-teacher.md) | [PPT](../lessons/lesson-08/slides.pptx) | 15 | 2, 13, 15 | `12c247605d22` |
-| L9 | [任务](../lessons/lesson-09/judgment-task.md) | [依据](../lessons/lesson-09/judgment-teacher.md) | [PPT](../lessons/lesson-09/slides.pptx) | 21 | 3, 17, 21 | `4ed522a61f3d` |
-| L10 | [任务](../lessons/lesson-10/judgment-task.md) | [依据](../lessons/lesson-10/judgment-teacher.md) | [PPT](../lessons/lesson-10/slides.pptx) | 17 | 3, 13, 17 | `4858f29a1a96` |
-| L11 | [任务](../lessons/lesson-11/judgment-task.md) | [依据](../lessons/lesson-11/judgment-teacher.md) | [PPT](../lessons/lesson-11/slides.pptx) | 20 | 3, 16, 20 | `2c68dc8b688a` |
-| L12 | [任务](../lessons/lesson-12/judgment-task.md) | [依据](../lessons/lesson-12/judgment-teacher.md) | [PPT](../lessons/lesson-12/slides.pptx) | 21 | 2, 17, 21 | `dcc1b0ebe8a6` |
-| L13 | [任务](../lessons/lesson-13/judgment-task.md) | [依据](../lessons/lesson-13/judgment-teacher.md) | [PPT](../lessons/lesson-13/slides.pptx) | 20 | 3, 17, 20 | `3ae42c8c6eaa` |
-| L14 | [任务](../lessons/lesson-14/judgment-task.md) | [依据](../lessons/lesson-14/judgment-teacher.md) | [PPT](../lessons/lesson-14/slides.pptx) | 16 | 3, 8, 16 | `4875714db659` |
-| L15 | [任务](../lessons/lesson-15/judgment-task.md) | [依据](../lessons/lesson-15/judgment-teacher.md) | [PPT](../lessons/lesson-15/slides.pptx) | 15 | 4, 10, 15 | `ec4ed1d7fa0b` |
-| L16 | [任务](../lessons/lesson-16/judgment-task.md) | [依据](../lessons/lesson-16/judgment-teacher.md) | [PPT](../lessons/lesson-16/slides.pptx) | 12 | 6, 7, 12 | `0c967472c86e` |
+| L1 | [任务](../lessons/lesson-01/judgment-task.md) | [依据](../lessons/lesson-01/judgment-teacher.md) | [PPT](../lessons/lesson-01/lesson-01.pptx) | 36 | 7, 31, 36 | `795b43a5dfd8` |
+| L2 | [任务](../lessons/lesson-02/judgment-task.md) | [依据](../lessons/lesson-02/judgment-teacher.md) | [PPT](../lessons/lesson-02/lesson-02.pptx) | 27 | 4, 24, 27 | `d6b0b64294c7` |
+| L3 | [任务](../lessons/lesson-03/judgment-task.md) | [依据](../lessons/lesson-03/judgment-teacher.md) | [PPT](../lessons/lesson-03/lesson-03.pptx) | 21 | 1, 3, 6, 13, 14, 16, 17, 18, 21 | `4ecadbabf71b` |
+| L4 | [任务](../lessons/lesson-04/judgment-task.md) | [依据](../lessons/lesson-04/judgment-teacher.md) | [PPT](../lessons/lesson-04/lesson-04.pptx) | 18 | 2, 3, 9, 11, 12, 14, 15, 17, 18 | `fb4775e9bc00` |
+| L5 | [任务](../lessons/lesson-05/judgment-task.md) | [依据](../lessons/lesson-05/judgment-teacher.md) | [PPT](../lessons/lesson-05/lesson-05.pptx) | 21 | 3, 17, 21 | `05ccf732969f` |
+| L6 | [任务](../lessons/lesson-06/judgment-task.md) | [依据](../lessons/lesson-06/judgment-teacher.md) | [PPT](../lessons/lesson-06/lesson-06.pptx) | 22 | 3, 17, 22 | `b1615ad9eaa3` |
+| L7 | [任务](../lessons/lesson-07/judgment-task.md) | [依据](../lessons/lesson-07/judgment-teacher.md) | [PPT](../lessons/lesson-07/lesson-07.pptx) | 17 | 3, 14, 17 | `1bfacfda4c4c` |
+| L8 | [任务](../lessons/lesson-08/judgment-task.md) | [依据](../lessons/lesson-08/judgment-teacher.md) | [PPT](../lessons/lesson-08/lesson-08.pptx) | 15 | 2, 13, 15 | `12c247605d22` |
+| L9 | [任务](../lessons/lesson-09/judgment-task.md) | [依据](../lessons/lesson-09/judgment-teacher.md) | [PPT](../lessons/lesson-09/lesson-09.pptx) | 21 | 3, 17, 21 | `4ed522a61f3d` |
+| L10 | [任务](../lessons/lesson-10/judgment-task.md) | [依据](../lessons/lesson-10/judgment-teacher.md) | [PPT](../lessons/lesson-10/lesson-10.pptx) | 17 | 3, 13, 17 | `4858f29a1a96` |
+| L11 | [任务](../lessons/lesson-11/judgment-task.md) | [依据](../lessons/lesson-11/judgment-teacher.md) | [PPT](../lessons/lesson-11/lesson-11.pptx) | 20 | 3, 16, 20 | `2c68dc8b688a` |
+| L12 | [任务](../lessons/lesson-12/judgment-task.md) | [依据](../lessons/lesson-12/judgment-teacher.md) | [PPT](../lessons/lesson-12/lesson-12.pptx) | 21 | 2, 17, 21 | `dcc1b0ebe8a6` |
+| L13 | [任务](../lessons/lesson-13/judgment-task.md) | [依据](../lessons/lesson-13/judgment-teacher.md) | [PPT](../lessons/lesson-13/lesson-13.pptx) | 20 | 3, 17, 20 | `3ae42c8c6eaa` |
+| L14 | [任务](../lessons/lesson-14/judgment-task.md) | [依据](../lessons/lesson-14/judgment-teacher.md) | [PPT](../lessons/lesson-14/lesson-14.pptx) | 16 | 3, 8, 16 | `4875714db659` |
+| L15 | [任务](../lessons/lesson-15/judgment-task.md) | [依据](../lessons/lesson-15/judgment-teacher.md) | [PPT](../lessons/lesson-15/lesson-15.pptx) | 15 | 4, 10, 15 | `ec4ed1d7fa0b` |
+| L16 | [任务](../lessons/lesson-16/judgment-task.md) | [依据](../lessons/lesson-16/judgment-teacher.md) | [PPT](../lessons/lesson-16/lesson-16.pptx) | 12 | 6, 7, 12 | `0c967472c86e` |
 
 ## 待独立登记
 

@@ -119,8 +119,9 @@ def check_lesson_metadata(checks: Checks) -> None:
             if actual != declared:
                 mismatches.append(f"L{number:02d} {target_name}: README {declared}, 文件 {actual or '无版本'}")
 
-        pptx = lesson / "slides.pptx"
-        page_match = re.search(r"\[slides\.pptx\]\(\./slides\.pptx\).*?（(\d+) 页）", moc)
+        pptx_name = f"lesson-{number:02d}.pptx"
+        pptx = lesson / pptx_name
+        page_match = re.search(rf"\[{re.escape(pptx_name)}\]\(\./{re.escape(pptx_name)}\).*?（(\d+) 页）", moc)
         try:
             with zipfile.ZipFile(pptx) as archive:
                 actual_pages = sum(bool(SLIDE_XML_RE.fullmatch(name)) for name in archive.namelist())
@@ -159,7 +160,7 @@ def check_authoritative_sources_and_archive(checks: Checks) -> None:
     status_match = re.search(r"^状态：(.*)$", l16_handout, re.MULTILINE)
     status = status_match.group(1) if status_match else ""
     handout_row = next((line for line in l16_moc.splitlines() if line.startswith("| [handout.md]")), "")
-    ppt_row = next((line for line in l16_moc.splitlines() if line.startswith("| [slides.pptx]")), "")
+    ppt_row = next((line for line in l16_moc.splitlines() if line.startswith("| [lesson-16.pptx]")), "")
     draft_consistent = "草稿" in status and "待定稿·学生讲义" in handout_row and "课堂 PPT 候选" in ppt_row
     current_revision = re.search(r"^## RSI 与评价训练修订轮[^\n]*\n(.*?)(?=^## |\Z)", l16_moc, re.MULTILINE | re.DOTALL)
     revision_text = current_revision.group(1) if current_revision else ""

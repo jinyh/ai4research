@@ -185,7 +185,7 @@ MI（机制可解释性）是教师贯穿全课的研究 Demo；学生从第1课
 
 - [第 6 课正式讲义](./handout.md)
 - [第 6 课正式 PPT 逐页稿](./slides.md)
-- [第 6 课正式课堂 PPT](./slides.pptx)
+- [第 6 课正式课堂 PPT](./lesson-06.pptx)
 - [课程备课规划](../备课规划.md) 第 6 课
 - [课程大纲](../../course/syllabus.md)
 - [逐课阅读清单](../../course/reading-list.md) 第 6 课

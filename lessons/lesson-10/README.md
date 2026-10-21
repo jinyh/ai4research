@@ -57,7 +57,7 @@
 | [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.8.0 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
 | [slides.md](./slides.md) | 现行·逐页母稿 v0.8.0 | 17 页屏显、讲述、动作与来源；冻结 PPTX 仍为基线；本轮修订预览待生成与检查 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.2.1 | 本轮实际构图、可编辑对象与验收；旧规格保留历史 |
-| [slides.pptx](./slides.pptx) | 冻结基线·可编辑课堂 PPT（17 页） | 2026-10-14 冻结版本；本轮修订预览待生成与检查，未同步正式文件 |
+| [lesson-10.pptx](./lesson-10.pptx) | 冻结基线·可编辑课堂 PPT（17 页） | 2026-10-14 冻结版本；本轮修订预览待生成与检查，未同步正式文件 |
 | [assets/agent-task-example/](./assets/agent-task-example/) | 现行·课次本地真实教学工件 | 可核验的 before/after、`generate.diff`、`unittest`、测试输出与越权失败日志；供 P12 演示和无执行环境备用路径使用 |
 
 ## 母稿与讲述备注同步修订轮（2026-09-13，当前）
@@ -70,7 +70,7 @@
 - 教学检查：清除 README 与 P17 notes 中将第 11 课冻结队列误写为按评价结果 Keep/Discard 的旧衔接。不新增提交或课堂任务。
 - 视觉检查：最终导出文件全页重新渲染并扫描；屏显图层未修改，原生视觉基线可继续追溯。
 - Microsoft PowerPoint 原生检查：本轮未执行，2026-09-12 的原生通过仅对应当时文件；本轮不得记为原生通过。教室投影仍待授课机复核。
-- 正式文件：`slides.pptx`，17 页；SHA-256 `da80d27420ffe7df7ab83d742b8b6a0b0cad0492b2108f0bac4bb6db38bf4158`。
+- 正式文件：`lesson-10.pptx`，17 页；SHA-256 `da80d27420ffe7df7ab83d742b8b6a0b0cad0492b2108f0bac4bb6db38bf4158`。
 - QA：`.work/ppt/lesson-10/2026-09-13-sync-fix/validation.json`、`package-diff.json`、`final-path-check.json`、`formal-reopen.json`、`final-render/`；无须新增里程碑副本。
 
 ## 2026-08-20 课件修订
@@ -83,7 +83,7 @@
 ### 对象化视觉提升轮（正式，2026-09-12）
 
 - 内容与教学：内容口径、课堂最低产出和 90 分钟结构不变；视觉提升教学门复核通过。
-- 正式文件：17 页；`slides.pptx`；SHA-256 `6c075708e561bd251da46d0c9b8c77bf5a390ca66ab4ee8556570602a2de1d40`。
+- 正式文件：17 页；`lesson-10.pptx`；SHA-256 `6c075708e561bd251da46d0c9b8c77bf5a390ca66ab4ee8556570602a2de1d40`。
 - 技术检查：包结构与布局 0 finding；1 个 Master、4 个 Layout；17/17 页 notes 含 `[Sources]`；教学文字不低于 18 pt。
 - 教学检查：真实 diff 完整显示 `paper_id`、`summary` 与合法换行的缺失校验，受限执行继续直接交给第 11 课冻结循环。
 - 视觉检查：Artifact Tool 全尺寸与联系图已复核；P06 标签不溢出，P12 采用 720px 代码区与 410px 测试/失败区，短字符串不自动折断；ReAct、SWE-bench 页脚显示作者与年份。
@@ -113,7 +113,7 @@
 ### 学生入口呈现增强轮（2026-08-22，历史；当前 PPT 验收以对象化视觉提升轮为准）
 
 - 门 1 与内容门已复核通过：只补任务契约与失败记录的具体链接，课堂闭环、案例事实和来源边界不变。
-- 90 分钟教学门、逐页映射门、PPT 制作与三重检查不受影响，沿用下方既有通过记录；本轮不修改 `teaching-plan.md`、`slides.md` 或 `slides.pptx`。
+- 90 分钟教学门、逐页映射门、PPT 制作与三重检查不受影响，沿用下方既有通过记录；本轮不修改 `teaching-plan.md`、`slides.md` 或 `lesson-10.pptx`。
 - 待延后项：无；本机 Python、预置 diff 与测试输出的课堂可用性仍由助教按审阅协议复核。
 
 - **三件套（口径唯一）**：`handout.md`（教什么）↔ `teaching-plan.md`（怎么教）↔ `slides.md`（逐页屏显）。讲义是内容源，教案不替代讲义，slides 不自造事实。

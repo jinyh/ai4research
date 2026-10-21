@@ -13,24 +13,29 @@
   - 出处：National Academies of Sciences, Engineering, and Medicine. *Fostering Integrity in Research* (2017), Highlights p.1. DOI: [10.17226/21896](https://doi.org/10.17226/21896)；截取 nap.nationalacademies.org 开放获取样张第 1 页（报告标题、六价值句与封面）。
   - 许可：NAP 开放获取（免费下载阅读）；课件图旁保留简短身份、备注中记录完整出处，不单独发布本图。如需上传网络或正式发布，另行核验 NAP 图像复用条款。
   - 脱敏状态：不适用（公开出版物）。
-  - 嵌入位置：`slides.pptx` P05（科研诚信六价值页）左侧截图位；`handout.md` 不嵌图。
+  - 嵌入位置：`lesson-02.pptx` P05（科研诚信六价值页）左侧截图位；`handout.md` 不嵌图。
 
 - `cas-2024-ai-integrity-page-screenshot.png`：
   - 来源角色：中国科学院《诚信提醒》官方网页截图，用于确认文件身份与科研活动规范来源，不替代逐条原文阅读。
   - 出处：[中国科学院发布《关于在科研活动中规范使用人工智能技术的诚信提醒》](https://www.cas.cn/sygz/202409/t20240910_5031186.shtml)，截图日期 2026-08-26。
   - 许可：公开网页课堂引用；课件内标明来源。对外发布前再次核验网站使用条款。
   - 脱敏状态：不适用（公开网页）。
-  - 嵌入位置：`slides.pptx` P06 左栏；`handout.md` 不嵌图。
+  - 嵌入位置：`lesson-02.pptx` P06 左栏；`handout.md` 不嵌图。
 
 - `sjtu-2025-ai-policy-page1-screenshot.png`：
   - 来源角色：上海交通大学《关于在教育教学中使用 AI 的规范（试行版）》原始 PDF 首页截图，用于确认校级文件身份与适用场景。
   - 出处：[上海交通大学正式 PDF](https://soo.sjtu.edu.cn/upload/file/20250217/20250217162021.pdf)，下载并渲染日期 2026-08-26。
   - 许可：校级公开文件课堂引用；课件内标明来源。对外发布前按学校要求复核。
   - 脱敏状态：不适用（公开文件）。
-  - 嵌入位置：`slides.pptx` P06 右栏；`handout.md` 不嵌图。
+  - 嵌入位置：`lesson-02.pptx` P06 右栏；`handout.md` 不嵌图。
 
 ## 2026-09-15 整课重建
 
 - NASEM、CAS、SJTU 原始截图继续用于来源识别；CAS 与 SJTU 采用 PPT 内原生裁切，完整图片保留。
 - P06/P13/P25 的历史生成线稿退出当前 PPT，风险分支与 harness 改为原生可编辑节点和连接。生成资产保留为历史材料。
 - 详细来源、完整规范题名与复用说明进入备注。
+
+
+## 2026-10-21 连续修订
+
+本轮目录、授权、E1–E5与模拟请求统一来自classroom-pack.md，均为教学构造、非真实日志；private/与heldout/只有无敏感内容的对象描述。P04/P07/P21–P23用可编辑文字呈现；人工控制不冒充自动限制。原规范截图保留历史来源身份，现行规则须回源复核。

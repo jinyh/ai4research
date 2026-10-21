@@ -52,7 +52,7 @@
 | [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v0.7.0 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
 | [slides.md](./slides.md) | 现行·逐页母稿 v0.7.1 | 16 页屏显、讲述、动作与来源；冻结 PPTX 仍为基线；本轮修订预览待生成与检查 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.3.1 | 本轮实际构图、可编辑对象与验收；旧规格保留历史 |
-| [slides.pptx](./slides.pptx) | 冻结基线·可编辑课堂 PPT（16 页） | 2026-10-14 冻结版本；本轮修订预览待生成与检查，未同步正式文件 |
+| [lesson-14.pptx](./lesson-14.pptx) | 冻结基线·可编辑课堂 PPT（16 页） | 2026-10-14 冻结版本；本轮修订预览待生成与检查，未同步正式文件 |
 
 ## 2026-09-12 视觉提升轮（当前有效验收）
 
@@ -159,7 +159,7 @@
 
 ## 历史 PPT 验证记录（同日减负轮；原视觉通过结论撤回）
 
-- 正式路径：`lessons/lesson-14/slides.pptx`；16 页；403814 bytes；SHA-256 `3a65f37eece13f25c7e067277483327c137daf947422aa71814e7c5d5fc581d0`。
+- 正式路径：`lessons/lesson-14/lesson-14.pptx`；16 页；403814 bytes；SHA-256 `3a65f37eece13f25c7e067277483327c137daf947422aa71814e7c5d5fc581d0`。
 - 模板关系：保留交大原生 1 个 master、4 个 layout、校徽、红标题带、页码与主题关系。
 - 技术检查：16 组 notes，`[Sources]` 16/16；最终器结构、字体、版面与 Artifact Tool 重开检查通过。
 - 教学检查：16 页与 `slides.md` v0.4.1 同序，课堂→课后→研究门边界、120 次输出、主指标和 H1/A1/A2/A3 可见。
@@ -169,9 +169,9 @@
 
 ## 历史 PPT 验证记录（2026-08-07）
 
-- 正式路径：`lessons/lesson-14/slides.pptx`
+- 正式路径：`lessons/lesson-14/lesson-14.pptx`
 - 页数：17；文件大小：422841 bytes；SHA-256：`2b7500ef605e26baa0c6d5af427b7d152236c80f4d8ec48df0fab2d46ed1d84d`
-- 模板：`lessons/lesson-07/slides.pptx`；源模板 SHA-256：`34bfad2dda3703277b6120dd2afc61c9935eef21e6e1f4002f0d34df711dbc6d`
+- 模板：`lessons/lesson-07/lesson-07.pptx`；源模板 SHA-256：`34bfad2dda3703277b6120dd2afc61c9935eef21e6e1f4002f0d34df711dbc6d`
 - 技术检查：master=1，layout=4，media=5；17 个 notes 页，17 个 `[Sources]` 块；空结构 placeholder=0；默认提示词=0；Artifact Tool layout 越界=0；模板保真问题=0。
 - 教学检查：17 页标题与 `slides.md` 一致；Checkpoint 4 十项、IMRaD 回写、结论追踪、失败与冲突证据保留、AI 使用披露七字段、`stable` 证据要求和第 15 课输入均有对应页面。
 - 最终重开：LibreOffice 从正式磁盘路径重开并导出 PDF；PDF 为 17 页、16:9（960.009 × 540 pt）；逐页复渲染接触表通过。

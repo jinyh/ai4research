@@ -1,5 +1,16 @@
 # 第 3 课内容入口（MOC）
 
+> 本轮状态（2026-10-21，教学选目修订）：源稿按教师批准的审阅意见更新，PPT新版预览已完成源稿、映射、文件和视觉自检。现行 `lesson-03.pptx` 保留已确认基线，尚未承载本轮修改；交付包与网站保持原版本。本轮入口与检查见[修订执行记录](../../docs/lesson-01-04-reading-revision-20261021.md)。
+
+- [本轮新版PPT预览](../../.work/ppt/lesson-03/2026-10-21-reading/output/lesson-03-reading-preview.pptx)：可编辑，独立与现场复核另记。
+
+## 既有基线与历史检查
+
+
+> 当前轮（2026-10-21）：用户明确“可以进入deliverables，并且清理临时文件”，本轮32页PPT已提升为[现行课件](./lesson-03.pptx)，并纳入[2026秋季交付目录](../../deliverables/2026-fall/README.md)。内容、映射、技术与视觉自检完成；独立评审、实际PowerPoint、助教试做和投影仍待登记，交付授权不代替现场验证。见[本轮执行记录](../../docs/lesson-01-03-continuity-20261021.md)。
+
+原始材料保存在本机 `archive/course-releases/2026-10-21-l01-l03/input-baseline/`；本轮中间稿、逐页渲染和构建缓存已清理，检查报告保留。学生网站未随本次交付更新。以下按日期保留的记录只描述当时版本，当前状态以本段及文件清单为准。
+
 > 当前轮（2026-10-20）：已修正为教师MI Demo与学生本人项目，源稿任务见[综合修订记录](../../docs/personal-project-revision-20261020.md)。本课原PPT保留；源稿改动不继承旧版PPT或人员复核通过，后续按课接入呈现复验。
 
 
@@ -83,10 +94,10 @@
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生讲义（本轮复核另登记） v2.1.0 | 学生可独立阅读的当前内容源 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v2.1.0 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v1.0.0 | 32 页屏显、讲述、动作、讲义映射与来源；已与本轮 PPT 逐项核对 |
-| [slides.pptx](./slides.pptx) | 现行·审阅用课堂 PPT（32 页） | 2026-10-15 IOI 主线修订；技术、屏显映射与全页视觉自检完成；教师与现场验收待登记 |
+| [handout.md](./handout.md) | 现行·学生讲义（本轮复核另登记） v2.2.0 | 学生可独立阅读的当前内容源 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v2.2.1 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v2.2.1 | 32 页屏显、讲述、动作、讲义映射与来源；已与本轮 PPT 逐项核对 |
+| [lesson-03.pptx](./lesson-03.pptx) | 现行·可编辑课堂 PPT（32 页） | 2026-10-21用户授权交付，与deliverables副本字节一致；现场验证待登记 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v2.0.0 | 本轮实际构图、可编辑对象与验收；旧规格保留历史 |
 | [ioi-retrieval-record.md](./ioi-retrieval-record.md) | 现行·主线检索记录 v1.0.0 | 真实返回、后向引文、访问失败恢复与来源核验 |
 | [source-audit-demo.md](./source-audit-demo.md) | 现行·教学资产 v1.1.0 | Keshav 2007 Crossref—DOI—原文—候选表 trace 与断网备用 |
@@ -98,13 +109,13 @@
 ### 视觉升级（2026-09-12）
 
 - 逐页映射门：✅ `slides.md` v0.8.1 仅更新视觉结构与字号层级，屏显语义、页数与 90 分钟教案不变。
-- PPT 构建：✅ 21 页候选 r6 已提升为现行 [slides.pptx](./slides.pptx)；构建目录 `.work/ppt/lesson-03/2026-09-12-visual-upgrade/`；SHA256 `e2dd3cf8f9ba6141f57a671b4ae87d72157e2fcd23b7dc3ecd6e6b987ec7b8ef`。
+- PPT 构建：✅ 21 页候选 r6 已提升为现行 [lesson-03.pptx](./lesson-03.pptx)；构建目录 `.work/ppt/lesson-03/2026-09-12-visual-upgrade/`；SHA256 `e2dd3cf8f9ba6141f57a671b4ae87d72157e2fcd23b7dc3ecd6e6b987ec7b8ef`。
 - 技术检查：✅ finalizer、Artifact Tool 最终文件重导入、21/21 notes `[Sources]`、1 Master/4 Layout、空 placeholder 与字号审计通过。
 - 教学检查：✅ P14 的真实 Keshav 原文身份/DOI、P16 幻觉引用审计与 P18 可复盘检索工作表均与逐页母稿一致。
 - 视觉检查：✅ 21 页全尺寸和 contact sheet 逐页复核通过；标题 30–32pt、常规正文 22–24pt、检索/表格工件 18–20pt，正文以 regular 为主；r6 延续 P7/P13/P20/P21 修复，并把 P16 底部教学提示重建为实际 18pt 文本框。
 - PowerPoint 原生检查：✅ Microsoft PowerPoint 已打开 r6 并原生导出；延续 r4 的 21/21 页复核，并对 r6 P16 的 18pt 教学提示单页复核通过，无越界或异常换行；原生 PDF 为 `.work/ppt/visual-upgrade-20260912/representatives/lesson-03-slides-v0.8.1-visual-r6-native.pdf`。
 - 替代关系：本节视觉检查取代下方减负轮的旧视觉通过记录；旧记录仅保留为历史，不再证明当前候选通过。
-- 状态：✅ 候选已写回正式 `slides.pptx` v0.8.1；正式文件 SHA256 `e2dd3cf8f9ba6141f57a671b4ae87d72157e2fcd23b7dc3ecd6e6b987ec7b8ef`。LibreOffice 中文字体回退单独记为兼容性风险，本轮不宣称 LibreOffice 通过。
+- 状态：✅ 候选已写回正式 `lesson-03.pptx` v0.8.1；正式文件 SHA256 `e2dd3cf8f9ba6141f57a671b4ae87d72157e2fcd23b7dc3ecd6e6b987ec7b8ef`。LibreOffice 中文字体回退单独记为兼容性风险，本轮不宣称 LibreOffice 通过。
 - QA：`.work/ppt/visual-upgrade-20260912/audit/lesson-01-06-qa.md`。
 
 > 状态说明：以上视觉升级记录仅描述 2026-09-12 文件；现行 PPT 状态见顶部 2026-10-15 IOI 修订轮。下方减负轮、旧门控状态与旧视觉检查仅保留当时事实；其中旧的笼统“视觉通过”记录已被本轮技术、教学、视觉和 PowerPoint 原生检查取代。
@@ -127,7 +138,7 @@
 | PPT 规则 | [ppt-quality-gates.md](../../course/ppt-quality-gates.md)、[ppt-design-criteria.md](../ppt-design-criteria.md) |
 
 - 学生：`handout.md` → `course/reading-list.md` 第 3 课。
-- 教师：`teaching-plan.md` → `slides.md` → `slides.pptx`。
+- 教师：`teaching-plan.md` → `slides.md` → `lesson-03.pptx`。
 - 维护者：`AGENTS.md` → [备课规划.md](../备课规划.md) → 本 README。
 
 ## 历史门控记录（原“当前门控状态”，2026-08-20）

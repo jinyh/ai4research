@@ -69,7 +69,7 @@
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.1.2 | 本轮实际构图、可编辑对象与验收；旧规格保留历史 |
 | [evaluation-report-template.md](./evaluation-report-template.md) | 现行·评价报告模板 | 学生直接写入个人项目 `evaluation-report.md` 的七段结构 |
 | [evaluation-report-example.md](./evaluation-report-example.md) | 教学样例·虚构 | 展示结果映射、负向结果、失败审计与待验证状态；所有数值/ID 明示虚构 |
-| [slides.pptx](./slides.pptx) | 冻结基线·可编辑课堂 PPT（20 页） | 2026-10-14 冻结版本；本轮修订预览待生成与检查，未同步正式文件 |
+| [lesson-13.pptx](./lesson-13.pptx) | 冻结基线·可编辑课堂 PPT（20 页） | 2026-10-14 冻结版本；本轮修订预览待生成与检查，未同步正式文件 |
 
 ## 母稿与讲述备注同步修订轮（2026-09-13，当前）
 
@@ -81,7 +81,7 @@
 - 教学检查：虚构数值、反例与运行记录均在相关页 notes 明确身份；六类根因为课程审计框架，P13/P14 的根因解释和修订效果仍待复测。不新增提交或课堂任务。
 - 视觉检查：最终导出文件全页重新渲染并扫描；P12/P13 全尺寸复核，新增虚构标签完整可读，标题与工件文字未溢出。
 - Microsoft PowerPoint 原生检查：本轮未执行，2026-09-12 的原生通过仅对应当时文件；本轮不得记为原生通过。教室投影仍待授课机复核。
-- 正式文件：`slides.pptx`，20 页；SHA-256 `7850d9abb402f7155fd184a36ebcb134cf59bfa58b3a23a9f643af825e36b274`。
+- 正式文件：`lesson-13.pptx`，20 页；SHA-256 `7850d9abb402f7155fd184a36ebcb134cf59bfa58b3a23a9f643af825e36b274`。
 - QA：`.work/ppt/lesson-13/2026-09-13-sync-fix/validation.json`、`package-diff.json`、`final-path-check.json`、`formal-reopen.json`、`final-render/`；无须新增里程碑副本。
 
 ## 2026-08-20 课件修订
@@ -94,7 +94,7 @@
 ### 对象化视觉提升轮（正式）
 
 - 内容与教学：内容口径、课堂最低产出、验证门口径和 90 分钟结构不变；视觉提升教学门复核通过。
-- 正式文件：20 页；`slides.pptx`；SHA-256 `6f3c9fb956ef450bd2f6618e8fb2f80f90fc6ee3249f84f5dcc5096f00b6e36e`。
+- 正式文件：20 页；`lesson-13.pptx`；SHA-256 `6f3c9fb956ef450bd2f6618e8fb2f80f90fc6ee3249f84f5dcc5096f00b6e36e`。
 - 技术检查：包结构与布局 0 finding；1 个 Master、4 个 Layout；20/20 页 notes 含 `[Sources]`；教学文字不低于 18 pt；结果页保留原生图表对象。
 - 教学检查：结果对照、失败/局限与判断修订保持同一工作流；0.18/0.31 仅为虚构教学数据，方向支持 H1，但 A1/A2/A3 未排除、机制仍不能判断。
 - 视觉检查：Artifact Tool 全尺寸与联系图已复核；P11 构念威胁无孤字并独立显示“课程虚构教学数据”，P14 两份文档完整且以“关联 run ID”连接，不出现空白对象或假日期字段。
@@ -129,7 +129,7 @@
 ### 学生入口呈现增强轮（2026-08-22，历史；当前 PPT 验收以对象化视觉提升轮为准）
 
 - 门 1 与内容门已复核通过：补齐评价报告模板与虚构教学样例的正文链接，验证门条件、案例事实和来源边界不变。
-- 90 分钟教学门、逐页映射门、PPT 制作与三重检查不受影响，沿用下方既有通过记录；本轮不修改 `teaching-plan.md`、`slides.md` 或 `slides.pptx`。
+- 90 分钟教学门、逐页映射门、PPT 制作与三重检查不受影响，沿用下方既有通过记录；本轮不修改 `teaching-plan.md`、`slides.md` 或 `lesson-13.pptx`。
 - 待延后项：无；真实学生项目上的模板可用性仍由助教按审阅协议反馈。
 
 - **三件套（口径唯一）**：`handout.md`（教什么）↔ `teaching-plan.md`（怎么教）↔ `slides.md`（逐页屏显）。讲义是内容源，教案不替代讲义，slides 不自造事实。

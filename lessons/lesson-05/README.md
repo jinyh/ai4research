@@ -64,9 +64,9 @@
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
 | [handout.md](./handout.md) | 现行·学生讲义（本轮复核另登记） v1.6.0 | 学生可独立阅读的当前内容源 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.6.0 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v1.6.1 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
 | [slides.md](./slides.md) | 现行·逐页母稿 v1.5.0 | 21 页屏显、讲述、动作与来源；冻结 PPTX 仍为基线；本轮修订预览待生成与检查 |
-| [slides.pptx](./slides.pptx) | 冻结基线·可编辑课堂 PPT（21 页） | 2026-10-14 冻结版本；本轮修订预览待生成与检查，未同步正式文件 |
+| [lesson-05.pptx](./lesson-05.pptx) | 冻结基线·可编辑课堂 PPT（21 页） | 2026-10-14 冻结版本；本轮修订预览待生成与检查，未同步正式文件 |
 | [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.4.1 | 本轮实际构图、可编辑对象与验收；旧规格保留历史 |
 | [mi-evidence-map-demo.md](./mi-evidence-map-demo.md) | 现行·教学资产 v1.0.0 | C02/C05/C16/C18/C31 因果证据矩阵、四句受限综述与 F-MI-01 回写 |
 | [assets/](./assets/) | 现行·图形资产 | MI 因果证据地图 SVG 与出处/许可登记 |
@@ -74,13 +74,13 @@
 ### 视觉升级（2026-09-12）
 
 - 逐页映射门：✅ `slides.md` v1.3.1 仅更新视觉结构与字号层级，屏显语义、页数与 90 分钟教案不变。
-- PPT 构建：✅ 21 页候选 r9 已提升为现行 [slides.pptx](./slides.pptx)；构建目录 `.work/ppt/lesson-05/2026-09-12-visual-upgrade/`；SHA256 `fd0dd68dc0f4b15e699a32fb7802400698fa3d3612ecd8412d7ce80d3e52e2cc`。
+- PPT 构建：✅ 21 页候选 r9 已提升为现行 [lesson-05.pptx](./lesson-05.pptx)；构建目录 `.work/ppt/lesson-05/2026-09-12-visual-upgrade/`；SHA256 `fd0dd68dc0f4b15e699a32fb7802400698fa3d3612ecd8412d7ce80d3e52e2cc`。
 - 技术检查：✅ finalizer、Artifact Tool 最终文件重导入、21/21 notes `[Sources]`、1 Master/4 Layout、空 placeholder 与字号审计通过。
 - 教学检查：✅ P14 保留既有 MI 证据地图与来源身份，支持/限制/效度威胁/空白均在主视区；P18 继续复用同一组共享记录。
 - 视觉检查：✅ 21 页全尺寸和 contact sheet 逐页复核通过；标题 30–32pt、常规正文 22–24pt、矩阵/地图工件 18–20pt，正文以 regular 为主；r9 已修正 P10 流程句断行、P13 矩阵底部重叠，以及 P15 标签与句号孤行。
 - PowerPoint 原生检查：✅ Microsoft PowerPoint 已打开 r9 并原生导出 21 页 PDF；沿用 r7 已通过的 20 张未改页，并对 r9 P15 全尺寸复核通过，标签、句号、中文和品牌元素完整；原生 PDF 为 `.work/ppt/visual-upgrade-20260912/representatives/lesson-05-slides-v1.3.1-visual-r9-native.pdf`。
 - 替代关系：本节视觉检查取代下方减负轮的旧视觉通过记录；旧记录仅保留为历史，不再证明当前候选通过。
-- 状态：✅ 候选已写回正式 `slides.pptx` v1.3.1；正式文件 SHA256 `fd0dd68dc0f4b15e699a32fb7802400698fa3d3612ecd8412d7ce80d3e52e2cc`。LibreOffice 中文字体回退单独记为兼容性风险，本轮不宣称 LibreOffice 通过。
+- 状态：✅ 候选已写回正式 `lesson-05.pptx` v1.3.1；正式文件 SHA256 `fd0dd68dc0f4b15e699a32fb7802400698fa3d3612ecd8412d7ce80d3e52e2cc`。LibreOffice 中文字体回退单独记为兼容性风险，本轮不宣称 LibreOffice 通过。
 - QA：`.work/ppt/visual-upgrade-20260912/audit/lesson-01-06-qa.md`。
 
 > 状态说明：以上视觉升级记录是现行 PPT 的唯一验收口径。下方减负轮、旧门控表与 2.0 修订轮仅保留当时事实；其中旧的笼统“视觉通过”记录已被本轮技术、教学、视觉和 PowerPoint 原生检查取代。

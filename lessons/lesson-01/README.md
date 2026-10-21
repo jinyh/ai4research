@@ -1,5 +1,16 @@
 # 第 1 课内容入口（MOC）
 
+> 本轮状态（2026-10-21，教学选目修订）：源稿按教师批准的审阅意见更新，PPT新版预览已完成源稿、映射、文件和视觉自检。现行 `lesson-01.pptx` 保留已确认基线，尚未承载本轮修改；交付包与网站保持原版本。本轮入口与检查见[修订执行记录](../../docs/lesson-01-04-reading-revision-20261021.md)。
+
+- [本轮新版PPT预览](../../.work/ppt/lesson-01/2026-10-21-reading/output/lesson-01-reading-preview.pptx)：可编辑，独立与现场复核另记。
+
+## 既有基线与历史检查
+
+
+> 当前轮（2026-10-21）：用户明确“可以进入deliverables，并且清理临时文件”，本轮36页PPT已提升为[现行课件](./lesson-01.pptx)，并纳入[2026秋季交付目录](../../deliverables/2026-fall/README.md)。内容、映射、技术与视觉自检完成；独立评审、实际PowerPoint、助教试做和投影仍待登记，交付授权不代替现场验证。见[本轮执行记录](../../docs/lesson-01-03-continuity-20261021.md)。
+
+原始材料保存在本机 `archive/course-releases/2026-10-21-l01-l03/input-baseline/`；本轮中间稿、逐页渲染和构建缓存已清理，检查报告保留。学生网站未随本次交付更新。以下按日期保留的记录只描述当时版本，当前状态以本段及文件清单为准。
+
 > 当前轮（2026-10-20）：已修正为教师MI Demo与学生本人项目，源稿任务见[综合修订记录](../../docs/personal-project-revision-20261020.md)。本课原PPT保留；源稿改动不继承旧版PPT或人员复核通过，后续按课接入呈现复验。
 
 
@@ -97,13 +108,13 @@
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生讲义 v1.8.0 | 学生可独立阅读的当前内容源 |
-| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v2.12.0 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
-| [slides.md](./slides.md) | 现行·逐页母稿 v1.18.0 | 36 页屏显、讲述、动作与来源；冻结 PPTX 仍为基线；本轮修订预览待生成与检查 |
-| [slides.pptx](./slides.pptx) | 冻结基线·可编辑课堂 PPT（36 页） | 2026-10-14 冻结版本；本轮修订预览待生成与检查，未同步正式文件 |
-| [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v1.15.0 | 本轮实际构图、可编辑对象与验收；旧规格保留历史 |
+| [handout.md](./handout.md) | 现行·学生讲义 v1.9.0 | 学生可独立阅读的当前内容源 |
+| [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v2.13.1 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
+| [slides.md](./slides.md) | 现行·逐页母稿 v1.19.1 | 36 页屏显、讲述、动作与来源；已与本轮现行及交付PPT核对 |
+| [lesson-01.pptx](./lesson-01.pptx) | 现行·可编辑课堂 PPT（36 页） | 2026-10-21用户授权交付，与deliverables副本字节一致；现场验证待登记 |
+| [keystone-design-spec.md](./keystone-design-spec.md) | 现行·关键页设计规格 v2.0.0 | 本轮实际构图、可编辑对象与验收；旧规格保留历史 |
 | [reading-notes.md](./reading-notes.md) | 现行·教师文献精读卡集 | 第 1 课 8 篇文献按 AI 辅助阅读协议产出的精读卡，原文定位已完成，待教师复核定稿 |
-| [classroom-pack.md](./classroom-pack.md) | 现行·课堂材料包 v1.2.2 | 最小 prompt 可复制版、纸面任务契约、预期 diff 样例、日志空白与纸面验收三项 |
+| [classroom-pack.md](./classroom-pack.md) | 现行·课堂材料包 v1.3.0 | 最小 prompt 可复制版、纸面任务契约、预期 diff 样例、日志空白与纸面验收三项 |
 | [assets/](./assets/) | 教学资产 | 论文图重绘、概念图等课堂用图 |
 
 ### AItalk 参考改版（2026-09-15，修订轮）
@@ -112,7 +123,7 @@
 - 课次目标与内容门：复核通过。保留个人项目、四个研究门与课堂最低产出。两课案例和字段对齐；AI Scientist 的人工筛选、评审分数、内部复核与撤回事实已核验。交大规范第六条四类名称校正为“禁止使用、有限使用、鼓励使用、开放使用”。
 - 90 分钟教学门：按现有各段时长复核，未增加时长或课堂表单。第 1 课契约 5 分钟、临时互查 10 分钟；第 2 课 P22 已纳入教师演示映射。
 - 逐页映射门：现行讲义、教案与逐页母稿对应。缩短屏显标题，来源与许可进入备注，判断边界、课堂构造标记和完成线按正文呈现。
-- PPT 制作：本课全部 31 页已更新至 `slides.pptx` v1.14.1。保留交大原生母版、红标题带、校徽和页脚。
+- PPT 制作：本课全部 31 页已更新至 `lesson-01.pptx` v1.14.1。保留交大原生母版、红标题带、校徽和页脚。
 - 技术检查：包完整性、几何、重导入及现行路径重新渲染通过。31/31 页含 `[Sources]` 备注；1 Master / 4 Layout；2 个原生表格、1 个原生图表、36 条原生连接。教学文字 ≥18pt，屏显无本地来源路径或课堂分钟数。
 - 教学与视觉检查：全量逐页联系表和关键页全尺寸检查完成；实际 PowerPoint 原生打开并导出 PDF。修正断词、孤立标点、原图裁切和练习保存位置；关键事实与完成条件保留。第 1 课最后修正 P06/P26/P29，28 个未改页面渲染逐字节一致，改动三页重新做原生检查。
 - 图表编辑检查：在独立副本中打开内嵌 Excel，把 20% 改为 21%，图条随数据更新；保存、关闭并重新打开 PowerPoint 后仍显示 21%。现行课件维持 25%、30%、25%、20%，图表部件与测试前版本逐字节一致。
@@ -124,13 +135,13 @@
 ### 视觉升级（2026-09-12）
 
 - 逐页映射门：✅ `slides.md` v1.13.1 仅更新视觉结构与字号层级，屏显语义、页数与 90 分钟教案不变。
-- PPT 构建：✅ 31 页候选 r3 已提升为现行 [slides.pptx](./slides.pptx)；构建目录 `.work/ppt/lesson-01/2026-09-12-visual-upgrade/`；SHA256 `ca98bf233a95b8048ca71588fae213263e6eec0ce95c223537830e679e925162`。
+- PPT 构建：✅ 31 页候选 r3 已提升为现行 [lesson-01.pptx](./lesson-01.pptx)；构建目录 `.work/ppt/lesson-01/2026-09-12-visual-upgrade/`；SHA256 `ca98bf233a95b8048ca71588fae213263e6eec0ce95c223537830e679e925162`。
 - 技术检查：✅ finalizer、Artifact Tool 最终文件重导入、31/31 notes `[Sources]`、1 Master/4 Layout、空 placeholder 与字号审计通过。
 - 教学检查：✅ Nature/Hao 真实证据、八阶段导航、代码/diff 审核与两段个人实践的动作和边界均与逐页母稿一致。
 - 视觉检查：✅ 31 页全尺寸和 contact sheet 逐页复核通过；标题 30–32pt、常规正文 22–24pt、代码/工件 18–20pt，正文以 regular 为主；r3 已修正 P5 句号孤行与 P8“披露”断词。
 - PowerPoint 原生检查：✅ Microsoft PowerPoint 已打开 r3 并原生导出；31/31 张 `native-checked-*.png` 全尺寸逐页复核通过，P5/P8 修复后无孤立标点或断词，中文、换行与品牌元素完整；原生 PDF 为 `.work/ppt/visual-upgrade-20260912/representatives/lesson-01-slides-v1.13.1-visual-r3-native.pdf`。
 - 替代关系：本节视觉检查取代下方减负轮的旧视觉通过记录；旧记录仅保留为历史，不再证明当前候选通过。
-- 状态：✅ 候选已写回正式 `slides.pptx` v1.13.1；正式文件 SHA256 `ca98bf233a95b8048ca71588fae213263e6eec0ce95c223537830e679e925162`。LibreOffice 中文字体回退单独记为兼容性风险，本轮不宣称 LibreOffice 通过。
+- 状态：✅ 候选已写回正式 `lesson-01.pptx` v1.13.1；正式文件 SHA256 `ca98bf233a95b8048ca71588fae213263e6eec0ce95c223537830e679e925162`。LibreOffice 中文字体回退单独记为兼容性风险，本轮不宣称 LibreOffice 通过。
 - QA：`.work/ppt/visual-upgrade-20260912/audit/lesson-01-06-qa.md`。
 
 > 状态说明：下方视觉升级记录保留上轮文件的历史验收事实；本轮状态以上方 AItalk 参考改版记录为准。下方减负轮、教师复核轮与旧门控表仅保留当时事实；其中旧的笼统“视觉通过”记录已被本轮技术、教学、视觉和 PowerPoint 原生检查取代。
@@ -211,7 +222,7 @@
 - `keystone-design-spec.md` → 指导 `slides.md` 关键页的视觉设计契约。
 - `reading-notes.md` → 为 `handout.md` 提供文献来源与精读卡。
 - 2026-07-07 的 `introduction.md` / `lecture-notes.md` 已移到 被替代文稿归档（仅本机保留：`archive/superseded-docs/lesson-01/`），现行制作不以之为母版。
-- 旧 39 页 PPTX 已移到 PPT 试制里程碑（仅本机保留：`archive/ppt-experiments/lesson-01/2026-07-30-pre-gate-39-page-baseline/decision-record.md`）。现行 [slides.pptx](./slides.pptx) 与 31 页母稿一致。
+- 旧 39 页 PPTX 已移到 PPT 试制里程碑（仅本机保留：`archive/ppt-experiments/lesson-01/2026-07-30-pre-gate-39-page-baseline/decision-record.md`）。现行 [lesson-01.pptx](./lesson-01.pptx) 与 31 页母稿一致。
 
 ## 关联课程文档
 
