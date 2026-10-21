@@ -65,7 +65,17 @@ uv run python scripts/check_site.py
 | `_build/` | `mkdocs build` 输出（.gitignore 忽略） |
 | `.venv/` | uv 虚拟环境（.gitignore 忽略） |
 
-## 当前部署（2026-10-20）
+## 当前部署（2026-10-21）
+
+用户明确要求更新 <https://jinyh.github.io/ai4research/>。课程源为 `8e2ca19655512338fa44128cfa4a1954dac529d0`（`codex/ai-research-revision`），学生静态快照为 `1a9bde13423ef06f2063b98052efb8639238714a`（`codex/student-site`），部署指针为 `f8d8c157096369bcc35cf6c858aa2c4650eb9b5e`（`main`）。两个发布分支均沿用远端历史；主分支仅更新工作流中的快照提交号。
+
+本轮将L01–L04现行学生讲义、共同任务、阅读清单、逐课路径、L04阅读指南及下载包同步到网页，并校正四课入口的个人项目与阅读预算要求。新增L01开发观察说明及原始精度JSON；输入是课程构造，数值身份和来源指纹保留。补齐逐文件发布清单与下载清单，L01任务使用固定锚点，前沿研究链接直接指向公开来源。快照共206个文件、97个HTML页面、6个学生下载ZIP；较10月20日新增2个文件、修改21个文件，无删除。
+
+发布前17项网站测试、严格构建、97页内部链接／锚点／发布边界、6个ZIP完整性、12项课程一致性、248份Markdown链接及44项Harness测试通过。L04与新增观察页完成浏览器核对。教师答案、教案、逐页母稿、PPT和本机评审记录不进入学生快照；既有课件和现场待核状态按课次记录保留。
+
+[GitHub Actions发布任务](https://github.com/jinyh/ai4research/actions/runs/39571308260)成功。线上117项文件（全部97个HTML、6个ZIP、10个SVG、搜索索引、两份站点地图及新增观察JSON）与验收快照逐字节一致；L04教师答案和教案路径均返回404。L04线上页面已在浏览器确认新阅读范围与预算。发布清单、差异、原始核验报告及截图保存在本机 `.work/publish-20261021/`；此目录不纳入Git。
+
+## 上一次部署（2026-10-20）
 
 用户明确授权提交、推送与发布。课程源提交为 `eaeadca84a424b85c5cbf15013c741e9a21a600c`（`codex/ai-research-revision`）；学生网站快照为 `ba1acc4a0778381323ed881670f40a40fe626ee8`（`codex/student-site`）；部署指针提交为 `955c2ea009ac4b4ae9df2e9fda10f96abcdca452`（`main`）。网站快照延续原分支历史，主分支仅更新部署指针。
 
