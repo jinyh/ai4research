@@ -1,0 +1,51 @@
+{
+  "identity": "教师2026-10-20实际运行的开发输入节选；2026-10-21提取",
+  "input_origin": "课程自拟IOI句；不是论文数据",
+  "metric": "logit(原句间接宾语)-logit(原句主语)",
+  "model": "openai-community/gpt2",
+  "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+  "device": "cpu",
+  "dtype": "float32",
+  "source_files": [
+    {
+      "name": "manifest.json",
+      "sha256": "cfbf10637cd373a95ad09be5a63c61701ffd987f681e4fda001a93ec93050c6a"
+    },
+    {
+      "name": "results.jsonl",
+      "sha256": "32b3c92bdcc78a0e3baa0e17dd287df239990b3f5339fb98a37dbf9b2bc7c99f"
+    }
+  ],
+  "upstream_identity": {
+    "protocol_sha256": "e11f40772ec8777b0664be41de5e5f517d34831c5feadbe55f922aed819f883d",
+    "cases_sha256": "d2520cd4d89f44c5003628a4ea51c3ca4b9c86c42e1445e509443add01b464ab",
+    "policy_sha256": "f9bb747bbe071787e9e5b2af84cc332e7c1486c522d6076a6ec72c1ac908a07b",
+    "runner_sha256": "696334140356f41422f1532f39e59783099d5fd524deea16b886d19302b8b91b",
+    "model_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "split": "dev"
+  },
+  "records": [
+    {
+      "id": "store-01",
+      "family": "store",
+      "split": "dev",
+      "clean": "When John and Mary went to the store, John gave a bag to",
+      "corrupt": "When John and Mary went to the store, Mary gave a bag to",
+      "subject": "John",
+      "indirect_object": "Mary",
+      "origin": "course-authored teaching prompt inspired by IOI; not the original paper dataset",
+      "clean_name_logit_difference": 2.9044036865234375
+    },
+    {
+      "id": "store-02",
+      "family": "store",
+      "split": "dev",
+      "clean": "When Mary and John went to the store, Mary gave a bag to",
+      "corrupt": "When Mary and John went to the store, John gave a bag to",
+      "subject": "Mary",
+      "indirect_object": "John",
+      "origin": "course-authored teaching prompt inspired by IOI; not the original paper dataset",
+      "clean_name_logit_difference": 2.14422607421875
+    }
+  ]
+}

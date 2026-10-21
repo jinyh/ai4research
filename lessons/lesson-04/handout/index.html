@@ -1268,10 +1268,38 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="本课研究主线：问题导向的原文、图表与代码阅读">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        先理解论文要解释什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fig6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        读 Fig.6 前的操作与指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         学习目标
@@ -1377,7 +1405,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         相邻构造例：观察、解释与迁移
@@ -1424,7 +1452,7 @@
   <a href="#4_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. 拆开断言，核对指标与证据强度
+        4. 拆开断言，核对指标与证据强度（恢复比例算例按需查阅）
       
     </span>
   </a>
@@ -1446,7 +1474,7 @@
   <a href="#6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. 论文干预与课程代码的条件比较
+        6. 论文干预与课程代码的条件比较（按需查阅）
       
     </span>
   </a>
@@ -1454,10 +1482,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        从真实方法文核对动作与用途
+        从真实方法文核对动作与用途（按需查阅）
       
     </span>
   </a>
@@ -1470,7 +1498,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         四、阅读卡字段
@@ -1481,7 +1509,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         五、常见错误
@@ -1548,7 +1576,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         按需补充
@@ -1564,7 +1592,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         七、共同诊断与本人迁移
@@ -1592,7 +1620,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       
         八、术语表
@@ -1603,7 +1631,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
       
         九、延伸阅读与课程材料
@@ -1614,7 +1642,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     <span class="md-ellipsis">
       
         补充：早期试探也能帮助收敛问题
@@ -1625,7 +1653,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
       
         课外预算与下次输入
@@ -1674,14 +1702,49 @@
 </blockquote>
 <h2 id="_3">本课研究主线：问题导向的原文、图表与代码阅读<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>IOI 是 Indirect Object Identification（间接宾语识别）。论文要求 GPT-2 small 根据句子补全间接宾语名字。例如：“When John and Mary went to the store, John gave a bag to Mary.” 输入在最后一个 Mary 之前截断，模型预测待补名字。John 是主语 S，第一次出现记为 S1，第二次出现记为 S2；Mary 是间接宾语 IO。模型需要利用名字的角色和重复关系。此句用于说明任务，未当作新的模型运行记录。任务和名字角色定义见 Wang 等 v1 §2。</p>
-<p>residual stream（残差流）是 Transformer 各层读写的隐藏表示；本课默认 residual patch 把指定层输出、指定 token 位置的整个向量替换成另一输入对应的向量。注意力头是其中更细的组件，整向量干预不能直接视为单头作用。下文将分别核对论文与代码实际改变了什么。</p>
+<h3 id="_4">先理解论文要解释什么<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>论文的研究问题是：GPT-2 small 怎样利用句中信息完成 IOI？作者以内部干预寻找相关注意力头、解释信息流，再检验候选电路的解释力。阅读时先建立这条论证主线，再判断某项检验支持到哪里。原文依据是摘要、§1、§3 与 §4。</p>
+<p>电路是完整模型计算图中解释某种行为的子图。注意力头可从某些位置读取信息，并向残差流写入结果；残差流是各层共享的隐藏表示。Fig.2 给出作者提出的电路概览，具体连接的证据要回到对应干预。</p>
+<h3 id="fig6">读 Fig.6 前的操作与指标<a class="headerlink" href="#fig6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>记号／操作</th>
+<th>在本案例中的含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M</td>
+<td>完整 GPT-2 small 模型</td>
+</tr>
+<tr>
+<td>C</td>
+<td>候选电路；运行它时，C 外节点已经按下述规则消融</td>
+</tr>
+<tr>
+<td>K</td>
+<td>从 C 中选出的一组节点，两边再移除同一组 K</td>
+</tr>
+<tr>
+<td>F</td>
+<td>IOI 样本上的平均 logit(IO) − logit(S)，衡量两个名字的相对偏好</td>
+</tr>
+<tr>
+<td>均值消融</td>
+<td>用参考样本的平均激活替换节点输出。参考分布 p_ABC 用三个不同名字，平均值按同一句式模板计算</td>
+</tr>
+</tbody>
+</table>
+<p>F 为正只说明 IO 相对 S 更受偏好，不等于全词表准确率。这里“移除”指激活替换，不能理解成删除模型参数或一律置零。比较 C∖K 和 M∖K 时，前者还消融了 C 外节点。这些定义来自 §2、§2.1 和 §4.1，供读图使用；图中各类点说明什么，仍需自行判断。</p>
+<p>原文 §4 的 faithfulness 检查候选电路能否保留任务表现，§4.1 的 completeness 进一步检验移除同组 K 后的表现是否对应，§4.2 的 minimality 检查保留组件的作用。本课集中阅读完整性检验，不把三个词当成一套已经自动满足的标准。</p>
 <p><strong>核心判断：移除同一组组件后，候选电路与完整模型的表现为何可能不同？</strong></p>
-<p>先让 AI 为“干预支持何种因果主张”生成阅读地图。定位原论文任务、干预对象、指标和验证设置，再比较本课整条 residual patch 与论文回路分析的异同。不要为未检查章节虚构页码。</p>
+<p>先让 AI 为“论文研究什么、提出什么解释、怎样检验”生成阅读地图。核对摘要与 §1 的问题和贡献，再定位 §2／§2.1 的任务与操作、§4.1 的评价。保留原始建议及核验后的采用、修订或维持理由。课程代码比较按需查阅，不列入共同诊断必做项。</p>
 <p>完成第一张完整精读卡，保留 AI 初始解释、两个原文位置和本人允许使用的主张；必要时让 AI 根据原文纠正解释。</p>
 <p>区分论文作者的结论、代码实际执行与本人的迁移推断；若实验设置不同，写明具体差别。</p>
 <p>本课产物：第一张核心精读卡及有依据的主张范围。L5 带入第二项条件不同或结论有冲突的来源。</p>
 <p>完整输入、动作与完成标准见<a href="../judgment-task/">本课研究任务</a>。教师演示与个人项目的分工见<a href="../../../course/micro-project/">项目说明</a>。以下示例用于解释方法；本人的主要产物回写自己的研究项目，方向不限于 MI。</p>
-<h2 id="_4">学习目标<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">学习目标<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>本课核心能力：原文支持哪种转述，支持到哪里？能以可定位证据回答，并将决定落实到本人项目。</p>
 <p>完成本讲后，你应该能够：</p>
 <ol>
@@ -1780,7 +1843,7 @@
 <p>人工定稿的判断责任在学生。AI 可以建议措辞、补充候选、提出质疑，但阅读卡里的"作者主张"必须能回到原文位置，"个人判断"必须写明理由和适用边界。</p>
 <hr />
 <h2 id="ai_3">三、主张核验：区分 AI 主张与原文主张<a class="headerlink" href="#ai_3" title="Permanent link">&para;</a></h2>
-<h3 id="_5">相邻构造例：观察、解释与迁移<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_6">相邻构造例：观察、解释与迁移<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>以下两例是课堂构造材料，不是论文结果或模型实测。第一例：同一负载、同一机器上，P95延迟由100 ms降到80 ms。这是给定观察；“改善来自缓存命中变化”是一种解释；“禁用缓存后差距缩小”是尚待检验的预测。即使预测实现，也要检查禁用缓存是否同时改变其他条件，不能只凭一个结果作唯一归因。</p>
 <p>第二例的构造原文是：“同16核、并发64、固定请求集，A为8k req/s，B为10k req/s；未测突发流量与尾延迟。”它支持该设置下B的吞吐量高25%，还不能支持“B将改善我项目的突发负载表现”。反查时先将后一句收窄到已测条件，再把突发负载与P95检查列为下一步。没有代码的项目同样核对原文前提与本人用途是否一致。</p>
 <h3 id="1">1. 为什么要区分<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
@@ -1844,7 +1907,7 @@
 <p>与第 3 课的连接：第 3 课入口核验处理“文献身份是否一致，以及一条拟用主张能否安全使用”；本课内容核验处理“选定关键主张、原文位置、证据结构和局限是否被准确理解”。</p>
 </blockquote>
 <hr />
-<h3 id="4_1">4. 拆开断言，核对指标与证据强度<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<h3 id="4_1">4. 拆开断言，核对指标与证据强度（恢复比例算例按需查阅）<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
 <p>“恢复答案偏好，所以已经找到完整 IOI 电路”包含两个层次。前半句描述干预结果，后半句解释原模型怎样完成任务。核验时分别找结果依据与机制验证，明确什么观察会改变你的解释。</p>
 <p>课程代码的指标是 <code>logit(原句间接宾语) − logit(原句主语)</code>，在原句、扰动和各类干预中使用同一对名字。它衡量这两个候选的相对偏好；正值只表示前者的概率较高，不能据此断言它是整个词表概率最高的词。</p>
 <p><strong>虚构教学算例，非模型运行结果</strong>：clean = 4，corrupt = −2，patch = 1。patch 相对 corrupt 改善 3 个 logit 单位，仍低于 clean。若额外定义恢复比例 <code>(patch−corrupt)/(clean−corrupt)</code>，此例为 1/2；它是该定义下的比例，不是准确率。分母接近零、为负或样本间不同，都会改变解释。课程运行器保存原始分数和差值，未把这个比例列为默认评价指标。</p>
@@ -1852,13 +1915,13 @@
 <h3 id="5_1">5. 两处位置与三种声音<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h3>
 <p>至少两个原文位置分别承担不同核验动作，例如结果图支持观察、方法段界定对照，或者方法段说明流程、经验段说明支持强度。位置可以在同一页的不同段，重复摘抄同一句不会增加证据。指出全文未报告某实验时，要检查与断言相关的完整文本；一张局部截图只能说明图中没有该内容。</p>
 <p>作者主张与作者自述局限写入作者栏，AI 导航、推断与质疑写入待核建议及审计，本人迁移判断与识别的缺口写入本人判断。原文证据是这些判断的可定位支撑。AI 提出的质疑也需核验，不成立时保留理由并维持原判断；未发现错误时记录已查风险，无模型时注明人工提问与核验。</p>
-<h3 id="6">6. 论文干预与课程代码的条件比较<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<h3 id="6">6. 论文干预与课程代码的条件比较（按需查阅）<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
 <p>IOI 论文在注意力头及路径上分析信息流；课程包在指定 Transformer block 输出的一个 token 位置替换整个 hidden 向量。两者都涉及内部干预，但干预粒度、输入构造和验证目标不同。读论文时应把这些差异写入个人判断，而不是仅因模型名字相同就视为复现。</p>
 <p>代码中的 <code>changed[:, pos, :] = replacement</code> 给出替换范围；<code>layer = model.transformer.h[policy['layer']]</code> 给出挂钩对象。<code>policy-baseline.json</code> 使用零起始 layer 5 和原句第二次主语位置，属于研究起点。代码可证明程序实现了何种干预，实际效果必须读取真实运行记录。详见<a href="../ioi-reading-guide/">精读输入与代码定位</a>。</p>
 <hr />
-<h3 id="_6">从真实方法文核对动作与用途<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_7">从真实方法文核对动作与用途（按需查阅）<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>Keshav 的 <em>How to Read a Paper</em> §2.1要求第一遍阅读结论、标题等，帮助决定是否继续；§2.2第二遍细看图表、概括主线及支持证据，但暂略证明细节；§2.3第三遍尝试在脑中重新实现论文，重建作者假设与推理。课堂据此区分：初筛不能代替证明核验，概括证据也不等于运行复现。原文是作者经验性方法建议，没有在这些段落中提供“三遍法比所有其他方法更高效”的受控比较。本人可按证据缺口选择下一动作，再用实际记录检查是否有效。<a href="https://web.stanford.edu/class/ee384m/Handouts/HowtoReadPaper.pdf">公开原文</a></p>
-<h2 id="_7">四、阅读卡字段<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_8">四、阅读卡字段<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>阅读卡是本课的课堂产出，也是第 5 课证据地图的输入。最小字段：</p>
 <div class="highlight"><pre><span></span><code>论文：题名 / 作者 / 年份 / DOI
 来源核验状态（承接第 3 课）：pending / verified / verified-with-caveat / rejected
@@ -1893,7 +1956,7 @@ AI 偏差审计（错误/遗漏，或已检查风险与依据，见 §二·4）�
 <p>本课所说的“完整阅读卡”不是把整篇论文读完，而是围绕至少 1 条关键主张，将上述所有字段填入可复查内容；不适用的字段必须写明“不适用”及理由，不得留空。</p>
 <p>阅读卡统一保存在个人项目 <code>reading-cards.md</code>。第 5 课再把其中的主张—位置对重组进证据地图；第 6 课问题门统一检查至少 3 张与个人项目直接相关的完整精读卡。</p>
 <hr />
-<h2 id="_8">五、常见错误<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_9">五、常见错误<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>AI 摘要当作原文</strong>：把 AI 输出的摘要直接当成论文主张，不核对原文位置、图表和限定。可记录 AI 的分析与引用位置，但拟用的作者主张须对回原文。</li>
 <li><strong>主张无位置</strong>：写"作者认为 X"，但不标原文位置。无法复查的主张不能进入证据地图。</li>
@@ -1905,7 +1968,7 @@ AI 偏差审计（错误/遗漏，或已检查风险与依据，见 §二·4）�
 </ol>
 <hr />
 <h2 id="ioi">六、IOI 精读：原文、图表与代码怎样共同约束主张<a class="headerlink" href="#ioi" title="Permanent link">&para;</a></h2>
-<p>本课沿用第 3 课的 Wang 等 IOI 论文 v1。核心问题是：一项干预改善结果，足以支持怎样的机制判断？阅读路线先定位任务和指标，再检查作者怎样验证解释，最后与课程代码比较。</p>
+<p>本课沿用第 3 课的 Wang 等 IOI 论文 v1。核心问题是：一项干预改善结果，足以支持怎样的机制判断？阅读路线先定位问题、贡献、任务和指标，再检查作者怎样验证解释；课程代码比较作为按需扩展。</p>
 <h3 id="1_1">1. 用问题选择原文位置<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
 <p>§2 提供任务和指标，§2.1 说明完整性检验中的 mean ablation；§3.1 与附录 B 另行说明 path patching，§4–4.2 给出机制解释的验证方式。学生选定一条主张后，至少核对两个承担不同作用的位置：分别说明每处证据如何支持、限定或改变判断。记录章节、图号及其作用，避免只列一串页码。</p>
 <h3 id="2_2">2. 从图中读出作者实际比较什么<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
@@ -1918,10 +1981,10 @@ AI 偏差审计（错误/遗漏，或已检查风险与依据，见 §二·4）�
 <h3 id="4_2">4. 把判断回写为可复查的阅读卡<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h3>
 <p>例如，某系统论文在固定并发负载下比较吞吐量。原图支持该负载下的表现；是否能用于本人的突发负载，需要继续核对负载生成和资源约束。这是教学构造的相邻例，不是 IOI 诊断答案，也不是已执行的实验。</p>
 <p>课堂让 AI 先生成阅读地图，再围绕已核原文提出一项可检查的质疑。保存真实输入与相关输出。共同诊断的教师参考判断在初判保存后揭示；学生仍需完成本人论文的卡片。</p>
-<h3 id="_9">按需补充<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h3 id="_10">按需补充<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p><a href="../reading-card-demo/">Keshav 阅读卡</a>用于阅读深度和转述强度校准；<a href="../mi-reading-card-demo/">SAE 与子空间干预卡</a>用于比较不同条件下的证据。两份材料保留原来源身份，本课不要求额外完成它们。L5 可从已有候选中选第二项条件不同或有冲突的来源。</p>
 <hr />
-<h2 id="_10">七、共同诊断与本人迁移<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_11">七、共同诊断与本人迁移<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p>教师用 IOI 说明如何从原图和实际操作形成研究判断。初判时只分发研究任务、原文输入与原图；学生先写观察、解释和下一检查，再比较意见。完整讲义含下方解析，在 P14 教师校准后开放；折叠或页内提示本身不承担答案保密作用。</p>
 <p>随后回到本人研究，选定一条影响下一步的主张，核对两处原文。ML 项目可查消融与数据条件，系统项目可查负载与资源，理论或文献项目可查推导、反例和覆盖范围。机制图、代码和模型实验不是所有项目的要求。</p>
 <p>完成第一张完整精读卡，保留本人问题、AI 导航或质疑、两个原文位置、条件与最终决定。未带论文者使用<a href="../personal-reading-inputs/">公开备用短材料</a>。L5带入该卡及一项能补足缺口的来源。完整任务见<a href="../judgment-task/">本课研究任务</a>。</p>
@@ -1932,7 +1995,7 @@ AI 偏差审计（错误/遗漏，或已检查风险与依据，见 §二·4）�
 <p>对角线 y=x 表示两种表现相等，|x−y| 衡量该 K 下的完整性缺口。随机选择 K 和按组件类别选择 K 得到的小差异，支持电路在这些检查下保留了相关行为；贪心选择会主动寻找较大差异，它找到困难反例。因此不能从随机检查的成功推成所有 K 下都完整，也不能把主动搜索所得的点当作随机输入上的失败率。这些结果支持一项有边界的判断：候选电路解释了重要行为，但尚未通过更强的完整性检查。</p>
 <p>原文没有从这些点单独识别缺口的唯一机制。候选电路外的通路、冗余或补偿关系是待研究解释；干预规则和输入分布则是解释成立的条件，不能仅因有偏离就声称它们造成了伪影。可固定输入、K 和均值替换规则，预先指定补入组件并比较差异；也可固定组件和 K，改变参考分布。前者检验特定遗漏解释，后者检验结论对操作条件的敏感性；两者都需新结果，不能用实验设计冒充验证。</p>
 <p>阅读卡可写：“§4.1 / Fig.6(a) 的贪心检验暴露完整性缺口；§2.1 规定了该判断的均值替换和参考分布条件。我保留当前电路仍不完整的结论，暂缓唯一归因。先固定替换规则补回预先指定的候选路径：遗漏解释预期偏差缩小；再固定电路改变参考分布：设置依赖预期结论随之变化。两项检查尚未执行，单项结果都不能唯一归因。”选择组件与K的过程须与评价输入分开记录。这是教师示范，学生的实际AI记录和本人决定须自行填写。</p>
-<h2 id="_11">八、术语表<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h2 id="_12">八、术语表<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1992,7 +2055,7 @@ AI 偏差审计（错误/遗漏，或已检查风险与依据，见 §二·4）�
 </tbody>
 </table>
 <hr />
-<h2 id="_12">九、延伸阅读与课程材料<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h2 id="_13">九、延伸阅读与课程材料<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
 <p>课程内材料：</p>
 <ul>
 <li><a href="../../../course/syllabus/">课程大纲</a></li>
@@ -2012,11 +2075,11 @@ AI 偏差审计（错误/遗漏，或已检查风险与依据，见 §二·4）�
 <li>Booth, W. C. et al. <em>The Craft of Research</em>, 5th ed. University of Chicago Press, 2024. 选读 Chapter 4 "Engaging Sources"，重点为 reading for a problem、argument、data and support。<a href="https://press.uchicago.edu/ucp/books/book/chicago/C/bo215874008">出版社页面</a>。用途：防止把作者主张、数据、证据和个人推断混为一谈。</li>
 <li>沈向洋、华刚：《读科研论文的三个层次、四个阶段与十个问题》。本地转载副本（未公开；请查对应公开来源）。只作为中文提问清单；正式分发前须确认原始出处与许可。</li>
 </ul>
-<h2 id="_13">补充：早期试探也能帮助收敛问题<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h2 id="_14">补充：早期试探也能帮助收敛问题<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
 <p>第 3–6 课允许有预算上限的数据格式与独立样本审计、环境检查、最小反例和试跑。文献地图不能替代对数据与评价器可用性的检查；完整工程仍在问题与协议基本明确后展开。</p>
 <p>把目的、预算上限、输入与来源、观察、对问题的影响及待核验项写入现有笔记或主文档。探索可修改问题；后续验证说明此前已看过哪些数据，保留独立证据。未知失败含义和未确认独立样本数不能直接改写成零收益或独立观察。</p>
 <p><a href="../../lesson-11/assets/rsi-selection-case/#problem-gate">RSI 问题门审计</a>展示如何从缺少可执行历史和表格口径差异，收窄为可控偏差诊断。它是补充材料，不新增个人项目或正式提交。</p>
-<h2 id="_14">课外预算与下次输入<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h2 id="_15">课外预算与下次输入<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
 <p>课外总投入最多 <strong>60 分钟</strong>：指定阅读 15 分钟，准备 10 分钟，项目补全 35 分钟。阅读范围：围绕本人论文的一条关键主张核对两处位置；教师 IOI 输入只补查 §2.1 与 §4.1 / Fig.6(a) 的课堂缺口。§3.1 / 附录 B 仅用于另行方法比较，不增加必读任务。</p>
 <p>项目补全：完善第一张卡并选第二项来源的关键段落；不另加两篇整文精读。</p>
 <p>安装、下载与排障计入总预算。准备超出预算即采用现成 CPU 起点或纸面备用；未完项带回课堂收窄或补关键检查。三张完整精读卡在 L4、L5、L6 的课堂迁移中逐张完成，课后只补相应缺口。报告、说明和展示从累计项目整理；不增加独立文档或正式提交。</p>
