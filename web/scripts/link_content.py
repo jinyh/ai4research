@@ -45,6 +45,8 @@ PUBLISH = {
     "lessons/lesson-01/handout.md": "lessons/lesson-01/handout.md",
     # student_view.py 只呈现学生部分，教师纸面验收节不进入网站。
     "lessons/lesson-01/classroom-pack.md": "lessons/lesson-01/classroom-pack.md",
+    "lessons/lesson-01/assets/ioi-intro/README.md": "lessons/lesson-01/assets/ioi-intro/README.md",
+    "lessons/lesson-01/assets/ioi-intro/observations.json": "lessons/lesson-01/assets/ioi-intro/observations.json",
     "lessons/lesson-02/handout.md": "lessons/lesson-02/handout.md",
     "lessons/lesson-02/classroom-pack.md": "lessons/lesson-02/classroom-pack.md",
     "lessons/lesson-03/handout.md": "lessons/lesson-03/handout.md",

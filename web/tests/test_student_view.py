@@ -131,7 +131,13 @@ class StudentViewTests(unittest.TestCase):
             self.assertNotIn(title, visible)
         lessons = re.findall(r"^## 第 (\d+) 课：", visible, re.MULTILINE)
         self.assertEqual(lessons, [str(n) for n in range(1, 17)])
-        self.assertEqual(visible.count("**核心｜"), 12)
+        self.assertEqual(visible.count("**核心｜"), 10)
+        for number in (3, 4):
+            title = re.search(rf"^## (第 {number} 课：[^\n]+)", visible, re.MULTILINE).group(1)
+            reading = student_view.section(visible, title)
+            self.assertIn("本人", reading)
+            self.assertIn("学生不叠加MI必读", reading)
+            self.assertNotIn("**核心｜", reading)
         self.assertEqual(visible.count("**参考（研究门课不加必读）｜"), 4)
         self.assertIn("Keshav", visible)
         self.assertIn("未经授权", visible)
@@ -158,6 +164,9 @@ class StudentViewTests(unittest.TestCase):
             build_downloads.build_judgment_downloads({"docs_dir": folder}, link_content.PUBLISH)
             with ZipFile(Path(folder) / "downloads/judgment-tasks.zip") as archive:
                 self.assertEqual(set(archive.namelist()), set(build_downloads.JUDGMENT_FILES))
+                observations = "lessons/lesson-01/assets/ioi-intro/observations.json"
+                self.assertEqual(archive.read(observations), (WEB.parent / observations).read_bytes())
+                self.assertIn(b"observations.json", archive.read("lessons/lesson-01/assets/ioi-intro/README.md"))
                 for name in archive.namelist():
                     self.assertNotIn("teacher", name)
                     self.assertNotIn(b"/Users/bright", archive.read(name))

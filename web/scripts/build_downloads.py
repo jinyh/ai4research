@@ -116,6 +116,8 @@ JUDGMENT_FILES = (
     "course/source-starter-pool.md",
     "course/micro-project.md",
     "lessons/lesson-01/judgment-task.md",
+    "lessons/lesson-01/assets/ioi-intro/README.md",
+    "lessons/lesson-01/assets/ioi-intro/observations.json",
     "lessons/lesson-02/judgment-task.md",
     "lessons/lesson-03/judgment-task.md",
     "lessons/lesson-03/ioi-retrieval-record.md",

@@ -108,7 +108,7 @@
 
 | 文件 | 角色 | 用途 |
 | --- | --- | --- |
-| [handout.md](./handout.md) | 现行·学生讲义 v1.9.0 | 学生可独立阅读的当前内容源 |
+| [handout.md](./handout.md) | 现行·学生讲义 v1.9.1 | 学生可独立阅读的当前内容源 |
 | [teaching-plan.md](./teaching-plan.md) | 现行·教师教案 v2.13.1 | 90 分钟流程、板书、诊断反馈、过渡与演示安排 |
 | [slides.md](./slides.md) | 现行·逐页母稿 v1.19.1 | 36 页屏显、讲述、动作与来源；已与本轮现行及交付PPT核对 |
 | [lesson-01.pptx](./lesson-01.pptx) | 现行·可编辑课堂 PPT（36 页） | 2026-10-21用户授权交付，与deliverables副本字节一致；现场验证待登记 |
