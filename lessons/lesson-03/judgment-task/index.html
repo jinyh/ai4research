@@ -1263,7 +1263,29 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
+        判断时使用的原理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         产物与交接
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        材料定位
       
     </span>
   </a>
@@ -1289,15 +1311,62 @@
 
 <h1 id="3">第 3 课研究任务｜本人问题的检索与判断<a class="headerlink" href="#3" title="Permanent link">&para;</a></h1>
 <h2 id="_1">共同诊断<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>教师问题：哪些GPT-2 small IOI干预会改变答案偏好，效果能否迁移到新模板？种子arXiv:2211.00593为给定输入。只看<a href="../ioi-retrieval-record/">历史运行记录</a>输入A，独立写当前缺口、下一条路线、实际依据和一个替代选择，再查看B/C。说明新证据如何改变或加强决定。课堂提供IOI所需背景，个人项目方向不限于MI。</p>
+<p>教师问题：哪些 GPT-2 small IOI 干预会改变答案偏好，效果能否迁移到新模板？种子 arXiv:2211.00593 为给定输入。下面仅列 2026-10-15 历史记录的首轮输入 A，保留请求与元数据，不列后续选中的路径。原始工具完整响应尚未附入本页，元数据不能替代主张全文核验。</p>
+<p>接口：<code>web.run.search_query</code>。参数：</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;q&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;\&quot;indirect object identification\&quot; \&quot;activation patching\&quot; site:arxiv.org&quot;</span><span class="p">}</span>
+</code></pre></div>
+<p>实际使用的字符串是 <code>"indirect object identification" "activation patching" site:arxiv.org</code>。<code>response_length</code> 为 <code>long</code>。本次可见返回 4 条，按工具显示顺序如下；它们不是已确认纳入的候选表。</p>
+<table>
+<thead>
+<tr>
+<th>顺序</th>
+<th>arXiv ID</th>
+<th>返回题名</th>
+<th>后续审计范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="https://arxiv.org/abs/2605.22462">2605.22462</a></td>
+<td>From Correlation to Cause: A Five-Stage Methodology for Feature Analysis in Transformer Language Models</td>
+<td>本课未核主张，pending</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://arxiv.org/abs/2311.17030">2311.17030</a></td>
+<td>Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching</td>
+<td>打开原文，供入口核验</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://arxiv.org/abs/2608.03629">2608.03629</a></td>
+<td>Cross-Layer Interaction under Weight-Space Ablation: A Closed-Form Attention Jacobian Bound and a Test on a Real Pretrained Model</td>
+<td>本课未核主张，pending</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://arxiv.org/abs/2508.21258">2508.21258</a></td>
+<td>RelP: Faithful and Efficient Circuit Discovery via Relevance Patching</td>
+<td>本课未核主张，pending</td>
+</tr>
+</tbody>
+</table>
+<p>先独立写当前缺口、下一条路线、实际依据和一个替代选择，再由教师揭示后续动作及核验入口。已读过完整讲义或历史记录者，用本人新问题的首轮返回作相同判断，标明已知信息；不把回忆教师路径当独立检索决策。</p>
+<p>无网络时，本页足以完成“种子缺席后下一步”的判断；身份与主张核验使用本人已保存原文。没有原文则记录该项未完成，不能仅凭题名或元数据标为 verified；实际两路检索与 AI 动作仍待补。</p>
 <h2 id="_2">本人实践<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>输入来自L2：本人问题、可公开表述、来源与工具授权、网络范围、结果位置。课前在原15分钟阅读预算内读本人种子摘要与相关问题定义；无种子者可从<a href="../../../course/source-starter-pool/">公开起始池</a>取得给定来源，或选IOI临时备用。</p>
 <p>向Agent交代本人问题、缺口、已有种子、允许来源与预算，实际执行两条互补路线，根据首轮返回选择后续策略并记录理由。专门语义接口不可用时记录原因并选可用路线，不把自然语言输入等同于语义检索。</p>
 <p>核对两条真实来源的身份及各一条拟用主张，写原文位置、核验状态、允许主张和本人决定。至少一条已核验候选进入十字段表，pending保留在线索区。两条均通过或第二路线无新增也可成立。</p>
-<h2 id="_3">产物与交接<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">判断时使用的原理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>判断下一步时，分别考虑来源覆盖、字段／过滤、排序返回与筛选。只观察到四条返回不能定位唯一漏检原因；两路是本课练习要求，不能证明穷尽。讲义小索引用于解释查准率和召回率，按需查阅，不新增必交输出。</p>
+<h2 id="_4">产物与交接<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>统一保存notes/literature-search.md：问题版本、给定种子、实际请求与返回、路线比较与调整依据、两条审计、候选角色与决定、停止条件、未决项及AI使用记录。</p>
 <p>个人复核时反查一项纳入决定到原文和发现路径，再改变本人研究对象、数据、场景、论证前提或预算中的一个条件，说明哪条来源作用需要重判。教师以换模型示范，个人不必改做模型项目。</p>
 <p>L4带本人一篇来源及一条关键主张、身份与原文入口、当前允许转述及未决缺口；L4再完成两处证据和第一张完整精读卡。无网络时在存档上练判断，缺失实际检索与AI动作如实登记，在原每课60分钟课外预算内补核。回放不计本人实际运行，不新增正式作业。</p>
+<h2 id="_5">材料定位<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>方法依据：<a href="../handout/">本课方法讲义</a>。MI 背景状态：<a href="../../cases/mi/S0/">S0</a>；只取用本任务明确列出的输入。</p>
+<p>项目中的历史检索背景与动作关系：<a href="../../cases/mi/literature-route/">检索材料</a>。真实查询原始维护源仍为本课检索运行记录。</p>
 
 
 

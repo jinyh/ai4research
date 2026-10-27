@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="510" viewBox="0 0 900 510" role="img" aria-labelledby="title desc">
+<title id="title">研究任务怎样检验并修订方法</title><desc id="desc">讲义方法进入执行Harness，Codex在固定研究任务上执行并留下轨迹；Pi用于后续课堂演示。改进Harness根据轨迹提案、试跑与组合，保存完整采用版本和经验。比较批次结束后，分别决定是否回写讲义与后续执行。</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#516274" stroke-width="1.6"/></marker></defs>
+<rect width="900" height="510" fill="#fff"/>
+<g font-family="system-ui,Microsoft YaHei,sans-serif" fill="#263442">
+<text x="32" y="36" font-size="24" font-weight="600">方法进入执行，研究证据推动修订</text>
+<rect x="35" y="70" width="315" height="120" rx="8" fill="#faf4f5" stroke="#a6192e"/>
+<text x="55" y="104" font-size="23" font-weight="600">M · 16课方法讲义</text><text x="55" y="137" font-size="18">原理、推理、条件与验证</text><text x="55" y="165" font-size="18">教学工作稿与实验M0分别保存</text>
+<rect x="545" y="70" width="320" height="120" rx="8" fill="#f2f6fa" stroke="#516274"/>
+<text x="565" y="104" font-size="23" font-weight="600">H · 本任务执行Harness</text><text x="565" y="137" font-size="18">相关方法片段与执行约定</text><text x="565" y="165" font-size="18">固定工具、模型、权限和预算</text>
+<rect x="545" y="310" width="320" height="120" rx="8" fill="#f3f7f3" stroke="#607b66"/>
+<text x="565" y="344" font-size="23" font-weight="600">T · 具体研究任务</text><text x="565" y="377" font-size="18">MI的问题、证据与判断</text><text x="565" y="405" font-size="18">保存实际动作、交付和成本</text>
+<rect x="35" y="310" width="315" height="120" rx="8" fill="#f6f4f8" stroke="#786885"/>
+<text x="55" y="344" font-size="23" font-weight="600">I · 改进Harness</text><text x="55" y="377" font-size="18">根据轨迹提案、试跑、组合</text><text x="55" y="405" font-size="18">历史完整版本＋有依据的经验</text>
+<g fill="none" stroke="#516274" stroke-width="2" marker-end="url(#arrow)"><path d="M350 130H540"/><path d="M705 190V305"/><path d="M545 370H355"/><path d="M192 310V195"/><path d="M350 325L540 180"/></g>
+<g font-size="17"><text x="388" y="115">冻结方法映射</text><text x="724" y="252">Codex执行</text><text x="391" y="354">轨迹与缺口</text><text x="42" y="236">批次后分别决定</text><text x="42" y="262">正文回写与采用</text><text x="395" y="258">候选实际试跑</text></g>
+<text x="35" y="477" font-size="18">任务内：固定T，比较H。跨任务：保留采用版本与经验，指导下一任务的改进。</text>
+</g></svg>

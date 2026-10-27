@@ -1,0 +1,108 @@
+{
+  "version": "1.0.0",
+  "paper": "https://arxiv.org/abs/2211.00593",
+  "implementation": [
+    {
+      "path": "lessons/lesson-09/assets/mi-ioi/run.py",
+      "sha256": "696334140356f41422f1532f39e59783099d5fd524deea16b886d19302b8b91b"
+    },
+    {
+      "path": "lessons/lesson-09/assets/mi-ioi/protocol.json",
+      "sha256": "e11f40772ec8777b0664be41de5e5f517d34831c5feadbe55f922aed819f883d"
+    },
+    {
+      "path": "lessons/lesson-09/assets/mi-ioi/cases.jsonl",
+      "sha256": "d2520cd4d89f44c5003628a4ea51c3ca4b9c86c42e1445e509443add01b464ab"
+    }
+  ],
+  "historical_runs": [
+    {
+      "run_id": "historical-single-dev",
+      "identity": "historical-development",
+      "files": [
+        {
+          "path": ".work/mi-demo-20261020/single-dev/manifest.json",
+          "sha256": "100945e477eebf4e4454a261cccc12ef87b79ab919c2b31808e24b595e48753f",
+          "availability": "local-original"
+        },
+        {
+          "path": ".work/mi-demo-20261020/single-dev/events.jsonl",
+          "sha256": "0af676dcacd70dd4343ad7d2550b67faa29c8d15b3b479710774e08c33c2007f",
+          "availability": "local-original"
+        },
+        {
+          "path": ".work/mi-demo-20261020/single-dev/results.jsonl",
+          "sha256": "a110db50328c1d1377506603fd4f8ef8c905088aa6a482352fb790685e99076e",
+          "availability": "local-original"
+        },
+        {
+          "path": ".work/mi-demo-20261020/single-dev/summary.json",
+          "sha256": "68bd1efbee5e80fd6f8aa87924335e97322ff3e7a9fdf54e8bd9ae6453db44d3",
+          "availability": "local-original"
+        }
+      ],
+      "summary": {
+        "n": 12,
+        "mean_logit_difference": {
+          "clean": 3.4160289764404297,
+          "corrupt": -3.3953514099121094,
+          "noop": -3.3953514099121094,
+          "random": -3.2423057556152344,
+          "patch": -2.1950499216715493
+        },
+        "patch_minus_corrupt": 1.2003014882405598,
+        "patch_minus_random": 1.0472558339436848,
+        "max_noop_error": 0.0,
+        "by_family": {
+          "park": 1.0855712890625,
+          "store": 1.3150316874186199
+        },
+        "interpretation": "Descriptive measurements on teaching templates; no significance or general circuit claim."
+      }
+    },
+    {
+      "run_id": "historical-joint-dev",
+      "identity": "historical-development",
+      "files": [
+        {
+          "path": ".work/mi-demo-20261020/joint-dev/manifest.json",
+          "sha256": "2f2ec29562a66173c252aeea91650525e2f1a5c501c4db5c9687ba13b4cfdadb",
+          "availability": "local-original"
+        },
+        {
+          "path": ".work/mi-demo-20261020/joint-dev/events.jsonl",
+          "sha256": "0af676dcacd70dd4343ad7d2550b67faa29c8d15b3b479710774e08c33c2007f",
+          "availability": "local-original"
+        },
+        {
+          "path": ".work/mi-demo-20261020/joint-dev/results.jsonl",
+          "sha256": "4e7ff380fc62080c5298ca243aae56128b037ab4d7f6c942902217080e99d09b",
+          "availability": "local-original"
+        },
+        {
+          "path": ".work/mi-demo-20261020/joint-dev/summary.json",
+          "sha256": "3b525772c2c05616d410017cc693cb29dc3789e386584b112fb1db238265ee17",
+          "availability": "local-original"
+        }
+      ],
+      "summary": {
+        "n": 12,
+        "mean_logit_difference": {
+          "clean": 3.4160289764404297,
+          "corrupt": -3.3953514099121094,
+          "noop": -3.3953514099121094,
+          "random": -3.6388015747070312,
+          "patch": -2.475923538208008
+        },
+        "patch_minus_corrupt": 0.9194278717041016,
+        "patch_minus_random": 1.1628780364990234,
+        "max_noop_error": 0.0,
+        "by_family": {
+          "park": 0.8262608846028646,
+          "store": 1.0125948588053386
+        },
+        "interpretation": "Descriptive measurements on teaching templates; no significance or general circuit claim."
+      }
+    }
+  ]
+}

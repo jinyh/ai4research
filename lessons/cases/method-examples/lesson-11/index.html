@@ -1,0 +1,1635 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="上海交通大学研究生课程“智能科研方法”（AI for Research: Methods and Practice）">
+      
+      
+      
+        <link rel="canonical" href="https://jinyh.github.io/ai4research/lessons/cases/method-examples/lesson-11/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>L11 按需方法案例输入 - 智能科研方法</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#l11" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="智能科研方法" class="md-header__button md-logo" aria-label="智能科研方法" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            智能科研方法
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              L11 按需方法案例输入
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../learn/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  16 讲课程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../project/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  项目与考核
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../templates/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  模板与资源
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../teacher/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  课程信息
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="智能科研方法" class="md-nav__button md-logo" aria-label="智能科研方法" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    智能科研方法
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../learn/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 讲课程
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    16 讲课程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../learn/01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · AI 辅助科研导论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../learn/02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · 科研伦理与 Agent 边界
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../learn/03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · 检索与来源核验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../learn/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · 精读与主张核验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../learn/05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · 证据地图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../learn/06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · 问题定义
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../learn/07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · 假设与区分实验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../learn/08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · 中期诊所
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../learn/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Baseline 与复现
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../learn/10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · 受限 Agent 执行
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../learn/11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 · 自动化循环
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../learn/12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 · 个人工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../learn/13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 · 工作流评价
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../learn/14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 · 结果写成论证
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../learn/15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 · 同行评审与修改
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../learn/16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 · 最终展示
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目与考核
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模板与资源
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    模板与资源
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模板与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course/micro-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    教师 MI Demo 与学生个人研究项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../materials/reading-card/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    阅读卡回放包
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course/pi-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pi Agent 最小启动说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course/metax-compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    沐曦算力：申请与使用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course/reading-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    逐课参考阅读清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资源索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../teacher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课程信息
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、方法示例：把可重复动作改写为受限循环
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、方法示例：把可重复动作改写为受限循环">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 两种循环分别看
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 固定约束
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 从事件到账本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 技术失败与评价结果
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 课堂到项目
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selection-observation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        固定池选优的历史观察
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="固定池选优的历史观察">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        固定指标与选择误差
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        系统分析资料（按需查阅）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="系统分析资料（按需查阅）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 两个分析对象
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 八维框架拆解
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 两个边界判断
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 不外推清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 同谱系对照案例簇（延伸，仅分析对象）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2026-10-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-10-22 原文校准：单次限时与总循环额度
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="l11">L11 按需方法案例输入<a class="headerlink" href="#l11" title="Permanent link">&para;</a></h1>
+<p>身份：保留的教学构造或具名来源分析；按各段说明区分。它不是学生的默认个人项目，也不要求跨课连续完成。以下保留原案例叙述；其中跨课措辞描述该构造包的历史关系，不规定当前课堂进度。</p>
+<h2 id="_1">六、方法示例：把可重复动作改写为受限循环<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>使用<a href="../../../lesson-11/assets/reading-card-workflow/">可复演小包</a>。固定任务是回放三份构造源文本的两条件输出，共六项；输出来自预制素材，无模型调用。真实项目可把回放步骤替换成受限生成，但须重新记录版本、配置与评价。</p>
+<h3 id="1">1. 两种循环分别看<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>固定队列保持方法与输入规则，收集全部输出；优化循环改变候选方法，并依据开发评价作保留决定。两者都保留失败，优化还须规定搜索空间与总预算。本课主演为固定队列。</p>
+<h3 id="2">2. 固定约束<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>指标：人工基准限定条件遗漏率，生成/回放端不参与打分。</li>
+<li>预算：六项任务，最多八次尝试；恢复也计入尝试。</li>
+<li>停止：完成六项或达到尝试上限；输入改变必须另建版本。</li>
+<li>恢复：第一次人为注入的 T02-card 技术失败保留；人工查看后重放未完成项，使用新 run ID。</li>
+</ul>
+<h3 id="3">3. 从事件到账本<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>events.jsonl 逐项保留 attempt_started、controlled_failure、replayed 等事件，state.json 指出已完成项与下一动作。恢复不删除原失败，也不重复记已完成成功项。</p>
+<h3 id="4">4. 技术失败与评价结果<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>完成六项后，T01 改善、T02 无改善、T03 为负例。技术失败属于一次执行事件；无改善与负例属于输出评价，不能靠重新运行或删掉输入消除。在这个阅读卡构造例中，Q1 指“结构化摘要是否减少遗漏”，只在部分输入上方向一致；H1/A2 指约束格式是否通过注意关键条件发挥作用，现有输出不能区分提示内容和格式的作用；A1 指核验负担是否下降，未测时间故不能评价；A3 指能否迁移到其他论文类型，当前三段输入不足以支持。这里的编号只属于阅读卡案例，不沿用 RSI 选优模拟的编号。</p>
+<h3 id="5">5. 课堂到项目<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>先完成一条有状态的执行与恢复说明，并能复原三类记录。借用教师包时标记使用素材及回放身份，个人项目仍缺的运行入口或评价数据写入既有离场卡，课后补到本人项目。</p>
+<h2 id="selection-observation">固定池选优的历史观察<a class="headerlink" href="#selection-observation" title="Permanent link">&para;</a></h2>
+<p>身份：既有合成环境的实际CPU运行，原始数据与运行器保持原位。本段由方法讲义移入，未新增研究运行。</p>
+<h3 id="_2">固定指标与选择误差<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>协议没有漂移，反复选优也可能使历史最佳分数过于乐观。<a href="../../../lesson-11/assets/rsi-selection-case/#validation-gate">RSI 实际 CPU 案例</a>在所有候选真实成功率均为 0.65 的条件下，历史选优 K=64 的平均乐观偏差为 0.1882，独立最终成功率为 0.6508；参考选择损失为零。数值来自合成环境实际运行，不是 Dream-RSI 或工业任务的表现。</p>
+<p>这里没有偷换指标、删除失败或越过预算。需要补上的约束是：声明选择反馈和最终评价的角色，冻结候选后再揭示最终证据，最终结果不得继续驱动本轮优化。独立均匀验证与等预算随机验证都参与候选选择，其结论仍由单列的最终评价检查。</p>
+<p>检查图表时分别回答：历史分数是否乐观？是否真的选错？哪份证据参与选择？资源是否相同？四个问题不能只用一条 Keep/Discard 记录代替。完整日志与固定指标使过程可追踪，独立最终评价支撑结论。系统短分析保留四约束与人工判断边界，完整比较材料仍为按需参考。</p>
+<p>理解这个现象可以先写“观察分数＝候选实际表现＋本次评价误差”。在许多候选中选择最大观察值，也会偏向有利误差。上面的同质候选没有真实优劣，历史分数升高仍可能只是选中了高估；异质候选则还需问是否真的选错。这个分解是教学解释，具体数值来自链接内的合成实验。</p>
+<p>方法依据：<a href="https://jmlr.org/papers/v11/cawley10a.html">Cawley &amp; Talbot (2010), On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation</a>，摘要与模型选择讨论。有限样本上的选择准则也可能被过拟合；本课将此用于解释 RSI 教学模拟，不把模拟数值外推到真实 Agent。</p>
+<h2 id="systems">系统分析资料（按需查阅）<a class="headerlink" href="#systems" title="Permanent link">&para;</a></h2>
+<p>本节用第 12 课的 Agent Workflow 八部分框架拆解两类系统。<strong>它们是分析对象，不是结论外推的依据</strong>——分析目的是看清每个维度上"哪些已由系统处理、哪些仍需人工判断"，而不是断言"AI 已能自主科研"。</p>
+<h3 id="1_1">1. 两个分析对象<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>系统</th>
+<th>一句话描述</th>
+<th>在本课的角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI Scientist（Lu et al., Nature 2026）</td>
+<td>端到端自动化 AI 研究：想法→代码→实验→分析→论文→审稿</td>
+<td>端到端自动化的边界案例</td>
+</tr>
+<tr>
+<td>AutoResearch（Karpathy）</td>
+<td>单次训练限时、固定指标、保留/丢弃与日志的工程循环</td>
+<td>受限循环的最小骨架</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>来源参考：Lu, C. et al. "Towards end-to-end automation of AI research." <em>Nature</em> (2026). DOI: <a href="https://www.nature.com/articles/s41586-026-10265-5">10.1038/s41586-026-10265-5</a>。用途：分析端到端自动化的任务范围、评价证据和仍需人工判断的边界。<strong>不外推为通用自主科研能力</strong>——论文报告的是特定机器学习研究设置下的系统表现；三篇送审稿中一篇评分超过工作坊平均接收阈值，但按预设协议在审后撤回；该工作坊接收率为 70%，研究团队内部判断三篇均未达到 ICLR 主会标准。这不等于顶会正式接收，也不适用于所有学科。</p>
+<p>来源参考：Karpathy. <a href="https://github.com/karpathy/autoresearch/tree/228791fb499afffb54b46200aca536f79142f117"><em>AutoResearch</em>（commit <code>228791f</code>）</a>。用途：分析固定时间预算、固定 <code>val_bpb</code> 评价、<code>keep/discard/crash</code> 日志和回退的最小循环骨架。它是 2026 年工程案例，不是经典理论，也不证明通用自主科研能力。</p>
+</blockquote>
+<p>该系统的工件分析绑定该 commit 的 <a href="https://github.com/karpathy/autoresearch/blob/228791fb499afffb54b46200aca536f79142f117/program.md"><code>program.md</code></a>，只摘出可核对字段：仅修改 <code>train.py</code>、单次固定时间预算、以 <code>val_bpb</code> 为评价指标，并记录 <code>keep / discard / crash</code>。这是源文档字段的课堂重绘，不是系统运行截图或实验结果。</p>
+<h3 id="2_1">2. 八维框架拆解<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>AI Scientist（Lu et al. 2026）</th>
+<th>AutoResearch（Karpathy）</th>
+<th>仍需人工判断的部分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>任务契约</td>
+<td>系统自带任务模板（生成想法→跑实验→写论文）；输入是开放的研究主题</td>
+<td>任务由用户写明（program.md），输入是具体研究动作</td>
+<td>主题是否值得研究、范围是否合理、非例是否清晰</td>
+</tr>
+<tr>
+<td>Context / Memory</td>
+<td>系统维护 idea archive、实验结果、论文草稿的上下文</td>
+<td>启动步骤指定README、prepare.py与train.py等范围内文件</td>
+<td>哪些材料应进入 Context、敏感数据是否被排除</td>
+</tr>
+<tr>
+<td>工具与权限</td>
+<td>系统调用 Python 执行、文件写入、网络检索；权限范围由系统设计者决定</td>
+<td>用户明确只读/可写/可执行范围；单次时限写明，外层总次数与总时长需另加</td>
+<td>越权动作如何被识别、外部写入如何被审核</td>
+</tr>
+<tr>
+<td>状态与 Memory</td>
+<td>系统跨步骤保留状态；状态结构由系统定义</td>
+<td>状态保存在可审查的项目工件和日志中</td>
+<td>状态是否被悄悄修改、跨迭代是否一致</td>
+</tr>
+<tr>
+<td>执行循环</td>
+<td>端到端串联：想法→代码→实验→分析→论文→审稿</td>
+<td><code>Edit → Evaluate → Keep/Discard → Repeat</code></td>
+<td>循环是否允许修改指标、停止条件是否预先承诺</td>
+</tr>
+<tr>
+<td>工件与追踪</td>
+<td>系统产出代码、实验日志、论文稿件、审稿报告</td>
+<td>保留所有迭代的日志与 Keep/Discard 决策</td>
+<td>失败迭代是否被保留、是否可从工件复原决策</td>
+</tr>
+<tr>
+<td>Evals 与人工审核</td>
+<td>系统内置自动评审（AI 审稿）；人工审核在系统之外</td>
+<td>评价用预先写明的指标；启动前确认规则；已授权的 Keep/Discard 可自动执行</td>
+<td>自动评审是否能替代同行共识、Keep/Discard 是否遵守授权与评价规则</td>
+</tr>
+<tr>
+<td>失败恢复</td>
+<td>系统对失败实验有处理逻辑；但选择性保留的风险存在</td>
+<td>失败作为循环的一部分被记录；按指标保留或退回候选版本</td>
+<td>失败是否被选择性删除、回退是否真的回到稳定状态</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3_1">3. 两个边界判断<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p><strong>边界一：端到端自动化 ≠ 通用自主科研。</strong> Lu et al. 2026 报告的是特定机器学习研究设置下的系统表现；三篇送审稿中一篇评分超过工作坊平均接收阈值，但按预设协议撤回，且研究团队判断三篇均未达到 ICLR 主会标准。这不等于"AI 已普遍具备独立科研能力"，也不等于该系统能处理需要专家判断、伦理审查或跨学科证据整合的研究问题。在本课中，它只作为"端到端自动化在哪些维度上仍需人工判断"的分析对象。</p>
+<p><strong>边界二：自动评审 ≠ 同行共识。</strong> AI Scientist 内置的自动评审可以提供问题发现和评价证据，但模型评审不等同于真实同行共识。学生可比较 AI 评审、人类评审和预设评价协议，说明意见的适用范围与处理理由；对外部事实主张仍需追溯原始材料。</p>
+<blockquote>
+<p>来源参考：Huang, Q. et al. "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation." <em>ICML 2024</em>, PMLR 235, 20271–20309. <a href="https://proceedings.mlr.press/v235/huang24y.html">PMLR 正式页面</a>。用途：用任务、成功标准、轨迹和失败类型评价 ML 实验 Agent——它提供了评价 Agent 实验<strong>轨迹</strong>而不仅看最终分数的方法，可用来检查循环是否真的在受限条件下运行。</p>
+</blockquote>
+<h3 id="4_1">4. 不外推清单<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p>本课对 AutoResearch / AI Scientist 的分析不得被改写为以下结论：</p>
+<ul>
+<li>"AI 已能自主完成科研"；</li>
+<li>"Agent 工作流可以替代研究判断"；</li>
+<li>"自动评审可以替代同行评审"；</li>
+<li>"端到端自动化适用于所有学科"；</li>
+<li>"失败实验可以被自动删除"。</li>
+</ul>
+<p>这些表述都超出了来源证据的适用范围。任何在作业或 slides 中出现类似表述，都应被标记为越界并改写为带边界的形式。</p>
+<h3 id="5_1">5. 同谱系对照案例簇（延伸，仅分析对象）<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h3>
+<p>另一个按固定版本保留的分析对象是 Prime Agent（PrimeIntellect，构建于极简 harness pi 之上）代表另一个值得对照的设计方向：<strong>把循环的约束本身做成可持久化的状态</strong>——其 <code>/autonomous</code> 模式在 turn/token/time 预算内运行并可配置质量门，官方明确自述"通过一个门只证明该门所验证的内容，到达预算上限不等于任务成功"；其 Continual Harness 机制则尝试让 harness 的补充说明、记忆与子 Agent 规格以证据支撑的小步更新持久化（支撑论文 arXiv:2605.09998 与 arXiv:2512.24601 均为预印本，未经同行评议）。</p>
+<p>用本课四约束审视它：预算与质量门设计可与 讲义第三节 逐项对照，但"通过门 ≠ 任务成功"恰恰说明——无论 harness 多复杂，停止条件的解释权和回退决定仍必须由研究者保留。本课程现有材料未提供该版本的独立复现，因此只把它作为分析对象：钉死版本的 README 见 <a href="../../../../course/reading-list/">reading-list.md</a> 第 11 课新增案例条目；不进学生安装清单，不外推为"AI 已能自主科研"的任何变体。</p>
+<hr />
+<h3 id="2026-10-22">2026-10-22 原文校准：单次限时与总循环额度<a class="headerlink" href="#2026-10-22" title="Permanent link">&para;</a></h3>
+<p>复核上述固定版本的<code>program.md</code>：单次训练固定5分钟，另给单次异常超时处理；外层明确要求持续循环，直到人工停止。因此不能把它描述为已具备有限总次数／总时长的完整课程循环。课程另加总额度、失败计数和最终评价隔离，是课程设计要求。原文件用0作为崩溃指标占位，读表必须同时读<code>crash</code>状态；本课程未知用量仍记为未知，不能抄成零成本。规则声明也不证明系统权限隔离已被验证。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

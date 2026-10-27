@@ -1274,7 +1274,29 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
+        判断时使用的原理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         完成标准
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        材料定位
       
     </span>
   </a>
@@ -1306,13 +1328,17 @@
 <p>AI 可以参与问题、假设、实验选择、分析和评审。先形成个人初始判断，再比较证据与外部意见；这项课堂诊断不等于项目中禁用 AI。把“当前判断—依据—新证据或反馈—最终处理”写入已有项目，不增加独立作业。</p>
 <h2 id="mi-demo">教师 MI Demo 与共同诊断<a class="headerlink" href="#mi-demo" title="Permanent link">&para;</a></h2>
 <p>比较三个可研究分支：固定干预检查模板依赖；固定模板比较干预粒度；固定输入比较单头与联合。根据现有证据缺口、所需资源、能区分的解释和停止条件选择一个，说明放弃另两个的理由。没有预设唯一最优分支。</p>
+<p>可核对的开发输入（摘自教师演示记录（本页已列可用摘要）2026-10-20实测）：同一GPT-2修订、CPU/float32、12条store/park开发输入，每配置60次前向；保留模板未用于选择。第9层头9的patch−corrupt均值为1.200301，第9层头9＋头6的联合替换为0.919428（零基编号、同位置同输入），noop最大误差均为0；原策略整条residual替换为6.503883，但干预对象不同。零基编号；这些是教师测量摘要，不是论文数据，也不是学生本人的执行。完整配置与逐条结果由教师在相应运行目录反查。</p>
+<p>先区分给定摘要中的观察与想解释的机制，再比较三个分支各能补什么缺口、需要什么材料，以及为什么在当前资源下优先选择它。记录一个可能改变选择的新条件；竞争解释及其区分预测在L7展开。若不能访问逐条记录，仅对该已给摘要作受限判断，不报告跨模板效应、显著性或已确认机制。</p>
 <p>教师 Demo 与个人项目说明：<a href="../../../course/micro-project/">项目路径</a>。场景中的候选判断是教学问题，未标为实际记录的选项不是实验结果。</p>
 <h2 id="_2">迁移到个人研究<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>完成第三张核心精读卡，收敛一个问题；写出非例、可证伪命题和必要前提，保留一次失败或放弃方向。</p>
 <p><strong>验证：</strong>累计至少 10 条候选或等价外部材料、3 张完整卡；数量不替代质量，未核验材料不得冒充证据。</p>
 <p><strong>保存与达标证据：</strong>问题门当前项目版本。</p>
 <p><strong>下次输入：</strong>L7 从当前命题提出竞争解释与区分实验。</p>
-<h2 id="_3">完成标准<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">判断时使用的原理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>依据本人问题类型解释验证方式：效果比较用对照，测量问题核对定义与反例，系统问题检查不变量和故障，理论问题用推导与反例。必要条件不自动推出经验效果；采用决定另计成本与范围。</p>
+<h2 id="_4">完成标准<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1337,6 +1363,8 @@
 </table>
 <p>讨论、自愿协作和 AI 参与不改变个人评分。无改善、有依据地保留原方案或仍不能判断都可成立，但须说明依据及下一项会改变判断的证据。不得以模板填写或教师回放替代本人真实 AI 研究动作。</p>
 <p>普通课课外总量最多 60 分钟，包含阅读、准备、安装排障和项目补全；研究门课用同一预算整理提交，不增加必读。断网时可使用保存材料完成诊断，缺失的实际执行仍需按教师安排补核验。</p>
+<h2 id="_5">材料定位<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>方法依据：<a href="../handout/">本课方法讲义</a>。MI 固定输入：<a href="../../cases/mi/S2/">S2</a>与<a href="../../cases/mi/S1/">S1</a>；只取用本任务明确列出的输入。 原构造或回放例见<a href="../../cases/method-examples/lesson-06/">按需案例</a>，不作为个人项目主线。</p>
 
 
 

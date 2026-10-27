@@ -1267,10 +1267,27 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="一、承接 L1 的虚构演示项目">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        当前问题、观察与候选计划
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         二、任务授权
@@ -1292,7 +1309,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         四、两项安全可做的检查
@@ -1303,7 +1320,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         五、最小工件
@@ -1314,7 +1331,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         六、教师、助教与备用路径
@@ -1358,12 +1375,33 @@
 ├── ethics-and-compliance.md    风险卡由人在核验后更新
 ├── ai-usage-log.md             使用与人工检查记录
 ├── notes/
-│   ├── source-list.md          公开来源清单，尚未列入本次授权
+│   ├── source-list.md          公开来源清单（内容无敏感信息）
 │   └── next-check.md           待写入的下一项取证计划
 ├── private/description.md      占位：假设存在未公开合作内容；无原稿
 └── heldout/description.md      占位：假设存在保留评价；无结果
 </code></pre></div>
-<h2 id="_2">二、任务授权<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_2">当前问题、观察与候选计划<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>当前问题承接 L1：“怎样检查模型的名字偏好及内部原因？”下列为<a href="../../lesson-01/assets/ioi-intro/">教师真实开发观察节选</a>，输入是课程构造句，不是论文数据；GPT-2固定版本，logit差是间接宾语减主语，正值不等于完整生成准确率。</p>
+<table>
+<thead>
+<tr>
+<th>输入</th>
+<th style="text-align: right;">clean logit差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>When John and Mary went to the store, John gave a bag to</td>
+<td style="text-align: right;">2.904404</td>
+</tr>
+<tr>
+<td>When Mary and John went to the store, Mary gave a bag to</td>
+<td style="text-align: right;">2.144226</td>
+</tr>
+</tbody>
+</table>
+<p>仅两条同句式观察尚不能解释内部原因。E2两项计划是教学构造建议：第一项在开发输入中增加能区分姓名顺序与角色的行为检查；第二项先查原论文以明确内部干预对象、指标与对照。本课只判断所需材料和授权，不声称已执行任何一项实验。原始精度和运行身份见链接内 observations.json。</p>
+<h2 id="_3">二、任务授权<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>Task：比较两项取证计划的必要材料和成本；不执行实验。
 Context：仅人工提供的当前问题、public-observations.md 和此任务授权。
 Output：先返回两项建议；人选定后，才可把批准文本写入 notes/next-check.md 的“计划”段。
@@ -1401,15 +1439,15 @@ Review：新增读取或写入需求先说明必要性并获授权。权限行�
 </tbody>
 </table>
 <p>只依据给定记录作初判：在哪一步应暂停？哪条授权是依据？目前能接受哪些结论，哪些还需补查？先记录后讨论。公开清单的内容本身无敏感性；它与本次访问授权是否一致是另一项判断。教师依据另存，学生包不附标准答案。</p>
-<h2 id="_3">四、两项安全可做的检查<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">四、两项安全可做的检查<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>允许动作：人把本人公开问题粘贴给AI，任务仅为提出检索词；保存实际提示、输出和人工决定。只读与手动应用路径按 <a href="../../../course/pi-setup/">Pi启动说明</a> 执行。</p>
 <p>拒绝检查：假设某助手请求读取未列入本次授权的公开来源清单。人审查该模拟请求，在任何读取发生前决定拒绝或先补授权。正式“拒绝检查”选拒绝分支并记录；需要读清单的真实后续任务另行授权，不混入本次检查。限制文件不需要真实存在，不调用读取工具。</p>
 <p>在日志追加以下字段即可，不新增文档：检查ID、模拟请求、已有授权、决定、执行前拦截位置、操作者、实际是否读取、记录依据、下一步。人工拒绝记录的期望值是“未读取”；不能把这个值当工具或系统隔离证明。</p>
-<h2 id="_4">五、最小工件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">五、最小工件<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>权限行沿用starter-template六字段：对象或能力、只读范围、可写范围、是否允许执行、人工确认点、禁止事项；在同一文件写必要上下文清单。</p>
 <p>风险卡沿用Asset／Action／Risk／Control／Owner。示例风险可为任务范围外读取或泄露评价反馈，须按本人动作选取；不要虚构自己的项目存在敏感数据。</p>
 <p>使用记录沿用日期、工具／模型、用途、关键输入、Context／来源、输出用途、人工核验、问题及处理。拒绝检查写明人工模拟、执行前拦截、未实际读取。</p>
-<h2 id="_5">六、教师、助教与备用路径<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">六、教师、助教与备用路径<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>教师先讲对象、授权和控制证据；学生独立看E1–E5；讨论后教师校准。助教操作干净副本，先仅提交授权文本；教师确认后由助教人工应用计划，或用已复演限制配置写回，再核对完整trace和diff。课堂展示的构造轨迹始终标明身份。</p>
 <p>无模型时使用本包构造建议完成人工判断，标记“未调用模型”，实际AI动作待补。授课环境已有工具拒绝能力时可追加测试，记录配置与响应，不能从接口测试推断整个文件系统隔离。未公开合作稿只用无内容的描述开展材料授权对照，现场不发送原稿。</p>
 <p>L3交接：本人问题、可公开表述、来源与工具范围、网络边界、结果位置和本次检查记录。</p>

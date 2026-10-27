@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 870" role="img" aria-labelledby="title desc">
+<title id="title">检索过程与可观察信息</title><desc id="desc">六个诊断环节。来源覆盖和排序信息在当前接口中未知，不能由返回未含种子推断文献不存在。</desc>
+<rect width="380" height="870" fill="#f8fafc"/>
+<g font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" fill="#15304c">
+<text x="18" y="34" font-size="22">从问题到证据：诊断遗漏</text>
+<rect x="16" y="58" width="348" height="102" rx="8" fill="#e5f3ef" stroke="#bbcbd7"/>
+<text x="30" y="86" font-size="20">1. 问题与证据缺口</text>
+<text x="30" y="114" font-size="17" fill="#334155">研究者可见：需要定义、方法、</text>
+<text x="30" y="140" font-size="17" fill="#334155">比较结果还是反例</text>
+<path d="M190 162 v14 m-5 -5 l5 5 l5 -5" stroke="#557487" fill="none" stroke-width="2"/>
+<rect x="16" y="180" width="348" height="102" rx="8" fill="#e5f3ef" stroke="#bbcbd7"/>
+<text x="30" y="208" font-size="20">2. 查询与过滤</text>
+<text x="30" y="236" font-size="17" fill="#334155">记录可见：原请求、来源限制</text>
+<text x="30" y="262" font-size="17" fill="#334155">以及实际执行的调整</text>
+<path d="M190 284 v14 m-5 -5 l5 5 l5 -5" stroke="#557487" fill="none" stroke-width="2"/>
+<rect x="16" y="302" width="348" height="102" rx="8" fill="#e8eef5" stroke="#bbcbd7"/>
+<text x="30" y="330" font-size="20">3. 来源覆盖与索引字段</text>
+<text x="30" y="358" font-size="17" fill="#334155">当前接口未完整提供：覆盖集合、</text>
+<text x="30" y="384" font-size="17" fill="#334155">索引版本与字段</text>
+<path d="M190 406 v14 m-5 -5 l5 5 l5 -5" stroke="#557487" fill="none" stroke-width="2"/>
+<rect x="16" y="424" width="348" height="102" rx="8" fill="#e8eef5" stroke="#bbcbd7"/>
+<text x="30" y="452" font-size="20">4. 匹配、排序与截断</text>
+<text x="30" y="480" font-size="17" fill="#334155">当前接口未提供：总命中、</text>
+<text x="30" y="506" font-size="17" fill="#334155">排序参数与截断原因</text>
+<path d="M190 528 v14 m-5 -5 l5 5 l5 -5" stroke="#557487" fill="none" stroke-width="2"/>
+<rect x="16" y="546" width="348" height="102" rx="8" fill="#e5f3ef" stroke="#bbcbd7"/>
+<text x="30" y="574" font-size="20">5. 可见返回</text>
+<text x="30" y="602" font-size="17" fill="#334155">记录可见：首轮四条结果，</text>
+<text x="30" y="628" font-size="17" fill="#334155">给定的 IOI 种子未出现</text>
+<path d="M190 650 v14 m-5 -5 l5 5 l5 -5" stroke="#557487" fill="none" stroke-width="2"/>
+<rect x="16" y="668" width="348" height="102" rx="8" fill="#e5f3ef" stroke="#bbcbd7"/>
+<text x="30" y="696" font-size="20">6. 筛选与下一步</text>
+<text x="30" y="724" font-size="17" fill="#334155">研究者可见：核验与纳入理由、</text>
+<text x="30" y="750" font-size="17" fill="#334155">未解决缺口与下一步选择</text>
+<text x="18" y="820" font-size="16" fill="#475569">课程自绘框架，不是服务内部实现图。</text>
+<text x="18" y="846" font-size="16" fill="#475569">下一步应检验一种可能原因。</text>
+</g></svg>

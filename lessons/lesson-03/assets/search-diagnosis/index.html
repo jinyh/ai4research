@@ -1231,6 +1231,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        讲义查准率／召回率算例
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1254,6 +1273,8 @@ python3<span class="w"> </span>search.py<span class="w"> </span>--group<span cla
 </code></pre></div>
 <p>每个 --group 内用 | 连接 OR 词，各 group 之间为 AND；默认搜索 title 字段，大小写不敏感子串匹配。可选择 --field keywords。空词不允许。</p>
 <p>保存实际输出，与任务中的“已保存结果”比较；随后自行修订并执行一条查询。概念组不等于独立查询分支；只有分别运行的查询才计算独有命中。将本地练习与真实来源审计分开记录。</p>
+<h2 id="_2">讲义查准率／召回率算例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>按“科研文献阅读或综述方法教学条目”的题名／关键词用途，课程预设相关集合为S1、S2、S3；S4与S5不相关。这是教学标注，不代表真实论文精读结果。原两条查询返回空集及S3/S4/S5；增加 <code>python3 search.py --group 'read|review'</code> 返回S1/S2/S3/S4。对应查准率为未定义、1/3、3/4，召回率为0、1/3、1。脚本和原索引未改，算例无需新增提交。</p>
 
 
 

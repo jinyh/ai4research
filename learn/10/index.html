@@ -764,7 +764,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        带什么来
+        本课方法讲义
       
     </span>
   </a>
@@ -775,7 +775,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        课堂怎么做
+        带什么来
       
     </span>
   </a>
@@ -786,7 +786,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        做到哪里
+        课堂怎么做
       
     </span>
   </a>
@@ -795,6 +795,17 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        做到哪里
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         课外与下课去向
@@ -1343,7 +1354,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        带什么来
+        本课方法讲义
       
     </span>
   </a>
@@ -1354,7 +1365,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        课堂怎么做
+        带什么来
       
     </span>
   </a>
@@ -1365,7 +1376,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        做到哪里
+        课堂怎么做
       
     </span>
   </a>
@@ -1374,6 +1385,17 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        做到哪里
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         课外与下课去向
@@ -1402,18 +1424,20 @@
 
 <h1 id="10">第 10 讲 · 补丁意图与可区分测试<a class="headerlink" href="#10" title="Permanent link">&para;</a></h1>
 <p>三个补丁中哪个修复契约，测试能区分它们吗？</p>
-<h2 id="_1">带什么来<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">本课方法讲义<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>课堂直接使用<a href="../../lessons/lesson-10/handout/">完整讲义</a>，通过目录跳转概念、例子和判断方法；诊断时打开<a href="../../lessons/lesson-10/judgment-task/">任务与输入</a>。本人实践回写已有项目。</p>
+<h2 id="_2">带什么来<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>L9 baseline、冻结协议及一项受限动作。</p>
-<h2 id="_2">课堂怎么做<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_3">课堂怎么做<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li>打开<a href="../../lessons/lesson-10/judgment-task/">共同诊断任务与原始输入</a>，先写判断和依据。</li>
 <li>先独立记录，再由教师校准或开放讨论；说明依据与下一项会改变判断的测试。</li>
 <li>从现有 normalize_record 示例或本人同规模动作出发，先冻结正常/缺字段/空值/类型用例，再实际修改一个模块。与 baseline 在相同输入上比较，保留旧失败和新结果。</li>
 <li>检查 diff 仅在授权实现与本人新增行为测试内；gold/既有评价只读。若 AI 给出补丁，人工逐项审核；仅抄 after 示例不足以覆盖空值与类型。</li>
 </ol>
-<h2 id="_3">做到哪里<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">做到哪里<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>受限补丁、失败用例、测试结果、trace 与人工决定。达标看独立判断、证据定位、相称验证与实际回写；无改善或仍不能判断也可达标。</p>
-<h2 id="_4">课外与下课去向<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">课外与下课去向<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>课外总投入最多 <strong>60 分钟</strong>：指定阅读 15 分钟，准备 10 分钟，项目补全 35 分钟。阅读范围：ReAct 中 action/observation 循环的图及失败处理说明；对照本人的一次调试 trace。</p>
 <p>项目补全：修课堂发现的一个边界用例，整理补丁理由；不另开新功能。</p>
 <p>L11 把已核准动作接到小队列，检验恢复与停止。 安装与排障包含在预算内；超时切换备用。既有示例仅供参考，不替代本人执行与决定。</p>

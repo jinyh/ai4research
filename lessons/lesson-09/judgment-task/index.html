@@ -1257,10 +1257,27 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="教师 MI Demo 与共同诊断">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        共同诊断输入：报告的优势来自哪里
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         迁移到个人研究
@@ -1271,10 +1288,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        判断时使用的原理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         完成标准
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        材料定位
       
     </span>
   </a>
@@ -1302,17 +1341,64 @@
 <h2 id="_1">输入与待判断问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>MI 用于教师演示和短时诊断；下述“迁移到个人研究”在本人项目上完成，研究方向不限于 MI。</p>
 <p>本人L8方案、研究材料与已有AI用法；MI实验包只供教师演示。</p>
-<p><strong>科学效果和工作流收益各需要怎样的对照？</strong></p>
+<p><strong>报告中的优势有多少来自任务结果，多少来自分母、选优和总预算？怎样设计可比的下一轮？</strong></p>
 <p>AI 可以参与问题、假设、实验选择、分析和评审。先形成个人初始判断，再比较证据与外部意见；这项课堂诊断不等于项目中禁用 AI。把“当前判断—依据—新证据或反馈—最终处理”写入已有项目，不增加独立作业。</p>
 <h2 id="mi-demo">教师 MI Demo 与共同诊断<a class="headerlink" href="#mi-demo" title="Permanent link">&para;</a></h2>
 <p>两种比较分别列账：科学比较是 corrupt、noop、random 与 patch；工作流比较是本人已有 AI 方式与拟改进方式。即使 patch 效果很好，也不能据此直接写 Agent 更高效。</p>
+<h3 id="_2">共同诊断输入：报告的优势来自哪里<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>以下为<strong>教学构造记录，非模型实测</strong>。预先协议：在四项固定任务T1–T4上，合格记1，否则记0；timeout也记0。A执行一版，B顺序试了B1–B3，每版均尝试四项；每次尝试的预算上限相同。</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th style="text-align: right;">A</th>
+<th style="text-align: right;">B1</th>
+<th style="text-align: right;">B2</th>
+<th style="text-align: right;">B3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>T2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>T3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>T4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">timeout</td>
+<td style="text-align: right;">timeout</td>
+<td style="text-align: right;">timeout</td>
+</tr>
+</tbody>
+</table>
+<p>报告草稿写：“A成功率50%，B成功率100%，所以B优于A。”选择日志：先比较B1–B3在非timeout结果中的比例，报告最高版本B3；没有另设最终评价。</p>
+<p>请按预先协议复算A与B3；区分分母变化、真实任务结果变化与候选选择。哪项记录支持“全是分母造成”，哪项又限制这个说法？下一步怎样比较，才能保留已观察的变化并检查选择造成的乐观程度？同一记录还应分别说明总尝试数与单次预算，不能只写“等预算”。</p>
 <p>教师 Demo 与个人项目说明：<a href="../../../course/micro-project/">项目路径</a>。场景中的候选判断是教学问题，未标为实际记录的选项不是实验结果。</p>
-<h2 id="_2">迁移到个人研究<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_3">迁移到个人研究<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>在本人项目上建立可复查的研究 baseline，保存输入、版本与结果；运行本人已有 AI 工作方式。ML 项目可采用数据划分，系统项目采用固定负载和故障条件，理论或文献项目采用反例、推导检查或独立复核。事先说明哪些反馈用于改进、哪些用于最终评价。</p>
 <p><strong>验证：</strong>实现必须满足本人项目声明的不变量，结果与版本可定位；检查正常输入和失败路径。MI 演示中的 noop 对照只适用于相应干预实验。</p>
 <p><strong>保存与达标证据：</strong>判断门：双基线、实验规格、复现说明与至少两条研究判断。</p>
 <p><strong>下次输入：</strong>L10 以真实运行暴露的一项缺口组织 Agent 实现。</p>
-<h2 id="_3">完成标准<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">判断时使用的原理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>先说明参照服务效果、组件、机制还是资源比较，再确定保持一致的条件。本人项目运行适用研究baseline或等价依据，MI实验仅为教师Demo。优化停止与最终评价分别声明。</p>
+<h2 id="_5">完成标准<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1337,6 +1423,8 @@
 </table>
 <p>讨论、自愿协作和 AI 参与不改变个人评分。无改善、有依据地保留原方案或仍不能判断都可成立，但须说明依据及下一项会改变判断的证据。不得以模板填写或教师回放替代本人真实 AI 研究动作。</p>
 <p>普通课课外总量最多 60 分钟，包含阅读、准备、安装排障和项目补全；研究门课用同一预算整理提交，不增加必读。断网时可使用保存材料完成诊断，缺失的实际执行仍需按教师安排补核验。</p>
+<h2 id="_6">材料定位<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>方法依据：<a href="../handout/">本课方法讲义</a>。MI示例输入：<a href="../../cases/mi/S1/">S1协议</a>、<a href="../assets/mi-ioi/">实验包入口</a>、<a href="../../cases/mi/sources.json">来源指纹</a>。工作方式诊断使用本页四任务构造表，与科学效果分别评价。 原构造或回放例见<a href="../../cases/method-examples/lesson-09/">按需案例</a>，不作为个人项目主线。</p>
 
 
 

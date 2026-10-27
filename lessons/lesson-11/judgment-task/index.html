@@ -1249,10 +1249,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mi-demo" class="md-nav__link">
+  <a href="#mi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        教师 MI Demo 与共同诊断
+        共同诊断与按需 MI 示例
       
     </span>
   </a>
@@ -1274,7 +1274,29 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
+        判断时使用的原理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         完成标准
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        材料定位
       
     </span>
   </a>
@@ -1304,15 +1326,49 @@
 <p>L10 可运行动作、开发结果与剩余预算。</p>
 <p><strong>应恢复、改变实验方向还是停止？</strong></p>
 <p>AI 可以参与问题、假设、实验选择、分析和评审。先形成个人初始判断，再比较证据与外部意见；这项课堂诊断不等于项目中禁用 AI。把“当前判断—依据—新证据或反馈—最终处理”写入已有项目，不增加独立作业。</p>
-<h2 id="mi-demo">教师 MI Demo 与共同诊断<a class="headerlink" href="#mi-demo" title="Permanent link">&para;</a></h2>
-<p>MI 包支持受控中断和恢复。比较“同输入同策略续跑”“修改策略仍用原目录”“因负结果删除一条输入”三种行为；再看开发模板之间是否给出不同趋势。</p>
+<h2 id="mi">共同诊断与按需 MI 示例<a class="headerlink" href="#mi" title="Permanent link">&para;</a></h2>
+<p>以下是课程构造的开发轨迹，不是 MI 实验结果。冻结目标为比较两种分析策略在不同模板下的稳定性；完成一个模板的两策略配对需 2 次尝试。总预算 12 次，已耗 8 次（包括失败）；剩余 4 次。</p>
+<table>
+<thead>
+<tr>
+<th>模板</th>
+<th>基线正确数/输入数</th>
+<th>改动版正确数/输入数</th>
+<th>执行状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>3/4</td>
+<td>4/4</td>
+<td>已完成，输入与策略版本 v1</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>3/4</td>
+<td>2/4</td>
+<td>已完成，输入与策略版本 v1</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>—</td>
+<td>—</td>
+<td>第一次尝试超时，尚无完整结果</td>
+</tr>
+</tbody>
+</table>
+<p>状态记录：<code>completed=[D1,D2]</code>，<code>pending=[D3,D4]</code>，<code>attempts_used=8</code>，D3 的失败已计入；恢复沿用原输入、协议与策略指纹。已耗8次是给定预算总账；上表展示最后可用结果及当前失败，不是完整尝试流水，不能从表格独立核验全部8次的来历。方案 A 用剩余预算完成 D3、D4 两个配对；方案 B 用一次配对额度复核 D2、另一次完成 D3。允许提出停止或其他分配，但须说明目标、可获得的信息、舍弃的覆盖和停止理由。现有记录能否支持“改动稳定更好”？什么新证据会改变下一步选择？不能假定尚未运行的结果。</p>
+<p>教师随后用 MI 包中的真实受控中断与恢复说明状态身份；阅读卡六项队列是另一个已解方法示例，不是本题答案。</p>
 <p>教师 Demo 与个人项目说明：<a href="../../../course/micro-project/">项目路径</a>。场景中的候选判断是教学问题，未标为实际记录的选项不是实验结果。</p>
 <h2 id="_2">迁移到个人研究<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>实际触发一次受控中断并恢复，核对不重复已完成输入。无长任务的项目可将两个原文／推导核验动作分段，保存已完成检查与待办，再从待办恢复，不要求运行模型队列。让 AI 根据开发反馈选择下一步，保存无效尝试与停止理由。</p>
-<p><strong>验证：</strong>恢复不改变输入、协议和策略指纹。候选越多越容易选出偶然高值；现有 RSI 模拟是固定池选择偏差案例。</p>
+<p><strong>验证：</strong>恢复不改变输入、协议和策略指纹；请求已发出但结果未确认时，先检查状态再重试，新尝试与原失败分别保留。候选越多越容易选出偶然高值；现有 RSI 模拟是固定池选择偏差案例。</p>
 <p><strong>保存与达标证据：</strong>恢复证据、开发实验轨迹与继续／停止判断。</p>
 <p><strong>下次输入：</strong>L12 将已暴露的缺口写成可复用工作流改进。</p>
-<h2 id="_3">完成标准<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">判断时使用的原理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>即使固定指标和完整保留日志，反复选择历史最佳也可能选中有利误差。分别说明执行预算、优化停止和最终评价；不得让最终评价继续驱动本轮选优。</p>
+<h2 id="_4">完成标准<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1337,6 +1393,8 @@
 </table>
 <p>讨论、自愿协作和 AI 参与不改变个人评分。无改善、有依据地保留原方案或仍不能判断都可成立，但须说明依据及下一项会改变判断的证据。不得以模板填写或教师回放替代本人真实 AI 研究动作。</p>
 <p>普通课课外总量最多 60 分钟，包含阅读、准备、安装排障和项目补全；研究门课用同一预算整理提交，不增加必读。断网时可使用保存材料完成诊断，缺失的实际执行仍需按教师安排补核验。</p>
+<h2 id="_5">材料定位<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>方法依据：<a href="../handout/">本课方法讲义</a>。MI 背景状态：<a href="../../cases/mi/S1/">S1</a>；只取用本任务明确列出的输入。 原构造或回放例见<a href="../../cases/method-examples/lesson-11/">按需案例</a>，不作为个人项目主线。</p>
 
 
 

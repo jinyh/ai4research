@@ -1249,10 +1249,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mi-demo" class="md-nav__link">
+  <a href="#mi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        教师 MI Demo 与共同诊断
+        共同诊断与按需 MI 示例
       
     </span>
   </a>
@@ -1274,7 +1274,29 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
+        判断时使用的原理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         完成标准
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        材料定位
       
     </span>
   </a>
@@ -1304,15 +1326,35 @@
 <p>冻结实验协议、baseline 与一项实际缺口。</p>
 <p><strong>Agent 的修改修复了行为，还是只让检查不再报错？</strong></p>
 <p>AI 可以参与问题、假设、实验选择、分析和评审。先形成个人初始判断，再比较证据与外部意见；这项课堂诊断不等于项目中禁用 AI。把“当前判断—依据—新证据或反馈—最终处理”写入已有项目，不增加独立作业。</p>
-<h2 id="mi-demo">教师 MI Demo 与共同诊断<a class="headerlink" href="#mi-demo" title="Permanent link">&para;</a></h2>
-<p>比较两个都能运行的实现：在block输出替换指定token的完整向量，或在注意力输出投影c_proj之前替换指定头的拼接维度。根据要检验的主张选择实现，解释hook的输入输出、应保持的不变量和可能漏过普通功能测试的语义错误；再查看数值检查结果。</p>
+<h2 id="mi">共同诊断与按需 MI 示例<a class="headerlink" href="#mi" title="Permanent link">&para;</a></h2>
+<p>共同诊断是课程构造的代码比较；候选不是实际 Agent 运行记录。旧示例只检查缺字段，新契约要求 <code>paper_id</code> 与 <code>summary</code> 都为去空白后非空的字符串，并保留每条拒绝输入的原因。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># A：复用旧缺字段修复，再清理空白</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">candidate_a</span><span class="p">(</span><span class="n">record</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;paper_id&quot;</span><span class="p">,</span> <span class="s2">&quot;summary&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">record</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">record</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;paper_id&quot;</span><span class="p">,</span> <span class="s2">&quot;summary&quot;</span><span class="p">)}</span>
+
+<span class="c1"># B：在清理前补充输入验证</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">candidate_b</span><span class="p">(</span><span class="n">record</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;paper_id&quot;</span><span class="p">,</span> <span class="s2">&quot;summary&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">record</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">record</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">record</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;paper_id&quot;</span><span class="p">,</span> <span class="s2">&quot;summary&quot;</span><span class="p">)}</span>
+</code></pre></div>
+<p>检查输入依次为：<code>{"paper_id":"p1","summary":" result "}</code>、<code>{"paper_id":"p1"}</code>、<code>{"paper_id":"p1","summary":null}</code>、<code>{"paper_id":"p1","summary":"   "}</code>（JSON 的 null 在 Python 中为 None）。现有测试只覆盖前两项。分别预测返回值或异常，指出能区分 A/B 的最小输入；解释函数正确是否已经保证调用端保留拒绝记录。写完预测再运行或查看教师结果。</p>
+<p>教师 MI Demo 随后展示同一检查思路：整 token 的 block 替换和 c_proj 前的单头维度替换都可能运行成功，但它们干预的对象不同。选择哪一种取决于冻结的研究主张；普通“无报错”检查不能证明干预语义正确。它是方法迁移示例，不替代上面的共同题。</p>
 <p>教师 Demo 与个人项目说明：<a href="../../../course/micro-project/">项目路径</a>。场景中的候选判断是教学问题，未标为实际记录的选项不是实验结果。</p>
 <h2 id="_2">迁移到个人研究<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>给 Agent 明确动作、可写文件和测试条件；实际生成并执行一个补丁或策略实现。无代码研究可实现原文引用审计、推导步骤检查或检索策略，保留输入、执行轨迹与可复查结果；单纯描述流程不等于执行。核对差异，解释为什么采用或撤回。</p>
+<p>给Agent明确动作、可写对象和检查条件，确认限制由工具接口还是人工逐项审核实现；实际生成并执行一个补丁或策略实现。无代码研究可实现原文引用审计、推导步骤检查或检索策略，保留输入、执行轨迹与可复查结果；单纯描述流程不等于执行。核对差异，解释为什么采用或撤回。</p>
 <p><strong>验证：</strong>正常和失败输入都保留；变化涉及协议时重评可比双方，不把旧结果与新协议混算。</p>
 <p><strong>保存与达标证据：</strong>实际 AI 动作、diff、行为检查、结果与个人决定。</p>
 <p><strong>下次输入：</strong>L11 将动作接入有预算的运行与恢复流程。</p>
-<h2 id="_3">完成标准<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">判断时使用的原理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>在已获准范围与预算内，可依据失败证据修复实现并复验。涉及规格、评价协议、权限扩大或根因不清时升级审核。通过已有测试只支持其覆盖的行为，研究指标是否有效另行检查。</p>
+<h2 id="_4">完成标准<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1337,6 +1379,8 @@
 </table>
 <p>讨论、自愿协作和 AI 参与不改变个人评分。无改善、有依据地保留原方案或仍不能判断都可成立，但须说明依据及下一项会改变判断的证据。不得以模板填写或教师回放替代本人真实 AI 研究动作。</p>
 <p>普通课课外总量最多 60 分钟，包含阅读、准备、安装排障和项目补全；研究门课用同一预算整理提交，不增加必读。断网时可使用保存材料完成诊断，缺失的实际执行仍需按教师安排补核验。</p>
+<h2 id="_5">材料定位<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>方法依据：<a href="../handout/">本课方法讲义</a>。MI 背景状态：<a href="../../cases/mi/S1/">S1</a>；只取用本任务明确列出的输入。 原构造或回放例见<a href="../../cases/method-examples/lesson-10/">按需案例</a>，不作为个人项目主线。</p>
 
 
 

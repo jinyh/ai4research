@@ -32,6 +32,13 @@
 .md-typeset summary { font-weight: 600; }
 .md-nav__link { line-height: 1.55; }
 
+/* One complete handout supports reading and zoomed classroom navigation. */
+.md-typeset h2, .md-typeset h3 { scroll-margin-top: 4.5rem; }
+.md-content { min-width: 0; }
+.md-typeset p, .md-typeset li { overflow-wrap: anywhere; }
+.md-typeset .md-typeset__table { max-width: 100%; overflow-x: auto; }
+.md-typeset img, .md-typeset svg { max-width: 100%; height: auto; }
+
 @media (max-width: 600px) {
   .md-typeset { font-size: .82rem; }
   .md-typeset h1 { font-size: 1.65em; }
