@@ -23,7 +23,7 @@
     
     
       
-        <title>第十二讲｜Agent/Skill 背后的逻辑与个人工作流设计 - 智能科研方法</title>
+        <title>第 12 课｜工作流改进与递归自我改进 - 智能科研方法</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#agentskill" class="md-skip">
+        <a href="#12" class="md-skip">
           跳转至
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第十二讲｜Agent/Skill 背后的逻辑与个人工作流设计
+              第 12 课｜工作流改进与递归自我改进
             
           </span>
         </div>
@@ -501,7 +501,7 @@
   <span class="md-ellipsis">
     
   
-    03 · 检索与来源核验
+    03 · 研究问题与多路发现
   
 
     
@@ -529,7 +529,7 @@
   <span class="md-ellipsis">
     
   
-    04 · 精读与主张核验
+    04 · 精读与深度分析
   
 
     
@@ -557,7 +557,7 @@
   <span class="md-ellipsis">
     
   
-    05 · 证据地图
+    05 · 综述与证据地图
   
 
     
@@ -585,7 +585,7 @@
   <span class="md-ellipsis">
     
   
-    06 · 问题定义
+    06 · 问题定义与第一性原理
   
 
     
@@ -641,7 +641,7 @@
   <span class="md-ellipsis">
     
   
-    08 · 中期诊所
+    08 · 方案分享与公开质询
   
 
     
@@ -669,7 +669,7 @@
   <span class="md-ellipsis">
     
   
-    09 · Baseline 与复现
+    09 · 双基线与可复现性
   
 
     
@@ -725,7 +725,7 @@
   <span class="md-ellipsis">
     
   
-    11 · 自动化循环
+    11 · 结果驱动迭代与恢复
   
 
     
@@ -753,7 +753,7 @@
   <span class="md-ellipsis">
     
   
-    12 · 个人工作流
+    12 · 工作流改进与递归
   
 
     
@@ -781,7 +781,7 @@
   <span class="md-ellipsis">
     
   
-    13 · 工作流评价
+    13 · 效果、成本与迁移
   
 
     
@@ -837,7 +837,7 @@
   <span class="md-ellipsis">
     
   
-    15 · 同行评审与修改
+    15 · 独立评审与作者回应
   
 
     
@@ -865,7 +865,7 @@
   <span class="md-ellipsis">
     
   
-    16 · 最终展示
+    16 · 个人展示与迁移判断
   
 
     
@@ -1380,7 +1380,7 @@
 <summary>本讲章节导航</summary>
 <div class="toc">
 <ul>
-<li><a href="#agentskill">第十二讲｜Agent/Skill 背后的逻辑与个人工作流设计</a><ul>
+<li><a href="#12">第 12 课｜工作流改进与递归自我改进</a><ul>
 <li><a href="#_1">导读与学习目标</a></li>
 <li><a href="#_2">一、先走通一次研究动作</a></li>
 <li><a href="#_3">二、用八个要素解释执行设计</a></li>
@@ -1398,7 +1398,7 @@
 </div>
 </details>
 <hr />
-<h1 id="agentskill">第十二讲｜Agent/Skill 背后的逻辑与个人工作流设计<a class="headerlink" href="#agentskill" title="Permanent link">&para;</a></h1>
+<h1 id="12">第 12 课｜工作流改进与递归自我改进<a class="headerlink" href="#12" title="Permanent link">&para;</a></h1>
 <h2 id="_1">导读与学习目标<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>同一模型可以因为输入组织、工具权限、检查顺序和状态记录不同，完成很不一样的工作。设计研究工作流，要说明这些安排为什么有助于取得证据，以及怎样知道它们真的改善了研究。</p>
 <p>本课从一次可追查的执行出发，学习把任务、执行方法、改进机制和历史经验连接起来。完成后，你应能解释本人工作流如何从输入形成动作和工件，定位一个实际卡点，提出有依据的修改，并设计相称的验证。个人项目仍维护既有 Agent Workflow，不新增提交或要求付费接入。</p>
@@ -1475,6 +1475,7 @@
 <p>经验进入讲义、进入执行版本、进入改进库是三个采用动作。单次失败可以作为教学材料，但它提出的修复建议仍可能尚未验证。课程本地研究记录见<a href="../../cases/mi/">研究项目导航</a>；早期 Pi 试点未完成组合试跑，保留失败身份；后续 Codex 备课的实际进展按运行记录核对。组合得到执行、形成采用和后续复用分别需要证据。</p>
 <p>机制参考：<a href="https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/README.md">Harness² 固定版本说明</a>与<a href="https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/harness2/core/library.py">经验库实现</a>。本课采用其双层机制，Codex 备课递归、Pi 课堂演示、受限工具及教学材料映射是本地实现。</p>
 <h2 id="_5">七、本人工作流的修改与验证<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>本课个人实践只需围绕已有工作流完成一次有依据的改进并实际验证；上文完整候选与组合试跑用于理解递归研究方法，不作为每人的新增运行配额。</p>
 <p>选择本人现有工作流中的一个实际卡点，先找输入、工具动作和交付的对应证据。解释问题来自方法、工具、材料还是执行安排。然后只修改必要部分，保留父版本和修改理由，用相同初始输入检查行为变化与结果。</p>
 <p>预先确定怎样结束、怎样保存失败以及资源上限。若模型、工具或数据同时变化，结论只能覆盖组合变化，不能单独归因为提示。未知用量保持未知，不能声称成本降低。第13课继续分析总成本、效果和迁移，本课先完成一条走得通且可复查的路径。</p>
 <p>课堂按<a href="../judgment-task/">任务页</a>先独立判断，再讨论给定输入；教师答案按安排揭示。本人产出仍是个人 Workflow 的设计、实际运行和一次有依据的修改，回写现有项目。无需新建全局 skill、接入 MCP 或搭建多 Agent 系统。</p>
@@ -1489,7 +1490,7 @@
 <li><a href="../../../course/assignments/">项目里程碑与验证门</a></li>
 <li><a href="../../../course/project-template/">期末项目完整模板</a>（§6 个人 Agent Workflow 与自动化设计）</li>
 <li><a href="../../../course/reading-list/">第 12 课阅读书目</a></li>
-<li><a href="../../lesson-01/handout/">第 1 课讲义 §四 Agent Workflow 八要素</a></li>
+<li><a href="../../../course/project-template/">完整项目模板 §6：个人 Agent Workflow 与自动化设计</a></li>
 <li><a href="../../lesson-11/handout/">第 11 课 AutoResearch 循环</a></li>
 <li>备课规划第 12 课（未公开；请查对应公开来源）</li>
 </ul>
@@ -1519,7 +1520,7 @@
 <h2 id="_8">课外预算与下次输入<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>课外总投入最多 <strong>60 分钟</strong>：指定阅读 15 分钟，准备 10 分钟，项目补全 35 分钟。阅读范围：van der Aalst 工作流模式中的 sequence、exclusive choice 与 iteration 定义/示例；对照本人控制流。</p>
 <p>项目补全：仅修未走通的一个环节并补运行说明；不要求接入 MCP 或付费模型。</p>
-<p>安装、下载与排障计入总预算。准备超出预算即采用现成 CPU 起点或纸面备用；未完项带回课堂收窄或补关键检查。三张完整精读卡在 L4、L5、L6 的课堂迁移中逐张完成，课后只补相应缺口。报告、说明和展示从累计项目整理；不增加独立文档或正式提交。</p>
+<p>安装、下载与排障计入总预算。设备或网络故障时，用已保存的材料和日志完成可做的检查；未执行部分标明待补，不能以回放替代实际运行。本课回写累计项目，不新增正式提交。</p>
 
 
 

@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#10" class="md-skip">
+        <a href="#10-agent" class="md-skip">
           跳转至
         </a>
       
@@ -512,7 +512,7 @@
   <span class="md-ellipsis">
     
   
-    03 · 检索与来源核验
+    03 · 研究问题与多路发现
   
 
     
@@ -540,7 +540,7 @@
   <span class="md-ellipsis">
     
   
-    04 · 精读与主张核验
+    04 · 精读与深度分析
   
 
     
@@ -568,7 +568,7 @@
   <span class="md-ellipsis">
     
   
-    05 · 证据地图
+    05 · 综述与证据地图
   
 
     
@@ -596,7 +596,7 @@
   <span class="md-ellipsis">
     
   
-    06 · 问题定义
+    06 · 问题定义与第一性原理
   
 
     
@@ -652,7 +652,7 @@
   <span class="md-ellipsis">
     
   
-    08 · 中期诊所
+    08 · 方案分享与公开质询
   
 
     
@@ -680,7 +680,7 @@
   <span class="md-ellipsis">
     
   
-    09 · Baseline 与复现
+    09 · 双基线与可复现性
   
 
     
@@ -838,7 +838,7 @@
   <span class="md-ellipsis">
     
   
-    11 · 自动化循环
+    11 · 结果驱动迭代与恢复
   
 
     
@@ -866,7 +866,7 @@
   <span class="md-ellipsis">
     
   
-    12 · 个人工作流
+    12 · 工作流改进与递归
   
 
     
@@ -894,7 +894,7 @@
   <span class="md-ellipsis">
     
   
-    13 · 工作流评价
+    13 · 效果、成本与迁移
   
 
     
@@ -950,7 +950,7 @@
   <span class="md-ellipsis">
     
   
-    15 · 同行评审与修改
+    15 · 独立评审与作者回应
   
 
     
@@ -978,7 +978,7 @@
   <span class="md-ellipsis">
     
   
-    16 · 最终展示
+    16 · 个人展示与迁移判断
   
 
     
@@ -1422,8 +1422,8 @@
 
 
 
-<h1 id="10">第 10 讲 · 补丁意图与可区分测试<a class="headerlink" href="#10" title="Permanent link">&para;</a></h1>
-<p>三个补丁中哪个修复契约，测试能区分它们吗？</p>
+<h1 id="10-agent">第 10 讲 · Agent 执行实验与受限代码修改<a class="headerlink" href="#10-agent" title="Permanent link">&para;</a></h1>
+<p>两个候选实现中哪个满足契约，哪些输入能区分它们？</p>
 <h2 id="_1">本课方法讲义<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>课堂直接使用<a href="../../lessons/lesson-10/handout/">完整讲义</a>，通过目录跳转概念、例子和判断方法；诊断时打开<a href="../../lessons/lesson-10/judgment-task/">任务与输入</a>。本人实践回写已有项目。</p>
 <h2 id="_2">带什么来<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -1432,8 +1432,8 @@
 <ol>
 <li>打开<a href="../../lessons/lesson-10/judgment-task/">共同诊断任务与原始输入</a>，先写判断和依据。</li>
 <li>先独立记录，再由教师校准或开放讨论；说明依据与下一项会改变判断的测试。</li>
-<li>从现有 normalize_record 示例或本人同规模动作出发，先冻结正常/缺字段/空值/类型用例，再实际修改一个模块。与 baseline 在相同输入上比较，保留旧失败和新结果。</li>
-<li>检查 diff 仅在授权实现与本人新增行为测试内；gold/既有评价只读。若 AI 给出补丁，人工逐项审核；仅抄 after 示例不足以覆盖空值与类型。</li>
+<li>在本人项目选择一项获准动作，先写预期输出和边界检查，再实际执行并与 baseline 比较。代码项目可参考 normalize_record；无代码项目做引用审计、推导检查或检索策略，保留输入、AI 输出、核验依据和前后差异。</li>
+<li>检查改动仅在授权范围内、冻结的评价材料未被改写。代码路径复核 diff 和失败用例；无代码路径复核原文位置与判断变化。保存实际执行与个人决定。</li>
 </ol>
 <h2 id="_4">做到哪里<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>受限补丁、失败用例、测试结果、trace 与人工决定。达标看独立判断、证据定位、相称验证与实际回写；无改善或仍不能判断也可达标。</p>
@@ -1442,7 +1442,7 @@
 <p>项目补全：修课堂发现的一个边界用例，整理补丁理由；不另开新功能。</p>
 <p>L11 把已核准动作接到小队列，检验恢复与停止。 安装与排障包含在预算内；超时切换备用。既有示例仅供参考，不替代本人执行与决定。</p>
 <hr />
-<p><a href="../../lessons/lesson-10/handout/">完整讲义：方法、案例与来源</a> · <a href="../../course/reading-list/#10-ai-agent">本课阅读范围</a> · <a href="../11/">下一讲</a></p>
+<p><a href="../../lessons/lesson-10/handout/">完整讲义：方法、案例与来源</a> · <a href="../../course/reading-list/#10-agent">本课阅读范围</a> · <a href="../11/">下一讲</a></p>
 
 
 
