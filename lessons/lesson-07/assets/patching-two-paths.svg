@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">相同输出，两种干预路径</title>
+  <desc id="desc">给定教学网络 h=(x,0,x)，输出 y=2h2+h3。正常输入1得到状态(1,0,1)，供体输入3得到(3,0,3)。仅替换h3得到(1,0,3)，混合方向替换得到(2,1,1)，两者输出均为3，但后者使正常为零的h2产生贡献。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0,0 L0,8 L8,4 z" fill="#4A525B"/></marker>
+    <marker id="light-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0,0 L0,8 L8,4 z" fill="#7A8490"/></marker>
+  </defs>
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+  <g font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" fill="#26323C">
+    <text x="64" y="66" font-size="44" font-weight="700" fill="#7A0C16">相同输出，两种干预路径</text>
+    <text x="64" y="111" font-size="28">给定网络：h = (x, 0, x)；y = 2h2 + h3</text>
+    <rect x="60" y="145" width="1480" height="260" rx="18" fill="#F5F6F7" stroke="#D7DCE1" stroke-width="2"/>
+    <text x="90" y="194" font-size="28" font-weight="700">正常运行与供体</text>
+    <text x="90" y="245" font-size="28">接收：x = 1</text>
+    <text x="90" y="286" font-size="28">h = (1, 0, 1)</text>
+    <text x="90" y="342" font-size="26">供体：x′ = 3，h′ = (3, 0, 3)</text>
+    <rect x="645" y="168" width="165" height="55" rx="11" fill="#FFFFFF" stroke="#A7AFB7" stroke-width="2"/>
+    <rect x="645" y="246" width="165" height="55" rx="11" fill="#FFFFFF" stroke="#A7AFB7" stroke-width="2"/>
+    <rect x="645" y="324" width="165" height="55" rx="11" fill="#FFFFFF" stroke="#A7AFB7" stroke-width="2"/>
+    <text x="678" y="206" font-size="29">h1 = 1</text>
+    <text x="678" y="284" font-size="29">h2 = 0</text>
+    <text x="678" y="362" font-size="29">h3 = 1</text>
+    <line x1="810" y1="195" x2="1177" y2="266" stroke="#7A8490" stroke-width="3" stroke-dasharray="9 8" marker-end="url(#light-arrow)"/>
+    <line x1="810" y1="273" x2="1177" y2="273" stroke="#4A525B" stroke-width="3" marker-end="url(#arrow)"/>
+    <line x1="810" y1="351" x2="1177" y2="280" stroke="#4A525B" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="939" y="192" width="180" height="37" fill="#F5F6F7"/>
+    <text x="955" y="219" font-size="25">输出权重 0</text>
+    <rect x="961" y="243" width="145" height="37" fill="#F5F6F7"/>
+    <text x="989" y="271" font-size="25">× 2</text>
+    <rect x="961" y="317" width="145" height="37" fill="#F5F6F7"/>
+    <text x="989" y="345" font-size="25">× 1</text>
+    <rect x="1190" y="235" width="258" height="78" rx="14" fill="#FFFFFF" stroke="#4A525B" stroke-width="2"/>
+    <text x="1231" y="286" font-size="33" font-weight="700">输出 y = 1</text>
+    <rect x="60" y="435" width="720" height="350" rx="18" fill="#F1F7F4" stroke="#C8DDD2" stroke-width="2"/>
+    <rect x="820" y="435" width="720" height="350" rx="18" fill="#FCF7EC" stroke="#E6D5AF" stroke-width="2"/>
+    <text x="89" y="482" font-size="30" font-weight="700" fill="#245440">只替换 h3</text>
+    <text x="849" y="482" font-size="30" font-weight="700" fill="#80510C">沿混合方向替换投影</text>
+    <text x="89" y="527" font-size="25">供体的 h3 = 3 写入接收状态</text>
+    <text x="849" y="527" font-size="25">v = (1, 1, 0) / √2；状态增加 (1, 1, 0)</text>
+    <rect x="100" y="566" width="170" height="66" rx="11" fill="#FFFFFF" stroke="#A7AFB7" stroke-width="2"/>
+    <rect x="335" y="566" width="170" height="66" rx="11" fill="#FFFFFF" stroke="#A7AFB7" stroke-width="2"/>
+    <rect x="570" y="566" width="170" height="66" rx="11" fill="#E0EEE7" stroke="#245440" stroke-width="5"/>
+    <text x="127" y="609" font-size="29">h1 = 1</text>
+    <text x="362" y="609" font-size="29">h2 = 0</text>
+    <text x="597" y="609" font-size="29" font-weight="700" fill="#245440">h3 = 3</text>
+    <rect x="860" y="566" width="170" height="66" rx="11" fill="#F1DEB0" stroke="#80510C" stroke-width="5"/>
+    <rect x="1095" y="566" width="170" height="66" rx="11" fill="#F1DEB0" stroke="#80510C" stroke-width="5"/>
+    <rect x="1330" y="566" width="170" height="66" rx="11" fill="#FFFFFF" stroke="#A7AFB7" stroke-width="2"/>
+    <text x="887" y="609" font-size="29" font-weight="700" fill="#80510C">h1 = 2</text>
+    <text x="1122" y="609" font-size="29" font-weight="700" fill="#80510C">h2 = 1</text>
+    <text x="1357" y="609" font-size="29">h3 = 1</text>
+    <text x="89" y="686" font-size="27">正常输出通路中的 h3 改变</text>
+    <text x="849" y="686" font-size="27">h3 未变；正常为 0 的 h2 被改成 1</text>
+    <text x="89" y="746" font-size="36" font-weight="700" fill="#245440">y = 2 × 0 + 3 = 3</text>
+    <text x="849" y="746" font-size="36" font-weight="700" fill="#80510C">y = 2 × 1 + 1 = 3</text>
+    <text x="64" y="836" font-size="27" font-weight="700">深色描边与底色标出改变的值：只看输出，无法辨认这两条干预路径。</text>
+    <text x="64" y="876" font-size="24" fill="#56616B">课程自绘，依据 Makelov et al. §3.3、Figure 2；公开论文教学模型的具体代入，非 GPT-2 实测。</text>
+  </g>
+</svg>

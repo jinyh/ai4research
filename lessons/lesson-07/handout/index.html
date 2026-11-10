@@ -1505,13 +1505,51 @@
 <p>记录本次使用的工具或模型、实际输入、执行轨迹、采用内容、依据和下一步。AI 的生成内容可以成为待检验的方案或行为研究数据；涉及外部事实与文献时，仍需回到来源核验。</p>
 <h2 id="_6">六、论文案例：同一观察，两种机制<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>本节用一篇公开论文说明研究者怎样为同一个观察设计区分检查：Makelov、Lange、Nanda，<em>Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching</em>，<a href="https://arxiv.org/html/2311.17030v2">arXiv:2311.17030v2</a>。第3–5课的 MI 演示中出现过这篇论文；这里只看它的论证结构，不需要掌握其中的线性代数。</p>
-<p><strong>观察。</strong>activation patching 把模型在一个输入上的内部激活替换成另一个输入上的激活，看输出是否随之改变。作者在 GPT-2 Small 的间接宾语识别（IOI）任务上，沿某个 MLP 层中的一个一维方向做 patch，模型行为像是句中名字的位置信息被翻转了（§4，Figure 3 标出了干预位置）。</p>
+<p><strong>观察。</strong>activation patching 把模型在一个输入上的内部激活替换成另一个输入上的激活，看输出是否随之改变。沿一维方向 patch 时，替换的是该方向上的投影，与该方向正交的分量仍保留接收输入的原值。作者在 GPT-2 Small 的间接宾语识别（IOI）任务上，沿某个 MLP 层中的一个一维方向做 patch，模型行为像是句中名字的位置信息被翻转了（§4，Figure 3 标出了干预位置）。</p>
 <p><strong>两个解释。</strong></p>
 <ul>
 <li>解释 A：这个方向在模型的正常计算中表示了名字位置，patch 改写了这一特征。</li>
 <li>解释 B：这个方向可以拆成两部分。一部分与该层输出因果断开，单独改它不影响下游；另一部分在正常输入上几乎不被使用，作者称为“休眠”。两部分一起被 patch 时，打开了一条平时不用的通路，同样能产生行为改变（§3.2）。</li>
 </ul>
 <p>两个解释都预测“patch 后行为改变”，所以这个观察本身没有区分力，和§一的问答例是同一类处境。</p>
+<p><strong>一个能算清楚的网络。</strong>论文§3.3、Figure 2 给出一个教学网络：输入为数值 <code>x</code>，中间状态为 <code>h=(x,0,x)</code>，输出按 <code>y=2h_2+h_3</code> 计算。下面代入具体数值说明它的计算，属于公开论文教学模型，不是 GPT-2 实测。</p>
+<p>在这个给定计算图中，<code>h_1</code> 随输入变化，但输出不读取它；<code>h_2</code> 能影响输出，却在正常输入上恒为零；<code>h_3</code> 将输入传到输出。以输入 1 的状态作为接收对象，以输入 3 的状态作为供体：</p>
+<table>
+<thead>
+<tr>
+<th>状态或操作</th>
+<th>中间状态 <code>(h_1,h_2,h_3)</code></th>
+<th>输出 <code>y=2h_2+h_3</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>接收输入正常运行：<code>x=1</code></td>
+<td><code>(1,0,1)</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>供体输入正常运行：<code>x'=3</code></td>
+<td><code>(3,0,3)</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td>只用供体值替换接收状态的 <code>h_3</code></td>
+<td><code>(1,0,3)</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td>沿混合方向 <code>v=(1,1,0)/√2</code> 替换投影</td>
+<td><code>(2,1,1)</code></td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>最后一行并非分别复制 <code>h_1</code> 和 <code>h_2</code>。两个正常状态沿 <code>v</code> 的投影相差 <code>√2</code>，把接收状态沿这个方向增加 <code>√2v=(1,1,0)</code>，便得到 <code>(2,1,1)</code>。它的 <code>h_3</code> 仍为 1，输出却因 <code>h_2</code> 被改成 1 而变为 3。</p>
+<p><img alt="给定三单元网络中，两种替换得到相同输出" src="../assets/patching-two-paths.svg" /></p>
+<p><em>课程自绘，依据 Makelov et al. §3.3、Figure 2 改写。深色描边与底色标出改变的值；两种干预均得到输出 3，混合方向替换却使正常为零的分量产生贡献。数值为论文教学模型的具体代入，非 GPT-2 实测。</em></p>
+<p>只看输出变为 3，就无法辨认这两条路径。回查中间状态，才看见第二种干预使原本休眠的分量产生了作用。可以据此自查：哪项状态变化支持休眠通路解释？若只有输出记录，还缺什么计算过程证据？</p>
+<p>这个小网络让路径差异直接可见。在真实 MLP 中，作者另按输出矩阵将候选方向分解为因果断开部分和其余部分，再进行下述检查；图中的坐标 <code>h_2</code> 不直接等于实际模型分解出的方向。</p>
 <p><strong>区分检查。</strong>作者在§3.4给出两项检查。下表是按本例重建的预期，用来说明检查为什么有区分力，不是原文的判定规则：</p>
 <table>
 <thead>
