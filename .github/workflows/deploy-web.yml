@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           # Snapshot on codex/student-site; update only after publication checks.
-          ref: bc9b3b12325bb81c2df60cd494e8764fc1ce16d0
+          ref: dfe6c6fad5cb16f36940a9fdfbbb542b44c4ffea
           path: student-site
           persist-credentials: false
       - name: Verify publication boundary
