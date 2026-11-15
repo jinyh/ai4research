@@ -1423,24 +1423,22 @@
 
 
 <h1 id="10-agent">第 10 讲 · Agent 执行实验与受限代码修改<a class="headerlink" href="#10-agent" title="Permanent link">&para;</a></h1>
-<p>两个候选实现中哪个满足契约，哪些输入能区分它们？</p>
+<p>实现通过测试，是否也完成了研究规格中的操作？</p>
 <h2 id="_1">本课方法讲义<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>课堂直接使用<a href="../../lessons/lesson-10/handout/">完整讲义</a>，通过目录跳转概念、例子和判断方法；诊断时打开<a href="../../lessons/lesson-10/judgment-task/">任务与输入</a>。本人实践回写已有项目。</p>
+<p>使用<a href="../../lessons/lesson-10/handout/">完整讲义</a>理解原理、例子与判断依据，诊断时打开<a href="../../lessons/lesson-10/judgment-task/">任务与输入</a>。本人实践持续回写同一项目。</p>
 <h2 id="_2">带什么来<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>L9 baseline、冻结协议及一项受限动作。</p>
+<p>L9冻结规格、baseline与可运行小输入；先写出一项预期行为。 安装与排障计入原预算，不额外准备新系统。</p>
 <h2 id="_3">课堂怎么做<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
-<li>打开<a href="../../lessons/lesson-10/judgment-task/">共同诊断任务与原始输入</a>，先写判断和依据。</li>
-<li>先独立记录，再由教师校准或开放讨论；说明依据与下一项会改变判断的测试。</li>
-<li>在本人项目选择一项获准动作，先写预期输出和边界检查，再实际执行并与 baseline 比较。代码项目可参考 normalize_record；无代码项目做引用审计、推导检查或检索策略，保留输入、AI 输出、核验依据和前后差异。</li>
-<li>检查改动仅在授权范围内、冻结的评价材料未被改写。代码路径复核 diff 和失败用例；无代码路径复核原文位置与判断变化。保存实际执行与个人决定。</li>
+<li>按任务输入独立记录初判与依据，再比较证据和实际做法。</li>
+<li>回到本人项目，先实际执行一个受限动作并检查结果；根据反馈修订或补查，再同输入复验。</li>
+<li>把实际输入、差异、输出与决定保存在已有记录，不另写课堂报告。原方案正确可以保留；无改善和有效负结果均按真实证据处理。</li>
 </ol>
 <h2 id="_4">做到哪里<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>受限补丁、失败用例、测试结果、trace 与人工决定。达标看独立判断、证据定位、相称验证与实际回写；无改善或仍不能判断也可达标。</p>
+<p>一个实际AI动作、代码或策略差异、相称检查与采用／撤回／待查决定。 理论、文献与系统项目选择相称检查，方向不限MI。共同构造题和教师回放保留其身份，不能抵扣本人执行。</p>
 <h2 id="_5">课外与下课去向<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>课外总投入最多 <strong>60 分钟</strong>：指定阅读 15 分钟，准备 10 分钟，项目补全 35 分钟。阅读范围：ReAct 中 action/observation 循环的图及失败处理说明；对照本人的一次调试 trace。</p>
-<p>项目补全：修课堂发现的一个边界用例，整理补丁理由；不另开新功能。</p>
-<p>L11 把已核准动作接到小队列，检验恢复与停止。 安装与排障包含在预算内；超时切换备用。既有示例仅供参考，不替代本人执行与决定。</p>
+<p>课外总投入最多 <strong>60 分钟</strong>：指定阅读15分钟、准备10分钟、项目补全35分钟。 原预算内补同一动作的缺项与边界检查，不另加功能。</p>
+<p>L11接收实现、检查结果、当前不确定性与剩余预算。 模型不可用时实际检查本人已有真实AI产物或本地结果，缺失执行明确标待补，不编造运行；超时先缩小范围。</p>
 <hr />
 <p><a href="../../lessons/lesson-10/handout/">完整讲义：方法、案例与来源</a> · <a href="../../course/reading-list/#10-agent">本课阅读范围</a> · <a href="../11/">下一讲</a></p>
 

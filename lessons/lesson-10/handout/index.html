@@ -1481,6 +1481,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#paper-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. PaperBench：实现、执行与结果是三层证据
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1600,6 +1611,7 @@
 <li><a href="#2_2">2. 修复根因、绕过失败与污染实验</a></li>
 <li><a href="#3-diff">3. diff 审查清单</a></li>
 <li><a href="#4-swe-bench">4. SWE-bench 视角：任务构造与测试判定</a></li>
+<li><a href="#paper-case">5. PaperBench：实现、执行与结果是三层证据</a></li>
 </ul>
 </li>
 <li><a href="#_6">五、方法应用与本人迁移</a></li>
@@ -1809,7 +1821,31 @@
 </tbody>
 </table>
 <p>测试把部分预期行为变成可执行检查；覆盖之外仍可能有错误。如果测试与实现共同误解规格，两者也可能一起通过。对科研代码还要另查指标、分母和数据使用：一个正确求均值的程序，也可能在错误的样本单位上求均值。</p>
-<p>方法背景：<a href="https://www.cs.utexas.edu/~EWD/ewd02xx/EWD249.PDF">Dijkstra, Notes on Structured Programming, EWD249，第7页</a>讨论测试对程序正确性判断的限度。上表是课程构造调试案例与工程验证方法，不是该文的实验。</p>
+<p>例如，研究规格要求“每个任务等权，报告任务准确率的平均值”。以下为教学构造的小输入：</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>正确数 / 输入数</th>
+<th>任务准确率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>甲</td>
+<td>2 / 2</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>乙</td>
+<td>4 / 8</td>
+<td>50%</td>
+</tr>
+</tbody>
+</table>
+<p>按任务等权，结果为 <code>(100% + 50%) / 2 = 75%</code>；把全部输入汇总，结果为 <code>(2 + 4) / (2 + 8) = 60%</code>。前者回答“一个等权任务的平均表现”，后者回答“这批输入中正确的比例”。如果研究规格选择前者，返回60%的实现即使计数、除法和输出范围测试全部通过，也没有实现约定的研究操作；另一个研究若预先选择按输入汇总，60%则是相应结果。</p>
+<p>因此，检查代码前要把“在哪个单位上比较、怎样加权”写入规格，再用这种可手算的小输入核对实际行为。这个检查把代码输出接回研究意图；它仍没有回答任务是否有代表性、指标是否足以支持更广的研究结论。这些问题需要相应的研究证据。</p>
+<p>方法背景：<a href="https://www.cs.utexas.edu/~EWD/ewd02xx/EWD249.PDF">Dijkstra, Notes on Structured Programming, EWD249，第7页</a>讨论测试对程序正确性判断的限度。本节字段校验与比较单位短例均为课程构造，该文提供方法背景。</p>
 <h2 id="permissions">三、权限分层与人工审核点<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h2>
 <h3 id="1">1. 最小权限原则的回归<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>第 2 课“Agent 权限”已建立最小权限原则：只读、可写、可执行、需确认、禁止。本课把它从"项目级权限矩阵"落到"任务级权限契约"。</p>
@@ -1934,6 +1970,10 @@
 <p>SWE-bench 把"代码任务"构造为：一个真实 issue、一个可执行的代码仓库快照、一组判定通过的测试。它的关键设计是把"Agent 解决了问题"定义为"指定测试通过"，而不是"Agent 改了一段看起来合理的代码"。本课借用它的视角——Agent 的修改是否被接受，由预先指定的测试判定，不由 Agent 自己的叙述判定。其任务来自关联issue且修改了测试文件的pull request，在指定仓库版本上用修复前失败、修复后通过的测试作为重要信号；不能概括为只运行仓库原有测试。本课据此要求把测试对应到问题与预期行为，不把通过有限测试等同于修改完全正确。</p>
 <p>SWE-bench 的局限也是本课的局限：测试通过不等于方法正确、不等于未引入数据泄漏、不等于未污染评价协议。Agent 输出始终需要人工核验。</p>
 <hr />
+<h3 id="paper-case">5. PaperBench：实现、执行与结果是三层证据<a class="headerlink" href="#paper-case" title="Permanent link">&para;</a></h3>
+<p><a href="https://arxiv.org/html/2504.01848v3"><em>PaperBench</em>，arXiv:2504.01848v3</a> 将复现要求区分为 Code Development、Execution 和 Result Match（§2.4、Table 1），并在独立复现阶段运行提交（§2.2）。读这部分时追问：看到代码、运行日志和生成结果，分别足以判断什么？</p>
+<p>把这种区分用于自己的研究：代码检查定位实现是否对应规格，实际运行检查指定动作是否发生，结果检查再回答预定观察是否出现。例如，上述按任务等权的指标，代码中出现平均函数只是实现线索；保存命令、输入和输出才能确认执行的是哪版程序；把实际75%的输出对回已知小输入，才能核对本次结果。每层都要指向具体对象，三层之间的缺口才能被发现。</p>
+<p>结果与预期一致之后，仍需用研究设计判断它支持哪个命题、覆盖哪些条件。PaperBench的复现分数受其rubric和任务范围约束；这里借用证据分层解释检查方法，不要求复刻完整系统。</p>
 <h2 id="_6">五、方法应用与本人迁移<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>先用本讲方法检查本人项目，再把判断、依据、未决项和下一步回写已有记录。完整教学构造或回放输入见<a href="../../cases/method-examples/lesson-10/">按需案例</a>；案例不规定本人研究方向或跨课进度。</p>
 <h2 id="_7">六、常见错误<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
@@ -1953,8 +1993,9 @@
 </ol>
 <hr />
 <h2 id="transfer">七、共同诊断与本人迁移<a class="headerlink" href="#transfer" title="Permanent link">&para;</a></h2>
-<p>给 Agent 明确动作、可写文件和测试条件；实际生成并运行一个补丁或策略实现。核对差异，解释为什么采用或撤回。</p>
-<p>验证：正常和失败输入都保留；变化涉及协议时重评可比双方，不把旧结果与新协议混算。</p>
+<p>从 L9 已有项目选一项可执行的小动作，先把研究意图落实到可检查行为，再给 Agent 明确动作、可写文件和测试条件。例如，指标计算要对应正确的比较单位；干预代码要作用于协议指定的对象；反例检索要保留命题的前提。权限约定复用已有记录，只补本次差异。</p>
+<p>先执行小动作并检查结果，再根据中点反馈修订或补查，用相同输入复验。已有实现正确时，可以保留它并实际检查一个未覆盖的行为；不要求先出现错误。代码项目留下 diff、命令和输出，理论或文献项目留下实际策略、AI 原始输出及原文或推导依据，这些产物本身就是研究记录。</p>
+<p>课上完成一个实际动作、相称检查及采用／撤回／待查决定；课后在原预算内补齐同一动作的说明或边界检查，不另建新功能。正常和失败输入均保留；若需修改研究规格，应另立版本并重评可比双方，不把旧结果与新协议混算。</p>
 <p>产物：实际 AI 动作、diff、行为检查、结果与个人决定。完整任务见<a href="../judgment-task/">本课研究任务</a>。</p>
 <h2 id="_8">八、术语表<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <table>
@@ -2037,13 +2078,14 @@
 </ul>
 <p>正式书目（见 <a href="../../../course/reading-list/">reading-list.md</a> 第 10 课）：</p>
 <ol>
-<li>Russell, S., &amp; Norvig, P. <em>Artificial Intelligence: A Modern Approach</em>, 4th ed. Pearson, 2020. 选读 Chapter 2 "Intelligent Agents"。<a href="https://www.pearson.com/en-us/subject-catalog/p/artificial-intelligence-a-modern-approach/P200000003500/9780134610993">出版社页面</a>。用途：先用经典 Agent 概念理解环境、目标、观察和行动，再分析 LLM coding agent。指定范围见本课课外预算。</li>
-<li>Yao, S. et al. "ReAct: Synergizing Reasoning and Acting in Language Models." <em>ICLR 2023</em>. <a href="https://iclr.cc/virtual/2023/poster/11003">会议页面</a>。用途：分析 reasoning—action—observation 循环及其错误传播。任选，约 25 分钟。</li>
-<li>Amershi, S. et al. "Guidelines for Human-AI Interaction." <em>CHI 2019</em>. DOI: <a href="https://www.microsoft.com/en-us/research/publication/guidelines-for-human-ai-interaction/">10.1145/3290605.3300233</a>。选读人工纠错、控制、反馈和失败处理相关准则。用途：设计人工审核点和可恢复交互。任选，约 20 分钟。</li>
+<li>Russell, S., &amp; Norvig, P. <em>Artificial Intelligence: A Modern Approach</em>, 4th ed. Pearson, 2020. 选读 Chapter 2 "Intelligent Agents"。<a href="https://www.pearson.com/en-us/subject-catalog/p/artificial-intelligence-a-modern-approach/P200000003500/9780134610993">出版社页面</a>。用途：用经典 Agent 概念理解环境、目标、观察和行动。按需参考，不列入本课指定阅读。</li>
+<li>Yao, S. et al. "ReAct: Synergizing Reasoning and Acting in Language Models." <em>ICLR 2023</em>. <a href="https://iclr.cc/virtual/2023/poster/11003">会议页面</a>。用途：分析 reasoning—action—observation 循环及其错误传播。指定15分钟选段：action/observation循环的图及失败处理说明，对照本人一次调试trace。</li>
+<li>Amershi, S. et al. "Guidelines for Human-AI Interaction." <em>CHI 2019</em>. DOI: <a href="https://www.microsoft.com/en-us/research/publication/guidelines-for-human-ai-interaction/">10.1145/3290605.3300233</a>。选读人工纠错、控制、反馈和失败处理相关准则。用途：设计人工审核点和可恢复交互。按需参考，约20分钟；计入原课外总预算，不额外叠加。</li>
 </ol>
 <p>课堂案例：</p>
 <ol>
 <li>Jimenez, C. E. et al. <a href="https://www.swebench.com/original.html"><em>SWE-bench: Can Language Models Resolve Real-World GitHub Issues?</em></a>, ICLR 2024。只分析任务构造、执行环境、测试判定及 benchmark 局限。</li>
+<li>Starace et al. <a href="https://arxiv.org/html/2504.01848v3"><em>PaperBench: Evaluating AI's Ability to Replicate AI Research</em></a>，预印本，2025，v3。课堂使用§2.2、§2.4与Table 1，区分代码实现、执行和结果证据；按需参考，不增加必读。</li>
 </ol>
 <h2 id="handoff">课外预算与下次输入<a class="headerlink" href="#handoff" title="Permanent link">&para;</a></h2>
 <p>课外总投入最多 <strong>60 分钟</strong>：指定阅读 15 分钟，准备 10 分钟，项目补全 35 分钟。阅读范围：ReAct 中 action/observation 循环的图及失败处理说明；对照本人的一次调试 trace。</p>
