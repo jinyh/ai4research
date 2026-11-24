@@ -1535,7 +1535,7 @@
 <p>一次比较的第一步，是说清分数差异要回答什么问题。AxBench 用两组参照比较模型控制方法。一项 Codex 分析任务则用原有提示作参照，判断改版是否推进了分析。读完两例，你应能为自己的研究选择参照、说明比较单位与指标、分开选优和最终评价，并留下可查的成本与执行记录。</p>
 <h2 id="paper-case">案例一：AxBench 怎样选择 baseline<a class="headerlink" href="#paper-case" title="Permanent link">&para;</a></h2>
 <p><strong>关键输入与数据。</strong> Wu 等人用 Concept500 比较 Gemma-2-2B-it 与 Gemma-2-9B-it 上的方法。概念检测给带标签的文本打分，检验正例能否排在负例前。Steering 给模型一条指令和目标概念，检验生成能否体现该概念。LLM 评审对概念体现、指令遵循和流畅度各打 0、1 或 2 分，三项取调和平均，综合分的量程是 <strong>0–2</strong>。每个概念用 <strong>10 条指令</strong>，表征 steering 方法有 <strong>14 档候选强度</strong>。见 <a href="https://arxiv.org/html/2501.17148v3#S3.SS3">AxBench v3 §§3.3、4.1</a>。</p>
-<p>每格依次为 <strong>2B 第 10 层设置 / 9B 第 20 层设置</strong>，对应每个模型所测的较早层。表中的 prompting 在指令前加一段提示，微调用训练好的模型生成。它们的结果列在对应的比较设置下，两种办法都省去生成时的强度选档。见 <a href="https://arxiv.org/html/2501.17148v3#S4">AxBench v3 §§4、5，Tables 1–3</a>。</p>
+<p>每格依次为 <strong>2B 第 10 层设置 / 9B 第 20 层设置</strong>，对应每个模型所测的较早层。表中包含三类对象：① 工程控制手段：<strong>Prompting</strong>（指令前加提示）与微调（<strong>LoReFT</strong>、<strong>LoRA</strong>、<strong>SFT</strong>），它们的结果列在对应的比较设置下，均省去生成时的强度选档；② 简单或有监督表征方法：<strong>DiffMean</strong>（正负样本激活均值差）与 <strong>ReFT-r1</strong>（联合训练概念检测与干预的秩 1 表征微调）；③ 无监督字典方法：<strong>SAE</strong>（预训练稀疏自编码器）及 <strong>SAE-A</strong>（为对齐训练数据条件，用同一批标注训练数据按 AUROC 为 SAE 选出最匹配特征）。见 <a href="https://arxiv.org/html/2501.17148v3#S4">AxBench v3 §§4、5，Tables 1–3</a>。</p>
 <table>
 <thead>
 <tr>
@@ -1603,12 +1603,13 @@
 <p><strong>两组参照。</strong> 对第一问，prompting 和微调是实际可用的替代办法。在 9B 第 20 层设置，prompting 的 steering 分是 1.075，LoReFT 是 0.777，ReFT-r1 是 0.630。在 2B 第 10 层设置，三者分别为 0.698、0.701 和 0.633，差距小得多。对第二问，可以用 DiffMean 这类简单表征方法作为参照。以 9B 第 20 层设置为例，DiffMean 与 SAE 逐概念配对，胜率 64.3%，同时在概念检测上分别得到 0.955 和 0.631。</p>
 <p><strong>比较单位和指标。</strong> Table 1 先按概念算 AUROC，再对概念取平均。Table 2 报告选定强度后的平均综合分，任何一项评分低都会拉低调和平均。Table 3 把每个概念的综合分与相同设置下的 SAE 配对，平局算半胜。读胜率时要看它数的是概念，读 AUROC 时要看它排的是文本。SAE-A 在表中两种设置下都提高了检测 AUROC，steering 综合分却略低于原 SAE，说明两项任务需要各自的指标。</p>
 <p><strong>公平性与选择。</strong> 有监督方法有训练数据可用，作者增设 SAE-A，让 SAE 也能依据同一批带标签的训练数据选特征。作者用 5 条指令选强度，用另外 5 条评价选中的强度。若用同一批指令既挑最高分又报最终效果，偶然的高分会参与选优。Prompting 和微调对每条测试指令随机抽一份输出来评分，使各方法计分的输出份数相同。比较时还要交代各边实际搜索了什么、投入了多少。见 <a href="https://arxiv.org/html/2501.17148v3#S4">AxBench v3 §§4、4.1、5.2</a>。</p>
+<p><img alt="AxBench 两组参照与选优隔离" src="../assets/axbench-protocol-comparison.svg" /></p>
 </details>
 <p><strong>方法与边界。</strong> 先用一句话写清比较要决定替代、改进还是组件贡献，再决定用什么参照、按什么单位计分、用哪些材料选优和评价。本表适用于指定 Gemma 模型、层和合成概念，steering 由 LLM 评分，SFT 的概念覆盖也较窄。作者指出自动标签偏词元级，标签质量可能解释 SAE 的部分弱势，推广到其他模型、高阶概念或人工评价需要新的比较。见 <a href="https://arxiv.org/html/2501.17148v3#S6">AxBench v3 §§4.1、6</a>。</p>
 <h2 id="codex-case">案例二：Codex 算出的恢复比例怎样改变判断？<a class="headerlink" href="#codex-case" title="Permanent link">&para;</a></h2>
 <p>对同一批 GPT-2 IOI 干预记录，原有分析提示和改版提示给出的判断，哪一个更站得住？关键是有没有算出干预找回了多少比例的分数，以及这个比例会怎样改变对两组模板差异的解读。</p>
 <p>IOI（间接宾语识别）看模型预测句末人名时有多偏向原句的间接宾语，分数是它与原句主语的 logit 差。模板族是一组共用句式的输入，本例有两族，每族 6 条。每条输入有三个分数，分别来自原句、替换一个人名后的扰动句，以及在扰动句上恢复一处原句内部激活后的结果。</p>
-<p>原提示、改版 A、改版 B 和组合版各用 Codex 重分析一次，都拿到相同的 12 条既有记录。按干预后比扰动后多得几分来算，store 族的平均增幅比 park 族高 <strong>0.2295</strong>。这能说明 store 族恢复得更多吗？下表列出原提示和改版 B 的单次分析成本。</p>
+<p>原提示、改版 A、改版 B 和组合版各用 Codex 重分析一次，都拿到相同的 12 条既有记录。按“干预后减扰动后”的原尺度增幅算，store 族均值为 <strong>1.315</strong>，park 族均值为 <strong>1.086</strong>，store 族高出 <strong>0.2295</strong>（但 12 条输入在干预后的 logit 差仍全为负值）。这能说明 store 族恢复得更多吗？下表把原提示、改版 B 的单次成本与整轮研究总账并列给出。</p>
 <table>
 <thead>
 <tr>
@@ -1628,9 +1629,14 @@
 <td style="text-align: right;">159.44 秒</td>
 <td style="text-align: right;">17,548</td>
 </tr>
+<tr>
+<td>整轮研究总账（含拟定候选、试跑、选优与失败尝试）</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">≥ 294,128（另有 3 次调用未知，不按 0 计）</td>
+</tr>
 </tbody>
 </table>
-<p>整轮研究还花费在拟定候选、试跑、选优和失败尝试上。已记录的 <strong>294,128 token</strong> 是整轮研究用量的下界。另有 3 次调用的用量未知，不能按 0 计。</p>
+<p>整轮研究的实际开销远不止选中版本的那一次分析；已记录的 <strong>294,128 token</strong> 只是用量下界。</p>
 <p><strong>先判断。</strong> ① 一份笔记建议算恢复比例，另一份实际算了出来。你会用哪两个差值复算这个比例？什么结果会让你收窄对组间差异的解释？② 只报告选中版本的单次分析成本，会漏掉哪些开销？③ 为了检验先前任务积累的经验能否改善这次分析，原计划让提示设计者参考那些经验，再对同一批记录把基线和三个候选各跑一次。整轮只剩两个分析运行名额，每个名额允许试跑一个版本。现在能完成这组四次运行的对照吗？</p>
 <details>
 <summary>展开 Codex 案例分析</summary>
@@ -1640,10 +1646,44 @@
 <p><strong>方法与边界。</strong> 比较 AI 工作方式时，先让原有方式在同一任务上真实跑一次，再报告试了几个版本、怎样选优、总成本多少，以及结论适用于什么范围。这一轮中途修过校验器，应按一次开发过程来读。要检验改版能否在其他任务上同样推进分析，需要固定比较流程，在新材料上评价，并给原有方式相称的尝试机会。</p>
 <p>数据来自 2026 年 10 月 22 日的 GPT-2 IOI 重分析、匿名选优和独立复算记录。</p>
 <h2 id="personal-practice">把两种比较带回本人项目<a class="headerlink" href="#personal-practice" title="Permanent link">&para;</a></h2>
+<p><img alt="双基线分账：科学对照与 AI 工作方式对照分开建立" src="../assets/dual-baselines-and-splits.svg" /></p>
 <ol>
-<li><strong>找出研究 baseline。</strong> 带上第 8 课后实际运行的一条研究输入及结果。尚未运行时，先补一次最小运行或等价核验。</li>
-<li><strong>实跑原有 AI 工作方式。</strong> 按<a href="../judgment-task/">本课任务</a>，在课程使用的 Agent 平台 Pi Agent 上运行一次，并注明实际完成状态。</li>
-<li><strong>分开记录两条基线。</strong> 各写清比较问题、输入、评价单位和资源，附上版本、配置、原始输出与日志位置。涉及随机过程时记录种子，涉及动态检索时保存实际请求和响应。</li>
+<li><strong>找出研究 baseline。</strong> 带上第 8 课后实际运行的一条研究输入及结果。尚未运行时，先优先补一次最小研究运行或等价核验（保留输入、条件、结果与缩减理由），将下方第 2 步移至课后整理时段补跑，并在提交中注明实际状态。</li>
+<li><strong>实跑原有 AI 工作方式。</strong> 已完成研究 baseline 者，按<a href="../judgment-task/">本课任务</a>，在课程使用的 Agent 平台 Pi Agent 上针对本人项目一小段已获准任务运行一次原有 AI 方式，并注明实际完成状态。</li>
+<li><strong>分开记录两条基线。</strong> 按下表把科学研究 baseline 与原有 AI 工作方式基线分开列账，附上版本、配置、原始输出与日志位置。涉及随机过程时记录种子，涉及动态检索时保存实际请求和响应。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>基线类型</th>
+<th>比较问题</th>
+<th>输入与版本</th>
+<th>评价单位与指标</th>
+<th>资源与成本</th>
+<th>选优与最终评价边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>科学研究 baseline</td>
+<td>我的方法／解释在研究对象上是否成立？</td>
+<td>任务输入、材料版本、配置与种子（或等价条件）</td>
+<td>比较单位、指标定义与分母</td>
+<td>算力、运行次数或人工核验耗时</td>
+<td>哪些材料用于调试／选参，哪些用于最终评价</td>
+</tr>
+<tr>
+<td>原有 AI 工作方式基线</td>
+<td>后续改版流程是否提升质量、减少遗漏或省成本？</td>
+<td>同一任务片段、提示／上下文、模型与工具版本</td>
+<td>输出核验判据（准确性、遗漏、复算等）</td>
+<td>单次耗时／token 与整轮尝试、失败总账</td>
+<td>冻结改版后再在未参与选优的材料上同判据比较</td>
+</tr>
+</tbody>
+</table>
+<p><em>方向适配：ML／算法项目可采用数据划分与模型对照；系统／软件项目采用固定负载、边界输入与故障条件；理论或文献项目采用现有推导、反例、覆盖审计或独立复核，不要求统一安装代码环境或 GPU。</em></p>
+<ol>
 <li><strong>确定下一步。</strong> 把实际缺口和下一项检查写回项目。已有记录足以支持当前判断时，指出可复查的依据。若要判断结果是否稳定，安排足以支持该判断的重复或新条件核验。最后用<a href="#checkpoint-2">判断门提交清单</a>自查。</li>
 </ol>
 <h2 id="_2">课外预算与下次输入<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>

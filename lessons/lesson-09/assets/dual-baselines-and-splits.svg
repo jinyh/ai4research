@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" role="img" aria-labelledby="title desc">
+  <title id="title">双基线分账：科学对照与 AI 工作方式对照分开建立</title>
+  <desc id="desc">左侧为科学研究 baseline，回答方法或解释在研究对象上是否成立；右侧为原有 AI 工作方式基线，回答改进工作流是否提升质量、减少遗漏或节省成本；底部为两条基线共同守住的三道边界。</desc>
+  <rect width="1600" height="800" fill="#FFFFFF"/>
+  <g font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" fill="#26323C">
+    <text x="60" y="64" font-size="40" font-weight="700" fill="#7A0C16">双基线分账：科学对照与 AI 工作方式对照分开建立</text>
+    <text x="60" y="106" font-size="24" fill="#56616B">一项科学结果变好，不能直接写成 AI 工作流更高效；两笔账各自回答不同问题</text>
+
+    <!-- Left Card: Science Baseline -->
+    <rect x="60" y="136" width="712" height="444" rx="18" fill="#F1F7F4" stroke="#C8DDD2" stroke-width="2.5"/>
+    <rect x="90" y="160" width="184" height="40" rx="20" fill="#245440"/>
+    <text x="182" y="187" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">账一 · 科学对照</text>
+    <text x="292" y="190" font-size="30" font-weight="700" fill="#245440">科学研究 baseline</text>
+
+    <rect x="90" y="218" width="652" height="58" rx="10" fill="#E0EEE7"/>
+    <text x="114" y="255" font-size="22" font-weight="700" fill="#245440">回答：我的方法、解释或设计在研究对象上是否成立？</text>
+
+    <rect x="90" y="294" width="652" height="258" rx="12" fill="#FFFFFF" stroke="#C8DDD2" stroke-width="1.5"/>
+    <text x="114" y="340" font-size="22"><tspan font-weight="700" fill="#245440">• 对应案例：</tspan>AxBench（两组参照回答不同比较问题）</text>
+    <text x="114" y="396" font-size="22"><tspan font-weight="700" fill="#245440">• 对照要点：</tspan>控制混杂、对齐比较单位、区分检测与干预</text>
+    <text x="114" y="452" font-size="22"><tspan font-weight="700" fill="#245440">• 复现记录：</tspan>输入、配置、版本、种子或等价核查条件</text>
+    <text x="114" y="508" font-size="22"><tspan font-weight="700" fill="#245440">• 方向适配：</tspan>系统＝固定负载；理论／文献＝反例与核验</text>
+
+    <!-- Right Card: AI Workflow Baseline -->
+    <rect x="828" y="136" width="712" height="444" rx="18" fill="#FCF7EC" stroke="#E6D5AF" stroke-width="2.5"/>
+    <rect x="858" y="160" width="204" height="40" rx="20" fill="#80510C"/>
+    <text x="960" y="187" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">账二 · 工作流对照</text>
+    <text x="1080" y="190" font-size="30" font-weight="700" fill="#80510C">原有 AI 工作方式基线</text>
+
+    <rect x="858" y="218" width="652" height="58" rx="10" fill="#F1DEB0"/>
+    <text x="882" y="255" font-size="22" font-weight="700" fill="#80510C">回答：改版流程是否提高质量、减少遗漏或节省成本？</text>
+
+    <rect x="858" y="294" width="652" height="258" rx="12" fill="#FFFFFF" stroke="#E6D5AF" stroke-width="1.5"/>
+    <text x="882" y="340" font-size="22"><tspan font-weight="700" fill="#80510C">• 对应案例：</tspan>Codex × IOI 重分析（原提示 vs 改版 B）</text>
+    <text x="882" y="396" font-size="22"><tspan font-weight="700" fill="#80510C">• 实跑起点：</tspan>在本人项目用 Pi Agent 实跑一次原有方式</text>
+    <text x="882" y="452" font-size="22"><tspan font-weight="700" fill="#80510C">• 成本全账：</tspan>单次耗时／token 与整轮探索失败分开记</text>
+    <text x="882" y="508" font-size="22"><tspan font-weight="700" fill="#80510C">• 评价时机：</tspan>固定流程后，在新材料上同判据评价双方</text>
+
+    <!-- Center ≠ Badge -->
+    <circle cx="800" cy="358" r="28" fill="#7A0C16"/>
+    <text x="800" y="369" text-anchor="middle" font-size="34" font-weight="700" fill="#FFFFFF">≠</text>
+
+    <!-- Bottom Strip: Three shared guardrails -->
+    <rect x="60" y="606" width="1480" height="132" rx="16" fill="#F5F6F7" stroke="#D7DCE1" stroke-width="2"/>
+    <text x="90" y="646" font-size="24" font-weight="700" fill="#182C40">两条基线共同守住的三道边界</text>
+
+    <rect x="90" y="664" width="445" height="54" rx="10" fill="#FFFFFF" stroke="#A7AFB7" stroke-width="1.5"/>
+    <text x="312" y="699" text-anchor="middle" font-size="21" font-weight="700" fill="#182C40">① 先定比较问题，再选参照与单位</text>
+
+    <rect x="577" y="664" width="446" height="54" rx="10" fill="#FFFFFF" stroke="#A7AFB7" stroke-width="1.5"/>
+    <text x="800" y="699" text-anchor="middle" font-size="21" font-weight="700" fill="#182C40">② 选优／调试材料与最终评价分开</text>
+
+    <rect x="1065" y="664" width="445" height="54" rx="10" fill="#FFFFFF" stroke="#A7AFB7" stroke-width="1.5"/>
+    <text x="1287" y="699" text-anchor="middle" font-size="21" font-weight="700" fill="#182C40">③ 如实记录总尝试数、失败与停止</text>
+
+    <!-- Footer provenance -->
+    <text x="60" y="776" font-size="20" fill="#56616B">课程自绘｜第 9 课双基线框架：承接第 8 课后研究 baseline 与本课 Pi Agent 原有 AI 工作方式记录，作为第 10–13 课评价起点。</text>
+  </g>
+</svg>

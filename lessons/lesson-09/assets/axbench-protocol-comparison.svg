@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="820" viewBox="0 0 1600 820" role="img" aria-labelledby="title desc">
+  <title id="title">AxBench：先定比较问题，再定参照与选优隔离</title>
+  <desc id="desc">在 Gemma-2-9B-it 第 20 层设置上，AxBench 用两组参照分别回答两个问题：与 Prompting 和微调对比以判断是否可替代现有控制手段，与 DiffMean 和 SAE-A 对比以评估 SAE 相对简单表征方法的表现；同时用 5 条指令选 14 档强度、另 5 条指令冻结评价以隔离选优与最终评价。</desc>
+  <rect width="1600" height="820" fill="#FFFFFF"/>
+  <g font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" fill="#26323C">
+    <text x="60" y="64" font-size="40" font-weight="700" fill="#7A0C16">AxBench：先定比较问题，再定参照与选优隔离</text>
+    <text x="60" y="106" font-size="24" fill="#56616B">以 Gemma-2-9B-it 第 20 层（Tables 1–3）为例：不同问题需要不同参照，选优与最终评价必须分开</text>
+
+    <!-- Left Card: Question 1 -->
+    <rect x="60" y="134" width="720" height="366" rx="18" fill="#F1F7F4" stroke="#C8DDD2" stroke-width="2.5"/>
+    <text x="90" y="182" font-size="27" font-weight="700" fill="#245440">问题 ①：表征干预能否替代现有控制手段？</text>
+    <text x="90" y="220" font-size="21" fill="#384859">参照组：Prompting 与参数高效微调（Steering 综合分，量程 0–2）</text>
+
+    <!-- Bar Row 1: Prompting -->
+    <rect x="90" y="242" width="660" height="58" rx="10" fill="#FFFFFF" stroke="#C8DDD2" stroke-width="1.5"/>
+    <text x="112" y="279" font-size="23" font-weight="700">Prompting</text>
+    <rect x="330" y="259" width="290" height="24" rx="12" fill="#E8ECEF"/>
+    <rect x="330" y="259" width="156" height="24" rx="12" fill="#245440"/>
+    <text x="640" y="279" font-size="24" font-weight="700" fill="#245440">1.075</text>
+
+    <!-- Bar Row 2: LoReFT -->
+    <rect x="90" y="312" width="660" height="58" rx="10" fill="#FFFFFF" stroke="#C8DDD2" stroke-width="1.5"/>
+    <text x="112" y="349" font-size="23" font-weight="700">LoReFT（微调）</text>
+    <rect x="330" y="329" width="290" height="24" rx="12" fill="#E8ECEF"/>
+    <rect x="330" y="329" width="113" height="24" rx="12" fill="#4A8068"/>
+    <text x="640" y="349" font-size="24" font-weight="700" fill="#245440">0.777</text>
+
+    <!-- Bar Row 3: ReFT-r1 -->
+    <rect x="90" y="382" width="660" height="58" rx="10" fill="#FFFFFF" stroke="#C8DDD2" stroke-width="1.5"/>
+    <text x="112" y="419" font-size="23" font-weight="700">ReFT-r1（表征）</text>
+    <rect x="330" y="399" width="290" height="24" rx="12" fill="#E8ECEF"/>
+    <rect x="330" y="399" width="91" height="24" rx="12" fill="#80510C"/>
+    <text x="640" y="419" font-size="24" font-weight="700" fill="#80510C">0.630</text>
+
+    <text x="90" y="476" font-size="19" fill="#56616B">注：2B 第 10 层三者差距收窄（0.698 / 0.701 / 0.633），结论按设置分读</text>
+
+    <!-- Right Card: Question 2 -->
+    <rect x="820" y="134" width="720" height="366" rx="18" fill="#FCF7EC" stroke="#E6D5AF" stroke-width="2.5"/>
+    <text x="850" y="182" font-size="27" font-weight="700" fill="#80510C">问题 ②：SAE 是否优于简单表征方法？</text>
+    <text x="850" y="220" font-size="21" fill="#384859">参照组：DiffMean（均值差）及同数据选特征的 SAE-A</text>
+
+    <!-- Row 1: DiffMean -->
+    <rect x="850" y="242" width="660" height="58" rx="10" fill="#FFFFFF" stroke="#E6D5AF" stroke-width="1.5"/>
+    <text x="870" y="279" font-size="22" font-weight="700">DiffMean</text>
+    <text x="1038" y="279" font-size="21">检测 <tspan font-weight="700" fill="#245440">0.955</tspan></text>
+    <text x="1192" y="279" font-size="21">引导 <tspan font-weight="700">0.322</tspan></text>
+    <text x="1342" y="279" font-size="21">胜率 <tspan font-weight="700" fill="#245440">64.3%</tspan></text>
+
+    <!-- Row 2: SAE -->
+    <rect x="850" y="312" width="660" height="58" rx="10" fill="#FFFFFF" stroke="#E6D5AF" stroke-width="1.5"/>
+    <text x="870" y="349" font-size="22" font-weight="700">SAE（原版）</text>
+    <text x="1038" y="349" font-size="21">检测 0.631</text>
+    <text x="1192" y="349" font-size="21">引导 0.191</text>
+    <text x="1342" y="349" font-size="21">基准 50.0%</text>
+
+    <!-- Row 3: SAE-A highlighted -->
+    <rect x="850" y="382" width="660" height="58" rx="10" fill="#FFFDF6" stroke="#80510C" stroke-width="2.5"/>
+    <text x="870" y="419" font-size="22" font-weight="700" fill="#80510C">SAE-A</text>
+    <text x="1038" y="419" font-size="21">检测 <tspan font-weight="700" fill="#245440">0.924 ↑</tspan></text>
+    <text x="1192" y="419" font-size="21">引导 <tspan font-weight="700" fill="#7A0C16">0.186</tspan></text>
+    <text x="1342" y="419" font-size="21">胜率 48.5%</text>
+
+    <text x="850" y="476" font-size="20" font-weight="700" fill="#80510C">SAE-A 检测大涨但引导略降：检测 AUROC 不能代替 steering 指标</text>
+
+    <!-- Bottom Strip: Fairness & Selection Isolation -->
+    <rect x="60" y="524" width="1480" height="232" rx="18" fill="#F5F6F7" stroke="#D7DCE1" stroke-width="2"/>
+    <text x="90" y="568" font-size="26" font-weight="700" fill="#182C40">公平性与选优隔离设计（防止偶然高分混入最终结论）</text>
+
+    <!-- Subcard 1 -->
+    <rect x="90" y="592" width="445" height="136" rx="12" fill="#FFFFFF" stroke="#A7AFB7" stroke-width="1.5"/>
+    <text x="114" y="630" font-size="23" font-weight="700" fill="#182C40">1. 对齐训练数据（SAE-A）</text>
+    <text x="114" y="668" font-size="20">让 SAE 也能用同一批标注训练数据</text>
+    <text x="114" y="700" font-size="20">按 AUROC 选特征，消除数据不公</text>
+
+    <!-- Subcard 2 -->
+    <rect x="565" y="592" width="470" height="136" rx="12" fill="#FFFDF6" stroke="#80510C" stroke-width="2.5"/>
+    <text x="589" y="630" font-size="23" font-weight="700" fill="#80510C">2. 每概念 10 条指令分半隔离</text>
+    <rect x="589" y="652" width="198" height="54" rx="10" fill="#F1DEB0"/>
+    <text x="688" y="687" text-anchor="middle" font-size="20" font-weight="700" fill="#80510C">5 条选 14 档强度</text>
+    <text x="803" y="687" text-anchor="middle" font-size="24" font-weight="700" fill="#4A525B">→</text>
+    <rect x="819" y="652" width="192" height="54" rx="10" fill="#E0EEE7"/>
+    <text x="915" y="687" text-anchor="middle" font-size="20" font-weight="700" fill="#245440">5 条冻结评价</text>
+
+    <!-- Subcard 3 -->
+    <rect x="1065" y="592" width="445" height="136" rx="12" fill="#FFFFFF" stroke="#A7AFB7" stroke-width="1.5"/>
+    <text x="1089" y="630" font-size="23" font-weight="700" fill="#182C40">3. 搜索过程与投入分账</text>
+    <text x="1089" y="668" font-size="20">Prompting / 微调无强度档，随机评 1 份</text>
+    <text x="1089" y="700" font-size="20">评分观察数对齐，搜索投入仍须单列</text>
+
+    <!-- Footer provenance -->
+    <text x="60" y="794" font-size="20" fill="#56616B">课程自绘，数值依据 Wu et al. AxBench arXiv:2501.17148v3（Gemma-2-9B-it 第 20 层，Tables 1–3，§§4–5）；胜率按逐概念与 SAE 配对计算。</text>
+  </g>
+</svg>
