@@ -1534,7 +1534,7 @@
 <h2 id="_1">导读与学习目标<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>一次比较的第一步，是说清分数差异要回答什么问题。AxBench 用两组参照比较模型控制方法。一项 Codex 分析任务则用原有提示作参照，判断改版是否推进了分析。读完两例，你应能为自己的研究选择参照、说明比较单位与指标、分开选优和最终评价，并留下可查的成本与执行记录。</p>
 <h2 id="paper-case">案例一：AxBench 怎样选择 baseline<a class="headerlink" href="#paper-case" title="Permanent link">&para;</a></h2>
-<p><strong>关键输入与数据。</strong> Wu 等人用 Concept500 比较 Gemma-2-2B-it 与 Gemma-2-9B-it 上的方法。概念检测给带标签的文本打分，检验正例能否排在负例前。Steering 给模型一条指令和目标概念，检验生成能否体现该概念。LLM 评审对概念体现、指令遵循和流畅度各打 0、1 或 2 分，三项取调和平均，综合分的量程是 <strong>0–2</strong>。每个概念用 <strong>10 条指令</strong>，表征 steering 方法有 <strong>14 档候选强度</strong>。见 <a href="https://arxiv.org/html/2501.17148v3#S3.SS3">AxBench v3 §§3.3、4.1</a>。</p>
+<p><strong>关键输入与数据。</strong> Wu 等人用 Concept500 比较 Gemma-2-2B-it 与 Gemma-2-9B-it 上的方法。概念检测给带标签的文本打分，检验正例能否排在负例前。Steering 给模型一条指令和目标概念，检验生成能否体现该概念。LLM 评审对概念体现、指令遵循和流畅度各打 0、1 或 2 分，三项取调和平均，综合分的量程是 <strong>0–2</strong>；任意一项为 0 则综合分为 0（例如完全不体现概念但流利答题的 <code>0/2/2</code>，算术平均为 1.33，调和平均为 0；此为口径示意）。每个概念用 <strong>10 条指令</strong>，表征 steering 方法有 <strong>14 档候选强度</strong>。见 <a href="https://arxiv.org/html/2501.17148v3#S3.SS3">AxBench v3 §§3.3、4.1</a>。</p>
 <p>每格依次为 <strong>2B 第 10 层设置 / 9B 第 20 层设置</strong>，对应每个模型所测的较早层。表中包含三类对象：① 工程控制手段：<strong>Prompting</strong>（指令前加提示）与微调（<strong>LoReFT</strong>、<strong>LoRA</strong>、<strong>SFT</strong>），它们的结果列在对应的比较设置下，均省去生成时的强度选档；② 简单或有监督表征方法：<strong>DiffMean</strong>（正负样本激活均值差）与 <strong>ReFT-r1</strong>（联合训练概念检测与干预的秩 1 表征微调）；③ 无监督字典方法：<strong>SAE</strong>（预训练稀疏自编码器）及 <strong>SAE-A</strong>（为对齐训练数据条件，用同一批标注训练数据按 AUROC 为 SAE 选出最匹配特征）。见 <a href="https://arxiv.org/html/2501.17148v3#S4">AxBench v3 §§4、5，Tables 1–3</a>。</p>
 <table>
 <thead>
@@ -1596,12 +1596,12 @@
 </tr>
 </tbody>
 </table>
-<p>SFT 只覆盖前 20 个概念，论文只列出 2B 的结果。破折号表示对应表中没有结果。Table 3 与相邻正文的部分平均胜率有出入，本讲义采用表中按模型与层设置列出的数值。</p>
+<p>表 3 对每个概念将该方法与同设置 SAE 的 Steering 综合分逐一配对，平局记半胜，报告胜出概念占比。SFT 只覆盖前 20 个概念，论文只列出 2B 的结果。破折号表示对应表中没有结果。Table 3 与相邻正文的部分平均胜率有出入，本讲义采用表中按模型与层设置列出的数值。</p>
 <p><strong>先判断。</strong> ① 如果你要决定是否用表征干预替代已有的模型控制手段，会选哪组参照？② 如果你要判断 SAE 是否优于简单表征方法，又会选哪组？选定参照后想一想，SAE-A 的检测分明显高于 SAE，这足以预测它更擅长 steering 吗？如果强度可调，哪批指令可以用来选强度？</p>
 <details>
 <summary>展开 AxBench 案例分析</summary>
 <p><strong>两组参照。</strong> 对第一问，prompting 和微调是实际可用的替代办法。在 9B 第 20 层设置，prompting 的 steering 分是 1.075，LoReFT 是 0.777，ReFT-r1 是 0.630。在 2B 第 10 层设置，三者分别为 0.698、0.701 和 0.633，差距小得多。对第二问，可以用 DiffMean 这类简单表征方法作为参照。以 9B 第 20 层设置为例，DiffMean 与 SAE 逐概念配对，胜率 64.3%，同时在概念检测上分别得到 0.955 和 0.631。</p>
-<p><strong>比较单位和指标。</strong> Table 1 先按概念算 AUROC，再对概念取平均。Table 2 报告选定强度后的平均综合分，任何一项评分低都会拉低调和平均。Table 3 把每个概念的综合分与相同设置下的 SAE 配对，平局算半胜。读胜率时要看它数的是概念，读 AUROC 时要看它排的是文本。SAE-A 在表中两种设置下都提高了检测 AUROC，steering 综合分却略低于原 SAE，说明两项任务需要各自的指标。</p>
+<p><strong>比较单位和指标。</strong> Table 1 先按概念算 AUROC，再对概念取平均。Table 2 报告选定强度后的平均综合分：表前 <code>0/2/2</code> 对应干预过弱，另一端如把强度拉大导致偏题的 <code>2/0/1</code>（算术平均 1.00，调和平均仍为 0）对应干预过强；调和平均同时封住两端，因此表征方法必须从 14 档中选强度，并把选优与评价隔开。Table 3 的逐概念胜率与 Table 2 的均分幅度互补——例如 9B 第 20 层上 DiffMean 均分只比 SAE 高 0.131，逐概念胜率却达 64.3%（平局记半胜），说明优势并非靠少数极端概念拉高。读胜率时要看它数的是概念，读 AUROC 时要看它排的是文本。SAE-A 在表中两种设置下都提高了检测 AUROC，steering 综合分却略低于原 SAE，说明两项任务需要各自的指标。</p>
 <p><strong>公平性与选择。</strong> 有监督方法有训练数据可用，作者增设 SAE-A，让 SAE 也能依据同一批带标签的训练数据选特征。作者用 5 条指令选强度，用另外 5 条评价选中的强度。若用同一批指令既挑最高分又报最终效果，偶然的高分会参与选优。Prompting 和微调对每条测试指令随机抽一份输出来评分，使各方法计分的输出份数相同。比较时还要交代各边实际搜索了什么、投入了多少。见 <a href="https://arxiv.org/html/2501.17148v3#S4">AxBench v3 §§4、4.1、5.2</a>。</p>
 <p><img alt="AxBench 两组参照与选优隔离" src="../assets/axbench-protocol-comparison.svg" /></p>
 </details>
@@ -1609,13 +1609,39 @@
 <h2 id="codex-case">案例二：Codex 算出的恢复比例怎样改变判断？<a class="headerlink" href="#codex-case" title="Permanent link">&para;</a></h2>
 <p>对同一批 GPT-2 IOI 干预记录，原有分析提示和改版提示给出的判断，哪一个更站得住？关键是有没有算出干预找回了多少比例的分数，以及这个比例会怎样改变对两组模板差异的解读。</p>
 <p>IOI（间接宾语识别）看模型预测句末人名时有多偏向原句的间接宾语，分数是它与原句主语的 logit 差。模板族是一组共用句式的输入，本例有两族，每族 6 条。每条输入有三个分数，分别来自原句、替换一个人名后的扰动句，以及在扰动句上恢复一处原句内部激活后的结果。</p>
-<p>原提示、改版 A、改版 B 和组合版各用 Codex 重分析一次，都拿到相同的 12 条既有记录。按“干预后减扰动后”的原尺度增幅算，store 族均值为 <strong>1.315</strong>，park 族均值为 <strong>1.086</strong>，store 族高出 <strong>0.2295</strong>（但 12 条输入在干预后的 logit 差仍全为负值）。这能说明 store 族恢复得更多吗？下表把原提示、改版 B 的单次成本与整轮研究总账并列给出。</p>
+<p>原提示、改版 A、改版 B 和组合版各用 Codex 重分析一次，都拿到相同的 12 条既有记录。下表列出两族在三个条件下的均值：按“干预后减扰动后”的原尺度增幅算，store 族均值为 <strong>1.3150</strong>，park 族均值为 <strong>1.0856</strong>，store 族高出 <strong>0.2295</strong>（按未舍入原值计算；12 条输入在干预后的 logit 差仍全为负值）。这能说明 store 族恢复得更多吗？</p>
+<table>
+<thead>
+<tr>
+<th>模板族（各 6 条）</th>
+<th style="text-align: right;">原句均值</th>
+<th style="text-align: right;">扰动后均值</th>
+<th style="text-align: right;">干预后均值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>store</td>
+<td style="text-align: right;">3.5564</td>
+<td style="text-align: right;">−3.6313</td>
+<td style="text-align: right;">−2.3163</td>
+</tr>
+<tr>
+<td>park</td>
+<td style="text-align: right;">3.2756</td>
+<td style="text-align: right;">−3.1594</td>
+<td style="text-align: right;">−2.0738</td>
+</tr>
+</tbody>
+</table>
+<p>下表把四个版本的单次执行成本、采用状态与整轮研究总账并列给出。</p>
 <table>
 <thead>
 <tr>
 <th>记录范围</th>
 <th style="text-align: right;">耗时</th>
 <th style="text-align: right;">已知输入与输出 token</th>
+<th>采用状态</th>
 </tr>
 </thead>
 <tbody>
@@ -1623,25 +1649,40 @@
 <td>基线提示单次分析</td>
 <td style="text-align: right;">106.71 秒</td>
 <td style="text-align: right;">13,412</td>
+<td>参照基线</td>
+</tr>
+<tr>
+<td>改版提示 A 单次分析</td>
+<td style="text-align: right;">121.28 秒</td>
+<td style="text-align: right;">12,312</td>
+<td>未入选</td>
 </tr>
 <tr>
 <td>改版提示 B 单次分析</td>
 <td style="text-align: right;">159.44 秒</td>
 <td style="text-align: right;">17,548</td>
+<td>匿名比较采用</td>
 </tr>
 <tr>
-<td>整轮研究总账（含拟定候选、试跑、选优与失败尝试）</td>
+<td>组合版单次分析</td>
+<td style="text-align: right;">235.13 秒</td>
+<td style="text-align: right;">16,920</td>
+<td>未入选</td>
+</tr>
+<tr>
+<td>整轮研究总账</td>
 <td style="text-align: right;">—</td>
 <td style="text-align: right;">≥ 294,128（另有 3 次调用未知，不按 0 计）</td>
+<td>—</td>
 </tr>
 </tbody>
 </table>
-<p>整轮研究的实际开销远不止选中版本的那一次分析；已记录的 <strong>294,128 token</strong> 只是用量下界。</p>
-<p><strong>先判断。</strong> ① 一份笔记建议算恢复比例，另一份实际算了出来。你会用哪两个差值复算这个比例？什么结果会让你收窄对组间差异的解释？② 只报告选中版本的单次分析成本，会漏掉哪些开销？③ 为了检验先前任务积累的经验能否改善这次分析，原计划让提示设计者参考那些经验，再对同一批记录把基线和三个候选各跑一次。整轮只剩两个分析运行名额，每个名额允许试跑一个版本。现在能完成这组四次运行的对照吗？</p>
+<p><strong>先判断。</strong> ① 一份笔记建议算恢复比例，另一份实际算了出来。你会用上表哪两个差值估算这个比例？什么结果会让你收窄对组间差异的解释？② 结合四版成本表，只报告选中版本的单次分析成本会漏掉哪些开销？选优依据是单次最省吗？③ 原计划下一轮在同一批记录上把基线和三个候选各跑一次，但整轮只剩两个分析运行名额（每个名额允许试跑一个版本）。现在能完成这组四次运行的对照吗？</p>
 <details>
 <summary>展开 Codex 案例分析</summary>
-<p><strong>恢复比例改变了什么。</strong> 原提示报告了每条输入的增幅与分组均值，把恢复比例留作下一步。改版 B 用同一输入的“干预后减扰动后”除以“原始条件减扰动后”，逐条算出恢复比例，再按组取均值。store 族平均找回 <strong>17.90%</strong>，park 族平均找回 <strong>16.83%</strong>，相差 <strong>1.07 个百分点</strong>，两组逐条比例的范围也有重叠。0.2295 描述的是原尺度上的平均增幅差。换到各自受扰动损失的分数上看，这批输入的平均恢复比例接近，判断应限定在这两个已观察的模板族。</p>
-<p><strong>选优、成本与停止。</strong> 四份分析笔记匿名比较后采用了改版 B。随后逐项复算该笔记中的 99 个数值，均在舍入容差内。改版 B 补做了可以复算的分析，也比原提示多用约 53 秒和 4,136 token。剩余额度只够两次运行，凑不齐下一组所需的四次，前一任务也未产出可复用的经验，因此停止。</p>
+<p><strong>恢复比例改变了什么。</strong> 原提示报告了每条输入的增幅与分组均值，把恢复比例留作下一步。用上表族均值直接作比值 <code>（干预后均值 − 扰动后均值）÷（原句均值 − 扰动后均值）</code>，按未舍入原值计算 store 族为 <strong>18.30%</strong>、park 族为 <strong>16.87%</strong>（相差 <strong>1.43 个百分点</strong>）；改版 B 按每条输入先算比例再族内取平均，store 族为 <strong>17.90%</strong>、park 族为 <strong>16.83%</strong>（相差 <strong>1.07 个百分点</strong>），两组逐条比例的范围也有重叠。两种汇总权重不同，报告时不能混用（与案例一“先按概念算再平均”同理）。差距显著收窄的原因在于：store 族原尺度增幅虽比 park 族高约 21%，但它受扰动损失的总分跨度（7.1877 对 6.4350）也高约 12%，按各自损失归一化后两族接近。此外，原句分数只是同一指标的数值参照，不代表最大可恢复上限；12 条输入干预后偏好仍全为负，判断应限定在这两个已观察的模板族。</p>
+<p><strong>选优、成本与停止。</strong> 四份分析笔记匿名比较后采用了改版 B，随后逐项复算该笔记中的 99 个数值，均在舍入容差内。对照四版成本可见：改版 A 比原提示更省 token 却未入选，组合版最慢也未入选；改版 B 补做了可复算的分析，但也比原提示多用约 53 秒和 4,136 token（属于分析推进，并非成本优势）。整轮研究的实际开销远不止选中版本的那一次分析，还包括拟定候选、试跑、选优与失败尝试，已记录的 <strong>294,128 token</strong> 只是用量下界（另有 3 次调用未知，不能按 0 计）。剩余额度只够两次分析运行名额，凑不齐下一组所需的四次，因此停止。</p>
+<p><strong>把两层账拆开看。</strong> 科学层的参照是扰动句，比较对象是 store 与 park 两族，结论是归一化恢复比例接近；工作方式层的参照是同任务实跑的原有提示，比较对象是四版分析流程，结论是改版 B 在本次开发记录里推进了分析、但单次更贵且尚未在独立新任务上验证。</p>
 </details>
 <p><strong>方法与边界。</strong> 比较 AI 工作方式时，先让原有方式在同一任务上真实跑一次，再报告试了几个版本、怎样选优、总成本多少，以及结论适用于什么范围。这一轮中途修过校验器，应按一次开发过程来读。要检验改版能否在其他任务上同样推进分析，需要固定比较流程，在新材料上评价，并给原有方式相称的尝试机会。</p>
 <p>数据来自 2026 年 10 月 22 日的 GPT-2 IOI 重分析、匿名选优和独立复算记录。</p>
