@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="840" viewBox="0 0 1600 840" role="img" aria-labelledby="title desc">
+  <title id="title">PaperBench：写出来、跑起来、结果对上，各凭什么？</title>
+  <desc id="desc">PaperBench 将提交包放入独立全新虚拟机重跑 reproduce.sh，把评审拆成 Code Development、Execution 与 Result Match 三类叶节点，并规定五类文件对评审者的可见矩阵；其中 Result Match 刻意不展示源码。顶部列出 Claude 3.5 Sonnet BasicAgent 在三类节点上的分层得分落差。</desc>
+  <rect width="1600" height="840" fill="#FFFFFF"/>
+  <g font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" fill="#26323C">
+    <text x="60" y="62" font-size="38" font-weight="700" fill="#7A0C16">PaperBench：写出来、跑起来、结果对上，各凭什么？</text>
+    <text x="60" y="102" font-size="22" fill="#56616B">独立干净环境重跑 + 三类节点对评审者的文件可见隔离（arXiv:2504.01848v3，§§2.2、2.4，Table 1 &amp; Table 9）</text>
+
+    <!-- Top Independent Reproduction Flow Strip (not a funnel) -->
+    <rect x="60" y="124" width="1480" height="88" rx="14" fill="#F5F6F7" stroke="#D7DCE1" stroke-width="2"/>
+    <rect x="88" y="142" width="290" height="52" rx="10" fill="#FFFFFF" stroke="#A7AFB7" stroke-width="1.5"/>
+    <text x="233" y="175" text-anchor="middle" font-size="21" font-weight="700" fill="#182C40">Agent 交付提交包</text>
+    <text x="414" y="176" text-anchor="middle" font-size="26" font-weight="700" fill="#56616B">→</text>
+    <rect x="450" y="142" width="520" height="52" rx="10" fill="#FCF7EC" stroke="#E6D5AF" stroke-width="2"/>
+    <text x="710" y="175" text-anchor="middle" font-size="21" font-weight="700" fill="#80510C">全新 Ubuntu VM 独立重跑 reproduce.sh</text>
+    <text x="1006" y="176" text-anchor="middle" font-size="26" font-weight="700" fill="#56616B">→</text>
+    <rect x="1042" y="142" width="470" height="52" rx="10" fill="#F1F7F4" stroke="#C8DDD2" stroke-width="2"/>
+    <text x="1277" y="175" text-anchor="middle" font-size="21" font-weight="700" fill="#245440">产出 reproduce.log 与复现输出（区分硬编码）</text>
+
+    <!-- Three Requirement Columns Header Cards -->
+    <!-- Col 1: Code Development -->
+    <rect x="440" y="232" width="350" height="176" rx="14" fill="#F5F7FA" stroke="#C6D2DF" stroke-width="2"/>
+    <rect x="462" y="250" width="198" height="34" rx="17" fill="#182C40"/>
+    <text x="561" y="273" text-anchor="middle" font-size="18" font-weight="700" fill="#FFFFFF">层 1 · Code Dev.</text>
+    <text x="462" y="316" font-size="20" font-weight="700" fill="#182C40">源码看起来正确实现要求了吗？</text>
+    <text x="462" y="350" font-size="19" fill="#56616B">Claude 3.5 Sonnet (Basic)</text>
+    <text x="462" y="392" font-size="34" font-weight="700" fill="#182C40">35.4% <tspan font-size="19" font-weight="400" fill="#56616B">± 0.8%</tspan></text>
+
+    <!-- Col 2: Execution -->
+    <rect x="815" y="232" width="350" height="176" rx="14" fill="#FCF7EC" stroke="#E6D5AF" stroke-width="2"/>
+    <rect x="837" y="250" width="184" height="34" rx="17" fill="#80510C"/>
+    <text x="929" y="273" text-anchor="middle" font-size="18" font-weight="700" fill="#FFFFFF">层 2 · Execution</text>
+    <text x="837" y="316" font-size="22" font-weight="700" fill="#80510C">实验流程跑没跑起来？</text>
+    <text x="837" y="350" font-size="19" fill="#56616B">Claude 3.5 Sonnet (Basic)</text>
+    <text x="837" y="392" font-size="34" font-weight="700" fill="#80510C">1.8% <tspan font-size="19" font-weight="400" fill="#56616B">± 0.7%</tspan></text>
+
+    <!-- Col 3: Result Match -->
+    <rect x="1190" y="232" width="350" height="176" rx="14" fill="#F1F7F4" stroke="#245440" stroke-width="2.5"/>
+    <rect x="1212" y="250" width="212" height="34" rx="17" fill="#245440"/>
+    <text x="1318" y="273" text-anchor="middle" font-size="18" font-weight="700" fill="#FFFFFF">层 3 · Result Match</text>
+    <text x="1212" y="316" font-size="22" font-weight="700" fill="#245440">干净输出对没对上？</text>
+    <text x="1212" y="350" font-size="19" fill="#56616B">Claude 3.5 Sonnet (Basic)</text>
+    <text x="1212" y="392" font-size="34" font-weight="700" fill="#7A0C16">0.7% <tspan font-size="19" font-weight="400" fill="#56616B">± 0.3%</tspan></text>
+
+    <!-- Left Label Box aligned with header -->
+    <rect x="60" y="232" width="356" height="176" rx="14" fill="#FFFFFF" stroke="#D7DCE1" stroke-width="2"/>
+    <text x="84" y="280" font-size="24" font-weight="700" fill="#182C40">评审者可见文件矩阵</text>
+    <text x="84" y="318" font-size="19" fill="#56616B">（Table 1 隔离的是评审者，</text>
+    <text x="84" y="346" font-size="19" fill="#56616B">不是执行期的 Agent）</text>
+    <text x="84" y="388" font-size="19" font-weight="700" fill="#7A0C16">分层得分 ≠ 转化率</text>
+
+    <!-- Matrix Rows (5 file types) -->
+    <!-- Row 1: READMEs & Docs -->
+    <rect x="60" y="426" width="1480" height="62" rx="10" fill="#F9FAFB" stroke="#E2E6EA" stroke-width="1.5"/>
+    <text x="86" y="465" font-size="22" font-weight="700">READMEs &amp; Docs</text>
+    <text x="615" y="466" text-anchor="middle" font-size="26" font-weight="700" fill="#245440">✓ 可见</text>
+    <text x="990" y="466" text-anchor="middle" font-size="26" font-weight="700" fill="#245440">✓ 可见</text>
+    <text x="1365" y="466" text-anchor="middle" font-size="26" font-weight="700" fill="#245440">✓ 可见</text>
+
+    <!-- Row 2: Source code (HIGHLIGHTED for Result Match = X) -->
+    <rect x="60" y="498" width="1480" height="66" rx="10" fill="#FFF7F7" stroke="#D9A3A8" stroke-width="2"/>
+    <text x="86" y="539" font-size="22" font-weight="700" fill="#7A0C16">Source code（源码）</text>
+    <text x="615" y="540" text-anchor="middle" font-size="26" font-weight="700" fill="#245440">✓ 可见</text>
+    <text x="990" y="540" text-anchor="middle" font-size="26" font-weight="700" fill="#245440">✓ 可见</text>
+    <rect x="1235" y="509" width="260" height="44" rx="8" fill="#7A0C16"/>
+    <text x="1365" y="538" text-anchor="middle" font-size="22" font-weight="700" fill="#FFFFFF">✗ 刻意隐藏源码</text>
+
+    <!-- Row 3: reproduce.sh -->
+    <rect x="60" y="574" width="1480" height="62" rx="10" fill="#F9FAFB" stroke="#E2E6EA" stroke-width="1.5"/>
+    <text x="86" y="613" font-size="22" font-weight="700">reproduce.sh</text>
+    <text x="615" y="614" text-anchor="middle" font-size="26" font-weight="700" fill="#245440">✓ 可见</text>
+    <text x="990" y="614" text-anchor="middle" font-size="26" font-weight="700" fill="#245440">✓ 可见</text>
+    <text x="1365" y="614" text-anchor="middle" font-size="26" font-weight="700" fill="#245440">✓ 可见</text>
+
+    <!-- Row 4: reproduce.log -->
+    <rect x="60" y="646" width="1480" height="62" rx="10" fill="#FFFFFF" stroke="#E2E6EA" stroke-width="1.5"/>
+    <text x="86" y="685" font-size="22" font-weight="700">reproduce.log（运行日志）</text>
+    <text x="615" y="686" text-anchor="middle" font-size="24" fill="#8C96A0">✗ 不可见</text>
+    <text x="990" y="686" text-anchor="middle" font-size="26" font-weight="700" fill="#245440">✓ 可见</text>
+    <text x="1365" y="686" text-anchor="middle" font-size="26" font-weight="700" fill="#245440">✓ 可见</text>
+
+    <!-- Row 5: Repro outputs -->
+    <rect x="60" y="718" width="1480" height="62" rx="10" fill="#F9FAFB" stroke="#E2E6EA" stroke-width="1.5"/>
+    <text x="86" y="757" font-size="22" font-weight="700">Repro outputs（复现输出）</text>
+    <text x="615" y="758" text-anchor="middle" font-size="24" fill="#8C96A0">✗ 不可见</text>
+    <text x="990" y="758" text-anchor="middle" font-size="24" fill="#8C96A0">✗ 不可见</text>
+    <text x="1365" y="758" text-anchor="middle" font-size="26" font-weight="700" fill="#245440">✓ 可见</text>
+
+    <!-- Footer provenance -->
+    <text x="60" y="818" font-size="19" fill="#56616B">课程自绘｜依据 Starace et al. PaperBench arXiv:2504.01848v3（Table 1、Table 9）；表中 ± 为标准误，列三原文为 Results Analysis，总分为树形加权均分。</text>
+  </g>
+</svg>

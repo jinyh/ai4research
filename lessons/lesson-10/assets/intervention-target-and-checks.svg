@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="840" viewBox="0 0 1600 840" role="img" aria-labelledby="title desc">
+  <title id="title">分数更高，操作对象却不同：真实 MI 干预配置与检查覆盖</title>
+  <desc id="desc">对照 2026-10-20 课程团队在 GPT-2 small 12 条 IOI 开发模板上的两次真实运行（指标为 logit 差 LD 增量，非准确率）：residual-dev 干预 L5 第二次主语位置的 block 整向量，LD 增量 +6.5039；single-dev 干预 L9 末 token 在 c_proj 输入张量上的 H9（索引 9，切片 576:640），LD 增量 +1.2003；两者 max |LD_noop - LD_corrupt| 均为 0。底部展示互补行为检查及 noop 边界。</desc>
+  <rect width="1600" height="840" fill="#FFFFFF"/>
+  <g font-family="Arial, PingFang SC, Noto Sans CJK SC, sans-serif" fill="#26323C">
+    <text x="60" y="58" font-size="36" font-weight="700" fill="#7A0C16">分数更高，操作对象却不同：真实配置与检查覆盖</text>
+    <text x="60" y="96" font-size="20" fill="#56616B">教学规格：仅在 L9.attn.c_proj 输入张量上替换末 token 的 H9 切片（0 起编号，投影及后续层允许变化）；表中为 LD 增量，非准确率</text>
+
+    <!-- Left Card: residual-dev -->
+    <rect x="60" y="122" width="700" height="404" rx="16" fill="#F5F7FA" stroke="#BFCAD6" stroke-width="2.5"/>
+    <rect x="88" y="144" width="218" height="38" rx="19" fill="#384859"/>
+    <text x="197" y="170" text-anchor="middle" font-size="19" font-weight="700" fill="#FFFFFF">实测 A · residual-dev</text>
+    <text x="324" y="171" font-size="24" font-weight="700" fill="#182C40">整条 block 输出向量替换</text>
+
+    <!-- Config box -->
+    <rect x="88" y="198" width="644" height="128" rx="12" fill="#FFFFFF" stroke="#CFD8E2" stroke-width="1.5"/>
+    <text x="112" y="234" font-size="21"><tspan font-weight="700" fill="#182C40">层位与位置（0 起）：</tspan>L5（索引 5） · 第二次主语位置（pos = 9）</text>
+    <text x="112" y="270" font-size="21"><tspan font-weight="700" fill="#182C40">作用对象：</tspan>残差相加及 MLP 之后的 block 输出整向量（768 维）</text>
+    <text x="112" y="306" font-size="18" fill="#56616B">张量流：12×64 拼接 → c_proj → 残差+MLP → [ block 整向量 768 维 ]</text>
+
+    <!-- Metrics box -->
+    <rect x="88" y="342" width="644" height="96" rx="12" fill="#FFFFFF" stroke="#CFD8E2" stroke-width="1.5"/>
+    <text x="112" y="382" font-size="20">LD 增量(patch−corrupt)：<tspan font-size="27" font-weight="700" fill="#182C40">+6.5039</tspan></text>
+    <text x="112" y="420" font-size="17" fill="#56616B">patch−random (LD): +3.5106 ｜ max |LD_noop−LD_corrupt|: 0.000000</text>
+
+    <rect x="88" y="454" width="644" height="50" rx="10" fill="#EAEFF4"/>
+    <text x="112" y="486" font-size="20" font-weight="700" fill="#384859">规格核对：层位、位置、对象三处均偏离当前目标规格</text>
+
+    <!-- Center Divider Badge -->
+    <rect x="772" y="272" width="56" height="92" rx="12" fill="#7A0C16"/>
+    <text x="800" y="311" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">条件</text>
+    <text x="800" y="343" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">全异</text>
+
+    <!-- Right Card: single-dev -->
+    <rect x="840" y="122" width="700" height="404" rx="16" fill="#FAF8F4" stroke="#D5CCB8" stroke-width="2.5"/>
+    <rect x="868" y="144" width="198" height="38" rx="19" fill="#5A4A32"/>
+    <text x="967" y="170" text-anchor="middle" font-size="19" font-weight="700" fill="#FFFFFF">实测 B · single-dev</text>
+    <text x="1084" y="171" font-size="24" font-weight="700" fill="#3B2E1E">c_proj 前单头切片替换</text>
+
+    <!-- Hook Pipeline Diagram inside Right Card -->
+    <rect x="868" y="198" width="644" height="128" rx="12" fill="#FFFFFF" stroke="#DED6C6" stroke-width="1.5"/>
+    <text x="892" y="234" font-size="21"><tspan font-weight="700" fill="#3B2E1E">层位与位置（0 起）：</tspan>L9（索引 9） · 末 token（pos = 13）</text>
+    <rect x="892" y="256" width="174" height="48" rx="8" fill="#F2EFE9" stroke="#C7BDA8" stroke-width="1.5"/>
+    <text x="979" y="286" text-anchor="middle" font-size="18" font-weight="700">12×64 拼接(768)</text>
+    <text x="1083" y="287" text-anchor="middle" font-size="22" font-weight="700">→</text>
+    <rect x="1100" y="256" width="234" height="48" rx="8" fill="#F7EAD2" stroke="#80510C" stroke-width="2"/>
+    <text x="1217" y="286" text-anchor="middle" font-size="18" font-weight="700" fill="#80510C">替 H9(索引9) [576:640]</text>
+    <text x="1351" y="287" text-anchor="middle" font-size="22" font-weight="700">→</text>
+    <rect x="1368" y="256" width="124" height="48" rx="8" fill="#F2EFE9" stroke="#C7BDA8" stroke-width="1.5"/>
+    <text x="1430" y="286" text-anchor="middle" font-size="18" font-weight="700">c_proj→后层</text>
+
+    <!-- Metrics box -->
+    <rect x="868" y="342" width="644" height="96" rx="12" fill="#FFFFFF" stroke="#DED6C6" stroke-width="1.5"/>
+    <text x="892" y="382" font-size="20">LD 增量(patch−corrupt)：<tspan font-size="27" font-weight="700" fill="#3B2E1E">+1.2003</tspan></text>
+    <text x="892" y="420" font-size="17" fill="#56616B">patch−random (LD): +1.0473 ｜ max |LD_noop−LD_corrupt|: 0.000000</text>
+
+    <rect x="868" y="454" width="644" height="50" rx="10" fill="#EFEAE0"/>
+    <text x="892" y="486" font-size="20" font-weight="700" fill="#5A4A32">规格核对：层位、位置、目标头切片与冻结规格一致</text>
+
+    <!-- Bottom Panel: Complementary Checks & noop boundary -->
+    <rect x="60" y="548" width="1480" height="236" rx="16" fill="#F5F6F7" stroke="#D7DCE1" stroke-width="2"/>
+    <text x="90" y="590" font-size="24" font-weight="700" fill="#182C40">仅靠“无报错 + noop 误差为 0”不够：采用前须核对适用两面（test_heads.py）</text>
+
+    <!-- Check 1 -->
+    <rect x="90" y="612" width="460" height="148" rx="12" fill="#FFFFFF" stroke="#A7AFB7" stroke-width="1.5"/>
+    <text x="114" y="648" font-size="21" font-weight="700" fill="#182C40">① 不该变的保持不变</text>
+    <text x="114" y="684" font-size="19">原输入张量不被原地修改；在替换位</text>
+    <text x="114" y="712" font-size="19">置的 c_proj 输入张量上，其他位置与</text>
+    <text x="114" y="740" font-size="19">非目标头维度保持原值（后层可变）。</text>
+
+    <!-- Check 2 -->
+    <rect x="574" y="612" width="460" height="148" rx="12" fill="#FFFFFF" stroke="#A7AFB7" stroke-width="1.5"/>
+    <text x="598" y="648" font-size="21" font-weight="700" fill="#182C40">② 该替换的确实替换＋分项单测</text>
+    <text x="598" y="684" font-size="19">目标切片变为指定替换值；小 GPT-2</text>
+    <text x="598" y="712" font-size="19">分别核对 noop hook 与直接调用</text>
+    <text x="598" y="740" font-size="19">c_proj(modified) 的显式矩阵乘法。</text>
+
+    <!-- Caveat Box: noop boundary -->
+    <rect x="1058" y="612" width="452" height="148" rx="12" fill="#FFFDF6" stroke="#80510C" stroke-width="2"/>
+    <text x="1082" y="648" font-size="21" font-weight="700" fill="#80510C">⚠ noop 标量误差为 0 的盲区</text>
+    <text x="1082" y="684" font-size="19">原样返回也能过 noop = 0；且记录值</text>
+    <text x="1082" y="712" font-size="19">仅为 LD 标量差，须配非零替换检查</text>
+    <text x="1082" y="740" font-size="19">并核对真实运行的 manifest 与日志。</text>
+
+    <!-- Footer provenance -->
+    <text x="60" y="818" font-size="19" fill="#56616B">课程自绘｜数据来自 2026-10-20 GPT-2 small 公开证据包（mi-hook-audit/）；LD = logit(收礼人)−logit(主语)，不构成整块与单头的效果排名。</text>
+  </g>
+</svg>

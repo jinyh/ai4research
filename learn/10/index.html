@@ -1423,22 +1423,22 @@
 
 
 <h1 id="10-agent">第 10 讲 · Agent 执行实验与受限代码修改<a class="headerlink" href="#10-agent" title="Permanent link">&para;</a></h1>
-<p>实现通过测试，是否也完成了研究规格中的操作？</p>
+<p>实现通过了测试，是否也完成了冻结规格中的研究操作？</p>
 <h2 id="_1">本课方法讲义<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>使用<a href="../../lessons/lesson-10/handout/">完整讲义</a>理解原理、例子与判断依据，诊断时打开<a href="../../lessons/lesson-10/judgment-task/">任务与输入</a>。本人实践持续回写同一项目。</p>
+<p>课堂直接使用<a href="../../lessons/lesson-10/handout/">完整讲义</a>，通过目录跳转案例、图示与操作卡；共同诊断与本人迁移打开<a href="../../lessons/lesson-10/judgment-task/">任务与输入</a>。本人实践持续回写同一项目。</p>
 <h2 id="_2">带什么来<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>L9冻结规格、baseline与可运行小输入；先写出一项预期行为。 安装与排障计入原预算，不额外准备新系统。</p>
+<p>第 9 课已冻结的实验规格、baseline 与本人项目的一份可运行小输入；提前写出一项预期行为（什么应按规格改变、什么应保持不变）。安装与排障计入原预算，不额外准备新系统。</p>
 <h2 id="_3">课堂怎么做<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
-<li>按任务输入独立记录初判与依据，再比较证据和实际做法。</li>
-<li>回到本人项目，先实际执行一个受限动作并检查结果；根据反馈修订或补查，再同输入复验。</li>
-<li>把实际输入、差异、输出与决定保存在已有记录，不另写课堂报告。原方案正确可以保留；无改善和有效负结果均按真实证据处理。</li>
+<li>读 <a href="../../lessons/lesson-10/handout/#paper-case">PaperBench</a> 的三类评审要求与文件可见矩阵，先判断再展开分析，分清代码实现、实际执行与结果核对三层证据。</li>
+<li>打开<a href="../../lessons/lesson-10/judgment-task/">任务页</a>，从一次真实 Agent 代码委派与接管经历写出权限、防绕过检查与人工审核初判；再看<a href="../../lessons/lesson-10/handout/#code-audit-case">真实 MI 实现审计</a>及<a href="../../lessons/lesson-10/assets/mi-hook-audit/">公开证据包</a>，检验为何“分数更高且 <code>noop=0</code>”仍不能替代规格核对。</li>
+<li>回到<a href="../../lessons/lesson-10/handout/#personal-practice">本人项目</a>，第一段委派并实际执行一个受限小动作、保存原始输出与初次核验；中点反馈后针对缺口修订或补查，在原输入上回归复验（新增边界输入另记），记录采用／撤回／待查决定。</li>
 </ol>
 <h2 id="_4">做到哪里<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>一个实际AI动作、代码或策略差异、相称检查与采用／撤回／待查决定。 理论、文献与系统项目选择相称检查，方向不限MI。共同构造题和教师回放保留其身份，不能抵扣本人执行。</p>
+<p>一个本人实际 AI 动作、代码／推导／检索策略或判断的前后差异（原实现正确可保留并留新增核验证据）、至少一项有区分力的行为检查、复验结果与采用／撤回／待查决定。系统、理论与文献项目选用相称检查，方向不限于 MI。共同案例与公开备用题保留其身份，不能抵扣本人真实执行。</p>
 <h2 id="_5">课外与下课去向<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>课外总投入最多 <strong>60 分钟</strong>：指定阅读15分钟、准备10分钟、项目补全35分钟。 原预算内补同一动作的缺项与边界检查，不另加功能。</p>
-<p>L11接收实现、检查结果、当前不确定性与剩余预算。 模型不可用时实际检查本人已有真实AI产物或本地结果，缺失执行明确标待补，不编造运行；超时先缩小范围。</p>
+<p>课外总投入最多 <strong>60 分钟</strong>：指定阅读 15 分钟（ReAct 循环与失败处理选段）、准备 10 分钟、项目补全 35 分钟。原预算内仅修同一动作的缺项与边界检查，不另开新功能；本课非正式提交门。</p>
+<p>第 11 课接收核准实现、检查结果、当前不确定性与剩余预算。模型或网络不可用时，实际检查本人已保存的真实 AI 产物或本地结果，缺失执行明确标待补，不编造运行；超时先缩小范围。</p>
 <hr />
 <p><a href="../../lessons/lesson-10/handout/">完整讲义：方法、案例与来源</a> · <a href="../../course/reading-list/#10-agent">本课阅读范围</a> · <a href="../11/">下一讲</a></p>
 

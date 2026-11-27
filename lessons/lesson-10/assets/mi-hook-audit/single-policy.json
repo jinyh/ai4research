@@ -1,0 +1,40 @@
+{
+  "identity": {
+    "protocol_sha256": "e11f40772ec8777b0664be41de5e5f517d34831c5feadbe55f922aed819f883d",
+    "cases_sha256": "d2520cd4d89f44c5003628a4ea51c3ca4b9c86c42e1445e509443add01b464ab",
+    "policy_sha256": "019897df206bc040189fbac5a492eb9c70339efefab70d516573ff4e302bb0ea",
+    "runner_sha256": "696334140356f41422f1532f39e59783099d5fd524deea16b886d19302b8b91b",
+    "model_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "split": "dev"
+  },
+  "created_utc": "2026-10-20T09:06:39.167914+00:00",
+  "policy": {
+    "name": "single",
+    "component": "attention_heads",
+    "layer": 9,
+    "position": "last",
+    "heads": [9],
+    "reason": "Teacher demonstration of head vs joint intervention, not an optimized circuit."
+  },
+  "protocol": {
+    "version": "1.0.0",
+    "model": "openai-community/gpt2",
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "dtype": "float32",
+    "device": "cpu",
+    "seed": 20261014,
+    "threads": 4,
+    "metric": "logit(clean_indirect_object) - logit(clean_subject)",
+    "controls": ["clean", "corrupt", "noop", "random"],
+    "split_unit": "template_family",
+    "research_scope": "Residual-stream intervention in a small teaching IOI task; not full circuit identification"
+  },
+  "recorded_summary": {
+    "n": 12,
+    "patch_minus_corrupt": 1.2003014882405598,
+    "patch_minus_random": 1.0472558339436848,
+    "max_noop_error": 0.0,
+    "forward_passes": 60,
+    "seconds_including_model_load": 2.7925457910168916
+  }
+}
